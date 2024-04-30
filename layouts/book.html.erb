@@ -1,0 +1,39 @@
+<h2 class="book-title">
+<%= @item[:title] %>
+<% if @item[:favorite] || false %>
+<span class="favorite-icon" aria-label="Coup de cœur"><%= heart_svg %></span>
+<% end %>
+</h2>
+<h4><%= @item[:author] %></h4>
+
+<p aria-label="<%= @item[:rating] %>" title="<%= @item[:rating] %>" style="vertical-align: middle;">
+<% @item[:rating].times do |star_on| %>
+<%= star_svg(filled: true) %>
+<% end %>
+<% (10 - @item[:rating]).times do |star_off| %>
+<%= star_svg(filled: false) %>
+<% end %>
+</p>
+
+<%
+unless @items["/cover/#{@item[:isbn]}.*"].nil?
+  cover = @items["/cover/#{@item[:isbn]}.*"]
+%>
+<img src="<%= cover.path %>" width="<%= cover["width_default"] %>" height="<%= cover["height_default"] %>" class="book-cover">
+<% end %>
+
+<%= yield  %>
+
+<div style="clear: left;"></div>
+
+<%
+unless @item.fetch(:linked_books, []).empty?
+  def linked_book_items = @item[:linked_books].map { |isbn| @items["/book/#{isbn}.*"] }
+%>
+<h3>À lire aussi</h3>
+<ul class="linked-books">
+<% linked_book_items.each do |book| %>
+  <li><a href="<%= book.path %>"><%= linked_book_title(@item, linked_book: book) %></a></li>
+<% end %>
+</ul>
+<% end %>

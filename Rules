@@ -1,0 +1,86 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'mimemagic'
+require 'image_size'
+
+preprocess do
+  missing_covers = 0
+
+  @items.select { |item| item.identifier =~ '/index.*' || book?(item) }.each do |item|
+    raise "item #{item.identifier} doesn't have a uuid (suggested: #{SecureRandom.uuid})" unless item[:uuid]
+
+    if book?(item)
+      item_name = item.identifier.without_exts.delete_prefix('/book/')
+      raise "mismatch between identifier name '#{item_name}' & isbn '#{item[:isbn]}'" if item[:isbn] != item_name
+
+      if @items["/cover/#{item[:isbn]}.*"].nil?
+        missing_covers += 1
+        query = CGI.escape("#{item[:title]} #{item[:author]}")
+        google_q = "https://www.google.fr/search?q=#{query}&udm=2"
+        amazon_q = "https://www.amazon.fr/s?k=#{query}&i=stripbooks"
+        puts "- missing cover for #{format_isbn(item[:isbn])} #{item[:title]} #{item[:author]} | #{google_q} | #{amazon_q}"
+      end
+    end
+  end
+
+  @items.select { |item| item.identifier =~ '/cover/*' }.each do |cover|
+    isbn = cover.identifier.without_exts.delete_prefix('/cover/')
+    raise "cover for unavailable book #{isbn}" if @items.select { |item| book?(item) }.none? { |item| item[:isbn] == isbn }
+  end
+
+  @items.select { |i| i.identifier =~ '/cover/*' }.each do |cover|
+    cover_path = cover.raw_filename
+    cover[:mime_type] = MimeMagic.by_path(cover_path).type
+    cover_size = ImageSize.new(IO.read(cover_path))
+    %i[mini default].each do |repr|
+      cover_repr_width = @config[:cover][:width][repr]
+      cover_repr_height = cover_size.height * cover_repr_width / cover_size.width
+      cover["width_#{repr}"] = cover_repr_width
+      cover["height_#{repr}"] = cover_repr_height
+    end
+  end
+
+  puts "#{@items.count { |item| book?(item) }} books"
+  puts " - #{missing_covers} missing covers" if missing_covers > 0
+end
+
+compile '/static/**/*' do
+  # don't filter or layout
+end
+
+%i[mini default].each do |repr|
+  compile '/cover/**/*', rep: repr do
+    width = @config[:cover][:width][repr]
+    filter :thumbnailize, width: width unless @config[:dev]
+
+    suffix = "-#{repr}" unless repr == :default
+    write "#{item.identifier.without_exts}#{suffix}.#{item[:extension]}"
+  end
+end
+
+compile '/book/**/*' do
+  filter :erb
+  filter :kramdown
+  filter :html_compressor, type: item[:extension] unless @config[:dev]
+
+  layout '/book.*'
+  layout '/default.*'
+  
+  write item.identifier.without_ext + '/index.html'
+end
+
+compile '/**/*.html' do
+  filter :erb
+  layout '/default.*'
+
+  if item.identifier =~ '**/index.*'
+    write item.identifier.to_s
+  else
+    write item.identifier.without_ext + '/index.html'
+  end
+end
+
+passthrough '/**/*'
+
+layout '/**/*', :erb, trim_mode: '-'

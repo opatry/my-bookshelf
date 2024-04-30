@@ -1,0 +1,11 @@
+{
+  "hosting": {
+    "site": "lecture-80c2c",
+    "public": "output",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

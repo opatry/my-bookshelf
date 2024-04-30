@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="<%= @config[:site][:lang] %>">
+<head>
+  <meta charset="utf-8">
+  <title><%= page_title(@item) %> &mdash; <%= @config[:site][:title] %></title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="theme-color" content="#c51104">
+
+<%
+if @item.identifier =~ '**/index.*'
+%>
+  <link href="https://unpkg.com/tabulator-tables/dist/css/tabulator_semanticui.min.css" rel="stylesheet">
+  <script type="text/javascript" src="https://unpkg.com/tabulator-tables/dist/js/tabulator.min.js"></script>
+<%
+end
+%>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Material Symbols -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <!-- Dancing Script font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700">
+  <!-- Caslon font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&display=swap">
+  <link rel="stylesheet" href="<%= @items['/static/style.*'].path %>">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📚</text></svg>">
+  <link rel="canonical" href="<%= "#{@config[:site][:url]}#{@item.path}" %>" />
+
+<%
+is_home = @item.identifier =~ '/index.*'
+%>
+
+  <!-- Open Graph Protocol (https://ogp.me/) -->
+  <meta property="og:locale" content="<%= @config[:site][:lang] %>" />
+  <meta property="og:site_name" content="<%= @config[:site][:title] %>" />
+  <meta property="og:title" content="<%= page_title(@item) %>" />
+  <meta property="og:url" content="<%= "#{@config[:site][:url]}#{@item.path}" %>" />
+
+<% if is_home %>
+  <meta property="og:type" content="website" />
+  <meta property="og:description" content="<%= @config[:site][:description] %>" />
+  <meta name="description" content="<%= @config[:site][:description] %>">
+<% end %>
+
+<% if book?(@item) %>
+  <meta property="og:type" content="book" />
+  <meta property="book:author" content="<%= @item[:author] %>" />
+  <meta property="book:isbn" content="<%= format_isbn(@item[:isbn]) %>" />
+  <%# <meta property="book:release_date" content="TODO" /> %>
+<%
+  picture = @items["/cover/#{@item[:isbn]}.*"]
+  unless picture.nil?
+    picture_url = "#{@config[:site][:url]}#{picture.path}"
+%>
+  <meta property="og:image" content="<%= picture_url %>" />
+  <meta property="og:image:secure_url" content="<%= picture_url %>" />
+  <meta property="og:image:type" content="<%= picture[:mime_type] %>" />
+  <meta property="og:image:width" content="<%= picture["width_default"] %>" />
+  <meta property="og:image:height" content="<%= picture["height_default"] %>" />
+<%end %>
+<%
+  # keep 50 first words
+  description = "#{@item.raw_content.split.first(50).join(' ')}…"
+%>
+  <meta property="og:description" content="<%= description %>" />
+  <meta name="description" content="<%= description %>">
+<%end %>
+
+  <meta name="generator" content="Nanoc <%= Nanoc::VERSION %>">
+</head>
+
+<body>
+<div id="content">
+<%
+header_style_class = is_home ? 'full' : 'compact'
+%>
+  <div id="header" class="<%= header_style_class %>">
+    <div class="profile-picture">
+    <% unless is_home %>
+      <a href="<%= @items['/index.*'].path %>" title="Retour à l'accueil…">
+    <% end %>
+        <img src="<%= @items['/static/avatar.*'].path %>">
+    <% unless is_home %>
+      </a>
+    <% end %>
+    </div>
+
+    <div class="header-detail">
+      <blockquote>
+        <q><%= @config[:site][:description] %></q>
+      </blockquote>
+      
+      <div id="social-badges">
+      <% @config[:social].each do |key, social| %>
+        <div id="social-badge-<%= key %>" class="social-badge">
+          <%#
+          A bit hacky, but unfortunately, background-color: attr(data-tint color) won't work.
+          Should have been: data-tint="#FFF000" + a[data-tint]:hover { background-color: attr(data-tint color[, fallback]); }
+          Providing the color as a CSS variable would work though…
+          So, final result is: style="--social-tint-color: #FFF000" + a:hover { background-color: var(--social-tint-color[, fallback]); }
+          See https://css-tricks.com/css-attr-function-got-nothin-custom-properties/
+          %>
+          <a href="<%= social[:url] %>" title="Mon profil <%= social[:label] %>" style="--social-tint-color: <%= hex_color_to_rgba(social[:tint], 0.2) %>">
+            <img src="<%= @items[social[:icon_identifier]].path %>" width="25" height="25">
+          </a>
+        </div>
+      <% end %>
+      </div>
+    </div>
+  </div>
+
+  <%= yield %>
+</div>
+</body>
+</html>

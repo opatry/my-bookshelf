@@ -1,0 +1,43 @@
+text_extensions: [ 'adoc', 'asciidoc', 'atom', 'coffee', 'css', 'erb', 'haml', 'handlebars', 'hb', 'htm', 'html', 'js', 'less', 'markdown', 'md', 'ms', 'mustache', 'org', 'php', 'rb', 'rdoc', 'sass', 'scss', 'slim', 'tex', 'txt', 'xhtml', 'xml' ]
+
+prune:
+  auto_prune: true
+
+data_sources:
+  - type: filesystem
+    encoding: utf-8
+
+environments:
+  default:
+    dev: true
+    site:
+      url: 'http://localhost:3000' # FIXME not very nice to hardcode port
+  prod:
+    dev: false
+    site:
+      url: https://lecture.opatry.net
+
+site:
+  lang: fr
+  title: 📚 Les lectures d'Olivier
+  description: Les livres que j'ai lu avec une note et un résumé rapide pour partager.
+
+social:
+  sc:
+    label: SensCritique
+    user: 'OlivYé'
+    icon_identifier: '/static/senscritique.*'
+    tint: '#60d16f'
+    url: https://www.senscritique.com/OlivYé/collection?universe=2&action=RATING&order=MY_RATING_DESC
+  babelio:
+    label: Babelio
+    user: 'olivierpatry'
+    icon_identifier: '/static/babelio.*'
+    tint: '#fbb91e'
+    url: https://www.babelio.com/bibliotheque.php?&s1=1&id_user=1664025&tri=note&sens=decroissant
+
+cover:
+  quality: '85%'
+  width:
+    mini: 50 # width of mini cover in main table (see content/index.html `formatterParams`)
+    default: 150 # width of cover by default (see content/static/style.css `.book-cover`)

@@ -1,0 +1,10 @@
+* text=auto
+
+.gitignore text
+*.sh text eol=lf
+_sh/* text eol=lf
+*.bat text eol=crlf
+*.awk eol=lf
+*.bin binary
+*.svg text
+*.tsv text

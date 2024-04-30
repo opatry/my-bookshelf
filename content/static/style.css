@@ -1,0 +1,242 @@
+.tabulator .tabulator-footer .tabulator-page.active {
+  color: rgb(197, 17, 4);
+}
+.tabulator-row.tabulator-selectable:hover {
+  background-color: rgba(0, 0, 0, .05) !important;
+}
+.tabulator {
+  font-size: inherit;
+}
+.tabulator-col .tabulator-col-sorter .icon {
+  color: rgba(0, 0, 0, .7);
+}
+.tabulator-col[aria-sort='none'] .tabulator-col-sorter .icon {
+  color: rgba(0, 0, 0, .1);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  /* https://www.toptal.com/designers/subtlepatterns/swirl/ Made by Peter Chon licensed under Creative Commons */
+  background: url('swirl.png')
+              fixed            
+              repeat
+              rgba(0, 0, 0, .05);
+  font-family: 'Libre Caslon Display', serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  border-bottom: .5px dotted rgba(0, 0, 0, .2);
+  color: inherit;
+  transition : border 500ms ease-out;
+}
+a:hover {
+  border-bottom: 1px solid rgb(197, 17, 4);
+}
+
+#content {
+  max-width: 1000px;
+  min-width: 600px;
+  width: 75%;
+  margin: 0 auto;
+  padding: 24px;
+  box-shadow: 0 24px 128px rgba(0, 0, 0, .2);
+  background-color: rgba(255, 255, 255, .5);
+}
+
+/*
+TODO fixed with lift on scroll?
+*/
+
+#header {
+  margin-bottom: 24px;
+  display: flex;
+  gap: 24px;
+}
+
+#header.compact {
+  height: 56px;
+}
+
+#header .header-detail {
+  flex-grow: 1;
+  position: relative;
+  display: grid;
+  place-content: center;
+}
+
+.profile-picture a {
+  border: 0 none;
+}
+.profile-picture img {
+  width: 128px;
+  height: 128px;
+  border-radius: 100%;
+  border: 4px solid rgba(255, 255, 255, 1);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+}
+
+.compact .profile-picture img {
+  width: 48px;
+  height: 48px;
+  border-width: 2px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+}
+
+#social-badges {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.social-badge {
+  display: inline-flex;
+}
+.social-badge img {
+  vertical-align: text-bottom;
+  border-radius: 4px;
+}
+.social-badge a {
+  text-decoration: none;
+  display: block;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, .2);
+  height: 100%;
+  width: 100%;
+  padding: 4px 8px;
+  color: inherit;
+  transition: background-color 0.5s ease-in-out;
+}
+.social-badge a:hover {
+  background-color: var(--social-tint-color, rgba(0, 0, 0, .2));
+}
+
+.social-badge img {
+  width: 24px;
+  height: 24px;
+}
+
+h1, h2, h3 {
+  font-family: 'Dancing Script', cursive;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+ul {
+  margin: 0 16px;
+  padding: 0;
+  list-style-type: none;
+}
+
+ul li::before {
+  font-family: 'Dancing Script', cursive;
+  font-weight: 700;
+  content: '- ';
+}
+
+.linked-books {
+  font-size: .9em;
+}
+
+.linked-books li {
+  padding: 4px 0;
+}
+
+.heart-icon {
+  padding-bottom: 4px;
+  fill: rgb(197, 17, 4);
+  vertical-align: text-bottom;
+}
+.tabulator .heart-icon:hover,
+.book-title .heart-icon {
+  transform-origin: center;
+  animation: pulse 2000ms;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scaleX(1) scaleY(1);
+  }
+  15% {
+    transform: scaleX(1.25) scaleY(1.25);
+  }
+  30% {
+    transform: scaleX(1) scaleY(1);
+  }
+  45% {
+    transform: scaleX(1.25) scaleY(1.25);
+  }
+  60% {
+    transform: scaleX(1) scaleY(1);
+  }
+  75% {
+    transform: scaleX(1.25) scaleY(1.25);
+  }
+  100% {
+    transform: scaleX(1) scaleY(1);
+  }
+}
+
+p {
+  line-height: 1.5;
+}
+
+.book-cover {
+  width: 150px;
+  float: left;
+  margin-right: 24px;
+}
+
+blockquote {
+  font-family: 'Dancing Script', cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+  color: rgba(0, 0, 0, .2);
+  quotes: none;
+}
+blockquote::before {
+  position: absolute;
+  font-size: 2.5em;
+  content: '\00AB';
+  margin-top: -.5em;
+  margin-left: -.5em;
+}
+
+#book-filter-box {
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, .2);
+  padding: 4px;
+  display: flex;
+  align-items: center;
+}
+
+#book-filter-box:focus-within {
+  outline: 1px solid rgba(0, 0, 0, .2);
+}
+
+#book-filter-box .input-icon {
+  padding: 0 4px;
+  opacity: .3;
+  transition: opacity 0.3s ease-in-out;
+}
+#book-filter-box:focus-within .input-icon {
+  opacity: .6;
+}
+#book-filter-q {
+  border: 0 none;
+  flex-grow: 1;
+}
+
+#book-filter-q:focus {
+  outline: 0 none;
+}
+
+#book-filter-q::-webkit-search-cancel-button {
+}

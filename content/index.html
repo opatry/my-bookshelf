@@ -1,0 +1,124 @@
+---
+title: Mes lectures
+uuid: d45018b8-4b50-4d56-a403-aee411ab5931
+---
+
+  <div id="book-filter-box">
+    <span class="material-symbols-outlined input-icon">filter_list</span>
+    <input id="book-filter-q" type="search" placeholder="Filtrer…" size="40">
+  </div>
+  <div id="books-table"></div>
+
+  <script type="text/javascript">
+    // TODO load JSON file
+  var booksData = <%= JSON[@items.select { |item| book?(item) }.map { |book| to_json(book) }] %>;
+  var table = new Tabulator("#books-table", {
+    data: booksData,
+    layout: "fitColumns",
+    responsiveLayout: "hide",
+    pagination: "local",
+    paginationSize: 18,
+    paginationCounter: "rows",
+    initialSort: [
+        {
+          column: "title",
+          dir: "asc"
+        },
+    ],
+    headerSortElement: function(column, dir){
+        switch(dir){
+            case "asc":
+                return '<span class="icon material-symbols-outlined">keyboard_arrow_up</span>';
+            break;
+            case "desc":
+                return '<span class="icon material-symbols-outlined">keyboard_arrow_down</span>';
+            break;
+            default:
+                return '<span class="icon material-symbols-outlined">sort_by_alpha</span>';
+        }
+    },
+    persistence: {
+      sort: true,
+    },
+    persistenceID: "books",
+    columns: [
+        {
+          headerSort: false,
+          field: "cover",
+          formatter: "image",
+          width: 65,
+          formatterParams: {
+            height: "50px",
+            width: "auto"
+          }
+        },
+        {
+          headerSort: true,
+          field: "title",
+          title: "Title",
+          // sort taking into account locale (1, 2, 10 vs 1, 10, 2; accented characters etc.)
+          sorter: function(a, b, aRow, bRow, column, dir, sorterParams) {
+            return a.localeCompare(b, '<%= @config[:site][:lang] %>', { numeric: true, sensitivity: "base", ignorePunctuation: true });
+          }
+        },
+        {
+          headerSort: true,
+          field: "author",
+          title: "Author",
+          width: 250,
+        },
+        {
+          headerSort: true,
+          headerSortStartingDir: "desc",
+          field: "rating",
+          title: "Rating",
+          formatter: "star",
+          formatterParams: {
+            stars: 10
+          },
+          hozAlign: "center",
+          width: 200,
+          tooltip: true,
+        },
+        {
+          headerSort: true,
+          sorter: "boolean",
+          headerSortStartingDir: "desc",
+          field: "favorite",
+          formatter: function(cell, formatterParams, onRendered) {
+            return cell.getValue() ? '<span aria-label="Coup de cœur"><%= heart_svg %></span>' : '';
+          },
+          hozAlign: "center",
+          width: 65,
+          tooltip: function(e, cell, onRendered) {
+            if (cell.getValue()) {
+              var tooltipElement = document.createElement("div");
+              tooltipElement.innerText = "Coup de cœur"
+              return tooltipElement;
+            } else {
+              return null;
+            }
+          }
+        },
+    ],
+  });
+
+  function updateFilter(query) {
+    var queryTrimed = query.trim();
+    if (queryTrimed.length > 0) {
+      table.setFilter("title", "like", queryTrimed);
+    } else {
+      table.clearFilter();
+    }
+  }
+
+  var filterField = document.getElementById("book-filter-q");
+  filterField.addEventListener("input", (e) => {
+    updateFilter(e.target.value.trim());
+  });
+
+  table.on("rowClick", function(e, row){
+    var book = row._row.data;
+    window.location = book.link;
+  });
+  </script>
