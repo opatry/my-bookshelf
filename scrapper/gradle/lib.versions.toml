@@ -1,0 +1,63 @@
+[versions]
+bookReading = "1.0.0"
+
+kotlin = "2.0.0-RC2"
+coroutines = "1.8.0"
+kodein = "7.21.2"
+selenium = "4.20.0"
+ktor = "2.3.10"
+log4j = "2.20.0"
+sqldelight = "2.0.2"
+
+[libraries]
+coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
+coroutines-swing = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-swing", version.ref = "coroutines" }
+
+junit4 = { module = "junit:junit", version = "4.13.2" }
+gson = { module = "com.google.code.gson:gson", version = "2.10.1" }
+
+kodein = { module = "org.kodein.di:kodein-di", version.ref = "kodein" }
+kodein-compose = { module = "org.kodein.di:kodein-di-framework-compose", version.ref = "kodein" }
+
+jsoup = { module = "org.jsoup:jsoup", version = "1.16.1" }
+
+ktor-server-core = { module = "io.ktor:ktor-server-core-jvm", version.ref = "ktor" }
+ktor-server-netty = { module = "io.ktor:ktor-server-netty-jvm", version.ref = "ktor" }
+ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
+ktor-client-auth = { module = "io.ktor:ktor-client-auth", version.ref = "ktor" }
+ktor-client-cio = { module = "io.ktor:ktor-client-cio", version.ref = "ktor" }
+ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor" }
+ktor-client-logging = { module = "io.ktor:ktor-client-logging", version.ref = "ktor" }
+ktor-serialization-gson = { module = "io.ktor:ktor-serialization-gson", version.ref = "ktor" }
+
+selenium-lib = { module = "org.seleniumhq.selenium:selenium-java", version.ref = "selenium" }
+selenium-driver-chrome = { module = "org.seleniumhq.selenium:selenium-chrome-driver", version.ref = "selenium" }
+
+log4j-core = { module = "org.apache.logging.log4j:log4j-core", version.ref = "log4j" }
+log4j-slf4j-impl = { module = "org.apache.logging.log4j:log4j-slf4j-impl", version.ref = "log4j" }
+
+sqldelight-sqlite-driver = { module = "app.cash.sqldelight:sqlite-driver", version.ref = "sqldelight" }
+sqldelight-coroutines-extensions = { module = "app.cash.sqldelight:coroutines-extensions", version.ref = "sqldelight" }
+sqldelight-primitive-adapters = { module = "app.cash.sqldelight:primitive-adapters", version.ref = "sqldelight" }
+
+[bundles]
+ktor-server = [ "ktor-server-core", "ktor-server-netty" ]
+ktor-client = [
+    "ktor-client-core",
+    "ktor-client-auth",
+    "ktor-client-cio",
+    "ktor-client-content-negotiation",
+    "ktor-client-logging",
+    "ktor-serialization-gson",
+]
+
+sqldelight = [
+    "sqldelight-sqlite-driver",
+    "sqldelight-coroutines-extensions",
+    "sqldelight-primitive-adapters",
+]
+
+log4j = ["log4j-core", "log4j-slf4j-impl"]
+
+[plugins]
+sqldelight = { id = "app.cash.sqldelight", version.ref = "sqldelight" }
