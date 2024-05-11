@@ -112,6 +112,49 @@ uuid: d45018b8-4b50-4d56-a403-aee411ab5931
           }
         },
     ],
+    langs: {
+        "fr": {
+            "columns": {
+                "name": "Nom",
+            },
+            "data": {
+                "loading": "Chargement",
+                "error": "Erreur",
+            },
+            "groups": {
+                "item": "élément",
+                "items":"éléments",
+            },
+            "pagination": {
+                "page_size": "Taille de page",
+                "page_title": "Afficher la page",
+                "first": "«",
+                "first_title": "Première page",
+                "last": "»",
+                "last_title": "Dernière page",
+                "prev": "‹",
+                "prev_title": "Page précédente",
+                "next": "›",
+                "next_title": "Page suivante",
+                "all": "Tout",
+                "counter": {
+                    "showing": "",
+                    "of": " / ",
+                    "rows": "lignes",
+                    "pages": "pages",
+                }
+            },
+            "headerFilters":{
+                "default": "Filtrer la colonne…",
+                "columns": {
+                    "name": "Filtrer par nom…",
+                    "author": "Filtrer par auteur…",
+                    "rating": "Filtrer par note…",
+                    "favorite": "Filtrer par favoris…",
+                }
+            }
+        }
+    },
   });
 
   function updateFilter(query) {
@@ -131,5 +174,9 @@ uuid: d45018b8-4b50-4d56-a403-aee411ab5931
   table.on("rowClick", function(e, row){
     var book = row._row.data;
     window.location = book.link;
+  });
+
+  window.addEventListener("load", (event) => {
+    table.setLocale("fr");
   });
   </script>
