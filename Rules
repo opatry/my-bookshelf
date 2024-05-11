@@ -70,6 +70,13 @@ compile '/book/**/*' do
   write item.identifier.without_ext + '/index.html'
 end
 
+compile '/**/*.md' do
+  filter :erb
+  filter :kramdown
+
+  layout '/default.*'
+end
+
 compile '/**/*.html' do
   filter :erb
   layout '/default.*'
@@ -79,6 +86,11 @@ compile '/**/*.html' do
   else
     write item.identifier.without_ext + '/index.html'
   end
+end
+
+route '/error/404.*' do
+  # Firebase hosting expected 404.html at the root (see https://firebase.google.com/docs/hosting/full-config#404)
+  '/404.html'
 end
 
 passthrough '/**/*'
