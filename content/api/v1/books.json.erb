@@ -1,0 +1,12 @@
+---
+layout: none
+---
+<%#
+#######################################################################
+# Fields here are consumed by third party code (Android companion app).
+# Do not change anything here that could break backward compatibility.
+#  - field names
+#  - field format
+#  - do not remove fields
+#######################################################################
+%><%= JSON[@items.select { |item| book?(item) }.map { |book| to_json(book, url: :absolute) }] %>

@@ -2,16 +2,17 @@
 
 require 'json'
 
-def to_json(book)
+def to_json(book, url: :relative)
   cover = @items["/cover/#{book[:isbn]}.*"]
-  cover_path = cover.path rep: :mini unless cover.nil?
+  cover_path = cover.path(rep: :mini) unless cover.nil?
+  url_prefix = url == :absolute ? @config[:site][:url] : ''
   {
     'title' => book[:title],
     'author' => book[:author],
-    'link' => book.path,
+    'link' => "#{url_prefix}#{book.path}",
     'rating' => book[:rating] || 0,
     'favorite' => book[:favorite] || false,
-    'cover' => cover_path || ''
+    'cover' => "#{url_prefix}#{cover_path}" || ''
   }
 end
 

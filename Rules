@@ -70,6 +70,11 @@ compile '/book/**/*' do
   write item.identifier.without_ext + '/index.html'
 end
 
+compile '/api/v1/*' do
+  filter :erb
+  layout item[:layout] unless item[:layout] == 'none'
+end
+
 compile '/**/*.md' do
   filter :erb
   filter :kramdown
@@ -86,6 +91,10 @@ compile '/**/*.html' do
   else
     write item.identifier.without_ext + '/index.html'
   end
+end
+
+route '/**/*.erb' do
+  item.identifier.to_s.chomp('.erb')
 end
 
 route '/error/404.*' do
