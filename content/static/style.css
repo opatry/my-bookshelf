@@ -39,8 +39,6 @@ a:hover {
 }
 
 #content {
-  /* prevents children's margin to be applied to container */
-  overflow: auto;
   width: 80%;
   max-width: 1000px;
   margin: 0 auto;
@@ -168,6 +166,49 @@ ul li::before {
   content: '- ';
 }
 
+table {
+  width: 100%;
+  border-collapse: collapse;
+  /* a bit hacky way to draw border-radius on table with border-collapse: collapse */
+  border-style: hidden;
+  border-radius: 4px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, .2);
+  margin: 16px auto;
+}
+
+table thead tr {
+  background-color: rgba(0, 0, 0, .05);
+  font-weight: 700;
+  height: 56px;
+  text-align: left;
+}
+table thead td {
+  vertical-align: middle;
+}
+
+table tr {
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
+}
+table tbody tr:last-child {
+  border-bottom-width: 0;
+}
+table tbody tr:hover {
+  background-color: rgba(0, 0, 0, .01);
+}
+
+table td {
+  padding: 8px 4px;
+  vertical-align: top;
+  text-overflow: ellipsis;
+}
+
+.book-cover-mini {
+  display: block;
+  height: 50px;
+  width: auto;
+  margin: 0 auto;
+}
+
 .linked-books {
   font-size: .9em;
 }
@@ -181,10 +222,14 @@ ul li::before {
   fill: rgb(197, 17, 4);
   vertical-align: text-bottom;
 }
-.tabulator .heart-icon:hover,
-.book-title .heart-icon {
+.books-table .heart-icon:hover,
+.books-title .heart-icon {
   transform-origin: center;
   animation: pulse 2000ms;
+}
+#books-table-noscript .heart-icon {
+  display: block;
+  margin: 0 auto;
 }
 
 @keyframes pulse {

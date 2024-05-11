@@ -3,11 +3,58 @@ title: Mes lectures
 uuid: d45018b8-4b50-4d56-a403-aee411ab5931
 ---
 
+<% require 'natural_sort' %>
+
   <div id="book-filter-box">
     <span class="material-symbols-outlined input-icon">filter_list</span>
     <input id="book-filter-q" type="search" placeholder="Filtrer…" size="40">
   </div>
-  <div id="books-table"></div>
+  <div id="books-table" class="books-table"></div>
+
+  <noscript>
+  <table id="books-table-noscript" class="books-table">
+  <thead>
+    <tr>
+      <th style="width: 65px;"><!-- cover --></th>
+      <th>Titre</th>
+      <th>Auteur</th>
+      <th style="width: 220px;"><!-- rating --></th>
+      <th style="width: 65px;"><!-- favorite --></th>
+    </tr>
+  </thead>
+  <tbody>
+<% @items.select { |item| book?(item) }.sort_by { |book| NaturalSort(book[:title]) }.each do |book| %>
+    <tr>
+      <td>
+<%
+unless @items["/cover/#{book[:isbn]}.*"].nil?
+  cover = @items["/cover/#{book[:isbn]}.*"]
+%>
+        <img src="<%= cover.path(rep: :mini) %>" width="<%= cover["width_mini"] %>" height="<%= cover["height_mini"] %>" class="book-cover-mini">
+<% end %>
+      </td>
+      <td><a href="<%= book.path %>"><%= book[:title] %></a></td>
+      <td><%= book[:author] %></td>
+      <td>
+        <p aria-label="<%= book[:rating] %>" title="<%= book[:rating] %>" style="vertical-align: middle; text-align: center;">
+          <% book[:rating].times do |star_on| %>
+          <%= star_svg(filled: true) %>
+          <% end %>
+          <% (10 - book[:rating]).times do |star_off| %>
+          <%= star_svg(filled: false) %>
+          <% end %>
+        </p>
+      </td>
+      <td>
+<% if book[:favorite] || false %>
+        <span class="favorite-icon" aria-label="Coup de cœur" title="Coup de cœur"><%= heart_svg %></span>
+<% end %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+  </table>
+  </noscript>
 
   <script type="text/javascript">
     // TODO load JSON file

@@ -24,6 +24,7 @@ gem 'htmlcompressor'
 gem 'mimemagic'
 gem 'image_size'
 gem 'htmlentities'
+gem 'natural_sort'
 
 group :development do
   # debug
