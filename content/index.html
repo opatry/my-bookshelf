@@ -45,8 +45,10 @@ uuid: d45018b8-4b50-4d56-a403-aee411ab5931
         {
           headerSort: false,
           field: "cover",
+          responsive: 1,
           formatter: "image",
           width: 65,
+          minWidth: 65,
           formatterParams: {
             height: "50px",
             width: "auto"
@@ -55,7 +57,9 @@ uuid: d45018b8-4b50-4d56-a403-aee411ab5931
         {
           headerSort: true,
           field: "title",
-          title: "Title",
+          title: "Titre",
+          minWidth: 150,
+          responsive: 0, // never hidden
           // sort taking into account locale (1, 2, 10 vs 1, 10, 2; accented characters etc.)
           sorter: function(a, b, aRow, bRow, column, dir, sorterParams) {
             return a.localeCompare(b, '<%= @config[:site][:lang] %>', { numeric: true, sensitivity: "base", ignorePunctuation: true });
@@ -64,20 +68,25 @@ uuid: d45018b8-4b50-4d56-a403-aee411ab5931
         {
           headerSort: true,
           field: "author",
-          title: "Author",
+          title: "Auteur",
+          responsive: 1,
           width: 250,
+          minWidth: 100,
+          minWidth: 150,
         },
         {
           headerSort: true,
           headerSortStartingDir: "desc",
           field: "rating",
-          title: "Rating",
+          title: "Note",
+          responsive: 2,
           formatter: "star",
           formatterParams: {
             stars: 10
           },
           hozAlign: "center",
           width: 200,
+          minWidth: 150,
           tooltip: true,
         },
         {
@@ -85,11 +94,13 @@ uuid: d45018b8-4b50-4d56-a403-aee411ab5931
           sorter: "boolean",
           headerSortStartingDir: "desc",
           field: "favorite",
+          responsive: 2,
           formatter: function(cell, formatterParams, onRendered) {
             return cell.getValue() ? '<span aria-label="Coup de cœur"><%= heart_svg %></span>' : '';
           },
           hozAlign: "center",
           width: 65,
+          minWidth: 50,
           tooltip: function(e, cell, onRendered) {
             if (cell.getValue()) {
               var tooltipElement = document.createElement("div");

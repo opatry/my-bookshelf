@@ -39,13 +39,21 @@ a:hover {
 }
 
 #content {
+  /* prevents children's margin to be applied to container */
+  overflow: auto;
+  width: 80%;
   max-width: 1000px;
-  min-width: 600px;
-  width: 75%;
   margin: 0 auto;
   padding: 24px;
   box-shadow: 0 24px 128px rgba(0, 0, 0, .2);
   background-color: rgba(255, 255, 255, .5);
+}
+
+@media screen and (max-width: 675px) {
+  #content {
+    width: initial;
+    padding: 12px;
+  }
 }
 
 /*
@@ -62,11 +70,23 @@ TODO fixed with lift on scroll?
   height: 56px;
 }
 
+@media screen and (max-width: 675px) {
+  #header {
+    height: 56px;
+  }
+}
+
 #header .header-detail {
   flex-grow: 1;
   position: relative;
   display: grid;
   place-content: center;
+}
+
+@media screen and (max-width: 675px) {
+  #header .header-detail blockquote {
+    display: none;
+  }
 }
 
 .profile-picture a {
@@ -85,6 +105,15 @@ TODO fixed with lift on scroll?
   height: 48px;
   border-width: 2px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+}
+
+@media screen and (max-width: 675px) {
+  .profile-picture img {
+    width: 48px;
+    height: 48px;
+    border-width: 2px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+  }
 }
 
 #social-badges {
