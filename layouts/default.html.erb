@@ -27,7 +27,23 @@ end
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&display=swap">
   <link rel="stylesheet" href="<%= @items['/static/style.*'].path %>">
 
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📚</text></svg>">
+  <link rel="shortcut icon" href="<%= @items['/static/favicon.*'].path(rep: :default) %>">
+<%
+@config[:favicon_reprs].each do |repr|
+  next if repr == :default
+  # retrieve size from repr name
+  size = repr.to_s
+  size.slice! 'favicon'
+%>
+  <link rel="icon" type="image/png" href="<%= @items['/static/favicon.*'].path(rep: repr) %>" sizes="<%= "#{size}x#{size}" %>">
+<% end %>
+
+  <link rel="apple-touch-icon" href="<%= @items['/static/favicon192-maskable.*'].path %>">
+
+  <!-- https://developer.chrome.com/multidevice/android/installtohomescreen -->
+  <link rel="manifest" href="<%= @items['/manifest.*'].path %>">
+  <meta name="mobile-web-app-capable" content="yes">
+
   <link rel="canonical" href="<%= "#{@config[:site][:url]}#{@item.path}" %>" />
 
 <%

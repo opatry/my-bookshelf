@@ -36,6 +36,7 @@ social:
     tint: '#fbb91e'
     url: https://www.babelio.com/bibliotheque.php?&s1=1&id_user=1664025&tri=note&sens=decroissant
 
+favicon_reprs: [ 'default' ]
 cover:
   quality: '85%'
   width:

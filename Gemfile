@@ -23,6 +23,7 @@ gem 'htmlcompressor'
 
 gem 'mimemagic'
 gem 'image_size'
+gem 'htmlentities'
 
 group :development do
   # debug

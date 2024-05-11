@@ -20,6 +20,7 @@ GEM
     diff-lcs (1.5.1)
     e2mmap (0.1.0)
     htmlcompressor (0.4.0)
+    htmlentities (4.3.4)
     image_size (3.4.0)
     immutable-ruby (0.2.0)
       concurrent-ruby (~> 1.1)
@@ -169,6 +170,7 @@ DEPENDENCIES
   adsf
   clonefile
   htmlcompressor
+  htmlentities
   image_size
   kramdown
   mimemagic

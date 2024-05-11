@@ -4,7 +4,12 @@
 require 'mimemagic'
 require 'image_size'
 
+# mainly used for Android "Add to Homescreen" feature
+favicon_reprs = %i[default favicon152 favicon36 favicon48 favicon72 favicon96 favicon144 favicon192 favicon512]
+
 preprocess do
+  @config[:favicon_reprs] = favicon_reprs
+
   missing_covers = 0
 
   @items.select { |item| item.identifier =~ '/index.*' || book?(item) }.each do |item|
@@ -45,6 +50,22 @@ preprocess do
   puts " - #{missing_covers} missing covers" if missing_covers > 0
 end
 
+favicon_reprs.each do |repr|
+  compile '/static/favicon.*', rep: repr do
+    route = if repr == :default
+              filter :favicon
+              # browser friendly favicon location + avoids 404 errors on server when such browsers are looking for it
+              '/favicon.ico'
+            else
+              # extract size from favicon repr name
+              size = repr.to_s.delete_prefix('favicon').to_i
+              filter :thumbnailize, width: size
+              "/#{repr}.#{item[:extension]}"
+            end
+    write route
+  end
+end
+
 compile '/static/**/*' do
   # don't filter or layout
 end
@@ -66,7 +87,7 @@ compile '/book/**/*' do
 
   layout '/book.*'
   layout '/default.*'
-  
+
   write item.identifier.without_ext + '/index.html'
 end
 
@@ -82,25 +103,47 @@ compile '/**/*.md' do
   layout '/default.*'
 end
 
-compile '/**/*.html' do
+compile '/service-worker.*' do
   filter :erb
-  layout '/default.*'
+end
 
-  if item.identifier =~ '**/index.*'
-    write item.identifier.to_s
-  else
-    write item.identifier.without_ext + '/index.html'
+compile '/manifest.*' do
+  filter :erb
+end
+
+compile '/**/*' do
+  unless item.binary?
+    filter :erb
+    layout '/default.*'
   end
 end
 
-route '/**/*.erb' do
-  item.identifier.to_s.chomp('.erb')
+route '/robots.txt' do
+  '/robots.txt'
+end
+
+route '/manifest.*' do
+  '/manifest.json'
+end
+
+route '/service-worker.*' do
+  '/service-worker.js'
 end
 
 route '/error/404.*' do
   # Firebase hosting expected 404.html at the root (see https://firebase.google.com/docs/hosting/full-config#404)
   '/404.html'
 end
+
+route '/index.*' do
+  "/index.html"
+end
+
+route '/**/*.erb' do
+  "#{item.identifier.without_ext}/index.html"
+end
+
+passthrough '/static/favicon{192,512}-maskable.*'
 
 passthrough '/**/*'
 
