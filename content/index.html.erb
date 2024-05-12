@@ -3,8 +3,6 @@ title: Mes lectures
 uuid: d45018b8-4b50-4d56-a403-aee411ab5931
 ---
 
-<% require 'natural_sort' %>
-
   <div id="book-filter-box">
     <span class="material-symbols-outlined input-icon">filter_list</span>
     <input id="book-filter-q" type="search" placeholder="Filtrer…" size="40">
@@ -23,7 +21,7 @@ uuid: d45018b8-4b50-4d56-a403-aee411ab5931
     </tr>
   </thead>
   <tbody>
-<% @items.select { |item| book?(item) }.sort_by { |book| NaturalSort(book[:title]) }.each do |book| %>
+<% natural_sort(@items.select { |item| book?(item) }).each do |book| %>
     <tr>
       <td>
 <%

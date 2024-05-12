@@ -3,11 +3,16 @@
 
 require 'mimemagic'
 require 'image_size'
+require 'i18n'
 
 # mainly used for Android "Add to Homescreen" feature
 favicon_reprs = %i[default favicon152 favicon36 favicon48 favicon72 favicon96 favicon144 favicon192 favicon512]
 
 preprocess do
+  # by default, no locale available, I18n::InvalidLocale: "fr" is not a valid locale
+  I18n.available_locales = [ @config[:site][:lang] ]
+  I18n.default_locale = @config[:site][:lang]
+
   @config[:favicon_reprs] = favicon_reprs
 
   missing_covers = 0

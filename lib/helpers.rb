@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 require 'json'
+require 'natural_sort'
+require 'i18n'
 
 def to_json(book, url: :relative)
   cover = @items["/cover/#{book[:isbn]}.*"]
@@ -76,4 +78,8 @@ def link_to_book(isbn, title = nil)
     puts "Warning: link_to_book(#{isbn}, #{title}), book title differs #{title} vs #{book[:title]}" if !title.nil? && title != book[:title]
     %Q[[#{link_label}](#{book.path})]
   end
+end
+
+def natural_sort(books)
+  books.sort_by { |book| NaturalSort(I18n.transliterate(book[:title].downcase).gsub(/\W/, ' ').gsub(/\s+/, ' ').strip) }
 end

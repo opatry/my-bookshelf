@@ -25,6 +25,7 @@ gem 'mimemagic'
 gem 'image_size'
 gem 'htmlentities'
 gem 'natural_sort'
+gem 'i18n'
 
 group :development do
   # debug
