@@ -9,4 +9,10 @@ layout: none
 #  - field format
 #  - do not remove fields
 #######################################################################
-%><%= JSON[@items.select { |item| book?(item) }.map { |book| to_json(book, url: :absolute) }] %>
+%>{
+  "url": <%= @config[:site][:url].to_json %>,
+  "lang": <%= @config[:site][:lang].to_json %>,
+  "title": <%= @config[:site][:title].to_json %>,
+  "description": <%= @config[:site][:description].to_json %>,
+  "books": <%= JSON[@items.select { |item| book?(item) }.map { |book| to_json(book, url: :absolute) }] %>
+}
