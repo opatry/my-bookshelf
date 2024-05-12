@@ -38,19 +38,6 @@ require 'htmlentities'
   "start_url": "/?utm_source=pwa",
   "display": "standalone",
   "orientation": "portrait",
-  "description": "<%= @config[:site][:description] %>"
-  <%#
-  ,
-   "screenshots" : [
-    {
-      "src": "< % = @items['/static/pwa-screenshot-home..*'].path % >",
-      "sizes": "651x1280",
-      "type": "image/png"
-    },
-    {
-      "src": "< % = @items['/static/pwa-screenshot-book.*'].path % >",
-      "sizes": "651x1280",
-      "type": "image/png"
-    }
-  ] %>
+  "description": "<%= @config[:site][:description] %>",
+  "screenshots" : <%= @items.select { |i| i.identifier =~ '/static/pwa-screenshot-*' }.map { |item| pwa_screenshot_to_json(item) }.to_json %>
 }

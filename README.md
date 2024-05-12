@@ -36,6 +36,7 @@ $ ./node_modules/.bin/firebase deploy --only hosting
 - clean JS (use const & let instead of var, normalize quotes, colon etc)
 - clean CSS
 - avatar picture with real photo
+- Add span for serie prefix "(.+), tome \d+:" + In responsive compact mode, hide it.
 
 ## Scrapping
 

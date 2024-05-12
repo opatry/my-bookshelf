@@ -85,3 +85,13 @@ end
 def natural_sort(books)
   books.sort_by { |book| NaturalSort(I18n.transliterate(book[:title].downcase).gsub(/\W/, ' ').gsub(/\s+/, ' ').strip) }
 end
+
+def pwa_screenshot_to_json(item)
+  {
+    'src' => item.path,
+    'sizes' => "#{item[:width]}x#{item[:height]}",
+    'type'=> item[:mime_type],
+    'platform' => item[:pwa_platform],
+    'form_factor' => item[:pwa_form_factor]
+  }
+end

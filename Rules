@@ -39,6 +39,22 @@ preprocess do
     raise "cover for unavailable book #{isbn}" if @items.select { |item| book?(item) }.none? { |item| item[:isbn] == isbn }
   end
 
+  @items.select { |i| i.identifier =~ '/static/pwa-screenshot-*' }.each do |picture|
+    desktop_screenshot = picture.identifier =~ '/static/pwa-screenshot-desktop-*'
+    phone_screenshot = picture.identifier =~ '/static/pwa-screenshot-phone-*'
+    picture_path = picture.raw_filename
+    picture[:mime_type] = MimeMagic.by_path(picture_path).type
+    picture_size = ImageSize.new(IO.read(picture_path))
+    # TODO size depends on target (phone or desktop)
+    #  isolate each set in its own directory to ease choice
+    picture_width = @config[:pwa_screenshot_width][phone_screenshot ? :phone : :desktop]
+    picture_height = picture_size.height * picture_width / picture_size.width
+    picture[:width] = picture_width
+    picture[:height] = picture_height
+    picture[:pwa_platform] = phone_screenshot ? 'android' : 'macos'
+    picture[:pwa_form_factor] = desktop_screenshot ? 'wide' : 'narrow'
+  end
+
   @items.select { |i| i.identifier =~ '/cover/*' }.each do |cover|
     cover_path = cover.raw_filename
     cover[:mime_type] = MimeMagic.by_path(cover_path).type
@@ -69,6 +85,12 @@ favicon_reprs.each do |repr|
             end
     write route
   end
+end
+
+compile '/static/pwa-screenshot-*' do
+  filter :thumbnailize, width: item[:width] unless @config[:dev]
+
+  write item.identifier.to_s.gsub(%r/\d+\-/, '')
 end
 
 compile '/static/**/*' do
