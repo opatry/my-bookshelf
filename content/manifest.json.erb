@@ -1,11 +1,9 @@
 ---
 layout: none
 ---
-<%
-require 'htmlentities'
-%>{
-  "name": "<%= "#{HTMLEntities.new.decode(@config[:site][:title])} — #{@config[:site][:description]}" %>",
-  "short_name": "<%= HTMLEntities.new.decode(@config[:site][:title]) %>",
+{
+  "name": <%= "#{@config[:site][:title]} — #{@config[:site][:description]}".to_json %>,
+  "short_name": <%= @config[:site][:title].to_json %>,
   "icons": [
     {
       "src": "<%= @items['/static/favicon.*'].path(rep: :favicon192) %>",

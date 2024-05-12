@@ -1,14 +1,14 @@
 // highly based on https://developers.google.com/web/fundamentals/primers/service-workers
 
 <%
-paths_to_cache = @items.select { |item| item.identifier =~ '/static/.*' }
-        .map { |path| " '#{path}'" }
+paths_to_cache = @items.select { |item| item.identifier =~ '/static/*' }
+        .map { |item| item.path }
         .uniq
-        .join(',\n')
+        .to_json
 %>
 
 const CACHE_NAME = 'cache-v2'
-const urlsToCache = [ <%= paths_to_cache %> ]
+const urlsToCache = <%= paths_to_cache %>
 
 self.addEventListener('install', event => {
   // Perform install steps
