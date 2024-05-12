@@ -13,7 +13,7 @@ local.properties
 .DS_Store
 build
 .project
-scrapper/book-reading-app/src/main/resources/client_secret_*.apps.googleusercontent.com.json
+client_secret_*.apps.googleusercontent.com.json
 node_modules/
 /output/
 logs
@@ -25,3 +25,4 @@ firebase-debug.log*
 firebase-debug.*.log*
 .firebase/
 tmp
+google_auth_token_cache.json

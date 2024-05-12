@@ -1,7 +1,7 @@
 [versions]
 bookReading = "1.0.0"
 
-kotlin = "2.0.0-RC2"
+kotlin = "1.9.21"
 coroutines = "1.8.0"
 kodein = "7.21.2"
 selenium = "4.20.0"
@@ -9,9 +9,12 @@ ktor = "2.3.10"
 log4j = "2.20.0"
 sqldelight = "2.0.2"
 
+compose = "1.6.2"
+coil = "3.0.0-alpha02"
+
 [libraries]
-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
-coroutines-swing = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-swing", version.ref = "coroutines" }
+kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
+kotlinx-coroutines-swing = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-swing", version.ref = "coroutines" }
 
 junit4 = { module = "junit:junit", version = "4.13.2" }
 gson = { module = "com.google.code.gson:gson", version = "2.10.1" }
@@ -40,6 +43,13 @@ sqldelight-sqlite-driver = { module = "app.cash.sqldelight:sqlite-driver", versi
 sqldelight-coroutines-extensions = { module = "app.cash.sqldelight:coroutines-extensions", version.ref = "sqldelight" }
 sqldelight-primitive-adapters = { module = "app.cash.sqldelight:primitive-adapters", version.ref = "sqldelight" }
 
+jetbrains-compose-material = { module = "org.jetbrains.compose.material:material", version.ref = "compose" }
+jetbrains-compose-material-icons-extended-desktop = { module = "org.jetbrains.compose.material:material-icons-extended-desktop", version.ref = "compose" }
+jetbrains-compose-material-desktop = { module = "org.jetbrains.compose.material:material-desktop", version.ref = "compose" }
+
+coil-compose = { module = "io.coil-kt.coil3:coil-compose", version.ref = "coil" }
+coil-network = { module = "io.coil-kt.coil3:coil-network", version.ref = "coil" }
+
 [bundles]
 ktor-server = [ "ktor-server-core", "ktor-server-netty" ]
 ktor-client = [
@@ -59,5 +69,14 @@ sqldelight = [
 
 log4j = ["log4j-core", "log4j-slf4j-impl"]
 
+jetbrains-compose = [
+    "jetbrains-compose-material",
+    "jetbrains-compose-material-icons-extended-desktop",
+    "jetbrains-compose-material-desktop",
+]
+coil = ["coil-compose", "coil-network"]
+
 [plugins]
 sqldelight = { id = "app.cash.sqldelight", version.ref = "sqldelight" }
+jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+jetbrains-compose = { id = "org.jetbrains.compose", version.ref = "compose" }

@@ -20,21 +20,10 @@
 
 plugins {
     alias(libs.plugins.jetbrains.kotlin.jvm)
-    alias(libs.plugins.sqldelight)
+    alias(libs.plugins.jetbrains.compose)
 }
 
 dependencies {
-    implementation(projects.babelioScrapper)
-    implementation(projects.senscritiqueScrapper)
-
-    implementation(libs.bundles.ktor.server)
-    implementation(libs.bundles.ktor.client)
-    implementation(libs.gson)
-    implementation(libs.jsoup)
-    implementation(libs.selenium.lib)
-    implementation(libs.selenium.driver.chrome)
-
-    implementation(libs.bundles.sqldelight)
 
     implementation(libs.kotlinx.coroutines.core)
     implementation(libs.kotlinx.coroutines.swing) {
@@ -43,13 +32,48 @@ dependencies {
         // see also https://github.com/JetBrains/compose-jb/releases/tag/v1.1.1
     }
 
-    testImplementation(libs.junit4)
+    implementation(compose.desktop.currentOs)
+    implementation(libs.bundles.jetbrains.compose)
+    implementation(libs.bundles.ktor.server)
+    implementation(libs.bundles.ktor.client)
+    implementation(libs.bundles.coil)
+    implementation(libs.gson)
 }
 
-sqldelight {
-    databases {
-        create("BookReadingDB") {
-            packageName.set("net.opatry.book")
+compose.desktop {
+    application {
+        mainClass = "net.opatry.book.EditorAppKt"
+
+        nativeDistributions {
+            packageVersion = version.toString()
+            packageName = "Book Reading Editor App"
+            version = version
+            description = "Editor to add read books to my bookshelf nanoc/markdown project."
+//            targetFormats(
+//                TargetFormat.Dmg,
+//                TargetFormat.Msi,
+//                TargetFormat.Deb
+//            )
+
+            modules(
+                // for Gson (sun.misc.Unsafe requirement)
+                "jdk.unsupported"
+            )
+
+            macOS {
+//                iconFile.set(project.file("icon.icns"))
+                bundleID = "net.opatry.book.editor"
+            }
+            windows {
+//                iconFile.set(project.file("icon.ico"))
+                menuGroup = "Productivity"
+                shortcut = true
+                // see https://www.guidgen.com/
+                upgradeUuid = "21E12D14-FC36-4164-9250-DE47F73CDF47"
+            }
+            linux {
+//                iconFile.set(project.file("icon.png"))
+            }
         }
     }
 }

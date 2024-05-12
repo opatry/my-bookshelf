@@ -47,7 +47,7 @@ data class GoogleBook(
         @SerializedName("subtitle")
         val subtitle: String? = null, // Les deux tours. Tome II
         @SerializedName("authors")
-        val authors: List<String>,
+        val authors: List<String>? = null,
         @SerializedName("publisher")
         val publisher: String? = null, // Pocket
         @SerializedName("publishedDate")
@@ -55,7 +55,7 @@ data class GoogleBook(
         @SerializedName("description")
         val description: String? = null, // Frodon le Hobbit et ses Compagnons se sont engagés, au Grand Conseil d’Elrond, à détruire l’Anneau de Puissance dont Sauron de Mordor cherche à s’emparer pour asservir tous les peuples de la Terre habitée : Elfes et Nains, Hommes et Hobbits. Dès les premières étapes de leur audacieuse entreprise, les Compagnons de Frodon vont affronter les forces du Seigneur des Ténèbres et bientôt ils devront se disperser pour survivre. Parviendront-ils à échapper aux Cavaliers de Rohan ? Trouveront-ils asile auprès de Ceux des Arbres, grâce à l’entremise de Sylvebarbe ? Qu’adviendra-t-il de Gandalf le Gris métamorphosé, au-delà de la mort, en Cavalier Blanc ? [Source : 4e de couv.]
         @SerializedName("industryIdentifiers")
-        val industryIdentifiers: List<IndustryIdentifier>,
+        val industryIdentifiers: List<IndustryIdentifier>? = null,
         @SerializedName("readingModes")
         val readingModes: ReadingModes,
         @SerializedName("pageCount")

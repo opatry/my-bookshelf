@@ -21,4 +21,5 @@ rootProject.name = "book-reading"
 include(":senscritique-scrapper")
 include(":babelio-scrapper")
 include(":book-reading-app")
+include(":book-reading-editor-app")
 
