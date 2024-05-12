@@ -90,11 +90,8 @@ is_home = @item.identifier =~ '/index.*'
 </head>
 
 <body>
-<div id="content">
-<%
-header_style_class = is_home ? 'full' : 'compact'
-%>
-  <div id="header" class="<%= header_style_class %>">
+<div id="main" class="<%= is_home ? 'full' : 'compact' %>">
+  <div id="header">
     <div class="profile-picture">
     <% unless is_home %>
       <a href="<%= @items['/index.*'].path %>" title="Retour à l'accueil…">
@@ -129,7 +126,9 @@ header_style_class = is_home ? 'full' : 'compact'
     </div>
   </div>
 
+  <div id="content">
   <%= yield %>
+  </div>
 </div>
 </body>
 </html>

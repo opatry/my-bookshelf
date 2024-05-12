@@ -38,19 +38,17 @@ a:hover {
   border-bottom: 1px solid rgb(197, 17, 4);
 }
 
-#content {
+#main {
   width: 80%;
   max-width: 1000px;
   margin: 0 auto;
-  padding: 24px;
   box-shadow: 0 24px 128px rgba(0, 0, 0, .2);
   background-color: rgba(255, 255, 255, .5);
 }
 
 @media screen and (max-width: 675px) {
-  #content {
+  #main {
     width: initial;
-    padding: 12px;
   }
 }
 
@@ -59,18 +57,22 @@ TODO fixed with lift on scroll?
 */
 
 #header {
-  margin-bottom: 24px;
+  padding: 24px;
   display: flex;
   gap: 24px;
 }
 
-#header.compact {
+.compact #header {
   height: 56px;
+  padding: 12px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .05);
 }
 
 @media screen and (max-width: 675px) {
   #header {
     height: 56px;
+    padding: 12px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .05);
   }
 }
 
@@ -81,6 +83,9 @@ TODO fixed with lift on scroll?
   place-content: center;
 }
 
+.compact .header-detail blockquote {
+  display: none;
+}
 @media screen and (max-width: 675px) {
   #header .header-detail blockquote {
     display: none;
@@ -118,6 +123,19 @@ TODO fixed with lift on scroll?
   position: absolute;
   top: 0;
   right: 0;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.compact #social-badges {
+  top: 0;
+  bottom: 0;
+}
+@media screen and (max-width: 675px) {
+  #social-badges {
+    top: 0;
+    bottom: 0;
+  }
 }
 
 .social-badge {
@@ -145,6 +163,16 @@ TODO fixed with lift on scroll?
 .social-badge img {
   width: 24px;
   height: 24px;
+}
+
+#content {
+  padding: 24px;
+}
+
+@media screen and (max-width: 675px) {
+  #content {
+    padding: 12px;
+  }
 }
 
 h1, h2, h3 {
