@@ -251,7 +251,7 @@ table td {
   vertical-align: text-bottom;
 }
 .books-table .heart-icon:hover,
-.books-title .heart-icon {
+.book-title .heart-icon {
   transform-origin: center;
   animation: pulse 2000ms;
 }
