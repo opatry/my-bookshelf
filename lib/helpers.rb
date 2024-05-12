@@ -9,6 +9,7 @@ def to_json(book, url: :relative)
   cover_path = cover.path(rep: :mini) unless cover.nil?
   url_prefix = url == :absolute ? @config[:site][:url] : ''
   {
+    'isbn' => book[:isbn],
     'title' => book[:title],
     'author' => book[:author],
     'link' => "#{url_prefix}#{book.path}",

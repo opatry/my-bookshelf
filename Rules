@@ -140,6 +140,10 @@ route '/error/404.*' do
   '/404.html'
 end
 
+route '/api/**/*' do
+  item.identifier.to_s.chomp('.erb')
+end
+
 route '/index.*' do
   "/index.html"
 end
