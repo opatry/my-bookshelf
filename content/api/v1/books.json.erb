@@ -14,5 +14,6 @@ layout: none
   "lang": <%= @config[:site][:lang].to_json %>,
   "title": <%= @config[:site][:title].to_json %>,
   "description": <%= @config[:site][:description].to_json %>,
+  "tint": "#c51104",
   "books": <%= JSON[@items.select { |item| book?(item) }.map { |book| to_json(book, url: :absolute) }] %>
 }

@@ -10,6 +10,7 @@ def to_json(book, url: :relative)
   url_prefix = url == :absolute ? @config[:site][:url] : ''
   {
     'isbn' => book[:isbn],
+    'uuid' => book[:uuid],
     'title' => book[:title],
     'author' => book[:author],
     'link' => "#{url_prefix}#{book.path}",
