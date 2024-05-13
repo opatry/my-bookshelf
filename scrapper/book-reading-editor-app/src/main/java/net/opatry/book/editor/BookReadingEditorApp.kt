@@ -89,7 +89,7 @@ import net.opatry.book.editor.component.BookPreview
 import net.opatry.book.editor.component.BookRow
 import net.opatry.book.editor.component.RatingBar
 import net.opatry.google.books.entity.GoogleBook
-import net.opatry.google.books.entity.GoogleBook.VolumeInfo.IndustryIdentifier.IndustryIdentifierType.ISBN_13
+import net.opatry.openlibrary.entity.OpenLibraryDoc
 import net.opatry.util.toColorInt
 import java.awt.Dimension
 import java.io.File
@@ -200,8 +200,6 @@ fun main() {
 
 private val collator = Collator.getInstance(Locale.FRENCH)
 
-fun String.cleanThumbnailUrl() = replace(Regex("&edge=\\w+"), "").replace(Regex("&zoom=\\d+"), "")
-
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun MainScreen(bookshelf: Bookshelf, googleBooksCredentialsFilename: String, outputDir: File, onBackNavigationClick: () -> Unit) {
@@ -282,8 +280,8 @@ fun BookEditor(googleBooksCredentialsFilename: String, onCreate: (Bookshelf.Book
     var isFavorite by remember { mutableStateOf(false) }
 
     var gbooksHttpClient by remember { mutableStateOf<HttpClient?>(null) }
-    var candidateBooks by remember { mutableStateOf(emptyList<GoogleBook.VolumeInfo>()) }
-    var selectedCandidate by remember { mutableStateOf<GoogleBook.VolumeInfo?>(null) }
+    var candidateBooks by remember { mutableStateOf(emptyList<BookPreviewData>()) }
+    var selectedCandidate by remember { mutableStateOf<BookPreviewData?>(null) }
     var openLibHttpClient by remember { mutableStateOf<HttpClient?>(null) }
 
     val uriHandler = LocalUriHandler.current
@@ -326,7 +324,7 @@ fun BookEditor(googleBooksCredentialsFilename: String, onCreate: (Bookshelf.Book
                             gbooksHttpClient = buildGoogleBooksHttpClient(googleBooksCredentialsFilename, uriHandler::openUri)
                         }
                         if (title.isNotBlank() && author.isNotBlank()) {
-                            candidateBooks = gbooksHttpClient?.findGBook(title.trim(), author.trim()) ?: emptyList()
+                            candidateBooks = gbooksHttpClient?.findGBook(title.trim(), author.trim())?.mapNotNull(GoogleBook.VolumeInfo::toBookPreviewData) ?: emptyList()
                         }
                     }
                 },
@@ -342,28 +340,7 @@ fun BookEditor(googleBooksCredentialsFilename: String, onCreate: (Bookshelf.Book
                         }
                         if (title.isNotBlank() && author.isNotBlank()) {
                             val result = openLibHttpClient?.findOpenLibBook(title.trim(), author.trim())?: emptyList()
-                                    // quick & dirty mapping to GBooks result API until a pivot data model is extracted
-                            candidateBooks = result.mapNotNull { doc ->
-                                val isbn = doc.isbn?.firstOrNull { it.length == 13 } ?: return@mapNotNull null
-                                GoogleBook.VolumeInfo(
-                                    title = doc.title ?: "????",
-                                    authors = doc.authorName,
-                                    industryIdentifiers = listOf(GoogleBook.VolumeInfo.IndustryIdentifier(ISBN_13, isbn)),
-                                    readingModes = GoogleBook.VolumeInfo.ReadingModes(false, false),
-                                    pageCount = 0,
-                                    allowAnonLogging = false,
-                                    contentVersion = "0",
-                                    language = "fr",
-                                    infoLink = "",
-                                    previewLink = "",
-                                    canonicalVolumeLink = "",
-                                    publishedDate = "",
-                                    imageLinks = GoogleBook.VolumeInfo.ImageLinks(
-                                        smallThumbnail = "https://covers.openlibrary.org/b/isbn/$isbn-S.jpg", //?default=false",
-                                        thumbnail = "https://covers.openlibrary.org/b/isbn/$isbn-L.jpg"//?default=false"
-                                    ),
-                                )
-                            }
+                            candidateBooks = result.mapNotNull(OpenLibraryDoc::toBookPreviewData)
                         }
                     }
                 },
@@ -376,12 +353,12 @@ fun BookEditor(googleBooksCredentialsFilename: String, onCreate: (Bookshelf.Book
                     selectedCandidate?.let { candidate ->
                         Bookshelf.Book(
                             title = candidate.title,
-                            author = candidate.authors?.joinToString(" & ") ?: "?",
+                            author = candidate.authors.joinToString(" & "),
                             rating = rating,
                             isFavorite = isFavorite,
                             url = "",
-                            isbn = candidate.industryIdentifiers?.firstOrNull { it.type == ISBN_13 }?.identifier ?: error("No ISBN found"),
-                            coverUrl = candidate.imageLinks?.thumbnail?.cleanThumbnailUrl() ?: "",
+                            isbn = candidate.isbn,
+                            coverUrl = candidate.coverUrl,
                             uuid = UUID.randomUUID().toString()
                         )
                     }?.also { book ->

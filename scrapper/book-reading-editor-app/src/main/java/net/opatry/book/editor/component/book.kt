@@ -55,17 +55,14 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
+import net.opatry.book.editor.BookPreviewData
 import net.opatry.book.editor.Bookshelf
-import net.opatry.book.editor.cleanThumbnailUrl
-import net.opatry.google.books.entity.GoogleBook
-import net.opatry.google.books.entity.GoogleBook.VolumeInfo.IndustryIdentifier.IndustryIdentifierType.ISBN_13
 import kotlin.time.Duration.Companion.seconds
 
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
-fun BookPreview(book: GoogleBook.VolumeInfo, isSelected: Boolean, onClick: () -> Unit) {
-    val thumbnail = book.imageLinks?.thumbnail?.cleanThumbnailUrl()
+fun BookPreview(book: BookPreviewData, isSelected: Boolean, onClick: () -> Unit) {
     Card(
         onClick = onClick,
         Modifier.padding(8.dp),
@@ -73,15 +70,15 @@ fun BookPreview(book: GoogleBook.VolumeInfo, isSelected: Boolean, onClick: () ->
     ) {
         Column(Modifier.padding(8.dp)) {
             Box(Modifier.height(150.dp), contentAlignment = Alignment.Center) {
-                if (thumbnail != null) {
-                    AsyncImage(thumbnail, null, Modifier.fillMaxSize())
+                if (book.coverUrl.isNotBlank()) {
+                    AsyncImage(book.coverUrl, null, Modifier.fillMaxSize())
                 } else {
                     Icon(Icons.Outlined.Block, null)
                 }
             }
             Text(book.title, style = MaterialTheme.typography.subtitle1)
-            Text(book.authors?.joinToString(" & ") ?: "?", style = MaterialTheme.typography.subtitle2)
-            Text(book.industryIdentifiers?.firstOrNull { it.type == ISBN_13 }?.identifier ?: "", style = MaterialTheme.typography.caption, fontFamily = FontFamily.Monospace)
+            Text(book.authors.joinToString(" & "), style = MaterialTheme.typography.subtitle2)
+            Text(book.isbn, style = MaterialTheme.typography.caption, fontFamily = FontFamily.Monospace)
         }
     }
 }

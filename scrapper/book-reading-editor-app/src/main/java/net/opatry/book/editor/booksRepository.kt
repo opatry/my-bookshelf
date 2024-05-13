@@ -50,6 +50,36 @@ import java.io.InputStreamReader
 import java.net.URLEncoder
 import kotlin.time.Duration.Companion.seconds
 
+
+data class BookPreviewData(
+    val title: String,
+    val authors: List<String>,
+    val isbn: String,
+    val coverUrl: String,
+)
+
+fun GoogleBook.VolumeInfo.toBookPreviewData(): BookPreviewData? {
+    return BookPreviewData(
+        title = title,
+        authors = authors?.takeUnless(List<*>::isNullOrEmpty) ?: return null,
+        isbn = industryIdentifiers?.find { it.type == ISBN_13 }?.identifier ?: return null,
+        coverUrl = imageLinks?.thumbnail
+            ?.replace(Regex("&edge=\\w+"), "")
+            ?.replace(Regex("&zoom=\\d+"), "")
+            ?: "",
+    )
+}
+
+fun OpenLibraryDoc.toBookPreviewData(): BookPreviewData? {
+    val isbn = isbn?.find { it.length == 13 } ?: return null
+    return BookPreviewData(
+        title = title ?: return null,
+        authors = authorName?.takeUnless(List<*>::isNullOrEmpty) ?: return null,
+        isbn = isbn,
+        coverUrl = "https://covers.openlibrary.org/b/isbn/$isbn-L.jpg",
+    )
+}
+
 fun buildOpenLibraryHttpClient(): HttpClient {
     return HttpClient(CIO) {
         CurlUserAgent()
