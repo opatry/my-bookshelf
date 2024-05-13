@@ -89,6 +89,11 @@ is_home = @item.identifier =~ '/index.*'
   <meta name="generator" content="Nanoc <%= Nanoc::VERSION %>">
 </head>
 
+<%
+avatar = @items['/static/avatar.*']
+avatar_repr = is_home ? :default : :compact
+avatar_size = @config[:avatar_size][avatar_repr]
+%>
 <body>
 <div id="main" class="<%= is_home ? 'full' : 'compact' %>">
   <div id="header">
@@ -96,7 +101,7 @@ is_home = @item.identifier =~ '/index.*'
     <% unless is_home %>
       <a href="<%= @items['/index.*'].path %>" title="Retour à l'accueil…">
     <% end %>
-        <img src="<%= @items['/static/avatar.*'].path %>">
+        <img src="<%= avatar.path(rep: avatar_repr) %>" width="<%= avatar_size %>" height="<%= avatar_size %>">
     <% unless is_home %>
       </a>
     <% end %>
@@ -108,7 +113,7 @@ is_home = @item.identifier =~ '/index.*'
       </blockquote>
       
       <div id="social-badges">
-      <% @config[:social].each do |key, social| %>
+      <% @config[:social][:badges].each do |key, social| %>
         <div id="social-badge-<%= key %>" class="social-badge">
           <%#
           A bit hacky, but unfortunately, background-color: attr(data-tint color) won't work.
@@ -118,7 +123,7 @@ is_home = @item.identifier =~ '/index.*'
           See https://css-tricks.com/css-attr-function-got-nothin-custom-properties/
           %>
           <a href="<%= social[:url] %>" title="Mon profil <%= social[:label] %>" style="--social-tint-color: <%= hex_color_to_rgba(social[:tint], 0.2) %>">
-            <img src="<%= @items[social[:icon_identifier]].path %>" width="25" height="25">
+            <img src="<%= @items[social[:icon_identifier]].path %>" width="<%= @config[:social][:badge_size] %>" height="<%= @config[:social][:badge_size] %>">
           </a>
         </div>
       <% end %>

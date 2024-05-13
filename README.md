@@ -32,7 +32,6 @@ $ ./node_modules/.bin/firebase deploy --only hosting
 
 ## TODO 
 - export data from SC/Babelio instead of scrapping
-- social image resize to target size
 - clean JS (use const & let instead of var, normalize quotes, colon etc)
 - clean CSS
 - avatar picture with real photo

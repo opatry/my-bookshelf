@@ -23,18 +23,20 @@ site:
   description: Les livres que j'ai lu avec une note et un résumé rapide pour partager.
 
 social:
-  sc:
-    label: SensCritique
-    user: 'OlivYé'
-    icon_identifier: '/static/senscritique.*'
-    tint: '#60d16f'
-    url: https://www.senscritique.com/OlivYé/collection?universe=2&action=RATING&order=MY_RATING_DESC
-  babelio:
-    label: Babelio
-    user: 'olivierpatry'
-    icon_identifier: '/static/babelio.*'
-    tint: '#fbb91e'
-    url: https://www.babelio.com/bibliotheque.php?&s1=1&id_user=1664025&tri=note&sens=decroissant
+  badge_size: 25
+  badges:
+    sc:
+      label: SensCritique
+      user: 'OlivYé'
+      icon_identifier: '/static/senscritique.*'
+      tint: '#60d16f'
+      url: https://www.senscritique.com/OlivYé/collection?universe=2&action=RATING&order=MY_RATING_DESC
+    babelio:
+      label: Babelio
+      user: 'olivierpatry'
+      icon_identifier: '/static/babelio.*'
+      tint: '#fbb91e'
+      url: https://www.babelio.com/bibliotheque.php?&s1=1&id_user=1664025&tri=note&sens=decroissant
 
 pwa_screenshot_width:
   phone: 651
@@ -45,3 +47,6 @@ cover:
   width:
     mini: 50 # width of mini cover in main table (see content/index.html `formatterParams`)
     default: 150 # width of cover by default (see content/static/style.css `.book-cover`)
+avatar_size:
+  compact: 48
+  default: 128

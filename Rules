@@ -93,6 +93,19 @@ compile '/static/pwa-screenshot-*' do
   write item.identifier.to_s.gsub(%r/\d+\-/, '')
 end
 
+compile '/static/{babelio,senscritique}.*' do
+  filter :thumbnailize, width: @config[:social][:badge_size] unless @config[:dev]
+end
+
+%i[compact default].each do |repr|
+  compile '/static/avatar.*', rep: repr do
+    filter :thumbnailize, width: @config[:avatar_size][repr] #unless @config[:dev]
+    
+    suffix = "-#{repr}" unless repr == :default
+    write "#{item.identifier.without_exts}#{suffix}.#{item[:extension]}"
+  end
+end
+
 compile '/static/**/*' do
   # don't filter or layout
 end
