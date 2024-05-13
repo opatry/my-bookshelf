@@ -20,56 +20,16 @@
 
 package net.opatry.book.editor
 
-import androidx.compose.foundation.ExperimentalFoundationApi
-import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.grid.GridCells
-import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
-import androidx.compose.foundation.lazy.grid.items
-import androidx.compose.foundation.lazy.items
-import androidx.compose.material.Button
-import androidx.compose.material.Card
-import androidx.compose.material.CircularProgressIndicator
-import androidx.compose.material.ContentAlpha
-import androidx.compose.material.Divider
 import androidx.compose.material.ExperimentalMaterialApi
-import androidx.compose.material.FloatingActionButton
-import androidx.compose.material.Icon
-import androidx.compose.material.IconButton
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.OutlinedButton
-import androidx.compose.material.OutlinedTextField
-import androidx.compose.material.Scaffold
-import androidx.compose.material.Text
-import androidx.compose.material.TopAppBar
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.outlined.ArrowBack
-import androidx.compose.material.icons.filled.Favorite
-import androidx.compose.material.icons.outlined.Book
-import androidx.compose.material.icons.outlined.FavoriteBorder
-import androidx.compose.material.icons.outlined.Public
-import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.window.DialogState
-import androidx.compose.ui.window.DialogWindow
 import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.WindowPosition
 import androidx.compose.ui.window.WindowState
@@ -84,17 +44,11 @@ import io.ktor.client.plugins.defaultRequest
 import io.ktor.client.request.get
 import io.ktor.http.isSuccess
 import io.ktor.serialization.gson.gson
-import kotlinx.coroutines.launch
-import net.opatry.book.editor.component.BookPreview
-import net.opatry.book.editor.component.BookRow
-import net.opatry.book.editor.component.RatingBar
-import net.opatry.google.books.entity.GoogleBook
-import net.opatry.openlibrary.entity.OpenLibraryDoc
+import net.opatry.book.editor.screen.InstanceChoiceScreen
+import net.opatry.book.editor.screen.MainScreen
 import net.opatry.util.toColorInt
 import java.awt.Dimension
 import java.io.File
-import java.text.Collator
-import java.util.*
 
 sealed class Instance(val site: String, val dir: File, val label: String) {
     data object Oliv : Instance("https://lecture.opatry.net", File("/Users/opatry/work/book-reading"), "Olivier")
@@ -147,41 +101,8 @@ fun main() {
 
             BookReadingEditorTheme(bookshelf?.tint?.let(String::toColorInt)?.let(::Color)) {
                 if (chosenInstance == null || bookshelf == null) {
-                    Scaffold(
-                        topBar = {
-                            TopAppBar(
-                                title = {
-                                    Text("Book Reading Editor App")
-                                }
-                            )
-                        }
-                    ) {
-                        Column {
-                            if (chosenInstance == null) {
-                                Text("Choose an instance")
-                                Row(horizontalArrangement = Arrangement.spacedBy(16.dp)) {
-                                    Card(onClick = { chosenInstance = Instance.Oliv }) {
-                                        Text(
-                                            Instance.Oliv.label,
-                                            Modifier.padding(8.dp),
-                                            style = MaterialTheme.typography.h4
-                                        )
-                                    }
-                                    Card(onClick = { chosenInstance = Instance.Fanny }) {
-                                        Text(
-                                            Instance.Fanny.label,
-                                            Modifier.padding(8.dp),
-                                            style = MaterialTheme.typography.h4
-                                        )
-                                    }
-                                }
-                            } else {
-                                Column {
-                                    Text("Loading bookshelf for ${chosenInstance!!.label}…")
-                                    CircularProgressIndicator()
-                                }
-                            }
-                        }
+                    InstanceChoiceScreen(listOf(Instance.Oliv, Instance.Fanny), chosenInstance) {
+                        chosenInstance = it
                     }
                 } else {
                     MainScreen(
@@ -192,189 +113,6 @@ fun main() {
                         chosenInstance = null
                         bookshelf = null
                     }
-                }
-            }
-        }
-    }
-}
-
-private val collator = Collator.getInstance(Locale.FRENCH)
-
-@OptIn(ExperimentalFoundationApi::class)
-@Composable
-fun MainScreen(bookshelf: Bookshelf, googleBooksCredentialsFilename: String, outputDir: File, onBackNavigationClick: () -> Unit) {
-    val uriHandler = LocalUriHandler.current
-    val books = remember {
-        derivedStateOf {
-            bookshelf.books.sortedWith(compareBy(collator, Bookshelf.Book::title))
-        }
-    }
-
-    var editorOpen by remember { mutableStateOf(false) }
-    val coroutineScope = rememberCoroutineScope()
-
-    Scaffold(
-        topBar = {
-            TopAppBar(
-                title = {
-                    Text(bookshelf.title)
-                },
-                navigationIcon = {
-                    IconButton(onClick = onBackNavigationClick) {
-                        Icon(Icons.AutoMirrored.Outlined.ArrowBack, null)
-                    }
-                },
-                actions = {
-                    IconButton(onClick = { bookshelf.url.let(uriHandler::openUri) }) {
-                        Icon(Icons.Outlined.Public, null)
-                    }
-                }
-            )
-        },
-        floatingActionButton = {
-            FloatingActionButton(onClick = { editorOpen = true }) {
-                Icon(Icons.Outlined.Book, null)
-            }
-        },
-    ) {
-        Column {
-            LazyColumn {
-                stickyHeader {
-                    Text("${books.value.size} books", Modifier.background(MaterialTheme.colors.background).fillMaxWidth().padding(4.dp), style = MaterialTheme.typography.caption)
-                    Divider()
-                }
-                items(books.value) { book ->
-                    BookRow(book) {
-                        uriHandler.openUri(book.url)
-                    }
-                    Divider()
-                }
-            }
-        }
-    }
-
-    if (editorOpen) {
-        DialogWindow(
-            onCloseRequest = { editorOpen = false },
-            title = "Add new book",
-            state = DialogState(
-                width = 800.dp,
-                height = 800.dp
-            ),
-        ) {
-            BookEditor(googleBooksCredentialsFilename) { book ->
-                editorOpen = false
-                coroutineScope.launch {
-                    createBook(outputDir, book)
-                }
-            }
-        }
-    }
-}
-
-@Composable
-fun BookEditor(googleBooksCredentialsFilename: String, onCreate: (Bookshelf.Book) -> Unit) {
-    var title by remember { mutableStateOf("") }
-    var author by remember { mutableStateOf("") }
-    var rating by remember { mutableStateOf(0) }
-    var isFavorite by remember { mutableStateOf(false) }
-
-    var gbooksHttpClient by remember { mutableStateOf<HttpClient?>(null) }
-    var candidateBooks by remember { mutableStateOf(emptyList<BookPreviewData>()) }
-    var selectedCandidate by remember { mutableStateOf<BookPreviewData?>(null) }
-    var openLibHttpClient by remember { mutableStateOf<HttpClient?>(null) }
-
-    val uriHandler = LocalUriHandler.current
-    val coroutineScope = rememberCoroutineScope()
-
-    Column(Modifier.padding(8.dp).fillMaxSize(), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-        OutlinedTextField(
-            value = title,
-            onValueChange = { title = it },
-            Modifier.fillMaxWidth(),
-            label = { Text("Title") },
-            singleLine = true
-        )
-        OutlinedTextField(
-            value = author,
-            onValueChange = { author = it },
-            Modifier.fillMaxWidth(),
-            label = { Text("Author") },
-            singleLine = true
-        )
-
-        RatingBar(rating) {
-            rating = it
-        }
-
-        val (heartIcon, hearIconColor) = if (isFavorite) {
-            Icons.Filled.Favorite to Color(0xff_c5_11_04)
-        } else {
-            Icons.Outlined.FavoriteBorder to MaterialTheme.colors.onSurface.copy(alpha = ContentAlpha.disabled)
-        }
-        IconButton(onClick = { isFavorite = !isFavorite }) {
-            Icon(heartIcon, null, tint = hearIconColor)
-        }
-
-        Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-            OutlinedButton(
-                onClick = {
-                    coroutineScope.launch {
-                        if (gbooksHttpClient == null) {
-                            gbooksHttpClient = buildGoogleBooksHttpClient(googleBooksCredentialsFilename, uriHandler::openUri)
-                        }
-                        if (title.isNotBlank() && author.isNotBlank()) {
-                            candidateBooks = gbooksHttpClient?.findGBook(title.trim(), author.trim())?.mapNotNull(GoogleBook.VolumeInfo::toBookPreviewData) ?: emptyList()
-                        }
-                    }
-                },
-                enabled = title.isNotBlank() && author.isNotBlank()
-            ) {
-                Text("Fetch GBooks")
-            }
-            OutlinedButton(
-                onClick = {
-                    coroutineScope.launch {
-                        if (openLibHttpClient == null) {
-                            openLibHttpClient = buildOpenLibraryHttpClient()
-                        }
-                        if (title.isNotBlank() && author.isNotBlank()) {
-                            val result = openLibHttpClient?.findOpenLibBook(title.trim(), author.trim())?: emptyList()
-                            candidateBooks = result.mapNotNull(OpenLibraryDoc::toBookPreviewData)
-                        }
-                    }
-                },
-                enabled = title.isNotBlank() && author.isNotBlank()
-            ) {
-                Text("Fetch OpenLib")
-            }
-            Button(
-                onClick = {
-                    selectedCandidate?.let { candidate ->
-                        Bookshelf.Book(
-                            title = candidate.title,
-                            author = candidate.authors.joinToString(" & "),
-                            rating = rating,
-                            isFavorite = isFavorite,
-                            url = "",
-                            isbn = candidate.isbn,
-                            coverUrl = candidate.coverUrl,
-                            uuid = UUID.randomUUID().toString()
-                        )
-                    }?.also { book ->
-                        onCreate(book)
-                    }
-                },
-                enabled = selectedCandidate != null
-            ) {
-                Text("Create")
-            }
-        }
-
-        LazyVerticalGrid(columns = GridCells.Fixed(3), Modifier.fillMaxWidth()) {
-            items(candidateBooks) { book ->
-                BookPreview(book, book == selectedCandidate) {
-                    selectedCandidate = book.takeIf { book != selectedCandidate }
                 }
             }
         }
