@@ -23,12 +23,18 @@ package net.opatry.book.editor
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
+import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 
 @Composable
-fun BookReadingEditorTheme(content: @Composable () -> Unit) {
+fun BookReadingEditorTheme(tint: Color? = null, content: @Composable () -> Unit) {
     MaterialTheme(
+        colors = lightColors(
+            primary = tint ?: MaterialTheme.colors.primary,
+            secondary = tint ?: MaterialTheme.colors.secondary,
+        ),
         content = {
             Surface(
                 Modifier.fillMaxSize(),

@@ -32,8 +32,11 @@ import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.Button
+import androidx.compose.material.Card
+import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.material.ContentAlpha
 import androidx.compose.material.Divider
+import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.FloatingActionButton
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
@@ -44,6 +47,7 @@ import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.outlined.ArrowBack
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.outlined.Book
 import androidx.compose.material.icons.outlined.FavoriteBorder
@@ -84,11 +88,18 @@ import net.opatry.book.editor.component.BookRow
 import net.opatry.book.editor.component.RatingBar
 import net.opatry.google.books.entity.GoogleBook
 import net.opatry.google.books.entity.GoogleBook.VolumeInfo.IndustryIdentifier.IndustryIdentifierType.ISBN_13
+import net.opatry.util.toColorInt
 import java.awt.Dimension
 import java.io.File
 import java.text.Collator
 import java.util.*
 
+sealed class Instance(val site: String, val dir: File, val label: String) {
+    data object Oliv : Instance("https://lecture.opatry.net", File("/Users/opatry/work/book-reading"), "Olivier")
+    data object Fanny : Instance("https://fanny-lit.web.app", File("/Users/opatry/work/lecture-fanny"), "Fanny")
+}
+
+@OptIn(ExperimentalMaterialApi::class)
 fun main() {
     application {
         val defaultSize = DpSize(900.dp, 900.dp)
@@ -107,12 +118,79 @@ fun main() {
         ) {
             if (window.minimumSize != minWindowSize) window.minimumSize = minWindowSize
 
-            BookReadingEditorTheme {
-                MainScreen(
-                    "https://lecture.opatry.net",
-                    "client_secret_1018227543555-0h5t6m21lgr1o1ictrjcuplnk7s2gagf.apps.googleusercontent.com.json",
-                    File("/Users/opatry/work/book-reading")
-                )
+            var chosenInstance by remember { mutableStateOf<Instance?>(null) }
+            var bookshelf by remember { mutableStateOf<Bookshelf?>(null) }
+
+            LaunchedEffect(chosenInstance?.site) {
+                chosenInstance?.site?.let { site ->
+                    val httpClient = HttpClient(CIO) {
+                        CurlUserAgent()
+                        install(ContentNegotiation) {
+                            gson()
+                        }
+                        install(HttpTimeout) {
+                            requestTimeoutMillis = 3000
+                        }
+                        defaultRequest {
+                            url(site)
+                        }
+                    }
+                    val response = httpClient.get("api/v1/books.json")
+                    if (response.status.isSuccess()) {
+                        bookshelf = response.body()
+                    }
+                    // TODO else notify error in snackbar
+                }
+            }
+
+            BookReadingEditorTheme(bookshelf?.tint?.let(String::toColorInt)?.let(::Color)) {
+                if (chosenInstance == null || bookshelf == null) {
+                    Scaffold(
+                        topBar = {
+                            TopAppBar(
+                                title = {
+                                    Text("Book Reading Editor App")
+                                }
+                            )
+                        }
+                    ) {
+                        Column {
+                            if (chosenInstance == null) {
+                                Text("Choose an instance")
+                                Row(horizontalArrangement = Arrangement.spacedBy(16.dp)) {
+                                    Card(onClick = { chosenInstance = Instance.Oliv }) {
+                                        Text(
+                                            Instance.Oliv.label,
+                                            Modifier.padding(8.dp),
+                                            style = MaterialTheme.typography.h4
+                                        )
+                                    }
+                                    Card(onClick = { chosenInstance = Instance.Fanny }) {
+                                        Text(
+                                            Instance.Fanny.label,
+                                            Modifier.padding(8.dp),
+                                            style = MaterialTheme.typography.h4
+                                        )
+                                    }
+                                }
+                            } else {
+                                Column {
+                                    Text("Loading bookshelf for ${chosenInstance!!.label}…")
+                                    CircularProgressIndicator()
+                                }
+                            }
+                        }
+                    }
+                } else {
+                    MainScreen(
+                        bookshelf!!,
+                        "client_secret_1018227543555-0h5t6m21lgr1o1ictrjcuplnk7s2gagf.apps.googleusercontent.com.json",
+                        chosenInstance!!.dir
+                    ) {
+                        chosenInstance = null
+                        bookshelf = null
+                    }
+                }
             }
         }
     }
@@ -123,35 +201,13 @@ private val collator = Collator.getInstance(Locale.FRENCH)
 fun String.cleanThumbnailUrl() = replace(Regex("&edge=\\w+"), "").replace(Regex("&zoom=\\d+"), "")
 
 @Composable
-fun MainScreen(bookshelfUrl: String, googleBooksCredentialsFilename: String, outputDir: File) {
-    val httpClient = HttpClient(CIO) {
-        CurlUserAgent()
-        install(ContentNegotiation) {
-            gson()
-        }
-        install(HttpTimeout) {
-            requestTimeoutMillis = 3000
-        }
-        defaultRequest {
-            url(bookshelfUrl)
-        }
-    }
-    var bookshelf by remember { mutableStateOf<Bookshelf?>(null) }
+fun MainScreen(bookshelf: Bookshelf, googleBooksCredentialsFilename: String, outputDir: File, onBackNavigationClick: () -> Unit) {
+    val uriHandler = LocalUriHandler.current
     val books = remember {
         derivedStateOf {
-            bookshelf?.books?.sortedWith(compareBy(collator, Bookshelf.Book::title)) ?: emptyList()
+            bookshelf.books.sortedWith(compareBy(collator, Bookshelf.Book::title))
         }
     }
-
-    LaunchedEffect(bookshelfUrl) {
-        val response = httpClient.get("api/v1/books.json")
-        if (response.status.isSuccess()) {
-            bookshelf = response.body()
-        } else {
-            // TODO snackbar
-        }
-    }
-    val uriHandler = LocalUriHandler.current
 
     var editorOpen by remember { mutableStateOf(false) }
     val coroutineScope = rememberCoroutineScope()
@@ -160,10 +216,15 @@ fun MainScreen(bookshelfUrl: String, googleBooksCredentialsFilename: String, out
         topBar = {
             TopAppBar(
                 title = {
-                    Text(bookshelf?.title ?: "Bookshelf")
+                    Text(bookshelf.title)
+                },
+                navigationIcon = {
+                    IconButton(onClick = onBackNavigationClick) {
+                        Icon(Icons.AutoMirrored.Outlined.ArrowBack, null)
+                    }
                 },
                 actions = {
-                    IconButton(onClick = { bookshelf?.url?.let(uriHandler::openUri) }, enabled = bookshelf != null) {
+                    IconButton(onClick = { bookshelf.url.let(uriHandler::openUri) }) {
                         Icon(Icons.Outlined.Public, null)
                     }
                 }

@@ -109,7 +109,7 @@ fun BookRow(book: Bookshelf.Book, onClick: () -> Unit) {
         }
     }) {
         Row(Modifier.clickable(onClick = onClick).fillMaxWidth().padding(8.dp)) {
-            AsyncImage(book.coverUrl, null, Modifier.height(50.dp).padding(vertical = 4.dp, horizontal = 8.dp))
+            AsyncImage(book.coverUrl, null, Modifier.height(50.dp).widthIn(max = 35.dp).padding(vertical = 4.dp, horizontal = 8.dp))
             Text(book.title, Modifier.weight(.6f).padding(4.dp))
             Text(book.author, Modifier.weight(.4f).padding(4.dp))
             RatingBar(book.rating)

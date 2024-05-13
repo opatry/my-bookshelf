@@ -18,41 +18,18 @@
 // TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE
 // OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-package net.opatry.book.editor
+package net.opatry.util
 
-import com.google.gson.annotations.SerializedName
-
-data class Bookshelf(
-    @SerializedName("url")
-    val url: String,
-    @SerializedName("lang")
-    val lang: String,
-    @SerializedName("title")
-    val title: String,
-    @SerializedName("tint")
-    val tint: String,
-    @SerializedName("description")
-    val description: String,
-    @SerializedName("books")
-    val books: List<Book>
-) {
-    data class Book(
-        @SerializedName("isbn")
-        val isbn: String,
-        @SerializedName("uuid")
-        val uuid: String,
-        @SerializedName("title")
-        val title: String,
-        @SerializedName("author")
-        val author: String,
-        @SerializedName("link")
-        val url: String,
-        @SerializedName("rating")
-        val rating: Int,
-        @SerializedName("favorite")
-        val isFavorite: Boolean,
-        @SerializedName("cover")
-        val coverUrl: String,
-    )
+//source code from androidX
+fun String.toColorInt(): Int {
+    if (this[0] == '#') {
+        var color = substring(1).toLong(16)
+        if (length == 7) {
+            color = color or 0x00000000ff000000L
+        } else if (length != 9) {
+            throw IllegalArgumentException("Unknown color")
+        }
+        return color.toInt()
+    }
+    throw IllegalArgumentException("Unknown color")
 }
-
