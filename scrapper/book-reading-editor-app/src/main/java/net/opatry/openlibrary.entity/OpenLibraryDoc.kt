@@ -61,7 +61,7 @@ data class OpenLibraryDoc(
     @SerializedName("ia")
     val ia: List<String>? = null, // [ "returnofking00tolk_1", "lordofrings00tolk_1", "lordofrings00tolk_0" ]
     @SerializedName("isbn")
-    val isbn: List<String>, // [ "3946571654", "3946571026", "9783946571025", "9783946571650" ]
+    val isbn: List<String>? = null, // [ "3946571654", "3946571026", "9783946571025", "9783946571650" ]
     @SerializedName("author_key")
     val authorKey: List<String>? = null, // [ "OL26320A" ]
     @SerializedName("public_scan_b")

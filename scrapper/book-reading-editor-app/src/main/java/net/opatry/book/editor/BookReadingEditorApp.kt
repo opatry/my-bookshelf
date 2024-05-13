@@ -284,6 +284,7 @@ fun BookEditor(googleBooksCredentialsFilename: String, onCreate: (Bookshelf.Book
     var gbooksHttpClient by remember { mutableStateOf<HttpClient?>(null) }
     var candidateBooks by remember { mutableStateOf(emptyList<GoogleBook.VolumeInfo>()) }
     var selectedCandidate by remember { mutableStateOf<GoogleBook.VolumeInfo?>(null) }
+    var openLibHttpClient by remember { mutableStateOf<HttpClient?>(null) }
 
     val uriHandler = LocalUriHandler.current
     val coroutineScope = rememberCoroutineScope()
@@ -325,13 +326,50 @@ fun BookEditor(googleBooksCredentialsFilename: String, onCreate: (Bookshelf.Book
                             gbooksHttpClient = buildGoogleBooksHttpClient(googleBooksCredentialsFilename, uriHandler::openUri)
                         }
                         if (title.isNotBlank() && author.isNotBlank()) {
-                            candidateBooks = gbooksHttpClient?.findBook(title.trim(), author.trim()) ?: emptyList()
+                            candidateBooks = gbooksHttpClient?.findGBook(title.trim(), author.trim()) ?: emptyList()
                         }
                     }
                 },
                 enabled = title.isNotBlank() && author.isNotBlank()
             ) {
-                Text("Fetch")
+                Text("Fetch GBooks")
+            }
+            OutlinedButton(
+                onClick = {
+                    coroutineScope.launch {
+                        if (openLibHttpClient == null) {
+                            openLibHttpClient = buildOpenLibraryHttpClient()
+                        }
+                        if (title.isNotBlank() && author.isNotBlank()) {
+                            val result = openLibHttpClient?.findOpenLibBook(title.trim(), author.trim())?: emptyList()
+                                    // quick & dirty mapping to GBooks result API until a pivot data model is extracted
+                            candidateBooks = result.mapNotNull { doc ->
+                                val isbn = doc.isbn?.firstOrNull { it.length == 13 } ?: return@mapNotNull null
+                                GoogleBook.VolumeInfo(
+                                    title = doc.title ?: "????",
+                                    authors = doc.authorName,
+                                    industryIdentifiers = listOf(GoogleBook.VolumeInfo.IndustryIdentifier(ISBN_13, isbn)),
+                                    readingModes = GoogleBook.VolumeInfo.ReadingModes(false, false),
+                                    pageCount = 0,
+                                    allowAnonLogging = false,
+                                    contentVersion = "0",
+                                    language = "fr",
+                                    infoLink = "",
+                                    previewLink = "",
+                                    canonicalVolumeLink = "",
+                                    publishedDate = "",
+                                    imageLinks = GoogleBook.VolumeInfo.ImageLinks(
+                                        smallThumbnail = "https://covers.openlibrary.org/b/isbn/$isbn-S.jpg", //?default=false",
+                                        thumbnail = "https://covers.openlibrary.org/b/isbn/$isbn-L.jpg"//?default=false"
+                                    ),
+                                )
+                            }
+                        }
+                    }
+                },
+                enabled = title.isNotBlank() && author.isNotBlank()
+            ) {
+                Text("Fetch OpenLib")
             }
             Button(
                 onClick = {

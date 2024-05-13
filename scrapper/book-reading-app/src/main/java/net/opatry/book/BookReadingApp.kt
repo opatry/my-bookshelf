@@ -21,24 +21,10 @@
 package net.opatry.book
 
 import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
-import io.ktor.client.HttpClient
-import io.ktor.client.call.body
-import io.ktor.client.engine.cio.CIO
-import io.ktor.client.plugins.CurlUserAgent
-import io.ktor.client.plugins.HttpTimeout
-import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
-import io.ktor.client.plugins.defaultRequest
-import io.ktor.client.request.get
-import io.ktor.http.isSuccess
-import io.ktor.serialization.gson.gson
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.runBlocking
-import kotlinx.coroutines.withContext
 import net.opatry.babelio.BabelioScrapper
 import net.opatry.babelio.babelioHttpClient
-import net.opatry.openlibrary.entity.OpenLibrarySearchResult
 import net.opatry.senscritique.SensCritiqueScrapper
 import net.opatry.senscritique.sensCritiqueHttpClient
 import org.openqa.selenium.By
@@ -46,7 +32,6 @@ import org.openqa.selenium.chrome.ChromeDriver
 import org.openqa.selenium.chrome.ChromeOptions
 import org.openqa.selenium.chromium.ChromiumDriver
 import org.openqa.selenium.support.ui.WebDriverWait
-import java.io.FileReader
 import java.io.FileWriter
 import java.net.URLEncoder
 import java.time.Duration
@@ -65,7 +50,7 @@ fun ChromeDriver.use(block: (driver: ChromeDriver) -> Unit) {
 private const val FETCH_BABELIO = true
 private const val FETCH_SENSCRITIQUE = true
 
-fun main2() {
+fun main() {
 //    val userDataDir = File("/Users/opatry/Library/Application Support/Google/Chrome/Default")
     val options = ChromeOptions()
 //        .addArguments("user-data-dir=${userDataDir.absolutePath}")
@@ -187,79 +172,6 @@ private fun ChromiumDriver.scrapSensCritiqueBooks(scrapper: SensCritiqueScrapper
             addAll(runBlocking {
                 scrapper.extractBooks(html)
             })
-        }
-    }
-}
-
-fun main() {
-    val openLibraryHttpClient = HttpClient(CIO) {
-        CurlUserAgent()
-        install(ContentNegotiation) {
-            gson()
-        }
-        install(HttpTimeout) {
-            requestTimeoutMillis = 3000
-        }
-        defaultRequest {
-            url("https://openlibrary.org")
-        }
-    }
-    runBlocking {
-        val books: List<BabelioBook> = withContext(Dispatchers.IO) {
-            FileReader("babelio_books.json").use { reader ->
-                Gson().fromJson(reader, object : TypeToken<List<BabelioBook>>() {}.type)
-            }
-        }
-
-        books.forEach { book ->
-            val simpleTitle = when {
-                Regex(
-                    "tome \\d+ :",
-                    RegexOption.IGNORE_CASE
-                ).containsMatchIn(book.title) -> book.title.replace(Regex(".+tome \\d+ :", RegexOption.IGNORE_CASE), "")
-                    .trim()
-
-                Regex(
-                    ", tome \\d+",
-                    RegexOption.IGNORE_CASE
-                ).containsMatchIn(book.title) -> book.title.replace(Regex(", tome \\d+", RegexOption.IGNORE_CASE), "")
-                    .trim()
-
-                else -> book.title
-            }
-            val queryParams = buildMap {
-                put("title", simpleTitle)
-                put("author", book.author)
-                put("lang", "fr")
-                put("language", "fre")
-                put(
-                    "fields",
-                    listOf(
-                        "key",
-                        "cover_i",
-                        "isbn",
-                        "title",
-                        "language",
-                        "author_name",
-                        "first_publish_year",
-                        "publish_year"
-                    ).joinToString(",")
-                )
-                put("limit", 1.toString())
-            }.entries.joinToString("&") { "${it.key}=${URLEncoder.encode(it.value, Charsets.UTF_8)}" }
-            println("Fetch book ''${book.title}'' ($simpleTitle) @(${book.author}): query=$queryParams")
-            val response = openLibraryHttpClient.get("search.json?$queryParams")
-            if (response.status.isSuccess()) {
-//                println("Fetch book ${book.title} ${book.author}: response=${response.bodyAsText()}")
-                val result = response.body<OpenLibrarySearchResult>()
-                if (result.numFound == 0 || result.docs.isEmpty()) {
-                    println("No book found for ''${book.title}'' ($simpleTitle) @(${book.author})")
-                } else {
-                    result.docs.forEach(::println)
-                }
-            } else {
-                println("Failed to fetch book ''${book.title}'' ${book.author}")
-            }
         }
     }
 }

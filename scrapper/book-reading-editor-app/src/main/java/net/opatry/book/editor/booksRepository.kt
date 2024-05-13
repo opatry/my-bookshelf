@@ -25,6 +25,7 @@ import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.engine.cio.CIO
 import io.ktor.client.plugins.CurlUserAgent
+import io.ktor.client.plugins.HttpTimeout
 import io.ktor.client.plugins.auth.Auth
 import io.ktor.client.plugins.auth.providers.BearerTokens
 import io.ktor.client.plugins.auth.providers.bearer
@@ -42,10 +43,27 @@ import net.opatry.google.auth.HttpGoogleAuthenticator
 import net.opatry.google.books.entity.GoogleBook
 import net.opatry.google.books.entity.GoogleBook.VolumeInfo.IndustryIdentifier.IndustryIdentifierType.ISBN_13
 import net.opatry.google.books.entity.GoogleBookSearchResult
+import net.opatry.openlibrary.entity.OpenLibraryDoc
+import net.opatry.openlibrary.entity.OpenLibrarySearchResult
 import java.io.File
 import java.io.InputStreamReader
 import java.net.URLEncoder
 import kotlin.time.Duration.Companion.seconds
+
+fun buildOpenLibraryHttpClient(): HttpClient {
+    return HttpClient(CIO) {
+        CurlUserAgent()
+        install(ContentNegotiation) {
+            gson()
+        }
+        install(HttpTimeout) {
+            requestTimeoutMillis = 3000
+        }
+        defaultRequest {
+            url("https://openlibrary.org")
+        }
+    }
+}
 
 suspend fun buildGoogleBooksHttpClient(credentialsFilename: String, onAuth: (url: String) -> Unit): HttpClient {
     val tokenCacheFile = File("google_auth_token_cache.json")
@@ -108,7 +126,37 @@ suspend fun buildGoogleBooksHttpClient(credentialsFilename: String, onAuth: (url
     }
 }
 
-suspend fun HttpClient.findBook(title: String, author: String): List<GoogleBook.VolumeInfo> {
+suspend fun HttpClient.findOpenLibBook(title: String, author: String): List<OpenLibraryDoc> {
+    val queryParams = mapOf(
+        "title" to title,
+        "author" to author,
+        "lang" to "fr",
+        "language" to "fre",
+        "fields" to listOf(
+            "key",
+            "cover_i",
+            "isbn",
+            "title",
+            "language",
+            "author_name",
+            "first_publish_year",
+            "publish_year"
+        ).joinToString(","),
+        "limit" to 20.toString()
+    ).entries.joinToString("&") { "${it.key}=${URLEncoder.encode(it.value, Charsets.UTF_8)}" }
+    val response = get("search.json?$queryParams")
+    if (response.status.isSuccess()) {
+        val result = response.body<OpenLibrarySearchResult>()
+        if (result.numFound == 0 || result.docs.isEmpty()) {
+            println("No book found for ''$title'' @($author)")
+        } else {
+            return result.docs.filter { it.isbn?.any { identifier -> identifier.length == 13 } ?: false }
+        }
+    }
+    return emptyList()
+}
+
+suspend fun HttpClient.findGBook(title: String, author: String): List<GoogleBook.VolumeInfo> {
 //    val searchQueryTokens = mapOf(
 //        "intitle" to book.title,
 //        "inauthor" to book.author,
