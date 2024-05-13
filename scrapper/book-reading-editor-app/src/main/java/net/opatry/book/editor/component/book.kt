@@ -35,6 +35,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
@@ -58,6 +59,7 @@ import net.opatry.book.editor.Bookshelf
 import net.opatry.book.editor.cleanThumbnailUrl
 import net.opatry.google.books.entity.GoogleBook
 import net.opatry.google.books.entity.GoogleBook.VolumeInfo.IndustryIdentifier.IndustryIdentifierType.ISBN_13
+import kotlin.time.Duration.Companion.seconds
 
 
 @OptIn(ExperimentalMaterialApi::class)
@@ -107,17 +109,19 @@ fun BookRow(book: Bookshelf.Book, onClick: () -> Unit) {
                 }
             }
         }
-    }) {
+    }, delayMillis = 1.seconds.inWholeMilliseconds.toInt()) {
         Row(Modifier.clickable(onClick = onClick).fillMaxWidth().padding(8.dp)) {
             AsyncImage(book.coverUrl, null, Modifier.height(50.dp).widthIn(max = 35.dp).padding(vertical = 4.dp, horizontal = 8.dp))
             Text(book.title, Modifier.weight(.6f).padding(4.dp))
             Text(book.author, Modifier.weight(.4f).padding(4.dp))
             RatingBar(book.rating)
-            if (book.isFavorite) {
-                // TODO animate heart beat
-                Icon(Icons.Filled.Favorite, null, tint = Color(0xff_c5_11_04))
-            } else {
-                Spacer(Modifier.size(24.dp))
+            Box(Modifier.width(48.dp), contentAlignment = Alignment.TopCenter) {
+                if (book.isFavorite) {
+                    // TODO animate heart beat
+                    Icon(Icons.Filled.Favorite, null, tint = Color(0xff_c5_11_04))
+                } else {
+                    Spacer(Modifier.size(24.dp))
+                }
             }
         }
     }

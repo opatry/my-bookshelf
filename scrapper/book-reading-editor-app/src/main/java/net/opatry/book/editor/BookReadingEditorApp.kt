@@ -20,6 +20,8 @@
 
 package net.opatry.book.editor
 
+import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -200,6 +202,7 @@ private val collator = Collator.getInstance(Locale.FRENCH)
 
 fun String.cleanThumbnailUrl() = replace(Regex("&edge=\\w+"), "").replace(Regex("&zoom=\\d+"), "")
 
+@OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun MainScreen(bookshelf: Bookshelf, googleBooksCredentialsFilename: String, outputDir: File, onBackNavigationClick: () -> Unit) {
     val uriHandler = LocalUriHandler.current
@@ -238,6 +241,10 @@ fun MainScreen(bookshelf: Bookshelf, googleBooksCredentialsFilename: String, out
     ) {
         Column {
             LazyColumn {
+                stickyHeader {
+                    Text("${books.value.size} books", Modifier.background(MaterialTheme.colors.background).fillMaxWidth().padding(4.dp), style = MaterialTheme.typography.caption)
+                    Divider()
+                }
                 items(books.value) { book ->
                     BookRow(book) {
                         uriHandler.openUri(book.url)
