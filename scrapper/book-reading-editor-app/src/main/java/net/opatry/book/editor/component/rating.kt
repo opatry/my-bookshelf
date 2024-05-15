@@ -29,27 +29,23 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Star
 import androidx.compose.material.icons.outlined.StarOutline
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 
 
 @Composable
 fun RatingBar(rating: Int, onClick: ((rating: Int) -> Unit)? = null) {
+    val starOn = remember { Icons.Filled.Star to Color(0xff_ff_dd_33) }
+    val starOff = remember { Icons.Outlined.StarOutline to MaterialTheme.colors.onSurface.copy(alpha = ContentAlpha.disabled) }
     Row {
-        repeat(rating) {
+        repeat(10) {
+            val (icon, tint) = if (it < rating) starOn else starOff
             Icon(
-                Icons.Filled.Star,
+                icon,
                 null,
                 Modifier.clickable { onClick?.invoke(if (rating == it + 1) 0 else it + 1) },
-                tint = Color(0xff_ff_dd_33)
-            )
-        }
-        repeat(10 - rating) {
-            Icon(
-                Icons.Outlined.StarOutline,
-                null,
-                Modifier.clickable { onClick?.invoke(rating + it + 1) },
-                tint = MaterialTheme.colors.onSurface.copy(alpha = ContentAlpha.disabled)
+                tint = tint
             )
         }
     }
