@@ -7,11 +7,8 @@
 <h4><%= @item[:author] %></h4>
 
 <p aria-label="<%= @item[:rating] %>" title="<%= @item[:rating] %>" style="vertical-align: middle;">
-<% @item[:rating].times do |star_on| %>
-<%= star_svg(filled: true) %>
-<% end %>
-<% (10 - @item[:rating]).times do |star_off| %>
-<%= star_svg(filled: false) %>
+<% 10.times do |i| %>
+<%= star_svg(filled: i < @item[:rating]) -%>
 <% end %>
 </p>
 

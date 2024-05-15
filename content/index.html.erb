@@ -35,11 +35,8 @@ unless @items["/cover/#{book[:isbn]}.*"].nil?
       <td><%= book[:author] %></td>
       <td>
         <p aria-label="<%= book[:rating] %>" title="<%= book[:rating] %>" style="vertical-align: middle; text-align: center;">
-          <% book[:rating].times do |star_on| %>
-          <%= star_svg(filled: true) %>
-          <% end %>
-          <% (10 - book[:rating]).times do |star_off| %>
-          <%= star_svg(filled: false) %>
+          <% 10.times do |i| %>
+          <%= star_svg(filled: i < book[:rating]) %>
           <% end %>
         </p>
       </td>
