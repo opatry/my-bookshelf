@@ -9,14 +9,14 @@ def to_json(book, url: :relative)
   cover_path = cover.path(rep: :mini) unless cover.nil?
   url_prefix = url == :absolute ? @config[:site][:url] : ''
   {
-    'isbn' => book[:isbn],
-    'uuid' => book[:uuid],
-    'title' => book[:title],
-    'author' => book[:author],
-    'link' => "#{url_prefix}#{book.path}",
-    'rating' => book[:rating] || 0,
-    'favorite' => book[:favorite] || false,
-    'cover' => "#{url_prefix}#{cover_path}" || ''
+    'isbn': book[:isbn],
+    'uuid': book[:uuid],
+    'title': book[:title],
+    'author': book[:author],
+    'link': "#{url_prefix}#{book.path}",
+    'rating': book[:rating] || 0,
+    'favorite': book[:favorite] || false,
+    'cover': "#{url_prefix}#{cover_path}" || ''
   }
 end
 
@@ -88,10 +88,10 @@ end
 
 def pwa_screenshot_to_json(item)
   {
-    'src' => item.path,
-    'sizes' => "#{item[:width]}x#{item[:height]}",
-    'type'=> item[:mime_type],
-    'platform' => item[:pwa_platform],
-    'form_factor' => item[:pwa_form_factor]
+    'src': item.path,
+    'sizes': "#{item[:width]}x#{item[:height]}",
+    'type': item[:mime_type],
+    'platform': item[:pwa_platform],
+    'form_factor': item[:pwa_form_factor]
   }
 end
