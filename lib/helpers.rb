@@ -6,7 +6,8 @@ require 'i18n'
 
 def to_json(book, url: :relative)
   cover = @items["/cover/#{book[:isbn]}.*"]
-  cover_path = cover.path(rep: :mini) unless cover.nil?
+  cover_path = cover.path(rep: :default) unless cover.nil?
+  cover_mini_path = cover.path(rep: :mini) unless cover.nil?
   url_prefix = url == :absolute ? @config[:site][:url] : ''
   {
     'isbn': book[:isbn],
@@ -16,7 +17,8 @@ def to_json(book, url: :relative)
     'link': "#{url_prefix}#{book.path}",
     'rating': book[:rating] || 0,
     'favorite': book[:favorite] || false,
-    'cover': "#{url_prefix}#{cover_path}" || ''
+    'cover': "#{url_prefix}#{cover_path}" || '',
+    'cover_mini': "#{url_prefix}#{cover_mini_path}" || '',
   }
 end
 
@@ -92,6 +94,6 @@ def pwa_screenshot_to_json(item)
     'sizes': "#{item[:width]}x#{item[:height]}",
     'type': item[:mime_type],
     'platform': item[:pwa_platform],
-    'form_factor': item[:pwa_form_factor]
+    'form_factor': item[:pwa_form_factor],
   }
 end

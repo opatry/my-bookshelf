@@ -7,7 +7,6 @@ uuid: d45018b8-4b50-4d56-a403-aee411ab5931
     <span class="material-symbols-outlined input-icon">filter_list</span>
     <input id="book-filter-q" type="search" placeholder="Filtrer…" size="40">
   </div>
-  <div id="books-table" class="books-table"></div>
 
   <noscript>
   <table id="books-table-noscript" class="books-table">
@@ -25,8 +24,8 @@ uuid: d45018b8-4b50-4d56-a403-aee411ab5931
     <tr>
       <td>
 <%
-unless @items["/cover/#{book[:isbn]}.*"].nil?
-  cover = @items["/cover/#{book[:isbn]}.*"]
+cover = @items["/cover/#{book[:isbn]}.*"]
+unless cover.nil?
 %>
         <img src="<%= cover.path(rep: :mini) %>" width="<%= cover["width_mini"] %>" height="<%= cover["height_mini"] %>" class="book-cover-mini">
 <% end %>
@@ -51,6 +50,7 @@ unless @items["/cover/#{book[:isbn]}.*"].nil?
   </table>
   </noscript>
 
+  <div id="books-table" class="books-table"></div>
   <script type="text/javascript">
     // TODO load JSON file
   var booksData = <%= JSON[@items.select { |item| book?(item) }.map { |book| to_json(book) }] %>;
@@ -86,7 +86,7 @@ unless @items["/cover/#{book[:isbn]}.*"].nil?
     columns: [
         {
           headerSort: false,
-          field: "cover",
+          field: "cover_mini",
           responsive: 1,
           formatter: "image",
           width: 65,
