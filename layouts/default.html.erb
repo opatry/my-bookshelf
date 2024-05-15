@@ -8,6 +8,21 @@
 
   <meta name="theme-color" content="#c51104">
 
+  <link rel="expect" blocking="render" href="#content">
+  <link rel="expect" blocking="render" href="#header">
+
+  <script type="speculationrules">
+    {
+      "prerender": [{
+        "source": "document",
+        "where": {
+          "href_matches": "/book/*"
+        },
+        "eagerness": "moderate"
+      }]
+    }
+  </script>
+  <script src="<%= @items['/static/view-transition.*'].path %>"></script>
 <%
 if @item.identifier =~ '**/index.*'
 %>

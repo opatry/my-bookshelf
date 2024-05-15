@@ -1,3 +1,7 @@
+@view-transition {
+  navigation: auto;
+}
+
 .tabulator .tabulator-footer .tabulator-page.active {
   color: rgb(197, 17, 4);
 }
