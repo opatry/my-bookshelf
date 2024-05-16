@@ -21,7 +21,7 @@ uuid: d45018b8-4b50-4d56-a403-aee411ab5931
   </thead>
   <tbody>
 <% natural_sort(@items.select { |item| book?(item) }).each do |book| %>
-    <tr>
+    <tr id="isbn_<%= book[:isbn] %>" data-isbn="<%= book[:isbn] %>" data-uuid="<%= book[:uuid] %>">
       <td>
 <%
 cover = @items["/cover/#{book[:isbn]}.*"]
