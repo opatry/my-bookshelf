@@ -33,7 +33,15 @@ $ ./node_modules/.bin/firebase deploy --only hosting
 ## TODO 
 - export data from SC/Babelio instead of scrapping
 - clean JS (use const & let instead of var, normalize quotes, colon etc)
+- book release date
+- og:title improvement & prez in WhatsApp & Slack demo (test with https://www.opengraph.xyz/ or https://opengraph.dev/ or https://toolsaday.com/seo/open-graph)
+  - desc Recommended length: 150 - 160 characters
+  - image Recommended dimension: 1200 x 630 pixels (+ not simple cover, ideally fancy rendering (with cover) and text for attractiveness)
+  - emoji book redundant with favicon, only keep it in index/home page title
+- no index etc. (see https://toolsaday.com/seo/noindex-checker)
+- image multi res & responsive (<picture/>, for avatar in particular)
 - clean CSS
+- stars themed with CSS and value tweak, maybe custom star formatter to make it styleable or submit a feature request or a PR to tabulator
 - avatar picture with real photo
 - Add span for serie prefix "(.+), tome \d+:" + In responsive compact mode, hide it.
 
