@@ -37,6 +37,8 @@ import io.ktor.http.encodedPath
 import io.ktor.http.isSuccess
 import io.ktor.http.takeFrom
 import io.ktor.serialization.gson.gson
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flow
 import net.opatry.google.auth.GoogleAuth
 import net.opatry.google.auth.GoogleAuthenticator
 import net.opatry.google.auth.HttpGoogleAuthenticator
@@ -78,6 +80,44 @@ fun OpenLibraryDoc.toBookPreviewData(): BookPreviewData? {
         isbn = isbn,
         coverUrl = "https://covers.openlibrary.org/b/isbn/$isbn-L.jpg",
     )
+}
+
+interface BookRepository {
+    fun fetchBookshelf(): Flow<Bookshelf?>
+}
+
+//class OpenLibraryBookRepository : BookRepository {
+//
+//}
+
+//class GoogleBooksBookRepository(private val credentialsFilename: String) : BookRepository {
+//
+//}
+
+class BookReadingBookRepository(
+    private val instance: Instance
+) : BookRepository {
+    private val httpClient = HttpClient(CIO) {
+        CurlUserAgent()
+        install(ContentNegotiation) {
+            gson()
+        }
+        install(HttpTimeout) {
+            requestTimeoutMillis = 3000
+        }
+        defaultRequest {
+            url(instance.site)
+        }
+    }
+
+    override fun fetchBookshelf(): Flow<Bookshelf?> = flow {
+        val response = httpClient.get("api/v1/books.json")
+        if (response.status.isSuccess()) {
+            emit(response.body())
+        } else {
+            emit(null)
+        }
+    }
 }
 
 fun buildOpenLibraryHttpClient(): HttpClient {

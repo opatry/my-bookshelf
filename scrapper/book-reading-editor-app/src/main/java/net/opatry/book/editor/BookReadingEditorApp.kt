@@ -20,7 +20,6 @@
 
 package net.opatry.book.editor
 
-import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -55,7 +54,7 @@ sealed class Instance(val site: String, val dir: File, val label: String) {
     data object Fanny : Instance("https://fanny-lit.web.app", File("/Users/opatry/work/lecture-fanny"), "Fanny")
 }
 
-@OptIn(ExperimentalMaterialApi::class)
+
 fun main() {
     application {
         val defaultSize = DpSize(900.dp, 900.dp)
@@ -75,8 +74,14 @@ fun main() {
             if (window.minimumSize != minWindowSize) window.minimumSize = minWindowSize
 
             var chosenInstance by remember { mutableStateOf<Instance?>(null) }
+//            viewModel: BookViewModel
             var bookshelf by remember { mutableStateOf<Bookshelf?>(null) }
 
+//            LaunchedEffect(chosenInstance) {
+//                chosenInstance?.let {
+//                    viewModel = BookViewModelImpl(BookReadingBookRepository(it))
+//                }
+//            }
             LaunchedEffect(chosenInstance?.site) {
                 chosenInstance?.site?.let { site ->
                     val httpClient = HttpClient(CIO) {

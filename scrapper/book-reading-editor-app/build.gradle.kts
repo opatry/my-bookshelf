@@ -38,6 +38,7 @@ dependencies {
     implementation(libs.bundles.ktor.client)
     implementation(libs.bundles.coil)
     implementation(libs.gson)
+    implementation(libs.androidx.lifecycle.viewmodel)
 }
 
 compose.desktop {

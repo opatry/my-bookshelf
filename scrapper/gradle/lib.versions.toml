@@ -12,6 +12,8 @@ sqldelight = "2.0.2"
 compose = "1.6.2"
 coil = "3.0.0-alpha02"
 
+androidx-lifecycle = "2.8.0-rc01"
+
 [libraries]
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
 kotlinx-coroutines-swing = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-swing", version.ref = "coroutines" }
@@ -49,6 +51,8 @@ jetbrains-compose-material-desktop = { module = "org.jetbrains.compose.material:
 
 coil-compose = { module = "io.coil-kt.coil3:coil-compose", version.ref = "coil" }
 coil-network = { module = "io.coil-kt.coil3:coil-network", version.ref = "coil" }
+
+androidx-lifecycle-viewmodel = { module = "androidx.lifecycle:lifecycle-viewmodel", version.ref = "androidx-lifecycle" }
 
 [bundles]
 ktor-server = [ "ktor-server-core", "ktor-server-netty" ]
