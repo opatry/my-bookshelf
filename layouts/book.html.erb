@@ -6,11 +6,11 @@
 </h2>
 <h4><%= @item[:author] %></h4>
 
-<p aria-label="<%= @item[:rating] %>" title="<%= @item[:rating] %>" style="vertical-align: middle;">
+<div aria-label="<%= @item[:rating] %>" class="rating-bar" data-rating="<%= @item[:rating] %>" title="<%= @item[:rating] %>">
 <% 10.times do |i| %>
-<%= star_svg(filled: i < @item[:rating]) -%>
+<%= star_svg(filled: i < @item[:rating], params: { size: 16 }) -%>
 <% end %>
-</p>
+</div>
 
 <%
 unless @items["/cover/#{@item[:isbn]}.*"].nil?

@@ -263,6 +263,27 @@ table td {
   padding: 4px 0;
 }
 
+.rating-bar {
+  vertical-align: middle;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 8px;
+}
+
+.star-icon {
+  fill: rgba(0, 0, 0, .2);
+  display: inline;
+}
+
+.star-icon.icon-active {
+  fill: rgb(255, 215, 0);
+}
+
+.star-icon.icon-inactive {
+  fill: rgba(0, 0, 0, .15);
+}
+
 .heart-icon {
   padding-bottom: 4px;
   fill: rgb(197, 17, 4);

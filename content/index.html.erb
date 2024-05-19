@@ -122,9 +122,34 @@ unless cover.nil?
           field: "rating",
           title: "Note",
           responsive: 2,
-          formatter: "star",
-          formatterParams: {
-            stars: 10
+          formatter: function(cell, formatterParams, onRendered) {
+            var maxStars = 10;
+            var value = cell.getValue();
+            value = value && !isNaN(value) ? parseInt(value) : 0;
+            value = Math.max(0, Math.min(value, maxStars));
+            var element = cell.getElement();
+
+            var starActive = '<%= star_svg(filled: true, params: { size: 16 }) %>';
+            var starInactive = '<%= star_svg(filled: false, params: { size: 16 }) %>';
+
+            var stars = document.createElement('div');
+            stars.setAttribute('aria-label', value);
+            stars.setAttribute('class', 'rating-bar');
+            stars.dataset.rating = value;
+
+            for (var i = 1; i < 10; ++i) {
+              var star = document.createElement('span');
+              star.innerHTML = i < value ? starActive : starInactive;
+              stars.appendChild(star);
+            }
+
+            element.style.whiteSpace = 'nowrap';
+            element.style.overflow = 'hidden';
+            element.style.textOverflow = 'ellipsis';
+
+            element.setAttribute('aria-label', value);
+
+            return stars;
           },
           hozAlign: "center",
           width: 200,
