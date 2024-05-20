@@ -123,33 +123,31 @@ unless cover.nil?
           title: "Note",
           responsive: 2,
           formatter: function(cell, formatterParams, onRendered) {
-            var maxStars = 10;
-            var value = cell.getValue();
-            value = value && !isNaN(value) ? parseInt(value) : 0;
+            const maxStars = parseInt(formatterParams?.stars) || 10;
+            let value = parseInt(cell.getValue()) || 0;
             value = Math.max(0, Math.min(value, maxStars));
-            var element = cell.getElement();
+            const element = cell.getElement();
+            element.style.whiteSpace = 'nowrap';
+            element.style.overflow = 'hidden';
+            element.style.textOverflow = 'ellipsis';
+            element.setAttribute('aria-label', value);
 
-            var starActive = '<%= star_svg(filled: true, params: { size: 16 }) %>';
-            var starInactive = '<%= star_svg(filled: false, params: { size: 16 }) %>';
+            const starActive = '<%= star_svg(filled: true, params: { size: 16 }) %>';
+            const starInactive = '<%= star_svg(filled: false, params: { size: 16 }) %>';
 
-            var stars = document.createElement('div');
+            const stars = document.createElement('div');
             stars.setAttribute('aria-label', value);
             stars.setAttribute('class', 'rating-bar');
             stars.dataset.rating = value;
 
-            for (var i = 1; i < 10; ++i) {
-              var star = document.createElement('span');
-              star.innerHTML = i < value ? starActive : starInactive;
-              stars.appendChild(star);
+            for (let i = 1; i < maxStars; ++i) {
+              stars.insertAdjacentHTML('beforeend', i < value ? starActive : starInactive);
             }
 
-            element.style.whiteSpace = 'nowrap';
-            element.style.overflow = 'hidden';
-            element.style.textOverflow = 'ellipsis';
-
-            element.setAttribute('aria-label', value);
-
             return stars;
+          },
+          formatterParams: {
+            stars: 10
           },
           hozAlign: "center",
           width: 200,
