@@ -22,9 +22,7 @@ package net.opatry.book.editor.component
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Row
-import androidx.compose.material.ContentAlpha
 import androidx.compose.material.Icon
-import androidx.compose.material.MaterialTheme
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Star
 import androidx.compose.material.icons.outlined.StarOutline
@@ -37,7 +35,8 @@ import androidx.compose.ui.graphics.Color
 @Composable
 fun RatingBar(rating: Int, onClick: ((rating: Int) -> Unit)? = null) {
     val starOn = remember { Icons.Filled.Star to Color(0xff_ff_dd_33) }
-    val starOff = remember { Icons.Outlined.StarOutline to MaterialTheme.colors.onSurface.copy(alpha = ContentAlpha.disabled) }
+//    val starOff = remember { Icons.Outlined.StarOutline to MaterialTheme.colors.onSurface.copy(alpha = ContentAlpha.disabled) }
+    val starOff = remember { Icons.Outlined.StarOutline to Color(0x33_00_00_00) }
     Row {
         repeat(10) {
             val (icon, tint) = if (it < rating) starOn else starOff
