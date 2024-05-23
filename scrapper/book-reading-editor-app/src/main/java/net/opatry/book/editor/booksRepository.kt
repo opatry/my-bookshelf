@@ -43,6 +43,7 @@ import net.opatry.google.auth.HttpGoogleAuthenticator
 import net.opatry.google.books.entity.GoogleBook
 import net.opatry.google.books.entity.GoogleBook.VolumeInfo.IndustryIdentifier.IndustryIdentifierType.ISBN_13
 import net.opatry.google.books.entity.GoogleBookSearchResult
+import net.opatry.google.customsearch.GoogleCustomSearchResult
 import net.opatry.openlibrary.entity.OpenLibraryDoc
 import net.opatry.openlibrary.entity.OpenLibrarySearchResult
 import java.io.File
@@ -95,17 +96,46 @@ fun buildOpenLibraryHttpClient(): HttpClient {
     }
 }
 
-suspend fun buildGoogleBooksHttpClient(credentialsFilename: String, onAuth: (url: String) -> Unit): HttpClient {
+suspend fun buildGoogleCustomSearchHttpClient(credentialsFilename: String, onAuth: (url: String) -> Unit): HttpClient {
+    val (accessToken, refreshToken) = getGoogleAuthToken(credentialsFilename, onAuth)
+    return HttpClient(CIO) {
+        CurlUserAgent()
+        install(ContentNegotiation) {
+            gson()
+        }
+        install(Auth) {
+            bearer {
+                loadTokens {
+                    BearerTokens(accessToken ?: "", refreshToken ?: "")
+                }
+            }
+        }
+        install(HttpTimeout) {
+            requestTimeoutMillis = 3000
+        }
+        defaultRequest {
+            if (url.host.isEmpty()) {
+                val defaultUrl = URLBuilder().takeFrom("https://www.googleapis.com/customsearch")
+                url.host = defaultUrl.host
+                url.protocol = defaultUrl.protocol
+                if (!url.encodedPath.startsWith('/')) {
+                    val basePath = defaultUrl.encodedPath
+                    url.encodedPath = "$basePath/${url.encodedPath}"
+                }
+            }
+        }
+    }
+}
+
+suspend fun getGoogleAuthToken(credentialsFilename: String, onAuth: (url: String) -> Unit): Pair<String?, String?> {
     val tokenCacheFile = File("google_auth_token_cache.json")
-    val tokenCache =
-        tokenCacheFile.loadTokenCache()?.takeIf { it.expirationTimeMillis < System.currentTimeMillis() }
-    val (accessToken, refreshToken) = tokenCache?.let { it.accessToken to it.refreshToken } ?: run {
+    val tokenCache = tokenCacheFile.loadTokenCache()?.takeIf { it.expirationTimeMillis < System.currentTimeMillis() }
+    return tokenCache?.let { it.accessToken to it.refreshToken } ?: run {
         val googleAuthCredentials = ClassLoader.getSystemResourceAsStream(credentialsFilename)?.let { inputStream ->
             InputStreamReader(inputStream).use {
                 Gson().fromJson(it, GoogleAuth::class.java).credentials
             }
         } ?: error("Failed to load Google Auth credentials $credentialsFilename")
-
         val googleConfig = HttpGoogleAuthenticator.ApplicationConfig(
             redirectUrl = googleAuthCredentials.redirectUris.first(),
             clientId = googleAuthCredentials.clientId,
@@ -114,9 +144,11 @@ suspend fun buildGoogleBooksHttpClient(credentialsFilename: String, onAuth: (url
         val googleAuthenticator: GoogleAuthenticator = HttpGoogleAuthenticator(googleConfig)
         val code = googleAuthenticator.authorize(
             listOf(
+                // FIXME hardcoded scopes and a bit unrelated
                 GoogleAuthenticator.Permission.Profile,
                 GoogleAuthenticator.Permission.Email,
                 GoogleAuthenticator.Permission.Books,
+                GoogleAuthenticator.Permission.CustomSearch,
             ),
             onAuth
         )
@@ -130,6 +162,10 @@ suspend fun buildGoogleBooksHttpClient(credentialsFilename: String, onAuth: (url
         )
         token.accessToken to token.refreshToken
     }
+}
+
+suspend fun buildGoogleBooksHttpClient(credentialsFilename: String, onAuth: (url: String) -> Unit): HttpClient {
+    val (accessToken, refreshToken) = getGoogleAuthToken(credentialsFilename, onAuth)
     return HttpClient(CIO) {
         CurlUserAgent()
         install(ContentNegotiation) {
@@ -205,6 +241,38 @@ suspend fun HttpClient.findGBook(title: String, author: String): List<GoogleBook
             println("No book found for ''$title'' @($author)")
         } else {
             return result.items.filter { it.volumeInfo.industryIdentifiers?.any { identifier -> identifier.type == ISBN_13 } ?: false }.map { it.volumeInfo }
+        }
+    }
+    return emptyList()
+}
+
+data class GoogleCustomSearchImage(
+    val link: String,
+    val thumbnailLink: String,
+    val width: Int,
+    val height: Int,
+)
+
+/**
+ * See https://programmablesearchengine.google.com/controlpanel/all for the custom search engine ID
+ */
+suspend fun HttpClient.findGoogleCustomSearchBookCover(customSearchEngineId: String, title: String, author: String): List<GoogleCustomSearchImage> {
+    val searchQueryTokens = URLEncoder.encode("$title $author", Charsets.UTF_8)
+    val queryParams = mapOf(
+        "q" to searchQueryTokens,
+        "cx" to customSearchEngineId,
+        "num" to 10.toString(),
+        "searchType" to "image",
+    ).entries.joinToString("&") { "${it.key}=${it.value}" }
+
+    val response = get("v1?$queryParams")
+    if (response.status.isSuccess()) {
+        val result = response.body<GoogleCustomSearchResult>()
+        if (result.searchInformation.totalResults.toInt() == 0) {
+            println("No book found for ''$title'' @($author)")
+        } else {
+            // filter size greater than a criteria?
+            return result.items.map { GoogleCustomSearchImage(it.link, it.image.thumbnailLink, it.image.width, it.image.height) }
         }
     }
     return emptyList()

@@ -55,10 +55,12 @@ import kotlinx.coroutines.launch
 import net.opatry.book.editor.BookPreviewData
 import net.opatry.book.editor.Bookshelf
 import net.opatry.book.editor.buildGoogleBooksHttpClient
+import net.opatry.book.editor.buildGoogleCustomSearchHttpClient
 import net.opatry.book.editor.buildOpenLibraryHttpClient
 import net.opatry.book.editor.component.BookPreview
 import net.opatry.book.editor.component.RatingBar
 import net.opatry.book.editor.findGBook
+import net.opatry.book.editor.findGoogleCustomSearchBookCover
 import net.opatry.book.editor.findOpenLibBook
 import net.opatry.book.editor.toBookPreviewData
 import net.opatry.google.books.entity.GoogleBook
@@ -74,9 +76,10 @@ fun BookEditor(googleBooksCredentialsFilename: String, onCreate: (Bookshelf.Book
     var isFavorite by remember { mutableStateOf(false) }
 
     var gbooksHttpClient by remember { mutableStateOf<HttpClient?>(null) }
+    var openLibHttpClient by remember { mutableStateOf<HttpClient?>(null) }
+    var googleCustomSearchHttpClient by remember { mutableStateOf<HttpClient?>(null) }
     var candidateBooks by remember { mutableStateOf(emptyList<BookPreviewData>()) }
     var selectedCandidate by remember { mutableStateOf<BookPreviewData?>(null) }
-    var openLibHttpClient by remember { mutableStateOf<HttpClient?>(null) }
 
     val uriHandler = LocalUriHandler.current
     val coroutineScope = rememberCoroutineScope()
@@ -142,6 +145,23 @@ fun BookEditor(googleBooksCredentialsFilename: String, onCreate: (Bookshelf.Book
                 enabled = title.isNotBlank() && author.isNotBlank()
             ) {
                 Text("Fetch OpenLib")
+            }
+            OutlinedButton(
+                onClick = {
+                    coroutineScope.launch {
+                        if (googleCustomSearchHttpClient == null) {
+                            googleCustomSearchHttpClient = buildGoogleCustomSearchHttpClient(googleBooksCredentialsFilename, uriHandler::openUri)
+                        }
+                        if (title.isNotBlank() && author.isNotBlank()) {
+                            // see https://programmablesearchengine.google.com/controlpanel/all
+                            val result = googleCustomSearchHttpClient?.findGoogleCustomSearchBookCover("86bc25997f9d7439f", title.trim(), author.trim())?: emptyList()
+                            candidateBooks = result.map { BookPreviewData(title, listOf(author), "TBD", it.thumbnailLink) }
+                        }
+                    }
+                },
+                enabled = title.isNotBlank() && author.isNotBlank()
+            ) {
+                Text("Google CustomSearch")
             }
             Button(
                 onClick = {

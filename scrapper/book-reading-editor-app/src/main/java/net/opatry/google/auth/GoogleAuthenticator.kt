@@ -68,7 +68,8 @@ interface GoogleAuthenticator {
         Profile("https://www.googleapis.com/auth/userinfo.profile"),
         Email("https://www.googleapis.com/auth/userinfo.email"),
         OpenID("openid"),
-        Books("https://www.googleapis.com/auth/books")
+        Books("https://www.googleapis.com/auth/books"),
+        CustomSearch("https://www.googleapis.com/auth/cse"),
     }
 
     /**
