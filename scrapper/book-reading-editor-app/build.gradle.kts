@@ -20,6 +20,7 @@
 
 plugins {
     alias(libs.plugins.jetbrains.kotlin.jvm)
+    alias(libs.plugins.jetbrains.kotlin.compose.compiler)
     alias(libs.plugins.jetbrains.compose)
 }
 
@@ -38,6 +39,11 @@ dependencies {
     implementation(libs.bundles.ktor.client)
     implementation(libs.bundles.coil)
     implementation(libs.gson)
+}
+
+composeCompiler {
+    enableStrongSkippingMode = true
+    includeSourceInformation = true
 }
 
 compose.desktop {

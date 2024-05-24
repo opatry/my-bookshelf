@@ -1,7 +1,7 @@
 [versions]
 bookReading = "1.0.0"
 
-kotlin = "1.9.21"
+kotlin = "2.0.0"
 coroutines = "1.8.0"
 kodein = "7.21.2"
 selenium = "4.20.0"
@@ -9,7 +9,7 @@ ktor = "2.3.10"
 log4j = "2.20.0"
 sqldelight = "2.0.2"
 
-compose = "1.6.2"
+compose = "1.6.10"
 coil = "3.0.0-alpha02"
 
 [libraries]
@@ -79,4 +79,5 @@ coil = ["coil-compose", "coil-network"]
 [plugins]
 sqldelight = { id = "app.cash.sqldelight", version.ref = "sqldelight" }
 jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+jetbrains-kotlin-compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 jetbrains-compose = { id = "org.jetbrains.compose", version.ref = "compose" }
