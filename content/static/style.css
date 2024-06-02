@@ -331,10 +331,15 @@ p {
   line-height: 1.5;
 }
 
+[tabulator-field=cover_mini] img,
+.book-cover-mini {
+  border-radius: 4px;
+}
 .book-cover {
   width: 150px;
   float: left;
   margin-right: 24px;
+  border-radius: 8px;
 }
 
 blockquote {
