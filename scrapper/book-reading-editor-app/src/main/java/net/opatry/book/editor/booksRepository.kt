@@ -129,7 +129,7 @@ suspend fun buildGoogleCustomSearchHttpClient(credentialsFilename: String, onAut
 
 suspend fun getGoogleAuthToken(credentialsFilename: String, onAuth: (url: String) -> Unit): Pair<String?, String?> {
     val tokenCacheFile = File("google_auth_token_cache.json")
-    val tokenCache = tokenCacheFile.loadTokenCache()?.takeIf { it.expirationTimeMillis < System.currentTimeMillis() }
+    val tokenCache = tokenCacheFile.loadTokenCache()?.takeIf { it.expirationTimeMillis > System.currentTimeMillis() }
     return tokenCache?.let { it.accessToken to it.refreshToken } ?: run {
         val googleAuthCredentials = ClassLoader.getSystemResourceAsStream(credentialsFilename)?.let { inputStream ->
             InputStreamReader(inputStream).use {
