@@ -43,6 +43,9 @@ jobs:
           bundle config set --local without 'development'
           bundle config set --local path .bundler
 
+    - name: Install ImageMagick
+      run: sudo apt install imagemagick
+
     - name: Cache nanoc
       id: cache-nanoc
       uses: actions/cache@v4
