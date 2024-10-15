@@ -59,6 +59,7 @@ jobs:
         export LANGUAGE=en_US:en
         export LC_ALL=en_US.UTF-8
         bundle exec nanoc compile --env=prod -V
+        [ -f crash.log ] && cat crash.log
 
     - name: Setup Node
       if: steps.build.outputs.need_deploy == 0
