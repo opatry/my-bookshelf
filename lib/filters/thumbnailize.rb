@@ -7,6 +7,7 @@ class Thumbnailize < Nanoc::Filter
   def run(filename, params = {})
     system(
       'magick',
+      filename,
       '-resize',
       params[:width].to_s,
       '-strip',
@@ -14,7 +15,6 @@ class Thumbnailize < Nanoc::Filter
       'Plane',
       '-quality',
       @config[:cover][:quality],
-      filename,
       output_filename
     )
   end
