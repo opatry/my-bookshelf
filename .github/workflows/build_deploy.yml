@@ -34,7 +34,7 @@ jobs:
         gem install bundler
         bundle config set --local without 'development'
         bundle config set --local path .bundler
-        bundle install --jobs "$(nproc)"
+        bundle install --jobs "$(sysctl -n hw.physicalcpu)"
 
     - name: Install Bundler only
       if: steps.cache-bundler.outputs.cache-hit == 'true'
