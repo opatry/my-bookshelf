@@ -20,9 +20,7 @@ jobs:
         ruby-version: 3.0
 
     - name: Install ImageMagick
-      run: |
-          brew install imagemagick@7
-          magick --version
+      run: brew install imagemagick@7
 
     - name: Cache bundler gems
       id: cache-bundler
@@ -63,8 +61,7 @@ jobs:
         export LANG=en_US.UTF-8
         export LANGUAGE=en_US:en
         export LC_ALL=en_US.UTF-8
-        bundle exec nanoc compile --env=prod -V || cat crash.log && exit 1
-        [ -f crash.log ] && cat crash.log
+        bundle exec nanoc compile --env=prod -V
 
     - name: Setup Node
       if: steps.build.outputs.need_deploy == 0
