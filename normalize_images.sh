@@ -12,7 +12,7 @@ else
   target_width=575
   if [ "${width}" -gt "${target_width}" ]; then
     ratio=$(bc -l <<< "${target_width} * 100 / ${width}")
-    convert "${image}" -resize "${ratio}%" tmp.jpg && mv tmp.jpg "${image}"
+    magick "${image}" -resize "${ratio}%" tmp.jpg && mv tmp.jpg "${image}"
   fi
 fi
 

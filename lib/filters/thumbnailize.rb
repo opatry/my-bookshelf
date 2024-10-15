@@ -6,7 +6,7 @@ class Thumbnailize < Nanoc::Filter
 
   def run(filename, params = {})
     system(
-      'convert',
+      'magick',
       '-resize',
       params[:width].to_s,
       '-strip',
