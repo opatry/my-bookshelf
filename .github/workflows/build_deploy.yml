@@ -8,7 +8,7 @@ on:
 jobs:
   build-and-deploy:
     name: Build and Deploy
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
 
     steps:
     - name: Checkout
@@ -44,7 +44,9 @@ jobs:
           bundle config set --local path .bundler
 
     - name: Install ImageMagick
-      run: sudo apt install imagemagick
+      run: |
+          brew install imagemagick@7
+          magick --version
 
     - name: Cache nanoc
       id: cache-nanoc
