@@ -17,14 +17,14 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
 
+    - name: Install ImageMagick
+      run: brew install imagemagick@7
+
     - name: Setup Ruby 3.1
       uses: ruby/setup-ruby@v1
       with:
         ruby-version: 3.1
         bundler-cache: true
-
-    - name: Install ImageMagick
-      run: brew install imagemagick@7
 
     - name: Cache nanoc
       id: cache-nanoc
