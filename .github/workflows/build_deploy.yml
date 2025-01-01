@@ -47,7 +47,7 @@ jobs:
       if: steps.build.outputs.need_deploy == 0
       uses: actions/setup-node@v4
       with:
-        node-version: '21'
+        node-version: '22'
         cache: 'npm'
 
     - name: Deploy prod
