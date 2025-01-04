@@ -275,6 +275,11 @@ table td {
   margin-bottom: 8px;
 }
 
+.read-date {
+  font-size: .9em;
+  color: rgba(0, 0, 0, .6);
+}
+
 .star-icon {
   fill: rgba(0, 0, 0, .2);
   display: inline;

@@ -11,6 +11,9 @@
 <%= star_svg(filled: i < @item[:rating], params: { size: 16 }) -%>
 <% end %>
 </div>
+<% unless item[:read_date].nil? %>
+<p class="read-date">(lu en <%= get_pretty_date(item) %>)</p>
+<% end %>
 
 <%
 unless @items["/cover/#{@item[:isbn]}.*"].nil?
