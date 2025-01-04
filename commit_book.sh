@@ -21,5 +21,7 @@ for book in ${new_books}; do
   isbn=$(cut -d'"' -f2 <<< "${isbn}")
   commit_msg="[book][${isbn}] ${title} by ${author}"
 
-  git commit -m "${commit_msg}"
+  # use book read date as Git author date (not committer date on purpose)
+  book_read_date=$(grep "read_date" "${book}" | cut -d' ' -f2 -f3) || book_read_date=$(date "+%Y-%m-%d")
+  git commit --date="${book_read_date}" -m "${commit_msg}"
 done
