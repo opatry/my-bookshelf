@@ -154,7 +154,7 @@ end
 compile '/**/*' do
   unless item.binary?
     filter :erb
-    layout '/default.*'
+    layout '/default.*' unless item[:layout] == 'none'
   end
 end
 
