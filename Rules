@@ -10,6 +10,7 @@ favicon_reprs = %i[default favicon152 favicon36 favicon48 favicon72 favicon96 fa
 
 preprocess do
   # by default, no locale available, I18n::InvalidLocale: "fr" is not a valid locale
+  I18n.load_path << Dir["#{File.expand_path('strings')}/*.yml"]
   I18n.available_locales = [ @config[:site][:lang] ]
   I18n.default_locale = @config[:site][:lang]
 

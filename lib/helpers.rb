@@ -101,3 +101,11 @@ def pwa_screenshot_to_json(item)
     'form_factor': item[:pwa_form_factor],
   }
 end
+
+def get_pretty_date(book)
+  read_date = book[:read_date]
+  return nil unless read_date.is_a?(Date)
+
+  read_date_output = "#{I18n.t('date.month_names')[read_date.month]} #{read_date.year}"
+  %Q[<time datetime="#{read_date.strftime('%Y-%m-%d')}">#{read_date_output}</time>]
+end
