@@ -16,6 +16,8 @@ preprocess do
 
   @config[:favicon_reprs] = favicon_reprs
 
+  @config[:feed_book_identifiers] = feed_books.map(&:identifier)
+
   missing_covers = 0
 
   @items.select { |item| item.identifier =~ '/index.*' || book?(item) }.each do |item|
@@ -121,6 +123,20 @@ end
   end
 end
 
+compile '/book/**/*', rep: :feed do
+  if @config[:feed_book_identifiers].include?(item.identifier)
+    filter :erb
+    filter :kramdown if item[:extension] == 'md'
+    filter :html_compressor, type: item[:extension] unless @config[:dev]
+
+    layout '/feed_entry.*'
+    snapshot :feed
+  end
+
+  # do not write/route such representation
+  write nil
+end
+
 compile '/book/**/*' do
   filter :erb
   filter :kramdown
@@ -157,6 +173,10 @@ compile '/**/*' do
     filter :erb
     layout '/default.*' unless item[:layout] == 'none'
   end
+end
+
+route '/feed.*' do
+  '/feed.xml'
 end
 
 route '/robots.txt' do

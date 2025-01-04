@@ -61,6 +61,8 @@ end
 
   <link rel="canonical" href="<%= "#{@config[:site][:url]}#{@item.path}" %>" />
 
+  <link rel="feed" type="application/atom+xml" title="Atom feed" href="<%= @items['/feed.*'].path %>">
+
 <%
 is_home = @item.identifier =~ '/index.*'
 %>

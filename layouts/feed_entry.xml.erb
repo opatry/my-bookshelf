@@ -1,0 +1,24 @@
+<%
+site_url = @config[:site][:url]
+%>
+  <entry>
+    <link rel="alternate" type="text/html" href="<%= site_url + item.path %>"/>
+    <id>urn:uuid:<%= item[:uuid] %></id>
+    <updated><%= get_atom_date(item) %></updated>
+    <title><%=h item[:title] %></title>
+    <author>
+      <name><%=h item[:author] %></name>
+    </author>
+    <content type="html">
+    <![CDATA[
+      <%
+      unless @items["/cover/#{@item[:isbn]}.*"].nil?
+        cover = @items["/cover/#{@item[:isbn]}.*"]
+      %>
+      <img src="<%= cover.path %>" width="<%= cover["width_default"] %>" height="<%= cover["height_default"] %>">
+      <% end %>
+      <%= yield %>
+      <a href="<%= "#{site_url}#{@item.path}" %>">Voir en entier.</a>
+    ]]>
+    </content>
+  </entry>

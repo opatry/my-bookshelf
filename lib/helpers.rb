@@ -3,6 +3,11 @@
 require 'json'
 require 'natural_sort'
 require 'i18n'
+require 'cgi'
+
+def h(text)
+  CGI.escapeHTML(text.nil? ? '' : text)
+end
 
 def to_json(book, url: :relative)
   cover = @items["/cover/#{book[:isbn]}.*"]
@@ -108,4 +113,23 @@ def get_pretty_date(book)
 
   read_date_output = "#{I18n.t('date.month_names')[read_date.month]} #{read_date.year}"
   %Q[<time datetime="#{read_date.strftime('%Y-%m-%d')}">#{read_date_output}</time>]
+end
+
+def get_atom_date(book)
+  # 2015-01-24T14:52:47Z
+  book[:read_date].strftime('%Y-%m-%dT%H:%M:%SZ')
+end
+
+# Returns the last readings sorted by read date in descending order.
+#
+# @param limit [Integer, nil] the maximum number of readings to return. If nil, returns all readings.
+# @return [Array<Hash>] an array of book items sorted by read date.
+def last_readings(limit = nil)
+  books = @items.select { |item| book?(item) && item[:read_date].is_a?(Date) }
+                .sort_by { |item| -item[:read_date].to_time.to_i }
+  limit.nil? ? books : books.first(limit)
+end
+
+def feed_books()
+  last_readings(@config[:site][:feed][:max_entries])
 end
