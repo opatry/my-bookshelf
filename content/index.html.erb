@@ -16,7 +16,7 @@ unless books.empty?
       unless cover.nil?
       %>
       
-      <img src="<%= cover.path(rep: :medium) %>" width="<%= cover["width_medium"] %>" class="book-cover-card">
+      <a href="<%= book.path %>"><img src="<%= cover.path(rep: :medium) %>" width="<%= cover["width_medium"] %>" class="book-cover-card"></a>
       <% end %>
       <div class="book-info"title="<%= "#{book[:title]} de #{book[:author]}"%>">
         <div class="book-header">
