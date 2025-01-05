@@ -30,7 +30,11 @@ window.addEventListener('pageswap', async (e) => {
       const isbn = targetBookMatch.pathname.groups.isbn
       setTemporaryViewTransitionNames([
         [document.querySelector('.profile-picture'), 'avatar'],
-        [document.querySelector(`img[src='/cover/${isbn}-mini.jpg']`), 'cover'],
+        [
+          // favor medium if any, fallback to mini otherwise
+          document.querySelector(`img[src='/cover/${isbn}-medium.jpg']`) || document.querySelector(`img[src='/cover/${isbn}-mini.jpg']`),
+          'cover'
+        ],
       ], e.viewTransition.finished);
     }
   }
@@ -48,7 +52,10 @@ window.addEventListener('pagereveal', async (e) => {
       const isbn = fromBookMatch.pathname.groups.isbn
       setTemporaryViewTransitionNames([
         [document.querySelector('.profile-picture'), 'avatar'],
-        [document.querySelector(`img[src='/cover/${isbn}-mini.jpg']`), 'cover'],
+        [
+          document.querySelector(`img[src='/cover/${isbn}-medium.jpg']`) || document.querySelector(`img[src='/cover/${isbn}-mini.jpg']`), 
+          'cover'
+        ],
       ], e.viewTransition.ready);
     }
     
