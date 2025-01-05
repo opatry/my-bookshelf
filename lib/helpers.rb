@@ -14,6 +14,7 @@ def to_json(book, url: :relative)
   cover_path = cover.path(rep: :default) unless cover.nil?
   cover_mini_path = cover.path(rep: :mini) unless cover.nil?
   url_prefix = url == :absolute ? @config[:site][:url] : ''
+  read_date = book[:read_date].iso8601 if book[:read_date].is_a?(Date)
   {
     'isbn': book[:isbn],
     'uuid': book[:uuid],
@@ -21,6 +22,7 @@ def to_json(book, url: :relative)
     'author': book[:author],
     'link': "#{url_prefix}#{book.path}",
     'rating': book[:rating] || 0,
+    'read_date': read_date,
     'favorite': book[:favorite] || false,
     'cover': "#{url_prefix}#{cover_path}" || '',
     'cover_mini': "#{url_prefix}#{cover_mini_path}" || '',
