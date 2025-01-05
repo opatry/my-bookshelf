@@ -16,7 +16,8 @@ preprocess do
 
   @config[:favicon_reprs] = favicon_reprs
 
-  @config[:feed_book_identifiers] = feed_books.map(&:identifier)
+  @config[:feed_book_isbn] = feed_books.map { |book| book[:isbn] }
+  @config[:recent_book_isbn] = recent_books.map { |book| book[:isbn] }
 
   missing_covers = 0
 
@@ -113,9 +114,11 @@ compile '/static/**/*' do
   # don't filter or layout
 end
 
-# FIXME avoid if not in recent books
 %i[mini medium default].each do |repr|
   compile '/cover/**/*', rep: repr do
+    isbn = item.identifier.without_exts.split('/')[-1]
+    next if repr == :medium && !@config[:recent_book_isbn].include?(isbn)
+
     width = @config[:cover][:width][repr]
     filter :thumbnailize, width: width unless @config[:dev]
 
@@ -125,14 +128,13 @@ end
 end
 
 compile '/book/**/*', rep: :feed do
-  if @config[:feed_book_identifiers].include?(item.identifier)
-    filter :erb
-    filter :kramdown if item[:extension] == 'md'
-    filter :html_compressor, type: item[:extension] unless @config[:dev]
+  next unless @config[:feed_book_isbn].include?(item[:isbn])
+  filter :erb
+  filter :kramdown if item[:extension] == 'md'
+  filter :html_compressor, type: item[:extension] unless @config[:dev]
 
-    layout '/feed_entry.*'
-    snapshot :feed
-  end
+  layout '/feed_entry.*'
+  snapshot :feed
 
   # do not write/route such representation
   write nil
