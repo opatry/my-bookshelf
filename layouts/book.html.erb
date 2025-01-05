@@ -1,3 +1,4 @@
+<div id="<%= "book-#{item[:isbn]}" %>">
 <h2 class="book-title">
 <%= @item[:title] %>
 <% if @item[:favorite] || false %>
@@ -37,3 +38,4 @@ unless @item.fetch(:linked_books, []).empty?
 <% end %>
 </ul>
 <% end %>
+</div>
