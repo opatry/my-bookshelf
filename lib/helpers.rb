@@ -132,6 +132,11 @@ def last_readings(limit = nil)
   limit.nil? ? books : books.first(limit)
 end
 
+def recent_books()
+  six_months_ago = Date.today << 60
+  last_readings(6).select { |book| book[:read_date] >= six_months_ago }
+end
+
 def feed_books()
   last_readings(@config[:site][:feed][:max_entries])
 end

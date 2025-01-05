@@ -336,6 +336,72 @@ p {
   line-height: 1.5;
 }
 
+#recent-books {
+  margin-bottom: 1em;
+}
+
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 1fr auto;
+  gap: 1em;
+}
+
+.book-card {
+  grid-column: auto / span 12;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, .2);
+  overflow: hidden;
+  width: 100%;
+  min-width: 250px;
+}
+
+@media (min-width: 750px) {
+  .book-card {
+    grid-column: auto / span 6;
+  }
+}
+
+@media (min-width: 1050px) {
+  .book-card {
+    grid-column: auto / span 4;
+  }
+}
+
+.book-cover-card {
+  width: 75px;
+  object-position: 0;
+  object-fit: cover;
+  float: left;
+  margin-right: .5em;
+}
+
+.book-info {
+  flex: 1;
+  margin: 0 .5em;
+}
+
+.book-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.book-header .book-title {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: .5em 0;
+}
+
+.book-footer {
+  text-align: right;
+}
+.book-footer p {
+  margin: .5em 0;
+}
+
 [tabulator-field=cover_mini] img,
 .book-cover-mini {
   border-radius: 4px;
@@ -359,9 +425,13 @@ blockquote {
 blockquote::before {
   position: absolute;
   font-size: 2.5em;
-  content: '\00AB';
+  /* content: '\00AB'; */
+  content: open-quote;
   margin-top: -.5em;
   margin-left: -.5em;
+}
+blockquote::after {
+  content: close-quote;
 }
 
 #book-filter-box {

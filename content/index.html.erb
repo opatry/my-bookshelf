@@ -3,6 +3,45 @@ title: Mes lectures
 uuid: d45018b8-4b50-4d56-a403-aee411ab5931
 ---
 
+<%
+# TODO Ideally the view-transition should be applied to these cover as well, not the case for now
+books = recent_books
+unless books.empty?
+%>
+  <h1>Lectures récentes</h1>
+  <div id="recent-books" class="book-grid">
+  <% books.each do |book| %>
+    <div class="book-card">
+      <%
+      cover = @items["/cover/#{book[:isbn]}.*"]
+      unless cover.nil?
+      %>
+      
+      <img src="<%= cover.path(rep: :medium) %>" width="<%= cover["width_medium"] %>" class="book-cover-card">
+      <% end %>
+      <div class="book-info"title="<%= "#{book[:title]} de #{book[:author]}"%>">
+        <div class="book-header">
+          <h2 class="book-title"><a href="<%= book.path %>"><%= book[:title] %></a></h2>
+          <% if book[:favorite] || false %>
+          <span class="favorite-icon" aria-label="Coup de cœur" title="Coup de cœur"><%= heart_svg %></span>
+          <% end %>
+        </div>
+        <div aria-label="<%= book[:rating] %>" title="<%= book[:rating] %>" style="vertical-align: middle;">
+          <% 10.times do |i| %>
+          <%= star_svg(filled: i < book[:rating], params: { size: 12 }) %>
+          <% end %>
+        </div>
+        <div class="book-footer">
+          <p class="read-date">Lu en <%= get_pretty_date(book) %></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  </div>
+
+  <h1>Bibliothèque</h1>
+<% end %>
+
   <div id="book-filter-box">
     <span class="material-symbols-outlined input-icon">filter_list</span>
     <input id="book-filter-q" type="search" placeholder="Filtrer…" size="40">
