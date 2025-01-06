@@ -30,7 +30,7 @@ body {
               fixed            
               repeat
               rgba(0, 0, 0, .05);
-  font-family: 'Libre Caslon Display', serif;
+  font-family: serif;
   font-weight: 400;
   font-style: normal;
   font-size: 18px;
@@ -202,9 +202,7 @@ TODO fixed with lift on scroll?
 }
 
 h1, h2, h3 {
-  font-family: 'Dancing Script', cursive;
-  font-optical-sizing: auto;
-  font-weight: 600;
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -215,8 +213,6 @@ ul {
 }
 
 ul li::before {
-  font-family: 'Dancing Script', cursive;
-  font-weight: 700;
   content: '- ';
 }
 
@@ -397,6 +393,7 @@ p {
   overflow: hidden;
   text-overflow: ellipsis;
   margin: .5em 0;
+  font-size: 1.1em;
 }
 
 .book-footer {
@@ -418,8 +415,7 @@ p {
 }
 
 blockquote {
-  font-family: 'Dancing Script', cursive;
-  font-optical-sizing: auto;
+  font-family: cursive, serif;
   font-weight: 400;
   font-style: normal;
   font-size: 20px;
@@ -428,14 +424,10 @@ blockquote {
 }
 blockquote::before {
   position: absolute;
-  font-size: 2.5em;
-  /* content: '\00AB'; */
-  content: open-quote;
+  font-size: 2em;
+  content: '\00AB';
   margin-top: -.5em;
-  margin-left: -.5em;
-}
-blockquote::after {
-  content: close-quote;
+  margin-left: -.7em;
 }
 
 #book-filter-box {
