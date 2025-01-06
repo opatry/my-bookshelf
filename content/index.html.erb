@@ -25,7 +25,7 @@ unless books.empty?
           <span class="favorite-icon" aria-label="Coup de cœur" title="Coup de cœur"><%= heart_svg %></span>
           <% end %>
         </div>
-        <div aria-label="<%= book[:rating] %>" title="<%= book[:rating] %>" style="vertical-align: middle;">
+        <div aria-label="<%= book[:rating] %>" title="<%= book[:rating] %>">
           <% 10.times do |i| %>
           <%= star_svg(filled: i < book[:rating], params: { size: 12 }) %>
           <% end %>
