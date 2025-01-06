@@ -370,8 +370,7 @@ p {
 
 .book-cover-card {
   width: 75px;
-  object-position: 0;
-  object-fit: cover;
+  max-height: 110px;
   float: left;
   margin-right: .5em;
 }
