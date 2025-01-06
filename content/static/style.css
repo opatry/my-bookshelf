@@ -377,8 +377,11 @@ p {
 }
 
 .book-info {
-  flex: 1;
   margin: 0 .5em;
+  /* allow child items to position (last item stick at bottom) */
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .book-header {
@@ -398,6 +401,8 @@ p {
 
 .book-footer {
   text-align: right;
+  /* align to bottom */
+  margin-top: auto;
 }
 .book-footer p {
   margin: .5em 0;
