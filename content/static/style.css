@@ -377,6 +377,11 @@ p {
   max-height: 110px;
   float: left;
   margin-right: .5em;
+  transform-origin: 50% 50%;
+  transition: transform 0.3s ease-out;
+}
+.book-cover-card:hover {
+  transform: scale(1.05);
 }
 
 .book-info {
