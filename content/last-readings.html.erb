@@ -9,11 +9,32 @@ if books.empty?
 %>
   <h1>Lectures récentes</h1>
   <p>Aucune information sur les dernières lectures.</p>
-<% else %>
-  <h1>Lectures récentes</h1>
-  <div id="recent-books" class="book-grid">
-  <% books.each do |book| %>
-    <%= book.reps[:card].compiled_content(snapshot: :card) %>
+<%
+else
+  books_by_year = books.group_by { |book| book[:read_date].year }
+  books_by_year.each do |year, books_in_year|
+    books_by_year[year] = books_in_year.group_by { |book| book[:read_date].month }
+  end
+%>
+  <h1><%= @item[:title] %></h1>
+  <p style="font-size: .9em;">Accès rapide :
+  <% books_by_year.keys().each_with_index do |year, index| %>
+    <% if index > 0 %>
+    <span style="opacity: .3;"> • </span> 
+    <% end %>
+    <a href="#y-<%= year %>" title="Voir les livres lus en <%= year %>"><%= year %></a>
   <% end %>
+  </p>
+
+<% books_by_year.each do |year, books_by_month| %>
+  <h2 id="y-<%= year %>"><%= year %></h2>
+  <% books_by_month.each do |month_num, books_in_month| %>
+  <h3 id="y-<%= year %>-m-<%= month_num %>"><%= I18n.t('date.month_names')[month_num].capitalize %> <span class="title-more"><a href="#" title="Retour en haut de page">↑</a></span></h3>
+  <div id="recent-books" class="book-grid">
+    <% books_in_month.each do |book| %>
+      <%= book.reps[:card].compiled_content(snapshot: :card) %>
+    <% end %>
   </div>
+  <% end %>
+<% end %>
 <% end %>

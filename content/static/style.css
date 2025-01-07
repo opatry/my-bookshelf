@@ -275,12 +275,12 @@ table td {
   margin-bottom: 8px;
 }
 
-h1 {
+h1, h2, h3 {
   display: flex;
   align-items: center;
 }
 
-h1 .title-more {
+.title-more {
   margin-left: auto;
   font-size: .5em;
   color: rgba(0, 0, 0, .6);
@@ -411,6 +411,7 @@ p {
 
 .book-header .book-title {
   flex: 1;
+  display: block; /* disable display: flex applied more broadly */
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
