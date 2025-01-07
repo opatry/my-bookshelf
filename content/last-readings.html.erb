@@ -1,0 +1,43 @@
+---
+title: Dernières lectures
+uuid: f7892c5d-a6a4-4e59-a7df-6838c73120c7
+---
+
+<%
+books = last_readings
+if books.empty?
+%>
+  <h1>Lectures récentes</h1>
+  <p>Aucune information sur les dernières lectures.</p>
+<% else %>
+  <h1>Lectures récentes</h1>
+  <div id="recent-books" class="book-grid">
+  <% books.each do |book| %>
+    <div class="book-card">
+      <%
+      cover = @items["/cover/#{book[:isbn]}.*"]
+      unless cover.nil?
+      %>
+      
+      <a href="<%= book.path %>"><img src="<%= cover.path(rep: :medium) %>" width="<%= cover["width_medium"] %>" class="book-cover-card"></a>
+      <% end %>
+      <div id="book-<%= book[:isbn] %>" class="book-info" title="<%= "#{book[:title]} de #{book[:author]}"%>">
+        <div class="book-header">
+          <h2 class="book-title"><a href="<%= book.path %>"><%= book[:title] %></a></h2>
+          <% if book[:favorite] || false %>
+          <span class="favorite-icon" aria-label="Coup de cœur" title="Coup de cœur"><%= heart_svg %></span>
+          <% end %>
+        </div>
+        <div aria-label="<%= book[:rating] %>" title="<%= book[:rating] %>">
+          <% 10.times do |i| %>
+          <%= star_svg(filled: i < book[:rating], params: { size: 12 }) %>
+          <% end %>
+        </div>
+        <div class="book-footer">
+          <p class="read-date">Lu en <%= get_pretty_date(book) %></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  </div>
+<% end %>

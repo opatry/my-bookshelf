@@ -18,13 +18,15 @@ window.addEventListener('pageswap', async (e) => {
     const currentUrl = e.activation.from?.url ? new URL(e.activation.from.url) : null
     const targetUrl = new URL(e.activation.entry.url)
 
-    if (bookPagePattern.exec(currentUrl) && targetUrl.pathname == '/') {
+    // from /book/:isbn to / or /*.html
+    if (bookPagePattern.exec(currentUrl) && /^\/(.*\.html)?$/.test(targetUrl.pathname)) {
       setTemporaryViewTransitionNames([
         [document.querySelector('.profile-picture'), 'avatar'],
         [document.querySelector('.book-cover'), 'cover'],
       ], e.viewTransition.ready);
     }
 
+    // to /book/:isbn
     const targetBookMatch = bookPagePattern.exec(targetUrl)
     if (targetBookMatch) {
       const isbn = targetBookMatch.pathname.groups.isbn
@@ -48,7 +50,8 @@ window.addEventListener('pagereveal', async (e) => {
     const currentUrl = new URL(navigation.activation.entry.url);
 
     const fromBookMatch = bookPagePattern.exec(fromUrl)
-    if (fromBookMatch && currentUrl.pathname == '/') {
+    // from /book/:isbn to / or /*.html
+    if (fromBookMatch && /^\/(.*\.html)?$/.test(currentUrl.pathname)) {
       const isbn = fromBookMatch.pathname.groups.isbn
       setTemporaryViewTransitionNames([
         [document.querySelector('.profile-picture'), 'avatar'],
@@ -58,7 +61,8 @@ window.addEventListener('pagereveal', async (e) => {
         ],
       ], e.viewTransition.ready);
     }
-    
+
+    // to /book/:isbn
     if (bookPagePattern.exec(currentUrl)) {
       setTemporaryViewTransitionNames([
         [document.querySelector('.profile-picture'), 'avatar'],
