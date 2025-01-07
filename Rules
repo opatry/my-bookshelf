@@ -140,6 +140,19 @@ compile '/book/**/*', rep: :feed do
   write nil
 end
 
+compile '/book/**/*', rep: :card do
+  next unless @config[:last_readings_isbn].include?(item[:isbn])
+  filter :erb
+  # no need to apply kramdown, book_card only uses book metadata, not content
+  filter :html_compressor, type: item[:extension] unless @config[:dev]
+
+  layout '/book_card.*'
+  snapshot :card
+
+  # do not write/route such representation
+  write nil
+end
+
 compile '/book/**/*' do
   filter :erb
   filter :kramdown
