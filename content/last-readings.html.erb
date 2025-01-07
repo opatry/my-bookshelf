@@ -26,6 +26,43 @@ else
   <% end %>
   </p>
 
+  <table>
+  <thead>
+    <tr>
+    <th></th>
+    <% (1..12).each do |month_num| %>
+      <th><%= I18n.t('date.month_names')[month_num].capitalize.slice(0, 3) %></th>
+    <% end %>
+    </tr>
+  </thead>
+<% books_by_year.each do |year, books_by_month| %>
+  <tr>
+    <%# FIXME handle case of empty years %>
+    <th><a href="#y-<%= year %>" title="Voir les livres lus en <%= year %>"><%= year %></a></th>
+    <%
+    (1..12).each do |month_num|
+      month_books = books_by_month[month_num] || []
+      book_count = month_books.count
+      # we consider 1 book / week at most usually for better bubble size
+      book_count_percentage = 20 *[month_books.count, 5].min
+    %>
+    <td class="calendar-cell">
+    <%# TODO I18n %>
+    <% if book_count > 0 %>
+    <a href="#y-<%= year %>-m-<%= month_num %>" title="Voir les <%= book_count %> livres(s) lu(s) en <%= I18n.t('date.month_names')[month_num] %> <%= year %>">
+    <% end %>
+      <svg height="100%" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="<%= (book_count_percentage / 2.0).to_i %>" fill="rgba(197, 17, 4, <%= (book_count_percentage / 100.0) %>)" />
+      </svg>
+    <% if book_count > 0 %>
+    </a>
+    <% end %>
+    </td>
+    <% end %>
+  </tr>
+<% end %>
+  </table>
+
 <% books_by_year.each do |year, books_by_month| %>
   <h2 id="y-<%= year %>"><%= year %></h2>
   <% books_by_month.each do |month_num, books_in_month| %>

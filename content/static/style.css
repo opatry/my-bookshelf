@@ -455,6 +455,16 @@ blockquote::before {
   margin-left: -.7em;
 }
 
+.calendar-cell {
+  vertical-align: middle;
+}
+
+.calendar-cell a {
+  display: block;
+  height: 100%;
+  border: 0 none;
+}
+
 #book-filter-box {
   border-radius: 4px;
   border: 1px solid rgba(0, 0, 0, .2);
