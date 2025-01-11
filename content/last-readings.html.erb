@@ -16,29 +16,29 @@ else
     books_by_year[year] = books_in_year.group_by { |book| book[:read_date].month }
   end
 %>
-  <h1><%= @item[:title] %></h1>
-  <p style="font-size: .9em;">Accès rapide :
+  <h1><%= @item[:title] %> <span class="title-more"><a href="#" title="Pas de filtre">tout</a> • <a href="#only-favorites" title="Ne voir que les favoris"><%= heart_svg(params: { size: 12 }) %></a></span></h1>
+  <p class="quick-access" style="font-size: .9em;">Accès rapide :
   <% books_by_year.keys().each_with_index do |year, index| %>
     <% if index > 0 %>
     <span style="opacity: .3;"> • </span> 
     <% end %>
-    <a href="#y-<%= year %>" title="Voir les livres lus en <%= year %>"><%= year %></a>
+    <a href="#y<%= year %>" title="Voir les livres lus en <%= year %>"><%= year %></a>
   <% end %>
   </p>
 
-  <table>
+  <table class="calendar">
   <thead>
     <tr>
     <th></th>
     <% (1..12).each do |month_num| %>
-      <th><%= I18n.t('date.month_names')[month_num].capitalize.slice(0, 3) %></th>
+      <th><%= I18n.t('date.month_names')[month_num].slice(0, 3) %></th>
     <% end %>
     </tr>
   </thead>
 <% books_by_year.each do |year, books_by_month| %>
   <tr>
     <%# FIXME handle case of empty years %>
-    <th><a href="#y-<%= year %>" title="Voir les livres lus en <%= year %>"><%= year %></a></th>
+    <th><a href="#y<%= year %>" title="Voir les livres lus en <%= year %>"><%= year %></a></th>
     <%
     (1..12).each do |month_num|
       month_books = books_by_month[month_num] || []
@@ -49,7 +49,7 @@ else
     <td class="calendar-cell">
     <%# TODO I18n %>
     <% if book_count > 0 %>
-    <a href="#y-<%= year %>-m-<%= month_num %>" title="Voir les <%= book_count %> livres(s) lu(s) en <%= I18n.t('date.month_names')[month_num] %> <%= year %>">
+    <a href="#y<%= year %>-m<%= month_num %>" title="Voir les <%= book_count %> livres(s) lu(s) en <%= I18n.t('date.month_names')[month_num] %> <%= year %>">
     <% end %>
       <svg height="100%" viewBox="0 0 100 100">
         <circle cx="50" cy="50" r="<%= (book_count_percentage / 2.0).to_i %>" fill="rgba(197, 17, 4, <%= (book_count_percentage / 100.0) %>)" />
@@ -64,14 +64,18 @@ else
   </table>
 
 <% books_by_year.each do |year, books_by_month| %>
-  <h2 id="y-<%= year %>"><%= year %></h2>
+<div id="y<%= year %>" class="temporal-section year-section">
+  <h2><%= year %></h2>
   <% books_by_month.each do |month_num, books_in_month| %>
-  <h3 id="y-<%= year %>-m-<%= month_num %>"><%= I18n.t('date.month_names')[month_num].capitalize %> <span class="title-more"><a href="#" title="Retour en haut de page">↑</a></span></h3>
-  <div id="recent-books" class="book-grid">
-    <% books_in_month.each do |book| %>
-      <%= book.reps[:card].compiled_content(snapshot: :card) %>
-    <% end %>
+  <div id="y<%= year %>-m<%= month_num %>" class="temporal-section month-section">
+    <h3><%= I18n.t('date.month_names')[month_num].capitalize %> <span class="title-more"><a href="#" title="Retour en haut de page">↑</a></span></h3>
+    <div id="recent-books" class="book-grid">
+      <% books_in_month.each do |book| %>
+        <%= book.reps[:card].compiled_content(snapshot: :card) %>
+      <% end %>
+    </div>
   </div>
   <% end %>
+</div>
 <% end %>
 <% end %>

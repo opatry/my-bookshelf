@@ -1,5 +1,10 @@
 <!DOCTYPE html>
-<html lang="<%= @config[:site][:lang] %>">
+<%
+is_home = @item.identifier =~ '/index.*'
+# small trick to identify the favorite toggle in last readings page (to allow filtering favorites)
+special_favorite_filter_id_attr = 'id="only-favorites"' if @item.identifier =~ '/last-readings.*'
+%>
+<html lang="<%= @config[:site][:lang] %>" <%= special_favorite_filter_id_attr %>>
 <head>
   <meta charset="utf-8">
   <title><%= page_title(@item) %> &mdash; <%= @config[:site][:title] %></title>
@@ -58,10 +63,6 @@ end
   <link rel="canonical" href="<%= "#{@config[:site][:url]}#{@item.path}" %>" />
 
   <link rel="feed" type="application/atom+xml" title="Atom feed" href="<%= @items['/feed.*'].path %>">
-
-<%
-is_home = @item.identifier =~ '/index.*'
-%>
 
   <!-- Open Graph Protocol (https://ogp.me/) -->
   <meta property="og:locale" content="<%= @config[:site][:lang] %>" />

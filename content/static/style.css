@@ -494,5 +494,23 @@ blockquote::before {
   outline: 0 none;
 }
 
-#book-filter-q::-webkit-search-cancel-button {
+.calendar {
+  width: initial;
+}
+.calendar th {
+  padding: .5em;
+}
+.calendar td {
+  padding: 5px 0;
+}
+.calendar svg {
+  max-height: 30px;
+}
+
+/* TODO layout anim content size for smooth transition */
+#only-favorites:target .book-regular,
+#only-favorites:target .quick-access,
+#only-favorites:target .calendar,
+#only-favorites:target .temporal-section:not(:has(.book-favorite)) {
+  display: none;
 }

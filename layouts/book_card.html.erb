@@ -1,4 +1,4 @@
-    <div class="book-card">
+    <div class="book-card <%= item[:favorite] ? 'book-favorite' : 'book-regular' %>">
       <%
       cover = @items["/cover/#{item[:isbn]}.*"]
       unless cover.nil?
