@@ -16,6 +16,25 @@ preprocess do
 
   @config[:favicon_reprs] = favicon_reprs
 
+  # remove unrated books in prod
+  ignored_isbns = []
+  @items.delete_if do |item|
+    # keep everything in dev
+    next false if @config[:dev]
+    # keep everthing that is not a book
+    next false unless book?(item)
+    if item[:rating].nil? || item[:rating].zero?
+      ignored_isbns << item[:isbn]
+      true
+    else
+      false
+    end
+  end
+
+  @items.delete_if do |item|
+    item.identifier =~ '/cover/*' && ignored_isbns.include?(item.identifier.without_exts.delete_prefix('/cover/'))
+  end
+
   @config[:feed_book_isbn] = feed_books.map { |book| book[:isbn] }
   @config[:last_readings_isbn] = last_readings.map { |book| book[:isbn] }
 

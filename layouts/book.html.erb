@@ -28,12 +28,20 @@ unless @items["/cover/#{@item[:isbn]}.*"].nil?
 <div style="clear: left;"></div>
 
 <%
-unless @item.fetch(:linked_books, []).empty?
-  def linked_book_items = @item[:linked_books].map { |isbn| @items["/book/#{isbn}.*"] }
+linked_books = @item.fetch(:linked_books, []).map do |isbn|
+  book_item = @items["/book/#{isbn}.*"]
+  if book_item.nil?
+    warn "Warning: Linked book with ISBN #{isbn} not found."
+    next
+  end
+  book_item
+end.compact
+
+unless linked_books.empty?
 %>
 <h3>À lire aussi</h3>
 <ul class="linked-books">
-<% linked_book_items.each do |book| %>
+<% linked_books.each do |book| %>
   <li><a href="<%= book.path %>"><%= linked_book_title(@item, linked_book: book) %></a></li>
 <% end %>
 </ul>
