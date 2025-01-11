@@ -17,14 +17,6 @@ else
   end
 %>
   <h1><%= @item[:title] %> <span class="title-more"><a href="#" title="Pas de filtre">tout</a> • <a href="#only-favorites" title="Ne voir que les favoris"><%= heart_svg(params: { size: 12 }) %></a></span></h1>
-  <p class="quick-access" style="font-size: .9em;">Accès rapide :
-  <% books_by_year.keys().each_with_index do |year, index| %>
-    <% if index > 0 %>
-    <span style="opacity: .3;"> • </span> 
-    <% end %>
-    <a href="#y<%= year %>" title="Voir les livres lus en <%= year %>"><%= year %></a>
-  <% end %>
-  </p>
 
   <table class="calendar">
   <thead>
