@@ -9,7 +9,7 @@
       <div id="book-<%= item[:isbn] %>" class="book-info" title="<%= "#{item[:title]} de #{item[:author]}"%>">
         <div class="book-header">
           <h2 class="book-title"><a href="<%= item.path %>"><%= item[:title] %></a></h2>
-          <% if item[:favorite] || false %>
+          <% if item[:favorite] %>
           <span class="favorite-icon" aria-label="Coup de cœur" title="Coup de cœur"><%= heart_svg %></span>
           <% end %>
         </div>
