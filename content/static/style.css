@@ -498,6 +498,7 @@ blockquote::before {
   width: initial;
 }
 .calendar th {
+  text-align: center;
   padding: .5em;
 }
 .calendar td {
@@ -505,6 +506,32 @@ blockquote::before {
 }
 .calendar svg {
   max-height: 30px;
+}
+
+@media (max-width: 600px) {
+  .calendar thead th { font-size: 0; }
+  .calendar tbody th { padding: .25em; }
+  .calendar thead th::first-letter { font-size: initial; }
+  
+  .book-read-count-marker { display: none; }
+  
+  [data-book-read-count] {
+    padding: 0 !important;
+  }
+  [data-book-read-count] a {
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    margin: 0 1px;
+  }
+  [data-book-read-count]:last-child a { margin-right: 5px; }
+  [data-book-read-count="0"] a { background-color: rgba(197, 17, 4, 0); }
+  [data-book-read-count="1"] a { background-color: rgba(197, 17, 4, .15); }
+  [data-book-read-count="2"] a { background-color: rgba(197, 17, 4, .30); }
+  [data-book-read-count="3"] a { background-color: rgba(197, 17, 4, .45); }
+  [data-book-read-count="4"] a { background-color: rgba(197, 17, 4, .60); }
+  [data-book-read-count="5"] a { background-color: rgba(197, 17, 4, .75); }
+  [data-book-read-count="6"] a { background-color: rgba(197, 17, 4, 1); }
 }
 
 /* TODO layout anim content size for smooth transition */

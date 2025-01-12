@@ -27,6 +27,7 @@ else
     <% end %>
     </tr>
   </thead>
+  <tbody>
 <% books_by_year.each do |year, books_by_month| %>
   <tr>
     <%# FIXME handle case of empty years %>
@@ -38,12 +39,12 @@ else
       # we consider 1 book / week at most usually for better bubble size
       book_count_percentage = 20 *[month_books.count, 5].min
     %>
-    <td class="calendar-cell">
+    <td class="calendar-cell" data-book-read-count="<%= book_count %>">
     <%# TODO I18n %>
     <% if book_count > 0 %>
     <a href="#y<%= year %>-m<%= month_num %>" title="Voir les <%= book_count %> livres(s) lu(s) en <%= I18n.t('date.month_names')[month_num] %> <%= year %>">
     <% end %>
-      <svg height="100%" viewBox="0 0 100 100">
+      <svg height="100%" viewBox="0 0 100 100" class="book-read-count-marker">
         <circle cx="50" cy="50" r="<%= (book_count_percentage / 2.0).to_i %>" fill="rgba(197, 17, 4, <%= (book_count_percentage / 100.0) %>)" />
       </svg>
     <% if book_count > 0 %>
@@ -53,6 +54,7 @@ else
     <% end %>
   </tr>
 <% end %>
+  </tbody>
   </table>
 
 <% books_by_year.each do |year, books_by_month| %>
