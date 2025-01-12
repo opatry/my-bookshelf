@@ -1,4 +1,4 @@
-    <div class="book-card <%= item[:favorite] ? 'book-favorite' : 'book-regular' %>">
+    <div id="book-<%= item[:isbn] %>" class="book-card <%= item[:favorite] ? 'book-favorite' : 'book-regular' %>">
       <%
       cover = @items["/cover/#{item[:isbn]}.*"]
       unless cover.nil?
@@ -6,7 +6,7 @@
       
       <a href="<%= item.path %>"><img src="<%= cover.path(rep: :medium) %>" width="<%= cover["width_medium"] %>" class="book-cover-card"></a>
       <% end %>
-      <div id="book-<%= item[:isbn] %>" class="book-info" title="<%= "#{item[:title]} de #{item[:author]}"%>">
+      <div class="book-info" title="<%= "#{item[:title]} de #{item[:author]}"%>">
         <div class="book-header">
           <h2 class="book-title"><a href="<%= item.path %>"><%= item[:title] %></a></h2>
           <% if item[:favorite] %>
