@@ -155,7 +155,7 @@ unless cover.nil?
             stars.setAttribute('class', 'rating-bar');
             stars.dataset.rating = value;
 
-            for (let i = 1; i < maxStars; ++i) {
+            for (let i = 0; i < maxStars; ++i) {
               stars.insertAdjacentHTML('beforeend', i < value ? starActive : starInactive);
             }
 
