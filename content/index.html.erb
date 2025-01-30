@@ -49,7 +49,7 @@ unless cover.nil?
       <td>
         <p aria-label="<%= book[:rating] %>" title="<%= book[:rating] %>" style="vertical-align: middle; text-align: center;">
           <% 10.times do |i| %>
-          <%= star_svg(filled: i < book[:rating]) %>
+          <%= star_svg(filled: i < book[:rating], params: { size: 16 }) %>
           <% end %>
         </p>
       </td>
