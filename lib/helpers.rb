@@ -49,7 +49,9 @@ end
 
 def page_title(item)
   if book?(item)
-    "#{item[:title]} par #{item[:author]}"
+    rating = "⭐️ #{@item[:rating]}/10"
+    favorite = "❤️" if @item[:favorite]
+    "#{item[:title]} par #{item[:author]} • #{rating} #{favorite}"
   else
     item[:title]
   end
