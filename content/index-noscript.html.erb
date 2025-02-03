@@ -1,0 +1,58 @@
+---
+title: Mes lectures
+uuid: b571886b-c053-43fe-baa4-427ef0db57b2
+---
+
+<%
+books = recent_books
+unless books.empty?
+%>
+  <h1>Lectures récentes <span class="title-more"><a href="<%= @items['/last-readings.*'].path %>">→ voir plus…</a></span></h1>
+  <div id="recent-books" class="book-grid">
+  <% books.each do |book| %>
+    <%= book.reps[:card].compiled_content(snapshot: :card) %>
+  <% end %>
+  </div>
+
+  <h1>Bibliothèque</h1>
+<% end %>
+
+  <table id="books-table-noscript" class="books-table">
+  <thead>
+    <tr>
+      <th style="width: 65px;"><!-- cover --></th>
+      <th>Titre</th>
+      <th>Auteur</th>
+      <th style="width: 220px;"><!-- rating --></th>
+      <th style="width: 65px;"><!-- favorite --></th>
+    </tr>
+  </thead>
+  <tbody>
+<% natural_sort(@items.select { |item| book?(item) }).each do |book| %>
+    <tr id="isbn_<%= book[:isbn] %>" data-isbn="<%= book[:isbn] %>" data-uuid="<%= book[:uuid] %>">
+      <td>
+<%
+cover = @items["/cover/#{book[:isbn]}.*"]
+unless cover.nil?
+%>
+        <img src="<%= cover.path(rep: :mini) %>" width="<%= cover["width_mini"] %>" height="<%= cover["height_mini"] %>" class="book-cover-mini">
+<% end %>
+      </td>
+      <td><a href="<%= book.path %>"><%= book[:title] %></a></td>
+      <td><%= book[:author] %></td>
+      <td>
+        <p aria-label="<%= book[:rating] %>" title="<%= book[:rating] %>" style="vertical-align: middle; text-align: center;">
+          <% 10.times do |i| %>
+          <%= star_svg(filled: i < book[:rating], params: { size: 16 }) %>
+          <% end %>
+        </p>
+      </td>
+      <td>
+<% if book[:favorite] %>
+        <span class="favorite-icon" aria-label="Coup de cœur" title="Coup de cœur"><%= heart_svg %></span>
+<% end %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+  </table>

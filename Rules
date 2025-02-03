@@ -243,6 +243,10 @@ route '/last-readings.*' do
   "/last-readings.html"
 end
 
+route '/index-noscript.*' do
+  "/index-noscript.html"
+end
+
 route '/**/*.erb' do
   "#{item.identifier.without_ext}/index.html"
 end
