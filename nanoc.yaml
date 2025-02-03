@@ -29,17 +29,21 @@ social:
   badge_size: 25
   badges:
     sc:
-      label: SensCritique
-      user: 'OlivYé'
+      label: Mon profil SensCritique
       icon_identifier: '/static/senscritique.*'
       tint: '#60d16f'
       url: https://www.senscritique.com/OlivYé/collection?universe=2&action=RATING&order=MY_RATING_DESC
     babelio:
-      label: Babelio
-      user: 'olivierpatry'
+      label: Mon profil Babelio
       icon_identifier: '/static/babelio.*'
       tint: '#fbb91e'
       url: https://www.babelio.com/bibliotheque.php?&s1=1&id_user=1664025&tri=note&sens=decroissant
+    rss:
+      label: Flux RSS
+      icon_identifier: '/static/rss.*'
+      tint: '#6ddfe3'
+      url: https://lecture.opatry.net/feed.xml
+
 
 pwa_screenshot_width:
   phone: 651
