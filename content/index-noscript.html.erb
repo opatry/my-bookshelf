@@ -28,7 +28,17 @@ unless books.empty?
     </tr>
   </thead>
   <tbody>
-<% natural_sort(@items.select { |item| book?(item) }).each do |book| %>
+<%
+@items.select { |item| book?(item) }
+      .sort_by { |book|
+        [
+          -book[:rating].to_i,
+          book[:favorite] ? 0 : 1,
+          sortable_label(book[:title])
+        ]
+      }
+      .each do |book|
+%>
     <tr id="isbn_<%= book[:isbn] %>" data-isbn="<%= book[:isbn] %>" data-uuid="<%= book[:uuid] %>">
       <td>
 <%

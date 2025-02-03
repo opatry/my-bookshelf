@@ -97,8 +97,12 @@ def link_to_book(isbn, title = nil)
   end
 end
 
+def sortable_label(label)
+  NaturalSort(I18n.transliterate(label.downcase).gsub(/\W/, ' ').gsub(/\s+/, ' ').strip)
+end
+
 def natural_sort(books)
-  books.sort_by { |book| NaturalSort(I18n.transliterate(book[:title].downcase).gsub(/\W/, ' ').gsub(/\s+/, ' ').strip) }
+  books.sort_by { |book| sortable_label(book[:title]) }
 end
 
 def pwa_screenshot_to_json(item)
