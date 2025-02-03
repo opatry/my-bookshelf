@@ -1,10 +1,24 @@
 [![Build and deploy Status](https://github.com/opatry/my-bookshelf/actions/workflows/build_deploy.yml/badge.svg)](https://github.com/opatry/my-bookshelf/actions/workflows/build_deploy.yml)
 
-# Reading
+# My Readings
+
+This repository is the source for a static site generator used to share the books I read.
+Each book is rated and can be tagged as a favorite.
+The content is displayed using a filterable, sortable, and paginated table.
+
+There is also a dedicated section for recent readings for convenience.
 
 The content is, most of the time, written using [**`[M↓]`** Markdown](http://daringfireball.net/projects/markdown/) and served by [`nanoc`](http://nanoc.ws/).
 
 This website is available at https://lecture.opatry.net/ using [🔥 Firebase hosting](https://firebase.google.com/products/hosting).
+
+You can combine sorting across multiple columns using the <kbd>shift</kbd> key.
+
+On the [last readings](https://lecture.opatry.net/last-readings.html) page, you can filter to display [only favorites](https://lecture.opatry.net/last-readings.html#only-favorites) (indicated by the heart on the right).
+
+Alternatively, you can navigate by date using the calendar.
+
+Finally, there is an [RSS feed](https://lecture.opatry.net/feed.xml) for those who still believe in it!
 
 ## 🛠 Requirements & Initial setup
 
