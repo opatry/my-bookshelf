@@ -74,7 +74,7 @@ if [ $# -eq 1 ] && [ -f "$1" ]; then
     # call ourselves with values instead of file
     "${BASH_SOURCE[0]}" "${title}" "${author}" "${rating}" "${description}"
   done < "${file}"
-elif [ $# -gt 4 ]; then
+elif [ $# -eq 0 ] || [ $# -gt 4 ]; then
   echo "Usage:"
   echo " either $0 \"title\" \"author\" [rating] [description]"
   echo "  - rating is an integer in [0-10] (0 means unrated)"

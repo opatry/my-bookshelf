@@ -64,20 +64,24 @@ $ npm install
 $ ./node_modules/.bin/firebase deploy --only hosting
 ```
 
-## Scrapping
+## Fetch Google Books convenience script
 
-Scraps [Sens Critique](https://www.senscritique.com/) and [Babelio](https://www.babelio.com/) readings to generate a static site with fetch & consolidated data.
+You can either fetch data for a single book using this (which will create a new book file if one is not already available).
 
-### Tech stack
+```bash
+./fetch_book.sh "Book Title" "Author"
+```
 
-- [Kotlin](https://kotlinlang.org/)
-- [Coroutines](https://kotlinlang.org/docs/coroutines-overview.html)
-- [Kodein-DI](https://kosi-libs.org/kodein) for dependency injection.
-- [Ktor](https://ktor.io/) HTTP client.
-  - Kotlin first class
-  - Coroutines
-- [Gson](https://github.com/google/gson) for Json/Object marshalling/un-marshalling.
-- [JUnit](https://junit.org/junit4/) for unit & integration tests.
+Or batch process it using a text file, following the  `title | author | rating | description` pattern for each line.
+The rating can be a single value in the `[0..10]` range or in `X/Y` format, which will be normalized to a 10-point scale.
+Call the script without any arguments to see detailed usage.
+
+⚠️ The Google Books API isn’t very accurate, and the books database is incomplete.
+Always double-check the results and logs.
+
+Covers, in particular, aren’t always ideal. You can find alternatives using Google Images or Amazon queries available in the logs.
+
+This script relies on a `GOOGLE_BOOKS_API_KEY` environment variable, which can be created on the Credentials page of the Google Cloud Platform console.
 
 ### Google Books API Auth
 
@@ -97,3 +101,32 @@ or directly
 
 API reference
 - https://developers.google.com/books/docs/v1/reference/?apix=true
+
+## Web Scrapping
+
+There is a quick & dirty project to scrap [Sens Critique](https://www.senscritique.com/) and [Babelio](https://www.babelio.com/) readings to generate a static site with fetch & consolidated data.
+
+<details>
+<summary>See details…</summary>
+
+Open the `scrapper/settings.gradle.kts` project in your favorite IDE or launch it with Gradle.
+
+It uses Selenium and requires a quite manual setup to authorize your account (see `:book-reading-app` module).
+
+### Tech stack
+
+- [Kotlin](https://kotlinlang.org/)
+- [Coroutines](https://kotlinlang.org/docs/coroutines-overview.html)
+- [Kodein-DI](https://kosi-libs.org/kodein) for dependency injection.
+- [Ktor](https://ktor.io/) HTTP client.
+  - Kotlin first class
+  - Coroutines
+- [Gson](https://github.com/google/gson) for Json/Object marshalling/un-marshalling.
+- [JUnit](https://junit.org/junit4/) for unit & integration tests.
+
+There is also a quicker, dirtier proof of concept (POC) to browse existing books using the “REST API” (`api/v1/books.json`), display them in a UI, and provide an editor bootstrap to fetch book data based on title and author (including covers from various sources).
+
+Both of these tools are not maintained and are kept as-is for potential future use.
+Most likely, they will be replaced by a web application and a proper backend.
+
+</details>
