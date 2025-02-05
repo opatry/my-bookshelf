@@ -1,0 +1,7 @@
+<%= yield %>
+
+<div class="book-grid">
+<% @item[:books].each do |book_identifier| %>
+  <%= @items[book_identifier].reps[:card].compiled_content(snapshot: :card) %>
+<% end %>
+</div>
