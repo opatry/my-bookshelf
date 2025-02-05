@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <%
 is_home = home?(@item)
+is_author_page = author?(@item)
 # small trick to identify the favorite toggle in last readings page (to allow filtering favorites)
 special_favorite_filter_id_attr = 'id="only-favorites"' if @item.identifier =~ '/last-readings.*'
 %>
@@ -74,6 +75,8 @@ special_favorite_filter_id_attr = 'id="only-favorites"' if @item.identifier =~ '
 
 <% case when is_home %>
 <%= render '/head_home.*' %>
+<% when is_author_page %>
+<%= render '/head_author.*' %>
 <% when book?(@item) %>
 <%= render '/head_book.*' %>
 <% end %>
@@ -82,18 +85,19 @@ special_favorite_filter_id_attr = 'id="only-favorites"' if @item.identifier =~ '
 </head>
 
 <%
-avatar = @items['/static/avatar.*']
-avatar_repr = is_home ? :default : :compact
+avatar = is_author_page ? @item[:avatar] || @items['/static/avatar-placeholder.*'] : @items['/static/avatar.*']
+avatar_repr = is_home || is_author_page ? :default : :compact
 avatar_size = @config[:avatar_size][avatar_repr]
+avatar_path = avatar.is_a?(String) ? avatar : avatar.path(rep: avatar_repr) 
 %>
 <body>
-<div id="main" class="<%= is_home ? 'full' : 'compact' %>">
+<div id="main" class="<%= is_home || is_author_page ? 'full' : 'compact' %>">
   <div id="header">
     <div class="profile-picture">
     <% unless is_home %>
       <a href="<%= @items['/index.*'].path %>" title="Retour à l'accueil…">
     <% end %>
-        <img src="<%= avatar.path(rep: avatar_repr) %>" width="<%= avatar_size %>" height="<%= avatar_size %>" alt="">
+        <img src="<%= avatar_path %>" width="<%= avatar_size %>" height="<%= avatar_size %>" alt="">
     <% unless is_home %>
       </a>
     <% end %>

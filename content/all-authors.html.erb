@@ -1,0 +1,16 @@
+---
+title: Les auteurs
+layout: default
+---
+
+<h2>Tous les auteurs</h2>
+
+<ul class="tag-cloud">
+<% author_tag_cloud.each do |author, tag_weight, books_count| %>
+  <li>
+    <span class="tag_<%= tag_weight %>">
+      <a href="<%= @items[author_item_identifier(author)].path %>"><span class="tag"><%= author %></span></a>&nbsp;<span class="tag-count">(<%= books_count %>)</span>
+    </span>
+  </li>
+<% end %>
+</ul>
