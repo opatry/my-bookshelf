@@ -3,7 +3,7 @@
       cover = @items["/cover/#{item[:isbn]}.*"]
       unless cover.nil?
       %>
-      
+
       <a href="<%= item.path %>"><img src="<%= cover.path(rep: :medium) %>" width="<%= cover["width_medium"] %>" class="book-cover-card"></a>
       <% end %>
       <div class="book-info" title="<%= "#{item[:title]} de #{item[:author]}"%>">
@@ -18,8 +18,10 @@
           <%= star_svg(filled: i < item[:rating], params: { size: 12 }) %>
           <% end %>
         </div>
+        <% if item[:read_date] %>
         <div class="book-footer">
           <p class="read-date">Lu en <%= get_pretty_date(item) %></p>
         </div>
+        <% end %>
       </div>
     </div>
