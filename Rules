@@ -41,6 +41,7 @@ preprocess do
   end
 
   generate_tag_items
+  generate_author_items
 
   missing_covers = 0
 
@@ -157,7 +158,7 @@ compile '/static/{babelio,senscritique,rss}.*' do
 end
 
 %i[compact default].each do |repr|
-  compile '/static/avatar.*', rep: repr do
+  compile '/static/avatar*', rep: repr do
     filter :thumbnailize, width: @config[:avatar_size][repr] #unless @config[:dev]
     
     suffix = "-#{repr}" unless repr == :default
@@ -260,6 +261,17 @@ compile '/tag/*' do
   write "#{item.identifier.without_exts}.html"
 end
 
+compile '/author/*' do
+  filter :erb
+  filter :kramdown
+  filter :html_compressor, type: item[:extension] unless @config[:dev]
+
+  layout '/author.*'
+  layout '/default.*'
+
+  write "#{item.identifier.without_exts}.html"
+end
+
 compile '/api/v1/*' do
   filter :erb
   layout item[:layout] unless item[:layout] == 'none'
@@ -326,6 +338,10 @@ end
 
 route '/all-tags.*' do
   "/tag/index.html"
+end
+
+route '/all-authors.*' do
+  "/author/index.html"
 end
 
 route '/index-noscript.*' do

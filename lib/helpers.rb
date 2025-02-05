@@ -53,6 +53,10 @@ def book?(item)
   item.identifier =~ '/book/*'
 end
 
+def author?(item)
+  item.identifier =~ '/author/*'
+end
+
 def lucide_icon_svg(name, params: {})
   size = params.fetch(:size, 24)
   width = params.fetch(:width, size)
@@ -268,6 +272,62 @@ Voir la liste des <%= link_to('autres étiquettes', @items['/all-tags.*']) %>.
                     .map { |p| p.identifier.to_s },
         extension: 'md'
       }, Nanoc::Identifier.new(tag_item_identifier(tag))
+    )
+  end
+end
+
+def author_tag_cloud
+  # FIXME natural sort on author name?
+  authors = @items.select { |item| book?(item) }.group_by { |book| book[:author] }.sort # sort on hash sort by key which is what we want
+  # tag_<weight> goes from tag_0 to tag_10, map tag weight value to [0,10]
+  max = authors.max_by { |_, v| v.size }[1].size
+  min = authors.min_by { |_, v| v.size }[1].size
+  result = []
+  authors.each do |author, books|
+    books_count = books.size
+    tag_weight = (((books_count - min) * 10.0) / max).round
+    result << [author, tag_weight, books_count]
+  end
+  result
+end
+
+def author_slug(author)
+  I18n.transliterate(author.downcase).gsub(/\W/, '-').gsub(/-+/, '-').strip
+end
+
+def author_item_identifier(author)
+  "/author/#{author_slug(author)}.*"
+end
+
+def generate_author_items
+  # FIXME uniqueness of author slug (or group by author slug?)
+  books_by_author = @items.select { |item| book?(item) }.group_by { |book| book[:author] }
+  # TODO author alias (ex: Madeleine Wickham (alias Sophie Kinsella))
+  # TODO static content == bio + picture? data source?
+  # TODO author picture & bio
+  books_by_author.each do |author, books|
+    if @config.key?(:author)
+      author_info = @config[:author][author_slug(author).to_sym]
+      unless author_info.nil?
+        author_picture = author_info[:picture]
+        author_picture_md = "![](#{author_picture})\n{: .profile-picture .author-picture }" unless author_picture.nil?
+        author_bio = author_info[:bio]
+        author_bio_md = "> #{author_bio}" unless author_bio.nil?
+      end
+    end
+    @items.create("## #{author}\n#{author_bio_md}\n",
+      {
+        title: author,
+        layout: 'author',
+        avatar: author_picture,
+        # can't store item ref, from the preprocess block, the item view isn't suitable for future use
+        # such as compiled_content, path, reps and so on.
+        # only store identifier and request item from identifier at call site
+        books: books
+                .sort_by { |book| sortable_label(book[:title]) }
+                .map { |b| b.identifier.to_s },
+        extension: 'md'
+      }, Nanoc::Identifier.new(author_item_identifier(author))
     )
   end
 end
