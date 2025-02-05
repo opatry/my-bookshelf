@@ -54,6 +54,19 @@ preprocess do
         amazon_q = "https://www.amazon.fr/s?k=#{query}&i=stripbooks"
         puts "- missing cover for #{format_isbn(item[:isbn])} #{item[:title]} #{item[:author]} | #{google_q} | #{amazon_q}"
       end
+
+      # create book series from first book in series
+      if item[:linked_books]
+        series_isbns = [item[:isbn]] + item[:linked_books]
+  
+        series_isbns.each do |isbn|
+          other_book = @items["/book/#{isbn}.*"]
+          raise "Invalid linked book #{isbn} for #{item.identifier}" unless other_book
+          # there is already a series, skip
+          next unless other_book[:linked_books].nil?
+          other_book[:linked_books] = (series_isbns - [isbn]).uniq
+        end
+      end
     end
   end
 
