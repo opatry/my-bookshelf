@@ -35,9 +35,6 @@ preprocess do
     item.identifier =~ '/cover/*' && ignored_isbns.include?(item.identifier.without_exts.delete_prefix('/cover/'))
   end
 
-  @config[:feed_book_isbn] = feed_books.map { |book| book[:isbn] }
-  @config[:last_readings_isbn] = last_readings.map { |book| book[:isbn] }
-
   missing_covers = 0
 
   @items.select { |item| item.identifier =~ '/index.*' || book?(item) }.each do |item|
@@ -45,7 +42,8 @@ preprocess do
 
     if book?(item)
       item_name = item.identifier.without_exts.delete_prefix('/book/')
-      raise "mismatch between identifier name '#{item_name}' & isbn '#{item[:isbn]}'" if item[:isbn] != item_name
+      raise "book item's name '#{item_name}' should be a valid ISBN-13" unless item_name.match?(/^\d{13}$/)
+      item[:isbn] = item_name
 
       if @items["/cover/#{item[:isbn]}.*"].nil?
         missing_covers += 1
@@ -74,6 +72,9 @@ preprocess do
     isbn = cover.identifier.without_exts.delete_prefix('/cover/')
     raise "cover for unavailable book #{isbn}" if @items.select { |item| book?(item) }.none? { |item| item[:isbn] == isbn }
   end
+
+  @config[:feed_book_isbn] = feed_books.map { |book| book[:isbn] }
+  @config[:last_readings_isbn] = last_readings.map { |book| book[:isbn] }
 
   @items.select { |i| i.identifier =~ '/static/pwa-screenshot-*' }.each do |picture|
     desktop_screenshot = picture.identifier =~ '/static/pwa-screenshot-desktop-*'

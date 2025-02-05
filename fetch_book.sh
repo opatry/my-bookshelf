@@ -175,7 +175,6 @@ title: \"${title}\"
 author: \"${author}\"
 rating: ${rating}
 read_date: $(date "+%Y-%m-%d") # TBD
-isbn: \"${isbn}\"
 ---
 
 ${description}
