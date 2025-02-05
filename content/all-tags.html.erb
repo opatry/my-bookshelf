@@ -1,0 +1,22 @@
+---
+title: Les étiquettes
+layout: default
+---
+
+<h2>Toutes les étiquettes</h2>
+<%
+tags = tag_cloud
+if tags.empty?
+%>
+<p>Aucune étiquette n'a été associée à un livre.</p>
+<% else %>
+<ul class="tag-cloud">
+<% tags.each do |tag, tag_weight, books_count| %>
+  <li>
+    <span class="tag_<%= tag_weight %>">
+      <a href="<%= @items[tag_item_identifier(tag)].path %>"><span class="tag"><%= tag %></span></a>&nbsp;<span class="tag-count">(<%= books_count %>)</span>
+    </span>
+  </li>
+<% end %>
+</ul>
+<% end %>

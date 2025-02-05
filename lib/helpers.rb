@@ -6,6 +6,7 @@ require 'i18n'
 require 'cgi'
 
 use_helper Nanoc::Helpers::Rendering
+use_helper Nanoc::Helpers::LinkTo
 
 def h(text)
   CGI.escapeHTML(text.nil? ? '' : text)
@@ -28,6 +29,7 @@ def to_json(book, url: :relative)
     'favorite': book[:favorite] || false,
     'cover': "#{url_prefix}#{cover_path}" || '',
     'cover_mini': "#{url_prefix}#{cover_mini_path}" || '',
+    'tags': book[:tags] || [],
   }
 end
 
@@ -151,4 +153,67 @@ end
 
 def feed_books()
   last_readings(@config[:site][:feed][:max_entries])
+end
+
+def all_tags
+  tags = {}
+  @items.each do |item|
+    next if item[:tags].nil? || item[:tags].empty?
+
+    item[:tags].each do |tag|
+      tags[tag] = [] if tags[tag].nil?
+      tags[tag] << item unless tags[tag].include? item
+    end
+  end
+  tags
+end
+
+def tag_cloud
+  # sort on hash sort by key which is what we want
+  tags = all_tags.sort
+  result = []
+  return result if tags.empty?
+  # tag_<weight> goes from tag_0 to tag_10, map tag weight value to [0,10]
+  max = tags.max_by { |_, v| v.size }[1].size
+  min = tags.min_by { |_, v| v.size }[1].size
+  tags.each do |tag, posts|
+    posts_count = posts.size
+    tag_weight = (((posts_count - min) * 10.0) / max).round
+    result << [tag, tag_weight, posts_count]
+  end
+  result
+end
+
+def tag_slug(tag)
+  I18n.transliterate(tag.downcase).gsub(/\W/, '-').gsub(/-+/, '-').strip
+end
+
+def tag_item_identifier(tag)
+  "/tag/#{tag_slug(tag)}.*"
+end
+
+def link_to_tag(tag)
+  tag_item = @items[tag_item_identifier(tag)]
+  link_to(tag_item[:title], tag_item)
+end
+
+def generate_tag_items
+  all_tags.each do |tag, books|
+    # item's content is used as fallback when no post can be found.
+    @items.create("
+Aucun livre n'est étiqueté \"<%= @item[:title] %>\".
+
+Voir la liste des <%= link_to('autres étiquettes', @items['/all-tags.*']) %>.
+      ", {
+        title: tag,
+        tag: tag_slug(tag),
+        layout: 'tags',
+        # can't store item ref, from the preprocess block, the item view isn't suitable for future use
+        # such as compiled_content, path, reps and so on.
+        # only store identifier and request item from identifier at call site
+        books: natural_sort(books).map { |p| p.identifier.to_s },
+        extension: 'md'
+      }, Nanoc::Identifier.new(tag_item_identifier(tag))
+    )
+  end
 end
