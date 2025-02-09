@@ -2,6 +2,11 @@
   <meta property="book:author" content="<%= @item[:author] %>" />
   <meta property="book:isbn" content="<%= format_isbn(@item[:isbn]) %>" />
   <%# <meta property="book:release_date" content="TODO" /> %>
+<% unless @item[:tags].nil? %>
+<% @item[:tags].each do |tag| %>
+  <meta property="book:tag" content="<%= tag %>">
+<% end %>
+<% end %>
 <%
   picture = @items["/cover/#{@item[:isbn]}.*"]
   unless picture.nil?

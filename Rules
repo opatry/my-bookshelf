@@ -35,6 +35,8 @@ preprocess do
     item.identifier =~ '/cover/*' && ignored_isbns.include?(item.identifier.without_exts.delete_prefix('/cover/'))
   end
 
+  generate_tag_items
+
   missing_covers = 0
 
   @items.select { |item| item.identifier =~ '/index.*' || book?(item) }.each do |item|
@@ -74,7 +76,6 @@ preprocess do
   end
 
   @config[:feed_book_isbn] = feed_books.map { |book| book[:isbn] }
-  @config[:last_readings_isbn] = last_readings.map { |book| book[:isbn] }
 
   @items.select { |i| i.identifier =~ '/static/pwa-screenshot-*' }.each do |picture|
     desktop_screenshot = picture.identifier =~ '/static/pwa-screenshot-desktop-*'
@@ -150,7 +151,6 @@ end
 %i[mini medium default].each do |repr|
   compile '/cover/**/*', rep: repr do
     isbn = item.identifier.without_exts.split('/')[-1]
-    next if repr == :medium && !@config[:last_readings_isbn].include?(isbn)
 
     width = @config[:cover][:width][repr]
     filter :thumbnailize, width: width unless @config[:dev]
@@ -174,7 +174,6 @@ compile '/book/**/*', rep: :feed do
 end
 
 compile '/book/**/*', rep: :card do
-  next unless @config[:last_readings_isbn].include?(item[:isbn])
   filter :erb
   # no need to apply kramdown, book_card only uses book metadata, not content
   filter :html_compressor, type: item[:extension] unless @config[:dev]
@@ -195,6 +194,17 @@ compile '/book/**/*' do
   layout '/default.*'
 
   write item.identifier.without_ext + '/index.html'
+end
+
+compile '/tag/*' do
+  filter :erb
+  filter :kramdown
+  filter :html_compressor, type: item[:extension] unless @config[:dev]
+
+  layout '/tag.*'
+  layout '/default.*'
+
+  write "#{item.identifier.without_exts}.html"
 end
 
 compile '/api/v1/*' do
@@ -255,6 +265,10 @@ end
 
 route '/last-readings.*' do
   "/last-readings.html"
+end
+
+route '/all-tags.*' do
+  "/tag/index.html"
 end
 
 route '/index-noscript.*' do

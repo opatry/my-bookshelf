@@ -541,3 +541,73 @@ blockquote::before {
 #only-favorites:target .temporal-section:not(:has(.book-favorite)) {
   display: none;
 }
+
+.tag-cloud {
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+}
+
+.tag-cloud li::before {
+  content: none;
+}
+
+.tag-cloud li {
+  display: inline;
+  margin: 0;
+  padding: 1em;
+  line-height: 3em;
+}
+
+.tag-count {
+  font-size: .6em;
+  color: rgba(0, 0, 0, .4);
+}
+
+.tag-cloud a {
+  text-decoration: none;
+}
+
+.tag {
+  white-space: nowrap;
+}
+
+.tag_0 { font-size: .7em; font-weight: 100; }
+.tag_1 { font-size: .9em; font-weight: 100; }
+.tag_2 { font-size: 1.1em; font-weight: 200; }
+.tag_3 { font-size: 1.3em; font-weight: 300; }
+.tag_4 { font-size: 1.5em; font-weight: 400; }
+.tag_5 { font-size: 1.7em; font-weight: 500; }
+.tag_6 { font-size: 1.9em; font-weight: 600; }
+.tag_7 { font-size: 2.1em; font-weight: 700; }
+.tag_8 { font-size: 2.4em; font-weight: 800; }
+.tag_9 { font-size: 2.6em; font-weight: 900; }
+.tag_10 { font-size: 2.6em; font-weight: 900; }
+
+.book-tags {
+  margin: 0;
+}
+
+.book-tags li {
+  display: inline-block;
+  margin: 0 2px;
+}
+
+.book-tags li::before {
+  content: none;
+}
+
+.book-tags li a {
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, .3);
+  padding: 2px 4px;
+  font-family: sans-serif;
+  font-size: 0.7em;
+  text-transform: lowercase;
+  background-color: rgba(0, 0, 0, .05);
+  transition: background-color .6s ease;
+}
+
+.book-tags li a:hover {
+  background-color: rgba(0, 0, 0, .15);
+}

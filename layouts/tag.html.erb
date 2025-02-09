@@ -1,0 +1,10 @@
+<h2>Les livres étiquetés "<%= @item[:title] %>" <span class="title-more"><%= link_to('🏷️ Toutes les étiquettes', @items['/all-tags.*']) %></a></h2>
+<% if @item[:books].nil? || @item[:books].empty? %>
+<%= yield %>
+<% else %>
+<div class="book-grid">
+<% @item[:books].each do |book_identifier| %>
+  <%= @items[book_identifier].reps[:card].compiled_content(snapshot: :card) %>
+<% end %>
+</div>
+<% end %>
