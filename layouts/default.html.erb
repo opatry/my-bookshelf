@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <%
-is_home = @item.identifier =~ '/index.*'
+is_home = home?(@item)
 # small trick to identify the favorite toggle in last readings page (to allow filtering favorites)
 special_favorite_filter_id_attr = 'id="only-favorites"' if @item.identifier =~ '/last-readings.*'
 %>
@@ -66,35 +66,11 @@ special_favorite_filter_id_attr = 'id="only-favorites"' if @item.identifier =~ '
   <meta property="og:title" content="<%= page_title(@item) %>" />
   <meta property="og:url" content="<%= "#{@config[:site][:url]}#{@item.path}" %>" />
 
-<% if is_home %>
-  <meta property="og:type" content="website" />
-  <meta property="og:description" content="<%= @config[:site][:description] %>" />
-  <meta name="description" content="<%= @config[:site][:description] %>">
+<% case when is_home %>
+<%= render '/head_home.*' %>
+<% when book?(@item) %>
+<%= render '/head_book.*' %>
 <% end %>
-
-<% if book?(@item) %>
-  <meta property="og:type" content="book" />
-  <meta property="book:author" content="<%= @item[:author] %>" />
-  <meta property="book:isbn" content="<%= format_isbn(@item[:isbn]) %>" />
-  <%# <meta property="book:release_date" content="TODO" /> %>
-<%
-  picture = @items["/cover/#{@item[:isbn]}.*"]
-  unless picture.nil?
-    picture_url = "#{@config[:site][:url]}#{picture.path}"
-%>
-  <meta property="og:image" content="<%= picture_url %>" />
-  <meta property="og:image:secure_url" content="<%= picture_url %>" />
-  <meta property="og:image:type" content="<%= picture[:mime_type] %>" />
-  <meta property="og:image:width" content="<%= picture["width_default"] %>" />
-  <meta property="og:image:height" content="<%= picture["height_default"] %>" />
-<%end %>
-<%
-  # keep 50 first words
-  description = "#{@item.raw_content.split.first(50).join(' ')}…"
-%>
-  <meta property="og:description" content="<%= description %>" />
-  <meta name="description" content="<%= description %>">
-<%end %>
 
   <meta name="generator" content="Nanoc <%= Nanoc::VERSION %>">
 </head>

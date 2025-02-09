@@ -5,6 +5,8 @@ require 'natural_sort'
 require 'i18n'
 require 'cgi'
 
+use_helper Nanoc::Helpers::Rendering
+
 def h(text)
   CGI.escapeHTML(text.nil? ? '' : text)
 end
@@ -27,6 +29,10 @@ def to_json(book, url: :relative)
     'cover': "#{url_prefix}#{cover_path}" || '',
     'cover_mini': "#{url_prefix}#{cover_mini_path}" || '',
   }
+end
+
+def home?(item)
+  item.identifier =~ '/index.*'
 end
 
 def book?(item)
