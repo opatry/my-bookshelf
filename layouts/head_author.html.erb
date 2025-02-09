@@ -1,0 +1,32 @@
+<%
+if @config.key?(:author)
+  info = @config[:author][author_slug(@item[:title]).to_sym]
+  picture = info[:picture] unless info.nil?
+  picture_url = case picture
+                when nil
+                  nil
+                when /^(http|https):\/\//
+                  picture
+                else
+                  "#{@config[:site][:url]}#{@items[picture].path}" rescue nil
+                end
+  bio = info[:bio] unless info.nil?
+end
+# TODO first_name/last_name hard to infer from single string (xxx yyy zzz, what is the first name, the last name? X.Y.Z. Toto etc.)
+%>
+  <meta property="og:type" content="profile" />
+  <meta property="profile:last_name" content="<%= @item[:title] %>" />
+<%
+unless picture_url.nil?
+%>
+  <meta property="og:image" content="<%= picture_url %>" />
+<%end %>
+<%
+  # keep 50 first words
+  description = "#{@item.raw_content.split.first(50).join(' ')}…"
+%>
+
+<% unless bio.nil? %>
+  <meta property="og:description" content="<%= bio %>" />
+  <meta name="description" content="<%= bio %>">
+<% end %>
