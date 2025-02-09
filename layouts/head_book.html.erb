@@ -1,5 +1,5 @@
   <meta property="og:type" content="book">
-  <meta property="book:author" content="<%= @item[:author] %>">
+  <meta property="book:author" content="<%= "#{@config[:site][:url]}#{@items[author_item_identifier(@item[:author])].path}" %>">
   <meta property="book:isbn" content="<%= format_isbn(@item[:isbn]) %>">
   <%# <meta property="book:release_date" content="TODO"> %>
 <% unless @item[:tags].nil? %>
