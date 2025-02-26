@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Olivier Patry
+// Copyright (c) 2025 Olivier Patry
 //
 // Permission is hereby granted, free of charge, to any person obtaining
 // a copy of this software and associated documentation files (the "Software"),
@@ -40,7 +40,6 @@ import io.ktor.http.fullPath
 import io.ktor.http.isSuccess
 import io.ktor.serialization.gson.gson
 import io.ktor.server.application.ApplicationStarted
-import io.ktor.server.application.call
 import io.ktor.server.engine.embeddedServer
 import io.ktor.server.netty.Netty
 import io.ktor.server.response.respond
@@ -205,7 +204,7 @@ class HttpGoogleAuthenticator(private val config: ApplicationConfig) : GoogleAut
                     }
                 }
             }
-            server.environment.monitor.subscribe(ApplicationStarted) {
+            server.monitor.subscribe(ApplicationStarted) {
                 requestUserAuthorization("$GOOGLE_ACCOUNTS_ROOT_URL/o/oauth2/auth$params")
             }
             server.start(wait = false)

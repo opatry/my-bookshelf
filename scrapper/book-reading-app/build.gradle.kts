@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Olivier Patry
+// Copyright (c) 2025 Olivier Patry
 //
 // Permission is hereby granted, free of charge, to any person obtaining
 // a copy of this software and associated documentation files (the "Software"),
@@ -27,7 +27,6 @@ dependencies {
     implementation(projects.babelioScrapper)
     implementation(projects.senscritiqueScrapper)
 
-    implementation(libs.bundles.ktor.server)
     implementation(libs.bundles.ktor.client)
     implementation(libs.gson)
     implementation(libs.jsoup)

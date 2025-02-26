@@ -1,28 +1,24 @@
 [versions]
 bookReading = "1.0.0"
 
-kotlin = "2.0.0"
-coroutines = "1.8.0"
-kodein = "7.21.2"
+kotlin = "2.1.10"
+coroutines = "1.10.1"
 selenium = "4.20.0"
-ktor = "2.3.10"
+ktor = "3.1.1"
 log4j = "2.20.0"
 sqldelight = "2.0.2"
 
-compose = "1.6.10"
-coil = "3.0.0-alpha02"
+compose = "1.7.3"
+coil = "3.1.0"
 
 [libraries]
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
 kotlinx-coroutines-swing = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-swing", version.ref = "coroutines" }
 
 junit4 = { module = "junit:junit", version = "4.13.2" }
-gson = { module = "com.google.code.gson:gson", version = "2.10.1" }
+gson = { module = "com.google.code.gson:gson", version = "2.12.1" }
 
-kodein = { module = "org.kodein.di:kodein-di", version.ref = "kodein" }
-kodein-compose = { module = "org.kodein.di:kodein-di-framework-compose", version.ref = "kodein" }
-
-jsoup = { module = "org.jsoup:jsoup", version = "1.16.1" }
+jsoup = { module = "org.jsoup:jsoup", version = "1.18.3" }
 
 ktor-server-core = { module = "io.ktor:ktor-server-core-jvm", version.ref = "ktor" }
 ktor-server-netty = { module = "io.ktor:ktor-server-netty-jvm", version.ref = "ktor" }
@@ -48,7 +44,7 @@ jetbrains-compose-material-icons-extended-desktop = { module = "org.jetbrains.co
 jetbrains-compose-material-desktop = { module = "org.jetbrains.compose.material:material-desktop", version.ref = "compose" }
 
 coil-compose = { module = "io.coil-kt.coil3:coil-compose", version.ref = "coil" }
-coil-network = { module = "io.coil-kt.coil3:coil-network", version.ref = "coil" }
+coil-network = { module = "io.coil-kt.coil3:coil-network-ktor3", version.ref = "coil" }
 
 [bundles]
 ktor-server = [ "ktor-server-core", "ktor-server-netty" ]
