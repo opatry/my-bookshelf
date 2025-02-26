@@ -304,22 +304,24 @@ def generate_author_items
   books_by_author = @items.select { |item| book?(item) }.group_by { |book| book[:author] }
   # TODO author alias (ex: Madeleine Wickham (alias Sophie Kinsella))
   # TODO static content == bio + picture? data source?
-  # TODO author picture & bio
   books_by_author.each do |author, books|
     if @config.key?(:author)
       author_info = @config[:author][author_slug(author).to_sym]
       unless author_info.nil?
         author_picture = author_info[:picture]
-        author_picture_md = "![](#{author_picture})\n{: .profile-picture .author-picture }" unless author_picture.nil?
         author_bio = author_info[:bio]
         author_bio_md = "> #{author_bio}" unless author_bio.nil?
       end
     end
+
+    unique_tags = books.flat_map { |book| book[:tags] }.compact.uniq
+
     @items.create("## #{author}\n#{author_bio_md}\n",
       {
         title: author,
         layout: 'author',
         avatar: author_picture,
+        tags: unique_tags,
         # can't store item ref, from the preprocess block, the item view isn't suitable for future use
         # such as compiled_content, path, reps and so on.
         # only store identifier and request item from identifier at call site
