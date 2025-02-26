@@ -5,3 +5,13 @@
   <%= @items[book_identifier].reps[:card].compiled_content(snapshot: :card) %>
 <% end %>
 </div>
+
+<% unless @item[:tags].nil? || @item[:tags].empty? %>
+<h3>Étiquettes associées à cet auteur <span class="title-more"><%= link_to('🏷️ Toutes les étiquettes', @items['/all-tags.*']) %></span></h3>
+<ul class="book-tags">
+  <li><span title="Étiquettes">🏷️</span></li>
+  <% @item[:tags].each do |tag| %>
+  <li><%= link_to_tag(tag) %></li>
+  <% end %>
+</ul>
+<% end %>
