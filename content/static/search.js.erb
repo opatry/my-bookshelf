@@ -1,0 +1,24 @@
+fetch('<%= @items['/static/search-index.*'].path %>')
+  .then(response => response.json())
+  .then(data => {
+    if (typeof Fuse === 'function') {
+      const fuse = new Fuse(data, {
+        ignoreDiacritics: true,
+        keys: ['title', 'author', 'tags'],
+        threshold: 0.3,
+      })
+
+      document.getElementById('book-search').addEventListener('input', function () {
+        const query = this.value.trim()
+        const results = fuse.search(query)
+        const resultsNode = document.querySelector('.search-results')
+        if (results.length == 0 && query.length > 1) {
+            resultsNode.innerHTML = `<li style="font-size: .8em;">Pas de résultat correspondant à la requête.</li>`
+        } else {
+          resultsNode.innerHTML = results.map(r => 
+            `<li><a href="${r.item.link}"><img src="${r.item.cover_mini}"> ${r.item.title} <span class="author-detail">(${r.item.author})</span></a></li>`
+          ).join('')
+        }
+      })
+    }
+  })

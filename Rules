@@ -144,6 +144,16 @@ end
   end
 end
 
+compile '/static/search-index.*' do
+  filter :erb
+  write '/static/search.json'
+end
+
+compile '/static/search.*' do
+  filter :erb
+  write '/static/search.js'
+end
+
 compile '/static/**/*' do
   # don't filter or layout
 end

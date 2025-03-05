@@ -1,0 +1,5 @@
+<%
+require 'json'
+
+books_json = natural_sort(@items.find_all('/book/*')).map { |book| to_json(book, url: :relative) }
+%><%= books_json.to_json %>

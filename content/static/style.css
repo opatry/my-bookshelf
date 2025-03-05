@@ -182,6 +182,9 @@ TODO fixed with lift on scroll?
   color: inherit;
   transition: background-color 0.5s ease-in-out;
 }
+.social-badge {
+  background-color: #fff;
+}
 .social-badge a:hover {
   background-color: var(--social-tint-color, rgba(0, 0, 0, .2));
 }
@@ -463,6 +466,67 @@ blockquote::before {
   display: block;
   height: 100%;
   border: 0 none;
+}
+
+.header-detail .book-query-box {
+  min-width: 250px;
+}
+
+.search-results {
+  width: 600px;
+  max-width: 100vw;
+  max-height: 600px;
+  overflow: scroll;
+  margin: 10px 0;
+  padding: 0;
+  position: absolute;
+  right: 0;
+  z-index: 100;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.search-results img {
+  width: auto;
+  height: 50px;
+  border-radius: 4px;
+  margin-right: 16px;
+}
+
+.search-results a {
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+}
+
+.search-results a:hover {
+  background-color: rgba(0, 0, 0, .05);
+}
+
+.search-results .author-detail {
+  font-size: 0.7em;
+  color: rgba(0, 0, 0, .6);
+  margin-left: .7em;
+}
+
+.search-results li:first-child {
+  margin-top: 16px;
+}
+
+.search-results li:last-child {
+  margin-bottom: 16px;
+}
+
+.search-results li {
+  margin: 4px 16px;
+  padding: 0;
+  list-style-position: inside;
+}
+
+.search-results li::before {
+  content: none;
 }
 
 .book-query-box {
