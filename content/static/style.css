@@ -465,7 +465,7 @@ blockquote::before {
   border: 0 none;
 }
 
-#book-filter-box {
+.book-query-box {
   border-radius: 4px;
   border: 1px solid rgba(0, 0, 0, .2);
   padding: 4px;
@@ -473,24 +473,24 @@ blockquote::before {
   align-items: center;
 }
 
-#book-filter-box:focus-within {
+.book-query-box:focus-within {
   outline: 1px solid rgba(0, 0, 0, .2);
 }
 
-#book-filter-box .input-icon {
+.book-query-box .input-icon {
   padding: 0 4px;
   opacity: .3;
   transition: opacity 0.3s ease-in-out;
 }
-#book-filter-box:focus-within .input-icon {
+.book-query-box:focus-within .input-icon {
   opacity: .6;
 }
-#book-filter-q {
+.book-query-box input[type='search'] {
   border: 0 none;
   flex-grow: 1;
 }
 
-#book-filter-q:focus {
+.book-query-box input[type='search']:focus {
   outline: 0 none;
 }
 
