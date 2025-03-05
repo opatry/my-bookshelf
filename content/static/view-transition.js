@@ -1,15 +1,15 @@
 
-const bookPagePattern = new URLPattern('/book/:isbn/?', window.origin);
+const bookPagePattern = new URLPattern('/book/:isbn/?', window.origin)
 
 const setTemporaryViewTransitionNames = async (entries, vtPromise) => {
   for (const [$el, name] of entries) {
-    $el.style.viewTransitionName = name;
+    $el.style.viewTransitionName = name
   }
 
-  await vtPromise;
+  await vtPromise
 
   for (const [$el, name] of entries) {
-    $el.style.viewTransitionName = '';
+    $el.style.viewTransitionName = ''
   }
 }
 
@@ -23,7 +23,7 @@ window.addEventListener('pageswap', async (e) => {
       setTemporaryViewTransitionNames([
         [document.querySelector('.profile-picture'), 'avatar'],
         [document.querySelector('.book-cover'), 'cover'],
-      ], e.viewTransition.ready);
+      ], e.viewTransition.ready)
     }
 
     // to /book/:isbn
@@ -37,17 +37,17 @@ window.addEventListener('pageswap', async (e) => {
           document.querySelector(`img[src='/cover/${isbn}-medium.jpg']`) || document.querySelector(`img[src='/cover/${isbn}-mini.jpg']`),
           'cover'
         ],
-      ], e.viewTransition.finished);
+      ], e.viewTransition.finished)
     }
   }
 })
 
 window.addEventListener('pagereveal', async (e) => {
-  if (!navigation.activation.from) return;
+  if (!navigation.activation.from) return
 
   if (e.viewTransition) {
-    const fromUrl = new URL(navigation.activation.from.url);
-    const currentUrl = new URL(navigation.activation.entry.url);
+    const fromUrl = new URL(navigation.activation.from.url)
+    const currentUrl = new URL(navigation.activation.entry.url)
 
     const fromBookMatch = bookPagePattern.exec(fromUrl)
     // from /book/:isbn to / or /*.html
@@ -59,7 +59,7 @@ window.addEventListener('pagereveal', async (e) => {
           document.querySelector(`img[src='/cover/${isbn}-medium.jpg']`) || document.querySelector(`img[src='/cover/${isbn}-mini.jpg']`), 
           'cover'
         ],
-      ], e.viewTransition.ready);
+      ], e.viewTransition.ready)
     }
 
     // to /book/:isbn
@@ -67,7 +67,7 @@ window.addEventListener('pagereveal', async (e) => {
       setTemporaryViewTransitionNames([
         [document.querySelector('.profile-picture'), 'avatar'],
         [document.querySelector('.book-cover'), 'cover'],
-      ], e.viewTransition.ready);
+      ], e.viewTransition.ready)
     }
   }
 })
