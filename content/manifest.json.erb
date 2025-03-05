@@ -37,5 +37,5 @@ layout: none
   "display": "standalone",
   "orientation": "portrait",
   "description": "<%= @config[:site][:description] %>",
-  "screenshots" : <%= @items.select { |i| i.identifier =~ '/static/pwa-screenshot-*' }.map { |item| pwa_screenshot_to_json(item) }.to_json %>
+  "screenshots" : <%= @items.find_all('/static/pwa-screenshot-*').map { |item| pwa_screenshot_to_json(item) }.to_json %>
 }

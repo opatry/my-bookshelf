@@ -1,7 +1,7 @@
 // highly based on https://developers.google.com/web/fundamentals/primers/service-workers
 
 <%
-paths_to_cache = @items.select { |item| item.identifier =~ '/static/*' }
+paths_to_cache = @items.find_all('/static/*')
         .map { |item| item.path }
         .uniq
         .to_json

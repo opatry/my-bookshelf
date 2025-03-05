@@ -29,7 +29,7 @@ unless books.empty?
   </thead>
   <tbody>
 <%
-@items.select { |item| book?(item) }
+@items.find_all('/book/*')
       .sort_by { |book|
         [
           -book[:rating].to_i,
