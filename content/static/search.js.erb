@@ -13,10 +13,21 @@ fetch('<%= @items['/static/search-index.*'].path %>')
         const results = fuse.search(query)
         const resultsNode = document.querySelector('.search-results')
         if (results.length == 0 && query.length > 1) {
-            resultsNode.innerHTML = `<li style="font-size: .8em;">Pas de résultat correspondant à la requête.</li>`
+          resultsNode.innerHTML = `<li class="search-result-row-none">Pas de résultat correspondant à la requête.</li>`
         } else {
-          resultsNode.innerHTML = results.map(r => 
-            `<li><a href="${r.item.link}"><img src="${r.item.cover_mini}"> ${r.item.title} <span class="author-detail">(${r.item.author})</span></a></li>`
+          resultsNode.innerHTML = results.map(r =>
+            `<li class="search-result-row" title="Voir plus de détails…" onclick="location.href = '${r.item.link}'">
+              <div class="image-container"><img src="${r.item.cover_mini}"></div>
+              <div class="book-cell">
+                <h3><a href="${r.item.link}">${r.item.title}</a> <span class="author-detail">(${r.item.author})</span></h3>
+                <ul class="book-tags" data-count="${r.item.tags.length}">
+                  <li><span title="Étiquettes">🏷️</span></li>
+                ${r.item.tags.map(p =>
+                  `<li class="tag">${p}</li>`
+                ).join('')}
+                </ul>
+              </div>
+            </li>`
           ).join('')
         }
       })
