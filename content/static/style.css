@@ -145,7 +145,7 @@ TODO fixed with lift on scroll?
   }
 }
 
-#social-badges {
+#badges {
   position: absolute;
   top: 0;
   right: 0;
@@ -153,12 +153,12 @@ TODO fixed with lift on scroll?
   gap: 8px;
   align-items: center;
 }
-.compact #social-badges {
+.compact #badges {
   top: 0;
   bottom: 0;
 }
 @media screen and (max-width: 675px) {
-  #social-badges {
+  #badges {
     top: 0;
     bottom: 0;
   }
