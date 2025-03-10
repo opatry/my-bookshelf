@@ -358,7 +358,65 @@ p {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: 1fr auto;
-  gap: 1em;
+  gap: 16px;
+}
+
+.book-card.ongoing {
+  grid-row: span 2;
+}
+
+.book-showcase {
+  display: grid;
+  margin: 0 auto;
+  border-radius: 8px;
+  overflow: hidden;
+  align-items: end;
+  position: relative;
+}
+
+.book-showcase::before {
+  content: "📖";
+  font-size: 2em;
+  position: absolute;
+  top: 0;
+  left: .2em;
+  z-index: 1;
+}
+
+.book-showcase .book-info,
+.book-showcase .book-cover-showcase {
+  grid-area: 1 / 1;
+  margin: 0;
+}
+
+.book-showcase img {
+  width: 100%;
+  /* FIXME weird value: 2 rows of card with height of 110px + 16px gap + 2px border */
+  height: 238px;
+  object-fit: cover;
+  object-position: top center;
+  vertical-align: middle;
+  transform-origin: center center;
+  transition: transform .6s;
+}
+.book-showcase img:hover {
+  transform: scale(1.05);
+}
+
+.book-showcase .book-info {
+  background-color: rgba(0, 0, 0, .6);
+  color: white;
+  z-index: 1;
+  display: grid;
+  gap: 16px;
+  width: 100%;
+  height: auto;
+  padding: 16px;
+}
+
+.book-showcase .book-info h2,
+.book-showcase .book-info h4 {
+  margin: 0;
 }
 
 .book-card {
