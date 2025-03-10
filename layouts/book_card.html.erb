@@ -21,7 +21,7 @@
           <% end %>
         </div>
         <% else %>
-        <h4><%= item[:author] %></h4>
+        <h4><a href="<%= @items[author_item_identifier(@item[:author])].path %>"><%= @item[:author] %></a></h4>
         <% end %>
 
         <% if item[:read_date] %>
