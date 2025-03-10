@@ -4,6 +4,27 @@ uuid: d45018b8-4b50-4d56-a403-aee411ab5931
 ---
 
 <%
+ongoing_books = @items.select { |book| book.identifier =~ '/book/*' && book[:ongoing] }
+raise 'Only one book can be ongoing' if ongoing_books.length > 1
+ongoing_book = ongoing_books.first
+unless ongoing_book.nil?
+  ongoing_book_cover = @items["/cover/#{ongoing_book[:isbn]}.*"]
+%>
+<h1>En cours</h1>
+<div class="book-showcase">
+<% unless ongoing_book_cover.nil? %>
+<div class="book-cover-showcase">
+<a href="<%= ongoing_book.path %>"><img src="<%= ongoing_book_cover.path %>"></a>
+</div>
+<% end %>
+<div class="book-info">
+<h2><a href="<%= ongoing_book.path %>"><%= ongoing_book[:title] %></a></h2>
+<h4><%= ongoing_book[:author] %></h4>
+</div>
+</div>
+<% end %>
+
+<%
 books = recent_books
 unless books.empty?
 %>
