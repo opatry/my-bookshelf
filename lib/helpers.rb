@@ -136,23 +136,33 @@ def get_atom_date(book)
   book[:read_date].strftime('%Y-%m-%dT%H:%M:%SZ')
 end
 
-# Returns the last readings sorted by read date in descending order.
+# Returns the last books sorted by read date in descending order.
 #
-# @param limit [Integer, nil] the maximum number of readings to return. If nil, returns all readings.
+# @param limit [Integer, nil] the maximum number of books to return. If nil, returns all books.
 # @return [Array<Hash>] an array of book items sorted by read date.
-def last_readings(limit = nil)
+def last_books(limit = nil)
   books = @items.select { |item| book?(item) && item[:read_date].is_a?(Date) }
                 .sort_by { |item| -item[:read_date].to_time.to_i }
   limit.nil? ? books : books.first(limit)
 end
 
+# Returns the wished books sorted by priority in ascending order.
+#
+# @param limit [Integer, nil] the maximum number of books to return. If nil, returns all books.
+# @return [Array<Hash>] an array of book items sorted by priority.
+def wished_books(limit = nil)
+  books = @items.select { |item| book?(item) && !item[:priority].nil? }
+                .sort_by { |item| item[:priority] }
+  limit.nil? ? books : books.first(limit)
+end
+
 def recent_books()
   six_months_ago = Date.today << 60
-  last_readings(6).select { |book| book[:read_date] >= six_months_ago }
+  last_books(6).select { |book| book[:read_date] >= six_months_ago }
 end
 
 def feed_books()
-  last_readings(@config[:site][:feed][:max_entries])
+  last_books(@config[:site][:feed][:max_entries])
 end
 
 def all_tags
