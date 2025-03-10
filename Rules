@@ -23,7 +23,7 @@ preprocess do
     next false if @config[:dev]
     # keep everthing that is not a book
     next false unless book?(item)
-    if item[:rating].nil? || item[:rating].zero?
+    if (item[:rating].nil? || item[:rating].zero?) && item[:priority].nil?
       ignored_isbns << item[:isbn]
       true
     else
