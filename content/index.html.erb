@@ -10,7 +10,9 @@ ongoing_book = ongoing_books.first
 unless ongoing_book.nil?
   ongoing_book_cover = @items["/cover/#{ongoing_book[:isbn]}.*"]
 %>
+<!--
 <h1>En cours</h1>
+-->
 <div class="book-showcase">
 <% unless ongoing_book_cover.nil? %>
 <div class="book-cover-showcase">
