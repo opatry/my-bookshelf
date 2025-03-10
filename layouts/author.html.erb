@@ -11,7 +11,7 @@
 <ul class="book-tags">
   <li><span title="Étiquettes">🏷️</span></li>
   <% @item[:tags].each do |tag| %>
-  <li><%= link_to_tag(tag) %></li>
+  <li class="tag"><%= link_to_tag(tag) %></li>
   <% end %>
 </ul>
 <% end %>
