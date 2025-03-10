@@ -13,7 +13,21 @@ unless books.empty?
     <%= book.reps[:card].compiled_content(snapshot: :card) %>
   <% end %>
   </div>
+<% end %>
 
+<%
+w_books = wished_books(6)
+unless w_books.empty?
+%>
+  <h1>Envies <span class="title-more"><a href="<%= @items['/wished-books.*'].path %>">→ voir plus…</a></span></h1>
+  <div id="wished-books" class="book-grid">
+  <% w_books.each do |book| %>
+    <%= book.reps[:card].compiled_content(snapshot: :card) %>
+  <% end %>
+  </div>
+<% end %>
+
+<% unless books.empty? && w_books.empty? %>
   <h1>Bibliothèque</h1>
 <% end %>
 
@@ -30,6 +44,7 @@ unless books.empty?
   <tbody>
 <%
 @items.find_all('/book/*')
+      .select { |book| !item[:rating].nil? }
       .sort_by { |book|
         [
           -book[:rating].to_i,

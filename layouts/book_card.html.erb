@@ -13,14 +13,24 @@
           <span class="favorite-icon" aria-label="Coup de cœur" title="Coup de cœur"><%= heart_svg %></span>
           <% end %>
         </div>
+
+        <% if item[:rating] %>
         <div aria-label="<%= item[:rating] %>" title="<%= item[:rating] %>">
           <% 10.times do |i| %>
           <%= star_svg(filled: i < item[:rating], params: { size: 12 }) %>
           <% end %>
         </div>
+        <% else %>
+        <h4><%= item[:author] %></h4>
+        <% end %>
+
         <% if item[:read_date] %>
         <div class="book-footer">
           <p class="read-date">Lu en <%= get_pretty_date(item) %></p>
+        </div>
+        <% elsif item[:priority] %>
+        <div class="book-footer">
+          <p>Priorité <span class="wish-priority" data-priority="<%= item[:priority].to_i %>">#<%= item[:priority].to_i %></span></p>
         </div>
         <% end %>
       </div>

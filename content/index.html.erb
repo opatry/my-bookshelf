@@ -13,7 +13,21 @@ unless books.empty?
     <%= book.reps[:card].compiled_content(snapshot: :card) %>
   <% end %>
   </div>
+<% end %>
 
+<%
+w_books = wished_books(6)
+unless w_books.empty?
+%>
+  <h1>Envies <span class="title-more"><a href="<%= @items['/wished-books.*'].path %>">→ voir plus…</a></span></h1>
+  <div id="wished-books" class="book-grid">
+  <% w_books.each do |book| %>
+    <%= book.reps[:card].compiled_content(snapshot: :card) %>
+  <% end %>
+  </div>
+<% end %>
+
+<% unless books.empty? && w_books.empty? %>
   <h1>Bibliothèque</h1>
 <% end %>
 
@@ -29,7 +43,7 @@ unless books.empty?
   <div id="books-table" class="books-table"></div>
   <script type="text/javascript">
     // TODO load JSON file
-  var booksData = <%= JSON[@items.find_all('/book/*').map { |book| to_json(book) }] %>;
+  var booksData = <%= JSON[@items.find_all('/book/*').select { |book| !book[:rating].nil? }.map { |book| to_json(book) }] %>;
   var table = new Tabulator("#books-table", {
     data: booksData,
     layout: "fitColumns",

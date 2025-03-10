@@ -1,0 +1,21 @@
+---
+title: Envies
+uuid: bb276b3a-d72a-463d-bb72-b2dacd9775d5
+---
+
+<h1>Envies</h1>
+
+<%
+books = wished_books
+if books.empty?
+%>
+  <p>Aucune information sur les envies de lectures.</p>
+<%
+else
+%>
+<div class="book-grid">
+<% books.each do |book| %>
+    <%= book.reps[:card].compiled_content(snapshot: :card) %>
+<% end %>
+</div>
+<% end %>

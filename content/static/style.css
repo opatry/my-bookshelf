@@ -289,7 +289,7 @@ h1, h2, h3 {
   color: rgba(0, 0, 0, .6);
 }
 
-.read-date {
+.book-footer {
   font-size: .9em;
   color: rgba(0, 0, 0, .6);
 }
@@ -386,6 +386,17 @@ p {
   }
 }
 
+#wished-books .book-card {
+  opacity: .6;
+  border-style: dashed;
+  transition: opacity 0.3s ease-in-out;
+}
+
+#wished-books .book-card:hover {
+  opacity: .9;
+  border-style: dotted;
+}
+
 .book-cover-card {
   width: 75px;
   max-height: 110px;
@@ -404,6 +415,11 @@ p {
   display: flex;
   flex-direction: column;
   height: 100%;
+}
+
+.book-info h4 {
+  margin: 0;
+  padding: 0;
 }
 
 .book-header {
@@ -430,6 +446,20 @@ p {
 .book-footer p {
   margin: .5em 0;
 }
+
+.wish-priority {
+  padding: 4px;
+  font-weight: 700;
+  font-family: monospace;
+  font-size: .9em;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, .15);
+}
+
+.wish-priority[data-priority="1"] { background-color: rgba(4, 197, 120, 0.6); }
+.wish-priority[data-priority="2"] { background-color: rgba(4, 197, 120, .45); }
+.wish-priority[data-priority="3"] { background-color: rgba(4, 197, 120, .30); }
+.wish-priority[data-priority="4"] { background-color: rgba(4, 197, 120, .15); }
 
 [tabulator-field=cover_mini] img,
 .book-cover-mini {
