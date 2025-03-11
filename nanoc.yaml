@@ -54,6 +54,7 @@ cover:
   width:
     mini: 50 # width of mini cover in main table (see content/index.html `formatterParams`)
     medium: 75 # width of medium cover in recent readings (see content/static/style.css `.book-cover-card`)
+    showcase: 300 # width of cover when displayed showcased (see content/static/style.css `.book-showcase img`) 
     default: 150 # width of cover by default (see content/static/style.css `.book-cover`)
 avatar_size:
   compact: 48

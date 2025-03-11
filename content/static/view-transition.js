@@ -35,6 +35,7 @@ window.addEventListener('pageswap', async (e) => {
         [
           // favor medium if any, fallback to mini otherwise
           document.querySelector(`img[src='/cover/${isbn}.jpg']`)
+          || document.querySelector(`img[src='/cover/${isbn}-showcase.jpg']`)
           || document.querySelector(`img[src='/cover/${isbn}-medium.jpg']`)
           || document.querySelector(`img[src='/cover/${isbn}-mini.jpg']`),
           'cover'
@@ -59,6 +60,7 @@ window.addEventListener('pagereveal', async (e) => {
         [document.querySelector('.profile-picture'), 'avatar'],
         [
           document.querySelector(`img[src='/cover/${isbn}.jpg']`)
+          || document.querySelector(`img[src='/cover/${isbn}-showcase.jpg']`)
           || document.querySelector(`img[src='/cover/${isbn}-medium.jpg']`)
           || document.querySelector(`img[src='/cover/${isbn}-mini.jpg']`), 
           'cover'
