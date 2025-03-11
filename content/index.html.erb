@@ -61,7 +61,7 @@ unless w_books.empty?
   <div id="books-table" class="books-table"></div>
   <script type="text/javascript">
     // TODO load JSON file
-  var booksData = <%= JSON[@items.find_all('/book/*').select { |book| !book[:rating].nil? }.map { |book| to_json(book) }] %>;
+  var booksData = <%= JSON[rated_books.map { |book| to_json(book) }] %>;
   var table = new Tabulator("#books-table", {
     data: booksData,
     layout: "fitColumns",

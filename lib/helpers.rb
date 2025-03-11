@@ -173,6 +173,10 @@ def feed_books()
   last_books(@config[:site][:feed][:max_entries])
 end
 
+def rated_books()
+  @items.select { |item| book?(item) && !item[:rating].nil? && !item[:rating].zero? }
+end
+
 def all_tags
   tags = {}
   @items.each do |item|
