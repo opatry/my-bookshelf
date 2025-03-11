@@ -160,6 +160,12 @@ compile '/static/search.*' do
   write '/static/search.js'
 end
 
+compile '/static/style.*' do
+  # force HTTP cache invalidation when stylesheet changes
+  sha = Digest::SHA1.hexdigest(item.raw_content)
+  write "#{item.identifier.without_ext}-#{sha}.#{item[:extension]}"
+end
+
 compile '/static/**/*' do
   # don't filter or layout
 end
