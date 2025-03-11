@@ -136,6 +136,14 @@ def get_atom_date(book)
   book[:read_date].strftime('%Y-%m-%dT%H:%M:%SZ')
 end
 
+def ongoing_book_info()
+  ongoing_books = @items.select { |book| book.identifier =~ '/book/*' && book[:ongoing] }
+  raise 'Only one book can be ongoing' if ongoing_books.length > 1
+  ongoing_book = ongoing_books.first
+  ongoing_book_cover = @items["/cover/#{ongoing_book[:isbn]}.*"] unless ongoing_book.nil?
+  [ongoing_book, ongoing_book_cover]
+end
+
 # Returns the last books sorted by read date in descending order.
 #
 # @param limit [Integer, nil] the maximum number of books to return. If nil, returns all books.

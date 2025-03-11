@@ -4,11 +4,29 @@ uuid: d45018b8-4b50-4d56-a403-aee411ab5931
 ---
 
 <%
+ongoing_book, ongoing_book_cover = ongoing_book_info
+
 books = recent_books
-unless books.empty?
+# the ongoing book, if any, takes the room of 2 books
+books = books.take(books.size - 2) unless ongoing_book.nil?
 %>
+
+<% unless books.empty? %>
   <h1>Lectures récentes <span class="title-more"><a href="<%= @items['/last-readings.*'].path %>">→ voir plus…</a></span></h1>
   <div id="recent-books" class="book-grid">
+  <% unless ongoing_book.nil? %>
+    <div class="book-card ongoing book-showcase">
+    <% unless ongoing_book_cover.nil? %>
+    <div class="book-cover-showcase" title="En cours de lecture…">
+    <a href="<%= ongoing_book.path %>"><img src="<%= ongoing_book_cover.path(rep: :medium) %>"></a>
+    </div>
+    <% end %>
+    <div class="book-info">
+    <h2><a href="<%= ongoing_book.path %>"><%= ongoing_book[:title] %></a></h2>
+    <h4><%= ongoing_book[:author] %></h4>
+    </div>
+    </div>
+  <% end %>
   <% books.each do |book| %>
     <%= book.reps[:card].compiled_content(snapshot: :card) %>
   <% end %>

@@ -34,7 +34,9 @@ window.addEventListener('pageswap', async (e) => {
         [document.querySelector('.profile-picture'), 'avatar'],
         [
           // favor medium if any, fallback to mini otherwise
-          document.querySelector(`img[src='/cover/${isbn}-medium.jpg']`) || document.querySelector(`img[src='/cover/${isbn}-mini.jpg']`),
+          document.querySelector(`img[src='/cover/${isbn}.jpg']`)
+          || document.querySelector(`img[src='/cover/${isbn}-medium.jpg']`)
+          || document.querySelector(`img[src='/cover/${isbn}-mini.jpg']`),
           'cover'
         ],
       ], e.viewTransition.finished)
@@ -56,7 +58,9 @@ window.addEventListener('pagereveal', async (e) => {
       setTemporaryViewTransitionNames([
         [document.querySelector('.profile-picture'), 'avatar'],
         [
-          document.querySelector(`img[src='/cover/${isbn}-medium.jpg']`) || document.querySelector(`img[src='/cover/${isbn}-mini.jpg']`), 
+          document.querySelector(`img[src='/cover/${isbn}.jpg']`)
+          || document.querySelector(`img[src='/cover/${isbn}-medium.jpg']`)
+          || document.querySelector(`img[src='/cover/${isbn}-mini.jpg']`), 
           'cover'
         ],
       ], e.viewTransition.ready)
