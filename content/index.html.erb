@@ -25,7 +25,7 @@ books = books.take(books.size - 2) unless ongoing_book.nil?
     <% end %>
     <div class="book-info">
     <h2><a href="<%= ongoing_book.path %>"><%= ongoing_book[:title] %></a></h2>
-    <h4><%= ongoing_book[:author] %></h4>
+    <h4><a href="<%= @items[author_item_identifier(ongoing_book[:author])].path %>"><%= ongoing_book[:author] %></a></h4>
     </div>
     </div>
   <% end %>
