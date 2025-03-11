@@ -38,7 +38,7 @@ body {
 
 a {
   text-decoration: none;
-  border-bottom: .5px dotted rgba(0, 0, 0, .2);
+  border-bottom: 1px dotted rgba(0, 0, 0, .2);
   color: inherit;
   transition : border 500ms ease-out;
 }
