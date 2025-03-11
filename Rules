@@ -78,7 +78,7 @@ preprocess do
 
   @items.find_all('/cover/*').each do |cover|
     isbn = cover.identifier.without_exts.delete_prefix('/cover/')
-    raise "cover for unavailable book #{isbn}" if @items.find_all('/book/*').none? { |item| item[:isbn] == isbn }
+    raise "no book for cover #{isbn}" if @items.find_all('/book/*').none? { |item| item[:isbn] == isbn }
   end
 
   @config[:feed_book_isbn] = feed_books.map { |book| book[:isbn] }
