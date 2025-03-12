@@ -565,11 +565,16 @@ blockquote::before {
   min-width: 250px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 500px) {
   .header-detail .book-query-box {
     min-width: initial;
-    max-width: 150px;
   }
+  .social-badge {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 400px) {
 }
 
 .search-results {
