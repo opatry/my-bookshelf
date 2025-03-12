@@ -162,8 +162,12 @@ end
 
 compile '/static/style.*' do
   # force HTTP cache invalidation when stylesheet changes
-  sha = Digest::SHA1.hexdigest(item.raw_content)
-  write "#{item.identifier.without_ext}-#{sha}.#{item[:extension]}"
+  if @config[:dev]
+    write item.identifier
+  else
+    sha = Digest::SHA1.hexdigest(item.raw_content)
+    write "#{item.identifier.without_ext}-#{sha}.#{item[:extension]}"
+  end
 end
 
 compile '/static/**/*' do
