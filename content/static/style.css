@@ -205,7 +205,7 @@ TODO fixed with lift on scroll?
   height: 24px;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 350px) {
   .social-badge a {
     width: 16px;
     height: 16px;
@@ -232,7 +232,7 @@ TODO fixed with lift on scroll?
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 350px) {
   .header-detail .book-query-box {
     min-width: initial;
     max-width: 100px;
