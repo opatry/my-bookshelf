@@ -84,13 +84,20 @@ TODO fixed with lift on scroll?
   box-shadow: 0 2px 5px rgba(0, 0, 0, .05);
 }
 
+@media screen and (max-width: 400px) {
+  #header {
+    height: 48px;
+    padding: 8px;
+    gap: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .1);
+  }
+}
+
 @media screen and (max-width: 675px) {
   #header {
-    height: 56px;
     padding: 12px;
-    /* keep position of badges stable */
-    padding-right: 24px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, .05);
+    gap: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .1);
   }
 }
 
@@ -196,6 +203,42 @@ TODO fixed with lift on scroll?
 .social-badge img {
   width: 24px;
   height: 24px;
+}
+
+@media (max-width: 400px) {
+  .social-badge a {
+    width: 16px;
+    height: 16px;
+    padding: 4px;
+  }
+  .social-badge img {
+    width: 100%;
+    height: 100%;
+    vertical-align: top;
+  }
+}
+
+.header-detail .book-query-box {
+  min-width: 200px;
+}
+
+@media (max-width: 450px) {
+  .header-detail .book-query-box {
+    min-width: initial;
+    max-width: 175px;
+  }
+  .header-detail .book-query-box input {
+    width: 100%;
+  }
+}
+
+@media (max-width: 400px) {
+  .header-detail .book-query-box {
+    min-width: initial;
+    max-width: 100px;
+    height: 16px;
+    font-size: .7em;
+  }
 }
 
 #content {
@@ -561,22 +604,6 @@ blockquote::before {
   border: 0 none;
 }
 
-.header-detail .book-query-box {
-  min-width: 250px;
-}
-
-@media (max-width: 500px) {
-  .header-detail .book-query-box {
-    min-width: initial;
-  }
-  .social-badge {
-    display: none;
-  }
-}
-
-@media screen and (max-width: 400px) {
-}
-
 .search-results {
   width: 650px;
   max-width: 90vw;
@@ -698,9 +725,17 @@ blockquote::before {
   opacity: .3;
   transition: opacity 0.3s ease-in-out;
 }
+
 .book-query-box:focus-within .input-icon {
   opacity: .6;
 }
+
+@media screen and (max-width: 450px) {
+  .book-query-box .input-icon {
+    padding: 0;
+  }
+}
+
 .book-query-box input[type='search'] {
   border: 0 none;
   flex-grow: 1;
