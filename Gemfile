@@ -27,11 +27,3 @@ gem 'htmlentities'
 gem 'natural_sort'
 gem 'i18n'
 
-group :development do
-  # debug
-  #gem 'debase', require: false
-  #gem 'ruby-debug-ide', require: false
-
-  # lint
-  gem 'solargraph', require: false
-end
