@@ -294,6 +294,10 @@ route '/last-readings.*' do
   "/last-readings.html"
 end
 
+route '/wished-books.*' do
+  "/wished-books.html"
+end
+
 route '/all-tags.*' do
   "/tag/index.html"
 end
