@@ -525,6 +525,9 @@ p {
 .book-info h4 {
   margin: 0;
   padding: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .book-header {
