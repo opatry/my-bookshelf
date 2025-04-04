@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Olivier Patry
+// Copyright (c) 2025 Olivier Patry
 //
 // Permission is hereby granted, free of charge, to any person obtaining
 // a copy of this software and associated documentation files (the "Software"),
@@ -66,9 +66,22 @@ private val collator = Collator.getInstance(Locale.FRENCH)
 @Composable
 fun MainScreen(bookshelf: Bookshelf, googleBooksCredentialsFilename: String, outputDir: File, onBackNavigationClick: () -> Unit) {
     val uriHandler = LocalUriHandler.current
+
     val books = remember {
         derivedStateOf {
-            bookshelf.books.sortedWith(compareBy(collator, Bookshelf.Book::title))
+            // group by wished or not
+            bookshelf.books.groupBy { (it.priority ?: 0f) > 0 || it.isOngoing }
+                .mapValues { (wished, books) ->
+                    if (wished) {
+                        books.sortedWith(compareBy<Bookshelf.Book> { it.priority }
+                            .thenComparing { first, second ->
+                                collator.compare(first.title, second.title)
+                            }
+                        )
+                    } else {
+                        books.sortedWith(compareBy(collator, Bookshelf.Book::title))
+                    }
+                }
         }
     }
 
@@ -102,14 +115,28 @@ fun MainScreen(bookshelf: Bookshelf, googleBooksCredentialsFilename: String, out
         Column {
             LazyColumn {
                 stickyHeader {
-                    Text("${books.value.size} books", Modifier.background(MaterialTheme.colors.background).fillMaxWidth().padding(4.dp), style = MaterialTheme.typography.caption)
+                    Text(
+                        "${bookshelf.books.size} books",
+                        Modifier.background(MaterialTheme.colors.background).fillMaxWidth().padding(4.dp),
+                        style = MaterialTheme.typography.caption
+                    )
                     Divider()
                 }
-                items(books.value) { book ->
-                    BookRow(book) {
-                        uriHandler.openUri(book.url)
+                books.value.forEach { (wished, books) ->
+                    stickyHeader {
+                        Text(
+                            if (wished) "To read" else "Read",
+                            Modifier.background(MaterialTheme.colors.background).fillMaxWidth().padding(4.dp),
+                            style = MaterialTheme.typography.subtitle1
+                        )
+                        Divider()
                     }
-                    Divider()
+                    items(books) { book ->
+                        BookRow(book) {
+                            uriHandler.openUri(book.url)
+                        }
+                        Divider()
+                    }
                 }
             }
         }

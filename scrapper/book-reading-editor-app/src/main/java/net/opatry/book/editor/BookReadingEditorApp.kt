@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Olivier Patry
+// Copyright (c) 2025 Olivier Patry
 //
 // Permission is hereby granted, free of charge, to any person obtaining
 // a copy of this software and associated documentation files (the "Software"),
@@ -20,7 +20,6 @@
 
 package net.opatry.book.editor
 
-import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -49,13 +48,13 @@ import net.opatry.book.editor.screen.MainScreen
 import net.opatry.util.toColorInt
 import java.awt.Dimension
 import java.io.File
+import java.time.LocalDate
 
 sealed class Instance(val site: String, val dir: File, val label: String) {
     data object Oliv : Instance("https://lecture.opatry.net", File("/Users/opatry/work/book-reading"), "Olivier")
     data object Fanny : Instance("https://fanny-lit.web.app", File("/Users/opatry/work/lecture-fanny"), "Fanny")
 }
 
-@OptIn(ExperimentalMaterialApi::class)
 fun main() {
     application {
         val defaultSize = DpSize(900.dp, 900.dp)
@@ -82,7 +81,9 @@ fun main() {
                     val httpClient = HttpClient(CIO) {
                         CurlUserAgent()
                         install(ContentNegotiation) {
-                            gson()
+                            gson {
+                                registerTypeAdapter(LocalDate::class.java, LocalDateAdapter())
+                            }
                         }
                         install(HttpTimeout) {
                             requestTimeoutMillis = 3000

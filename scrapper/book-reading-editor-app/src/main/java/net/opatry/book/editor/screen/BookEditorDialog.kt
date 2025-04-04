@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Olivier Patry
+// Copyright (c) 2025 Olivier Patry
 //
 // Permission is hereby granted, free of charge, to any person obtaining
 // a copy of this software and associated documentation files (the "Software"),
@@ -174,7 +174,8 @@ fun BookEditor(googleBooksCredentialsFilename: String, onCreate: (Bookshelf.Book
                             url = "",
                             isbn = candidate.isbn,
                             coverUrl = candidate.coverUrl,
-                            uuid = UUID.randomUUID().toString()
+                            uuid = UUID.randomUUID().toString(),
+                            tags = emptyList(), // TODO retrieve tags from API if any
                         )
                     }?.also { book ->
                         onCreate(book)

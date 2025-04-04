@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Olivier Patry
+// Copyright (c) 2025 Olivier Patry
 //
 // Permission is hereby granted, free of charge, to any person obtaining
 // a copy of this software and associated documentation files (the "Software"),
@@ -21,6 +21,7 @@
 package net.opatry.book.editor
 
 import com.google.gson.annotations.SerializedName
+import java.time.LocalDate
 
 data class Bookshelf(
     @SerializedName("url")
@@ -47,12 +48,22 @@ data class Bookshelf(
         val author: String,
         @SerializedName("link")
         val url: String,
+        @SerializedName("read_date")
+        val readDate: LocalDate? = null,
         @SerializedName("rating")
-        val rating: Int,
+        val rating: Int = 0,
+        @SerializedName("priority")
+        val priority: Float? = 0f,
         @SerializedName("favorite")
         val isFavorite: Boolean,
+        @SerializedName("ongoing")
+        val isOngoing: Boolean = false,
         @SerializedName("cover")
         val coverUrl: String,
+        @SerializedName("cover_mini")
+        val miniCoverUrl: String? = null,
+        @SerializedName("tags")
+        val tags: List<String> = emptyList(),
     )
 }
 

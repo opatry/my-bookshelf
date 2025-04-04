@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Olivier Patry
+// Copyright (c) 2025 Olivier Patry
 //
 // Permission is hereby granted, free of charge, to any person obtaining
 // a copy of this software and associated documentation files (the "Software"),
@@ -24,6 +24,7 @@ import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.TooltipArea
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -51,8 +52,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
 import net.opatry.book.editor.BookPreviewData
@@ -97,21 +102,73 @@ fun BookRow(book: Bookshelf.Book, onClick: () -> Unit) {
             ) {
                 CompositionLocalProvider(LocalTextStyle provides MaterialTheme.typography.caption) {
                     Text(
-                        """
-                        ISBN: ${book.isbn}
-                        UUID: ${book.uuid}
-                        URL: ${book.url}
-                    """.trimIndent()
+                        buildAnnotatedString {
+                            withStyle(LocalTextStyle.current.copy(fontWeight = FontWeight.Bold).toSpanStyle()) {
+                                append("ISBN: ")
+                            }
+                            append(book.isbn)
+                            append("\n")
+                            withStyle(LocalTextStyle.current.copy(fontWeight = FontWeight.Bold).toSpanStyle()) {
+                                append("UUID: ")
+                            }
+                            append(book.uuid)
+                            append("\n")
+                            withStyle(LocalTextStyle.current.copy(fontWeight = FontWeight.Bold).toSpanStyle()) {
+                                append("URL: ")
+                            }
+                            append(book.url)
+                            if (book.readDate != null) {
+                                append("\n")
+                                withStyle(LocalTextStyle.current.copy(fontWeight = FontWeight.Bold).toSpanStyle()) {
+                                    append("Read date: ")
+                                }
+                                append(book.readDate.toString())
+                            }
+                        }
                     )
                 }
             }
         }
     }, delayMillis = 1.seconds.inWholeMilliseconds.toInt()) {
         Row(Modifier.clickable(onClick = onClick).fillMaxWidth().padding(8.dp)) {
-            AsyncImage(book.coverUrl, null, Modifier.height(50.dp).widthIn(max = 35.dp).padding(vertical = 4.dp, horizontal = 8.dp))
+            AsyncImage(
+                book.coverUrl,
+                null,
+                Modifier.height(50.dp).widthIn(max = 35.dp)
+                    .padding(vertical = 4.dp, horizontal = 8.dp)
+            )
             Text(book.title, Modifier.weight(.6f).padding(4.dp))
             Text(book.author, Modifier.weight(.4f).padding(4.dp))
-            RatingBar(book.rating)
+            val priority = book.priority?.toInt() ?: 0
+            when {
+                book.isOngoing -> Text("📖 En cours de lecture")
+                priority > 0 -> Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.spacedBy(8.dp)
+                ) {
+                    Text("Priority: ")
+                    val alpha = when (priority) {
+                        1 -> .6f
+                        2 -> .45f
+                        3 -> .3f
+                        else -> .15f
+                    }
+                    val color = Color(0xff04c578)
+                    Text(
+                        priority.toString(),
+                        modifier = Modifier
+                            .clip(RoundedCornerShape(4.dp))
+                            .background(color.copy(alpha = alpha))
+                            .border(1.5.dp, color, RoundedCornerShape(4.dp))
+                            .padding(4.dp),
+                        style = MaterialTheme.typography.caption,
+                        fontFamily = FontFamily.Monospace,
+                        fontWeight = FontWeight.Bold,
+                    )
+                }
+
+                else -> RatingBar(book.rating)
+            }
             Box(Modifier.width(48.dp), contentAlignment = Alignment.TopCenter) {
                 if (book.isFavorite) {
                     // TODO animate heart beat

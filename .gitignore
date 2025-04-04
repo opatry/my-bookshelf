@@ -26,3 +26,6 @@ firebase-debug.*.log*
 .firebase/
 tmp
 google_auth_token_cache.json
+scrapper/.idea/appInsightsSettings.xml
+scrapper/.idea/caches/deviceStreaming.xml
+scrapper/.idea/runConfigurations.xml
