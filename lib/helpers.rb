@@ -26,6 +26,8 @@ def to_json(book, url: :relative)
     'link': "#{url_prefix}#{book.path}",
     'rating': book[:rating] || 0,
     'read_date': read_date,
+    'priority': book[:priority],
+    'ongoing': book[:ongoing] || false,
     'favorite': book[:favorite] || false,
     'cover': "#{url_prefix}#{cover_path}" || '',
     'cover_mini': "#{url_prefix}#{cover_mini_path}" || '',
