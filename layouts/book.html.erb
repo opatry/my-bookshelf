@@ -17,6 +17,9 @@
 <% if item[:ongoing] %>
 <p class="book-details">📖 En cours de lecture…</p>
 <% end %>
+<% unless item[:priority].nil? %>
+<p class="book-details">Dans les envies de lecture pour plus tard…</p>
+<% end %>
 <% unless item[:read_date].nil? %>
 <p class="read-date book-details">(lu en <%= get_pretty_date(item) %>)</p>
 <% end %>
