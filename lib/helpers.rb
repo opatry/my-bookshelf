@@ -57,11 +57,16 @@ size = params.fetch(:size, 24)
   %Q[<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="#{width}" height="#{height}" viewBox="0 0 24 24" class="heart-icon"><path d="M12 20a1 1 0 0 1-.437-.1C11.214 19.73 3 15.671 3 9a5 5 0 0 1 8.535-3.536l.465.465.465-.465A5 5 0 0 1 21 9c0 6.646-8.212 10.728-8.562 10.9A1 1 0 0 1 12 20z"/></svg>]
 end
 
+def join_with_prefix(array, separator: ' ', prefix: '')
+  str = array.compact.join(separator)
+  str.empty? ? '' : "#{prefix}#{str}"
+end
+
 def page_title(item)
   if book?(item)
-    rating = "⭐️ #{@item[:rating]}/10"
+    rating = "⭐️ #{@item[:rating]}/10" if @item[:rating] && @item[:rating] > 0
     favorite = "❤️" if @item[:favorite]
-    "#{item[:title]} par #{item[:author]} • #{rating} #{favorite}"
+    "#{item[:title]} par #{item[:author]} #{join_with_prefix([rating, favorite], prefix: ' • ')}"
   else
     item[:title]
   end
