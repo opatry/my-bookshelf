@@ -64,7 +64,7 @@ end
 
 def page_title(item)
   if book?(item)
-    rating = "⭐️ #{@item[:rating]}/10" if @item[:rating] && @item[:rating] > 0
+    rating = "⭐️ #{@item[:rating]}/10" unless item[:rating].nil? || item[:rating].zero?
     favorite = "❤️" if @item[:favorite]
     "#{item[:title]} par #{item[:author]} #{join_with_prefix([rating, favorite], prefix: ' • ')}"
   else
