@@ -71,6 +71,7 @@ TODO fixed with lift on scroll?
 */
 
 #header {
+  min-height: 56px;
   padding: 24px;
   display: flex;
   gap: 24px;
@@ -79,14 +80,12 @@ TODO fixed with lift on scroll?
 .compact #header {
   height: 56px;
   padding: 12px;
-  /* keep position of badges stable */
-  padding-right: 24px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, .05);
 }
 
 @media screen and (max-width: 400px) {
   #header {
-    height: 48px;
+    height: 56px;
     padding: 8px;
     gap: 8px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, .1);
@@ -98,6 +97,13 @@ TODO fixed with lift on scroll?
     padding: 12px;
     gap: 12px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, .1);
+  }
+}
+
+@media screen and (min-width: 675px) {
+  .compact #header {
+    /* keep position of badges stable */
+    padding-right: 24px;
   }
 }
 
@@ -609,6 +615,16 @@ blockquote > p {
 
 blockquote + p {
   margin: .5em 2em;
+}
+
+@media screen and (max-width: 675px) {
+  blockquote {
+    margin: 1em 1.5em 0 1.5em;
+  }
+
+  blockquote + p {
+    margin: .5em 1.5em;
+  }
 }
 
 .calendar-cell {
