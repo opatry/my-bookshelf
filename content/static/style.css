@@ -256,6 +256,11 @@ h1, h2, h3 {
   font-style: normal;
 }
 
+h3 {
+  padding-top: 1em;
+  clear: both;
+}
+
 ul {
   margin: 0 16px;
   padding: 0;
@@ -582,11 +587,12 @@ p {
 }
 
 blockquote {
+  margin: 1em 3em 0 3em;
   font-family: cursive, serif;
   font-weight: 400;
   font-style: normal;
   font-size: 20px;
-  color: rgba(0, 0, 0, .2);
+  color: rgba(0, 0, 0, .4);
   quotes: none;
 }
 blockquote::before {
@@ -595,6 +601,14 @@ blockquote::before {
   content: '\00AB';
   margin-top: -.5em;
   margin-left: -.7em;
+}
+
+blockquote > p {
+  margin: 0;
+}
+
+blockquote + p {
+  margin: .5em 2em;
 }
 
 .calendar-cell {
