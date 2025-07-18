@@ -3,12 +3,14 @@ const bookPagePattern = new URLPattern('/book/:isbn/?', window.origin)
 
 const setTemporaryViewTransitionNames = async (entries, vtPromise) => {
   for (const [$el, name] of entries) {
+    if (!$el) continue
     $el.style.viewTransitionName = name
   }
 
   await vtPromise
 
   for (const [$el, name] of entries) {
+    if (!$el) continue
     $el.style.viewTransitionName = ''
   }
 }
