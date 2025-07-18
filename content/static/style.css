@@ -593,38 +593,48 @@ p {
 }
 
 blockquote {
-  margin: 1em 3em 0 3em;
+  margin: 1em 0 .5em 0;
+  padding: 1em;
+  position: relative;
+  quotes: "“" "”" "‘" "’";
   font-family: cursive, serif;
-  font-weight: 400;
   font-style: normal;
+  line-height: 140%;
   font-size: 20px;
   color: rgba(0, 0, 0, .4);
-  quotes: none;
-}
-blockquote::before {
-  position: absolute;
-  font-size: 2em;
-  content: '\00AB';
-  margin-top: -.5em;
-  margin-left: -.7em;
+  background-color: rgba(0, 0, 0, .02);
+  border-radius: 10px;
 }
 
 blockquote > p {
   margin: 0;
 }
 
-blockquote + p {
-  margin: .5em 2em;
+figcaption {
+  color: rgba(0, 0, 0, .6);
+  text-align: right;
 }
 
-@media screen and (max-width: 675px) {
-  blockquote {
-    margin: 1em 1.5em 0 1.5em;
-  }
+blockquote::before, blockquote::after {
+  position: absolute;
+  color: rgba(0, 0, 0, .2);
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 700;
+}
 
-  blockquote + p {
-    margin: .5em 1.5em;
-  }
+blockquote::before {
+  content: open-quote;
+  top: .25em;
+  left: .25em;
+  line-height: 1;
+}
+
+blockquote::after {
+  content: close-quote;
+  bottom: .25em;
+  right: .25em;
+  line-height: 0;
 }
 
 .calendar-cell {

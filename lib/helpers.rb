@@ -246,3 +246,9 @@ Voir la liste des <%= link_to('autres étiquettes', @items['/all-tags.*']) %>.
     )
   end
 end
+
+def quote_markup(text:, author: nil)
+  paragraphs = text.split("\n").map { |line| "<p>#{line}</p>" }.join
+  figcaption = author.nil? ? '' : %Q[<figcaption class="quote-author">—&nbsp;#{author}</figcaption>]
+  %Q[<figure class="quote"><blockquote class="quote-text">#{paragraphs}</blockquote>#{figcaption}</figure>]
+end
