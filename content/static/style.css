@@ -592,6 +592,13 @@ p {
   border-radius: 8px;
 }
 
+@media screen and (max-width: 675px) {
+  figure.quote {
+    margin-inline-start: 20px;
+    margin-inline-end: 20px;
+  }
+}
+
 blockquote {
   margin: 1em 0 .5em 0;
   padding: 1em;
@@ -600,7 +607,7 @@ blockquote {
   font-family: cursive, serif;
   font-style: normal;
   line-height: 140%;
-  font-size: 20px;
+  font-size: 1.2em;
   color: rgba(0, 0, 0, .4);
   background-color: rgba(0, 0, 0, .02);
   border-radius: 10px;
@@ -618,7 +625,7 @@ figcaption {
 blockquote::before, blockquote::after {
   position: absolute;
   color: rgba(0, 0, 0, .2);
-  font-size: 25px;
+  font-size: 1.5em;
   font-style: normal;
   font-weight: 700;
 }
