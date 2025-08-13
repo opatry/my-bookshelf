@@ -352,6 +352,12 @@ h1, h2, h3 {
   color: rgba(0, 0, 0, .6);
 }
 
+.share-book-icon {
+  cursor: pointer;
+  font-size: 24px;
+  color: rgba(0, 0, 0, .3);
+}
+
 .star-icon {
   fill: rgba(0, 0, 0, .2);
   display: inline;

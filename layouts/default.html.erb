@@ -27,6 +27,9 @@ special_favorite_filter_id_attr = 'id="only-favorites"' if @item.identifier =~ '
       }]
     }
   </script>
+  <% if book?(@item) %>
+  <script src="<%= @items['/static/share-book-button.*'].path %>"></script>
+  <% end %>
   <script src="<%= @items['/static/view-transition.*'].path %>"></script>
 <% if is_home %>
   <link href="https://unpkg.com/tabulator-tables/dist/css/tabulator_semanticui.min.css" rel="stylesheet">
