@@ -17,7 +17,7 @@
         <% if item[:rating] %>
         <div aria-label="<%= item[:rating] %>" title="<%= item[:rating] %>">
           <% 10.times do |i| %>
-          <%= star_svg(filled: i < item[:rating], params: { size: 12 }) %>
+          <%= star_svg(filled: i < item[:rating], size: 12) %>
           <% end %>
         </div>
         <% else %>

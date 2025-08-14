@@ -1,4 +1,4 @@
-text_extensions: [ 'adoc', 'asciidoc', 'atom', 'coffee', 'css', 'erb', 'haml', 'handlebars', 'hb', 'htm', 'html', 'js', 'less', 'markdown', 'md', 'ms', 'mustache', 'org', 'php', 'rb', 'rdoc', 'sass', 'scss', 'slim', 'tex', 'txt', 'xhtml', 'xml' ]
+text_extensions: [ 'adoc', 'asciidoc', 'atom', 'coffee', 'css', 'erb', 'haml', 'handlebars', 'hb', 'htm', 'html', 'svg', 'js', 'less', 'markdown', 'md', 'ms', 'mustache', 'org', 'php', 'rb', 'rdoc', 'sass', 'scss', 'slim', 'tex', 'txt', 'xhtml', 'xml' ]
 
 prune:
   auto_prune: true

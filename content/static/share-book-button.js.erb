@@ -9,10 +9,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const selfUrl = document.querySelector('link[rel="canonical"]')?.href ?? location.href
   bookTitle.appendChild(
     Object.assign(document.createElement('span'), {
-      className: 'material-symbols-outlined share-book-icon title-more',
+      className: 'share-book-icon title-more',
       title: 'Partager',
       ariaLabel: 'Partager',
-      innerHTML: 'share',
+      innerHTML: '<%= lucide_icon_svg("share-2") %>',
       onclick: () => {
         navigator.share({
           url: selfUrl,

@@ -170,6 +170,18 @@ compile '/static/style.*' do
   end
 end
 
+compile '/static/lucide-icons/*.svg' do
+  # TODO: optimize SVG (with svgo or something like that)
+
+  # no need to write/route such SVG, inlined within HTML
+  write nil
+end
+
+compile '/static/share-book-button.js.erb' do
+  filter :erb
+  write '/static/share-book-button.js'
+end
+
 compile '/static/**/*' do
   # don't filter or layout
 end

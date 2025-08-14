@@ -26,4 +26,5 @@ gem 'image_size'
 gem 'htmlentities'
 gem 'natural_sort'
 gem 'i18n'
+gem 'nokogiri', '~> 1.18'
 

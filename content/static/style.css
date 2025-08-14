@@ -360,20 +360,24 @@ h1, h2, h3 {
 
 .star-icon {
   fill: rgba(0, 0, 0, .2);
+  stroke: none;
   display: inline;
 }
 
 .star-icon.icon-active {
   fill: rgb(255, 215, 0);
+  stroke: rgb(255, 215, 0);
 }
 
 .star-icon.icon-inactive {
   fill: rgba(0, 0, 0, .15);
+  stroke: none;
 }
 
 .heart-icon {
   padding-bottom: 4px;
   fill: rgb(197, 17, 4);
+  stroke: rgb(197, 17, 4);
   vertical-align: text-bottom;
 }
 .books-table .heart-icon:hover,

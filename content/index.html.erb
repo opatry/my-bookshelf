@@ -50,7 +50,7 @@ unless w_books.empty?
 <% end %>
 
   <div id="book-filter-box" class="book-query-box">
-    <span class="material-symbols-outlined input-icon">filter_list</span>
+    <%= lucide_icon_svg('list-filter', params: { class: 'input-icon' }) %>
     <input id="book-filter-q" type="search" placeholder="Filtrer…" size="40">
   </div>
 
@@ -61,8 +61,8 @@ unless w_books.empty?
   <div id="books-table" class="books-table"></div>
   <script type="text/javascript">
     // TODO load JSON file
-  var booksData = <%= JSON[rated_books.map { |book| to_json(book) }] %>;
-  var table = new Tabulator("#books-table", {
+  const booksData = <%= JSON[rated_books.map { |book| to_json(book) }] %>;
+  const table = new Tabulator("#books-table", {
     data: booksData,
     layout: "fitColumns",
     responsiveLayout: "hide",
@@ -75,17 +75,24 @@ unless w_books.empty?
           dir: "asc"
         },
     ],
-    headerSortElement: function(column, dir){
-        switch(dir){
-            case "asc":
-                return '<span class="icon material-symbols-outlined">keyboard_arrow_up</span>';
-            break;
-            case "desc":
-                return '<span class="icon material-symbols-outlined">keyboard_arrow_down</span>';
-            break;
-            default:
-                return '<span class="icon material-symbols-outlined">sort_by_alpha</span>';
-        }
+    headerSortElement: function(column, dir) {
+      const isNumeric = column.getField() === "rating" || column.getField() === "favorite";
+      const ascIcon = isNumeric 
+        ? '<%= lucide_icon_svg('arrow-down-0-1', params: { class: 'icon' }) %>'
+        : '<%= lucide_icon_svg('arrow-down-a-z', params: { class: 'icon' }) %>';
+      const descIcon = isNumeric
+        ? '<%= lucide_icon_svg('arrow-down-1-0', params: { class: 'icon' }) %>'
+        : '<%= lucide_icon_svg('arrow-down-z-a', params: { class: 'icon' }) %>';
+      switch(dir) {
+        case "asc":
+          return ascIcon;
+        break;
+        case "desc":
+          return descIcon;
+        break;
+        default:
+          return '<%= lucide_icon_svg('arrow-down-up', params: { class: 'icon' }) %>';
+      }
     },
     persistence: {
       sort: true,
@@ -141,8 +148,8 @@ unless w_books.empty?
             element.style.textOverflow = 'ellipsis';
             element.setAttribute('aria-label', value);
 
-            const starActive = '<%= star_svg(filled: true, params: { size: 16 }) %>';
-            const starInactive = '<%= star_svg(filled: false, params: { size: 16 }) %>';
+            const starActive = '<%= star_svg(filled: true, size: 16) %>';
+            const starInactive = '<%= star_svg(filled: false, size: 16) %>';
 
             const stars = document.createElement('div');
             stars.setAttribute('aria-label', value);
