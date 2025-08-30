@@ -26,7 +26,7 @@ body {
   margin: 0;
   padding: 0;
   /* https://www.toptal.com/designers/subtlepatterns/swirl/ Made by Peter Chon licensed under Creative Commons */
-  background: url('swirl.png')
+  background: url('/static/swirl.png')
               fixed            
               repeat
               rgba(0, 0, 0, .05);

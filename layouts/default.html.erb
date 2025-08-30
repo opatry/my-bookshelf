@@ -32,11 +32,14 @@ special_favorite_filter_id_attr = 'id="only-favorites"' if @item.identifier =~ '
   <% end %>
   <script src="<%= @items['/static/view-transition.*'].path %>" defer></script>
 <% if is_home %>
-  <link href="https://unpkg.com/tabulator-tables/dist/css/tabulator_semanticui.min.css" rel="stylesheet" async>
+  <link rel="preload" href="https://unpkg.com/tabulator-tables/dist/css/tabulator_semanticui.min.css" as="style" onload="this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="https://unpkg.com/tabulator-tables/dist/css/tabulator_semanticui.min.css">
+  </noscript>
   <script type="text/javascript" src="https://unpkg.com/tabulator-tables/dist/js/tabulator.min.js" defer></script>
 <% end %>
 
-  <link rel="stylesheet" href="<%= @items['/static/style.*'].path %>" async>
+  <style type="text/css"><%= @items['/static/style.*'].compiled_content %></style>
 
   <link rel="shortcut icon" href="<%= @items['/static/favicon.*'].path(rep: :default) %>">
 <%
