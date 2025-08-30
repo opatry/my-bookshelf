@@ -59,205 +59,210 @@ unless w_books.empty?
   </noscript>
 
   <div id="books-table" class="books-table"></div>
-  <script type="text/javascript">
+  <script type="text/javascript" defer>
     // TODO load JSON file
   const booksData = <%= JSON[rated_books.map { |book| to_json(book) }] %>;
-  const table = new Tabulator("#books-table", {
-    data: booksData,
-    layout: "fitColumns",
-    responsiveLayout: "hide",
-    pagination: "local",
-    paginationSize: 18,
-    paginationCounter: "rows",
-    initialSort: [
-        {
-          column: "title",
-          dir: "asc"
-        },
-    ],
-    headerSortElement: function(column, dir) {
-      const isNumeric = column.getField() === "rating" || column.getField() === "favorite";
-      const ascIcon = isNumeric 
-        ? '<%= lucide_icon_svg('arrow-down-0-1', params: { class: 'icon' }) %>'
-        : '<%= lucide_icon_svg('arrow-down-a-z', params: { class: 'icon' }) %>';
-      const descIcon = isNumeric
-        ? '<%= lucide_icon_svg('arrow-down-1-0', params: { class: 'icon' }) %>'
-        : '<%= lucide_icon_svg('arrow-down-z-a', params: { class: 'icon' }) %>';
-      switch(dir) {
-        case "asc":
-          return ascIcon;
-        break;
-        case "desc":
-          return descIcon;
-        break;
-        default:
-          return '<%= lucide_icon_svg('arrow-down-up', params: { class: 'icon' }) %>';
-      }
-    },
-    persistence: {
-      sort: true,
-    },
-    persistenceID: "books",
-    columns: [
-        {
-          headerSort: false,
-          field: "cover_mini",
-          responsive: 1,
-          formatter: "image",
-          width: 65,
-          minWidth: 65,
-          formatterParams: {
-            height: "50px",
-            width: "auto"
-          }
-        },
-        {
-          headerSort: true,
-          field: "title",
-          title: "Titre",
-          minWidth: 150,
-          responsive: 0, // never hidden
-          // sort taking into account locale (1, 2, 10 vs 1, 10, 2; accented characters etc.)
-          sorter: function(a, b, aRow, bRow, column, dir, sorterParams) {
-            return a.localeCompare(b, '<%= @config[:site][:lang] %>', { numeric: true, sensitivity: "base", ignorePunctuation: true });
-          }
-        },
-        {
-          headerSort: true,
-          field: "author",
-          title: "Auteur",
-          responsive: 1,
-          width: 250,
-          minWidth: 100,
-          minWidth: 150,
-        },
-        {
-          headerSort: true,
-          sorter: "number",
-          headerSortStartingDir: "desc",
-          field: "rating",
-          title: "Note",
-          responsive: 2,
-          formatter: function(cell, formatterParams, onRendered) {
-            const maxStars = parseInt(formatterParams?.stars) || 10;
-            let value = parseInt(cell.getValue()) || 0;
-            value = Math.max(0, Math.min(value, maxStars));
-            const element = cell.getElement();
-            element.style.whiteSpace = 'nowrap';
-            element.style.overflow = 'hidden';
-            element.style.textOverflow = 'ellipsis';
-            element.setAttribute('aria-label', value);
 
-            const starActive = '<%= star_svg(filled: true, size: 16) %>';
-            const starInactive = '<%= star_svg(filled: false, size: 16) %>';
-
-            const stars = document.createElement('div');
-            stars.setAttribute('aria-label', value);
-            stars.setAttribute('class', 'rating-bar');
-            stars.dataset.rating = value;
-
-            for (let i = 0; i < maxStars; ++i) {
-              stars.insertAdjacentHTML('beforeend', i < value ? starActive : starInactive);
-            }
-
-            return stars;
-          },
-          formatterParams: {
-            stars: 10
-          },
-          hozAlign: "center",
-          width: 200,
-          minWidth: 150,
-          tooltip: true,
-        },
-        {
-          headerSort: true,
-          sorter: "boolean",
-          headerSortStartingDir: "desc",
-          field: "favorite",
-          responsive: 2,
-          formatter: function(cell, formatterParams, onRendered) {
-            return cell.getValue() ? '<span aria-label="Coup de cœur"><%= heart_svg %></span>' : '';
-          },
-          hozAlign: "center",
-          width: 65,
-          minWidth: 50,
-          tooltip: function(e, cell, onRendered) {
-            if (cell.getValue()) {
-              var tooltipElement = document.createElement("div");
-              tooltipElement.innerText = "Coup de cœur"
-              return tooltipElement;
-            } else {
-              return null;
-            }
-          }
-        },
-    ],
-    langs: {
-        "fr": {
-            "columns": {
-                "name": "Nom",
-            },
-            "data": {
-                "loading": "Chargement",
-                "error": "Erreur",
-            },
-            "groups": {
-                "item": "élément",
-                "items":"éléments",
-            },
-            "pagination": {
-                "page_size": "Taille de page",
-                "page_title": "Afficher la page",
-                "first": "«",
-                "first_title": "Première page",
-                "last": "»",
-                "last_title": "Dernière page",
-                "prev": "‹",
-                "prev_title": "Page précédente",
-                "next": "›",
-                "next_title": "Page suivante",
-                "all": "Tout",
-                "counter": {
-                    "showing": "",
-                    "of": " / ",
-                    "rows": "lignes",
-                    "pages": "pages",
-                }
-            },
-            "headerFilters":{
-                "default": "Filtrer la colonne…",
-                "columns": {
-                    "name": "Filtrer par nom…",
-                    "author": "Filtrer par auteur…",
-                    "rating": "Filtrer par note…",
-                    "favorite": "Filtrer par favoris…",
-                }
-            }
-        }
-    },
-  });
+  var table;
 
   function updateFilter(query) {
-    var queryTrimed = query.trim();
+    const queryTrimed = query.trim();
     if (queryTrimed.length > 0) {
-      table.setFilter("title", "like", queryTrimed);
+      table?.setFilter("title", "like", queryTrimed);
     } else {
-      table.clearFilter();
+      table?.clearFilter();
     }
   }
 
-  var filterField = document.getElementById("book-filter-q");
+  const filterField = document.getElementById("book-filter-q");
   filterField.addEventListener("input", (e) => {
     updateFilter(e.target.value.trim());
   });
 
-  table.on("rowClick", function(e, row){
-    var book = row._row.data;
-    window.location = book.link;
+  window.addEventListener("DOMContentLoaded", () => {
+    table = new Tabulator("#books-table", {
+      data: booksData,
+      layout: "fitColumns",
+      responsiveLayout: "hide",
+      pagination: "local",
+      paginationSize: 18,
+      paginationCounter: "rows",
+      initialSort: [
+          {
+            column: "title",
+            dir: "asc"
+          },
+      ],
+      headerSortElement: function(column, dir) {
+        const isNumeric = column.getField() === "rating" || column.getField() === "favorite";
+        const ascIcon = isNumeric 
+          ? '<%= lucide_icon_svg('arrow-down-0-1', params: { class: 'icon' }) %>'
+          : '<%= lucide_icon_svg('arrow-down-a-z', params: { class: 'icon' }) %>';
+        const descIcon = isNumeric
+          ? '<%= lucide_icon_svg('arrow-down-1-0', params: { class: 'icon' }) %>'
+          : '<%= lucide_icon_svg('arrow-down-z-a', params: { class: 'icon' }) %>';
+        switch(dir) {
+          case "asc":
+            return ascIcon;
+          break;
+          case "desc":
+            return descIcon;
+          break;
+          default:
+            return '<%= lucide_icon_svg('arrow-down-up', params: { class: 'icon' }) %>';
+        }
+      },
+      persistence: {
+        sort: true,
+      },
+      persistenceID: "books",
+      columns: [
+          {
+            headerSort: false,
+            field: "cover_mini",
+            responsive: 1,
+            formatter: "image",
+            width: 65,
+            minWidth: 65,
+            formatterParams: {
+              height: "50px",
+              width: "auto"
+            }
+          },
+          {
+            headerSort: true,
+            field: "title",
+            title: "Titre",
+            minWidth: 150,
+            responsive: 0, // never hidden
+            // sort taking into account locale (1, 2, 10 vs 1, 10, 2; accented characters etc.)
+            sorter: function(a, b, aRow, bRow, column, dir, sorterParams) {
+              return a.localeCompare(b, '<%= @config[:site][:lang] %>', { numeric: true, sensitivity: "base", ignorePunctuation: true });
+            }
+          },
+          {
+            headerSort: true,
+            field: "author",
+            title: "Auteur",
+            responsive: 1,
+            width: 250,
+            minWidth: 100,
+            minWidth: 150,
+          },
+          {
+            headerSort: true,
+            sorter: "number",
+            headerSortStartingDir: "desc",
+            field: "rating",
+            title: "Note",
+            responsive: 2,
+            formatter: function(cell, formatterParams, onRendered) {
+              const maxStars = parseInt(formatterParams?.stars) || 10;
+              let value = parseInt(cell.getValue()) || 0;
+              value = Math.max(0, Math.min(value, maxStars));
+              const element = cell.getElement();
+              element.style.whiteSpace = 'nowrap';
+              element.style.overflow = 'hidden';
+              element.style.textOverflow = 'ellipsis';
+              element.setAttribute('aria-label', value);
+
+              const starActive = '<%= star_svg(filled: true, size: 16) %>';
+              const starInactive = '<%= star_svg(filled: false, size: 16) %>';
+
+              const stars = document.createElement('div');
+              stars.setAttribute('aria-label', value);
+              stars.setAttribute('class', 'rating-bar');
+              stars.dataset.rating = value;
+
+              for (let i = 0; i < maxStars; ++i) {
+                stars.insertAdjacentHTML('beforeend', i < value ? starActive : starInactive);
+              }
+
+              return stars;
+            },
+            formatterParams: {
+              stars: 10
+            },
+            hozAlign: "center",
+            width: 200,
+            minWidth: 150,
+            tooltip: true,
+          },
+          {
+            headerSort: true,
+            sorter: "boolean",
+            headerSortStartingDir: "desc",
+            field: "favorite",
+            responsive: 2,
+            formatter: function(cell, formatterParams, onRendered) {
+              return cell.getValue() ? '<span aria-label="Coup de cœur"><%= heart_svg %></span>' : '';
+            },
+            hozAlign: "center",
+            width: 65,
+            minWidth: 50,
+            tooltip: function(e, cell, onRendered) {
+              if (cell.getValue()) {
+                var tooltipElement = document.createElement("div");
+                tooltipElement.innerText = "Coup de cœur"
+                return tooltipElement;
+              } else {
+                return null;
+              }
+            }
+          },
+      ],
+      langs: {
+          "fr": {
+              "columns": {
+                  "name": "Nom",
+              },
+              "data": {
+                  "loading": "Chargement",
+                  "error": "Erreur",
+              },
+              "groups": {
+                  "item": "élément",
+                  "items":"éléments",
+              },
+              "pagination": {
+                  "page_size": "Taille de page",
+                  "page_title": "Afficher la page",
+                  "first": "«",
+                  "first_title": "Première page",
+                  "last": "»",
+                  "last_title": "Dernière page",
+                  "prev": "‹",
+                  "prev_title": "Page précédente",
+                  "next": "›",
+                  "next_title": "Page suivante",
+                  "all": "Tout",
+                  "counter": {
+                      "showing": "",
+                      "of": " / ",
+                      "rows": "lignes",
+                      "pages": "pages",
+                  }
+              },
+              "headerFilters":{
+                  "default": "Filtrer la colonne…",
+                  "columns": {
+                      "name": "Filtrer par nom…",
+                      "author": "Filtrer par auteur…",
+                      "rating": "Filtrer par note…",
+                      "favorite": "Filtrer par favoris…",
+                  }
+              }
+          }
+      },
+    });
+
+    table.on("rowClick", function(e, row) {
+      const book = row._row.data;
+      window.location = book.link;
+    });
   });
 
   window.addEventListener("load", (event) => {
-    table.setLocale("fr");
+    table?.setLocale("fr");
   });
   </script>
