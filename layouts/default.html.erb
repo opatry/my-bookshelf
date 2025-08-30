@@ -86,7 +86,7 @@ avatar_size = @config[:avatar_size][avatar_repr]
     <% unless is_home %>
       <a href="<%= @items['/index.*'].path %>" title="Retour à l'accueil…">
     <% end %>
-        <img src="<%= avatar.path(rep: avatar_repr) %>" width="<%= avatar_size %>" height="<%= avatar_size %>">
+        <img src="<%= avatar.path(rep: avatar_repr) %>" width="<%= avatar_size %>" height="<%= avatar_size %>" alt="">
     <% unless is_home %>
       </a>
     <% end %>
@@ -112,7 +112,7 @@ avatar_size = @config[:avatar_size][avatar_repr]
           See https://css-tricks.com/css-attr-function-got-nothin-custom-properties/
           %>
           <a href="<%= social[:url] %>" title="<%= social[:label] %>" style="--social-tint-color: <%= hex_color_to_rgba(social[:tint], 0.2) %>">
-            <img src="<%= @items[social[:icon_identifier]].path %>" width="<%= @config[:social][:badge_size] %>" height="<%= @config[:social][:badge_size] %>">
+            <img src="<%= @items[social[:icon_identifier]].path %>" width="<%= @config[:social][:badge_size] %>" height="<%= @config[:social][:badge_size] %>" alt="<%= social[:label] %>">
           </a>
         </div>
       <% end %>

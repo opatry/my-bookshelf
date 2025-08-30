@@ -17,7 +17,7 @@ fetch('<%= @items['/static/search-index.*'].path %>')
         } else {
           resultsNode.innerHTML = results.map(r =>
             `<li class="search-result-row" title="Voir plus de détails…" onclick="location.href = '${r.item.link}'">
-              <div class="image-container"><img src="${r.item.cover_mini}"></div>
+              <div class="image-container"><img src="${r.item.cover_mini}"  alt="Couverture du livre ${r.item.title} de ${r.item.author}"></div>
               <div class="book-cell">
                 <h3><a href="${r.item.link}">${r.item.title}</a> <span class="author-detail">(${r.item.author})</span></h3>
                 <ul class="book-tags" data-count="${r.item.tags.length}">

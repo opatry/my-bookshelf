@@ -28,7 +28,7 @@
 unless @items["/cover/#{@item[:isbn]}.*"].nil?
   cover = @items["/cover/#{@item[:isbn]}.*"]
 %>
-<img src="<%= cover.path %>" width="<%= cover["width_default"] %>" height="<%= cover["height_default"] %>" class="book-cover">
+<img src="<%= cover.path %>" width="<%= cover["width_default"] %>" height="<%= cover["height_default"] %>"  alt="Couverture du livre <%= @item[:title] %> de <%= @item[:author] %>" class="book-cover">
 <% end %>
 
 <%= yield  %>

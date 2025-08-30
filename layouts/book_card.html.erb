@@ -4,7 +4,7 @@
       unless cover.nil?
       %>
 
-      <a href="<%= item.path %>"><img src="<%= cover.path(rep: :medium) %>" width="<%= cover["width_medium"] %>" class="book-cover-card"></a>
+      <a href="<%= item.path %>"><img src="<%= cover.path(rep: :medium) %>" width="<%= cover["width_medium"] %>"  alt="Couverture du livre <%= item[:title] %> de <%= item[:author] %>" class="book-cover-card"></a>
       <% end %>
       <div class="book-info" title="<%= "#{item[:title]} de #{item[:author]}"%>">
         <div class="book-header">

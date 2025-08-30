@@ -15,7 +15,7 @@ site_url = @config[:site][:url]
       unless @items["/cover/#{@item[:isbn]}.*"].nil?
         cover = @items["/cover/#{@item[:isbn]}.*"]
       %>
-      <img src="<%= cover.path %>" width="<%= cover["width_default"] %>" height="<%= cover["height_default"] %>">
+      <img src="<%= cover.path %>" width="<%= cover["width_default"] %>" height="<%= cover["height_default"] %>" alt="Couverture du livre <%= @item[:title] %> de <%= @item[:author] %>">
       <% end %>
       <%= yield %>
       <a href="<%= "#{site_url}#{@item.path}" %>">Voir en entier.</a>

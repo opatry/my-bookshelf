@@ -75,7 +75,7 @@ rated_books.sort_by { |book|
 cover = @items["/cover/#{book[:isbn]}.*"]
 unless cover.nil?
 %>
-        <img src="<%= cover.path(rep: :mini) %>" width="<%= cover["width_mini"] %>" height="<%= cover["height_mini"] %>" class="book-cover-mini">
+        <img src="<%= cover.path(rep: :mini) %>" width="<%= cover["width_mini"] %>" height="<%= cover["height_mini"] %>"  alt="Couverture du livre <%= book[:title] %> de <%= book[:author] %>" class="book-cover-mini">
 <% end %>
       </td>
       <td><a href="<%= book.path %>"><%= book[:title] %></a></td>
