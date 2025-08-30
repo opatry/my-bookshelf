@@ -18,7 +18,7 @@ books = books.take(books.size - 2) unless ongoing_book.nil?
     <div class="book-card ongoing book-showcase">
     <% unless ongoing_book_cover.nil? %>
     <div class="book-cover-showcase" title="En cours de lecture…">
-    <a href="<%= ongoing_book.path %>"><img src="<%= ongoing_book_cover.path(rep: :showcase) %>" alt="Couverture du livre <%= ongoing_book[:title] %> de <%= ongoing_book[:author] %>"></a>
+    <a href="<%= ongoing_book.path %>"><img src="<%= ongoing_book_cover.path(rep: :showcase) %>" alt="Couverture du livre <%= ongoing_book[:title] %> de <%= ongoing_book[:author] %>" fetchpriority="high"></a>
     </div>
     <% end %>
     <div class="book-info">
