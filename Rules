@@ -161,13 +161,10 @@ compile '/static/search.*' do
 end
 
 compile '/static/style.*' do
-  # force HTTP cache invalidation when stylesheet changes
-  if @config[:dev]
-    write item.identifier
-  else
-    sha = Digest::SHA1.hexdigest(item.raw_content)
-    write "#{item.identifier.without_ext}-#{sha}.#{item[:extension]}"
-  end
+  filter :rainpress unless @config[:dev]
+
+  # no need to write/route such file, inlined within HTML
+  write nil
 end
 
 compile '/static/lucide-icons/*.svg' do

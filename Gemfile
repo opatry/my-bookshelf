@@ -20,6 +20,7 @@ gem 'webrick'
 # nanoc filters
 gem 'kramdown'
 gem 'htmlcompressor'
+gem 'rainpress'
 
 gem 'mimemagic'
 gem 'image_size'
