@@ -137,7 +137,7 @@ compile '/static/pwa-screenshot-*' do
   write item.identifier.to_s.gsub(%r/\d+\-/, '')
 end
 
-compile '/static/{babelio,senscritique}.*' do
+compile '/static/{babelio,senscritique,rss}.*' do
   filter :thumbnailize, width: @config[:social][:badge_size] unless @config[:dev]
 end
 
