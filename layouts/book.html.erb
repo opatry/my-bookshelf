@@ -2,7 +2,7 @@
 <h2 class="book-title">
 <%= @item[:title] %>
 <% if @item[:favorite] %>
-<span class="favorite-icon" aria-label="Coup de cœur" title="Coup de cœur"><%= heart_svg %></span>
+&nbsp;<span class="favorite-icon" aria-label="Coup de cœur" title="Coup de cœur"><%= heart_svg %></span>
 <% end %>
 </h2>
 <h4><%= @item[:author] %></h4>
