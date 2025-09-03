@@ -266,3 +266,7 @@ def quote_markup(text:, author: nil)
   figcaption = author.nil? ? '' : %Q[<figcaption class="quote-author">—&nbsp;#{author}</figcaption>]
   %Q[<figure class="quote"><blockquote class="quote-text">#{paragraphs}</blockquote>#{figcaption}</figure>]
 end
+
+def book_description_metadata(book, max_words:)
+  Nokogiri::HTML(book.compiled_content).text.split.first(max_words).join(' ') + '…'
+end

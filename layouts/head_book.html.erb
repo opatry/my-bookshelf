@@ -20,7 +20,7 @@
 <%end %>
 <%
   # keep 50 first words
-  description = "#{@item.raw_content.split.first(50).join(' ')}…"
+  description = book_description_metadata(@item, max_words: 50)
 %>
   <meta property="og:description" content="<%= description %>" />
   <meta name="description" content="<%= description %>">
