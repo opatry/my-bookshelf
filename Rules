@@ -111,7 +111,12 @@ preprocess do
     end
   end
 
-  puts "#{@items.count { |item| book?(item) }} books"
+  books = @items.select { |item| book?(item) }
+  wished_books = books.select { |item| item[:rating].nil? || item[:rating] <= 0 }
+  read_books = books - wished_books
+  total_rating = read_books.sum { |book| book[:rating] || 0 }
+  puts " - #{read_books.size} books read 📚 (Average rating: ⭐️ #{'%.2f' % (total_rating.to_f / read_books.size)}/10)"
+  puts " - #{wished_books.size} books in the wish list"
   puts " - #{missing_covers} missing covers" if missing_covers > 0
 end
 
