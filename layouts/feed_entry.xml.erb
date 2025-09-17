@@ -5,7 +5,7 @@ site_url = @config[:site][:url]
     <link rel="alternate" type="text/html" href="<%= site_url + item.path %>"/>
     <id>urn:uuid:<%= item[:uuid] %></id>
     <updated><%= get_atom_date(item) %></updated>
-    <title><%=h item[:title] %></title>
+    <title><%=h page_title(item) %></title>
     <author>
       <name><%=h item[:author] %></name>
     </author>
