@@ -36,16 +36,22 @@ else
     (1..12).each do |month_num|
       month_books = books_by_month[month_num] || []
       book_count = month_books.count
-      # we consider 1 book / week at most usually for better bubble size
-      book_count_percentage = 20 *[month_books.count, 5].min
+      # we consider a max of 7 books per month for a max radius of 50
+      max_per_month = 7
+      max_radius = 50
+      book_count_cap = [book_count, max_per_month].min
+      radius_per_book = max_radius / max_per_month.to_f
+      book_radius = radius_per_book * book_count_cap
+      # linked to values in style.css (`data-book-read-count`)
+      book_color_alpha = book_count_cap * 14 / 100.0
     %>
-    <td class="calendar-cell" data-book-read-count="<%= book_count %>">
+    <td class="calendar-cell" data-book-read-count="<%= book_count_cap %>">
     <%# TODO I18n %>
     <% if book_count > 0 %>
     <a href="#y<%= year %>-m<%= month_num %>" title="Voir les <%= book_count %> livres(s) lu(s) en <%= I18n.t('date.month_names')[month_num] %> <%= year %>">
     <% end %>
       <svg height="100%" viewBox="0 0 100 100" class="book-read-count-marker">
-        <circle cx="50" cy="50" r="<%= (book_count_percentage / 2.0).to_i %>" fill="rgba(197, 17, 4, <%= (book_count_percentage / 100.0) %>)" />
+        <circle cx="50" cy="50" r="<%= book_radius %>" fill="rgba(197, 17, 4, <%= book_color_alpha %>)" />
       </svg>
     <% if book_count > 0 %>
     </a>
