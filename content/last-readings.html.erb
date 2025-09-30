@@ -28,10 +28,13 @@ else
     </tr>
   </thead>
   <tbody>
-<% books_by_year.each do |year, books_by_month| %>
+  <%
+  books_by_year.each do |year, books_by_month|
+    book_count_in_year = books_by_month.values.sum(&:size)
+  %>
   <tr>
     <%# FIXME handle case of empty years %>
-    <th><a href="#y<%= year %>" title="Voir les livres lus en <%= year %>"><%= year %></a></th>
+    <th><a href="#y<%= year %>" title="Voir les <%= book_count_in_year %> livres lus en <%= year %>"><%= year %></a></th>
     <%
     (1..12).each do |month_num|
       month_books = books_by_month[month_num] || []
@@ -63,12 +66,18 @@ else
   </tbody>
   </table>
 
-<% books_by_year.each do |year, books_by_month| %>
+<%
+books_by_year.each do |year, books_by_month|
+  book_count_in_year = books_by_month.values.sum(&:size)
+%>
 <div id="y<%= year %>" class="temporal-section year-section">
-  <h2><%= year %></h2>
-  <% books_by_month.each do |month_num, books_in_month| %>
+  <h2><%= year %>&nbsp;<span class="book-count">(<%= book_count_in_year %>)</span></h2>
+  <%
+  books_by_month.each do |month_num, books_in_month|
+    book_count_in_month = books_in_month.size
+  %>
   <div id="y<%= year %>-m<%= month_num %>" class="temporal-section month-section">
-    <h3><%= I18n.t('date.month_names')[month_num].capitalize %> <span class="title-more"><a href="#" title="Retour en haut de page">↑</a></span></h3>
+    <h3><%= I18n.t('date.month_names')[month_num].capitalize %>&nbsp;<span class="book-count">(<%= book_count_in_month %>)</span> <span class="title-more"><a href="#" title="Retour en haut de page">↑</a></span></h3>
     <div id="recent-books" class="book-grid">
       <% books_in_month.each do |book| %>
         <%= book.reps[:card].compiled_content(snapshot: :card) %>

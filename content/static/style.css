@@ -341,6 +341,11 @@ h1, h2, h3 {
   align-items: center;
 }
 
+.book-count {
+  font-size: .7em;
+  color: rgba(0, 0, 0, .6);
+}
+
 .title-more {
   margin-left: auto;
   font-size: .5em;
