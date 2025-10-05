@@ -14,3 +14,12 @@ fr:
     - octobre
     - novembre
     - décembre
+  last_readings:
+    readings_count_in_year:
+      zero: "Aucun livre lu en %{year}"
+      one: "Voir le livre lu en %{year}"
+      other: "Voir les %{book_count} livres lus en %{year}"
+    readings_count_in_month:
+      zero: "Aucun livre lu en %{month} %{year}"
+      one: "Voir le livre lu en %{month} %{year}"
+      other: "Voir les %{book_count} livres lus en %{month} %{year}"

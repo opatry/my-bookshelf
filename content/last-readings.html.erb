@@ -31,14 +31,27 @@ else
   <%
   books_by_year.each do |year, books_by_month|
     book_count_in_year = books_by_month.values.sum(&:size)
+    book_count_in_year_title = I18n.t(
+        'last_readings.readings_count_in_year',
+        count: book_count_in_year,
+        book_count: book_count_in_year,
+        year: year
+      )
   %>
   <tr>
     <%# FIXME handle case of empty years %>
-    <th><a href="#y<%= year %>" title="Voir les <%= book_count_in_year %> livres lus en <%= year %>"><%= year %></a></th>
+    <th><a href="#y<%= year %>" title="<%= book_count_in_year_title %>"><%= year %></a></th>
     <%
     (1..12).each do |month_num|
       month_books = books_by_month[month_num] || []
       book_count = month_books.count
+      book_count_title = I18n.t(
+        'last_readings.readings_count_in_month',
+        count: book_count,
+        book_count: book_count,
+        month: I18n.t('date.month_names')[month_num],
+        year: year
+      )
       # we consider a max of 7 books per month for a max radius of 50
       max_per_month = 7
       max_radius = 50
@@ -49,9 +62,8 @@ else
       book_color_alpha = book_count_cap * 14 / 100.0
     %>
     <td class="calendar-cell" data-book-read-count="<%= book_count_cap %>">
-    <%# TODO I18n %>
     <% if book_count > 0 %>
-    <a href="#y<%= year %>-m<%= month_num %>" title="Voir les <%= book_count %> livres(s) lu(s) en <%= I18n.t('date.month_names')[month_num] %> <%= year %>">
+    <a href="#y<%= year %>-m<%= month_num %>" title="<%= book_count_title %>">
     <% end %>
       <svg height="100%" viewBox="0 0 100 100" class="book-read-count-marker">
         <circle cx="50" cy="50" r="<%= book_radius %>" fill="rgba(197, 17, 4, <%= book_color_alpha %>)" />
