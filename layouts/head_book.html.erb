@@ -1,7 +1,7 @@
-  <meta property="og:type" content="book" />
-  <meta property="book:author" content="<%= @item[:author] %>" />
-  <meta property="book:isbn" content="<%= format_isbn(@item[:isbn]) %>" />
-  <%# <meta property="book:release_date" content="TODO" /> %>
+  <meta property="og:type" content="book">
+  <meta property="book:author" content="<%= @item[:author] %>">
+  <meta property="book:isbn" content="<%= format_isbn(@item[:isbn]) %>">
+  <%# <meta property="book:release_date" content="TODO"> %>
 <% unless @item[:tags].nil? %>
 <% @item[:tags].each do |tag| %>
   <meta property="book:tag" content="<%= tag %>">
@@ -12,15 +12,15 @@
   unless picture.nil?
     picture_url = "#{@config[:site][:url]}#{picture.path}"
 %>
-  <meta property="og:image" content="<%= picture_url %>" />
-  <meta property="og:image:secure_url" content="<%= picture_url %>" />
-  <meta property="og:image:type" content="<%= picture[:mime_type] %>" />
-  <meta property="og:image:width" content="<%= picture["width_default"] %>" />
-  <meta property="og:image:height" content="<%= picture["height_default"] %>" />
+  <meta property="og:image" content="<%= picture_url %>">
+  <meta property="og:image:secure_url" content="<%= picture_url %>">
+  <meta property="og:image:type" content="<%= picture[:mime_type] %>">
+  <meta property="og:image:width" content="<%= picture["width_default"] %>">
+  <meta property="og:image:height" content="<%= picture["height_default"] %>">
 <%end %>
 <%
   # keep 50 first words
   description = book_description_metadata(@item, max_words: 50)
 %>
-  <meta property="og:description" content="<%= description %>" />
+  <meta property="og:description" content="<%= description %>">
   <meta name="description" content="<%= description %>">
