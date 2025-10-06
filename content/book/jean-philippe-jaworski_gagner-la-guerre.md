@@ -1,0 +1,17 @@
+---
+uuid: 5e744895-9bf7-4324-a4f2-f609a1310d39
+isbn: "9782915793642"
+title: "Gagner la guerre"
+author: "Jean-Philippe Jaworski"
+priority: 4
+tags:
+  - TBD
+---
+
+Au bout de dix heures de combat, quand j’ai vu la flotte du Chah flamber d’un bout à l’autre de l’horizon, je me suis dit : "Benvenuto, mon fagot, t’as encore tiré tes os d’un rude merdier."
+
+Sous le commandement de mon patron, le podestat Leonide Ducatore, les galères de la République de Ciudalia venaient d’écraser les escadres du Sublime Souverain de Ressine. La victoire était arrachée, et je croyais que le gros de la tourmente était passé. Je me gourais sévère.
+
+Gagner une guerre, c’est bien joli, mais quand il faut partager le butin entre les vainqueurs, et quand ces triomphateurs sont des nobles pourris d’orgueil et d’ambition, le coup de grâce infligé à l’ennemi n’est qu’un amuse-gueule. C’est la curée qui commence. On en vient à regretter les bonnes vieilles batailles rangées et les tueries codifiées selon l’art militaire.
+
+Désormais, pour rafler le pactole, c’est au sein de la famille qu’on sort les couteaux. Et il se trouve que les couteaux, justement, c’est plutôt mon rayon…

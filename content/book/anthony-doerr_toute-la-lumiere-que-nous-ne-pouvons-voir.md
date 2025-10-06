@@ -1,0 +1,18 @@
+---
+uuid: 56f16a5a-118a-40e5-a87a-6ba284cf085b
+isbn: "9782226317186"
+title: "Toute la lumière que nous ne pouvons voir"
+author: "Anthony Doerr"
+rating: 9
+read_date: 2025-01-22
+favorite: true
+tags:
+  - Guerre
+  - Famille
+  - Allemagne
+---
+
+Magnifiquement écrit, captivant de bout en bout, il nous entraîne, du Paris de l'Occupation à l'effervescence de la Libération, dans le sillage de deux héros dont la guerre va bouleverser l'existence : Marie-Laure, une jeune aveugle, réfugiée avec son père à Saint-Malo, et Werner, un orphelin, véritable génie des transmissions électromagnétiques, dont les talents sont exploités par la Wehrmacht pour briser la Résistance.
+
+En entrecroisant avec une maîtrise éblouissante le destin de ces deux personnages, ennemis malgré eux, dans le décor crépusculaire d'une ville pilonnée par les bombes, Anthony Doerr dessine une fresque d'une beauté envoûtante. Bien plus qu'un roman sur la guerre, Toute la lumière que nous ne pouvons voir est une réflexion profonde sur le destin et la condition humaine. La preuve que même les heures les plus sombres ne pourront parvenir à détruire la beauté du monde.
+

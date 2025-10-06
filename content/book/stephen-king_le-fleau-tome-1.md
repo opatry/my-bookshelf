@@ -1,0 +1,15 @@
+---
+uuid: 611d341f-f6fc-4a79-8279-139987a53519
+isbn: "9782290310816"
+title: "Le fléau, tome 1"
+author: "Stephen King"
+rating: 8
+linked_books:
+  - "9782277233121"
+  - "9782290310830"
+---
+
+On avait cru d'abord à une banale épidémie de grippe. Mais quand les cadavres se comptèrent par milliers, quand les villes se transformèrent en charniers infâmes, il fallut bien se rendre à l'évidence : le Fléau n'épargnerait personne.
+Hagards, terrorisés, les rares survivants tentent de se regrouper. Tout est horrible, désorganisé. Partout le danger rôde.
+Un même cauchemar les obsède : un « homme sans visage » marche vers eux, un homme maudit aux pouvoirs machiavéliques. Ses intentions sont claires : imposer sa propre loi, fondée sur la malfaisance, la cruauté et la haine.
+Et si cette vision angoissante devenait réalité ?

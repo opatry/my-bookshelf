@@ -4,6 +4,12 @@ set -euo pipefail
 
 origin=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd) || exit
 
+# if there are issues with `iconv`, try installing it with homebrew (`brew install libiconv`) and force adding it to PATH
+# export PATH="/opt/homebrew/opt/libiconv/bin:$PATH"
+
+export LANG=fr_FR.UTF-8
+export LC_ALL=fr_FR.UTF-8
+
 escape_url() {
   printf %s "$1" | jq -sRr @uri
 }
@@ -12,8 +18,20 @@ trim() {
   sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//' <<< "$1"
 }
 
-parseNumber() {
+parse_number() {
   echo "$1" | tr ',' '.' | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'
+}
+
+extract_metadata() {
+  metadata=$(grep "^${1}:\ *" < "${2}")
+  metadata="${metadata#"${1}: "}"
+  echo "${metadata//\"/}"
+}
+
+slugify() {
+  str_lower=$(tr '[:upper:]' '[:lower:]' <<< "${1}")
+  str_slug=$(iconv -f utf-8 -t ascii//TRANSLIT//IGNORE <<< "${str_lower}" | sed 's/[^a-zA-Z 0-9\\-]//g' | sed 's/[ ]/-/g' | tr -s '-')
+  echo "${str_slug%%-}"
 }
 
 if [ $# -eq 1 ] && [ -f "$1" ]; then
@@ -21,7 +39,7 @@ if [ $# -eq 1 ] && [ -f "$1" ]; then
   if [ "${filename##*.}" = "docx" ]; then
     echo "Provided file is a .docx, converting to text"
     filename_b=$(basename "$1" .docx)
-    echo "filename_b=$filename_b"
+    echo "filename_b=${filename_b}"
     # unzip -p "$1" word/document.xml | sed -e 's/<\/w:p>/ /g; s/<[^>]\{1,\}>/ /g; s/[^[:print:]]\{1,\}/ /g'
     docx2txt.sh "$1"
     file="${PWD}/${filename_b}.txt"
@@ -61,9 +79,9 @@ if [ $# -eq 1 ] && [ -f "$1" ]; then
     author=$(trim "$(cut -d'|' -f2 <<< "${line}")")
     rating_str=$(echo "${line}" | cut -d'|' -f3)
     if [ -n "${rating_str}" ]; then
-      rating_value=$(parseNumber "$(cut -d/ -f1 <<< "${rating_str}")")
-      echo "rating_value=$rating_value"
-      rating_upper_bound=$(parseNumber "$(cut -d/ -f2 <<< "${rating_str}")")
+      rating_value=$(parse_number "$(cut -d/ -f1 <<< "${rating_str}")")
+      echo "rating_value=${rating_value}"
+      rating_upper_bound=$(parse_number "$(cut -d/ -f2 <<< "${rating_str}")")
       # we want rating to be in [0-10]
       rating=$(bc <<< "${rating_value} * 10 / ${rating_upper_bound}")
     else
@@ -164,12 +182,15 @@ else
   fi
 
   # book file (markdown)
-  book_file="${origin}/content/book/${isbn}.md"
+  author_slug=$(slugify "${author}")
+  title_slug=$(slugify "${title}")
+  book_file="${origin}/content/book/${author_slug}_${title_slug}.md"
   if [ ! -f "${book_file}" ]; then
     uuid=$(uuidgen | tr '[:upper:]' '[:lower:]')
     echo "Creating a new book ${book_file} for '${title}' by '${author}'"
     echo "---
 uuid: ${uuid}
+isbn: \"${isbn}\"
 REF: \"${book_query}\"
 title: \"${title}\"
 author: \"${author}\"

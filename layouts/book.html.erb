@@ -46,7 +46,7 @@ unless @items["/cover/#{@item[:isbn]}.*"].nil?
 
 <%
 linked_books = @item.fetch(:linked_books, []).map do |isbn|
-  book_item = @items["/book/#{isbn}.*"]
+  book_item = find_book_by_isbn(isbn)
   if book_item.nil?
     warn "Warning: Linked book with ISBN #{isbn} not found."
     next

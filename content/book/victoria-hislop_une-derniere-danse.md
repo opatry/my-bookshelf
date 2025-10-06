@@ -1,0 +1,13 @@
+---
+uuid: 1afe83d4-0ce6-4472-b32e-dcca6ba21fc0
+isbn: "9782365690874"
+title: "Une dernière danse"
+author: "Victoria Hislop"
+rating: 8
+read_date: 2021-04-12
+tags:
+  - Guerre
+  - Espagne
+---
+
+Après l'immense succès de L'Île des oubliés, retrouvez Victoria Hislop pour Une dernière danse dans le dédale des ruelles de Grenade. Derrière les tours majestueuses de l'Alhambra, les ruelles de Grenade résonnent de musique et de secrets. Venue de Londres pour prendre des cours de danse, Sonia ignore tout du passé de la ville quand elle arrive. Mais une simple conversation au café El Barril va la plonger dans la tragique histoire de la cité de Garcia Lorca et de la famille qui tenait les lieux. Soixante-dix ans plus tôt, le café abrite les Ramirez : trois frères qui n'ont rien d'autre en commun que leur amour pour leur sœur, Mercedes. Passionnée de danse, la jeune fille tombe bientôt sous le charme d'un gitan guitariste hors pair. Mais tandis que l'Espagne sombre dans la guerre civile, chacun doit choisir un camp. Et la fratrie va se déchirer entre résistance, soumission au pouvoir montant, ou fuite. Happée par ce récit de feu et de sang, Sonia est loin d'imaginer à quel point cette histoire va bouleverser sa propre existence…

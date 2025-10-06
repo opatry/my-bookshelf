@@ -1,0 +1,17 @@
+---
+uuid: c5fa5b10-ff56-4266-b4df-985c10c2f0ca
+isbn: "9782841569342"
+title: "Les Déferlantes"
+author: "Claudie Gallay"
+rating: 8
+read_date: 2023-02-06
+favorite: true
+tags:
+  - Nature
+  - Marine
+  - Famille
+  - Amour
+  - Normandie
+---
+
+Sur la pointe de la Hague, un homme, Lambert, revient quarante ans après sur le lieu du naufrage de ses parents et de son petit frère. La narratrice, une étrangère au pays, va peu à peu découvrir le mystère et les secrets de cette noyade, et mettre à jour les liens complexes unissant certains habitants du bourg.

@@ -113,8 +113,12 @@ def hex_color_to_rgba(hex, opacity)
   "rgba(#{rgb.join(", ")}, #{opacity})"
 end
 
+def find_book_by_isbn(isbn)
+  @items.find { |item| book?(item) && item[:isbn] == isbn }
+end
+
 def link_to_book(isbn, title = nil)
-  book = @items["/book/#{isbn}.*"]
+  book = find_book_by_isbn(isbn)
   if book.nil?
     raise "Can't find book #{isbn} and no fallback title provided" if title.nil?
     puts "Warning: link_to_book(#{isbn}, #{title}), can't resolve book"
@@ -181,7 +185,7 @@ end
 # @return [Array<Hash>] an array of book items sorted by priority.
 def wished_books(limit = nil)
   books = @items.select { |item| book?(item) && !item[:priority].nil? }
-                .sort_by { |item| item[:priority] }
+                .sort_by { |item| [item[:priority], item[:isbn]] }
   limit.nil? ? books : books.first(limit)
 end
 
@@ -196,6 +200,7 @@ end
 
 def rated_books()
   @items.select { |item| book?(item) && !item[:rating].nil? && !item[:rating].zero? }
+        .sort_by { |item| item[:isbn] }
 end
 
 def all_tags

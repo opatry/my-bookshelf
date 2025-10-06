@@ -1,0 +1,14 @@
+---
+uuid: 73c8040e-de83-4754-87c6-be9c37e9b824
+isbn: "9782363080714"
+title: "Ciel d'acier"
+author: "Michel Moutot"
+rating: 7
+read_date: 2021-01-31
+tags:
+  - Indiens
+  - Famille
+  - Etats-Unis
+---
+
+New-York, 11 septembre 2001. Au moment où les twins towers s'effrondent, John LaLiberté, dit Cat, Indien mohawk et ironworker (monteur d'acier) de son état, travaille sur le chantier d'un nouveau building à Manhattan. Passé l'incroyable moment de stupeur et dans l'atmosphère de guerre qui envahit alors toute la ville de New-York, il rejoint le lieu de la catastrophe, appelé en renfort comme tous ses congénères pour s'atteler, dans un effroyable et indescriptible champ de ruines, au premier déblaiement des gravas en vue de sauver d'hypothétiques survivants. Les Mohawks sont des Indiens, canadiens ou américains, vivant dans des réserves près de Montréal ou à la frontière avec les Etats-Unis. Pas un chantier en hauteur, pas un pont métallique ou un grand building n'ont été construits sans leur savoir-faire ancestral. La légende les présente doué d'une insensibilité au vertige, mais ce n'est qu'une légende. S'ils se déplacent comme des chats sur des poutres de 30 centimètres de large à des hauteurs vertigineuses, pour assembler les éléments d'acier qui constituent l'armature des édifices, c'est seulement en bravant leur peur et en faisant preuve d'un courage inouï. Pour John, cette mission va bien plus loin qu'un simple travail, aussi exceptionnelle que soit la situation. S'ajoute pour lui une circonstance particulière : c'est en construisant les tours du World Trade Center que son père, au printemps 1970, a trouvé la mort, frappé par la foudre pendant un orage. Les tours jumelles ont fait partie du patrimoine familial, alimentant la fierté et la légende du clan. Dès lors, le fil du passé se dévide, nous remontons le temps, pénétrons dans l'histoire des Mohawks, du premier rivet porté au rouge dans un brasero de charbon jusqu'à la construction de la Liberty Tower, qui remplace aujourd'hui le World Trade Center. Embrassant plus d'un siècle, ce roman polyphonique nous présente l'épopée de cette tribu indienne, la seule à avoir gagné, par son travail et son courage, sa place dans le monde des Blancs, sans renier ses croyances et ses traditions. Sur les traces d'une famille d'ironworkers de légende, Michel Moutot, après un extraordinaire travail de documentation, croise les destinées de plusieurs générations d'ironworkers mohawks, bâtisseurs de l'Amérique.

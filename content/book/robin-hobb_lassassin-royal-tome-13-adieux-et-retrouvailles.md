@@ -1,0 +1,13 @@
+---
+uuid: c1204f0d-f1e5-43e1-93f2-f5b18d9a4063
+isbn: "9782756406114"
+title: "L'Assassin royal, tome 13 : Adieux et retrouvailles"
+author: "Robin Hobb"
+rating: 8
+---
+
+Alors que les navires emportent au loin le prince Devoir et la Narcheska Elliania désormais libres de se marier, un homme seul se dresse sur les rivages de l'île d'Aslevjal. Fitz Chevalerie, s'il a fini par se résoudre à la mort du fou, ne peut supporter de laisser la dépouille de son ami ensevelie sous les décombres du château de glace. Il se lance alors dans l'exploration désespérée des ruines souillées à tout jamais par les maléfices de la femme pâle. Son périple le mènera bien plus loin qu'il n'aurait pu l'imaginer : des contrées de la mort aux rivages secrets de l'art, Fitz trouvera peut-être les réponses à toutes ses questions… Ou des raisons de croire qu'il se trompe depuis le début.
+
+---
+
+La suite des aventures de Fitz Chevalerie dans <%= link_to_book('9782756411187') %>.

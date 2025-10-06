@@ -1,0 +1,16 @@
+---
+uuid: 3587e8d3-5adc-4f03-98e1-687acf4f47ce
+isbn: "9782070319015"
+title: "H2G2, tome 1 : Le Guide du voyageur galactique"
+author: "Douglas Adams"
+rating: 7
+tags:
+  - Sci-fi
+  - Humour
+  - IA
+linked_books:
+  - "9782070416158"
+---
+
+Comment garder tout son flegme quand on apprend dans la même journée: que sa maison va être abattue dans la minute pour laisser place à une déviation d'autoroute ; que la Terre va être détruite d'ici deux minutes, se trouvant, coïncidence malheureuse, sur le tracé d'une future voie express intergalactique ; que son meilleur ami, certes délicieusement décalé, est en fait un astrostoppeur natif de Bételgeuse, et s'apprête à vous entraîner aux confins de la galaxie ?  
+Pas de panique ! Car Arthur Dent, un Anglais extraordinairement moyen, pourra compter sur le fabuleux Guide du voyageur galactique pour l'accompagner dans ses extraordinaires dérapages spatiaux moyennement contrôlés.

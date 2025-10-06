@@ -1,0 +1,9 @@
+---
+uuid: 48e36ea8-8b1a-42d1-a51c-4a1e82bba766
+isbn: "9782226233981"
+title: "Le Vol des cigognes"
+author: "Jean-Christophe Grangé"
+rating: 7
+---
+
+Chaque année, elles repartent pour leur fabuleuse migration jusqu'en Afrique. Cette année, elles ne reviendront pas… Cadavres mutilés, tueurs surgis du néant… Le jeu de piste qui aurait dû conduire Louis Antioche sur les traces des cigognes disparues tourne vite au jeu de massacre. Des camps tsiganes bulgares à l'enfer vert du Centrafrique en passant par les kibboutz chauffés à blanc des territoires occupés, sa course-poursuite l'entraîne jusqu'à Calcutta. Au coeur des ténèbres. Imagination débridée, construction impeccable, écriture d'une redoutable efficacité aussi bien dans la violence que dans la psychologie et le suspense : toutes les qualités de Jean-Christophe Grangé, qui l'ont porté au premier rang des auteurs de thrillers et ont fait de ses Rivières pourpres un immense succès mondial, se trouvent déjà dans ce premier roman. Un voyage au bout de la peur. Un livre hallucinant !

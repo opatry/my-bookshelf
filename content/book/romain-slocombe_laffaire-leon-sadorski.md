@@ -1,0 +1,13 @@
+---
+uuid: bc5a700f-5fed-4a32-975d-b8e6a402a362
+isbn: "9782221190593"
+title: "L'Affaire Léon Sadorski"
+author: "Romain Slocombe"
+rating: 6
+read_date: 2024-01-30
+tags:
+  - Guerre
+  - Policier
+---
+
+Le pire des salauds, le meilleur des enquêteurs. Avril 1942. Au sortir d'un hiver rigoureux, Paris prend des airs de fête malgré les tracas de l'Occupation. Pétainiste et antisémite, l'inspecteur Léon Sadorski est un flic modèle doublé d'un mari attentionné. Il fait très correctement son travail à la 3e section des Renseignements généraux, contrôle et arrête les Juifs pour les expédier à Drancy. De temps en temps, il lui arrive de donner un coup de main aux Brigades spéciales, d'intervenir contre les " terroristes ". Mais Sadorski est brusquement arrêté par la Gestapo et transféré à Berlin, où on le jette en prison. Le but des Allemands est d'en faire leur informateur au sein de la préfecture de police… De retour à Paris, il reçoit l'ordre de retrouver son ancienne maîtresse, Thérèse Gerst, mystérieuse agent double que la Gestapo soupçonne d'appartenir à un réseau antinazi. Après le succès de Monsieur le commandant, Romain Slocombe nous entraîne dans les abîmes de la collaboration et de la mauvaise conscience française. " Slocombe offre au polar un immense roman qui résonne avec notre Histoire. Grandiose. " Benoît Minville, auteur de Rural noir, libraire Fnac Défense.

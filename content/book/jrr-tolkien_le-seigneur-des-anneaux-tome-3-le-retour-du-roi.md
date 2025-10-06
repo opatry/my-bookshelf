@@ -1,0 +1,12 @@
+---
+uuid: 00a2c337-25cc-481b-b5f3-9e7412b3dc44
+isbn: "9782267032192"
+title: "Le Seigneur des Anneaux, tome 3 : Le retour du roi"
+author: "J.R.R. Tolkien"
+rating: 8
+tags:
+  - Aventure
+  - Fantasy
+---
+
+La dernière partie du Seigneur des Anneaux voit la fin de la quête de Frodo en Terre du Milieu. Le Retour du Roi raconte la stratégie désespérée de Gandalf face au Seigneur des Anneaux, jusqu’à la catastrophe finale et au dénouement de la grande Guerre où s’illustrent Aragorn et ses compagnons, Gimli le Nain, Legolas l’Elfe, les Hobbits Merry et Pippin, tandis que Gollum est appelé à jouer un rôle inattendu aux côtés de Frodo et de Sam au Mordor, le seul lieu où l’Anneau de Sauron peut être détruit. Cette nouvelle traduction prend en compte la dernière version du texte anglais, les indications laissées par J. R. R. Tolkien à l’intention des traducteurs et les découvertes permises par les publications posthumes proposées par Christopher Tolkien. Ce volume contient 15 illustrations d’Alan Lee, entièrement renumérisées, d’une qualité inégalée, ainsi que des cartes (en couleur) de la Terre du Milieu.

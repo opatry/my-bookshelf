@@ -1,0 +1,19 @@
+---
+uuid: ee86e4d6-b2f3-4f26-a8e2-3666e9b1821f
+isbn: "9782226306524"
+title: "Trois mille chevaux vapeur"
+author: "Antonin Varenne"
+rating: 8
+read_date: 2023-11-22
+tags:
+  - Aventure
+  - Far west
+  - Serial killer
+  - Etats-Unis
+  - Angleterre
+  - Inde
+  - Aventure
+  - Drogue
+---
+
+Le sergent Bowman appartient à cette race des héros crépusculaires qui traversent les livres de Conrad, Kipling, Stevenson… Ces soldats perdus qui ont plongé au coeur des ténèbres, massacré, connu l'enfer, couru le monde à la recherche d'une vengeance impossible, d'une improbable rédemption. De la jungle birmane aux bas-fonds de Londres, des rives de l'Irrawaddy à la conquête de l'Ouest, ce roman plein de bruit et de fureur nous mène sans répit au terme d'un voyage envoûtant, magnifique et sombre. Antonin Varenne, l'auteur de Fakirs, renoue avec la lignée disparue des grands écrivains d'aventures et d'action. Une réussite qui marquera.

@@ -1,0 +1,50 @@
+---
+uuid: 678ea217-3749-4e91-9d45-687ea08c1fe7
+isbn: "9782253079651"
+title: "La commode aux tiroirs de couleurs"
+author: "Olivia Ruiz"
+rating: 7
+read_date: 2025-07-18
+tags:
+  - Famille
+  - Espagne
+  - Guerre
+  - Immigration
+---
+
+À la mort de sa grand-mère, une jeune femme hérite de l'intrigante commode qui a nourri tous ses fantasmes de petite fille. Le temps d'une nuit, elle va ouvrir ses dix tiroirs et dérouler le fil de la vie de Rita, son Abuela, dévoilant les secrets qui ont scellé le destin de quatre générations de femmes indomptables, entre Espagne et France, de la dictature franquiste à nos jours.
+
+La commode aux tiroirs de couleurs signe l'entrée en littérature d'Olivia Ruiz, conteuse hors pair, qui entremêle tragédies familiales et tourments de l'Histoire pour nous offrir une fresque romanesque flamboyante sur l'exil.
+
+### À propos
+
+<%= quote_markup(
+  text: "Un magnifique roman sur l'exil. Un petit bijou.",
+  author: "Le Parisien"
+) %>
+
+<%= quote_markup(
+  text: "Un texte délicat, poétique et poignant.",
+  author: "RTL"
+) %>
+
+<%= quote_markup(
+  text: "Par la grâce d'un livre, les racines refleurissent.",
+  author: "Courrier de l'Ouest"
+) %>
+
+<%= quote_markup(
+  text: "Le partage est la morale de ce récit ardent.",
+  author: "Le Monde des livres"
+) %>
+
+<%= quote_markup(
+  text: "Un émouvant premier roman autour d'une lignée de femmes frondeuses, marquées par le déracinement.",
+  author: "Elle"
+) %>
+
+<%= quote_markup(
+  text: "Racé comme du Almodóvar. Un coup d'éclat et un coup de maître. Une écrivaine démente.",
+  author: "Le Point"
+) %>
+
