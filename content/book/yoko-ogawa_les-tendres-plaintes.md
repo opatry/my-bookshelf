@@ -1,0 +1,15 @@
+---
+uuid: 630868cf-8624-400c-9db9-8fae6325aab9
+isbn: "9782330026196"
+title: "Les tendres plaintes"
+author: "Yôko Ogawa"
+rating: 5
+read_date: 2023-08-19
+tags:
+  - Japon
+  - Amour
+  - Nature
+  - Amitié
+---
+
+Ruriko est calligraphe. Fuyant la brûlure des infidélités de son mari, elle part s'installer seule en pleine montagne, dans le chalet de ses parents. Elle rencontre Nitta, pianiste reconverti dans la fabrication de clavecins. L'histoire simple, intense et profonde, d'une femme en crise entre deux amours, entre deux vies. Sur l'indicible solitude des êtres et leurs relations fugitives, un roman riche en mystère où s'épanouit tout l'art d'Ogawa.

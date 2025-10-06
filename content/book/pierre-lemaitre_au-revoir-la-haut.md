@@ -1,0 +1,16 @@
+---
+uuid: 9a824516-27d1-4fac-bb64-9388bfdbf218
+isbn: "9782253194613"
+title: "Au revoir là-haut"
+author: "Pierre Lemaitre"
+rating: 8
+read_date: 2024-04-28
+favorite: true
+tags:
+  - Guerre
+  - Vengeance
+  - Amitié
+---
+
+Rescapés du premier conflit mondial, détruits par une guerre vaine et barbare, Albert et Édouard comprennent rapidement que le pays ne pourra rien faire pour eux. Car la France, qui glorifie ses morts, est impuissante à aider les survivants.
+Abandonnés, condamnés à l’exclusion, les deux amis refusent pourtant de céder à l’amertume ou au découragement. Défiant la société, l’État et la morale patriotique, ils imaginent une arnaque d’envergure nationale, d’une audace inouïe et d’un cynisme absolu.

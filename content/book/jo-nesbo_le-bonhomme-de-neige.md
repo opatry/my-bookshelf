@@ -1,0 +1,15 @@
+---
+uuid: 79007088-f838-422c-86f9-0ea5b301ebf6
+isbn: "9782070786411"
+title: "Le bonhomme de neige"
+author: "Jo Nesbø"
+rating: 6
+read_date: 2021-07-30
+tags:
+  - Thriller
+  - Policier
+  - Serial killer
+  - Scandinavie
+---
+
+Oslo, novembre, la première neige tombe sur la ville. Dans le jardin des Becker, un bonhomme de neige fait irruption, comme sorti de nulle part. Le jeune fils remarque qu'il est tourné vers la maison et que ses grands yeux noirs regardent fixement leurs fenêtres. Dans la nuit, Birte, la mère, disparaît, laissant pour seule trace son écharpe rose, retrouvée autour du cou du bonhomme de neige… Dans le même temps, l'inspecteur Harry Hole reçoit une lettre signée «le bonhomme de neige» qui lui annonce d'autres victimes. Plongeant son nez dans les dossiers de la police, Harry met en lumière une vague de disparitions parmi les femmes mariées et mères de famille de Norvège. Toutes n'ont plus donné signe de vie le jour de la première neige… D'une sobriété étonnante, Harry Hole va se retrouver confronté, pour la première fois de sa carrière, à un tueur en série agissant sur le territoire norvégien et qui le conduira jusqu'au gouffre de sa folie…

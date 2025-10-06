@@ -1,0 +1,9 @@
+---
+uuid: 0338904e-a305-4dd5-bee6-037b7b0d77f6
+isbn: "9782226335173"
+title: "Le Silence des agneaux"
+author: "Thomas Harris"
+rating: 8
+---
+
+Pour retrouver un tueur psychopathe, Clarice Sterling, jeune recrue du FBI, doit entrer dans la tête d’Hannibal Lecter. Mais peut-elle en sortir vivante ? Hannibal, le serial killer le plus célèbre de la littérature, est incarné par Mads Mikkelsen dans une série télé déjà culte.

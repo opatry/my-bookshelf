@@ -1,0 +1,14 @@
+---
+uuid: 3ae803b5-abea-4127-aa4a-9a5a4aaddd92
+isbn: "9782253174158"
+title: "Tuer le père"
+author: "Amélie Nothomb"
+rating: 5
+read_date: 2024-07-18
+---
+
+"Allez savoir ce qui se passe dans la tête d’un joueur."
+
+Cette tragique et folle histoire, Amélie la raconte avec son habituelle alacrité. Si noires que soient ses visions, si vives ses critiques de notre société de faussaires, elle sait danser avec elles. Il y a, bien sûr, un peu de magie là-dedans.
+
+Un anguleux jeu de miroirs pour un roman codé très noir, à l'image de son hauteur.

@@ -1,0 +1,15 @@
+---
+uuid: 3ee310d0-a6d4-40af-b3d2-bcda8162ea1a
+isbn: "9782264043290"
+title: "Les fantômes de Lhadrung"
+author: "Eliot Pattison"
+rating: 8
+read_date: 2021-08-14
+tags:
+  - Policier
+  - Thriller
+  - Chine
+  - Tibet
+---
+
+Dans la même journée, la collection d'art tibétain d'un milliardaire est volée à Seattle et une fresque disparaît de la Cité interdite à Pékin. Au même moment, au cœur d'un antique monastère du Tibet, un mort disparaît, laissant derrière lui un étrange dessin… Quel est donc le lien entre ces trois événements ? Pour le découvrir, l'ex-inspecteur Shan va devoir interrompre sa retraite spirituelle. De sa finesse et de sa détermination dépendent en effet le sort de ses amis lamas, et surtout celui de son fils, condamné aux travaux forcés. Aidé de ses fidèles amis Lokesh et Gendun, l'inspecteur Shan nous entraîne une nouvelle fois sur le toit du monde, où s'affrontent à armes inégales sagesse ancestrale et convoitise moderne.

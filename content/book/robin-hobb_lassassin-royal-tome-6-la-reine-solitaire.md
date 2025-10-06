@@ -1,0 +1,9 @@
+---
+uuid: 0bc26116-6aae-49f4-a465-c849fdb1ecf1
+isbn: "9782756406176"
+title: "L'Assassin royal, tome 6 : La Reine solitaire"
+author: "Robin Hobb"
+rating: 8
+---
+
+À la tête d’une déroutante procession – la reine Kettricken, la mystérieuse Gaudron, la ménestrelle Astérie et le fou –, Fitz poursuit son chemin sur la voie magique. Une quête toujours plus ardue, car incessante est la traque menée par Royal, son ennemi juré, et ses meilleurs artiseurs et soldats d’élite pour les retrouver et les tuer. S’enfonçant avec difficulté dans une contrée peuplée d’étranges présences, leur chemin, jalonné de gigantesques statues, va les mener à une imposante carrière de pierre noire. Mais où se terre Vérité ? Est-il seulement encore vivant ?

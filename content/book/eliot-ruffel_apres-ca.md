@@ -1,0 +1,20 @@
+---
+uuid: fe2398c7-2ec9-449f-a4fa-2f70f28bfd0f
+isbn: "9782823621334"
+title: "Après ça"
+author: "Eliot Ruffel"
+rating: 6
+read_date: 2025-03-14
+tags:
+  - Normandie
+  - Amitié
+  - Famille
+---
+
+« Je lui demande à quoi il pense et sans lui laisser le temps de répondre je jette un coup d’œil en bas de la falaise, je dis que c’est plutôt haut vu d’ici, tu t’imagines sauter des fois ? »
+
+Max n’a pas mis longtemps avant d’emmener Lou sur le bunker qui fait face à la mer. Les deux amis s’y retrouvent presque tous les soirs de ces vacances caniculaires, regardent partir les ferrys et la parole se délie au fur et à mesure que les bières descendent. C’est un de leurs points communs, de ne pas être trop bavard. Il y a aussi l'ennui, les jeux qu’ils s’inventent, cette ville qu’ils sillonnent avec sa jetée, comme un pont vers le néant. Les pêcheurs s'y disputent les meilleurs emplacements et au bout, on saute dans l’eau en évitant les rochers. On passe à l’âge adulte.
+
+Comment devenir un homme quand les pères ont la main lourde les soirs de défaite de l’OM ou sont absents et que les frères sont partis ?
+
+Dans un premier roman débordant de tendresse, Eliot Ruffel explore le langage des corps et des regards. Au cœur des silences, se dégagent la beauté et le drame d’une amitié.

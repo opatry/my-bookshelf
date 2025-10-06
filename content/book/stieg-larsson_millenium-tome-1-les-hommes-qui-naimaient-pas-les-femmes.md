@@ -1,0 +1,18 @@
+---
+uuid: 8ae41dbc-a99b-4d92-ae6e-4bcd89b0af81
+isbn: "9782742761579"
+title: "Millenium, tome 1 : Les hommes qui n'aimaient pas les femmes"
+author: "Stieg Larsson"
+rating: 8
+tags:
+  - Thriller
+  - Scandinavie
+linked_books:
+  - "9782742765010"
+  - "9782742770311"
+---
+
+Ancien rédacteur de Millénium, revue d'investigations sociales et économiques, Mikael Blomkvist est contacté par un gros industriel pour relancer une enquête abandonnée depuis quarante ans.
+Dans le huis clos d'une île, la petite nièce de Henrik Vanger a disparu, probablement assassinée, et quelqu'un se fait un malin plaisir de le lui rappeler à chacun de ses anniversaires.
+Secondé par Lisbeth Salander, jeune femme rebelle et perturbée, placée sous contrôle social mais fouineuse hors pair, Mikael Blomkvist, cassé par un procès en diffamation qu'il vient de perdre, se plonge sans espoir dans les documents cent fois examinés, jusqu'au jour où une intuition lui fait reprendre un dossier.
+Régulièrement bousculés par de nouvelles informations, suivant les méandres des haines familiales et des scandales financiers, lancés bientôt dans le monde des tueurs psychopathes, le journaliste tenace et l'écorchée vive vont résoudre l'affaire des fleurs séchées et découvrir ce qu'il faudrait peut-être taire.

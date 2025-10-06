@@ -1,0 +1,15 @@
+---
+uuid: 66fc805f-fd60-4642-9625-35576ec99d42
+isbn: "9782743602673"
+title: "American tabloid"
+author: "James Ellroy"
+rating: 7
+read_date: 2024-09-17
+tags:
+  - Guerre
+  - Etats-Unis
+  - Espionnage
+  - Drogue
+---
+
+Malgré son poids, "American Tabloid" tient de l'épure tant il semble que l'auteur ait taillé à la serpe dans un manuscrit que l'on imagine colossal. Plein comme un oeuf, "American Tabloid" requiert une attention de tous les instants : une simple ligne parcourue d'un oeil distrait, et c'est une conspiration, un retournement de veste ou un cadavre qui risquent d'échapper au lecteur. Il n'en fallait pas moins pour passer au scalpel les mille jours de l'administration Kennedy et dresser le tableau dantesque des cinq ans qui courent de novembre 1958 au 22 novembre 1963 à Dallas…

@@ -1,0 +1,16 @@
+---
+uuid: 756b2dd2-6995-43ba-a671-f5b1cf372080
+isbn: "9782266272445"
+title: "Les enfants de Venise"
+author: "Luca Di Fulvio"
+rating: 8
+read_date: 2021-09-14
+tags:
+  - Amitié
+  - Amour
+  - Italie
+  - Moyen-âge
+  - Aventure
+---
+
+La misère radieuse d'une bande d'enfants perdus, la fille secrète d'un médecin sans diplômes, la découverte de l'amour, l'or, le sang, la boue, l'honneur… Pour son nouveau roman, Luca Di Fulvio vous emporte à Venise.

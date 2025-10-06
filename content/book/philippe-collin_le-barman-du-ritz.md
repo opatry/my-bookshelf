@@ -1,0 +1,16 @@
+---
+uuid: 1339e664-1002-4fd8-9739-f339607d7586
+isbn: "9782226493781"
+title: "Le Barman du Ritz"
+author: "Philippe Collin"
+rating: 7
+favorite: true
+read_date: 2025-10-06
+tags:
+  - Guerre
+---
+
+Juin 1940. Les Allemands entrent dans Paris. Partout, le couvre-feu est de rigueur, sauf au grand hôtel Ritz. Avides de découvrir l'art de vivre à la française, les occupants y côtoient l'élite parisienne, tandis que derrière le bar oeuvre Frank Meier, le plus grand barman du monde.
+S'adapter est une question de survie. Frank Meier se révèle habile diplomate, gagne la sympathie des officiers allemands, achète sa tranquillité, mais aussi celle de Luciano, son apprenti, et de la troublante et énigmatique Blanche Auzello. Pendant quatre ans, les hommes de la Gestapo vont trinquer avec Coco Chanel, la terrible veuve Ritz, ou encore Sacha Guitry. Ces hommes et ces femmes, collabos ou résistants, héros ou profiteurs de guerre, vont s'aimer, se trahir, lutter aussi pour une certaine idée de la civilisation.
+La plupart d'entre eux ignorent que Meier, émigré autrichien, ancien combattant de 1914, chef d'orchestre de cet étrange ballet cache un lourd secret. Le barman du Ritz est juif.
+Philippe Collin restitue avec virtuosité et une méticuleuse précision historique une époque troublée. À travers le destin de cet homme méconnu, il se fait l'oeil et l'oreille d'une France occupée, et raconte l'éternel affrontement entre la peur et le courage.

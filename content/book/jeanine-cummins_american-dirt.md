@@ -1,0 +1,20 @@
+---
+uuid: 07e7c773-a23a-4d80-a6dd-b97cc8fcd1df
+isbn: "9782264074713"
+title: "American Dirt"
+author: "Jeanine Cummins"
+rating: 7
+read_date: 2024-05-23
+tags:
+  - Road-trip
+  - Cartel
+  - Famille
+  - Thriller
+  - Mexique
+  - Etats-Unis
+  - Drogue
+  - Immigration
+---
+
+Libraire à Acapulco, au Mexique, Lydia mène une vie calme avec son mari journaliste Sebastián et leur famille, malgré les tensions causées dans la ville par les puissants cartels de la drogue. Jusqu’au jour où Sebastián, s’apprêtant à révéler dans la presse l’identité du chef du principal cartel, apprend à Lydia que celui-ci n’est autre que Javier, un client érudit avec qui elle s’est liée dans sa librairie… La parution de son article, quelques jours plus tard, bouleverse leur destin à tous.
+Contrainte de prendre la fuite avec son fils de huit ans, Luca, Lydia se sait suivie par les hommes de Javier. Ils vont alors rejoindre le flot de migrants en provenance du sud du continent, en route vers les États-Unis, devront voyager clandestinement à bord de la redoutable Bestia, le train qui fonce vers le nord, seront dépouillés par des policiers corrompus, et menacés par les tueurs du cartel…

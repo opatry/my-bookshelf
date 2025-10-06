@@ -1,0 +1,16 @@
+---
+uuid: 5ea0ee9d-b0c6-4d3e-b52a-b7d1d05d6502
+isbn: "9791035411602"
+title: "La diagonale des reines"
+author: "Bernard Werber"
+rating: 5
+read_date: 2024-08-19
+---
+
+Et si vous n'étiez qu'un pion dans leur jeu ?
+Deux femmes, deux destins, deux visions opposées du monde.
+L'une croit dans la force du groupe.
+L'autre en l'individualisme.
+Leur duel est inévitable… laquelle aura l'avantage ?
+Des années 1970 à 2050, entre guerres, attaques terroristes et espionnage, elles vont s'opposer sans répit et sans merci. Leur terrain de jeu s'étend aux quatre coins de la planète, devenue un échiquier géant dont les humains sont les pièces.
+Dans ce roman puissant, porté par deux héroïnes exceptionnelles, Bernard Werber ajoute l'art de la stratégie à ses thèmes de prédilection pour nous entraîner dans une aventure contemporaine fascinante et visionnaire.

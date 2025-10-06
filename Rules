@@ -47,10 +47,7 @@ preprocess do
     raise "item #{item.identifier} doesn't have a uuid (suggested: #{SecureRandom.uuid})" unless item[:uuid]
 
     if book?(item)
-      item_name = item.identifier.without_exts.delete_prefix('/book/')
-      raise "book item's name '#{item_name}' should be a valid ISBN-13" unless item_name.match?(/^\d{13}$/)
-      item[:isbn] = item_name
-
+      raise "item #{item.identifier} doesn't have a isbn" unless item[:isbn]
       raise "book is both wished & read '#{item_name}'" unless item[:priority].nil? ^ item[:rating].nil?
 
       if @items["/cover/#{item[:isbn]}.*"].nil?
@@ -66,7 +63,7 @@ preprocess do
         series_isbns = [item[:isbn]] + item[:linked_books]
   
         series_isbns.each do |isbn|
-          other_book = @items["/book/#{isbn}.*"]
+          other_book = find_book_by_isbn(isbn)
           raise "Invalid linked book #{isbn} for #{item.identifier}" unless other_book
           # there is already a series, skip
           next unless other_book[:linked_books].nil?
@@ -78,7 +75,7 @@ preprocess do
 
   @items.find_all('/cover/*').each do |cover|
     isbn = cover.identifier.without_exts.delete_prefix('/cover/')
-    raise "no book for cover #{isbn}" if @items.find_all('/book/*').none? { |item| item[:isbn] == isbn }
+    raise "no book for cover #{isbn}" unless find_book_by_isbn(isbn)
   end
 
   @config[:feed_book_isbn] = feed_books.map { |book| book[:isbn] }
@@ -190,8 +187,8 @@ end
 
 %i[mini medium showcase default].each do |repr|
   compile '/cover/**/*', rep: repr do
-    isbn = item.identifier.without_exts.split('/')[-1]
-    next if repr == :showcase && !@items["/book/#{isbn}.*"][:ongoing]
+    isbn = item.identifier.without_exts.delete_prefix('/cover/')
+    next if repr == :showcase && !find_book_by_isbn(isbn)[:ongoing]
 
     width = @config[:cover][:width][repr]
     filter :thumbnailize, width: width unless @config[:dev]
@@ -234,7 +231,7 @@ compile '/book/**/*' do
   layout '/book.*'
   layout '/default.*'
 
-  write item.identifier.without_ext + '/index.html'
+  write "/book/#{item[:isbn]}/index.html"
 end
 
 compile '/tag/*' do

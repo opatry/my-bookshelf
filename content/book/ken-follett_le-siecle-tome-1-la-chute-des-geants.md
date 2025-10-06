@@ -1,0 +1,19 @@
+---
+uuid: 0c3e3d02-65af-45b3-950c-9189f4b90132
+isbn: "9782221110829"
+title: "Le siècle, tome 1 : La chute des géants"
+author: "Ken Follett"
+rating: 7
+read_date: 2024-08-12
+tags:
+  - Guerre
+  - Aventure
+  - Angleterre
+---
+
+En 1911, les grandes puissances vivent leurs derniers instants d’insouciance. Bientôt la guerre va déferler sur le monde…
+Cinq familles - américaine, russe, allemande, anglaise et galloise - vont se croiser, s’aimer, se déchirer, au rythme des bouleversements de l’Histoire: la Première Guerre mondiale et la Révolution russe.
+Les Williams, une famille galloise de mineurs est liée par amour et par inimitié aux Fitzherbert, aristocrates et propriétaires des mines. Ethel Williams connaîtra une passion secrète avec le comte Fitz, marié à la princesse russe Béa, appartenant à la haute aristocratie russe… et s’engagera en politique, défendra le droit de vote des femmes. Billy Williams quittera la mine pour les tranchées de la Somme, puis le front russe…
+La farouche Lady Maud Fitzherbert tombera amoureuse de Walter von Ulrich, espion de l’ambassade allemande à Londres. Leurs routes croiseront celles de l'ambitieux Gus Dewar, collaborateur du président américain Wilson, et de deux frères russes orphelins, Grigori et Lev Peshkov, dont le projet d’émigrer se heurte à la guerre, la mobilisation et la Révolution…Passions contrariées, rivalités et intrigues, jeux de pouvoir, coups du sort…
+Cette gigantesque fresque brasse toute la gamme des sentiments humains et dresse une galerie de portraits saisissants : des personnages exceptionnels, passionnés, ambitieux, attachants, tourmentés, qui bravent les obstacles et les peurs pour s’accomplir en dépit des tragédies qui les emportent.
+Entre saga historique et roman d’espionnage, histoire d’amour et lutte des classes, "Le Siècle", la nouvelle épopée de Ken Follett en trois volumes, traverse la période la plus agitée, la plus violente et la plus complexe des temps modernes : la grande aventure du XXe siècle…

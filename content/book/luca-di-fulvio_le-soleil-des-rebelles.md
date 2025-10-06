@@ -1,0 +1,18 @@
+---
+uuid: 1e837779-c4f4-4328-8ef3-207d4978c582
+isbn: "9782889440481"
+title: "Le Soleil des rebelles"
+author: "Luca Di Fulvio"
+rating: 6
+read_date: 2023-01-01
+tags:
+  - Moyen-âge
+  - Famille
+  - Amour
+---
+
+Le jeune prince Marcus est encore un enfant lorsqu'il assiste impuissant au massacre de toute sa famille.
+
+Marcus ne doit son salut qu'à la jeune Eloisa, fille d'Agnete, la lavandière du village qui l'accueillera sous son toit pour l'élever comme s'il était son fils.
+
+Luca di Fulvio retrace l'ascension paradoxale d'un petit prince qui va devoir apprendre dans la douleur comment devenir un homme.

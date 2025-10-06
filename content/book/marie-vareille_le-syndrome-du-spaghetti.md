@@ -1,0 +1,27 @@
+---
+uuid: a8da0392-2052-4256-9258-816c00aec278
+isbn: "9782823870879"
+title: "Le syndrôme du spaghetti"
+author: "Marie Vareille"
+rating: 7
+read_date: 2025-02-02
+tags:
+  - Sport
+  - Famille
+  - Amour
+  - Amitié
+  - Maladie
+---
+
+Quand la vie prend un virage aussi terrible qu'inattendu, comment se réinventer et garder espoir dans l'avenir ?
+Léa a 16 ans, un talent immense et un rêve à réaliser. Entraînée par son père, qui est à la fois son modèle, son meilleur ami et son confident, elle avance avec confiance vers cet avenir tout tracé.
+
+À 17 ans, Anthony, obligé de faire face à l'absence de son père et aux gardes à vue de son frère, ne rêve plus depuis longtemps.
+Ils se sont croisés une fois par hasard; ils n'auraient jamais dû se revoir.
+Pourtant, lorsque la vie de Léa s'écroule, Anthony est le seul à pouvoir l'aider à se relever.
+Leurs destinées s'en trouvent à jamais bouleversées.
+
+<%= quote_markup(
+  text: "La vie, c'est ce qui t'arrive pendant que tu es occupé à faire d'autres plans.",
+  author: "John Lennon"
+) %>
