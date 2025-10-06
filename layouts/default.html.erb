@@ -58,15 +58,15 @@ special_favorite_filter_id_attr = 'id="only-favorites"' if @item.identifier =~ '
   <link rel="manifest" href="<%= @items['/manifest.*'].path %>">
   <meta name="mobile-web-app-capable" content="yes">
 
-  <link rel="canonical" href="<%= "#{@config[:site][:url]}#{@item.path}" %>" />
+  <link rel="canonical" href="<%= "#{@config[:site][:url]}#{@item.path}" %>">
 
   <link rel="feed" type="application/atom+xml" title="Atom feed" href="<%= @items['/feed.*'].path %>">
 
   <!-- Open Graph Protocol (https://ogp.me/) -->
-  <meta property="og:locale" content="<%= @config[:site][:lang] %>" />
-  <meta property="og:site_name" content="<%= @config[:site][:title] %>" />
-  <meta property="og:title" content="<%= page_title(@item) %>" />
-  <meta property="og:url" content="<%= "#{@config[:site][:url]}#{@item.path}" %>" />
+  <meta property="og:locale" content="<%= @config[:site][:lang] %>">
+  <meta property="og:site_name" content="<%= @config[:site][:title] %>">
+  <meta property="og:title" content="<%= page_title(@item) %>">
+  <meta property="og:url" content="<%= "#{@config[:site][:url]}#{@item.path}" %>">
 
 <% case when is_home %>
 <%= render '/head_home.*' %>
