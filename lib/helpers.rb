@@ -134,10 +134,6 @@ def sortable_label(label)
   NaturalSort(I18n.transliterate(label.downcase).gsub(/\W/, ' ').gsub(/\s+/, ' ').strip)
 end
 
-def natural_sort(books)
-  books.sort_by { |book| sortable_label(book[:title]) }
-end
-
 def pwa_screenshot_to_json(item)
   {
     'src': item.path,
@@ -259,7 +255,8 @@ Voir la liste des <%= link_to('autres étiquettes', @items['/all-tags.*']) %>.
         # can't store item ref, from the preprocess block, the item view isn't suitable for future use
         # such as compiled_content, path, reps and so on.
         # only store identifier and request item from identifier at call site
-        books: natural_sort(books).map { |p| p.identifier.to_s },
+        books: books.sort_by { |book| sortable_label(book[:title]) }
+                    .map { |p| p.identifier.to_s },
         extension: 'md'
       }, Nanoc::Identifier.new(tag_item_identifier(tag))
     )
