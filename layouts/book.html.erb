@@ -45,14 +45,11 @@ unless @items["/cover/#{@item[:isbn]}.*"].nil?
 <% end %>
 
 <%
-linked_books = @item.fetch(:linked_books, []).map do |isbn|
+linked_books = @item.fetch(:linked_books, []).filter_map do |isbn|
   book_item = find_book_by_isbn(isbn)
-  if book_item.nil?
-    warn "Warning: Linked book with ISBN #{isbn} not found."
-    next
-  end
+  warn "Warning: Linked book with ISBN #{isbn} not found." unless book_item
   book_item
-end.compact
+end.sort_by { |book| sortable_label(book[:title]) }
 
 unless linked_books.empty?
 %>
