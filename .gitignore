@@ -16,6 +16,7 @@ build
 client_secret_*.apps.googleusercontent.com.json
 node_modules/
 /output/
+output.diff
 logs
 *.log
 npm-debug.log*
