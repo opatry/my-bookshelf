@@ -6,13 +6,14 @@ class Favicon < Nanoc::Filter
 
   def run(filename, params = {})
     # we might use params to define which size to generate, currently hardcoded to 16 & 32px
-    run_magick(
+    if run_magick(
       filename,
       '-define',
       'icon:auto-resize=16,32',
       "#{output_filename}.ico"
     )
-    # the magick command expects a filename ending with .ico, mv it to nanoc expected filename then
-    system("mv #{output_filename}.ico #{output_filename}")
+      # the magick command expects a filename ending with .ico, mv it to nanoc expected filename then
+      system("mv #{output_filename}.ico #{output_filename}")
+    end
   end
 end

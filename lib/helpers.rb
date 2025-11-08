@@ -10,16 +10,12 @@ use_helper Nanoc::Helpers::Rendering
 use_helper Nanoc::Helpers::LinkTo
 
 def run_magick(*args)
-  magick = 'magick'
-  magick_convert = if system("command -v #{magick} >/dev/null 2>&1")
-          magick
-        elsif RUBY_PLATFORM.include?('linux')
-          'convert'
-        else
-          magick
-        end
+  magick_cmd = 'magick'
+  unless system("command -v #{magick_cmd} >/dev/null 2>&1")
+    magick_cmd = 'convert' if RUBY_PLATFORM.include?('linux')
+  end
 
-  system(magick_convert, *args)
+  system(magick_cmd, *args)
 end
 
 def h(text)
