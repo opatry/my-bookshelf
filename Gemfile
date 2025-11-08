@@ -5,10 +5,12 @@ source 'https://rubygems.org'
 # nanoc itself
 gem 'nanoc', '>= 4.11'
 
-# Since nanoc 4.11.21, clonefile enabled copy-on-write
-# See https://github.com/nanoc/nanoc/pull/1509
-# See https://github.com/nanoc/nanoc/pull/1511
-gem 'clonefile'
+unless RUBY_PLATFORM.include?('linux') && RUBY_PLATFORM.include?('i386')
+  # Since nanoc 4.11.21, clonefile enabled copy-on-write
+  # See https://github.com/nanoc/nanoc/pull/1509
+  # See https://github.com/nanoc/nanoc/pull/1511
+  gem 'clonefile'
+end
 
 # nanoc view
 gem 'adsf'
