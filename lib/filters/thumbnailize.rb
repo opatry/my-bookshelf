@@ -1,14 +1,11 @@
 # frozen_string_literal: true
 
-require 'fileutils'
-
 class Thumbnailize < Nanoc::Filter
   identifier :thumbnailize
   type       :binary
 
   def run(filename, params = {})
-    system(
-      'magick',
+    run_magick(
       filename,
       '-resize',
       params[:width].to_s,
