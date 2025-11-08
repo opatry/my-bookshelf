@@ -2,6 +2,12 @@
 
 set -euo pipefail
 
+if [ "$(uname)" == "Linux" ]; then
+  if command -v convert >/dev/null 2>&1; then
+    alias magick='convert'
+  fi
+fi
+
 if [ -d "$1" ]; then
   find "$1" -type f -iname "*.jpg" -print0 | xargs -0 -n 1 -I '{}' "$0" {}
 else

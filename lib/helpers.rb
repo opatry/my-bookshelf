@@ -9,6 +9,19 @@ require 'nokogiri'
 use_helper Nanoc::Helpers::Rendering
 use_helper Nanoc::Helpers::LinkTo
 
+def run_magick(*args)
+  magick = 'magick'
+  magick_convert = if system("command -v #{magick} >/dev/null 2>&1")
+          magick
+        elsif RUBY_PLATFORM.include?('linux')
+          'convert'
+        else
+          magick
+        end
+
+  system(magick_convert, *args)
+end
+
 def h(text)
   CGI.escapeHTML(text.nil? ? '' : text)
 end
