@@ -3,7 +3,8 @@ uuid: 6d692403-7055-434f-9dee-d088dd5166aa
 isbn: "9782370552662"
 title: "Le Démon de la colline aux loups"
 author: "Dimitri Rouchon-Borie"
-priority: 3
+rating: 0
+ongoing: true
 tags:
   - Famille
   - Amour
