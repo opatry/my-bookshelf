@@ -3,8 +3,8 @@ uuid: 24c6325d-e2bb-4e2e-923f-f92d3a483a80
 isbn: "9782404011387"
 title: "Lonesome Dove, tome 1"
 author: "Larry McMurtry"
-rating: 0
-ongoing: true
+rating: 6
+read_date: 2025-11-09
 tags:
   - Etats-Unis
   - Nature
