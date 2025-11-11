@@ -3,7 +3,8 @@ uuid: 77d782e2-4f8a-4452-9a90-4b6f56f53db1
 isbn: "9782385291396"
 title: "La Dernière allumette"
 author: "Marie Vareille"
-priority: 2
+rating: 0
+ongoing: true
 tags:
   - Famille
   - Amour
