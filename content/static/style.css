@@ -856,6 +856,7 @@ blockquote::after {
 #only-favorites:target .book-regular,
 #only-favorites:target .quick-access,
 #only-favorites:target .calendar,
+#only-favorites:target .book-count,
 #only-favorites:target .temporal-section:not(:has(.book-favorite)) {
   display: none;
 }
