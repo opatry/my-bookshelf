@@ -1,26 +1,26 @@
-[![Build and deploy Status](https://github.com/opatry/my-bookshelf/actions/workflows/build_deploy.yml/badge.svg)](https://github.com/opatry/my-bookshelf/actions/workflows/build_deploy.yml)
+[![Build and Deploy Status](https://github.com/opatry/my-bookshelf/actions/workflows/build_deploy.yml/badge.svg)](https://github.com/opatry/my-bookshelf/actions/workflows/build_deploy.yml)
 
 # My Readings
 
-This repository is the source for a static site generator used to share the books I read.
-Each book is rated and can be tagged as a favorite.
-The content is displayed using a filterable, sortable, and paginated table.
+This repository is the source of a static site generator used to share the books I've read.  
+Each book is rated and can be marked as a favorite.  
+The content is displayed in a filterable, sortable, and paginated table.
 
-There is also a dedicated section for recent readings for convenience.
+A dedicated section for recent readings is also available for convenience.
 
-The content is, most of the time, written using [**`[M↓]`** Markdown](http://daringfireball.net/projects/markdown/) and served by [`nanoc`](http://nanoc.ws/).
+Most of the content is written in [**`[M↓]`** Markdown](http://daringfireball.net/projects/markdown/) and served by [`nanoc`](http://nanoc.ws/).
 
-This website is available at https://lecture.opatry.net/ using [🔥 Firebase hosting](https://firebase.google.com/products/hosting).
+The website is available at https://lecture.opatry.net/, hosted on [🔥 Firebase Hosting](https://firebase.google.com/products/hosting).
 
-You can combine sorting across multiple columns using the <kbd>shift</kbd> key.
+You can sort by multiple columns by holding the <kbd>Shift</kbd> key.
 
-On the [last readings](https://lecture.opatry.net/last-readings.html) page, you can filter to display [only favorites](https://lecture.opatry.net/last-readings.html#only-favorites) (indicated by the heart on the right).
+On the [Last Readings](https://lecture.opatry.net/last-readings.html) page, you can filter to show [only favorites](https://lecture.opatry.net/last-readings.html#only-favorites) (indicated by a heart icon on the right).
 
-Alternatively, you can navigate by date using the calendar.
+Alternatively, you can browse by date using the calendar.
 
-Finally, there is an [RSS feed](https://lecture.opatry.net/feed.xml) for those who still believe in it!
+An [RSS feed](https://lecture.opatry.net/feed.xml) is also available, for those who still believe in it!
 
-## 🛠 Requirements & Initial setup
+## 🛠 Requirements & Initial Setup
 
 ```bash
 $ gem install bundler
@@ -28,16 +28,18 @@ $ bundle install
 $ bundle exec nanoc compile
 ```
 
-This project also requires [ImageMagick](https://imagemagick.org/) for resizing and automated processing pipelines. Initially, it seemed convenient, but now it feels a bit cumbersome due to the ongoing migration from ImageMagick 6 to 7.
+This project also requires [ImageMagick](https://imagemagick.org/) for resizing and automated image processing.
+It was convenient at first, but has become a bit cumbersome due to the transition from ImageMagick 6 to 7.
 
-To avoid compatibility issues (since version 7 changed command-line names and some parameter orders), Linux distributions remain conservative and stick with version 6. However, this is not the direction for the future.
-On macOS, it’s still possible to install version 6 (`brew install imagemagick@6`), but again, it may not be a viable long-term choice.
+To avoid compatibility issues (since version 7 changed command-line names and some parameter orders), most Linux distributions remain on version 6. However, version 7 is the way forward.
+On macOS, version 6 can still be installed (`brew install imagemagick@6`), but it's not a long-term option.
 
-Version 7 was released around 2016 (see [`7.0.1-0`](https://github.com/ImageMagick/ImageMagick/releases/tag/7.0.1-0) tag or [releases archive](https://imagemagick.org/archive/releases/)).Now, in 2025, it has been decided to fully rely on version 7.
-That said, there are still 6.x releases, but this version is considered legacy, which makes the project’s status feel somewhat awkward.
+Version 7 was released around 2016 (see [`7.0.1-0`](https://github.com/ImageMagick/ImageMagick/releases/tag/7.0.1-0) tag or the [release archive](https://imagemagick.org/archive/releases/)).
+As of 2025, this project now fully relies on version 7.
+While 6.x releases are still available, they are considered legacy, which puts the project in an awkward state.
 
 > The main website for ImageMagick can be found at [https://imagemagick.org](https://imagemagick.org). The most recent version available is 
-> [ImageMagick 7.1.1-43](https://imagemagick.org/script/download.php). The source code for this software can be accessed through a 
+> [ImageMagick 7.1.2-8](https://imagemagick.org/script/download.php). The source code for this software can be accessed through a 
 > [repository](https://github.com/ImageMagick/ImageMagick). In addition, we maintain a legacy version of ImageMagick, 
 > [version 6](https://legacy.imagemagick.org/). Read our [porting](https://imagemagick.org/script/porting.php) guide for comprehensive details
 > on transitioning from version 6 to version 7.
@@ -46,7 +48,7 @@ That said, there are still 6.x releases, but this version is considered legacy, 
 $ brew install imagemagick@7
 ```
 
-For Linux, follow the instructions to build from sources.
+For Linux, follow the build instructions from source.
 
 ## Firebase Hosting
 
@@ -66,67 +68,72 @@ $ ./node_modules/.bin/firebase deploy --only hosting
 
 ## Fetch Google Books convenience script
 
-You can either fetch data for a single book using this (which will create a new book file if one is not already available).
+You can fetch data for a single book (it will create a new file if one doesn't exist):
 
 ```bash
 ./fetch_book.sh "Book Title" "Author"
 ```
 
-Or batch process it using a text file, following the  `title | author | rating | description` pattern for each line.
-The rating can be a single value in the `[0..10]` range or in `X/Y` format, which will be normalized to a 10-point scale.
-Call the script without any arguments to see detailed usage.
+Or process a batch from a text file, following the format:
+```
+title | author | rating | description
+```
+Each line represents a book entry.
+The rating can be a number from `[1..10]` or in `X/Y` format (normalized to a 10-point scale).
+Run the script without arguments for usage details.
 
-⚠️ The Google Books API isn’t very accurate, and the books database is incomplete.
-Always double-check the results and logs.
+⚠️ The Google Books API is not very accurate, and its database is incomplete.
+Always verify results and logs.
 
-Covers, in particular, aren’t always ideal. You can find alternatives using Google Images or Amazon queries available in the logs.
+Covers in particular are often poor. You can find better alternatives using Google Images or Amazon links in the logs.
 
-This script relies on a `GOOGLE_BOOKS_API_KEY` environment variable, which can be created on the Credentials page of the Google Cloud Platform console.
+This script requires a `GOOGLE_BOOKS_API_KEY` environment variable, which can be created in the Credentials section of the Google Cloud Platform console.
 
 ### Google Books API Auth
 
-Authentication with OAuth 2.0.
-Alternatively, use an API Key
+Uses OAuth 2.0 or an API key.
 
 See https://developers.google.com/books/docs/v1/using
 
-Add credentials (Web, to allow customizing redirect URI and in particular port)
+Add credentials (Web type, allowing redirect URI customization and port specification):
 - https://console.cloud.google.com/apis/credentials?project=<MY_PROJECT>
-- Store resulting JSON file in the resources of the project
 
-Enable Google Books API Library
+Store the resulting JSON file in the project's resources.
+
+Enable the Google Books API:
 - https://console.cloud.google.com/apis/library?project=<MY_PROJECT>&q=books%20api
-or directly
+
+or directly:
 - https://console.cloud.google.com/apis/library/books.googleapis.com?project=<MY_PROJECT>
 
-API reference
+API Reference:
 - https://developers.google.com/books/docs/v1/reference/?apix=true
 
 ## Web Scrapping
 
-There is a quick & dirty project to scrap [Sens Critique](https://www.senscritique.com/) and [Babelio](https://www.babelio.com/) readings to generate a static site with fetch & consolidated data.
+A quick and dirty project is included to scrape [Sens Critique](https://www.senscritique.com/) and [Babelio](https://www.babelio.com/) data, generating a static site with fetched and consolidated information.
 
 <details>
 <summary>See details…</summary>
 
-Open the `scrapper/settings.gradle.kts` project in your favorite IDE or launch it with Gradle.
+Open the `scrapper/settings.gradle.kts` project in your IDE or run it using Gradle.
 
-It uses Selenium and requires a quite manual setup to authorize your account (see `:book-reading-app` module).
+It uses Selenium and requires a manual login setup for your account (see the `:book-reading-app` module).
 
 ### Tech stack
 
 - [Kotlin](https://kotlinlang.org/)
 - [Coroutines](https://kotlinlang.org/docs/coroutines-overview.html)
-- [Kodein-DI](https://kosi-libs.org/kodein) for dependency injection.
-- [Ktor](https://ktor.io/) HTTP client.
-  - Kotlin first class
-  - Coroutines
-- [Gson](https://github.com/google/gson) for Json/Object marshalling/un-marshalling.
-- [JUnit](https://junit.org/junit4/) for unit & integration tests.
+- [Kodein-DI](https://kosi-libs.org/kodein) for dependency injection
+- [Ktor](https://ktor.io/) HTTP client
+  - Kotlin-first design
+  - Coroutine-based
+- [Gson](https://github.com/google/gson) for JSON serialization/deserialization
+- [JUnit](https://junit.org/junit4/) for unit and integration tests
 
-There is also a quicker, dirtier proof of concept (POC) to browse existing books using the “REST API” (`api/v1/books.json`), display them in a UI, and provide an editor bootstrap to fetch book data based on title and author (including covers from various sources).
+There's also a simpler proof of concept (POC) that uses the website "REST API" (`api/v1/books.json`) to browse books, display them in a UI, and provide a minimal editor to fetch metadata (including covers from multiple sources).
 
-Both of these tools are not maintained and are kept as-is for potential future use.
-Most likely, they will be replaced by a web application and a proper backend.
+Both tools are unmaintained and kept as-is for potential future reuse.
+They will most likely be replaced by a proper web application and backend.
 
 </details>
