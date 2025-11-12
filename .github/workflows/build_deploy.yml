@@ -18,15 +18,15 @@ jobs:
 
     steps:
     - name: Checkout
-      uses: actions/checkout@v4
+      uses: actions/checkout@v5
 
     - name: Install ImageMagick
       run: sudo apt install --no-install-recommends --no-install-suggests imagemagick
 
-    - name: Setup Ruby 3.2
+    - name: Setup Ruby 3.4
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: 3.2
+        ruby-version: 3.4
         bundler-cache: true
 
     - name: Cache nanoc
@@ -48,9 +48,9 @@ jobs:
 
     - name: Setup Node
       if: steps.build.outputs.need_deploy == 0
-      uses: actions/setup-node@v4
+      uses: actions/setup-node@v6
       with:
-        node-version: '22'
+        node-version: 22
         cache: 'npm'
 
     - name: Deploy prod
