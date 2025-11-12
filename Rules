@@ -162,11 +162,13 @@ compile '/static/search.*' do
   write '/static/search.js'
 end
 
-compile '/static/style.*' do
-  filter :rainpress unless @config[:dev]
+unless @config[:dev]
+  compile '/static/style.*' do
+    filter :rainpress
 
-  # no need to write/route such file, inlined within HTML
-  write nil
+    # no need to write/route such file, inlined within HTML
+    write nil
+  end
 end
 
 compile '/static/lucide-icons/*.svg' do

@@ -39,7 +39,11 @@ special_favorite_filter_id_attr = 'id="only-favorites"' if @item.identifier =~ '
   <script type="text/javascript" src="https://unpkg.com/tabulator-tables/dist/js/tabulator.min.js" defer></script>
 <% end %>
 
+<% if @config[:dev] %>
+  <link rel="stylesheet" type="text/css" href="<%= @items['/static/style.*'].path %>">
+<% else %>
   <style type="text/css"><%= @items['/static/style.*'].compiled_content %></style>
+<% end %>
 
   <link rel="shortcut icon" href="<%= @items['/static/favicon.*'].path(rep: :default) %>">
 <%
