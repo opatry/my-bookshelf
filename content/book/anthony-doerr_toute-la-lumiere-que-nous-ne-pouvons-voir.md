@@ -10,6 +10,9 @@ tags:
   - Guerre
   - Famille
   - Allemagne
+social:
+  sc: "15335517"
+  babelio: "708046"
 ---
 
 Magnifiquement écrit, captivant de bout en bout, il nous entraîne, du Paris de l'Occupation à l'effervescence de la Libération, dans le sillage de deux héros dont la guerre va bouleverser l'existence : Marie-Laure, une jeune aveugle, réfugiée avec son père à Saint-Malo, et Werner, un orphelin, véritable génie des transmissions électromagnétiques, dont les talents sont exploités par la Wehrmacht pour briser la Résistance.

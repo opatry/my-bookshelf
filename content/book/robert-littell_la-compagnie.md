@@ -11,6 +11,9 @@ tags:
   - Espionnage
   - Etats-Unis
   - Allemagne
+social:
+  babelio: "1378181"
+  sc: "11814937"
 ---
 
 Berlin, 1950. En pleine guerre froide, un dignitaire russe demande à changer de camp. En gage de bonne foi, il affirme détenir le nom d’une taupe haut placée au sein de la CIA. Jack McAuliffe, nouvelle recrue de la Central Intelligence Agency, et Harvey Torriti, vieux routard de l’espionnage porté sur la bouteille, vont devoir l’exfiltrer et tenter de démasquer l’agent double. Commence alors une extraordinaire épopée, magistralement contée par Robert Littell. La vie de ces agents jusqu’aux années 1990 nous fait traverser tout un pan de l’histoire du XXe siècle. Une histoire faite de conflits ouverts, mais aussi de secrets, d’assassinats et d’enlèvements commandités dans l’ombre par les deux puissants organismes, la CIA et le KGB. Entre fiction et réalité, de la Bulgarie à l’Afghanistan en passant par Cuba, La Compagnie est un immense thriller politique et une expérience de lecture inoubliable.

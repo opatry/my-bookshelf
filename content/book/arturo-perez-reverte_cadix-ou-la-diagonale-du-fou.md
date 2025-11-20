@@ -10,6 +10,9 @@ tags:
   - Aventure
   - Marine
   - Espagne
+social:
+  sc: "481899"
+  babelio: "281498"
 ---
 
 Cadix, citadelle radieuse, s'embrase. La guerre contre les troupes napoléoniennes fait rage, les bombes françaises pleuvent. Dans la cité à feu et à sang, les corps de jeunes filles sont retrouvés dans les cratères de bombes, disposés suivant la logique d'un échiquier. Elles ont été tuées à coup de fouet. Le commissaire Rogelio Tizon parviendra-t-il à mettre en échec le tueur fou de Cadix ?

@@ -9,6 +9,9 @@ tags:
   - Japon
   - Thriller
   - Fantastique
+social:
+  sc: "449144"
+  babelio: "1382550"
 ---
 
 Le Livre 3 fait entendre une nouvelle voix, celle d'Ushikawa.

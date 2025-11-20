@@ -8,6 +8,9 @@ tags:
   - Angleterre
   - Drogue
   - Musique
+social:
+  sc: "16606877"
+  babelio: "762475"
 ---
 
 Londres, 1967. Dans l’effervescence des Swinging Sixties se forme un improbable groupe de folk-rock psychédélique nommé Utopia Avenue. Chapeauté par l’excentrique manager canadien Levon Frankland, ce groupe fictif connaît une ascension fulgurante et croise la trajectoire de célébrités bien réelles telles que Syd Barrett, Francis Bacon, Leonard Cohen ou Janis Joplin.

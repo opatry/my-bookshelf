@@ -9,6 +9,9 @@ tags:
   - Russie
   - Etats-Unis
   - Guerre
+social:
+  babelio: "281239"
+  sc: "475671"
 ---
 
 Limonov n’est pas un personnage de fiction. Il existe. Je le connais. Il a été voyou en Ukraine ; idole de l’underground soviétique sous Brejnev ; clochard, puis valet de chambre d’un milliardaire à Manhattan ; écrivain branché à Paris ; soldat perdu dans les guerres des Balkans ; et maintenant, dans l’immense bordel de l’après-communisme en Russie, vieux chef charismatique d’un parti de jeunes desperados. Lui-même se voit comme un héros, on peut le considérer comme un salaud : je suspends pour ma part mon jugement.

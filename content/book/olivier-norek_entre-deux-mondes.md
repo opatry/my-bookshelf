@@ -9,6 +9,9 @@ tags:
   - Policier
   - Famille
   - Immigration
+social:
+  babelio: "977125"
+  sc: "28038120"
 ---
 
 Adam a découvert en France un endroit où l'on peut tuer sans conséquences.

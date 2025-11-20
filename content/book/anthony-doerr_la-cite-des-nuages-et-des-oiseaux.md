@@ -9,6 +9,9 @@ tags:
   - Fantastique
   - Guerre
   - Etats-Unis
+social:
+  sc: "49523439"
+  babelio: "383692"
 ---
 
 Un manuscrit ancien traverse le temps, unissant le passé, le présent et l'avenir de l'humanité.

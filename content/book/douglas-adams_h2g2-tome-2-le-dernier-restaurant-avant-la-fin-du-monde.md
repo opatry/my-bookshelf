@@ -8,6 +8,9 @@ tags:
   - Sci-fi
   - Humour
   - IA
+social:
+  sc: "108620"
+  babelio: "1134069"
 ---
 
 La cuisine anglaise est exécrable. Moins abominable, cependant, que la poésie des Vogons, un peuple fier, ombrageux, et éminemment irritable. D'ailleurs, les Vogons ont fait sauter la planète Terre, soi-disant par erreur.  

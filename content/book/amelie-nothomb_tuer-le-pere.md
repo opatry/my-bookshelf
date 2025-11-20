@@ -5,6 +5,12 @@ title: "Tuer le père"
 author: "Amélie Nothomb"
 rating: 5
 read_date: 2024-07-18
+tags:
+  - Famille
+  - Psychologie
+social:
+  sc: "490627"
+  babelio: "269858"
 ---
 
 "Allez savoir ce qui se passe dans la tête d’un joueur."

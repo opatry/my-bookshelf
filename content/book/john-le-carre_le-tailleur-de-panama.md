@@ -7,6 +7,9 @@ rating: 4
 read_date: 2022-01-31
 tags:
   - Espionnage
+social:
+  babelio: "14342"
+  sc: "418395"
 ---
 
 Sujet britannique, Harry Pendell s'est installé à Panama où il a ouvert une boutique réputée de tailleur. Marié à Luisa, qui lui a donné deux enfants, il mène une existence paisible, et son talent lui vaut d'habiller tous les politiciens locaux.

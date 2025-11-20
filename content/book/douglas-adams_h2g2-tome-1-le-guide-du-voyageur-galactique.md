@@ -10,6 +10,9 @@ tags:
   - IA
 linked_books:
   - "9782070416158"
+social:
+  sc: "32134"
+  babelio: "6617"
 ---
 
 Comment garder tout son flegme quand on apprend dans la même journée: que sa maison va être abattue dans la minute pour laisser place à une déviation d'autoroute ; que la Terre va être détruite d'ici deux minutes, se trouvant, coïncidence malheureuse, sur le tracé d'une future voie express intergalactique ; que son meilleur ami, certes délicieusement décalé, est en fait un astrostoppeur natif de Bételgeuse, et s'apprête à vous entraîner aux confins de la galaxie ?  

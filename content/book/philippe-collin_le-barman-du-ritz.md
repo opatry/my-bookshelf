@@ -8,6 +8,9 @@ favorite: true
 read_date: 2025-10-06
 tags:
   - Guerre
+social:
+  sc: "88639398"
+  babelio: "1599780"
 ---
 
 Juin 1940. Les Allemands entrent dans Paris. Partout, le couvre-feu est de rigueur, sauf au grand hôtel Ritz. Avides de découvrir l'art de vivre à la française, les occupants y côtoient l'élite parisienne, tandis que derrière le bar oeuvre Frank Meier, le plus grand barman du monde.

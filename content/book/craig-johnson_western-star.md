@@ -10,6 +10,9 @@ tags:
   - Etats-Unis
   - Policier
   - Nature
+social:
+  sc: "45469874"
+  babelio: "1353349"
 ---
 
 Tout juste rentré du Vietnam, le jeune adjoint Walt Longmire participe pour la première fois à l’excursion de l’Association des shérifs du Wyoming à bord du Western Star, train à vapeur légendaire de la conquête de l’Ouest.

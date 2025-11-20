@@ -7,6 +7,7 @@ rating: 8
 tags:
   - Thriller
   - Scandinavie
+social:
 ---
 
 Tandis que Lisbeth Salander coule des journées supposées tranquilles aux Caraïbes, Mikael Blomkvist, réhabilité, victorieux, est prêt à lancer un numéro spécial de Millénium sur un thème brûlant pour des gens haut placés : une sombre histoire de prostituées exportées des pays de l'Est. Mikael aimerait surtout revoir Lisbeth. Il la retrouvé sur son chemin, mais pas vraiment comme prévu : un soir, dans une rue de Stockholm, il la voit échapper de peu à une agression manifestement très planifiée.

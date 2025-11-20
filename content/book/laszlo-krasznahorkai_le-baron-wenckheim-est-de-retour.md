@@ -6,6 +6,9 @@ author: "Laszlo Krasznahorkai"
 priority: 2
 tags:
   - Humour
+social:
+  sc: "55602716"
+  babelio: "1437763"
 ---
 
 Sentant la fin de sa vie approcher et désireux de retrouver son amour d’adolescence, le baron Béla Wenckheim, qui a passé l’essentiel de son existence en Argentine, décide de rejoindre sa Hongrie natale. Là, nombreux sont ceux qui espèrent que le baron sauve la ville de la faillite alors que celui-ci est en réalité plutôt désargenté. Et ce malentendu va entraîner une tornade de rumeurs, de commérages, de quiproquos…  

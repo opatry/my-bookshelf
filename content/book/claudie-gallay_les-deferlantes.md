@@ -12,6 +12,9 @@ tags:
   - Famille
   - Amour
   - Normandie
+social:
+  sc: "368902"
+  babelio: "61847"
 ---
 
 Sur la pointe de la Hague, un homme, Lambert, revient quarante ans après sur le lieu du naufrage de ses parents et de son petit frère. La narratrice, une étrangère au pays, va peu à peu découvrir le mystère et les secrets de cette noyade, et mettre à jour les liens complexes unissant certains habitants du bourg.

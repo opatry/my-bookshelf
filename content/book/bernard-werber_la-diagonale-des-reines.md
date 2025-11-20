@@ -5,6 +5,9 @@ title: "La diagonale des reines"
 author: "Bernard Werber"
 rating: 5
 read_date: 2024-08-19
+social:
+  sc: "49041881"
+  babelio: "1449203"
 ---
 
 Et si vous n'étiez qu'un pion dans leur jeu ?

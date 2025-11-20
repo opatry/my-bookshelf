@@ -5,6 +5,9 @@ title: "Pourquoi j'ai mangé mon père"
 author: "Roy Lewis"
 rating: 7
 read_date: 2021-08-30
+social:
+  sc: "223049"
+  babelio: "3918"
 ---
 
 Les déboires d’une tribu préhistorique narrés dans le langage de nos modernes ethnologues. Nouvelle édition réalisée à l’occasion de la sortie du film d’animation Pourquoi j’ai pas mangé mon père, réalisé par Jamel Debbouze, le 8 avril 2015.

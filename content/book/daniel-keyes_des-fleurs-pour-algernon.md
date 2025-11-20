@@ -9,6 +9,9 @@ tags:
   - Sci-fi
   - Fantastique
   - Psychologie
+social:
+  sc: "436204"
+  babelio: "5608"
 ---
 
 Algernon est une souris de laboratoire dont le traitement du Pr Nemur et du Dr Strauss vient de décupler l'intelligence. Enhardis par cette réussite, les deux savants tentent alors, avec l'assistance de la psychologue Alice Kinnian, d'appliquer leur découverte à Charlie Gordon, un simple d'esprit employé dans une boulangerie. C'est bientôt l'extraordinaire éveil de l'intelligence pour le jeune homme. Il découvre un monde dont il avait toujours été exclu, et l'amour qui naît entre Alice et lui achève de le métamorphoser. Mais un jour, les facultés supérieures d'Algernon déclinent. Commence alors pour Charlie le drame atroce d'un homme qui, en pleine conscience, se sent retourner à l'état de bête…

@@ -7,6 +7,9 @@ priority: 2
 tags:
   - Thriller
   - Serial killer
+social:
+  sc: "366777"
+  babelio: "231564"
 ---
 
 Qui connaît vraiment Alex ?  

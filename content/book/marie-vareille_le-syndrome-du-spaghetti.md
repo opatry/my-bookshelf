@@ -11,6 +11,9 @@ tags:
   - Amour
   - Amitié
   - Maladie
+social:
+  babelio: "1246325"
+  sc: "43174124"
 ---
 
 Quand la vie prend un virage aussi terrible qu'inattendu, comment se réinventer et garder espoir dans l'avenir ?

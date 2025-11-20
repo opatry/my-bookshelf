@@ -12,6 +12,9 @@ tags:
 linked_books:
   - "9782264057891"
   - "9782264059260"
+social:
+  sc: "376649"
+  babelio: "268009"
 ---
 
 Entre l'an 1984 et le monde hypnotique de 1Q84, les ombres se reflètent et se confondent. Unies par un pacte secret, les existences de Tengo et d'Aomamé sont mystérieusement nouées au seuil de deux univers, de deux ères… Une odyssée initiatique qui embrasse fantastique, thriller et roman d'amour, composant l'œuvre la plus ambitieuse de Murakami.

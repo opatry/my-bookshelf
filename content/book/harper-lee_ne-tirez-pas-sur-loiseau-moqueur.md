@@ -11,6 +11,9 @@ tags:
   - Amitié
   - Famille
   - Racisme
+social:
+  sc: "253900"
+  babelio: "22389"
 ---
 
 Dans une petite ville d'Alabama, au moment de la Grande Dépression, Atticus Finch élève seul ses deux enfants, Jem et Scout. Homme intègre et rigoureux, cet avocat est commis d'office pour défendre un Noir accusé d'avoir violé une Blanche. Celui-ci risque la peine de mort.

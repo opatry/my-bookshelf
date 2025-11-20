@@ -10,6 +10,9 @@ tags:
   - Nature
   - Etats-Unis
   - Biographie
+social:
+  babelio: "100164"
+  sc: "218802"
 ---
 
 Pete Fromm s'apprête à vivre un long hiver, seul, au coeur des montagnes Rocheuses. L'auteur livre dans ce récit son témoignage, véritable hymne aux grands espaces sauvages de l'Idaho.

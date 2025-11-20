@@ -9,6 +9,9 @@ tags:
   - Famille
   - Amour
   - Pyschologie
+social:
+  babelio: "1589710"
+  sc: "81676079"
 ---
 
 Depuis plus de vingt ans, Abigaëlle vit recluse dans un couvent en Bourgogne. Sa vie d'avant ? Elle l'a en grande partie oubliée. Elle est même incapable de se rappeler l'événement qui a fait basculer sa destinée et l'a poussée à se retirer du monde. De loin, elle observe la vie parisienne de Gabriel, son grand frère dont la brillante carrière d'artiste et l'imaginaire rempli de poésie sont encensés par la critique.  

@@ -7,6 +7,9 @@ rating: 8
 linked_books:
   - "9782277233121"
   - "9782290310830"
+social:
+  sc: "116000"
+  babelio: "696996"
 ---
 
 On avait cru d'abord à une banale épidémie de grippe. Mais quand les cadavres se comptèrent par milliers, quand les villes se transformèrent en charniers infâmes, il fallut bien se rendre à l'évidence : le Fléau n'épargnerait personne.

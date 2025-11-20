@@ -4,6 +4,9 @@ isbn: "9782226197573"
 title: "La Ligne noire"
 author: "Jean-Christophe Grangé"
 rating: 8
+social:
+  babelio: "5293"
+  sc: "167676"
 ---
 
 Il existe, quelque part en Asie du Sud-Est, entre le tropique du Cancer et la ligne de l'Équateur, une autre ligne. Une ligne noire jalonnée de corps et d'effroi…

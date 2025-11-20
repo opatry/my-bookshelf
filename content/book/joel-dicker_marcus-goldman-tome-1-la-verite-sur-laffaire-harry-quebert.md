@@ -13,6 +13,9 @@ tags:
   - Thriller
 linked_books:
   - "9782889730100"
+social:
+  babelio: "409204"
+  sc: "8110258"
 ---
 
 À New York, au printemps 2008, lorsque l'Amérique bruisse des prémices de l'élection présidentielle, Marcus Goldman, jeune écrivain à succès, est dans la tourmente: il est incapable d'écrire le nouveau roman qu'il doit remettre à son éditeur d'ici quelques mois.

@@ -10,6 +10,9 @@ tags:
   - Amour
   - Famille
   - Angleterre
+social:
+  babelio: "1393182"
+  sc: "47324613"
 ---
 
 “Elle a mon âge. Ses yeux clairs ont peu dormi. Elle est jolie, perdue dans sa solitude. Elle doit porter un peu de rouge à lèvres mais c’est discret. Comme elle. Une fille invisible au rouge à lèvres discret. Elle me rappelle ma mère ; des bribes de ma mère. Sa douceur. Sa mélancolie. Sa fragilité. Comme un puzzle, si tu veux, les morceaux du bord. Avec un grand vide au milieu.”

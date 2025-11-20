@@ -4,6 +4,9 @@ isbn: "9782226221322"
 title: "Le passager"
 author: "Jean-Christophe Grangé"
 rating: 7
+social:
+  sc: "480343"
+  babelio: "280953"
 ---
 
 Je suis l'ombre. Je suis la proie. Je suis le tueur. Je suis la cible. Pour m'en sortir, une seule option : fuir l'autre. Mais si l'autre est moi-même ?…

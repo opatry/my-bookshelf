@@ -12,6 +12,9 @@ tags:
   - Policier
   - Thriller
   - Drogue
+social:
+  sc: "25187917"
+  babelio: "921398"
 ---
 
 Comment, lorsqu'on est une femme seule, travailleuse avec une vision morale de l'existence… qu'on a trimé toute sa vie pour garder la tête hors de l'eau tout en élevant ses enfants… qu'on a servi la justice sans faillir, traduisant des milliers d'heures d'écoutes téléphoniques avec un statut de travailleur au noir… on en arrive à franchir la ligne jaune ? Rien de plus simple, on détourne une montagne de cannabis d'un Go Fast et on le fait l'âme légère, en ne ressentant ni culpabilité ni effroi, mais plutôt… disons… un détachement joyeux. Et on devient la Daronne. La Daronne a remporté le prix Le Point du polar européen 2017

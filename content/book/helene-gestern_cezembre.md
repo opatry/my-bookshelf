@@ -11,6 +11,9 @@ tags:
   - Nature
   - Marine
   - Bretagne
+social:
+  sc: "93614498"
+  babelio: "1623412"
 ---
 
 Après son divorce et la mort de son père, Yann de Kérambrun décide de quitter son poste de professeur d’histoire à Paris pour retourner à Saint-Malo, où il a passé les étés de son enfance. Épuisé, il n’a plus qu’un désir : retrouver la mer et la contempler depuis la maison dont il a hérité, le long de la plage, face à l’île de Cézembre.

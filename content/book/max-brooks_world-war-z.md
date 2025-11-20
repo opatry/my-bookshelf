@@ -7,7 +7,9 @@ priority: 2
 tags:
   - Apocalypse
   - Etats-Unis
-  - TBD
+social:
+  sc: "10993"
+  babelio: "112967"
 ---
 
 La guerre des Zombies a eu lieu, et elle a failli éradiquer l'ensemble de l'humanité.

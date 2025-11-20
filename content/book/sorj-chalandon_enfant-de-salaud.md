@@ -7,6 +7,9 @@ priority: 2
 tags:
   - Guerre
   - Famille
+social:
+  sc: "44890244"
+  babelio: "1328724"
 ---
 
 Depuis l’enfance, une question torture le narrateur :

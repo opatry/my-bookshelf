@@ -9,6 +9,9 @@ tags:
   - Guerre
   - Aventure
   - Angleterre
+social:
+  sc: "397365"
+  babelio: "208131"
 ---
 
 En 1911, les grandes puissances vivent leurs derniers instants d’insouciance. Bientôt la guerre va déferler sur le monde…
