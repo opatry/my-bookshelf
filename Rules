@@ -50,6 +50,13 @@ preprocess do
       raise "item #{item.identifier} doesn't have a isbn" unless item[:isbn]
       raise "book is both wished & read '#{item_name}'" unless item[:priority].nil? ^ item[:rating].nil?
 
+      if item[:social].nil? || item[:social].empty?
+        puts "Warning: missing :social attribute for '#{item[:title]}' by '#{item[:author]}'"
+      else
+        puts "Warning: missing :sc attribute for '#{item[:title]}' by '#{item[:author]}' (SensCritique social link ID)" if item[:social][:sc].nil? || item[:social][:sc].empty?
+        puts "Warning: missing :babelio attribute for '#{item[:title]}' by '#{item[:author]}' (Babelio social link ID)" if item[:social][:babelio].nil? || item[:social][:babelio].empty?
+      end
+
       if @items["/cover/#{item[:isbn]}.*"].nil?
         missing_covers += 1
         query = CGI.escape("#{item[:title]} #{item[:author]}")
