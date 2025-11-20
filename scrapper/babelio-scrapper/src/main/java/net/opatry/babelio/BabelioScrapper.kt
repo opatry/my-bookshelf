@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Olivier Patry
+// Copyright (c) 2025 Olivier Patry
 //
 // Permission is hereby granted, free of charge, to any person obtaining
 // a copy of this software and associated documentation files (the "Software"),
@@ -45,15 +45,19 @@ val babelioHttpClient = HttpClient(CIO) {
 annotation class UIntRange(val from: UInt, val to: UInt)
 
 /**
+ * @property url book's url
+ * @property id book's id (useful as URL identifier)
  * @property title book's title
  * @property author book's author
  * @property rating book's rating on [1..10]
- * @property coverUrl book's cover Url
+ * @property coverUrl book's cover url
  */
 data class Book(
+    val url: String,
+    val id: String,
     val title: String,
     val author: String,
-    @UIntRange(from = 1u, to = 10u)
+    @param:UIntRange(from = 1u, to = 10u)
     val rating: UInt,
     val coverUrl: String? = null,
 )
@@ -76,12 +80,21 @@ class BabelioScrapper(private val httpClient: HttpClient) {
                 httpClient.head(it).status.isSuccess()
             }
             val titleCell = bookRow.select(".titre_livre h2").firstOrNull() ?: return@mapNotNull null
+            val url = bookRow.select(".titre_livre a").firstOrNull()?.attr("href") ?: return@mapNotNull null
+            val id = url.substringAfterLast('/')
             val title = titleCell.text()
             val authorCell = bookRow.select(".auteur a").firstOrNull() ?: return@mapNotNull null
             val author = authorCell.text()
             val ratingCell = bookRow.select("td [data-rateit-value]").firstOrNull() ?: return@mapNotNull null
             val rating = ratingCell.dataset()["rateit-value"]?.toFloatOrNull() ?: return@mapNotNull null
-            Book(title.trim(), author.trim(), (rating * 2).toUInt(), coverImageUrl)
+            Book(
+                id = id,
+                url = ROOT_URL + url,
+                title = title.trim(),
+                author = author.trim(),
+                rating = (rating * 2).toUInt(),
+                coverUrl = coverImageUrl,
+            )
         } ?: emptyList()
     }
 
