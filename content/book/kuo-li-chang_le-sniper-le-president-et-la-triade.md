@@ -10,6 +10,9 @@ tags:
   - Thriller
   - Mafia
   - Chine
+social:
+  babelio: "1436664"
+  sc: "51333193"
 ---
 
 Candidat mal embarqué à sa propre réélection, le président Hsü Huo-sheng échappe à une tentative d’assassinat alors qu’il remonte la bruyante rue Huayin à bord de sa Jeep de campagne customisée. Son rival, qui a des doutes sur cet attentat, charge l’ancien inspecteur Wu d’enquêter. Naturellement, Wu va fouiner du côté des triades. La complicité du sniper Ai Li, cuistot clandestin dans un boui-boui de Taipei, ne sera pas de trop. Or ce dernier est contraint de prendre la fuite car on essaie de lui mettre cette attaque sur le dos…

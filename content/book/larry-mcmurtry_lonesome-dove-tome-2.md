@@ -9,6 +9,9 @@ tags:
   - Nature
   - Aventure
   - Far west
+social:
+  sc: "472044"
+  babelio: "938697"
 ---
 
 La première partie de Lonesome Dove nous a entraînés à la suite d'Augustus McCrae et Woodrox Call, illustres ex-Texas Rangers, sur la route dangereuse du Montana, là où, dit-on, les terres sont encore à qui les prend. De nombreuses épreuves attendent le convoi lors de cet extraordinaire périple à travers l'Ouest. Les hommes devront tour à tour affronter des éléments déchaînés, des pillards et leurs propres démons. Au bout de cette piste longue et périlleuse, beaucoup manqueront à l'appel. Récompensé par un prix Pulitzer, adapté par Hollywood, Lonesome Dove est une immense saga à travers l'Ouest américain. Au crépuscule d'un monde mythique, Larry McMurtry nous fait vivre l'ultime aventure de deux sruvivants qui tentent de prolonger la légende.

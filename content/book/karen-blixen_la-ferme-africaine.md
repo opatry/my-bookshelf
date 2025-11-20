@@ -6,6 +6,9 @@ author: "Karen Blixen"
 priority: 3
 tags:
   - Afrique
+social:
+  sc: "186812"
+  babelio: "621545"
 ---
 
 "J'ai possédé une ferme en Afrique, au pied du Ngong. La ligne de l'Equateur passait dans les montagnes, à vingt-cinq milles au Nord."

@@ -10,6 +10,9 @@ tags:
   - Espagne
   - Guerre
   - Immigration
+social:
+  babelio: "1208477"
+  sc: "42319472"
 ---
 
 À la mort de sa grand-mère, une jeune femme hérite de l'intrigante commode qui a nourri tous ses fantasmes de petite fille. Le temps d'une nuit, elle va ouvrir ses dix tiroirs et dérouler le fil de la vie de Rita, son Abuela, dévoilant les secrets qui ont scellé le destin de quatre générations de femmes indomptables, entre Espagne et France, de la dictature franquiste à nos jours.

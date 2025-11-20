@@ -11,6 +11,9 @@ tags:
   - Italie
   - Moyen-âge
   - Aventure
+social:
+  babelio: "939142"
+  sc: "25358023"
 ---
 
 La misère radieuse d'une bande d'enfants perdus, la fille secrète d'un médecin sans diplômes, la découverte de l'amour, l'or, le sang, la boue, l'honneur… Pour son nouveau roman, Luca Di Fulvio vous emporte à Venise.

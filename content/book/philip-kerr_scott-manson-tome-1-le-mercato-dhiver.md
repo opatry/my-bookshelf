@@ -13,6 +13,9 @@ tags:
 linked_books:
   - "9782702441589"
   - "9782702447130"
+social:
+  babelio: "844599"
+  sc: "19942669"
 ---
 
 Tout le monde sait que le football, c’est souvent une question de vie ou de mort… Scott Manson est l’entraîneur du club de football de London City. Les joueurs l’adorent ; ses patrons lui font confiance. Mais le jour où un homme est retrouvé mort dans les tribunes pendant un match à domicile, Manson va devoir agir. Le propriétaire du City, un milliardaire ukrainien, veut que l’affaire soit résolue au plus vite et le plus discrètement possible. Pas facile quand la victime en question est le célèbre manager de ce même club… Scott Manson doit mener l’enquête avant que la presse people ne s’empare de l’histoire de l’histoire. Et que le tueur ne frappe à nouveau. Le Mercato d’hiver, premier tome de la série Scott Manson, nous plonge dans les eaux troubles de la Premier League, un monde où l’adrénaline peut pousser aux pires excès…. Traduit de l’anglais par Katalin Balogh & Philippe Bonnet

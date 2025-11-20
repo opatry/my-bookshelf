@@ -4,6 +4,9 @@ isbn: "9782756406039"
 title: "L'Assassin royal, tome 9 : Les Secrets de Castelcerf"
 author: "Robin Hobb"
 rating: 8
+social:
+  babelio: "6866"
+  sc: "487170"
 ---
 
 FitzChevalerie, l’assassin royal, vient tout juste d’arracher l’héritier du trône des Six-Duchés, le prince Devoir, des griffes de la famille Pie. Reprenant son identité d’emprunt de Tom Blaireau, Fitz n’aspire plus qu’au repos. Il espère enfin clarifier sa relation avec Jinna, la sorcière des Haies, voir grandir Heur, son fils adoptif, et pleurer la mort de son compagnon de toujours, le loup Œil-de-Nuit. Hélas, les fiançailles annoncées du prince Devoir avec la Narcheska Elliana vont brusquement réclamer toute son attention. Et si les Pie profitaient du ballet diplomatique pour tenter un nouveau coup d’éclat ?

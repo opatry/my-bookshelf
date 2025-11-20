@@ -8,6 +8,9 @@ read_date: 2024-12-16
 tags:
   - Dystopie
   - Féminisme
+social:
+  babelio: "1330434"
+  sc: "386369"
 ---
 
 Devant la chute drastique de la fécondité, la république de Galaad, récemment fondée par des fanatiques religieux, a réduit au rang d'esclaves sexuelles les quelques femmes encore fertiles. Vêtue de rouge, Defred, servante écarlate parmi d'autres à qui l'on a ôté jusqu'à son nom, met donc son corps au service de son Commandant et de sa femme. Le soir, dans sa chambre à l'austérité monacale, elle songe au temps où les femmes avaient le droit de lire, de travailler… En rejoignant un réseau clandestin, elle va tout tenter pour recouvrer sa liberté.

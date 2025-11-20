@@ -9,6 +9,9 @@ tags:
   - Humour
   - Etats-Unis
   - Fantastique
+social:
+  sc: "122978"
+  babelio: "5745"
 ---
 
 Louis-Ferdinant Céline n'est pas mort en 1961. On l'a aperçu à Los Angeles. Et une pulpeuse créature qui n'est autre que la Mort charge un "privé" minable, Nick Belane, de le retrouver :

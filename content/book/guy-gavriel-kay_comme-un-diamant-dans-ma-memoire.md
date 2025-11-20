@@ -6,7 +6,9 @@ author: "Guy Gavriel Kay"
 priority: 4
 tags:
   - Fantasy
-  - TBD
+social:
+  sc: "54622469"
+  babelio: "1465323"
 ---
 
 “J'ai connu jadis une femme qui avait l'éclat du diamant et deux hommes que je n'oublierai jamais. J'ai joué un rôle dans une histoire en des temps féroces, sauvages, venteux. C'est à moi. Pour toujours. Je suis ici et ces souvenirs seront miens aussi longtemps qu'il me sera accordé de vivre.”

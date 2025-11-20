@@ -18,6 +18,9 @@ linked_books:
   - "9782756406237"
   - "9782756406251"
   - "9782756406114"
+social:
+  babelio: "6863"
+  sc: "186000"
 ---
 
 Au royaume des Six-Duchés, le prince Chevalerie, de la famille régnante des Loinvoyant, renonce à devenir roi-servant le jour où il apprend l’existence de Fitz, son fils illégitime. Le bâtard grandit à Castelcerf, sous l’autorité de Burrich, le maître d’écurie. Mais le roi Subtil exige que Fitz reçoive une éducation princière. L’enfant découvre bientôt que le dessein du monarque est tout autre : faire de lui un assassin au service du pouvoir. Et tandis que les attaques des Pirates rouges mettent la contrée en péril, Fitz va constater à chaque instant que sa vie ne tient qu’à un fil : celui de sa lame.

@@ -12,6 +12,9 @@ tags:
   - Famille
   - Road-trip
   - Immigration
+social:
+  babelio: "1394148"
+  sc: "46976873"
 ---
 
 Gina, charmante vieille dame d’origine italienne qui mène une existence modeste à Paris, a un péché mignon que tout le monde ignore : elle va chaque mois jouer aux machines à sous. Et voilà qu’un jour, elle gagne…Aussitôt, Gina prend une folle décision : cet argent, elle va le partager avec chacune des personnes qui ont joué un rôle dans sa vie et qu’elle n’a jamais pu remercier. Alors sans rien révéler à quiconque de son gain ni de ses intentions, Gina s’envole sur les traces de son passé…Lorsque sa petite-fille Chloé découvre la « fugue » de sa grand–mère adorée vers New York, elle décide de partir à sa recherche, accompagnée, à son corps défendant, par la très loufoque et envahissante meilleure amie de Gina qui a le don pour les mettre dans des situations impossibles.

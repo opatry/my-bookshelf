@@ -4,6 +4,9 @@ isbn: "9780007395484"
 title: "Windows on the World"
 author: "Frédéric Beigbeder"
 rating: 6
+social:
+  sc: "161589"
+  babelio: "40409"
 ---
 
 Vous connaissez la fin: tout le monde meurt. Certes la mort arrive à pas mal de gens, un jour ou l'autre. L'originalité de cette histoire, c'est que tous ses personnages vont mourir en même temps et au même endroit. Est-ce que la mort crée des liens entre les êtres ?

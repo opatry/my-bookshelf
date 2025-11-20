@@ -7,6 +7,8 @@ rating: 6
 read_date: 2024-07-14
 tags:
   - Famille
+social:
+  babelio: "1315486"
 ---
 
 Rébellion générationnelle à tous les étages !

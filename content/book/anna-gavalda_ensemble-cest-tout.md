@@ -8,6 +8,9 @@ read_date: 2023-01-28
 tags:
   - Amour
   - Amitié
+social:
+  sc: "160397"
+  babelio: "3915"
 ---
 
 “Et puis, qu'est-ce que ça veut dire, différents ? C'est de la foutaise, ton histoire de torchons et de serviettes…

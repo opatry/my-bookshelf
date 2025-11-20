@@ -10,6 +10,9 @@ tags:
   - Amour
   - Vengeance
   - Drogue
+social:
+  sc: "43512299"
+  babelio: "1273627"
 ---
 
 Un homme se retrouve en prison. Brutalisé dans sa mémoire et dans sa chair, il décide avant de mourir de nous livrer le récit de son destin.

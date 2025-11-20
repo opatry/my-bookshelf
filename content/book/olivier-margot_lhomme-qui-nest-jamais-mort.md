@@ -10,6 +10,9 @@ tags:
   - Autriche
   - Guerre
   - Biographie
+social:
+  babelio: "1181893"
+  sc: "42027229"
 ---
 
 Matthias Sindelar fut l’avant-centre génial de la Wunderteam, la grande équipe historique de l’Autriche. Il fut surnommé l’« homme de papier », pour son physique chétif et son art de franchir les murs de défenseurs, là où ne pouvait passer qu’un bout de papier.
