@@ -30,14 +30,6 @@ site:
 social:
   badge_size: 25
   badges:
-    sc:
-      label: SensCritique
-      icon_identifier: '/static/senscritique.*'
-      tint: '#60d16f'
-      base_url: https://www.senscritique.com/
-      self_page_path: OlivYé/collection?universe=2&action=RATING&order=MY_RATING_DESC
-      self_page_label: Mon profil SensCritique
-      book_page_path_prefix: livre/
     babelio:
       label: Babelio
       icon_identifier: '/static/babelio.*'
@@ -46,6 +38,14 @@ social:
       self_page_path: bibliotheque.php?&s1=1&id_user=1664025&tri=note&sens=decroissant
       self_page_label: Mon profil Babelio
       book_page_path_prefix: livres/
+    sc:
+      label: SensCritique
+      icon_identifier: '/static/senscritique.*'
+      tint: '#60d16f'
+      base_url: https://www.senscritique.com/
+      self_page_path: OlivYé/collection?universe=2&action=RATING&order=MY_RATING_DESC
+      self_page_label: Mon profil SensCritique
+      book_page_path_prefix: livre/
     rss:
       label: RSS
       icon_identifier: '/static/rss.*'
