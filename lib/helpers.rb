@@ -117,7 +117,7 @@ def linked_book_title(item, linked_book:)
   end
 end
 
-def hex_color_to_rgba(hex, opacity)
+def hex_color_to_rgba(hex, opacity: 1.0)
   rgb = hex.match(/^#(..)(..)(..)$/).captures.map(&:hex)
   "rgba(#{rgb.join(", ")}, #{opacity})"
 end
