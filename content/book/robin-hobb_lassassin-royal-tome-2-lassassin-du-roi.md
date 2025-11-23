@@ -4,6 +4,9 @@ isbn: "9782756406138"
 title: "L'Assassin royal, tome 2 : L'Assassin du roi"
 author: "Robin Hobb"
 rating: 8
+social:
+  sc: "141222"
+  babelio: "6864"
 ---
 
 Les Pirates rouges sèment la désolation dans les Six-Duchés. Le royaume ne dispose que de ressources limitées pour les combattre. Le roi est seul, entouré d’une cour qui intrigue, d’une armée qui doute et… d’un assassin royal. Fitz est à présent devenu une arme redoutable. Il maîtrise le Vif – la faculté de communiquer avec les animaux – et l’Art. Guerrier accompli, rompu à tuer, il incarne la justice du roi. Une charge d’autant plus lourde qu’il lui faut faire obstacle aux ambitions du prince Royal, un usurpateur en puissance…

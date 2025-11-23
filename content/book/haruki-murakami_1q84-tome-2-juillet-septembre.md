@@ -10,6 +10,9 @@ tags:
   - Japon
   - Thriller
   - Fantastique
+social:
+  sc: "395818"
+  babelio: "1447065"
 ---
 
 Les choses qui restent enfermées dans notre coeur n'existent pas en ce monde. Mais c'est dans notre coeur, ce monde à part, qu'elles se construisent pour y vivre.

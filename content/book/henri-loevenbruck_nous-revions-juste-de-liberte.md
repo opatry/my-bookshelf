@@ -9,6 +9,9 @@ tags:
   - Amitié
   - Drogue
   - Etats-Unis
+social:
+  sc: "13459113"
+  babelio: "695248"
 ---
 
 "Nous avions à peine vingt ans et nous rêvions juste de liberté."

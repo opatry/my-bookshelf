@@ -11,6 +11,9 @@ tags:
   - Ecosse
   - Policier
   - Amitié
+social:
+  babelio: "229435"
+  sc: "476166"
 ---
 
 L'inspecteur Fin McLeod, meurtri par la disparition de son fils unique, est de retour sur son île natale, en Écosse. Chaque année, une douzaine d'hommes partent en expédition à plusieurs heures de navigation pour tuer des oiseaux nicheurs. Sur fond de traditions ancestrales d'une cruauté absolue, Peter May nous plonge au cœur de l'histoire personnelle de son enquêteur Fin McLeod. Fausses pistes, dialogues à double sens, scènes glaçantes… l'auteur tient le lecteur en haleine jusqu'à la dernière page.

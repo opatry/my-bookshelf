@@ -10,6 +10,9 @@ tags:
   - Etats-Unis
   - Indiens
   - Famille
+social:
+  sc: "42441565"
+  babelio: "1214213"
 ---
 
 "Ce livre est à la fois une danse, un chant et un éclat de lune, mais par-dessus tout, l’histoire qu’il raconte est, et restera à jamais, celle de la Petite Indienne."

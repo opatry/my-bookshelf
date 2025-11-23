@@ -7,6 +7,11 @@ rating: 8
 tags:
   - Aventure
   - Fantasy
+social:
+  sc: "8322141"
+  babelio: "7346"
 ---
 
-La dernière partie du Seigneur des Anneaux voit la fin de la quête de Frodo en Terre du Milieu. Le Retour du Roi raconte la stratégie désespérée de Gandalf face au Seigneur des Anneaux, jusqu’à la catastrophe finale et au dénouement de la grande Guerre où s’illustrent Aragorn et ses compagnons, Gimli le Nain, Legolas l’Elfe, les Hobbits Merry et Pippin, tandis que Gollum est appelé à jouer un rôle inattendu aux côtés de Frodo et de Sam au Mordor, le seul lieu où l’Anneau de Sauron peut être détruit. Cette nouvelle traduction prend en compte la dernière version du texte anglais, les indications laissées par J. R. R. Tolkien à l’intention des traducteurs et les découvertes permises par les publications posthumes proposées par Christopher Tolkien. Ce volume contient 15 illustrations d’Alan Lee, entièrement renumérisées, d’une qualité inégalée, ainsi que des cartes (en couleur) de la Terre du Milieu.
+La dernière partie du Seigneur des Anneaux voit la fin de la quête de Frodo en Terre du Milieu. Le Retour du Roi raconte la stratégie désespérée de Gandalf face au Seigneur des Anneaux, jusqu’à la catastrophe finale et au dénouement de la grande Guerre où s’illustrent Aragorn et ses compagnons, Gimli le Nain, Legolas l’Elfe, les Hobbits Merry et Pippin, tandis que Gollum est appelé à jouer un rôle inattendu aux côtés de Frodo et de Sam au Mordor, le seul lieu où l’Anneau de Sauron peut être détruit.
+
+Cette nouvelle traduction prend en compte la dernière version du texte anglais, les indications laissées par J. R. R. Tolkien à l’intention des traducteurs et les découvertes permises par les publications posthumes proposées par Christopher Tolkien.

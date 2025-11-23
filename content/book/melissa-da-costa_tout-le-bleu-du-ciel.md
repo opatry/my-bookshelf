@@ -14,6 +14,9 @@ tags:
   - Road-trip
   - Nature
   - Famille
+social:
+  sc: "39801145"
+  babelio: "1218505"
 ---
 
 Petitesannonces.fr : Jeune homme de 26 ans, condamné à une espérance de vie de deux ans par un Alzheimer précoce, souhaite prendre le large pour un ultime voyage. Recherche compagnon(ne) pour partager avec moi ce dernier périple.

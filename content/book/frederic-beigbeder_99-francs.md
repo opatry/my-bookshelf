@@ -4,6 +4,9 @@ isbn: "9782246567691"
 title: "99 francs"
 author: "Frédéric Beigbeder"
 rating: 7
+social:
+  sc: "473236"
+  babelio: "3171"
 ---
 
 Octave est le maître du monde. Octave exerce en effet la profession lucrative de rédacteur publicitaire : il décide aujourd'hui ce que vous allez vouloir demain. Octave est un mort-vivant, couvert d'argent, de filles et de cocaïne. Un jour, il se rebelle. Le doué Octave déjante. La cliente idéale ? « Une mongolienne de moins de cinquante ans. » Les nababs de la publicité ? « Ils mènent la troisième guerre mondiale. » De l'île de la Jatte où négocient les patrons d'agence à Miami où l'on tourne un spot sous amphétamines, d'un séminaire en Afrique à Saint-Germain-des-Prés, de l'enfer du sexe à la pureté perdue, Frédéric Beigbeder, entre fiction et pamphlet, écrit la confession d'un enfant du millénaire. En riant, il dénonce le mercantilisme universel. En quelque sorte, un livre moral. Pour 99 francs, seulement. Frédéric Beigbeder est l'auteur, chez Grasset, de Vacances dans le coma (1994) et L'amour dure trois ans (1997); et d'un recueil de nouvelles, Nouvelles sous ecstasy (Gallimard, 1999).

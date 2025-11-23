@@ -10,6 +10,9 @@ tags:
   - Guerre
   - Vengeance
   - Amitié
+social:
+  babelio: "498518"
+  sc: "8983738"
 ---
 
 Rescapés du premier conflit mondial, détruits par une guerre vaine et barbare, Albert et Édouard comprennent rapidement que le pays ne pourra rien faire pour eux. Car la France, qui glorifie ses morts, est impuissante à aider les survivants.

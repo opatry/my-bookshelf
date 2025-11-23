@@ -4,8 +4,9 @@ isbn: "9782072462054"
 title: "Les Bienveillantes"
 author: "Jonathan Littell"
 priority: 3
-tags:
-  - TBD
+social:
+  sc: "237043"
+  babelio: "214223"
 ---
 
 "En fait, j'aurais tout aussi bien pu ne pas écrire. Après tout, ce n'est pas une obligation. Depuis la guerre, je suis resté un homme discret ; grâce à Dieu, je n'ai jamais eu besoin, comme certains de mes anciens collègues, d'écrire mes Mémoires à fin de justification, car je n'ai rien à justifier, ni dans un but lucratif, car je gagne assez bien ma vie comme ça. Je ne regrette rien: j'ai fait mon travail, voilà tout; quant à mes histoires de famille, que je raconterai peut-être aussi, elles ne concernent que moi ; et pour le reste, vers la fin, j'ai sans doute forcé la limite, mais là je n'étais plus tout à fait moi-même, je vacillais, le monde entier basculait, je ne fus pas le seul à perdre la tête, reconnaissez-le. Malgré mes travers, et ils ont été nombreux, je suis resté de ceux qui pensent que les seules choses indispensables à la vie humaine sont l'air, le manger, le boire et l'excrétion, et la recherche de la vérité. Le reste est facultatif."

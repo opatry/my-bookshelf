@@ -10,6 +10,9 @@ tags:
   - Etats-Unis
   - Famille
   - Immigration
+social:
+  sc: "52081"
+  babelio: "9323"
 ---
 
 "Quand je revois mon enfance, le seul fait d'avoir survécu m'étonne. Ce fut, bien sûr, une enfance misérable: l'enfance heureuse vaut rarement qu'on s'y arrête. Pire que l'enfance misérable ordinaire est l'enfance misérable en Irlande. Et pire encore est l'enfance misérable en Irlande catholique."

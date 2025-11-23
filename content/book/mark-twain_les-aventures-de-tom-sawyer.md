@@ -8,6 +8,9 @@ tags:
   - Aventure
   - Etats-Unis
   - Amitié
+social:
+  sc: "356416"
+  babelio: "70063"
 ---
 
 "Les Aventures de Tom Sawyer" est un roman classique écrit par l'auteur américain Mark Twain. Il a été publié pour la première fois en 1876 et se déroule dans la ville fictive de St. Petersburg, dans le Missouri. Le roman suit les aventures de son jeune protagoniste, Tom Sawyer.  

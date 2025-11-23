@@ -10,6 +10,9 @@ tags:
   - Guerre
   - Marine
   - Aventure
+social:
+  sc: "45493013"
+  babelio: "1209430"
 ---
 
 Dans ce 4 e tome de la saga maritime française des Aventures de Gilles Belmonte, on croise Toussaint Louverture à Saint-Domingue, Joséphine de Beauharnais et, bien sûr, le Consul en personne. Octobre 1801. Un vent nouveau souffle sur l'Europe. Vainqueur des armées coalisées, conquérant de l'Égypte, Napoléon Bonaparte peut enfin entreprendre son œuvre de modernisation. La marine, comme les colonies, sources inépuisables de profits, sont l'objet de ses attentions. Car, à Saint-Domingue, un ancien esclave, devenu gouverneur autoproclamé, n'a de cesse de s'affranchir de sa tutelle. À Brest, mais aussi Lorient, Rochefort, Cadix et Toulon, une vaste expédition se prépare sous l'égide des meilleurs amiraux français. Gilles Belmonte, que sa paternité et son amour pour Camille hantent, est en permission à Bordeaux lorsqu'il reçoit l'ordre de rallier l' Égalité. Entre le soulèvement d'une population opprimée, un règlement de comptes vieux de dix ans et les menées de la Perfide Albion, notre héros aura fort à faire pour accomplir la mission que lui a confiée Latouche-Tréville. Comme dans les précédents opus, rebondissements et personnages hauts en couleur jalonnent cette épopée, portée par son ton fluide et sa précision historique. - Pour les Trois couleurs : mention de l'Académie de marine 2016 / prix Écume de mer 2018 - Le Trésor des Américains : prix Marine Bravo Zulu 2018 À propos des Aventures de Gilles Belmonte " Nous tenons notre Forester ! " (Patrick Poivre d'Arvor – Vive les livres) " On ouvre les livres de Fabien Clauw comme on prend une place de cinéma. " (Sud-Ouest Dimanche) " Pour les lecteurs que son style absorbe littéralement, au point de les intégrer à l'équipage, l'expérience est toujours aussi vivifiante et impressionnante. À découvrir absolument ! (La Provence) " De l'aventure ! Et de la pêchue, excitante et exotique ! " (L'Express)

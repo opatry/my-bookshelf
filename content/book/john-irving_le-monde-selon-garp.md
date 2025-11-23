@@ -10,6 +10,9 @@ tags:
   - Féminisme
   - Famille
   - Etats-Unis
+social:
+  babelio: "1780"
+  sc: "11149"
 ---
 
 Alors qu'en 1943, face à une contraception défaillante, le souci de bien des femmes reste d'avoir un homme sans avoir d'enfant, la préoccupation de l'excentrique Jenny est d'avoir un enfant et surtout pas d'homme. C'est ainsi qu'elle jette son dévolu sur le sergent technicien Garp, « opérationnellement » intact en dépit de son cerveau endommagé. De cette éphémère union naîtra S.T. Garp. Impossible de résumer ce roman débordant d'humour et d'énergie peuplé de personnages passionés, foisonnant de péripéties délirantes.

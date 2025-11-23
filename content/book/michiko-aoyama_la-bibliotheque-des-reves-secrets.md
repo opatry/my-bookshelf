@@ -8,6 +8,9 @@ read_date: 2024-06-19
 tags:
   - Japon
   - Développement personnel
+social:
+  babelio: "1405905"
+  sc: "48034355"
 ---
 
 Homme ou femme, jeune ou vieux, salarié ou retraité… ils sont cinq à franchir le pas de la petite bibliothèque tenue par Sayuri Komachi en plein coeur de Tokyo. Leur point commun: ils sont au croisement de leur vie. A chacun Sayuri Komachi, énigmatique bibliothécaire attentive aux autres, proposera un ouvrage totalement inattendu, bien loin de celui qu'ils croyaient être venus chercher.

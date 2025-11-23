@@ -9,6 +9,9 @@ tags:
   - Dystopie
   - Sci-fi
   - Guerre
+social:
+  babelio: "3404"
+  sc: "101598"
 ---
 
 Ils sont là.  

@@ -10,6 +10,9 @@ tags:
 linked_books:
   - "9782742765010"
   - "9782742770311"
+social:
+  babelio: "20894"
+  sc: "213438"
 ---
 
 Ancien rédacteur de Millénium, revue d'investigations sociales et économiques, Mikael Blomkvist est contacté par un gros industriel pour relancer une enquête abandonnée depuis quarante ans.

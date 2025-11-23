@@ -5,6 +5,9 @@ title: "Meuh !"
 author: "François Morel"
 rating: 6
 read_date: 2021-11-30
+social:
+  sc: "8460425"
+  babelio: "1033553"
 ---
 
 « Mettons tout de suite les choses au point : si certains se sont procuré ce livre pour satisfaire une curiosité malsaine, ils seront déçus. Je n’ai pas le goût du scandale et il n’est pas dans mes intentions de laisser libre cours à des propos captieux, à des images morbides, à une pensée somme toute abjecte, ignoble. Non, je cherche seulement à dire ici avec le plus de simplicité, le plus d’honnêteté possible comment je suis devenu une vache. Je tenterai d’exprimer les différentes étapes de ma transformation sans chercher une dramatisation outrancière, même si encore aujourd’hui je ne peux évoquer sans larmes la première fois que je me suis fait traire. C’était il y a quelques printemps déjà et mes pis endoloris ont pu longtemps témoigner de ma singulière expérience. » Philippe Bonneval devenu Blanchette livre ses souvenirs et ses réflexions sur Dieu, la vie, l’amour, les hommes, les bovidés, répondant tout au long de ces pages à une question longuement ruminée, mais rarement traitée par la littérature : « À quoi ça pense une vache ? »

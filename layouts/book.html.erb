@@ -60,4 +60,30 @@ unless linked_books.empty?
 <% end %>
 </ul>
 <% end %>
+
+<% unless @item[:social].nil? %>
+<h3>Retrouver ce livre sur</h3>
+<ul class="book-social-links">
+  <% @item[:social].sort.each do |platform, social_identifier| %>
+    <%
+    social = @config[:social][:badges][platform]
+    slug = @item.identifier.without_exts.delete_prefix('/book/') + '/'
+    book_social_url = "#{social[:base_url]}#{social[:book_page_path_prefix]}#{slug}#{social_identifier}"
+    %>
+      <li>
+        <a
+          class="book-social-link book-social-link-<%= platform.to_s %>"
+          href="<%= book_social_url %>"
+          target="_blank"
+          rel="noopener"
+          style="--social-tint-color: <%= hex_color_to_rgba(social[:tint]) %>"
+        >
+          <img src="<%= "#{@items[social[:icon_identifier]].path}" %>" width="<%= @config[:social][:badge_size] %>" height="<%= @config[:social][:badge_size] %>" alt="">
+          <%= social[:label] %>
+        </a>
+      </li>
+  <% end %>
+</ul>
+<% end %>
+
 </div>

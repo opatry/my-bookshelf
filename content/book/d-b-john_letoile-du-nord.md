@@ -9,6 +9,9 @@ tags:
   - Corée
   - Espionnage
   - Thriller
+social:
+  sc: "38960651"
+  babelio: "1098431"
 ---
 
 Les États-Unis et la Corée du Nord sont au bord de la guerre. Avec l’espoir de retrouver sa sœur jumelle qui a été enlevée en Corée du Nord, Jenna se fait recruter par l’unique organisme capable de l’aider: la CIA. À Pyongyang, le colonel Cho fait une découverte terrifiante… Il doit coûte que coûte échapper à la police secrète qui le suit désormais de près. Un geste, un mot, et il deviendra traître à la nation. Madame Moon trouve un chargement de contrebande. Plutôt que de le rendre aux autorités, elle décide de vendre la marchandise au marché noir. Si elle réussit, sa vie s’améliorera; si elle échoue… Basé sur des faits réels glaçants, mené à un rythme effréné jusqu’au dénouement explosif, L’Étoile du Nord porte le thriller d’espionnage à de nouveaux sommets!

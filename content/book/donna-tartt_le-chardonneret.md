@@ -11,6 +11,9 @@ tags:
   - Etats-Unis
   - Famille
   - Drogue
+social:
+  sc: "10719031"
+  babelio: "537600"
 ---
 
 Dix ans après le succès mondial du Petit copain, et vingt après celui du Maître des illusions, Donna Tartt fait son grand retour avec Le Chardonneret, une odyssée hantée dans l'Amérique d'aujourd'hui. Dix ans après le succès mondial du Petit copain, et vingt après celui du Maître des illusions, Donna Tartt fait son grand retour avec Le Chardonneret, une odyssée hantée dans l'Amérique d'aujourd'hui. Qui est Theo ? Que lui est-il arrivé à New York pour qu'il soit aujourd'hui, quatorze ans plus tard, cloîtré dans une chambre d'hôtel à Amsterdam comme une bête traquée ? Qu'est devenu le jeune garçon de treize ans qui visitait des musées avec sa mère et menait une vie de collégien ordinaire ? D'où vient cette toile de maître, Le Chardonneret, qu'il transporte partout avec lui ? À la fois roman d'initiation à la Dickens et thriller éminemment moderne, fouillant les angoisses, les peurs et les vices de l'Amérique contemporaine, Le Chardonneret laisse le lecteur essoufflé, ébloui et encore une fois conquis par le talent hors du commun de Donna Tartt.

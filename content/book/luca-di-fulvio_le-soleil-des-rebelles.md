@@ -9,6 +9,9 @@ tags:
   - Moyen-âge
   - Famille
   - Amour
+social:
+  babelio: "1034521"
+  sc: "31654048"
 ---
 
 Le jeune prince Marcus est encore un enfant lorsqu'il assiste impuissant au massacre de toute sa famille.

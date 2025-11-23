@@ -117,7 +117,7 @@ def linked_book_title(item, linked_book:)
   end
 end
 
-def hex_color_to_rgba(hex, opacity)
+def hex_color_to_rgba(hex, opacity: 1.0)
   rgb = hex.match(/^#(..)(..)(..)$/).captures.map(&:hex)
   "rgba(#{rgb.join(", ")}, #{opacity})"
 end
@@ -280,4 +280,12 @@ end
 
 def book_description_metadata(book, max_words:)
   Nokogiri::HTML(book.compiled_content).text.split.first(max_words).join(' ') + '…'
+end
+
+def book_output(book)
+  "'#{book[:title].colorize(:blue)}' by '#{book[:author].colorize(:green)}'"
+end
+
+def warn_missing_social_attribute(book, social_key)
+  puts "⚠️ missing '#{social_key.colorize(:yellow)}' attribute for #{book_output(book)}"
 end

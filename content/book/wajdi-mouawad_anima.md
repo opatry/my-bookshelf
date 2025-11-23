@@ -9,6 +9,9 @@ tags:
   - Etats-Unis
   - Road-trip
   - Indiens
+social:
+  sc: "8176447"
+  babelio: "406173"
 ---
 
 Lorsqu’il découvre le meurtre de sa femme, Wahhch Debch est tétanisé : il doit à tout prix savoir qui a fait « ça », et qui donc si ce n’est pas lui ? Éperonné par sa douleur, il se lance dans une irrémissible chasse à l’homme en suivant l’odeur sacrée, millénaire et animale du sang versé. Seul et abandonné par l’espérance, il s’embarque dans une furieuse odyssée à travers l’Amérique, territoire de toutes les violences et de toutes les beautés. Les mémoires infernales qui sommeillent en lui, ensevelies dans les replis de son enfance, se réveillent du nord au sud, au contact de l’humanité des uns et de la bestialité des autres. Pour lever le voile sur le mensonge de ses origines, Wahhch devra-t-il lâcher le chien de sa colère et faire le sacrifice de son âme ?

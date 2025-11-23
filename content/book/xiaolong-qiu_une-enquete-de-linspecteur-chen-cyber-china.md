@@ -7,6 +7,9 @@ rating: 6
 tags:
   - Chine
   - Policier
+social:
+  sc: "8444640"
+  babelio: "383692"
 ---
 
 Harmonie et probité: à en croire les médias officiels, le modèle chinois est une réussite. Mais sur Internet, la colère des cyber-citoyens se déchaîne. Zhou, un cadre de la municipalité de Shanghai, est la cible rêvée de cette chasse à la corruption d'un nouveau genre. Une photo de lui en possession d'un paquet de cigarettes de luxe, emblème des Gros-Sous sans scrupules, enflamme la toile. Deux semaines plus tard, on le retrouve pendu. Suicide? Assassinat? Sous l'oil vigilant des dignitaires du Parti inquiets du formidable mouvement qui agite le réseau, l'inspecteur principal Chen, aidé d'une jeune journaliste, plonge dans l'univers des blogs clandestins. Là où la censure rouge se casse les dents. Cette huitième enquête du célèbre policier-poète pointe l'exaspération d'une population déterminée à retrouver sa liberté de parole face aux dérives d'un système clanique.

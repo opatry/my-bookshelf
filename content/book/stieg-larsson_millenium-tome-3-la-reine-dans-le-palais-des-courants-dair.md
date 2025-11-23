@@ -7,6 +7,9 @@ rating: 8
 tags:
   - Thriller
   - Scandinavie
+social:
+  sc: "435720"
+  babelio: "14497"
 ---
 
 Après avoir échappé de peu à la mort, Lisbeth Salander se remet difficilement de ses blessures dans une chambre d’hôpital. Incapable physiquement d’agir, elle a de surcroît été placée en isolement et sous surveillance policière, car elle est encore sous le coup de plusieurs chefs d’accusation. La voilà coincée, donc, mais pas inactive, d’autant qu’un patient soigné dans une chambre voisine a de très sérieux et très anciens comptes à régler avec elle…

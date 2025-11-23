@@ -196,8 +196,11 @@ title: \"${title}\"
 author: \"${author}\"
 rating: ${rating}
 read_date: $(date "+%Y-%m-%d") # TBD
-tags:
-  - TBD
+# tags:
+#   - TBD
+# social:
+#   sc: ""
+#   babelio: ""
 ---
 
 ${description}

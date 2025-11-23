@@ -9,6 +9,9 @@ tags:
   - Famille
   - Aveyron
   - Moyen-âge
+social:
+  babelio: "2400"
+  sc: "474834"
 ---
 
 A coup sûr, le premier des Pibrac n'avait pas la vocation.

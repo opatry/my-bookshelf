@@ -9,6 +9,9 @@ tags:
   - Normandie
   - Amitié
   - Famille
+social:
+  babelio: "1669888"
+  sc: "98112170"
 ---
 
 « Je lui demande à quoi il pense et sans lui laisser le temps de répondre je jette un coup d’œil en bas de la falaise, je dis que c’est plutôt haut vu d’ici, tu t’imagines sauter des fois ? »

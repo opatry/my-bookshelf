@@ -10,6 +10,9 @@ tags:
   - Humour
   - Alzheimer
   - Serial killer
+social:
+  babelio: "1302259"
+  sc: "44848562"
 ---
 
 « Avec Mathilde, jamais une balle plus haute que l’autre, du travail propre et sans bavures. Ce soir est une exception. Une fantaisie. Elle aurait pu agir de plus loin, faire moins de dégâts, et ne tirer qu’une seule balle, bien sûr. »

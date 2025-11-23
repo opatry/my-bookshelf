@@ -118,7 +118,7 @@ avatar_size = @config[:avatar_size][avatar_repr]
           So, final result is: style="--social-tint-color: #FFF000" + a:hover { background-color: var(--social-tint-color[, fallback]); }
           See https://css-tricks.com/css-attr-function-got-nothin-custom-properties/
           %>
-          <a href="<%= social[:url] %>" title="<%= social[:label] %>" style="--social-tint-color: <%= hex_color_to_rgba(social[:tint], 0.2) %>">
+          <a href="<%= "#{social[:base_url]}#{social[:self_page_path]}" %>" title="<%= social[:self_page_label] %>" style="--social-tint-color: <%= hex_color_to_rgba(social[:tint], opacity: 0.2) %>">
             <img src="<%= @items[social[:icon_identifier]].path %>" width="<%= @config[:social][:badge_size] %>" height="<%= @config[:social][:badge_size] %>" alt="<%= social[:label] %>">
           </a>
         </div>

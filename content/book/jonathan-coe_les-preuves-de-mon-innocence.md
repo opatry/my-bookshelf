@@ -8,6 +8,9 @@ read_date: 2025-10-20
 tags:
   - Policier
   - Angleterre
+social:
+  babelio: "1824088"
+  sc: "125192466"
 ---
 
 L’arrivée de Liz Truss au 10, Downing Street. Des ultraconservateurs réunis dans un vieux manoir. Une société secrète d’étudiants en plein Cambridge. Plusieurs morts mystérieuses. Des jeunes femmes en quête de vérité. Et une vieille inspectrice bien trop gourmande… Voici quelques ingrédients du nouveau roman virtuose de Jonathan Coe, le plus brillant et charming des auteurs britanniques, qui se joue ici des codes du polar pour mieux dénoncer montée des extrêmes et désinformation.

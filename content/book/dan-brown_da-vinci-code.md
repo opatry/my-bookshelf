@@ -4,6 +4,9 @@ isbn: "9781409091158"
 title: "Da Vinci Code"
 author: "Dan Brown"
 rating: 6
+social:
+  sc: "379449"
+  babelio: "4395"
 ---
 
 Robert Langdon, un éminent spécialiste de symbologie de Harvard, est convoqué d'urgence au Louvre. On a découvert un message codé sur le cadavre du conservateur en chef, retrouvé assassiné au milieu de la Grande Galerie. Pour examiner la série de pictogrammes, il est épaulé par Sophie Neveu, une brillante cryptographe membre de la police. A leur grande surprise, les premiers indices les conduisent à l'œuvre de Léonard de Vinci. En déchiffrant le code, Langdon va mettre à jour l'un des plus grands mystères de notre temps… et devenir un homme traqué.

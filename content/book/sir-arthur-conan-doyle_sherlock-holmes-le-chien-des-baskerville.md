@@ -5,6 +5,9 @@ title: "Sherlock Holmes : Le Chien des Baskerville"
 author: "Sir Arthur Conan Doyle"
 rating: 7
 read_date: 2022-02-05
+social:
+  sc: "125619"
+  babelio: "13854"
 ---
 
 Dartmoor, au Sud-Ouest de l'Angleterre. Le vieux Sir Charles Baskerville succombe à une crise cardiaque après une balade sur la lande. Selon une légende vieille de plusieurs siècles, un énorme chien démoniaque en aurait après les membres de cette famille. Sherlock Holmes et le docteur Watson enquêtent. Ils doivent protéger le dernier descendant, Sir Henry, revenu du Canada pour hériter du domaine familial…

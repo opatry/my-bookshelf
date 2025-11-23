@@ -224,6 +224,35 @@ TODO fixed with lift on scroll?
   }
 }
 
+.book-social-links {
+  display: flex;
+  gap: 16px;
+}
+
+.book-social-links li {
+  display: inline-flex;
+}
+
+.book-social-links li::before {
+  content: none;
+}
+
+.book-social-links li a {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.book-social-link {
+  color: var(--social-tint-color, rgb(0, 0, 0)); 
+  border-color: rgba(0, 0, 0, 0);
+  transition: border-color 0.3s ease-in-out;
+}
+
+.book-social-link:hover {
+  border-bottom: 1px solid rgba(0, 0, 0, .4);
+}
+
 .header-detail .book-query-box {
   min-width: 200px;
 }
