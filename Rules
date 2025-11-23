@@ -4,6 +4,7 @@
 require 'mimemagic'
 require 'image_size'
 require 'i18n'
+require 'colorize'
 
 # mainly used for Android "Add to Homescreen" feature
 favicon_reprs = %i[default favicon152 favicon36 favicon48 favicon72 favicon96 favicon144 favicon192 favicon512]
@@ -50,11 +51,13 @@ preprocess do
       raise "item #{item.identifier} doesn't have a isbn" unless item[:isbn]
       raise "book is both wished & read '#{item_name}'" unless item[:priority].nil? ^ item[:rating].nil?
 
-      if item[:social].nil? || item[:social].empty?
-        puts "Warning: missing :social attribute for '#{item[:title]}' by '#{item[:author]}'"
+      social_attrs = item[:social] || {}
+      if social_attrs.empty?
+        warn_missing_social_attribute(item, ':social')
       else
-        puts "Warning: missing :sc attribute for '#{item[:title]}' by '#{item[:author]}' (SensCritique social link ID)" if item[:social][:sc].nil? || item[:social][:sc].empty?
-        puts "Warning: missing :babelio attribute for '#{item[:title]}' by '#{item[:author]}' (Babelio social link ID)" if item[:social][:babelio].nil? || item[:social][:babelio].empty?
+        %i[sc babelio].each do |key|
+          warn_missing_social_attribute(item, ":#{key}") if social_attrs.fetch(key, '').empty?
+        end
       end
 
       if @items["/cover/#{item[:isbn]}.*"].nil?
@@ -62,7 +65,10 @@ preprocess do
         query = CGI.escape("#{item[:title]} #{item[:author]}")
         google_q = "https://www.google.fr/search?q=#{query}&udm=2"
         amazon_q = "https://www.amazon.fr/s?k=#{query}&i=stripbooks"
-        puts "- missing cover for #{format_isbn(item[:isbn])} #{item[:title]} #{item[:author]} | #{google_q} | #{amazon_q}"
+        puts "🚫 missing cover for '#{format_isbn(item[:isbn]).colorize(:magenta)}' #{book_output(item)}"
+        puts "\t#{google_q}"
+        puts "\t#{amazon_q}"
+        puts ""
       end
 
       # create book series from first book in series
@@ -119,9 +125,9 @@ preprocess do
   wished_books = books.select { |item| item[:rating].nil? || item[:rating] <= 0 }
   read_books = books - wished_books
   total_rating = read_books.sum { |book| book[:rating] || 0 }
-  puts " - #{read_books.size} books read 📚 (Average rating: ⭐️ #{'%.2f' % (total_rating.to_f / read_books.size)}/10)"
-  puts " - #{wished_books.size} books in the wish list"
-  puts " - #{missing_covers} missing covers" if missing_covers > 0
+  puts " - #{read_books.size.to_s.colorize(:cyan)} books read 📚 (Average rating: ⭐️ #{'%.2f' % (total_rating.to_f / read_books.size)}/10)"
+  puts " - #{wished_books.size.to_s.colorize(:cyan)} books in the wish list"
+  puts " - #{missing_covers.to_s.colorize(:cyan)} missing covers" if missing_covers > 0
 end
 
 favicon_reprs.each do |repr|

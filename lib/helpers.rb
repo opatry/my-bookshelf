@@ -281,3 +281,11 @@ end
 def book_description_metadata(book, max_words:)
   Nokogiri::HTML(book.compiled_content).text.split.first(max_words).join(' ') + '…'
 end
+
+def book_output(book)
+  "'#{book[:title].colorize(:blue)}' by '#{book[:author].colorize(:green)}'"
+end
+
+def warn_missing_social_attribute(book, social_key)
+  puts "⚠️ missing '#{social_key.colorize(:yellow)}' attribute for #{book_output(book)}"
+end
