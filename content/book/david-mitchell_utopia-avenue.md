@@ -3,7 +3,8 @@ uuid: 4502340d-3ba6-4c9e-9770-8bdaf02ec450
 isbn: "9782823618389"
 title: "Utopia Avenue"
 author: "David Mitchell"
-priority: 2
+rating: 0
+ongoing: true
 tags:
   - Angleterre
   - Drogue
