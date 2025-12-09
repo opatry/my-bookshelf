@@ -3,7 +3,7 @@ uuid: 9ede256d-b3a6-4749-935d-070f7111af6f
 isbn: "9782070370375"
 title: "La ferme africaine"
 author: "Karen Blixen"
-priority: 3
+priority: 1
 tags:
   - Afrique
 social:

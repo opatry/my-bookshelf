@@ -3,7 +3,7 @@ uuid: c1f9d41f-de8b-4a7f-9c31-03dcbdb35e3a
 isbn: "9782330100520"
 title: "Mille petits riens"
 author: "Jodi Picoult"
-priority: 2
+priority: 1.1
 tags:
   - Etats-Unis
   - Famille
