@@ -69,6 +69,7 @@ unless linked_books.empty?
     social = @config[:social][:badges][platform]
     slug = @item.identifier.without_exts.delete_prefix('/book/') + '/'
     book_social_url = "#{social[:base_url]}#{social[:book_page_path_prefix]}#{slug}#{social_identifier}"
+    icon_item = @items[social[:icon_identifier]]
     %>
       <li>
         <a
@@ -78,7 +79,11 @@ unless linked_books.empty?
           rel="noopener"
           style="--social-tint-color: <%= hex_color_to_rgba(social[:tint]) %>"
         >
-          <img src="<%= "#{@items[social[:icon_identifier]].path}" %>" width="<%= @config[:social][:badge_size] %>" height="<%= @config[:social][:badge_size] %>" alt="">
+          <% if icon_item[:extension] == 'svg' %>
+          <%= icon_svg(icon_item) %>
+          <% else %>
+          <img src="<%= "#{icon_item.path}" %>" width="<%= @config[:social][:badge_size] %>" height="<%= @config[:social][:badge_size] %>" alt="">
+          <% end %>
           <%= social[:label] %>
         </a>
       </li>

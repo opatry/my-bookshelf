@@ -110,6 +110,7 @@ avatar_size = @config[:avatar_size][avatar_repr]
         </div>
 
       <% @config[:social][:badges].each do |key, social| %>
+        <% icon_item = @items[social[:icon_identifier]] %>
         <div id="social-badge-<%= key %>" class="social-badge">
           <%#
           A bit hacky, but unfortunately, background-color: attr(data-tint color) won't work.
@@ -119,7 +120,11 @@ avatar_size = @config[:avatar_size][avatar_repr]
           See https://css-tricks.com/css-attr-function-got-nothin-custom-properties/
           %>
           <a href="<%= "#{social[:base_url]}#{social[:self_page_path]}" %>" title="<%= social[:self_page_label] %>" style="--social-tint-color: <%= hex_color_to_rgba(social[:tint], opacity: 0.2) %>">
-            <img src="<%= @items[social[:icon_identifier]].path %>" width="<%= @config[:social][:badge_size] %>" height="<%= @config[:social][:badge_size] %>" alt="<%= social[:label] %>">
+            <% if icon_item[:extension] == 'svg' %>
+            <%= icon_svg(icon_item) %>
+            <% else %>
+            <img src="<%= icon_item.path %>" width="<%= @config[:social][:badge_size] %>" height="<%= @config[:social][:badge_size] %>" alt="<%= social[:label] %>">
+            <% end %>
           </a>
         </div>
       <% end %>

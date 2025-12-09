@@ -184,7 +184,8 @@ TODO fixed with lift on scroll?
 .social-badge {
   display: inline-flex;
 }
-.social-badge img {
+.social-badge img,
+.social-badge svg {
   vertical-align: text-bottom;
   border-radius: 4px;
 }
@@ -206,7 +207,8 @@ TODO fixed with lift on scroll?
   background-color: var(--social-tint-color, rgba(0, 0, 0, .2));
 }
 
-.social-badge img {
+.social-badge img,
+.social-badge svg {
   width: 24px;
   height: 24px;
 }

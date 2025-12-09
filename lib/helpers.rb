@@ -53,16 +53,13 @@ def book?(item)
   item.identifier =~ '/book/*'
 end
 
-def lucide_icon_svg(name, params: {})
+def icon_svg(icon_item, params: {})
   size = params.fetch(:size, 24)
   width = params.fetch(:width, size)
   height = params.fetch(:height, size)
   clazz = params.fetch(:class, '')
 
-  icon = @items["/static/lucide-icons/#{name}.*"]
-  raise "Can't find lucide icon '/static/lucide-icons/#{name}.*'" if icon.nil?
-
-  svg_dom = Nokogiri::XML(icon.compiled_content)
+  svg_dom = Nokogiri::XML(icon_item.compiled_content)
   svg_node = svg_dom.root
 
   svg_node['width'] = width
@@ -70,6 +67,14 @@ def lucide_icon_svg(name, params: {})
   svg_node['class'] = [svg_node['class'], clazz].compact.join(' ')
 
   svg_dom.to_xml(:save_with => Nokogiri::XML::Node::SaveOptions::NO_DECLARATION).chomp
+end
+
+def lucide_icon_svg(name, params: {})
+  identifier = "/static/lucide-icons/#{name}.*"
+  icon = @items[identifier]
+  raise "Can't find lucide icon '#{identifier}'" if icon.nil?
+
+  icon_svg(icon, params: params)
 end
 
 def star_svg(filled:, size: 24)
