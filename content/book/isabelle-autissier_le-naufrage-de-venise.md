@@ -3,8 +3,8 @@ uuid: bf3fe812-9412-496b-99ae-e57783da2fbc
 isbn: "9782234091108"
 title: "Le naufrage de Venise"
 author: "Isabelle Autissier"
-rating: 0
-ongoing: true
+rating: 6
+read_date: 2026-02-09
 tags:
   - Dystopie
   - Italie
