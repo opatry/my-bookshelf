@@ -65,7 +65,7 @@ preprocess do
         query = CGI.escape("#{item[:title]} #{item[:author]}")
         google_q = "https://www.google.fr/search?q=#{query}&udm=2"
         amazon_q = "https://www.amazon.fr/s?k=#{query}&i=stripbooks"
-        puts "🚫 missing cover for '#{format_isbn(item[:isbn]).colorize(:magenta)}' #{book_output(item)}"
+        puts "🚫 missing cover for '#{item[:isbn].colorize(:magenta)}' #{book_output(item)}"
         puts "\t#{google_q}"
         puts "\t#{amazon_q}"
         puts ""
