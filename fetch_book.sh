@@ -194,13 +194,12 @@ isbn: \"${isbn}\"
 REF: \"${book_query}\"
 title: \"${title}\"
 author: \"${author}\"
-rating: ${rating}
-read_date: $(date "+%Y-%m-%d") # TBD
-# tags:
-#   - TBD
-# social:
-#   sc: ""
-#   babelio: ""
+priority: 1
+tags:
+  - TBD
+social:
+  sc: \"\"
+  babelio: \"\"
 ---
 
 ${description}
