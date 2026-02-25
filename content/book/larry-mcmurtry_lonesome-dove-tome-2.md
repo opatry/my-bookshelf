@@ -3,7 +3,7 @@ uuid: 00b49d3f-53d5-40d0-87cd-e8b11643ae79
 isbn: "9782404011424"
 title: "Lonesome Dove, tome 2"
 author: "Larry McMurtry"
-priority: 1.2
+priority: 1.3
 tags:
   - Etats-Unis
   - Nature
