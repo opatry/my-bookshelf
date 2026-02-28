@@ -3,7 +3,8 @@ uuid: 228f1b35-487b-48da-8dfb-031e43389db8
 isbn: "9782824628639"
 title: "Mens-moi à l'oreille"
 author: "Amy Tintera"
-priority: 1
+rating: 0
+ongoing: true
 tags:
   - Thriller
   - Etats-Unis
