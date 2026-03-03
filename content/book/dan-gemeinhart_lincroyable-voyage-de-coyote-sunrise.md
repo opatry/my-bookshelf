@@ -3,7 +3,8 @@ uuid: 7e8d2c08-ec90-4482-a8a9-127eaa7935f6
 isbn: "9782823870886"
 title: "L'incroyable voyage de Coyote Sunrise"
 author: "Dan Gemeinhart"
-priority: 1.1
+rating: 0
+ongoing: true
 tags:
   - Famille
   - Amitié
