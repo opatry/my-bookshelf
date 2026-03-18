@@ -30,7 +30,7 @@ jobs:
 
     - name: Cache nanoc
       id: cache-nanoc
-      uses: actions/cache@v4
+      uses: actions/cache@v5
       with:
         path: output
         key: ${{ runner.os }}-nanoc-prod-v2-${{ hashFiles('content/**', 'Rules', 'nanoc.yaml', 'lib/**', 'layouts/**') }}
