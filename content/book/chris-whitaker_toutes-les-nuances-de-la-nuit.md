@@ -3,8 +3,7 @@ uuid: 4a1e9163-5479-49c7-abb9-4c21f0e01113
 isbn: "9782355848322"
 title: "Toutes les nuances de la nuit"
 author: "Chris Whitaker"
-rating: 0
-ongoing: true
+priority: 1
 tags:
   - Thriller
   - Policier
