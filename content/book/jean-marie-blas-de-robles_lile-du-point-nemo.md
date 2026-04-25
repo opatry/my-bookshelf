@@ -3,10 +3,9 @@ uuid: 28f3e762-05a7-4e2d-a4f5-4eb54d1f71ed
 isbn: "9782843047305"
 title: "L'île du Point Nemo"
 author: "Jean-Marie Blas de Roblès"
-rating: 0
-ongoing: true
+rating: 4
+read_date: 2026-04-25
 tags:
-  - Humour
   - Sci-fi
   - Fantastique
   - Policier
