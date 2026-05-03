@@ -3,8 +3,9 @@ uuid: 3b65a80d-d316-4f51-a312-4ff52b95e318
 isbn: "9782917157237"
 title: "Le Déchronologue"
 author: "Stéphane Beauverger"
-rating: 0
-ongoing: true
+rating: 9
+read_date: 2026-05-03
+favorite: true
 tags:
   - Fantasy
   - Fantastique
