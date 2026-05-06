@@ -3,8 +3,8 @@ uuid: 9cd1251d-e445-45ca-87fb-db19ec2d679b
 isbn: "9782378804794"
 title: "Les Bouchères"
 author: "Sophie Demange"
-rating: 0
-ongoing: true
+rating: 6
+read_date: 2026-05-06
 tags:
   - Policier
   - Thriller
@@ -14,7 +14,7 @@ tags:
   - Vengeance
   - Féminisme
 social:
-  sc: ""
+  sc: "105892193"
   babelio: "1756562"
 ---
 
