@@ -3,7 +3,8 @@ uuid: c5c72723-e85e-4d59-9206-9bd4d4bac70a
 isbn: "9782756406374"
 title: "Les Aventuriers de la mer, tome 1 : Le vaisseau magique"
 author: "Robin Hobb"
-priority: 1.1
+rating: 0
+ongoing: true
 tags:
   - Fantasy
   - Aventure
