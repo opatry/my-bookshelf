@@ -10,6 +10,7 @@ tags:
   - Guerre
   - Famille
   - Allemagne
+  - Bretagne
 social:
   sc: "15335517"
   babelio: "708046"
