@@ -3,8 +3,8 @@ uuid: c435c260-0f09-4b1b-8058-71e0f4ab1ccd
 isbn: "9782266344593"
 title: "Coyote Perdue et Retrouvée"
 author: "Dan Gemeinhart"
-rating: 0
-ongoing: true
+rating: 7
+read_date: 2026-05-24
 tags:
   - Famille
   - Amitié
