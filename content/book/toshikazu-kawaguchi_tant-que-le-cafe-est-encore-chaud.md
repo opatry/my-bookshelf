@@ -9,6 +9,7 @@ tags:
   - Fantastique
   - Japon
   - Famille
+  - Feel-good
 linked_books:
   - "9782226480095"
 social:

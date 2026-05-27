@@ -8,6 +8,7 @@ read_date: 2026-05-05
 tags:
   - Amour
   - Aventure
+  - Feel-good
 social:
   sc: "47309109"
   babelio: "1374641"

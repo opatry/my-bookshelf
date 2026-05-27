@@ -12,6 +12,7 @@ tags:
   - Famille
   - Road-trip
   - Immigration
+  - Feel-good
 social:
   babelio: "1394148"
   sc: "46976873"

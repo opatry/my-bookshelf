@@ -8,6 +8,7 @@ read_date: 2023-01-28
 tags:
   - Amour
   - Amitié
+  - Feel-good
 social:
   sc: "160397"
   babelio: "3915"

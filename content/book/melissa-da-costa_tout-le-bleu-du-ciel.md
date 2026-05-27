@@ -14,6 +14,7 @@ tags:
   - Road-trip
   - Nature
   - Famille
+  - Feel-good
 social:
   sc: "39801145"
   babelio: "1218505"

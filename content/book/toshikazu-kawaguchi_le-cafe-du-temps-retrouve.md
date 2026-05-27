@@ -9,6 +9,7 @@ tags:
   - Fantastique
   - Japon
   - Famille
+  - Feel-good
 social:
   babelio: "1456678"
   sc: "53540161"

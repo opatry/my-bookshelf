@@ -11,6 +11,7 @@ tags:
   - Amour
   - Amitié
   - Maladie
+  - Feel-good
 social:
   babelio: "1246325"
   sc: "43174124"

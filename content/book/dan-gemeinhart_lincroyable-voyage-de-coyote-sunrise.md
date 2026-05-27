@@ -12,6 +12,7 @@ tags:
   - Amour
   - Road-trip
   - Etats-Unis
+  - Feel-good
 social:
   sc: "42262290"
   babelio: "1211908"

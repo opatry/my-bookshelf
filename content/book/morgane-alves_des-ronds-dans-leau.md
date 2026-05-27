@@ -9,6 +9,7 @@ tags:
   - Amour
   - Amitié
   - Famille
+  - Feel-good
 social:
   sc: "117328771"
   babelio: "1499390"

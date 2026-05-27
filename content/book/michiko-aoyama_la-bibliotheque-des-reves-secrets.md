@@ -8,6 +8,7 @@ read_date: 2024-06-19
 tags:
   - Japon
   - Développement personnel
+  - Feel-good
 social:
   babelio: "1405905"
   sc: "48034355"

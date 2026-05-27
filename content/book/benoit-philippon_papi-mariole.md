@@ -15,6 +15,7 @@ tags:
   - Amitié
   - Vengeance
   - Féminisme
+  - Feel-good
 linked_books:
   - "9782253241485"
 social:
