@@ -28,6 +28,10 @@
         <div class="book-footer book-details">
           <p class="read-date">Lu en <%= get_pretty_date(item) %></p>
         </div>
+        <% elsif item[:ongoing] %>
+        <div class="book-footer book-details">
+          <p>📖 En cours de lecture…</p>
+        </div>
         <% elsif item[:priority] %>
         <div class="book-footer book-details">
           <p>Priorité <span class="wish-priority" data-priority="<%= item[:priority].to_i %>">#<%= item[:priority].to_i %></span></p>
