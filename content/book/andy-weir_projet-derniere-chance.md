@@ -1,7 +1,6 @@
 ---
 uuid: 60f99ae1-32bd-4e2d-988f-22789ba90dd5
 isbn: "9791028117955"
-REF: "'projet dernière chance' by 'andy weir'"
 title: "Projet Dernière Chance"
 author: "Andy Weir"
 priority: 1.3
