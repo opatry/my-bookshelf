@@ -49,7 +49,9 @@ preprocess do
 
     if book?(item)
       raise "item #{item.identifier} doesn't have a isbn" unless item[:isbn]
-      raise "book is both wished & read '#{item_name}'" unless item[:priority].nil? ^ item[:rating].nil?
+      raise "book has read date but has no rating '#{item[:title]}' (#{item[:isbn]})" if item[:read_date] && (item[:rating].nil? || item[:rating].zero?)
+      raise "book is both wished & read '#{item[:title]}' (#{item[:isbn]})" unless item[:ongoing] || (item[:priority].nil? ^ item[:rating].nil?)
+      raise "book is both ongoing & read '#{item[:title]}' (#{item[:isbn]})" if item[:ongoing] && (item[:read_date] || item[:rating])
 
       social_attrs = item[:social] || {}
       if social_attrs.empty?
