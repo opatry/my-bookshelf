@@ -61,6 +61,29 @@ unless linked_books.empty?
 </ul>
 <% end %>
 
+<%
+recommended_books = @item.fetch(:recommended_books, []).filter_map do |recommendation|
+  book_item = find_book_by_isbn(recommendation[:isbn])
+  warn "Warning: Recommended book with ISBN #{recommendation[:isbn]} not found." unless book_item
+  next unless book_item
+
+  recommendation.merge(book: book_item)
+end
+
+unless recommended_books.empty?
+%>
+<h3>Vous pourriez aimer aussi</h3>
+<ul class="recommended-books">
+<% recommended_books.each do |recommendation| %>
+  <% book = recommendation[:book] %>
+  <li>
+    <a href="<%= book.path %>"><%= book[:title] %></a>
+    <span class="recommendation-reasons"><%= recommendation[:reasons].join(' • ') %></span>
+  </li>
+<% end %>
+</ul>
+<% end %>
+
 <% unless @item[:social].nil? %>
 <h3>Retrouver ce livre sur</h3>
 <ul class="book-social-links">

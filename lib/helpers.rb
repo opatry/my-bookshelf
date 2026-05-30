@@ -122,6 +122,116 @@ def linked_book_title(item, linked_book:)
   end
 end
 
+def normalize_tag(tag)
+  I18n.transliterate(tag.to_s.downcase).strip
+end
+
+def recommend_books(limit: 4)
+  books = @items.select { |item| book?(item) }
+  return if books.empty?
+
+  tag_counts = Hash.new(0)
+  books.each do |book|
+    (book[:tags] || []).map { |tag| normalize_tag(tag) }.uniq.each do |tag|
+      tag_counts[tag] += 1
+    end
+  end
+
+  tag_weights = tag_counts.transform_values do |count|
+    Math.log(books.size.to_f / count)
+  end
+
+  books.each do |book|
+    book[:recommended_books] = recommended_books_for(book, books, tag_weights, limit: limit)
+  end
+end
+
+def recommended_books_for(book, books, tag_weights, limit:)
+  linked_isbns = book.fetch(:linked_books, [])
+  scored_books = books.filter_map do |candidate|
+    next if candidate[:isbn] == book[:isbn]
+    next if linked_isbns.include?(candidate[:isbn])
+
+    score, reasons = recommendation_score(book, candidate, tag_weights)
+    next if score < 2.0
+
+    {
+      isbn: candidate[:isbn],
+      score: score.round(3),
+      reasons: reasons
+    }
+  end
+
+  scored_books
+    .sort_by { |recommendation| [-recommendation[:score], sortable_label(find_book_by_isbn(recommendation[:isbn])[:title])] }
+    .first(limit)
+end
+
+def recommendation_score(book, candidate, tag_weights)
+  reasons = []
+  score = 0.0
+  semantic_match = false
+
+  if normalize_author(book[:author]) == normalize_author(candidate[:author])
+    score += 8.0
+    semantic_match = true
+    reasons << 'Même auteur'
+  end
+
+  shared_tags = shared_recommendation_tags(book, candidate, tag_weights)
+  unless shared_tags.empty?
+    tag_score = shared_tags.sum { |tag, weight| weight }
+    score += tag_score
+    semantic_match = true
+    visible_tags = shared_tags.first(3).map(&:first)
+    reasons << "#{visible_tags.one? ? 'Tag commun' : 'Tags communs'} : #{visible_tags.join(', ')}"
+  end
+
+  rating_delta = rating_delta(book, candidate)
+  unless rating_delta.nil?
+    score += case rating_delta
+             when 0 then 2.5
+             when 1 then 2.0
+             when 2 then 1.0
+             else 0.0
+             end
+    reasons << 'Note proche' if rating_delta <= 1
+  end
+
+  if book[:favorite] && candidate[:favorite]
+    score += 1.5
+    reasons << 'Deux coups de cœur'
+  end
+
+  if book[:read_date].is_a?(Date) && candidate[:read_date].is_a?(Date) && book[:read_date].year == candidate[:read_date].year
+    score += 0.5
+  end
+
+  score = 0.0 unless semantic_match
+
+  [score, reasons]
+end
+
+def normalize_author(author)
+  I18n.transliterate(author.to_s.downcase).gsub(/\W/, ' ').gsub(/\s+/, ' ').strip
+end
+
+def shared_recommendation_tags(book, candidate, tag_weights)
+  book_tags = (book[:tags] || []).to_h { |tag| [normalize_tag(tag), tag] }
+  candidate_tags = (candidate[:tags] || []).map { |tag| normalize_tag(tag) }
+
+  (book_tags.keys & candidate_tags)
+    .map { |tag| [book_tags[tag], tag_weights.fetch(tag, 0.0)] }
+    .sort_by { |tag, weight| [-weight, sortable_label(tag)] }
+end
+
+def rating_delta(book, candidate)
+  return nil if book[:rating].nil? || candidate[:rating].nil?
+  return nil if book[:rating].zero? || candidate[:rating].zero?
+
+  (book[:rating] - candidate[:rating]).abs
+end
+
 def hex_color_to_rgba(hex, opacity: 1.0)
   rgb = hex.match(/^#(..)(..)(..)$/).captures.map(&:hex)
   "rgba(#{rgb.join(", ")}, #{opacity})"

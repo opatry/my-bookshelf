@@ -355,8 +355,20 @@ table td {
   font-size: .9em;
 }
 
-.linked-books li {
+.linked-books li,
+.recommended-books li {
   padding: 4px 0;
+}
+
+.recommended-books {
+  font-size: .9em;
+}
+
+.recommendation-reasons {
+  display: block;
+  margin-top: 2px;
+  color: rgba(0, 0, 0, .55);
+  font-size: .85em;
 }
 
 .rating-bar {

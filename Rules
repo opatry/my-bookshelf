@@ -93,6 +93,8 @@ preprocess do
     raise "no book for cover #{isbn}" unless find_book_by_isbn(isbn)
   end
 
+  recommend_books
+
   @config[:feed_book_isbn] = feed_books.map { |book| book[:isbn] }
 
   @items.find_all('/static/pwa-screenshot-*').each do |picture|
