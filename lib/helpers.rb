@@ -189,6 +189,15 @@ def last_books(limit = nil)
   limit.nil? ? books : books.first(limit)
 end
 
+def average_rating(books)
+  ratings = books.map { |book| book[:rating] }
+                 .compact
+                 .reject(&:zero?)
+  return nil if ratings.empty?
+
+  ratings.sum.to_f / ratings.size
+end
+
 # Returns the wished books sorted by priority in ascending order.
 #
 # @param limit [Integer, nil] the maximum number of books to return. If nil, returns all books.
