@@ -12,6 +12,7 @@ if books.empty?
 <%
 else
   books_by_year = books.group_by { |book| book[:read_date].year }
+  favorite_tags = favorite_tags_by_year(books)
   books_by_year.each do |year, books_in_year|
     books_by_year[year] = books_in_year.group_by { |book| book[:read_date].month }
   end
@@ -81,9 +82,18 @@ else
 <%
 books_by_year.each do |year, books_by_month|
   book_count_in_year = books_by_month.values.sum(&:size)
+  favorite_tags_in_year = favorite_tags.fetch(year, [])
 %>
 <div id="y<%= year %>" class="temporal-section year-section">
   <h2><%= year %>&nbsp;<span class="book-count">(<%= book_count_in_year %>)</span></h2>
+  <% unless favorite_tags_in_year.empty? %>
+  <ul class="book-tags favorite-tags">
+    <li><span title="Étiquettes favorites">🏷️</span></li>
+    <% favorite_tags_in_year.each do |tag| %>
+    <li class="tag"><%= link_to_tag(tag) %></li>
+    <% end %>
+  </ul>
+  <% end %>
   <%
   books_by_month.each do |month_num, books_in_month|
     book_count_in_month = books_in_month.size

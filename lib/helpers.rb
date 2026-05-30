@@ -189,6 +189,23 @@ def last_books(limit = nil)
   limit.nil? ? books : books.first(limit)
 end
 
+def favorite_tags_by_year(books, limit: 5)
+  books.group_by { |book| book[:read_date].year }.transform_values do |books_in_year|
+    tags = Hash.new(0)
+    books_in_year.each do |book|
+      next if book[:tags].nil? || book[:tags].empty?
+
+      book[:tags].each do |tag|
+        tags[tag] += 1
+      end
+    end
+
+    tags.sort_by { |tag, count| [-count, sortable_label(tag)] }
+       .map(&:first)
+       .first(limit)
+  end
+end
+
 # Returns the wished books sorted by priority in ascending order.
 #
 # @param limit [Integer, nil] the maximum number of books to return. If nil, returns all books.
