@@ -6,7 +6,7 @@ author: "Olivier Margot"
 rating: 6
 read_date: 2024-10-11
 tags:
-  - Foot
+  - Sport
   - Autriche
   - Guerre
   - Biographie

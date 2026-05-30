@@ -6,7 +6,7 @@ author: "Philip Kerr"
 rating: 5
 read_date: 2022-05-05
 tags:
-  - Foot
+  - Sport
   - Angleterre
   - Policier
 social:

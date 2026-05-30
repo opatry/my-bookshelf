@@ -7,7 +7,7 @@ rating: 6
 read_date: 2021-10-09
 favorite: true
 tags:
-  - Foot
+  - Sport
   - Angleterre
   - Policier
 linked_books:
