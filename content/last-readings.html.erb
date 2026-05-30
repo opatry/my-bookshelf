@@ -81,9 +81,15 @@ else
 <%
 books_by_year.each do |year, books_by_month|
   book_count_in_year = books_by_month.values.sum(&:size)
+  reading_pace = reading_pace_in_days_per_book(year, book_count_in_year)
 %>
 <div id="y<%= year %>" class="temporal-section year-section">
-  <h2><%= year %>&nbsp;<span class="book-count">(<%= book_count_in_year %>)</span></h2>
+  <h2>
+    <%= year %>&nbsp;<span class="book-count">(<%= book_count_in_year %>)</span>
+    <% unless reading_pace.nil? %>
+    <span class="reading-cadence">rythme : <%= reading_pace.round(1) %> j/livre</span>
+    <% end %>
+  </h2>
   <%
   books_by_month.each do |month_num, books_in_month|
     book_count_in_month = books_in_month.size

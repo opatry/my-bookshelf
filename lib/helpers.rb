@@ -189,6 +189,21 @@ def last_books(limit = nil)
   limit.nil? ? books : books.first(limit)
 end
 
+def reading_pace_in_days_per_book(year, book_count)
+  return nil if book_count.zero?
+
+  today = Date.today
+  days = if year == today.year
+           today.yday
+         elsif year < today.year
+           Date.gregorian_leap?(year) ? 366 : 365
+         end
+
+  return nil if days.nil?
+
+  days.to_f / book_count
+end
+
 # Returns the wished books sorted by priority in ascending order.
 #
 # @param limit [Integer, nil] the maximum number of books to return. If nil, returns all books.

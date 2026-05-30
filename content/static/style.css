@@ -377,6 +377,13 @@ h1, h2, h3 {
   color: rgba(0, 0, 0, .6);
 }
 
+.reading-cadence {
+  margin-left: .75em;
+  color: rgba(0, 0, 0, .55);
+  font-size: .6em;
+  font-weight: 400;
+}
+
 .title-more {
   margin-left: auto;
   font-size: .5em;
