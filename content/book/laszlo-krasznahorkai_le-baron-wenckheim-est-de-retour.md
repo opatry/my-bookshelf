@@ -3,7 +3,7 @@ uuid: 65f74be1-d797-46ea-a17f-fa8ebd739b73
 isbn: "9782330195298"
 title: "Le baron Wenckheim est de retour"
 author: "Laszlo Krasznahorkai"
-priority: 2
+priority: 3
 tags:
   - Humour
 social:

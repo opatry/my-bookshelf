@@ -3,7 +3,7 @@ uuid: 68b06a19-2d77-462a-99c3-905a51b8bc82
 isbn: "9782253129905"
 title: "World War Z"
 author: "Max Brooks"
-priority: 2
+priority: 4
 tags:
   - Apocalypse
   - Etats-Unis

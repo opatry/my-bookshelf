@@ -3,7 +3,7 @@ uuid: 75bd7f4a-24be-4752-8b32-f464773cac2e
 isbn: "9791041822720"
 title: "Les Aventures de Tom Sawyer"
 author: "Mark Twain"
-priority: 3
+priority: 4
 tags:
   - Aventure
   - Etats-Unis

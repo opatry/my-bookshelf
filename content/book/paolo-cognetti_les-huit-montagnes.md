@@ -3,7 +3,7 @@ uuid: 0db7e820-f949-42cc-bb7b-559c55d1e7c8
 isbn: "9782234083202"
 title: "Les huit montagnes"
 author: "Paolo Cognetti"
-priority: 1
+priority: 3
 tags:
   - Italie
   - Nature

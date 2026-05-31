@@ -3,7 +3,7 @@ uuid: d7b9bdf7-2f58-4401-8470-0c88d8a374e1
 isbn: "9782404081243"
 title: "Sukkwan Island"
 author: "David Vann"
-priority: 2
+priority: 3
 tags:
   - Etats-Unis
   - Famille

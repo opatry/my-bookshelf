@@ -3,7 +3,7 @@ uuid: a75e95fb-0019-481e-b361-4e2d2f22a06d
 isbn: "9782330151270"
 title: "La Rivière"
 author: "Peter Heller"
-priority: 1
+priority: 1.8
 tags:
   - Canada
   - Nature

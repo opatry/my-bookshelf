@@ -3,7 +3,7 @@ uuid: 1dc3d57a-040f-476d-82a1-47a51f33902d
 isbn: "9782246828167"
 title: "Enfant de salaud"
 author: "Sorj Chalandon"
-priority: 2
+priority: 3
 tags:
   - Guerre
   - Famille

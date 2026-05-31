@@ -3,7 +3,7 @@ uuid: 60f99ae1-32bd-4e2d-988f-22789ba90dd5
 isbn: "9791028117955"
 title: "Projet Dernière Chance"
 author: "Andy Weir"
-priority: 1.3
+priority: 2
 tags:
   - Sci-fi
   - Space-opera

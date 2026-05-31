@@ -3,9 +3,10 @@ uuid: 7636932f-5a7e-4e43-af6e-de8e08d60f90
 isbn: "9782707356758"
 title: "La maison vide"
 author: "Laurent Mauvignier"
-priority: 3
+priority: 4
 tags:
   - Famille
+  - Guerre
 social:
   sc: "122435860"
   babelio: "1868350"

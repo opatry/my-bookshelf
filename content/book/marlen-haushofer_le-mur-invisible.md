@@ -3,7 +3,7 @@ uuid: 52e85a12-6474-451f-b968-31bea897ff8e
 isbn: "9782330033842"
 title: "Le mur invisible"
 author: "Marlen Haushofer"
-priority: 1
+priority: 1.6
 tags:
   - Sci-fi
   - Nature

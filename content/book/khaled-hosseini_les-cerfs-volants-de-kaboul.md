@@ -3,7 +3,7 @@ uuid: 5b260c34-58b9-4c92-b639-5c0e28f5a2e2
 isbn: "9782714453112"
 title: "Les cerfs-volants de Kaboul"
 author: "Khaled Hosseini"
-priority: 1
+priority: 1.7
 tags:
   - Afghanistan
   - Amitié

@@ -3,7 +3,7 @@ uuid: b5581b7b-d58e-4ace-848a-1896236983ba
 isbn: "9782081360341"
 title: "Nous rêvions juste de liberté"
 author: "Henri Loevenbruck"
-priority : 1.5
+priority : 2
 tags:
   - Road-trip
   - Amitié
