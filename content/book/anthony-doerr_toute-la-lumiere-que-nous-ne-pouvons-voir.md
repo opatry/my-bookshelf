@@ -3,7 +3,7 @@ uuid: 56f16a5a-118a-40e5-a87a-6ba284cf085b
 isbn: "9782226317186"
 title: "Toute la lumière que nous ne pouvons voir"
 author: "Anthony Doerr"
-rating: 9
+rating: 8
 read_date: 2025-01-22
 favorite: true
 tags:
