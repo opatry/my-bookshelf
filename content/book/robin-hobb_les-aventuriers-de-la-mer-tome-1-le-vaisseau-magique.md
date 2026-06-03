@@ -13,6 +13,7 @@ social:
   babelio: "104388"
 linked_books:
   - "9782756406398"
+  - "9782756406411"
 ---
 
 Les vivenefs sont des vaisseaux magiques liés à la famille qui les possède par des liens empathiques. Ces navires sont insaisissables, ils bravent les tempêtes, évitent les récifs, distancent les monstres marins, sèment les pirates… Et sont surtout l'objet de toutes les convoitises.
