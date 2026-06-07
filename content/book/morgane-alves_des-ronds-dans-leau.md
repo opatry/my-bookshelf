@@ -3,7 +3,9 @@ uuid: b9b8348e-b692-4ecc-bf90-78b69df8c9ec
 isbn: "9782080293787"
 title: "Des ronds dans l'eau"
 author: "Morgane Alvès"
-ongoing: true
+rating: 7
+read_date: 2026-06-07
+favorite: true
 tags:
   - Bretagne
   - Amour
