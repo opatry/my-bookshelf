@@ -3,13 +3,12 @@ uuid: b73436f4-f248-4942-8dcf-17e0f06e8201
 isbn: "9782404006154"
 title: "Dans la forêt"
 author: "Jean Hegland"
-ongoing: true
+rating: 6
+read_date: 2026-06-15
 tags:
   - Dystopie
   - Nature
   - Famille
-  - Etats-Unis
-  - Sci-fi
   - Apocalypse
 social:
   sc: "22541510"
