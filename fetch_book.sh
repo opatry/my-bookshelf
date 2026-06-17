@@ -148,6 +148,11 @@ else
     if [ -z "${description}" ]; then
       description="$(jq -r '.volumeInfo.description' <<< "${selected_volume}")"
     fi
+
+    publication_year=$(jq -r '.volumeInfo.publishedDate' <<< "${selected_volume}")
+    publication_year=$(grep -oE '[0-9]{4}' <<< "${publication_year}" | head -n1)
+    page_count=$(jq -r '.volumeInfo.pageCount' <<< "${selected_volume}")
+
     cover_full_url=$(jq -r .volumeInfo.imageLinks.thumbnail <<< "${selected_volume}")
     if [ "${cover_full_url}" = "null" ] || [ -z "${cover_full_url}" ]; then
       echo " ⚠︎ Can't find book cover for ${book_query} (ISBN: ${isbn})"
@@ -191,7 +196,7 @@ else
     echo "---
 uuid: ${uuid}
 isbn: '${isbn}'
-REF: ${book_query}
+REF: \"${book_query}\"
 title: ${title}
 author: ${author}
 priority: 1
@@ -200,8 +205,8 @@ tags:
 social:
   sc: ''
   babelio: ''
-page_count:
-publication_year:
+page_count: ${page_count}
+publication_year: ${publication_year}
 ---
 
 ${description}
