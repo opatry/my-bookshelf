@@ -1,18 +1,20 @@
 ---
 uuid: e09d94f0-210d-4a65-85e2-fe4408a4f469
-isbn: "9782226492364"
-title: "On m'appelle Demon Copperhead"
-author: "Barbara Kingsolver"
+isbn: '9782226492364'
+title: On m'appelle Demon Copperhead
+author: Barbara Kingsolver
 rating: 8
 read_date: 2025-03-30
 favorite: true
 tags:
-  - Etats-Unis
-  - Drogue
-  - Famille
+- Etats-Unis
+- Drogue
+- Famille
 social:
-  sc: "74666377"
-  babelio: "1581508"
+  sc: '74666377'
+  babelio: '1581508'
+page_count: 624
+publication_year: 2024
 ---
 
 Né à même le sol d'un mobil-home au fin fond des Appalaches d'une jeune toxicomane et d'un père trop tôt disparu, Demon Copperhead est le digne héritier d'un célèbre personnage de Charles Dickens. De services sociaux défaillants en familles d'accueil véreuses, de tribunaux pour mineurs au cercle infernal de l'addiction, le garçon va être confronté aux pires épreuves et au mépris de la société à l'égard des plus démunis. Pourtant, à chacune des étapes de sa tragique épopée, c'est son instinct de survie qui triomphe. Demon saura-t-il devenir le héros de sa propre existence ?

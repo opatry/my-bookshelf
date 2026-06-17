@@ -190,16 +190,18 @@ else
     echo "Creating a new book ${book_file} for '${title}' by '${author}'"
     echo "---
 uuid: ${uuid}
-isbn: \"${isbn}\"
-REF: \"${book_query}\"
-title: \"${title}\"
-author: \"${author}\"
+isbn: '${isbn}'
+REF: ${book_query}
+title: ${title}
+author: ${author}
 priority: 1
 tags:
-  - TBD
+- TBD
 social:
-  sc: \"\"
-  babelio: \"\"
+  sc: ''
+  babelio: ''
+page_count:
+publication_year:
 ---
 
 ${description}

@@ -1,15 +1,17 @@
 ---
 uuid: 1dc3d57a-040f-476d-82a1-47a51f33902d
-isbn: "9782246828167"
-title: "Enfant de salaud"
-author: "Sorj Chalandon"
+isbn: '9782246828167'
+title: Enfant de salaud
+author: Sorj Chalandon
 priority: 3
 tags:
-  - Guerre
-  - Famille
+- Guerre
+- Famille
 social:
-  sc: "44890244"
-  babelio: "1328724"
+  sc: '44890244'
+  babelio: '1328724'
+page_count: 336
+publication_year: 2021
 ---
 
 Depuis l’enfance, une question torture le narrateur :

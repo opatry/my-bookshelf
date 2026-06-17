@@ -1,12 +1,14 @@
 ---
 uuid: 71f8d450-d93d-484e-9966-5e6aa1569ff4
-isbn: "9782756406077"
+isbn: '9782756406077'
 title: "L'Assassin royal, tome 4 : Le Poison de la vengeance"
-author: "Robin Hobb"
+author: Robin Hobb
 rating: 8
 social:
-  babelio: "14545"
-  sc: "217695"
+  babelio: '14545'
+  sc: '217695'
+page_count: 349
+publication_year: 2000
 ---
 
 Les pirates, de plus en plus audacieux, ont commencé leur invasion dévastatrice. Royal, après avoir assassiné le souverain légitime, est monté sur le trône des Six-Duchés. L’usurpateur s’est replié dans son fief natal, certain de ne plus être inquiété par FitzChevalerie, son ennemi intime, qu’il tient pour mort. Grossière erreur, car le jeune bâtard vit toujours. S’il ne perd pas espoir de se venger, il lui faut d’abord réapprendre à vivre, sous la patiente égide de Burrich et d’Umbre. Et choisir sa voie : celle de la civilisation… ou celle de la magie primitive qui le lie à Œil-de-Nuit ?

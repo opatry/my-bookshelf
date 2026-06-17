@@ -1,17 +1,19 @@
 ---
 uuid: b5581b7b-d58e-4ace-848a-1896236983ba
-isbn: "9782081360341"
-title: "Nous rêvions juste de liberté"
-author: "Henri Loevenbruck"
-priority : 2
+isbn: '9782081360341'
+title: Nous rêvions juste de liberté
+author: Henri Loevenbruck
+priority: 2
 tags:
-  - Road-trip
-  - Amitié
-  - Drogue
-  - Etats-Unis
+- Road-trip
+- Amitié
+- Drogue
+- Etats-Unis
 social:
-  sc: "13459113"
-  babelio: "695248"
+  sc: '13459113'
+  babelio: '695248'
+page_count: 489
+publication_year: 2017
 ---
 
 "Nous avions à peine vingt ans et nous rêvions juste de liberté."

@@ -1,19 +1,21 @@
 ---
 uuid: 76219e45-ccb9-416d-8ca4-4c5cac778d6d
-isbn: "9782253115847"
-title: "Ne tirez pas sur l'oiseau moqueur"
-author: "Harper Lee"
+isbn: '9782253115847'
+title: Ne tirez pas sur l'oiseau moqueur
+author: Harper Lee
 rating: 7
 read_date: 2024-08-23
 favorite: true
 tags:
-  - Etats-Unis
-  - Amitié
-  - Famille
-  - Racisme
+- Etats-Unis
+- Amitié
+- Famille
+- Racisme
 social:
-  sc: "253900"
-  babelio: "22389"
+  sc: '253900'
+  babelio: '22389'
+page_count: 448
+publication_year: 1960
 ---
 
 Dans une petite ville d'Alabama, au moment de la Grande Dépression, Atticus Finch élève seul ses deux enfants, Jem et Scout. Homme intègre et rigoureux, cet avocat est commis d'office pour défendre un Noir accusé d'avoir violé une Blanche. Celui-ci risque la peine de mort.

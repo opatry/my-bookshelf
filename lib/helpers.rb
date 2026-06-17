@@ -42,6 +42,9 @@ def to_json(book, url: :relative)
     'cover': "#{url_prefix}#{cover_path}" || '',
     'cover_mini': "#{url_prefix}#{cover_mini_path}" || '',
     'tags': book[:tags] || [],
+    'social': book[:social] || {},
+    'page_count': book[:page_count] || nil,
+    'publication_year': book[:publication_year] || nil,
   }
 end
 

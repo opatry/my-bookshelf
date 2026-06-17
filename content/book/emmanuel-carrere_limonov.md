@@ -1,17 +1,19 @@
 ---
 uuid: f64bcc49-6280-4fb1-9d70-8a16a3bcb753
-isbn: "9780141976426"
-title: "Limonov"
-author: "Emmanuel Carrère"
+isbn: '9780141976426'
+title: Limonov
+author: Emmanuel Carrère
 rating: 6
 read_date: 2021-07-03
 tags:
-  - Russie
-  - Etats-Unis
-  - Guerre
+- Russie
+- Etats-Unis
+- Guerre
 social:
-  babelio: "281239"
-  sc: "475671"
+  babelio: '281239'
+  sc: '475671'
+page_count: 496
+publication_year: 2011
 ---
 
 Limonov n’est pas un personnage de fiction. Il existe. Je le connais. Il a été voyou en Ukraine ; idole de l’underground soviétique sous Brejnev ; clochard, puis valet de chambre d’un milliardaire à Manhattan ; écrivain branché à Paris ; soldat perdu dans les guerres des Balkans ; et maintenant, dans l’immense bordel de l’après-communisme en Russie, vieux chef charismatique d’un parti de jeunes desperados. Lui-même se voit comme un héros, on peut le considérer comme un salaud : je suspends pour ma part mon jugement.

@@ -1,17 +1,19 @@
 ---
 uuid: 28f3e762-05a7-4e2d-a4f5-4eb54d1f71ed
-isbn: "9782843047305"
-title: "L'île du Point Nemo"
-author: "Jean-Marie Blas de Roblès"
+isbn: '9782843047305'
+title: L'île du Point Nemo
+author: Jean-Marie Blas de Roblès
 rating: 4
 read_date: 2026-04-25
 tags:
-  - Sci-fi
-  - Fantastique
-  - Policier
+- Sci-fi
+- Fantastique
+- Policier
 social:
-  sc: "11569638"
-  babelio: "620467"
+  sc: '11569638'
+  babelio: '620467'
+page_count: 460
+publication_year: 2014
 ---
 
 Roman d’aventures total, tourbillonnaire, conquérant, véritable machinerie de l’imaginaire où s’entrecroisent et se percutent tous les codes romanesques, la littérature populaire, entre passé historique et projection dans le futur, nos hantises programmées et nos rêves d’échappées irrépressibles.  

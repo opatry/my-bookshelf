@@ -1,16 +1,18 @@
 ---
 uuid: 75bd7f4a-24be-4752-8b32-f464773cac2e
-isbn: "9791041822720"
-title: "Les Aventures de Tom Sawyer"
-author: "Mark Twain"
+isbn: '9791041822720'
+title: Les Aventures de Tom Sawyer
+author: Mark Twain
 priority: 4
 tags:
-  - Aventure
-  - Etats-Unis
-  - Amitié
+- Aventure
+- Etats-Unis
+- Amitié
 social:
-  sc: "356416"
-  babelio: "70063"
+  sc: '356416'
+  babelio: '70063'
+page_count: 287
+publication_year: 1876
 ---
 
 "Les Aventures de Tom Sawyer" est un roman classique écrit par l'auteur américain Mark Twain. Il a été publié pour la première fois en 1876 et se déroule dans la ville fictive de St. Petersburg, dans le Missouri. Le roman suit les aventures de son jeune protagoniste, Tom Sawyer.  

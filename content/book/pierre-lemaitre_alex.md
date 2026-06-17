@@ -1,15 +1,17 @@
 ---
 uuid: a7e71702-86dc-4081-9c02-e69ab1334ced
-isbn: "9782253166443"
-title: "Alex"
-author: "Pierre Lemaitre"
+isbn: '9782253166443'
+title: Alex
+author: Pierre Lemaitre
 priority: 4
 tags:
-  - Thriller
-  - Serial killer
+- Thriller
+- Serial killer
 social:
-  sc: "366777"
-  babelio: "231564"
+  sc: '366777'
+  babelio: '231564'
+page_count: 392
+publication_year: 2011
 ---
 
 Qui connaît vraiment Alex ?  

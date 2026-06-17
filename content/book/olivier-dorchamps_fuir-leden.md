@@ -1,18 +1,20 @@
 ---
 uuid: 892c54f4-ca74-4e1b-8c8e-28cad5f876a7
-isbn: "9782363391605"
-title: "Fuir l'Eden"
-author: "Olivier Dorchamps"
+isbn: '9782363391605'
+title: Fuir l'Eden
+author: Olivier Dorchamps
 rating: 7
 read_date: 2025-02-01
 tags:
-  - Amitié
-  - Amour
-  - Famille
-  - Angleterre
+- Amitié
+- Amour
+- Famille
+- Angleterre
 social:
-  babelio: "1393182"
-  sc: "47324613"
+  babelio: '1393182'
+  sc: '47324613'
+page_count: 240
+publication_year: 2023
 ---
 
 “Elle a mon âge. Ses yeux clairs ont peu dormi. Elle est jolie, perdue dans sa solitude. Elle doit porter un peu de rouge à lèvres mais c’est discret. Comme elle. Une fille invisible au rouge à lèvres discret. Elle me rappelle ma mère ; des bribes de ma mère. Sa douceur. Sa mélancolie. Sa fragilité. Comme un puzzle, si tu veux, les morceaux du bord. Avec un grand vide au milieu.”

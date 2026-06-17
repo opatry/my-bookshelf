@@ -1,16 +1,18 @@
 ---
 uuid: 1339e664-1002-4fd8-9739-f339607d7586
-isbn: "9782226493781"
-title: "Le Barman du Ritz"
-author: "Philippe Collin"
+isbn: '9782226493781'
+title: Le Barman du Ritz
+author: Philippe Collin
 rating: 7
 favorite: true
 read_date: 2025-10-06
 tags:
-  - Guerre
+- Guerre
 social:
-  sc: "88639398"
-  babelio: "1599780"
+  sc: '88639398'
+  babelio: '1599780'
+page_count: 395
+publication_year: 2024
 ---
 
 Juin 1940. Les Allemands entrent dans Paris. Partout, le couvre-feu est de rigueur, sauf au grand hôtel Ritz. Avides de découvrir l'art de vivre à la française, les occupants y côtoient l'élite parisienne, tandis que derrière le bar oeuvre Frank Meier, le plus grand barman du monde.

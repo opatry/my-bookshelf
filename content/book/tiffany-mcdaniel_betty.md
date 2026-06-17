@@ -1,19 +1,21 @@
 ---
 uuid: b5529048-ceb1-4a41-81c9-0ab67917d9a7
-isbn: "9782351788387"
-title: "Betty"
-author: "Tiffany McDaniel"
+isbn: '9782351788387'
+title: Betty
+author: Tiffany McDaniel
 rating: 7
 read_date: 2025-11-29
 favorite: true
 tags:
-  - Nature
-  - Etats-Unis
-  - Indiens
-  - Famille
+- Nature
+- Etats-Unis
+- Indiens
+- Famille
 social:
-  sc: "42441565"
-  babelio: "1214213"
+  sc: '42441565'
+  babelio: '1214213'
+page_count: 704
+publication_year: 2022
 ---
 
 "Ce livre est à la fois une danse, un chant et un éclat de lune, mais par-dessus tout, l’histoire qu’il raconte est, et restera à jamais, celle de la Petite Indienne."

@@ -1,17 +1,19 @@
 ---
 uuid: fe2398c7-2ec9-449f-a4fa-2f70f28bfd0f
-isbn: "9782823621334"
-title: "Après ça"
-author: "Eliot Ruffel"
+isbn: '9782823621334'
+title: Après ça
+author: Eliot Ruffel
 rating: 6
 read_date: 2025-03-14
 tags:
-  - Normandie
-  - Amitié
-  - Famille
+- Normandie
+- Amitié
+- Famille
 social:
-  babelio: "1669888"
-  sc: "98112170"
+  babelio: '1669888'
+  sc: '98112170'
+page_count: 160
+publication_year: 2024
 ---
 
 « Je lui demande à quoi il pense et sans lui laisser le temps de répondre je jette un coup d’œil en bas de la falaise, je dis que c’est plutôt haut vu d’ici, tu t’imagines sauter des fois ? »

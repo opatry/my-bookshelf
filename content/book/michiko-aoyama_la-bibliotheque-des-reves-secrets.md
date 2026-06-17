@@ -1,17 +1,19 @@
 ---
 uuid: e467a3c3-8cf0-458f-b8e6-5a0db2ff282d
-isbn: "9782290384275"
-title: "La Bibliothèque des rêves secrets"
-author: "Michiko Aoyama"
+isbn: '9782290384275'
+title: La Bibliothèque des rêves secrets
+author: Michiko Aoyama
 rating: 5
 read_date: 2024-06-19
 tags:
-  - Japon
-  - Développement personnel
-  - Feel-good
+- Japon
+- Développement personnel
+- Feel-good
 social:
-  babelio: "1405905"
-  sc: "48034355"
+  babelio: '1405905'
+  sc: '48034355'
+page_count: 352
+publication_year: 2023
 ---
 
 Homme ou femme, jeune ou vieux, salarié ou retraité… ils sont cinq à franchir le pas de la petite bibliothèque tenue par Sayuri Komachi en plein coeur de Tokyo. Leur point commun: ils sont au croisement de leur vie. A chacun Sayuri Komachi, énigmatique bibliothécaire attentive aux autres, proposera un ouvrage totalement inattendu, bien loin de celui qu'ils croyaient être venus chercher.

@@ -1,17 +1,19 @@
 ---
 uuid: 5a95f7bc-3cb6-4aa4-b864-141b7468ebe2
-isbn: "9782264059260"
-title: "1Q84 tome 3 : Octobre-Décembre"
-author: "Haruki Murakami"
+isbn: '9782264059260'
+title: '1Q84 tome 3 : Octobre-Décembre'
+author: Haruki Murakami
 rating: 5
 read_date: 2025-03-10
 tags:
-  - Japon
-  - Thriller
-  - Fantastique
+- Japon
+- Thriller
+- Fantastique
 social:
-  sc: "449144"
-  babelio: "1382550"
+  sc: '449144'
+  babelio: '1382550'
+page_count: 548
+publication_year: 2024
 ---
 
 Le Livre 3 fait entendre une nouvelle voix, celle d'Ushikawa.

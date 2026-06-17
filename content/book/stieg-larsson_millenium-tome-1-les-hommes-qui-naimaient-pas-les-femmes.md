@@ -1,18 +1,20 @@
 ---
 uuid: 8ae41dbc-a99b-4d92-ae6e-4bcd89b0af81
-isbn: "9782742761579"
+isbn: '9782742761579'
 title: "Millenium, tome 1 : Les hommes qui n'aimaient pas les femmes"
-author: "Stieg Larsson"
+author: Stieg Larsson
 rating: 8
 tags:
-  - Thriller
-  - Scandinavie
+- Thriller
+- Scandinavie
 linked_books:
-  - "9782742765010"
-  - "9782742770311"
+- '9782742765010'
+- '9782742770311'
 social:
-  babelio: "20894"
-  sc: "213438"
+  babelio: '20894'
+  sc: '213438'
+page_count: 574
+publication_year: 2005
 ---
 
 Ancien rédacteur de Millénium, revue d'investigations sociales et économiques, Mikael Blomkvist est contacté par un gros industriel pour relancer une enquête abandonnée depuis quarante ans.

@@ -1,18 +1,20 @@
 ---
 uuid: b7a259cc-87ac-4708-9804-da2f79bc4a41
-isbn: "9782709665254"
-title: "L'homme qui n'est jamais mort"
-author: "Olivier Margot"
+isbn: '9782709665254'
+title: L'homme qui n'est jamais mort
+author: Olivier Margot
 rating: 6
 read_date: 2024-10-11
 tags:
-  - Sport
-  - Autriche
-  - Guerre
-  - Biographie
+- Sport
+- Autriche
+- Guerre
+- Biographie
 social:
-  babelio: "1181893"
-  sc: "42027229"
+  babelio: '1181893'
+  sc: '42027229'
+page_count: 200
+publication_year: 2020
 ---
 
 Matthias Sindelar fut l’avant-centre génial de la Wunderteam, la grande équipe historique de l’Autriche. Il fut surnommé l’« homme de papier », pour son physique chétif et son art de franchir les murs de défenseurs, là où ne pouvait passer qu’un bout de papier.

@@ -1,15 +1,17 @@
 ---
 uuid: 9ede256d-b3a6-4749-935d-070f7111af6f
-isbn: "9782070370375"
-title: "La ferme africaine"
-author: "Karen Blixen"
+isbn: '9782070370375'
+title: La ferme africaine
+author: Karen Blixen
 rating: 4
 read_date: 2026-02-28
 tags:
-  - Afrique
+- Afrique
 social:
-  sc: "186812"
-  babelio: "621545"
+  sc: '186812'
+  babelio: '621545'
+page_count: 508
+publication_year: 1937
 ---
 
 "J'ai possédé une ferme en Afrique, au pied du Ngong. La ligne de l'Equateur passait dans les montagnes, à vingt-cinq milles au Nord."

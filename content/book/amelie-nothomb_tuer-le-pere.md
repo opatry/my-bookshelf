@@ -1,16 +1,18 @@
 ---
 uuid: 3ae803b5-abea-4127-aa4a-9a5a4aaddd92
-isbn: "9782253174158"
-title: "Tuer le père"
-author: "Amélie Nothomb"
+isbn: '9782253174158'
+title: Tuer le père
+author: Amélie Nothomb
 rating: 5
 read_date: 2024-07-18
 tags:
-  - Famille
-  - Psychologie
+- Famille
+- Psychologie
 social:
-  sc: "490627"
-  babelio: "269858"
+  sc: '490627'
+  babelio: '269858'
+page_count: 150
+publication_year: 2011
 ---
 
 "Allez savoir ce qui se passe dans la tête d’un joueur."

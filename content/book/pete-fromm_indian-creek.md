@@ -1,18 +1,20 @@
 ---
 uuid: 6a1ade1c-5dce-4ba0-bf31-ad2b59c6f9f9
-isbn: "9782846663458"
-title: "Indian Creek"
-author: "Pete Fromm"
+isbn: '9782846663458'
+title: Indian Creek
+author: Pete Fromm
 rating: 8
 read_date: 2021-08-22
 favorite: true
 tags:
-  - Nature
-  - Etats-Unis
-  - Biographie
+- Nature
+- Etats-Unis
+- Biographie
 social:
-  babelio: "100164"
-  sc: "218802"
+  babelio: '100164'
+  sc: '218802'
+page_count: 237
+publication_year: 2010
 ---
 
 _Le garde commença à parler de bois à brûler. Je hochais la tête sans arrêt, comme si j'avais abattu des forêts entières avant de le rencontrer._  

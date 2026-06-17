@@ -1,17 +1,19 @@
 ---
 uuid: 1e837779-c4f4-4328-8ef3-207d4978c582
-isbn: "9782889440481"
-title: "Le Soleil des rebelles"
-author: "Luca Di Fulvio"
+isbn: '9782889440481'
+title: Le Soleil des rebelles
+author: Luca Di Fulvio
 rating: 6
 read_date: 2023-01-01
 tags:
-  - Moyen-âge
-  - Famille
-  - Amour
+- Moyen-âge
+- Famille
+- Amour
 social:
-  babelio: "1034521"
-  sc: "31654048"
+  babelio: '1034521'
+  sc: '31654048'
+page_count: 960
+publication_year: 2019
 ---
 
 Le jeune prince Marcus est encore un enfant lorsqu'il assiste impuissant au massacre de toute sa famille.

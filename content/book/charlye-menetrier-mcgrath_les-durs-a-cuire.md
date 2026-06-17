@@ -1,14 +1,16 @@
 ---
 uuid: f1f84897-73c8-49e9-81a8-e813ad7a3039
-isbn: "9782265155183"
-title: "Les durs à cuire"
-author: "Charlye Ménétrier McGrath"
+isbn: '9782265155183'
+title: Les durs à cuire
+author: Charlye Ménétrier McGrath
 rating: 6
 read_date: 2024-07-14
 tags:
-  - Famille
+- Famille
 social:
-  babelio: "1315486"
+  babelio: '1315486'
+page_count: 336
+publication_year: 2021
 ---
 
 Rébellion générationnelle à tous les étages !

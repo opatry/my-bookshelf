@@ -1,15 +1,17 @@
 ---
 uuid: 7636932f-5a7e-4e43-af6e-de8e08d60f90
-isbn: "9782707356758"
-title: "La maison vide"
-author: "Laurent Mauvignier"
+isbn: '9782707356758'
+title: La maison vide
+author: Laurent Mauvignier
 priority: 4
 tags:
-  - Famille
-  - Guerre
+- Famille
+- Guerre
 social:
-  sc: "122435860"
-  babelio: "1868350"
+  sc: '122435860'
+  babelio: '1868350'
+page_count: 752
+publication_year: 2025
 ---
 
 En 1976, mon père a rouvert la maison qu’il avait reçue de sa mère, restée fermée pendant vingt ans. À l’intérieur : un piano, une commode au marbre ébréché, une Légion d’honneur, des photographies sur lesquelles un visage a été découpé aux ciseaux. Une maison peuplée de récits, où se croisent deux guerres mondiales, la vie rurale de la première moitié du vingtième siècle, mais aussi Marguerite, ma grand-mère, sa mère Marie-Ernestine, la mère de celle-ci, et tous les hommes qui ont gravité autour d’elles. Toutes et tous ont marqué la maison et ont été progressivement effacés. J’ai tenté de les ramener à la lumière pour comprendre ce qui a pu être leur histoire, et son ombre portée sur la nôtre.

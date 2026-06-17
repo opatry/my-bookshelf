@@ -1,19 +1,21 @@
 ---
 uuid: 6833b659-3477-4708-947e-ed71bfa4363f
-isbn: "9782812603297"
-title: "L'île des chasseurs d'oiseaux"
-author: "Peter May"
+isbn: '9782812603297'
+title: L'île des chasseurs d'oiseaux
+author: Peter May
 rating: 8
 read_date: 2023-09-05
 tags:
-  - Nature
-  - Marine
-  - Ecosse
-  - Policier
-  - Amitié
+- Nature
+- Marine
+- Ecosse
+- Policier
+- Amitié
 social:
-  babelio: "229435"
-  sc: "476166"
+  babelio: '229435'
+  sc: '476166'
+page_count: 374
+publication_year: 2009
 ---
 
 L'inspecteur Fin McLeod, meurtri par la disparition de son fils unique, est de retour sur son île natale, en Écosse. Chaque année, une douzaine d'hommes partent en expédition à plusieurs heures de navigation pour tuer des oiseaux nicheurs. Sur fond de traditions ancestrales d'une cruauté absolue, Peter May nous plonge au cœur de l'histoire personnelle de son enquêteur Fin McLeod. Fausses pistes, dialogues à double sens, scènes glaçantes… l'auteur tient le lecteur en haleine jusqu'à la dernière page.

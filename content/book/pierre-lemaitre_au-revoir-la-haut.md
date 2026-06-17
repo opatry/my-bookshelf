@@ -1,18 +1,20 @@
 ---
 uuid: 9a824516-27d1-4fac-bb64-9388bfdbf218
-isbn: "9782253194613"
-title: "Au revoir là-haut"
-author: "Pierre Lemaitre"
+isbn: '9782253194613'
+title: Au revoir là-haut
+author: Pierre Lemaitre
 rating: 8
 read_date: 2024-04-28
 favorite: true
 tags:
-  - Guerre
-  - Vengeance
-  - Amitié
+- Guerre
+- Vengeance
+- Amitié
 social:
-  babelio: "498518"
-  sc: "8983738"
+  babelio: '498518'
+  sc: '8983738'
+page_count: 624
+publication_year: 2013
 ---
 
 Rescapés du premier conflit mondial, détruits par une guerre vaine et barbare, Albert et Édouard comprennent rapidement que le pays ne pourra rien faire pour eux. Car la France, qui glorifie ses morts, est impuissante à aider les survivants.

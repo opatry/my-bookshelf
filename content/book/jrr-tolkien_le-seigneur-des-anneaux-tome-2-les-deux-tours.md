@@ -1,15 +1,17 @@
 ---
 uuid: 15e7ff81-f696-4b46-bddc-ea721dc8578b
-isbn: "9782267051872"
-title: "Le Seigneur des Anneaux, tome 2 : Les deux tours"
-author: "J.R.R. Tolkien"
+isbn: '9782267051872'
+title: 'Le Seigneur des Anneaux, tome 2 : Les deux tours'
+author: J.R.R. Tolkien
 rating: 8
 tags:
-  - Aventure
-  - Fantasy
+- Aventure
+- Fantasy
 social:
-  sc: "8315223"
-  babelio: "25634"
+  sc: '8315223'
+  babelio: '25634'
+page_count: 576
+publication_year: 1954
 ---
 
 La Fraternité de l’Anneau poursuit son voyage vers la Montagne du Feu où l’Anneau Unique fut forgé, et où Frodo a pour mission de le détruire. Cette quête terrible est parsemée d’embûches : Gandalf a disparu dans les Mines de la Moria et Boromir a succombé au pouvoir de l’Anneau. Frodo et Sam se sont échappés afin de poursuivre leur voyage jusqu’au cœur du Mordor. À présent, ils cheminent seuls dans la désolation qui entoure le pays de Sauron – mais c’est sans compter la mystérieuse silhouette qui les suit partout où ils vont.

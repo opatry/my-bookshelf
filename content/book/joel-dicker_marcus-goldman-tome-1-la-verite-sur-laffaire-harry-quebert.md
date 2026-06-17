@@ -1,21 +1,23 @@
 ---
 uuid: 7865ed43-6477-4c47-9b46-bdb49063b6cb
-isbn: "9782877068161"
+isbn: '9782877068161'
 title: "Marcus Goldman tome 1 : La Vérité sur l'affaire Harry Quebert"
-author: "Joël Dicker"
+author: Joël Dicker
 rating: 6
 read_date: 2024-12-14
 tags:
-  - Amitié
-  - Amour
-  - Etats-Unis
-  - Policier
-  - Thriller
+- Amitié
+- Amour
+- Etats-Unis
+- Policier
+- Thriller
 linked_books:
-  - "9782889730100"
+- '9782889730100'
 social:
-  babelio: "409204"
-  sc: "8110258"
+  babelio: '409204'
+  sc: '8110258'
+page_count: 672
+publication_year: 2012
 ---
 
 À New York, au printemps 2008, lorsque l'Amérique bruisse des prémices de l'élection présidentielle, Marcus Goldman, jeune écrivain à succès, est dans la tourmente: il est incapable d'écrire le nouveau roman qu'il doit remettre à son éditeur d'ici quelques mois.

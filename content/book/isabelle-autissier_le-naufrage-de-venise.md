@@ -1,18 +1,20 @@
 ---
 uuid: bf3fe812-9412-496b-99ae-e57783da2fbc
-isbn: "9782234091108"
-title: "Le naufrage de Venise"
-author: "Isabelle Autissier"
+isbn: '9782234091108'
+title: Le naufrage de Venise
+author: Isabelle Autissier
 rating: 6
 read_date: 2026-02-09
 tags:
-  - Dystopie
-  - Italie
-  - Nature
-  - Famille
+- Dystopie
+- Italie
+- Nature
+- Famille
 social:
-  sc: "47739504"
-  babelio: "1411080"
+  sc: '47739504'
+  babelio: '1411080'
+page_count: 200
+publication_year: 2022
 ---
 
 Venise la belle, Venise la superlative, ses accumulations de palais, de places, de canaux, d’églises et de raffinements divers, n’a pas résisté. Une vague, une seule, gigantesque et mortifère, a suffi à l’engloutir tout entière et à réduire sa magnificence à néant. Le système MOSE (Moïse), savante et impérieuse combinaison de soixante-dix-huit écluses installées à grands frais et supposées – comme le prophète – apprivoiser les eaux capricieuses de la lagune, a bel et bien failli. La ville est détruite, les victimes innombrables. Noyée la Sérénissime ! Submergée la Cité des masques !

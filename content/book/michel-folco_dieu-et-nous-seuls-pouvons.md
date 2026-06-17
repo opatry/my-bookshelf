@@ -1,17 +1,19 @@
 ---
 uuid: 1f832469-6a78-4a15-b8b8-dbecb86318e4
-isbn: "9782021140668"
-title: "Dieu et nous seuls pouvons"
-author: "Michel Folco"
+isbn: '9782021140668'
+title: Dieu et nous seuls pouvons
+author: Michel Folco
 rating: 7
 read_date: 2025-04-26
 tags:
-  - Famille
-  - Aveyron
-  - Moyen-âge
+- Famille
+- Aveyron
+- Moyen-âge
 social:
-  babelio: "2400"
-  sc: "474834"
+  babelio: '2400'
+  sc: '474834'
+page_count: 310
+publication_year: 1996
 ---
 
 A coup sûr, le premier des Pibrac n'avait pas la vocation.

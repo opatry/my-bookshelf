@@ -1,19 +1,21 @@
 ---
 uuid: c5c72723-e85e-4d59-9206-9bd4d4bac70a
-isbn: "9782756406374"
-title: "Les Aventuriers de la mer, tome 1 : Le vaisseau magique"
-author: "Robin Hobb"
+isbn: '9782756406374'
+title: 'Les Aventuriers de la mer, tome 1 : Le vaisseau magique'
+author: Robin Hobb
 rating: 7
 read_date: 2026-05-20
 tags:
-  - Fantasy
-  - Aventure
+- Fantasy
+- Aventure
 social:
-  sc: "15504335"
-  babelio: "104388"
+  sc: '15504335'
+  babelio: '104388'
 linked_books:
-  - "9782756406398"
-  - "9782756406411"
+- '9782756406398'
+- '9782756406411'
+page_count: 317
+publication_year: 2003
 ---
 
 Les vivenefs sont des vaisseaux magiques liés à la famille qui les possède par des liens empathiques. Ces navires sont insaisissables, ils bravent les tempêtes, évitent les récifs, distancent les monstres marins, sèment les pirates… Et sont surtout l'objet de toutes les convoitises.

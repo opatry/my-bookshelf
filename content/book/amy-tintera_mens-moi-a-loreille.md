@@ -1,17 +1,19 @@
 ---
 uuid: 228f1b35-487b-48da-8dfb-031e43389db8
-isbn: "9782824628639"
-title: "Mens-moi à l'oreille"
-author: "Amy Tintera"
+isbn: '9782824628639'
+title: Mens-moi à l'oreille
+author: Amy Tintera
 rating: 6
 read_date: 2026-03-03
 tags:
-  - Thriller
-  - Etats-Unis
-  - Maladie
+- Thriller
+- Etats-Unis
+- Maladie
 social:
-  sc: "133854628"
-  babelio: "1764626"
+  sc: '133854628'
+  babelio: '1764626'
+page_count: 448
+publication_year: 2026
 ---
 
 Une nuit, Lucy est retrouvée errant dans la rue, les vêtements maculés de sang. Savannah, sa meilleure amie, vient d'être assassinée. Forcément la jeune femme devient la principale suspecte. Mais elle n'a aucun souvenir de cette terrible nuit et la police ne trouve aucune preuve pour l'inculper.

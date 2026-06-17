@@ -1,19 +1,21 @@
 ---
 uuid: 7d6ff6d9-cec6-4599-9c3a-f8422b982ff3
-isbn: "9782266154116"
+isbn: '9782266154116'
 title: "Le Seigneur des Anneaux, tome 1 : La Communauté de l'anneau"
-author: "J.R.R. Tolkien"
+author: J.R.R. Tolkien
 rating: 8
 tags:
-  - Fantasy
-  - Aventure
+- Fantasy
+- Aventure
 linked_books:
-  - "9782267051872"
-  - "9782267032192"
-  - "9782267024203"
+- '9782267051872'
+- '9782267032192'
+- '9782267024203'
 social:
-  sc: "8957375"
-  babelio: "8032"
+  sc: '8957375'
+  babelio: '8032'
+page_count: 768
+publication_year: 1954
 ---
 
 Dans un paisible village du Comté, le jeune Frodo est sur le point de recevoir un cadeau qui changera sa vie à jamais : l’Anneau de Pouvoir. Forgé par Sauron au cœur de la Montagne du Feu, on croyait l’Anneau perdu depuis qu’un homme l’avait arraché au Seigneur des Ténèbres avant de le chasser hors du monde. À présent, de noirs présages s’étendent à nouveau sur la Terre du Milieu, les créatures maléfiques se multiplient et, dans les Montagnes de Brume, les Orques traquent les Nains. L’ennemi veut récupérer son bien afin de dominer le monde ; l’Œil de Sauron est désormais pointé sur le Comté. Heureusement Gandalf les a devancés. S’ils font vite, Frodo et lui parviendront peut-être à détruire l’Anneau à temps.

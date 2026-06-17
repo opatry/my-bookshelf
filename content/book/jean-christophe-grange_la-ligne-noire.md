@@ -1,12 +1,14 @@
 ---
 uuid: 3576491e-48c1-4a40-b8df-d8096f00fcff
-isbn: "9782226197573"
-title: "La Ligne noire"
-author: "Jean-Christophe Grangé"
+isbn: '9782226197573'
+title: La Ligne noire
+author: Jean-Christophe Grangé
 rating: 8
 social:
-  babelio: "5293"
-  sc: "167676"
+  babelio: '5293'
+  sc: '167676'
+page_count: 608
+publication_year: 2004
 ---
 
 Il existe, quelque part en Asie du Sud-Est, entre le tropique du Cancer et la ligne de l'Équateur, une autre ligne. Une ligne noire jalonnée de corps et d'effroi…

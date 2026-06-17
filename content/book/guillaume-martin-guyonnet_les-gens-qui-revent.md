@@ -1,17 +1,19 @@
 ---
 uuid: 99d32e09-6e9e-4637-9823-bfb99ed78459
-isbn: "9782246834786"
-title: "Les gens qui rêvent"
-author: "Guillaume Martin-Guyonnet"
+isbn: '9782246834786'
+title: Les gens qui rêvent
+author: Guillaume Martin-Guyonnet
 rating: 6
 read_date: 2025-09-03
 favorite: true
 tags:
-  - Normandie
-  - Sport
+- Normandie
+- Sport
 social:
-  sc: "127695559"
-  babelio: "1706008"
+  sc: '127695559'
+  babelio: '1706008'
+page_count: 320
+publication_year: 2024
 ---
 
 Un jeune cycliste s’entraîne sur les routes ombragées de la campagne normande. Le vélo n'est pas encore son métier. Le Tour de France n'est encore qu'un astre lointain. À quinze ans, il profite simplement du moment, de la nature, de son souffle qui commence tout juste à se poser. Cinquante ans plus tôt, un garçon de ferme contemple les étoiles, un soir d’été, allongé dans un champ ; il a le cœur rempli de rêves. Au seizième siècle, enfin, un érudit humaniste, penché sur son pupitre, est occupé à noircir des manuscrits devant la cheminée de son manoir. Trois personnages. Trois époques. Trois destins. Des siècles les séparent mais un même lieu les rassemble : le domaine de La Boderie, en Suisse Normande, un écrin de verdure, de douceur et d’innocence. Ils sont candides et insouciants. Ils sont heureux. Hélas le temps et les épreuves les éloigneront peu à peu du paradis des simples. Sauront-ils échapper au bruit du monde et retrouver le chemin de leurs premières illusions ?

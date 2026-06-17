@@ -1,18 +1,20 @@
 ---
 uuid: 6d692403-7055-434f-9dee-d088dd5166aa
-isbn: "9782370552662"
-title: "Le Démon de la colline aux loups"
-author: "Dimitri Rouchon-Borie"
+isbn: '9782370552662'
+title: Le Démon de la colline aux loups
+author: Dimitri Rouchon-Borie
 rating: 5
 read_date: 2025-11-11
 tags:
-  - Famille
-  - Amour
-  - Vengeance
-  - Drogue
+- Famille
+- Amour
+- Vengeance
+- Drogue
 social:
-  sc: "43512299"
-  babelio: "1273627"
+  sc: '43512299'
+  babelio: '1273627'
+page_count: 192
+publication_year: 2022
 ---
 
 Un homme se retrouve en prison. Brutalisé dans sa mémoire et dans sa chair, il décide avant de mourir de nous livrer le récit de son destin.

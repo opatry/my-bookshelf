@@ -1,21 +1,23 @@
 ---
 uuid: 7b34670c-3ea2-4fd0-a1c1-b250d529b3ee
-isbn: "9782021420180"
-title: "L'America"
-author: "Michel Moutot"
+isbn: '9782021420180'
+title: L'America
+author: Michel Moutot
 rating: 7
 read_date: 2022-03-20
 tags:
-  - Mafia
-  - Amour
-  - Vengeance
-  - Etats-Unis
-  - Italie
-  - Aventure
-  - Immigration
+- Mafia
+- Amour
+- Vengeance
+- Etats-Unis
+- Italie
+- Aventure
+- Immigration
 social:
-  babelio: "1209225"
-  sc: "41498425"
+  babelio: '1209225'
+  sc: '41498425'
+page_count: 432
+publication_year: 2020
 ---
 
 Marettimo, petite île au large de la Sicile, juillet 1902. Quand il tombe amoureux de la belle Ana, venue passer l'été dans la maison de son père, Vittorio Bevilacqua, jeune pêcheur, ne peut se douter qu'il met en marche un engrenage qui l'obligera à fuir à l'autre bout du monde. Ana est la fille de Salvatore Fontarossa, le fontaniero le plus puissant de Trapani, chef d'un clan mafieux enrichi dans les vergers de citrons de la ville. Don Salva envoie son fils aîné châtier le misérable qui a déshonoré sa fille. Mais la balle de revolver ne part pas, Vittorio se défend, le sang coule.  

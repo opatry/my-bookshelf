@@ -1,15 +1,17 @@
 ---
 uuid: 68b06a19-2d77-462a-99c3-905a51b8bc82
-isbn: "9782253129905"
-title: "World War Z"
-author: "Max Brooks"
+isbn: '9782253129905'
+title: World War Z
+author: Max Brooks
 priority: 4
 tags:
-  - Apocalypse
-  - Etats-Unis
+- Apocalypse
+- Etats-Unis
 social:
-  sc: "10993"
-  babelio: "112967"
+  sc: '10993'
+  babelio: '112967'
+page_count: 544
+publication_year: 2010
 ---
 
 La guerre des Zombies a eu lieu, et elle a failli éradiquer l'ensemble de l'humanité.

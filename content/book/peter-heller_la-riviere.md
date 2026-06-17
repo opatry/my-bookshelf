@@ -1,20 +1,22 @@
 ---
 uuid: a75e95fb-0019-481e-b361-4e2d2f22a06d
-isbn: "9782330151270"
-title: "La Rivière"
-author: "Peter Heller"
+isbn: '9782330151270'
+title: La Rivière
+author: Peter Heller
 priority: 1.8
 tags:
-  - Canada
-  - Nature
-  - Amitié
-  - Aventure
-  - Thriller
-  - Policier
-  - Etats-Unis
+- Canada
+- Nature
+- Amitié
+- Aventure
+- Thriller
+- Policier
+- Etats-Unis
 social:
-  sc: "44688135"
-  babelio: "1303452"
+  sc: '44688135'
+  babelio: '1303452'
+page_count: 304
+publication_year: 2021
 ---
 
 Deux copains de fac s’offrent la virée en canoé de leur rêve sur le fleuve Maskwa, au nord du Canada. Bientôt la balade contemplative tourne à la course contre la montre quand l’horizon s’obscurcit du plus dévorant des feux de forêt. Mais dans les bras et sous le règne de dame nature, une menace peut toujours en cacher une autre.

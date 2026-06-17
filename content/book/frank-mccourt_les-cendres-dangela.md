@@ -1,18 +1,20 @@
 ---
 uuid: e65998a4-b080-469a-b2ca-98c2038a70da
-isbn: "9782714475947"
-title: "Les Cendres d'Angela"
-author: "Frank McCourt"
+isbn: '9782714475947'
+title: Les Cendres d'Angela
+author: Frank McCourt
 rating: 6
 read_date: 2025-04-17
 tags:
-  - Irlande
-  - Etats-Unis
-  - Famille
-  - Immigration
+- Irlande
+- Etats-Unis
+- Famille
+- Immigration
 social:
-  sc: "52081"
-  babelio: "9323"
+  sc: '52081'
+  babelio: '9323'
+page_count: 508
+publication_year: 1996
 ---
 
 "Quand je revois mon enfance, le seul fait d'avoir survécu m'étonne. Ce fut, bien sûr, une enfance misérable: l'enfance heureuse vaut rarement qu'on s'y arrête. Pire que l'enfance misérable ordinaire est l'enfance misérable en Irlande. Et pire encore est l'enfance misérable en Irlande catholique."

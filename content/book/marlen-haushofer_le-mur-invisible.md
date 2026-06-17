@@ -1,17 +1,19 @@
 ---
 uuid: 52e85a12-6474-451f-b968-31bea897ff8e
-isbn: "9782330033842"
-title: "Le mur invisible"
-author: "Marlen Haushofer"
+isbn: '9782330033842'
+title: Le mur invisible
+author: Marlen Haushofer
 priority: 1.6
 tags:
-  - Sci-fi
-  - Nature
-  - Apocalypse
-  - Dystopie
+- Sci-fi
+- Nature
+- Apocalypse
+- Dystopie
 social:
-  sc: "421363"
-  babelio: "25719"
+  sc: '421363'
+  babelio: '25719'
+page_count: 352
+publication_year: 1992
 ---
 
 Voici le roman le plus célèbre et le plus émouvant de Marlen Haushofer, journal de bord d'une femme ordinaire, confrontée à une expérience - limite.  

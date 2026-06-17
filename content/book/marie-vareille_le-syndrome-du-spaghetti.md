@@ -1,20 +1,22 @@
 ---
 uuid: a8da0392-2052-4256-9258-816c00aec278
-isbn: "9782823870879"
-title: "Le syndrôme du spaghetti"
-author: "Marie Vareille"
+isbn: '9782823870879'
+title: Le syndrôme du spaghetti
+author: Marie Vareille
 rating: 7
 read_date: 2025-02-02
 tags:
-  - Sport
-  - Famille
-  - Amour
-  - Amitié
-  - Maladie
-  - Feel-good
+- Sport
+- Famille
+- Amour
+- Amitié
+- Maladie
+- Feel-good
 social:
-  babelio: "1246325"
-  sc: "43174124"
+  babelio: '1246325'
+  sc: '43174124'
+page_count: 320
+publication_year: 2024
 ---
 
 Quand la vie prend un virage aussi terrible qu'inattendu, comment se réinventer et garder espoir dans l'avenir ?

@@ -1,17 +1,19 @@
 ---
 uuid: 623adbb5-81ce-4394-9757-1561daabbcfc
-isbn: "9780525521433"
-title: "Washington Black"
-author: "Esi Edugyan"
+isbn: '9780525521433'
+title: Washington Black
+author: Esi Edugyan
 rating: 6
 read_date: 2026-04-29
 tags:
-  - Racisme
-  - Aventure
-  - Amitié
+- Racisme
+- Aventure
+- Amitié
 social:
-  sc: "39092295"
-  babelio: "1060512"
+  sc: '39092295'
+  babelio: '1060512'
+page_count: 480
+publication_year: 2020
 ---
 
 La Barbade, 1830. À onze ans, Washington Black n’a d’autre horizon que le champ de canne à sucre de la plantation où il travaille avec d’autres esclaves. Quand le destin frappe à sa porte, c’est sous les traits de Titch, un scientifique anglais, jeune frère de son maître qui le choisit comme serviteur. Wash montre un talent inné pour le dessin et une curiosité d’esprit telle qu’il est promu assistant pour le projet fou de l’extravagant inventeur : construire un ballon dirigeable.  

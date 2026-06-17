@@ -1,12 +1,14 @@
 ---
 uuid: 6893e13a-6df9-4346-99c6-1d7d44978495
-isbn: "9782889730100"
-title: "Marcus Goldman tome 2 : Le Livre des Baltimore"
-author: "Joël Dicker"
+isbn: '9782889730100'
+title: 'Marcus Goldman tome 2 : Le Livre des Baltimore'
+author: Joël Dicker
 priority: 4
 social:
-  sc: "16853963"
-  babelio: "748234"
+  sc: '16853963'
+  babelio: '748234'
+page_count: 480
+publication_year: 2015
 ---
 
 Jusqu'au jour du Drame, il y avait deux familles Goldman. Les Goldman-de-Baltimore et les Goldman-de-Montclair.

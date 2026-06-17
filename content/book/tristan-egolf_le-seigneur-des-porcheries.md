@@ -1,16 +1,18 @@
 ---
 uuid: 0b156546-bfee-4fa4-bd45-3ba958c204fd
-isbn: "9782070414734"
-title: "Le seigneur des porcheries"
-author: "Tristan Egolf"
+isbn: '9782070414734'
+title: Le seigneur des porcheries
+author: Tristan Egolf
 priority: 4
 tags:
-  - Vengeance
-  - Racisme
-  - Etats-Unis
+- Vengeance
+- Racisme
+- Etats-Unis
 social:
-  sc: "134002"
-  babelio: "4749"
+  sc: '134002'
+  babelio: '4749'
+page_count: 608
+publication_year: 2000
 ---
 
 Ce premier roman singulier commence avec la mort d'un mammouth à l'ère glaciaire et finit par une burlesque chasse au porc lors d'un enterrement dans le Midwest d'aujourd'hui. Entre-temps, on aura assisté à deux inondations, à quatorze bagarres, à trois incendies criminels, à une émeute dans une mairie, à une tornade dévastatrice et à l'invasion de méthodistes déchaînés ; on aura suivi la révolte d'une équipe d'éboueurs et vu comment un match de basket se transforme en cataclysme.

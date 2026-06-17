@@ -1,17 +1,19 @@
 ---
 uuid: 0c3e3d02-65af-45b3-950c-9189f4b90132
-isbn: "9782221110829"
-title: "Le siècle, tome 1 : La chute des géants"
-author: "Ken Follett"
+isbn: '9782221110829'
+title: 'Le siècle, tome 1 : La chute des géants'
+author: Ken Follett
 rating: 7
 read_date: 2024-08-12
 tags:
-  - Guerre
-  - Aventure
-  - Angleterre
+- Guerre
+- Aventure
+- Angleterre
 social:
-  sc: "397365"
-  babelio: "208131"
+  sc: '397365'
+  babelio: '208131'
+page_count: 1008
+publication_year: 2010
 ---
 
 En 1911, les grandes puissances vivent leurs derniers instants d’insouciance. Bientôt la guerre va déferler sur le monde…

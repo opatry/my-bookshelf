@@ -1,17 +1,19 @@
 ---
 uuid: 3f7a4456-4858-427e-b48d-3dd2718e6386
-isbn: "9782749935072"
-title: "Entre deux mondes"
-author: "Olivier Norek"
+isbn: '9782749935072'
+title: Entre deux mondes
+author: Olivier Norek
 rating: 8
 read_date: 2025-09-06
 tags:
-  - Policier
-  - Famille
-  - Immigration
+- Policier
+- Famille
+- Immigration
 social:
-  babelio: "977125"
-  sc: "28038120"
+  babelio: '977125'
+  sc: '28038120'
+page_count: 384
+publication_year: 2018
 ---
 
 Adam a découvert en France un endroit où l'on peut tuer sans conséquences.

@@ -1,18 +1,20 @@
 ---
 uuid: 66a86f29-b490-4e27-92bb-49e2a55da9ac
-isbn: "9782757899892"
-title: "Western star"
-author: "Craig Johnson"
+isbn: '9782757899892'
+title: Western star
+author: Craig Johnson
 rating: 5
 read_date: 2022-04-15
 tags:
-  - Far west
-  - Etats-Unis
-  - Policier
-  - Nature
+- Far west
+- Etats-Unis
+- Policier
+- Nature
 social:
-  sc: "45469874"
-  babelio: "1353349"
+  sc: '45469874'
+  babelio: '1353349'
+page_count: 360
+publication_year: 2021
 ---
 
 Tout juste rentré du Vietnam, le jeune adjoint Walt Longmire participe pour la première fois à l’excursion de l’Association des shérifs du Wyoming à bord du Western Star, train à vapeur légendaire de la conquête de l’Ouest.

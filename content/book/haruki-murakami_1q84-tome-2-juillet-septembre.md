@@ -1,18 +1,19 @@
 ---
 uuid: e78217c1-63c8-43f5-b52c-9b16b23dcd36
-isbn: "9782264057891"
-title: "1Q84 tome 2 : Juillet-Septembre"
-author: "Haruki Murakami"
+isbn: '9782264057891'
+title: '1Q84 tome 2 : Juillet-Septembre'
+author: Haruki Murakami
 rating: 5
 read_date: 2025-02-28
-isbn: "9782264057891"
 tags:
-  - Japon
-  - Thriller
-  - Fantastique
+- Japon
+- Thriller
+- Fantastique
 social:
-  sc: "395818"
-  babelio: "1447065"
+  sc: '395818'
+  babelio: '1447065'
+page_count: 548
+publication_year: 2024
 ---
 
 Les choses qui restent enfermées dans notre coeur n'existent pas en ce monde. Mais c'est dans notre coeur, ce monde à part, qu'elles se construisent pour y vivre.

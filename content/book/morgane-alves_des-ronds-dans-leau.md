@@ -1,20 +1,22 @@
 ---
 uuid: b9b8348e-b692-4ecc-bf90-78b69df8c9ec
-isbn: "9782080293787"
-title: "Des ronds dans l'eau"
-author: "Morgane Alvès"
+isbn: '9782080293787'
+title: Des ronds dans l'eau
+author: Morgane Alvès
 rating: 7
 read_date: 2026-06-07
 favorite: true
 tags:
-  - Bretagne
-  - Amour
-  - Amitié
-  - Famille
-  - Feel-good
+- Bretagne
+- Amour
+- Amitié
+- Famille
+- Feel-good
 social:
-  sc: "117328771"
-  babelio: "1499390"
+  sc: '117328771'
+  babelio: '1499390'
+page_count: 480
+publication_year: 2024
 ---
 
 Un matin, l’esprit de Joséphine s’emballe lorsqu’elle découvre qu’elle est enceinte. En l’absence de son mari, Vincent, en déplacement pour le week-end, son cœur se gonfle de ce bonheur à venir. Elle n’est sûre de rien, se dit qu’il est trop tôt pour se réjouir mais imagine déjà un monde plus grand. Elle attend Vincent, encore et encore le dimanche soir. Il ne rentrera pas.

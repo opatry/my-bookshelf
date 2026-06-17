@@ -1,18 +1,20 @@
 ---
 uuid: 270a8cb0-ecbe-4ca3-823c-7ac3881eb61a
-isbn: "9782355848490"
-title: "Duchess"
-author: "Chris Whitaker"
+isbn: '9782355848490'
+title: Duchess
+author: Chris Whitaker
 ongoing: true
 tags:
-  - Thriller
-  - Amitié
-  - Famille
-  - Nature
-  - Etats-Unis 
+- Thriller
+- Amitié
+- Famille
+- Nature
+- Etats-Unis
 social:
-  sc: "47426811"
-  babelio: "1403282"
+  sc: '47426811'
+  babelio: '1403282'
+page_count: 528
+publication_year: 2022
 ---
 
 _"Depuis quand tu veux être comme les autres ? Tu es une hors-la-loi.​"_

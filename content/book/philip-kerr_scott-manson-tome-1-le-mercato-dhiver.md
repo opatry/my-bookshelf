@@ -1,21 +1,23 @@
 ---
 uuid: 81b5f209-0b81-449e-b48c-796e9c641aae
-isbn: "9782702441411"
+isbn: '9782702441411'
 title: "Scott Manson, tome 1 : Le Mercato d'hiver"
-author: "Philip Kerr"
+author: Philip Kerr
 rating: 6
 read_date: 2021-10-09
 favorite: true
 tags:
-  - Sport
-  - Angleterre
-  - Policier
+- Sport
+- Angleterre
+- Policier
 linked_books:
-  - "9782702441589"
-  - "9782702447130"
+- '9782702441589'
+- '9782702447130'
 social:
-  babelio: "844599"
-  sc: "19942669"
+  babelio: '844599'
+  sc: '19942669'
+page_count: 448
+publication_year: 2016
 ---
 
 Tout le monde sait que le football, c’est souvent une question de vie ou de mort… Scott Manson est l’entraîneur du club de football de London City. Les joueurs l’adorent ; ses patrons lui font confiance. Mais le jour où un homme est retrouvé mort dans les tribunes pendant un match à domicile, Manson va devoir agir. Le propriétaire du City, un milliardaire ukrainien, veut que l’affaire soit résolue au plus vite et le plus discrètement possible. Pas facile quand la victime en question est le célèbre manager de ce même club… Scott Manson doit mener l’enquête avant que la presse people ne s’empare de l’histoire de l’histoire. Et que le tueur ne frappe à nouveau. Le Mercato d’hiver, premier tome de la série Scott Manson, nous plonge dans les eaux troubles de la Premier League, un monde où l’adrénaline peut pousser aux pires excès…. Traduit de l’anglais par Katalin Balogh & Philippe Bonnet

@@ -1,19 +1,21 @@
 ---
 uuid: 05d66deb-857e-412c-a207-9e3acea45e02
-isbn: "9782246836131"
-title: "Cézembre"
-author: "Hélène Gestern"
+isbn: '9782246836131'
+title: Cézembre
+author: Hélène Gestern
 rating: 7
 read_date: 2025-09-13
 tags:
-  - Amour
-  - Famille
-  - Nature
-  - Marine
-  - Bretagne
+- Amour
+- Famille
+- Nature
+- Marine
+- Bretagne
 social:
-  sc: "93614498"
-  babelio: "1623412"
+  sc: '93614498'
+  babelio: '1623412'
+page_count: 656
+publication_year: 2025
 ---
 
 Après son divorce et la mort de son père, Yann de Kérambrun décide de quitter son poste de professeur d’histoire à Paris pour retourner à Saint-Malo, où il a passé les étés de son enfance. Épuisé, il n’a plus qu’un désir : retrouver la mer et la contempler depuis la maison dont il a hérité, le long de la plage, face à l’île de Cézembre.

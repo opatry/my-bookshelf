@@ -1,18 +1,20 @@
 ---
 uuid: 678ea217-3749-4e91-9d45-687ea08c1fe7
-isbn: "9782253079651"
-title: "La commode aux tiroirs de couleurs"
-author: "Olivia Ruiz"
+isbn: '9782253079651'
+title: La commode aux tiroirs de couleurs
+author: Olivia Ruiz
 rating: 7
 read_date: 2025-07-18
 tags:
-  - Famille
-  - Espagne
-  - Guerre
-  - Immigration
+- Famille
+- Espagne
+- Guerre
+- Immigration
 social:
-  babelio: "1208477"
-  sc: "42319472"
+  babelio: '1208477'
+  sc: '42319472'
+page_count: 192
+publication_year: 2021
 ---
 
 À la mort de sa grand-mère, une jeune femme hérite de l'intrigante commode qui a nourri tous ses fantasmes de petite fille. Le temps d'une nuit, elle va ouvrir ses dix tiroirs et dérouler le fil de la vie de Rita, son Abuela, dévoilant les secrets qui ont scellé le destin de quatre générations de femmes indomptables, entre Espagne et France, de la dictature franquiste à nos jours.

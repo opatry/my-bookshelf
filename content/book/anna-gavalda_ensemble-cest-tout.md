@@ -1,17 +1,19 @@
 ---
 uuid: 0e4bd56f-2b7a-4d07-8979-a5e41b368988
-isbn: "9782846662673"
-title: "Ensemble, c'est tout"
-author: "Anna Gavalda"
+isbn: '9782846662673'
+title: Ensemble, c'est tout
+author: Anna Gavalda
 rating: 6
 read_date: 2023-01-28
 tags:
-  - Amour
-  - Amitié
-  - Feel-good
+- Amour
+- Amitié
+- Feel-good
 social:
-  sc: "160397"
-  babelio: "3915"
+  sc: '160397'
+  babelio: '3915'
+page_count: 590
+publication_year: 2013
 ---
 
 “Et puis, qu'est-ce que ça veut dire, différents ? C'est de la foutaise, ton histoire de torchons et de serviettes…

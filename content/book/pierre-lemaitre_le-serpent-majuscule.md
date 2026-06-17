@@ -1,18 +1,20 @@
 ---
 uuid: c393f744-bd10-48e5-b663-bccd435e7f07
-isbn: "9782226464866"
-title: "Le Serpent majuscule"
-author: "Pierre Lemaitre"
+isbn: '9782226464866'
+title: Le Serpent majuscule
+author: Pierre Lemaitre
 rating: 6
 read_date: 2025-04-20
 tags:
-  - Thriller
-  - Humour
-  - Alzheimer
-  - Serial killer
+- Thriller
+- Humour
+- Alzheimer
+- Serial killer
 social:
-  babelio: "1302259"
-  sc: "44848562"
+  babelio: '1302259'
+  sc: '44848562'
+page_count: 312
+publication_year: 2022
 ---
 
 « Avec Mathilde, jamais une balle plus haute que l’autre, du travail propre et sans bavures. Ce soir est une exception. Une fantaisie. Elle aurait pu agir de plus loin, faire moins de dégâts, et ne tirer qu’une seule balle, bien sûr. »

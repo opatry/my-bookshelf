@@ -1,12 +1,14 @@
 ---
 uuid: 9884c86d-230b-43c8-b146-36595d2f33e4
-isbn: "9782756406152"
+isbn: '9782756406152'
 title: "L'Assassin royal, tome 3 : La Nef du crépuscule"
-author: "Robin Hobb"
+author: Robin Hobb
 rating: 8
 social:
-  babelio: "6860"
-  sc: "170334"
+  babelio: '6860'
+  sc: '170334'
+page_count: 413
+publication_year: 1999
 ---
 
 Le royaume des Six-Duchés ploie sous le joug de l’envahisseur. Les navires de guerre ne parviennent plus à tenir les pirates en respect. Des dissensions éclatent entre les duchés côtiers, pilonnés par les attaques de l’ennemi, et ceux de l’intérieur qui se désintéressent de leur sort. La cour elle-même n’est plus qu’un théâtre de marionnettes où règnent le soupçon et la traîtrise. Le prince Vérité décide d’entreprendre une quête insensée : aller trouver les Anciens pour leur rappeler qu’ils ont juré de venir en aide au royaume à ses heures les plus sombres.

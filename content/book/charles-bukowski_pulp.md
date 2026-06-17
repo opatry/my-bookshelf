@@ -1,17 +1,19 @@
 ---
 uuid: 2563c890-5061-4cb7-94b9-3108bdd7df1a
-isbn: "9782253141976"
-title: "Pulp"
-author: "Charles Bukowski"
+isbn: '9782253141976'
+title: Pulp
+author: Charles Bukowski
 priority: 4
 tags:
-  - Thriller
-  - Humour
-  - Etats-Unis
-  - Fantastique
+- Thriller
+- Humour
+- Etats-Unis
+- Fantastique
 social:
-  sc: "122978"
-  babelio: "5745"
+  sc: '122978'
+  babelio: '5745'
+page_count: 189
+publication_year: 1997
 ---
 
 Louis-Ferdinant Céline n'est pas mort en 1961. On l'a aperçu à Los Angeles. Et une pulpeuse créature qui n'est autre que la Mort charge un "privé" minable, Nick Belane, de le retrouver :

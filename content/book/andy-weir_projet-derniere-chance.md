@@ -1,15 +1,17 @@
 ---
 uuid: 60f99ae1-32bd-4e2d-988f-22789ba90dd5
-isbn: "9791028117955"
-title: "Projet Dernière Chance"
-author: "Andy Weir"
+isbn: '9791028117955'
+title: Projet Dernière Chance
+author: Andy Weir
 priority: 2
 tags:
-  - Sci-fi
-  - Space-opera
+- Sci-fi
+- Space-opera
 social:
-  sc: "45499197"
-  babelio: "1353767"
+  sc: '45499197'
+  babelio: '1353767'
+page_count: 480
+publication_year: 2021
 ---
 
 La nouvelle passionnante aventure spatiale de l'auteur du best-seller Seul sur Mars, portée à l'écran avec Ryan Gosling.

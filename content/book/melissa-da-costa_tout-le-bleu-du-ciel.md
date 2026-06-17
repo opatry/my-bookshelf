@@ -1,23 +1,25 @@
 ---
 uuid: b23129f1-04ba-4dde-bd1b-1fcf68089d33
-isbn: "9782253102472"
-title: "Tout le bleu du ciel"
-author: "Mélissa Da Costa"
+isbn: '9782253102472'
+title: Tout le bleu du ciel
+author: Mélissa Da Costa
 rating: 10
 read_date: 2025-01-29
 favorite: true
 tags:
-  - Alzheimer
-  - Maladie
-  - Amour
-  - Amitié
-  - Road-trip
-  - Nature
-  - Famille
-  - Feel-good
+- Alzheimer
+- Maladie
+- Amour
+- Amitié
+- Road-trip
+- Nature
+- Famille
+- Feel-good
 social:
-  sc: "39801145"
-  babelio: "1218505"
+  sc: '39801145'
+  babelio: '1218505'
+page_count: 840
+publication_year: 2020
 ---
 
 Petitesannonces.fr : Jeune homme de 26 ans, condamné à une espérance de vie de deux ans par un Alzheimer précoce, souhaite prendre le large pour un ultime voyage. Recherche compagnon(ne) pour partager avec moi ce dernier périple.

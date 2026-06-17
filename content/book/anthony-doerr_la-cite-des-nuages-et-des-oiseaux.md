@@ -1,17 +1,19 @@
 ---
 uuid: 0aa06e41-91ae-42f1-aa52-0f096b488cf6
-isbn: "9782226477262"
-title: "La Cité des nuages et des oiseaux"
-author: "Anthony Doerr"
+isbn: '9782226477262'
+title: La Cité des nuages et des oiseaux
+author: Anthony Doerr
 priority: 4
 tags:
-  - Sci-fi
-  - Fantastique
-  - Guerre
-  - Etats-Unis
+- Sci-fi
+- Fantastique
+- Guerre
+- Etats-Unis
 social:
-  sc: "49523439"
-  babelio: "383692"
+  sc: '49523439'
+  babelio: '383692'
+page_count: 330
+publication_year: 2013
 ---
 
 Un manuscrit ancien traverse le temps, unissant le passé, le présent et l'avenir de l'humanité.

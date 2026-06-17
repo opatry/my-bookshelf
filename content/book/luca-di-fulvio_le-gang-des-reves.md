@@ -1,21 +1,23 @@
 ---
 uuid: c9beea31-041e-48e6-a84b-f0baa79b4c73
-isbn: "9782889440061"
-title: "Le Gang des rêves"
-author: "Luca Di Fulvio"
+isbn: '9782889440061'
+title: Le Gang des rêves
+author: Luca Di Fulvio
 rating: 9
 read_date: 2021-07-11
 favorite: true
 tags:
-  - Amour
-  - Italie
-  - Etats-Unis
-  - Aventure
-  - Mafia
-  - Immigration
+- Amour
+- Italie
+- Etats-Unis
+- Aventure
+- Mafia
+- Immigration
 social:
-  babelio: "853724"
-  sc: "19859793"
+  babelio: '853724'
+  sc: '19859793'
+page_count: 720
+publication_year: 2016
 ---
 
 New York ! En ces tumultueuses années 1920, pour des milliers d’Européens, la ville est synonyme de « rêve américain ». C’est le cas pour Cetta Luminata, une Italienne qui, du haut de son jeune âge, compte bien se tailler une place au soleil avec Christmas, son fils.

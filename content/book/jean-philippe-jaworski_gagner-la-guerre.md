@@ -1,12 +1,14 @@
 ---
 uuid: 5e744895-9bf7-4324-a4f2-f609a1310d39
-isbn: "9782915793642"
-title: "Gagner la guerre"
-author: "Jean-Philippe Jaworski"
+isbn: '9782915793642'
+title: Gagner la guerre
+author: Jean-Philippe Jaworski
 priority: 4
 social:
-  sc: "148702"
-  babelio: "117385"
+  sc: '148702'
+  babelio: '117385'
+page_count: 684
+publication_year: 2009
 ---
 
 Au bout de dix heures de combat, quand j’ai vu la flotte du Chah flamber d’un bout à l’autre de l’horizon, je me suis dit : "Benvenuto, mon fagot, t’as encore tiré tes os d’un rude merdier."

@@ -1,12 +1,14 @@
 ---
 uuid: cf7d4382-94a9-4219-a091-de5de4e221fa
-isbn: "9782226221322"
-title: "Le passager"
-author: "Jean-Christophe Grangé"
+isbn: '9782226221322'
+title: Le passager
+author: Jean-Christophe Grangé
 rating: 7
 social:
-  sc: "480343"
-  babelio: "280953"
+  sc: '480343'
+  babelio: '280953'
+page_count: 750
+publication_year: 2011
 ---
 
 Je suis l'ombre. Je suis la proie. Je suis le tueur. Je suis la cible. Pour m'en sortir, une seule option : fuir l'autre. Mais si l'autre est moi-même ?…

@@ -1,18 +1,20 @@
 ---
 uuid: 978141ec-1c62-474c-af76-d6e21b9095e9
-isbn: "9782380200706"
-title: "Quand ils viendront"
-author: "René Manzor"
+isbn: '9782380200706'
+title: Quand ils viendront
+author: René Manzor
 rating: 6
 read_date: 2025-09-16
 tags:
-  - Etats-Unis
-  - Thriller
-  - Espionnage
-  - Famille
+- Etats-Unis
+- Thriller
+- Espionnage
+- Famille
 social:
-  sc: "130526913"
-  babelio: "1870503"
+  sc: '130526913'
+  babelio: '1870503'
+page_count: 400
+publication_year: 2025
 ---
 
 « QUAND ILS VIENDRONT, TU DEVRAS ÊTRE PRÊT. »  
