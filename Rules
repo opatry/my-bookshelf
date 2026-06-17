@@ -134,6 +134,8 @@ preprocess do
   puts " - #{missing_covers.to_s.colorize(:cyan)} missing covers" if missing_covers > 0
 
   puts literary_map(books)
+  puts "\n"
+  puts rating_map(books)
 end
 
 favicon_reprs.each do |repr|

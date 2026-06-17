@@ -327,3 +327,23 @@ def literary_map(books)
 
   lines.join("\n")
 end
+
+def rating_map(books)
+  max = 10
+
+  ratings = books.map { |book| book[:rating] }
+  distribution = (1..max).map do |rating|
+    [rating, ratings.count(rating)]
+  end
+
+  distribution.map do |rating, count|
+    bar_size = ((count.to_f / max) * 7).round
+    bar = "▓" * bar_size
+
+    stars = "★" * rating
+    empty = "☆" * (max - rating)
+
+    "#{stars}#{empty} │ #{bar.ljust(7)} #{count}"
+  end
+  .join("\n")
+end
