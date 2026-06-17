@@ -1,10 +1,12 @@
 # frozen_string_literal: true
 
-require 'json'
 require 'natural_sort'
 require 'i18n'
 require 'cgi'
 require 'nokogiri'
+require 'active_support'
+require 'active_support/number_helper'
+require 'active_support/core_ext/object/json'
 
 use_helper Nanoc::Helpers::Rendering
 use_helper Nanoc::Helpers::LinkTo

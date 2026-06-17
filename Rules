@@ -127,7 +127,9 @@ preprocess do
   wished_books = books.select { |item| item[:rating].nil? || item[:rating] <= 0 }
   read_books = books - wished_books
   total_rating = read_books.sum { |book| book[:rating] || 0 }
-  puts " - #{read_books.size.to_s.colorize(:cyan)} books read 📚 (Average rating: ⭐️ #{'%.2f' % (total_rating.to_f / read_books.size)}/10)"
+  total_pages_read = read_books.select { |book| book[:read_date] }.sum { |book| book[:page_count] || 0 }
+  total_pages_read_label = ActiveSupport::NumberHelper::number_to_delimited(total_pages_read)
+  puts " - #{read_books.size.to_s.colorize(:cyan)} books read (#{total_pages_read_label} pages) 📚 (Average rating: ⭐️ #{'%.2f' % (total_rating.to_f / read_books.size)}/10)"
   puts " - #{wished_books.size.to_s.colorize(:cyan)} books in the wish list"
   puts " - #{missing_covers.to_s.colorize(:cyan)} missing covers" if missing_covers > 0
 end
