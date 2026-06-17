@@ -132,6 +132,8 @@ preprocess do
   puts " - #{read_books.size.to_s.colorize(:cyan)} books read (#{total_pages_read_label} pages) 📚 (Average rating: ⭐️ #{'%.2f' % (total_rating.to_f / read_books.size)}/10)"
   puts " - #{wished_books.size.to_s.colorize(:cyan)} books in the wish list"
   puts " - #{missing_covers.to_s.colorize(:cyan)} missing covers" if missing_covers > 0
+
+  puts literary_map(books)
 end
 
 favicon_reprs.each do |repr|

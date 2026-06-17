@@ -299,3 +299,31 @@ end
 def warn_missing_social_attribute(book, social_key)
   puts "⚠️ missing '#{social_key.colorize(:yellow)}' attribute for #{book_output(book)}"
 end
+
+def literary_map(books)
+  years = books
+    .map { |book| book[:publication_year] }
+    .select { |year| year > 0 }
+
+  return "" if years.empty?
+
+  buckets = years
+    .group_by { |year| (year / 10) * 10 }
+    .sort
+
+  max_count = buckets.map { |_, books| books.size }.max
+
+  lines = []
+
+  buckets.each do |decade, books|
+    count = books.size
+    bar_size = ((count.to_f / max_count) * 30).round
+
+    bar = "▓" * bar_size
+    label = "#{decade}s".ljust(7)
+
+    lines << "#{label} #{bar} #{count}"
+  end
+
+  lines.join("\n")
+end
