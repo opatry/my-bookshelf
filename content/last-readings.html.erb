@@ -81,15 +81,29 @@ else
 <%
 books_by_year.each do |year, books_by_month|
   book_count_in_year = books_by_month.values.sum(&:size)
+  book_count_in_year_label = I18n.t('last_readings.books_count', count: book_count_in_year)
+  page_count_in_year = books_by_month.values.flatten.sum { |book| book[:page_count] || 0 }
+  page_count_in_year_label = I18n.t(
+    'last_readings.pages_count',
+    count: page_count_in_year,
+    formatted_count: ActiveSupport::NumberHelper::number_to_delimited(page_count_in_year, delimiter: I18n.t('number.format.delimiter'))
+  )
 %>
 <div id="y<%= year %>" class="temporal-section year-section">
-  <h2><%= year %>&nbsp;<span class="book-count">(<%= book_count_in_year %>)</span></h2>
+  <h2><%= year %>&nbsp;<span class="book-count">(<%= book_count_in_year_label %>, <%= page_count_in_year_label %>)</span></h2>
   <%
   books_by_month.each do |month_num, books_in_month|
     book_count_in_month = books_in_month.size
+    book_count_in_month_label = I18n.t('last_readings.books_count', count: book_count_in_month)
+    page_count_in_month = books_in_month.sum { |book| book[:page_count] || 0 }
+    page_count_in_month_label = I18n.t(
+      'last_readings.pages_count',
+      count: page_count_in_month,
+      formatted_count: ActiveSupport::NumberHelper::number_to_delimited(page_count_in_month, delimiter: I18n.t('number.format.delimiter'))
+    )
   %>
   <div id="y<%= year %>-m<%= month_num %>" class="temporal-section month-section">
-    <h3><%= I18n.t('date.month_names')[month_num].capitalize %>&nbsp;<span class="book-count">(<%= book_count_in_month %>)</span> <span class="title-more"><a href="#" title="Retour en haut de page">↑</a></span></h3>
+    <h3><%= I18n.t('date.month_names')[month_num].capitalize %>&nbsp;<span class="book-count">(<%= book_count_in_month_label %>, <%= page_count_in_month_label %>)</span> <span class="title-more"><a href="#" title="Retour en haut de page">↑</a></span></h3>
     <div id="recent-books" class="book-grid">
       <% books_in_month.each do |book| %>
         <%= book.reps[:card].compiled_content(snapshot: :card) %>

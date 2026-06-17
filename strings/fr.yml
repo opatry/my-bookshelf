@@ -1,4 +1,7 @@
 fr:
+  number:
+    format:
+      delimiter: " "
   date:
     month_names:
     - 
@@ -23,3 +26,11 @@ fr:
       zero: "Aucun livre lu en %{month} %{year}"
       one: "Voir le livre lu en %{month} %{year}"
       other: "Voir les %{book_count} livres lus en %{month} %{year}"
+    books_count:
+      zero: "%{count} livre"
+      one: "%{count} livre"
+      other: "%{count} livres"
+    pages_count:
+      zero: "%{formatted_count} page"
+      one: "%{formatted_count} page"
+      other: "%{formatted_count} pages"
