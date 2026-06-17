@@ -149,7 +149,7 @@ else
       description="$(jq -r '.volumeInfo.description' <<< "${selected_volume}")"
     fi
 
-    publication_year=$(jq -r '.volumeInfo.publishedDate' <<< "${selected_volume}")
+    publication_year=$(jq -r '.items[].volumeInfo.publishedDate' <<< "${book_data}" | sort | head -n1)
     publication_year=$(grep -oE '[0-9]{4}' <<< "${publication_year}" | head -n1)
     page_count=$(jq -r '.volumeInfo.pageCount' <<< "${selected_volume}")
 
