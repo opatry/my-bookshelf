@@ -1,8 +1,8 @@
 ---
 uuid: 6893e13a-6df9-4346-99c6-1d7d44978495
 isbn: '9782889730100'
-title: 'Marcus Goldman tome 2 : Le Livre des Baltimore'
-author: Joël Dicker
+title: "Marcus Goldman tome 2 : Le Livre des Baltimore"
+author: "Joël Dicker"
 priority: 4
 social:
   sc: '16853963'

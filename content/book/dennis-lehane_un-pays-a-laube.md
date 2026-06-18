@@ -1,8 +1,8 @@
 ---
 uuid: 894fb206-c2c5-44cb-9207-3641c265da48
 isbn: '9782743619367'
-title: Un pays à l'aube
-author: Dennis Lehane
+title: "Un pays à l'aube"
+author: "Dennis Lehane"
 rating: 6
 read_date: 2023-10-07
 tags:

@@ -1,8 +1,8 @@
 ---
 uuid: b23129f1-04ba-4dde-bd1b-1fcf68089d33
 isbn: '9782253102472'
-title: Tout le bleu du ciel
-author: Mélissa Da Costa
+title: "Tout le bleu du ciel"
+author: "Mélissa Da Costa"
 rating: 10
 read_date: 2025-01-29
 favorite: true

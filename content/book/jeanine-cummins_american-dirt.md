@@ -1,8 +1,8 @@
 ---
 uuid: 07e7c773-a23a-4d80-a6dd-b97cc8fcd1df
 isbn: '9782264074713'
-title: American Dirt
-author: Jeanine Cummins
+title: "American Dirt"
+author: "Jeanine Cummins"
 rating: 7
 read_date: 2024-05-23
 tags:

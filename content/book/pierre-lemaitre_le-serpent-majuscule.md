@@ -1,8 +1,8 @@
 ---
 uuid: c393f744-bd10-48e5-b663-bccd435e7f07
 isbn: '9782226464866'
-title: Le Serpent majuscule
-author: Pierre Lemaitre
+title: "Le Serpent majuscule"
+author: "Pierre Lemaitre"
 rating: 6
 read_date: 2025-04-20
 tags:

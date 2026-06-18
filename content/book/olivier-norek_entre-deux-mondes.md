@@ -1,8 +1,8 @@
 ---
 uuid: 3f7a4456-4858-427e-b48d-3dd2718e6386
 isbn: '9782749935072'
-title: Entre deux mondes
-author: Olivier Norek
+title: "Entre deux mondes"
+author: "Olivier Norek"
 rating: 8
 read_date: 2025-09-06
 tags:

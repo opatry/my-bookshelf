@@ -1,8 +1,8 @@
 ---
 uuid: 00a2c337-25cc-481b-b5f3-9e7412b3dc44
 isbn: '9782267032192'
-title: 'Le Seigneur des Anneaux, tome 3 : Le retour du roi'
-author: J.R.R. Tolkien
+title: "Le Seigneur des Anneaux, tome 3 : Le retour du roi"
+author: "J.R.R. Tolkien"
 rating: 8
 tags:
 - Aventure

@@ -1,8 +1,8 @@
 ---
 uuid: de390387-40bb-4710-8b9c-94fd52559f60
 isbn: '9782757871096'
-title: La Daronne
-author: Hannelore Cayre
+title: "La Daronne"
+author: "Hannelore Cayre"
 rating: 7
 read_date: 2022-08-06
 favorite: true

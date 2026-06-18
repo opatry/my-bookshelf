@@ -2,7 +2,7 @@
 uuid: 4cdd788b-56fb-44ab-bd7f-4937a2904deb
 isbn: '9782756406213'
 title: "L'Assassin royal, tome 8 : La Secte maudite"
-author: Robin Hobb
+author: "Robin Hobb"
 rating: 8
 social:
   sc: '476898'

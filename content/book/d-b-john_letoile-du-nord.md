@@ -1,8 +1,8 @@
 ---
 uuid: 2a1ebe93-fd42-4073-a1fb-65e50b6f725d
 isbn: '9782711200122'
-title: L'étoile du Nord
-author: D. B. John
+title: "L'étoile du Nord"
+author: "D. B. John"
 rating: 7
 tags:
 - Chine

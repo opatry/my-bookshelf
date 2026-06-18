@@ -1,8 +1,8 @@
 ---
 uuid: 270a8cb0-ecbe-4ca3-823c-7ac3881eb61a
 isbn: '9782355848490'
-title: Duchess
-author: Chris Whitaker
+title: "Duchess"
+author: "Chris Whitaker"
 ongoing: true
 tags:
 - Thriller

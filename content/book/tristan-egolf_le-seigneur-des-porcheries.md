@@ -1,8 +1,8 @@
 ---
 uuid: 0b156546-bfee-4fa4-bd45-3ba958c204fd
 isbn: '9782070414734'
-title: Le seigneur des porcheries
-author: Tristan Egolf
+title: "Le seigneur des porcheries"
+author: "Tristan Egolf"
 priority: 4
 tags:
 - Vengeance

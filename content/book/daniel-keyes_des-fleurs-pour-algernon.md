@@ -1,8 +1,8 @@
 ---
 uuid: c6851bb9-0851-49f3-822b-3628c75f605e
 isbn: '9782290312957'
-title: Des fleurs pour Algernon
-author: Daniel Keyes
+title: "Des fleurs pour Algernon"
+author: "Daniel Keyes"
 rating: 7
 read_date: 2025-04-21
 tags:

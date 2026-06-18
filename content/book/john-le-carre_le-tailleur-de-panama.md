@@ -1,8 +1,8 @@
 ---
 uuid: 6f1c8c02-dbee-48ce-944e-aae4bca10c2b
 isbn: '9782757874783'
-title: Le Tailleur de Panama
-author: John Le Carré
+title: "Le Tailleur de Panama"
+author: "John Le Carré"
 rating: 4
 read_date: 2022-01-31
 tags:

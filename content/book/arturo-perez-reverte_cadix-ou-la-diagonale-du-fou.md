@@ -1,8 +1,8 @@
 ---
 uuid: dc33d02f-b9c7-4fb9-9f91-aedb203ddde6
 isbn: '9782021228649'
-title: Cadix, ou la diagonale du fou
-author: Arturo Pérez-Reverte
+title: "Cadix, ou la diagonale du fou"
+author: "Arturo Pérez-Reverte"
 rating: 5
 read_date: 2025-08-24
 tags:

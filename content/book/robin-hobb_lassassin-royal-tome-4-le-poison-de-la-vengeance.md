@@ -2,7 +2,7 @@
 uuid: 71f8d450-d93d-484e-9966-5e6aa1569ff4
 isbn: '9782756406077'
 title: "L'Assassin royal, tome 4 : Le Poison de la vengeance"
-author: Robin Hobb
+author: "Robin Hobb"
 rating: 8
 social:
   babelio: '14545'

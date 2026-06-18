@@ -1,8 +1,8 @@
 ---
 uuid: b5d0afad-fba4-4e5a-b391-cc925b1c30eb
 isbn: '9782367190693'
-title: L'Île au trésor
-author: Robert Louis Stevenson
+title: "L'Île au trésor"
+author: "Robert Louis Stevenson"
 rating: 8
 tags:
 - Aventure

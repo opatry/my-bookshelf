@@ -1,8 +1,8 @@
 ---
 uuid: 141f73cd-f471-4dbc-b72e-a426c541d4bf
 isbn: '9782226469151'
-title: Tant que le café est encore chaud
-author: Toshikazu Kawaguchi
+title: "Tant que le café est encore chaud"
+author: "Toshikazu Kawaguchi"
 rating: 7
 read_date: 2023-07-25
 tags:

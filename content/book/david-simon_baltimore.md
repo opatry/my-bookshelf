@@ -1,8 +1,8 @@
 ---
 uuid: 47d2c0a8-53ba-4782-99a3-214314667d7c
 isbn: '9782355841224'
-title: Baltimore
-author: David Simon
+title: "Baltimore"
+author: "David Simon"
 priority: 3
 tags:
 - Etats-Unis

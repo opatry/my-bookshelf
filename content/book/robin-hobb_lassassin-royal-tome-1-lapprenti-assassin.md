@@ -2,7 +2,7 @@
 uuid: 5429c6b6-04d4-43ba-8a58-e8a1e72e02ab
 isbn: '9782756406053'
 title: "L'Assassin royal, tome 1 : L'Apprenti assassin"
-author: Robin Hobb
+author: "Robin Hobb"
 rating: 8
 favorite: true
 linked_books:

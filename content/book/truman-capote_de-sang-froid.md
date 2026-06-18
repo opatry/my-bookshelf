@@ -1,8 +1,8 @@
 ---
 uuid: 95ac902a-db60-4ccc-afba-87a0907300c2
 isbn: '9782070360598'
-title: De sang-froid
-author: Truman Capote
+title: "De sang-froid"
+author: "Truman Capote"
 rating: 6
 read_date: 2024-11-17
 tags:

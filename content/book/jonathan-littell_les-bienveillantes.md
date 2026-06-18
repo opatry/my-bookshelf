@@ -1,8 +1,8 @@
 ---
 uuid: 21c7b1ee-45a2-481c-9f3a-155b65f131fc
 isbn: '9782072462054'
-title: Les Bienveillantes
-author: Jonathan Littell
+title: "Les Bienveillantes"
+author: "Jonathan Littell"
 priority: 3
 social:
   sc: '237043'

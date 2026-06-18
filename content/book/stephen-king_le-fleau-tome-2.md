@@ -1,8 +1,8 @@
 ---
 uuid: ce37794c-de99-4d2e-9c21-e9d3ca5769ee
 isbn: '9782277233121'
-title: Le fléau, tome 2
-author: Stephen King
+title: "Le fléau, tome 2"
+author: "Stephen King"
 rating: 8
 social:
   sc: '28881788'

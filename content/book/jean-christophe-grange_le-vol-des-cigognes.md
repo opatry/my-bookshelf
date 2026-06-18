@@ -1,8 +1,8 @@
 ---
 uuid: 48e36ea8-8b1a-42d1-a51c-4a1e82bba766
 isbn: '9782226233981'
-title: Le Vol des cigognes
-author: Jean-Christophe Grangé
+title: "Le Vol des cigognes"
+author: "Jean-Christophe Grangé"
 rating: 7
 social:
   sc: '465787'

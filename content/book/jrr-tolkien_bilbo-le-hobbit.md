@@ -1,8 +1,8 @@
 ---
 uuid: 13968043-9e14-44f7-8d40-326cfd6ab415
 isbn: '9782267024203'
-title: Bilbo le Hobbit
-author: J.R.R. Tolkien
+title: "Bilbo le Hobbit"
+author: "J.R.R. Tolkien"
 rating: 6
 tags:
 - Aventure

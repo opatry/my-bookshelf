@@ -1,8 +1,8 @@
 ---
 uuid: f0bf34e0-c0d7-490c-81e2-1c633db3ccbe
 isbn: '9782823608656'
-title: Le Grand Marin
-author: Catherine Poulain
+title: "Le Grand Marin"
+author: "Catherine Poulain"
 priority: 3
 tags:
 - Aventure

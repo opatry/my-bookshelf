@@ -1,8 +1,8 @@
 ---
 uuid: 32b2433f-1da6-464b-9fee-ce5f914879ae
 isbn: '9782756406398'
-title: 'Les Aventuriers de la mer, tome 2 : Le Navire aux esclaves'
-author: Robin Hobb
+title: "Les Aventuriers de la mer, tome 2 : Le Navire aux esclaves"
+author: "Robin Hobb"
 rating: 6
 read_date: 2026-06-03
 tags:

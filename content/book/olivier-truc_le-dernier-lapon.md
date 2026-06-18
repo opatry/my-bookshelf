@@ -1,8 +1,8 @@
 ---
 uuid: 4bc037f0-c14a-49f0-b2a5-21c938c6ebab
 isbn: '9782757836064'
-title: Le dernier Lapon
-author: Olivier Truc
+title: "Le dernier Lapon"
+author: "Olivier Truc"
 rating: 7
 read_date: 2023-10-22
 tags:

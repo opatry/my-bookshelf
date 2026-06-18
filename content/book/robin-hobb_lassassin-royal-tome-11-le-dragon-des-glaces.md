@@ -2,7 +2,7 @@
 uuid: 4a403d65-3ae9-4d67-a594-ba330b63b614
 isbn: '9782756406237'
 title: "L'Assassin royal, tome 11 : Le Dragon des glaces"
-author: Robin Hobb
+author: "Robin Hobb"
 rating: 8
 social:
   sc: '63734'

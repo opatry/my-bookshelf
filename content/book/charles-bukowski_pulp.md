@@ -1,8 +1,8 @@
 ---
 uuid: 2563c890-5061-4cb7-94b9-3108bdd7df1a
 isbn: '9782253141976'
-title: Pulp
-author: Charles Bukowski
+title: "Pulp"
+author: "Charles Bukowski"
 priority: 4
 tags:
 - Thriller

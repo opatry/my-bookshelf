@@ -1,8 +1,8 @@
 ---
 uuid: a1e22387-d022-41dc-8cb9-c6364bbc86f2
 isbn: '9781409091158'
-title: Da Vinci Code
-author: Dan Brown
+title: "Da Vinci Code"
+author: "Dan Brown"
 rating: 6
 social:
   sc: '379449'

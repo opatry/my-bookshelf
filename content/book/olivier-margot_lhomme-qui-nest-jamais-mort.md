@@ -1,8 +1,8 @@
 ---
 uuid: b7a259cc-87ac-4708-9804-da2f79bc4a41
 isbn: '9782709665254'
-title: L'homme qui n'est jamais mort
-author: Olivier Margot
+title: "L'homme qui n'est jamais mort"
+author: "Olivier Margot"
 rating: 6
 read_date: 2024-10-11
 tags:

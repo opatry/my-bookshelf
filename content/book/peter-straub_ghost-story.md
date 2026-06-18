@@ -1,8 +1,8 @@
 ---
 uuid: 799f34e5-859e-4a3b-bdcf-6cae4ebc6ac5
 isbn: '9782266034814'
-title: Ghost story
-author: Peter Straub
+title: "Ghost story"
+author: "Peter Straub"
 rating: 7
 social:
   babelio: '7786'

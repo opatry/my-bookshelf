@@ -1,8 +1,8 @@
 ---
 uuid: 6833b659-3477-4708-947e-ed71bfa4363f
 isbn: '9782812603297'
-title: L'île des chasseurs d'oiseaux
-author: Peter May
+title: "L'île des chasseurs d'oiseaux"
+author: "Peter May"
 rating: 8
 read_date: 2023-09-05
 tags:

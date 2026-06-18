@@ -1,8 +1,8 @@
 ---
 uuid: 555aca77-20db-4944-9001-63dba49a08e7
 isbn: '9782375020517'
-title: 'Les aventures de Gilles Belmonte, tome 2 : Le trésor des Américains'
-author: Fabien Clauw
+title: "Les aventures de Gilles Belmonte, tome 2 : Le trésor des Américains"
+author: "Fabien Clauw"
 rating: 7
 read_date: 2022-02-12
 tags:

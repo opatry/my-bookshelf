@@ -1,8 +1,8 @@
 ---
 uuid: 47e7ac84-aefd-4331-9e04-cacc18649018
 isbn: '9782253241485'
-title: Mamie Luger
-author: Benoît Philippon
+title: "Mamie Luger"
+author: "Benoît Philippon"
 rating: 9
 read_date: 2023-02-12
 favorite: true

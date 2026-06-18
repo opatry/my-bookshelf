@@ -1,8 +1,8 @@
 ---
 uuid: f64bcc49-6280-4fb1-9d70-8a16a3bcb753
 isbn: '9780141976426'
-title: Limonov
-author: Emmanuel Carrère
+title: "Limonov"
+author: "Emmanuel Carrère"
 rating: 6
 read_date: 2021-07-03
 tags:

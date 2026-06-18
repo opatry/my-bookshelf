@@ -1,8 +1,8 @@
 ---
 uuid: e78217c1-63c8-43f5-b52c-9b16b23dcd36
 isbn: '9782264057891'
-title: '1Q84 tome 2 : Juillet-Septembre'
-author: Haruki Murakami
+title: "1Q84 tome 2 : Juillet-Septembre"
+author: "Haruki Murakami"
 rating: 5
 read_date: 2025-02-28
 tags:

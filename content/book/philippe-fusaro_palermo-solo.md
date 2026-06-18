@@ -1,8 +1,8 @@
 ---
 uuid: '089f4cce-6258-46bb-84a3-9e97e7dca818'
 isbn: '9782912042897'
-title: Palermo solo
-author: Philippe Fusaro
+title: "Palermo solo"
+author: "Philippe Fusaro"
 rating: 6
 read_date: 2021-08-15
 favorite: true

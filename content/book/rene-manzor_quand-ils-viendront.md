@@ -1,8 +1,8 @@
 ---
 uuid: 978141ec-1c62-474c-af76-d6e21b9095e9
 isbn: '9782380200706'
-title: Quand ils viendront
-author: René Manzor
+title: "Quand ils viendront"
+author: "René Manzor"
 rating: 6
 read_date: 2025-09-16
 tags:

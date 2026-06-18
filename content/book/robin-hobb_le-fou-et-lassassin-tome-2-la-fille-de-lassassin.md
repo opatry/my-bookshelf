@@ -2,7 +2,7 @@
 uuid: 975ef8a2-67d7-413a-a221-777c6047697a
 isbn: '9782756415055'
 title: "Le Fou et l'Assassin, tome 2 : La fille de l'assassin"
-author: Robin Hobb
+author: "Robin Hobb"
 rating: 7
 social:
   sc: '13405639'

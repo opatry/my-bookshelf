@@ -1,8 +1,8 @@
 ---
 uuid: 8b2a207d-add5-42bc-a194-d9b802b9c201
 isbn: '9781680680324'
-title: 'Nous sommes Bob, tome 1 : Nous sommes Légion'
-author: Dennis E. Taylor
+title: "Nous sommes Bob, tome 1 : Nous sommes Légion"
+author: "Dennis E. Taylor"
 rating: 7
 read_date: 2022-06-25
 tags:

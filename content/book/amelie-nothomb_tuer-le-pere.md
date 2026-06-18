@@ -1,8 +1,8 @@
 ---
 uuid: 3ae803b5-abea-4127-aa4a-9a5a4aaddd92
 isbn: '9782253174158'
-title: Tuer le père
-author: Amélie Nothomb
+title: "Tuer le père"
+author: "Amélie Nothomb"
 rating: 5
 read_date: 2024-07-18
 tags:

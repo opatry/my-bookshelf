@@ -1,8 +1,8 @@
 ---
 uuid: 12f7cac3-a553-4296-ac0b-eec1431c80e2
 isbn: '9782266291200'
-title: Les prisonniers de la liberté
-author: Luca Di Fulvio
+title: "Les prisonniers de la liberté"
+author: "Luca Di Fulvio"
 rating: 7
 read_date: 2023-03-11
 tags:

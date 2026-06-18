@@ -1,8 +1,8 @@
 ---
 uuid: 0aa06e41-91ae-42f1-aa52-0f096b488cf6
 isbn: '9782226477262'
-title: La Cité des nuages et des oiseaux
-author: Anthony Doerr
+title: "La Cité des nuages et des oiseaux"
+author: "Anthony Doerr"
 priority: 4
 tags:
 - Sci-fi

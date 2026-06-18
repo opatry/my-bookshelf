@@ -1,8 +1,8 @@
 ---
 uuid: 28bb1abe-cd0a-42c0-874b-3445c2f89568
 isbn: '9782757875407'
-title: Séquoias
-author: Michel Moutot
+title: "Séquoias"
+author: "Michel Moutot"
 rating: 9
 read_date: 2021-01-24
 favorite: true

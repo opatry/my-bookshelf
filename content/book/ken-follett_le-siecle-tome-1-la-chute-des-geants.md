@@ -1,8 +1,8 @@
 ---
 uuid: 0c3e3d02-65af-45b3-950c-9189f4b90132
 isbn: '9782221110829'
-title: 'Le siècle, tome 1 : La chute des géants'
-author: Ken Follett
+title: "Le siècle, tome 1 : La chute des géants"
+author: "Ken Follett"
 rating: 7
 read_date: 2024-08-12
 tags:

@@ -1,8 +1,8 @@
 ---
 uuid: 4b3b3ea7-b3a1-445d-a53b-127df2858dc0
 isbn: '9782073030443'
-title: Le sniper, le Président et la Triade
-author: Kuo-li Chang
+title: "Le sniper, le Président et la Triade"
+author: "Kuo-li Chang"
 rating: 6
 read_date: 2024-04-13
 tags:

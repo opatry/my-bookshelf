@@ -1,8 +1,8 @@
 ---
 uuid: 6ae7bba5-fc0c-4fff-93c0-b2160cba0909
 isbn: '9782221190777'
-title: Les piliers de la terre
-author: Ken Follett
+title: "Les piliers de la terre"
+author: "Ken Follett"
 rating: 8
 read_date: 2021-04-03
 tags:

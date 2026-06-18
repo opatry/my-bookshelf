@@ -1,8 +1,8 @@
 ---
 uuid: 1afe83d4-0ce6-4472-b32e-dcca6ba21fc0
 isbn: '9782365690874'
-title: Une dernière danse
-author: Victoria Hislop
+title: "Une dernière danse"
+author: "Victoria Hislop"
 rating: 8
 read_date: 2021-04-12
 tags:

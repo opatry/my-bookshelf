@@ -1,8 +1,8 @@
 ---
 uuid: e6fe6385-2fe4-40a3-b40d-4490dc4443c4
 isbn: '9782221123300'
-title: Moins que zéro
-author: Bret Easton Ellis
+title: "Moins que zéro"
+author: "Bret Easton Ellis"
 rating: 5
 social:
   sc: '266429'

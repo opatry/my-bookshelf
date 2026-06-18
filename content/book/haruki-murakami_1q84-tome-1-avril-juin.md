@@ -1,8 +1,8 @@
 ---
 uuid: c8f0eadc-3811-4a75-a15f-427ce83ab957
 isbn: '9782264057884'
-title: '1Q84 tome 1 : Avril-Juin'
-author: Haruki Murakami
+title: "1Q84 tome 1 : Avril-Juin"
+author: "Haruki Murakami"
 rating: 5
 read_date: 2025-02-21
 tags:

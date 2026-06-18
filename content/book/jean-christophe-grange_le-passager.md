@@ -1,8 +1,8 @@
 ---
 uuid: cf7d4382-94a9-4219-a091-de5de4e221fa
 isbn: '9782226221322'
-title: Le passager
-author: Jean-Christophe Grangé
+title: "Le passager"
+author: "Jean-Christophe Grangé"
 rating: 7
 social:
   sc: '480343'

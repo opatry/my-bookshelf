@@ -1,8 +1,8 @@
 ---
 uuid: 33074dbe-f07c-4662-9fcf-3f428c6ce1f8
 isbn: '9782266305815'
-title: 'Les aventures de Gilles Belmonte, tome 1 : Pour les trois couleurs'
-author: Fabien Clauw
+title: "Les aventures de Gilles Belmonte, tome 1 : Pour les trois couleurs"
+author: "Fabien Clauw"
 rating: 8
 read_date: 2021-09-21
 favorite: true

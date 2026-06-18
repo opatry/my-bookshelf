@@ -1,8 +1,8 @@
 ---
 uuid: c9beea31-041e-48e6-a84b-f0baa79b4c73
 isbn: '9782889440061'
-title: Le Gang des rêves
-author: Luca Di Fulvio
+title: "Le Gang des rêves"
+author: "Luca Di Fulvio"
 rating: 9
 read_date: 2021-07-11
 favorite: true

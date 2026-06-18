@@ -1,8 +1,8 @@
 ---
 uuid: 611d341f-f6fc-4a79-8279-139987a53519
 isbn: '9782290310816'
-title: Le fléau, tome 1
-author: Stephen King
+title: "Le fléau, tome 1"
+author: "Stephen King"
 rating: 8
 linked_books:
 - '9782277233121'

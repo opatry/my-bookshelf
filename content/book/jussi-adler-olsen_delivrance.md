@@ -1,8 +1,8 @@
 ---
 uuid: 923ae451-f3ce-42e0-968b-63f59af37b94
 isbn: '9782226284280'
-title: Délivrance
-author: Jussi Adler-Olsen
+title: "Délivrance"
+author: "Jussi Adler-Olsen"
 rating: 6
 tags:
 - Policier

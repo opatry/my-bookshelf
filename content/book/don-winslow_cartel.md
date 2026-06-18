@@ -1,8 +1,8 @@
 ---
 uuid: 7328adc2-bc1c-4d30-92d1-f4a7c4358ca7
 isbn: '9782021213157'
-title: Cartel
-author: Don Winslow
+title: "Cartel"
+author: "Don Winslow"
 rating: 8
 read_date: 2023-08-16
 tags:

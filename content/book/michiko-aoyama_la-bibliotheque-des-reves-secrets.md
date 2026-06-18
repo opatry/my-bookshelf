@@ -1,8 +1,8 @@
 ---
 uuid: e467a3c3-8cf0-458f-b8e6-5a0db2ff282d
 isbn: '9782290384275'
-title: La Bibliothèque des rêves secrets
-author: Michiko Aoyama
+title: "La Bibliothèque des rêves secrets"
+author: "Michiko Aoyama"
 rating: 5
 read_date: 2024-06-19
 tags:

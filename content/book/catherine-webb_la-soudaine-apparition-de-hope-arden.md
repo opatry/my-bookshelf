@@ -1,8 +1,8 @@
 ---
 uuid: e747d0cb-d1b5-435d-9e77-c908826c5ce4
 isbn: '9782811237783'
-title: La soudaine apparition de Hope Arden
-author: Catherine Webb
+title: "La soudaine apparition de Hope Arden"
+author: "Catherine Webb"
 rating: 7
 read_date: 2022-10-09
 tags:

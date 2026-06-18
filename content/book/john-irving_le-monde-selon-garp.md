@@ -1,8 +1,8 @@
 ---
 uuid: 71d7da21-56e3-426c-8c3b-e38536874c86
 isbn: '9782021122282'
-title: Le Monde selon Garp
-author: John Irving
+title: "Le Monde selon Garp"
+author: "John Irving"
 rating: 2
 read_date: 2025-07-17
 tags:

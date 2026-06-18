@@ -1,8 +1,8 @@
 ---
 uuid: 7237b391-c009-49ea-9b3a-8d7d6b85626d
 isbn: '9782756406411'
-title: 'Les Aventuriers de la mer, tome 3 : La conquête de la liberté'
-author: Robin Hobb
+title: "Les Aventuriers de la mer, tome 3 : La conquête de la liberté"
+author: "Robin Hobb"
 priority: 1.5
 tags:
 - Aventure

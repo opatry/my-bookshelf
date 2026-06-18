@@ -1,8 +1,8 @@
 ---
 uuid: 123ea4c3-60f4-4bc3-9ac9-34c3dbdcba59
 isbn: '9782364684119'
-title: Les Naufragés du Wager
-author: David Grann
+title: "Les Naufragés du Wager"
+author: "David Grann"
 rating: 7
 read_date: 2024-03-09
 tags:

@@ -1,8 +1,8 @@
 ---
 uuid: be0bd10a-e0a2-4646-b901-e3071f31fc15
 isbn: '9782266309844'
-title: L'Espion et le Traître
-author: Ben Macintyre
+title: "L'Espion et le Traître"
+author: "Ben Macintyre"
 rating: 8
 read_date: 2025-01-15
 tags:

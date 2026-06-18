@@ -2,7 +2,7 @@
 uuid: 1f188410-29c3-417e-a3ee-df9348cfddc7
 isbn: '9782867466007'
 title: "Une enquête de l'inspecteur Chen : Cyber China"
-author: Xiaolong Qiu
+author: "Xiaolong Qiu"
 rating: 6
 tags:
 - Chine

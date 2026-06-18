@@ -1,8 +1,8 @@
 ---
 uuid: 0e4bd56f-2b7a-4d07-8979-a5e41b368988
 isbn: '9782846662673'
-title: Ensemble, c'est tout
-author: Anna Gavalda
+title: "Ensemble, c'est tout"
+author: "Anna Gavalda"
 rating: 6
 read_date: 2023-01-28
 tags:

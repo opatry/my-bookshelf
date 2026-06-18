@@ -1,8 +1,8 @@
 ---
 uuid: 77d782e2-4f8a-4452-9a90-4b6f56f53db1
 isbn: '9782385291396'
-title: La Dernière allumette
-author: Marie Vareille
+title: "La Dernière allumette"
+author: "Marie Vareille"
 rating: 7
 read_date: 2025-11-16
 tags:

@@ -1,8 +1,8 @@
 ---
 uuid: 4541fad5-2b6a-4418-8f69-ac69708b91fa
 isbn: '9782072904622'
-title: Le sniper, son wok et son fusil
-author: Kuo-li Chang
+title: "Le sniper, son wok et son fusil"
+author: "Kuo-li Chang"
 rating: 7
 read_date: 2024-02-13
 tags:

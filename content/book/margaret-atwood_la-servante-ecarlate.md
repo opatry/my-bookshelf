@@ -1,8 +1,8 @@
 ---
 uuid: e8a52b6b-a997-48e8-89c6-e4a3ca488927
 isbn: '9782221203323'
-title: La servante écarlate
-author: Margaret Atwood
+title: "La servante écarlate"
+author: "Margaret Atwood"
 rating: 5
 read_date: 2024-12-16
 tags:

@@ -1,8 +1,8 @@
 ---
 uuid: '0338904e-a305-4dd5-bee6-037b7b0d77f6'
 isbn: '9782226335173'
-title: Le Silence des agneaux
-author: Thomas Harris
+title: "Le Silence des agneaux"
+author: "Thomas Harris"
 rating: 8
 social:
   babelio: '8246'

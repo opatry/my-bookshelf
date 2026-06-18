@@ -1,8 +1,8 @@
 ---
 uuid: 7b34670c-3ea2-4fd0-a1c1-b250d529b3ee
 isbn: '9782021420180'
-title: L'America
-author: Michel Moutot
+title: "L'America"
+author: "Michel Moutot"
 rating: 7
 read_date: 2022-03-20
 tags:

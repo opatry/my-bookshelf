@@ -1,8 +1,8 @@
 ---
 uuid: ff425fbe-a48f-463f-990b-f775c8eab11c
 isbn: '9782226261380'
-title: Miséricorde
-author: Jussi Adler-Olsen
+title: "Miséricorde"
+author: "Jussi Adler-Olsen"
 rating: 6
 tags:
 - Policier

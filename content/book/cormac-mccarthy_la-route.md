@@ -1,8 +1,8 @@
 ---
 uuid: cea5d7c7-e3ce-4a8e-88e5-d5e59e405e38
 isbn: '9782879295916'
-title: La Route
-author: Cormac McCarthy
+title: "La Route"
+author: "Cormac McCarthy"
 rating: 7
 read_date: 2024-10-15
 tags:

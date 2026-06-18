@@ -2,7 +2,7 @@
 uuid: 81b5f209-0b81-449e-b48c-796e9c641aae
 isbn: '9782702441411'
 title: "Scott Manson, tome 1 : Le Mercato d'hiver"
-author: Philip Kerr
+author: "Philip Kerr"
 rating: 6
 read_date: 2021-10-09
 favorite: true

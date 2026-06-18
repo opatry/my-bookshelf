@@ -2,7 +2,7 @@
 uuid: 772abb59-0630-4e5f-84c0-551c6ac92dea
 isbn: '9782756416960'
 title: "Le Fou et l'Assassin, tome 3 : En quête de vengeance"
-author: Robin Hobb
+author: "Robin Hobb"
 rating: 7
 social:
   sc: '18093520'

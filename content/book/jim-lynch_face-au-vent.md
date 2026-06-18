@@ -1,8 +1,8 @@
 ---
 uuid: 311b0f18-a97b-4ca0-bd5a-ae90f454297e
 isbn: '9782351781449'
-title: Face au vent
-author: Jim Lynch
+title: "Face au vent"
+author: "Jim Lynch"
 rating: 8
 read_date: 2023-11-26
 favorite: true

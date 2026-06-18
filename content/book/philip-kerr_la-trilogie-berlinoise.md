@@ -1,8 +1,8 @@
 ---
 uuid: 3c0406b4-a9ea-48b8-9c65-390927a5457d
 isbn: '9782702435489'
-title: La trilogie berlinoise
-author: Philip Kerr
+title: "La trilogie berlinoise"
+author: "Philip Kerr"
 rating: 7
 read_date: 2022-08-03
 tags:

@@ -1,8 +1,8 @@
 ---
 uuid: e262a640-e9c2-4974-b79e-d408e7183087
 isbn: '9781519112484'
-title: La guerre des mondes
-author: H.G. Wells
+title: "La guerre des mondes"
+author: "H.G. Wells"
 rating: 6
 read_date: 2023-07-08
 tags:

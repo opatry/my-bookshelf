@@ -1,8 +1,8 @@
 ---
 uuid: fe2398c7-2ec9-449f-a4fa-2f70f28bfd0f
 isbn: '9782823621334'
-title: Après ça
-author: Eliot Ruffel
+title: "Après ça"
+author: "Eliot Ruffel"
 rating: 6
 read_date: 2025-03-14
 tags:

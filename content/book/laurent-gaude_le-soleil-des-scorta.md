@@ -1,8 +1,8 @@
 ---
 uuid: fe655ba9-625a-4720-aaa2-eef87fc9c677
 isbn: '9782742760183'
-title: Le Soleil des Scorta
-author: Laurent Gaudé
+title: "Le Soleil des Scorta"
+author: "Laurent Gaudé"
 rating: 6
 read_date: 2024-02-06
 tags:

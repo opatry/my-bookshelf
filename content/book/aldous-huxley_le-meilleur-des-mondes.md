@@ -1,8 +1,8 @@
 ---
 uuid: d7466f54-c4de-40f5-ab73-624520cbad9e
 isbn: '9782259221702'
-title: Le meilleur des mondes
-author: Aldous Huxley
+title: "Le meilleur des mondes"
+author: "Aldous Huxley"
 rating: 6
 read_date: 2022-08-10
 tags:

@@ -1,8 +1,8 @@
 ---
 uuid: 76219e45-ccb9-416d-8ca4-4c5cac778d6d
 isbn: '9782253115847'
-title: Ne tirez pas sur l'oiseau moqueur
-author: Harper Lee
+title: "Ne tirez pas sur l'oiseau moqueur"
+author: "Harper Lee"
 rating: 7
 read_date: 2024-08-23
 favorite: true

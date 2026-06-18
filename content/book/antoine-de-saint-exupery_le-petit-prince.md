@@ -1,8 +1,8 @@
 ---
 uuid: 2c0d9f6d-1b57-48d4-ba98-ff541478d6d7
 isbn: '9782070408504'
-title: Le Petit Prince
-author: Antoine de Saint-Exupéry
+title: "Le Petit Prince"
+author: "Antoine de Saint-Exupéry"
 rating: 7
 social:
   sc: '97412'

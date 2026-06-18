@@ -1,8 +1,8 @@
 ---
 uuid: 18988636-c0e3-420c-8eca-f13c4157573e
 isbn: '9782020633635'
-title: La compagnie
-author: Robert Littell
+title: "La compagnie"
+author: "Robert Littell"
 rating: 8
 read_date: 2022-12-11
 favorite: true

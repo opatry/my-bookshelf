@@ -1,8 +1,8 @@
 ---
 uuid: 5e744895-9bf7-4324-a4f2-f609a1310d39
 isbn: '9782915793642'
-title: Gagner la guerre
-author: Jean-Philippe Jaworski
+title: "Gagner la guerre"
+author: "Jean-Philippe Jaworski"
 priority: 4
 social:
   sc: '148702'

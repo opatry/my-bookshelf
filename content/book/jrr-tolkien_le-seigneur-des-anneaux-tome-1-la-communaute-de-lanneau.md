@@ -2,7 +2,7 @@
 uuid: 7d6ff6d9-cec6-4599-9c3a-f8422b982ff3
 isbn: '9782266154116'
 title: "Le Seigneur des Anneaux, tome 1 : La Communauté de l'anneau"
-author: J.R.R. Tolkien
+author: "J.R.R. Tolkien"
 rating: 8
 tags:
 - Fantasy

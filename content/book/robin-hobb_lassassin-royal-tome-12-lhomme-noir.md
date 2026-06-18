@@ -2,7 +2,7 @@
 uuid: 8456f4d6-dd59-42eb-9b60-d3239a9d3f39
 isbn: '9782756406251'
 title: "L'Assassin royal, tome 12 : L'Homme noir"
-author: Robin Hobb
+author: "Robin Hobb"
 rating: 8
 social:
   sc: '17962'

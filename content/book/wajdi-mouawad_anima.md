@@ -1,8 +1,8 @@
 ---
 uuid: 989d6f01-7253-42d4-b75a-98d694056e34
 isbn: '9782330170479'
-title: Anima
-author: Wajdi Mouawad
+title: "Anima"
+author: "Wajdi Mouawad"
 rating: 7
 read_date: 2025-12-09
 tags:

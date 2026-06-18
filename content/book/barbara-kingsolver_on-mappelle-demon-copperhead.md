@@ -1,8 +1,8 @@
 ---
 uuid: e09d94f0-210d-4a65-85e2-fe4408a4f469
 isbn: '9782226492364'
-title: On m'appelle Demon Copperhead
-author: Barbara Kingsolver
+title: "On m'appelle Demon Copperhead"
+author: "Barbara Kingsolver"
 rating: 8
 read_date: 2025-03-30
 favorite: true

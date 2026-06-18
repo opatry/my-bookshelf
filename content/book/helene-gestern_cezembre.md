@@ -1,8 +1,8 @@
 ---
 uuid: 05d66deb-857e-412c-a207-9e3acea45e02
 isbn: '9782246836131'
-title: Cézembre
-author: Hélène Gestern
+title: "Cézembre"
+author: "Hélène Gestern"
 rating: 7
 read_date: 2025-09-13
 tags:

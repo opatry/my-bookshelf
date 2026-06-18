@@ -1,8 +1,8 @@
 ---
 uuid: c63a2bf4-49df-4af2-976b-69f87405acbb
 isbn: '9782878583762'
-title: L'armée furieuse
-author: Fred Vargas
+title: "L'armée furieuse"
+author: "Fred Vargas"
 rating: 6
 read_date: 2023-12-09
 tags:

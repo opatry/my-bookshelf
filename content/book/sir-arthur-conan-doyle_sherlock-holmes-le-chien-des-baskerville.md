@@ -1,8 +1,8 @@
 ---
 uuid: eb2d482e-9156-4ebd-a1d9-4b8527eaed8a
 isbn: '9782290334768'
-title: 'Sherlock Holmes : Le Chien des Baskerville'
-author: Sir Arthur Conan Doyle
+title: "Sherlock Holmes : Le Chien des Baskerville"
+author: "Sir Arthur Conan Doyle"
 rating: 7
 read_date: 2022-02-05
 social:

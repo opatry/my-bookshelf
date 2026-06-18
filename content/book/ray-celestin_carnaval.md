@@ -1,8 +1,8 @@
 ---
 uuid: d3e8bd51-d218-4e33-8c2e-b1c75dd699f0
 isbn: '9782264066312'
-title: Carnaval
-author: Ray Celestin
+title: "Carnaval"
+author: "Ray Celestin"
 rating: 7
 read_date: 2023-12-16
 tags:

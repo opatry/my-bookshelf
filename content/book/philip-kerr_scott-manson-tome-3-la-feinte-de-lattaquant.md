@@ -2,7 +2,7 @@
 uuid: 5556e79b-be6b-4e50-a3cf-540aca59056b
 isbn: '9782702447130'
 title: "Scott Manson, tome 3 : La feinte de l'attaquant"
-author: Philip Kerr
+author: "Philip Kerr"
 rating: 5
 read_date: 2022-05-05
 tags:

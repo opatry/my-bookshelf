@@ -1,8 +1,8 @@
 ---
 uuid: ee86e4d6-b2f3-4f26-a8e2-3666e9b1821f
 isbn: '9782226306524'
-title: Trois mille chevaux vapeur
-author: Antonin Varenne
+title: "Trois mille chevaux vapeur"
+author: "Antonin Varenne"
 rating: 8
 read_date: 2023-11-22
 tags:

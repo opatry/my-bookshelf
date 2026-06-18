@@ -1,8 +1,8 @@
 ---
 uuid: 99d32e09-6e9e-4637-9823-bfb99ed78459
 isbn: '9782246834786'
-title: Les gens qui rêvent
-author: Guillaume Martin-Guyonnet
+title: "Les gens qui rêvent"
+author: "Guillaume Martin-Guyonnet"
 rating: 6
 read_date: 2025-09-03
 favorite: true

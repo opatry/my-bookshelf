@@ -2,7 +2,7 @@
 uuid: 86399b18-ab16-4f37-860b-665262254ac0
 isbn: '9782742770311'
 title: "Millenium, tome 2 : La fille qui rêvait d'un bidon d'essence et d'une allumette"
-author: Stieg Larsson
+author: "Stieg Larsson"
 rating: 8
 tags:
 - Thriller

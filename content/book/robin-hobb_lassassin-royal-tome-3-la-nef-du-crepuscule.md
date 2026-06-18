@@ -2,7 +2,7 @@
 uuid: 9884c86d-230b-43c8-b146-36595d2f33e4
 isbn: '9782756406152'
 title: "L'Assassin royal, tome 3 : La Nef du crépuscule"
-author: Robin Hobb
+author: "Robin Hobb"
 rating: 8
 social:
   babelio: '6860'

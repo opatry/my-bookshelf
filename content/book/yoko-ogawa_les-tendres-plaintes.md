@@ -1,8 +1,8 @@
 ---
 uuid: 630868cf-8624-400c-9db9-8fae6325aab9
 isbn: '9782330026196'
-title: Les tendres plaintes
-author: Yôko Ogawa
+title: "Les tendres plaintes"
+author: "Yôko Ogawa"
 rating: 5
 read_date: 2023-08-19
 tags:

@@ -1,8 +1,8 @@
 ---
 uuid: 66a86f29-b490-4e27-92bb-49e2a55da9ac
 isbn: '9782757899892'
-title: Western star
-author: Craig Johnson
+title: "Western star"
+author: "Craig Johnson"
 rating: 5
 read_date: 2022-04-15
 tags:

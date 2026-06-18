@@ -1,8 +1,8 @@
 ---
 uuid: 64687a99-a15b-44f2-a979-072b1bf5ec89
 isbn: '9782823875614'
-title: Demande à la poussière
-author: John Fante
+title: "Demande à la poussière"
+author: "John Fante"
 rating: 4
 read_date: 2025-09-28
 tags:

@@ -1,8 +1,8 @@
 ---
 uuid: f20f0cee-8a73-4a78-9ece-19350a3618c9
 isbn: '9782744106002'
-title: La conjuration des imbéciles
-author: John Kennedy Toole
+title: "La conjuration des imbéciles"
+author: "John Kennedy Toole"
 rating: 3
 read_date: 2021-02-17
 social:

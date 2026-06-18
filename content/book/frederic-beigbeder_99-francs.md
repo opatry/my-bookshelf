@@ -1,8 +1,8 @@
 ---
 uuid: 3cd82eac-a2dd-4651-a933-600432f115f1
 isbn: '9782246567691'
-title: 99 francs
-author: Frédéric Beigbeder
+title: "99 francs"
+author: "Frédéric Beigbeder"
 rating: 7
 social:
   sc: '473236'

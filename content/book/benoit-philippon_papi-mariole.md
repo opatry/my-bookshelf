@@ -1,8 +1,8 @@
 ---
 uuid: f58e916a-4de4-46b2-93aa-2af2bfcdc0f8
 isbn: '9782226492760'
-title: Papi Mariole
-author: Benoît Philippon
+title: "Papi Mariole"
+author: "Benoît Philippon"
 rating: 8
 read_date: 2024-04-05
 favorite: true

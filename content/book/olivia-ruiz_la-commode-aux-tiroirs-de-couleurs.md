@@ -1,8 +1,8 @@
 ---
 uuid: 678ea217-3749-4e91-9d45-687ea08c1fe7
 isbn: '9782253079651'
-title: La commode aux tiroirs de couleurs
-author: Olivia Ruiz
+title: "La commode aux tiroirs de couleurs"
+author: "Olivia Ruiz"
 rating: 7
 read_date: 2025-07-18
 tags:

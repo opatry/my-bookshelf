@@ -1,8 +1,8 @@
 ---
 uuid: f3e55580-9d62-4146-8a06-4854fb8f3623
 isbn: '9782756411187'
-title: Le Fou et l'Assassin, tome 1
-author: Robin Hobb
+title: "Le Fou et l'Assassin, tome 1"
+author: "Robin Hobb"
 rating: 7
 linked_books:
 - '9782756415055'

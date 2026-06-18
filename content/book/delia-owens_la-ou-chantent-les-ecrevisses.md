@@ -1,8 +1,8 @@
 ---
 uuid: bc8d50e5-7f31-4c30-9307-637579af3706
 isbn: '9791041412846'
-title: Là où chantent les écrevisses
-author: Delia Owens
+title: "Là où chantent les écrevisses"
+author: "Delia Owens"
 rating: 8
 read_date: 2024-03-18
 favorite: true

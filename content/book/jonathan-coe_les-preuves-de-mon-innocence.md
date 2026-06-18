@@ -1,8 +1,8 @@
 ---
 uuid: 0205ecd2-5d51-460b-a81d-40c0fd02629b
 isbn: '9782073102010'
-title: Les preuves de mon innocence
-author: Jonathan Coe
+title: "Les preuves de mon innocence"
+author: "Jonathan Coe"
 rating: 4
 read_date: 2025-10-20
 tags:

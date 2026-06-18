@@ -1,8 +1,8 @@
 ---
 uuid: 3576491e-48c1-4a40-b8df-d8096f00fcff
 isbn: '9782226197573'
-title: La Ligne noire
-author: Jean-Christophe Grangé
+title: "La Ligne noire"
+author: "Jean-Christophe Grangé"
 rating: 8
 social:
   babelio: '5293'

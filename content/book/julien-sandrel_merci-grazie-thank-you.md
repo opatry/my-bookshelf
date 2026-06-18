@@ -1,8 +1,8 @@
 ---
 uuid: 391828d9-99de-4e9b-88b4-197ad280c755
 isbn: '9782702183762'
-title: Merci, Grazie, Thank you
-author: Julien Sandrel
+title: "Merci, Grazie, Thank you"
+author: "Julien Sandrel"
 rating: 7
 read_date: 2025-09-09
 favorite: true

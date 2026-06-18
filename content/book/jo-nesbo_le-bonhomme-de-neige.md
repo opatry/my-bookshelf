@@ -1,8 +1,8 @@
 ---
 uuid: 79007088-f838-422c-86f9-0ea5b301ebf6
 isbn: '9782070786411'
-title: Le bonhomme de neige
-author: Jo Nesbø
+title: "Le bonhomme de neige"
+author: "Jo Nesbø"
 rating: 6
 read_date: 2021-07-30
 tags:

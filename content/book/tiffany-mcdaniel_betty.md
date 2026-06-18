@@ -1,8 +1,8 @@
 ---
 uuid: b5529048-ceb1-4a41-81c9-0ab67917d9a7
 isbn: '9782351788387'
-title: Betty
-author: Tiffany McDaniel
+title: "Betty"
+author: "Tiffany McDaniel"
 rating: 7
 read_date: 2025-11-29
 favorite: true

@@ -1,8 +1,8 @@
 ---
 uuid: 8d9163ca-2ddf-4169-8f28-044e659728cd
 isbn: '9782226233967'
-title: L'empire des loups
-author: Jean-Christophe Grangé
+title: "L'empire des loups"
+author: "Jean-Christophe Grangé"
 rating: 7
 social:
   sc: '477068'

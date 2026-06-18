@@ -1,8 +1,8 @@
 ---
 uuid: 17163713-b8a3-41d3-b883-463736cd67f6
 isbn: '9782879290782'
-title: L'Homme-dé
-author: Luke Rhinehart
+title: "L'Homme-dé"
+author: "Luke Rhinehart"
 rating: 5
 read_date: 2024-05-11
 tags:

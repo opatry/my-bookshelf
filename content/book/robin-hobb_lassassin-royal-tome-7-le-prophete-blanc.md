@@ -2,7 +2,7 @@
 uuid: d3d05f90-c60f-49fb-8e4b-8f89b1dff8ef
 isbn: '9782756406190'
 title: "L'Assassin royal, tome 7 : Le Prophète blanc"
-author: Robin Hobb
+author: "Robin Hobb"
 rating: 8
 social:
   sc: '445280'

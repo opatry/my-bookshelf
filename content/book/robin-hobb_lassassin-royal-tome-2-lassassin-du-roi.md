@@ -2,7 +2,7 @@
 uuid: 1fb831e2-b6d0-44fb-b66f-7529b79f452c
 isbn: '9782756406138'
 title: "L'Assassin royal, tome 2 : L'Assassin du roi"
-author: Robin Hobb
+author: "Robin Hobb"
 rating: 8
 social:
   sc: '141222'

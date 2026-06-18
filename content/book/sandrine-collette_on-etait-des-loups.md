@@ -1,8 +1,8 @@
 ---
 uuid: 3d6e826c-7877-4951-b363-e00a92a7390f
 isbn: '9782380200362'
-title: On était des loups
-author: Sandrine Collette
+title: "On était des loups"
+author: "Sandrine Collette"
 rating: 8
 read_date: 2025-09-30
 favorite: true

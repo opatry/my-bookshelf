@@ -1,8 +1,8 @@
 ---
 uuid: 35275683-8bea-4ee0-914e-3040ed6b9b75
 isbn: '9782702441589'
-title: 'Scott Manson, tome 2 : La main de Dieu'
-author: Philip Kerr
+title: "Scott Manson, tome 2 : La main de Dieu"
+author: "Philip Kerr"
 rating: 6
 read_date: 2022-04-30
 tags:

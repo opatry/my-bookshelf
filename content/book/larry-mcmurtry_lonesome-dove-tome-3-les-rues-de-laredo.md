@@ -1,8 +1,8 @@
 ---
 uuid: baa20b8f-edc7-49d5-a11e-abfb96d3ac23
 isbn: '9782351788332'
-title: 'Lonesome Dove, tome 3 : Les rues de Laredo'
-author: Larry McMurtry
+title: "Lonesome Dove, tome 3 : Les rues de Laredo"
+author: "Larry McMurtry"
 priority: 3
 tags:
 - Etats-Unis

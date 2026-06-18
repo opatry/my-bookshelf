@@ -1,8 +1,8 @@
 ---
 uuid: 30597577-33cd-4b30-b02f-6c7a8bd71e3c
 isbn: '9782290310830'
-title: Le fléau, tome 3
-author: Stephen King
+title: "Le fléau, tome 3"
+author: "Stephen King"
 rating: 8
 social:
   sc: '43799475'

@@ -1,8 +1,8 @@
 ---
 uuid: 66fc805f-fd60-4642-9625-35576ec99d42
 isbn: '9782743602673'
-title: American tabloid
-author: James Ellroy
+title: "American tabloid"
+author: "James Ellroy"
 rating: 7
 read_date: 2024-09-17
 tags:

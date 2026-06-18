@@ -1,8 +1,8 @@
 ---
 uuid: 892c54f4-ca74-4e1b-8c8e-28cad5f876a7
 isbn: '9782363391605'
-title: Fuir l'Eden
-author: Olivier Dorchamps
+title: "Fuir l'Eden"
+author: "Olivier Dorchamps"
 rating: 7
 read_date: 2025-02-01
 tags:

@@ -2,7 +2,7 @@
 uuid: aa6f8cdd-0db3-47fc-96f2-663309d95124
 isbn: '9782756406275'
 title: "L'Assassin royal, tome 10 : Serments et deuils"
-author: Robin Hobb
+author: "Robin Hobb"
 rating: 8
 social:
   sc: '428087'

@@ -2,7 +2,7 @@
 uuid: 0bc26116-6aae-49f4-a465-c849fdb1ecf1
 isbn: '9782756406176'
 title: "L'Assassin royal, tome 6 : La Reine solitaire"
-author: Robin Hobb
+author: "Robin Hobb"
 rating: 8
 social:
   sc: '117069'

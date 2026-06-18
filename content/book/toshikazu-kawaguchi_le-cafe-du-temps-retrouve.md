@@ -1,8 +1,8 @@
 ---
 uuid: de616ce3-0b13-4fc3-861e-f31b134bbb30
 isbn: '9782226480095'
-title: Le Café du temps retrouvé
-author: Toshikazu Kawaguchi
+title: "Le Café du temps retrouvé"
+author: "Toshikazu Kawaguchi"
 rating: 7
 read_date: 2023-08-02
 tags:

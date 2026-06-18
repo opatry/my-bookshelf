@@ -2,7 +2,7 @@
 uuid: c1204f0d-f1e5-43e1-93f2-f5b18d9a4063
 isbn: '9782756406114'
 title: "L'Assassin royal, tome 13 : Adieux et retrouvailles"
-author: Robin Hobb
+author: "Robin Hobb"
 rating: 8
 social:
   sc: '58070'

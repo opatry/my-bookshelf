@@ -1,8 +1,8 @@
 ---
 uuid: 732a22a3-3cf9-4203-88dc-ebaaf6d700f7
 isbn: '9782743640590'
-title: Après la chute
-author: Dennis Lehane
+title: "Après la chute"
+author: "Dennis Lehane"
 rating: 5
 read_date: 2023-07-01
 tags:

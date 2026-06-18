@@ -1,8 +1,8 @@
 ---
 uuid: 742d8540-f2b5-48ad-8920-76b690937ef9
 isbn: '9782373050165'
-title: La Source au bout du monde, tome 1
-author: William Morris
+title: "La Source au bout du monde, tome 1"
+author: "William Morris"
 rating: 5
 read_date: 2026-05-13
 tags:

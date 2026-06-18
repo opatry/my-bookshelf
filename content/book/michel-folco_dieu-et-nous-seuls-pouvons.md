@@ -1,8 +1,8 @@
 ---
 uuid: 1f832469-6a78-4a15-b8b8-dbecb86318e4
 isbn: '9782021140668'
-title: Dieu et nous seuls pouvons
-author: Michel Folco
+title: "Dieu et nous seuls pouvons"
+author: "Michel Folco"
 rating: 7
 read_date: 2025-04-26
 tags:

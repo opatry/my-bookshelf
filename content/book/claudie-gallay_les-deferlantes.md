@@ -1,8 +1,8 @@
 ---
 uuid: c5fa5b10-ff56-4266-b4df-985c10c2f0ca
 isbn: '9782841569342'
-title: Les Déferlantes
-author: Claudie Gallay
+title: "Les Déferlantes"
+author: "Claudie Gallay"
 rating: 8
 read_date: 2023-02-06
 favorite: true

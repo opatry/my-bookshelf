@@ -1,8 +1,8 @@
 ---
 uuid: 6b1533f9-f8fa-49d4-b2ac-25a784dd13f7
 isbn: '9782367936109'
-title: Comme un diamant dans ma mémoire
-author: Guy Gavriel Kay
+title: "Comme un diamant dans ma mémoire"
+author: "Guy Gavriel Kay"
 priority: 4
 tags:
 - Fantasy

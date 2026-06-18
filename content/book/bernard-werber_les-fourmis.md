@@ -1,8 +1,8 @@
 ---
 uuid: e31aa3ea-ea9e-4f47-945e-18e481bd19b8
 isbn: '9782253063339'
-title: Les Fourmis
-author: Bernard Werber
+title: "Les Fourmis"
+author: "Bernard Werber"
 rating: 8
 social:
   sc: '411948'

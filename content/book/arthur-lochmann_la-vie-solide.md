@@ -1,8 +1,8 @@
 ---
 uuid: ba7be1d5-a11e-4f1a-a008-a37675b928db
 isbn: '9782228927956'
-title: La vie solide
-author: Arthur Lochmann
+title: "La vie solide"
+author: "Arthur Lochmann"
 rating: 6
 read_date: 2021-08-01
 social:

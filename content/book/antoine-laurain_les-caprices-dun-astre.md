@@ -1,8 +1,8 @@
 ---
 uuid: 991b1f7d-f59b-4510-a126-ddcb098b50bd
 isbn: '9782080206169'
-title: Les Caprices d'un astre
-author: Antoine Laurain
+title: "Les Caprices d'un astre"
+author: "Antoine Laurain"
 rating: 6
 read_date: 2026-05-05
 tags:

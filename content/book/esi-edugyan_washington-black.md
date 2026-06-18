@@ -1,8 +1,8 @@
 ---
 uuid: 623adbb5-81ce-4394-9757-1561daabbcfc
 isbn: '9780525521433'
-title: Washington Black
-author: Esi Edugyan
+title: "Washington Black"
+author: "Esi Edugyan"
 rating: 6
 read_date: 2026-04-29
 tags:

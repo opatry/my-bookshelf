@@ -1,8 +1,8 @@
 ---
 uuid: 9a824516-27d1-4fac-bb64-9388bfdbf218
 isbn: '9782253194613'
-title: Au revoir là-haut
-author: Pierre Lemaitre
+title: "Au revoir là-haut"
+author: "Pierre Lemaitre"
 rating: 8
 read_date: 2024-04-28
 favorite: true

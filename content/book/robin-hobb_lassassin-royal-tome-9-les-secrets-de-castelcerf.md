@@ -2,7 +2,7 @@
 uuid: 81231a58-d7f4-4404-84fd-5ee25d75d366
 isbn: '9782756406039'
 title: "L'Assassin royal, tome 9 : Les Secrets de Castelcerf"
-author: Robin Hobb
+author: "Robin Hobb"
 rating: 8
 social:
   babelio: "6866"

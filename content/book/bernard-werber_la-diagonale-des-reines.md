@@ -1,8 +1,8 @@
 ---
 uuid: 5ea0ee9d-b0c6-4d3e-b52a-b7d1d05d6502
 isbn: '9791035411602'
-title: La diagonale des reines
-author: Bernard Werber
+title: "La diagonale des reines"
+author: "Bernard Werber"
 rating: 5
 read_date: 2024-08-19
 social:

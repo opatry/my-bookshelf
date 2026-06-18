@@ -1,8 +1,8 @@
 ---
 uuid: 05e28535-da16-46a3-81d8-cc69c46b4d2a
 isbn: '9780007395484'
-title: Windows on the World
-author: Frédéric Beigbeder
+title: "Windows on the World"
+author: "Frédéric Beigbeder"
 rating: 6
 social:
   sc: '161589'

@@ -1,8 +1,8 @@
 ---
 uuid: 518d2e0e-4b2e-4ce7-a9e6-67e8155e4328
 isbn: '9782878586862'
-title: Pars vite et reviens tard
-author: Fred Vargas
+title: "Pars vite et reviens tard"
+author: "Fred Vargas"
 rating: 8
 tags:
 - Policier

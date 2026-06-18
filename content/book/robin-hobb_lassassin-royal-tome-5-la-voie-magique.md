@@ -2,7 +2,7 @@
 uuid: f598f574-da6a-489a-bf8a-0c881cc475bd
 isbn: '9782756406091'
 title: "L'Assassin royal, tome 5 : La Voie magique"
-author: Robin Hobb
+author: "Robin Hobb"
 rating: 8
 social:
   babelio: '7214'

@@ -2,7 +2,7 @@
 uuid: 7aaab2d0-415a-4963-a1a9-2eae87b18526
 isbn: '9782221090268'
 title: "Le cycle d'Hypérion, tome 1 : Hypérion"
-author: Dan Simmons
+author: "Dan Simmons"
 rating: 6
 read_date: 2023-11-05
 tags:

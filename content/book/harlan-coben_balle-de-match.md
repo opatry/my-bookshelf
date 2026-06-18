@@ -1,8 +1,8 @@
 ---
 uuid: a0a45100-0e36-454c-8036-c69d9d56d547
 isbn: '9782266152679'
-title: Balle de match
-author: Harlan Coben
+title: "Balle de match"
+author: "Harlan Coben"
 rating: 7
 social:
   babelio: '3855'

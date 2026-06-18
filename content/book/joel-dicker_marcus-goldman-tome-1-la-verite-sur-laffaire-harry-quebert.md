@@ -2,7 +2,7 @@
 uuid: 7865ed43-6477-4c47-9b46-bdb49063b6cb
 isbn: '9782877068161'
 title: "Marcus Goldman tome 1 : La Vérité sur l'affaire Harry Quebert"
-author: Joël Dicker
+author: "Joël Dicker"
 rating: 6
 read_date: 2024-12-14
 tags:

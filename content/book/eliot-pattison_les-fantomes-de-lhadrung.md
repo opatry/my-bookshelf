@@ -1,8 +1,8 @@
 ---
 uuid: 3ee310d0-a6d4-40af-b3d2-bcda8162ea1a
 isbn: '9782264043290'
-title: Les fantômes de Lhadrung
-author: Eliot Pattison
+title: "Les fantômes de Lhadrung"
+author: "Eliot Pattison"
 rating: 8
 read_date: 2021-08-14
 tags:

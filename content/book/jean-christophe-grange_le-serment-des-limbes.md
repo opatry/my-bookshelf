@@ -1,8 +1,8 @@
 ---
 uuid: f784ac3e-dc41-40cd-8af8-d0fd89b3884e
 isbn: '9782226197320'
-title: Le serment des limbes
-author: Jean-Christophe Grangé
+title: "Le serment des limbes"
+author: "Jean-Christophe Grangé"
 rating: 7
 social:
   sc: '188341'

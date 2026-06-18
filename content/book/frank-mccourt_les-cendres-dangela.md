@@ -1,8 +1,8 @@
 ---
 uuid: e65998a4-b080-469a-b2ca-98c2038a70da
 isbn: '9782714475947'
-title: Les Cendres d'Angela
-author: Frank McCourt
+title: "Les Cendres d'Angela"
+author: "Frank McCourt"
 rating: 6
 read_date: 2025-04-17
 tags:

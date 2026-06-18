@@ -1,8 +1,8 @@
 ---
 uuid: '0452094b-38ce-4812-87ed-860027d7dc15'
 isbn: '9782264069702'
-title: Les étoiles s'éteignent à l'aube
-author: Richard Wagamese
+title: "Les étoiles s'éteignent à l'aube"
+author: "Richard Wagamese"
 rating: 8
 read_date: 2021-05-15
 favorite: true

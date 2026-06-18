@@ -1,8 +1,8 @@
 ---
 uuid: 3587e8d3-5adc-4f03-98e1-687acf4f47ce
 isbn: '9782070319015'
-title: 'H2G2, tome 1 : Le Guide du voyageur galactique'
-author: Douglas Adams
+title: "H2G2, tome 1 : Le Guide du voyageur galactique"
+author: "Douglas Adams"
 rating: 7
 tags:
 - Sci-fi

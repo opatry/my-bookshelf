@@ -1,8 +1,8 @@
 ---
 uuid: 1339e664-1002-4fd8-9739-f339607d7586
 isbn: '9782226493781'
-title: Le Barman du Ritz
-author: Philippe Collin
+title: "Le Barman du Ritz"
+author: "Philippe Collin"
 rating: 7
 favorite: true
 read_date: 2025-10-06

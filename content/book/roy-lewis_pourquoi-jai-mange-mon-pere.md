@@ -1,8 +1,8 @@
 ---
 uuid: 7a4a7fe1-6f76-4b71-b727-cb2f9d4caea3
 isbn: '9782330052867'
-title: Pourquoi j'ai mangé mon père
-author: Roy Lewis
+title: "Pourquoi j'ai mangé mon père"
+author: "Roy Lewis"
 rating: 7
 read_date: 2021-08-30
 social:

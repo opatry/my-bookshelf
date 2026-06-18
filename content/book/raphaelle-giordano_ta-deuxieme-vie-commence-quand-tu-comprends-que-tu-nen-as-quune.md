@@ -1,8 +1,8 @@
 ---
 uuid: 48fb28d0-6436-4541-80bc-f46540603e5e
 isbn: '9782212561166'
-title: Ta deuxième vie commence quand tu comprends que tu n'en as qu'une
-author: Raphaëlle Giordano
+title: "Ta deuxième vie commence quand tu comprends que tu n'en as qu'une"
+author: "Raphaëlle Giordano"
 rating: 6
 read_date: 2024-09-01
 tags:

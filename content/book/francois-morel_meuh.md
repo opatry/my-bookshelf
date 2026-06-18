@@ -1,8 +1,8 @@
 ---
 uuid: bf4e4541-0074-4443-8989-59f51892ea4c
 isbn: '9782266073608'
-title: Meuh !
-author: François Morel
+title: "Meuh !"
+author: "François Morel"
 rating: 6
 read_date: 2021-11-30
 social:

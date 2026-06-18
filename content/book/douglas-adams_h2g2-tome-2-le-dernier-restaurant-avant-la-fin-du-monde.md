@@ -1,8 +1,8 @@
 ---
 uuid: a8f15561-6975-48cb-b5dc-393ac857e8c3
 isbn: '9782070416158'
-title: 'H2G2, tome 2 : Le dernier restaurant avant la fin du monde'
-author: Douglas Adams
+title: "H2G2, tome 2 : Le dernier restaurant avant la fin du monde"
+author: "Douglas Adams"
 rating: 7
 tags:
 - Sci-fi

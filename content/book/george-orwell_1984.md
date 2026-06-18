@@ -1,8 +1,8 @@
 ---
 uuid: 03b14b05-0640-4b00-9e63-347d893a4537
 isbn: '9780547249643'
-title: '1984'
-author: George Orwell
+title: "1984"
+author: "George Orwell"
 rating: 8
 tags:
 - Dystopie

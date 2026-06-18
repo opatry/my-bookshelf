@@ -1,8 +1,8 @@
 ---
 uuid: 15e7ff81-f696-4b46-bddc-ea721dc8578b
 isbn: '9782267051872'
-title: 'Le Seigneur des Anneaux, tome 2 : Les deux tours'
-author: J.R.R. Tolkien
+title: "Le Seigneur des Anneaux, tome 2 : Les deux tours"
+author: "J.R.R. Tolkien"
 rating: 8
 tags:
 - Aventure

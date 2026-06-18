@@ -1,8 +1,8 @@
 ---
 uuid: bc5a700f-5fed-4a32-975d-b8e6a402a362
 isbn: '9782221190593'
-title: L'Affaire Léon Sadorski
-author: Romain Slocombe
+title: "L'Affaire Léon Sadorski"
+author: "Romain Slocombe"
 rating: 6
 read_date: 2024-01-30
 tags:
