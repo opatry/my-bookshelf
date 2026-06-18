@@ -313,19 +313,16 @@ def literary_map(books)
 
   max_count = buckets.map { |_, books| books.size }.max
 
-  lines = []
-
-  buckets.each do |decade, books|
+  buckets.map do |decade, books|
     count = books.size
     bar_size = ((count.to_f / max_count) * 30).round
 
     bar = "▓" * bar_size
-    label = "#{decade}s".ljust(7)
+    label = "#{decade}s\t"
 
-    lines << "#{label} #{bar} #{count}"
+    "#{label} #{bar} #{count}"
   end
-
-  lines.join("\n")
+  .join("\n")
 end
 
 def rating_map(books)
@@ -343,7 +340,7 @@ def rating_map(books)
     stars = "★" * rating
     empty = "☆" * (max - rating)
 
-    "#{stars}#{empty} │ #{bar.ljust(7)} #{count}"
+    "#{stars}#{empty}  #{bar} #{count}"
   end
   .join("\n")
 end

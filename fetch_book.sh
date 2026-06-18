@@ -197,8 +197,8 @@ else
 uuid: ${uuid}
 isbn: '${isbn}'
 REF: \"${book_query}\"
-title: ${title}
-author: ${author}
+title: \"${title}\"
+author: \"${author}\"
 priority: 1
 tags:
 - TBD
