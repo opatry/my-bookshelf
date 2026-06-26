@@ -7,9 +7,12 @@ origin=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd) || exit
 new_books=$(cd "${origin}/content/book" && git ls-files -o --exclude-standard --full-name)
 
 extract_metadata() {
-  metadata=$(grep "^${1}:\ *" < "${2}")
+  local metadata
+  metadata=$(grep "^${1}:[[:space:]]*" < "${2}")
   metadata="${metadata#"${1}: "}"
-  echo "${metadata//\"/}"
+  metadata="${metadata//\"/}"
+  metadata="${metadata//\'/}"
+  echo "${metadata}"
 }
 
 for book in ${new_books}; do
