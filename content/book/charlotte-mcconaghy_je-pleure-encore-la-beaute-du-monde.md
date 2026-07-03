@@ -3,7 +3,7 @@ uuid: 7f054277-ab65-4b75-abe1-0ecc58b27ea0
 isbn: '9782330186524'
 title: "Je pleure encore la beauté du monde"
 author: "Charlotte McConaghy"
-priority: 1
+ongoing: true
 tags:
 - Nature
 - Ecosse
