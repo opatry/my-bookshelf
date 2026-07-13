@@ -1,7 +1,7 @@
 ---
 uuid: 131151b9-612e-4be3-b63e-17ad83050fae
 isbn: '9782756406312'
-title: "Les Aventuriers de la mer, tome 7 : Le seigneur des Trois Règnes"
+title: "Les Aventuriers de la mer, tome 7 : Le Seigneur des Trois Règnes"
 author: "Robin Hobb"
 priority: 2
 tags:
