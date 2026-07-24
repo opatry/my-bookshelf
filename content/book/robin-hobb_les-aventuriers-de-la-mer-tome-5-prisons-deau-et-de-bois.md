@@ -3,7 +3,7 @@ uuid: d39ea24f-fbc2-49ed-b25c-12be0bbe8bd3
 isbn: '9782756406459'
 title: "Les Aventuriers de la mer, tome 5 : Prisons d'eau et de bois"
 author: "Robin Hobb"
-priority: 1
+priority: 1.2
 tags:
 - Aventure
 - Fantasy
