@@ -3,7 +3,8 @@ uuid: 0a801833-3b8a-4d6c-a76b-395e484e2e88
 isbn: '9782756406435'
 title: "Les Aventuriers de la mer, tome 4 : Brumes et tempêtes"
 author: "Robin Hobb"
-ongoing: true
+rating: 7
+read_date: 2026-07-26
 tags:
 - Aventure
 - Fantasy
