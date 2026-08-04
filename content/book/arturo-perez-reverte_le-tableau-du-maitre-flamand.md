@@ -3,7 +3,8 @@ uuid: 1c56ef4e-2da8-4a4f-af63-d7ce3e28f4f1
 isbn: '9782709656399'
 title: "Le Tableau du Maître flamand"
 author: "Arturo Pérez-Reverte"
-ongoing: true
+rating: 5
+read_date: 2026-08-04
 tags:
 - Thriller
 - Policier
