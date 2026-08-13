@@ -12,7 +12,7 @@ tags:
 social:
   sc: '454410'
   babelio: '7760'
-page_count: 346
+page_count: 461
 publication_year: 1994
 ---
 
