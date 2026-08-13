@@ -149,9 +149,9 @@ else
       description="$(jq -r '.volumeInfo.description' <<< "${selected_volume}")"
     fi
 
-    publication_year=$(jq -r '.items[].volumeInfo.publishedDate' <<< "${book_data}" | sort | head -n1)
-    publication_year=$(grep -oE '[0-9]{4}' <<< "${publication_year}" | head -n1)
-    page_count=$(jq -r '.volumeInfo.pageCount' <<< "${selected_volume}")
+    publication_year=$(jq -r '.items[].volumeInfo.publishedDate // empty' <<< "${book_data}" | sort | head -n1)
+    publication_year=$(grep -oE '[0-9]{4}' <<< "${publication_year}" | head -n1 || true)
+    page_count=$(jq -r '.volumeInfo.pageCount // empty' <<< "${selected_volume}")
 
     cover_full_url=$(jq -r .volumeInfo.imageLinks.thumbnail <<< "${selected_volume}")
     if [ "${cover_full_url}" = "null" ] || [ -z "${cover_full_url}" ]; then
