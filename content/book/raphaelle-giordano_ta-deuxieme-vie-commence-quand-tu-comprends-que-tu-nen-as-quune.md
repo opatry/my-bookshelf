@@ -7,7 +7,7 @@ rating: 6
 read_date: 2024-09-01
 tags:
 - Psychologie
-- Développement personel
+- Développement personnel
 - Feel-good
 social:
   babelio: '762475'
