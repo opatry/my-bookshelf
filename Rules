@@ -224,6 +224,7 @@ end
 compile '/book/**/*', rep: :feed do
   next unless @config[:feed_book_isbn].include?(item[:isbn])
   filter :erb
+  filter :french_typography if item[:extension] == 'md'
   filter :kramdown if item[:extension] == 'md'
   filter :html_compressor, type: item[:extension] unless @config[:dev]
 
@@ -248,6 +249,7 @@ end
 
 compile '/book/**/*' do
   filter :erb
+  filter :french_typography
   filter :kramdown
   filter :html_compressor, type: item[:extension] unless @config[:dev]
 
@@ -259,6 +261,7 @@ end
 
 compile '/tag/*' do
   filter :erb
+  filter :french_typography
   filter :kramdown
   filter :html_compressor, type: item[:extension] unless @config[:dev]
 
@@ -275,6 +278,7 @@ end
 
 compile '/**/*.md' do
   filter :erb
+  filter :french_typography
   filter :kramdown
 
   layout '/default.*'
