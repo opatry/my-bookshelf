@@ -11,6 +11,7 @@ class FrenchTypographyFilter < Nanoc::Filter
   def run(content, params = {})
     content
       .gsub('...', ELLIPSIS)
+      .gsub(/'/, '’')
       .gsub(/[ \t]+([;:!?])/, "#{NO_BREAK_SPACE}\\1")
   end
 end

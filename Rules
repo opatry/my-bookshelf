@@ -62,6 +62,10 @@ preprocess do
         end
       end
 
+      %i[title author].each do |key|
+        item[key] = item[key].gsub(/'/, '’')
+      end
+
       if @items["/cover/#{item[:isbn]}.*"].nil?
         missing_covers += 1
         query = CGI.escape("#{item[:title]} #{item[:author]}")
