@@ -150,7 +150,7 @@ def link_to_book(isbn, title = nil)
 end
 
 def sortable_label(label)
-  NaturalSort(I18n.transliterate(label.downcase).gsub(/\W/, ' ').gsub(/\s+/, ' ').strip)
+  NaturalSort.key(I18n.transliterate(label.downcase).gsub(/\W/, ' ').gsub(/\s+/, ' ').strip)
 end
 
 def pwa_screenshot_to_json(item)
