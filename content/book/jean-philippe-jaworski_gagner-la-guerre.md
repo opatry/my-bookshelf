@@ -11,7 +11,7 @@ page_count: 684
 publication_year: 2009
 ---
 
-Au bout de dix heures de combat, quand j’ai vu la flotte du Chah flamber d’un bout à l’autre de l’horizon, je me suis dit : "Benvenuto, mon fagot, t’as encore tiré tes os d’un rude merdier."
+Au bout de dix heures de combat, quand j’ai vu la flotte du Chah flamber d’un bout à l’autre de l’horizon, je me suis dit : _“Benvenuto, mon fagot, t’as encore tiré tes os d’un rude merdier.”_
 
 Sous le commandement de mon patron, le podestat Leonide Ducatore, les galères de la République de Ciudalia venaient d’écraser les escadres du Sublime Souverain de Ressine. La victoire était arrachée, et je croyais que le gros de la tourmente était passé. Je me gourais sévère.
 

@@ -16,7 +16,7 @@ page_count: 489
 publication_year: 2017
 ---
 
-"Nous avions à peine vingt ans et nous rêvions juste de liberté."
+_“Nous avions à peine vingt ans et nous rêvions juste de liberté.”_
 
 Ce rêve, la bande d’Hugo va l’exaucer en fuyant la petite ville de Providence pour traverser le pays à moto. Ensemble, ils vont former un clan où l’indépendance et l’amitié règnent en maîtres. Ensemble ils vont, pour le meilleur et pour le pire, découvrir que la liberté se paie cher.
 

@@ -18,7 +18,7 @@ page_count: 528
 publication_year: 2022
 ---
 
-_"Depuis quand tu veux être comme les autres ? Tu es une hors-la-loi.​"_
+_“Depuis quand tu veux être comme les autres ? Tu es une hors-la-loi.​”_
 
 Duchess a 13 ans, pas de père, et une mère à la dérive. Dans les rues de Cape Haven, petite ville côtière de Californie, elle ne souffre ni pitié ni compromis. Face à un monde d'adultes défaillants, elle relève la tête et fait front, tout en veillant sur son petit frère, Robin. Mais Vincent King, le responsable du naufrage de sa mère, vient de sortir de prison. Et son retour à Cape Haven ravive les tumultes du passé.  
 Quand cette menace se précise, Duchess n'a plus le choix : il va lui falloir engager la lutte pour sauver ce qui peut l'être, et protéger les siens.

@@ -14,8 +14,6 @@ page_count: 480
 publication_year: 2021
 ---
 
-La nouvelle passionnante aventure spatiale de l'auteur du best-seller Seul sur Mars, portée à l'écran avec Ryan Gosling.
-
 Ryland Grace est le seul survivant d'une expédition spatiale de la dernière chance. S'il échoue, c'est le sort de l'humanité et la Terre tout entière qui sera en péril. Mais pour l'instant, il ignore tout de cela. Il ne se souvient même pas de son propre nom, et encore moins des objectifs de sa mission. Il sait seulement qu'il est resté en sommeil très, très longtemps. Et il vient de se réveiller pour découvrir qu'il se trouve à des millions de kilomètres de chez lui, avec deux cadavres pour toute compagnie.
 
 Ryland se rend compte peu à peu qu'il doit faire face à une tâche impossible. Filant à travers l'espace, il lui faut trouver la clé d'un mystère scientifique insondable… et combattre un fléau qui laisse présager l'extinction de notre espèce.
