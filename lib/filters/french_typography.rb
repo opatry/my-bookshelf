@@ -13,6 +13,7 @@ class FrenchTypographyFilter < Nanoc::Filter
     content
       .gsub('...', ELLIPSIS)
       .gsub(/'/, '’')
+      .gsub(/([\s]*)-([\s])/, "\\1—\\2")
       .gsub(/[ \t]+([;!?])/, "#{NARROW_NO_BREAK_SPACE}\\1")
       .gsub(/[ \t]+([:])/, "#{NO_BREAK_SPACE}\\1")
   end

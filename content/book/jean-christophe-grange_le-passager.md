@@ -11,4 +11,4 @@ page_count: 750
 publication_year: 2011
 ---
 
-Je suis l'ombre. Je suis la proie. Je suis le tueur. Je suis la cible. Pour m'en sortir, une seule option : fuir l'autre. Mais si l'autre est moi-même ?…
+Je suis l'ombre. Je suis la proie. Je suis le tueur. Je suis la cible. Pour m'en sortir, une seule option : fuir l'autre. Mais si l'autre est moi-même ?

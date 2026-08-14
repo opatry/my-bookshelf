@@ -16,8 +16,8 @@ page_count: 590
 publication_year: 2013
 ---
 
-“Et puis, qu'est-ce que ça veut dire, différents ? C'est de la foutaise, ton histoire de torchons et de serviettes…
-Ce qui empêche les gens de vivre ensemble, c'est leur connerie, pas leurs différences…”
+_“Et puis, qu'est-ce que ça veut dire, différents ? C'est de la foutaise, ton histoire de torchons et de serviettes…  
+Ce qui empêche les gens de vivre ensemble, c'est leur connerie, pas leurs différences…”_
 
 Camille dessine. Dessinait plutôt, maintenant elle fait des ménages, la nuit. Philibert, aristo pur jus, héberge Franck, cuisinier de son état, dont l'existence tourne autour des filles, de la moto et de Paulette, sa grand-mère.
 
