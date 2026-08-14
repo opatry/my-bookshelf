@@ -5,6 +5,7 @@ require 'nokogiri'
 class FrenchTypographyFilter < Nanoc::Filter
   identifier :french_typography
 
+  NARROW_NO_BREAK_SPACE = "\u202F"
   NO_BREAK_SPACE = "\u00a0"
   ELLIPSIS = "\u2026"
 
@@ -12,6 +13,7 @@ class FrenchTypographyFilter < Nanoc::Filter
     content
       .gsub('...', ELLIPSIS)
       .gsub(/'/, '’')
-      .gsub(/[ \t]+([;:!?])/, "#{NO_BREAK_SPACE}\\1")
+      .gsub(/[ \t]+([;!?])/, "#{NARROW_NO_BREAK_SPACE}\\1")
+      .gsub(/[ \t]+([:])/, "#{NO_BREAK_SPACE}\\1")
   end
 end
