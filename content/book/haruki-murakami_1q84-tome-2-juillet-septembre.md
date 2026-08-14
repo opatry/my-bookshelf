@@ -16,7 +16,7 @@ page_count: 548
 publication_year: 2024
 ---
 
-Les choses qui restent enfermées dans notre coeur n'existent pas en ce monde. Mais c'est dans notre coeur, ce monde à part, qu'elles se construisent pour y vivre.
+Les choses qui restent enfermées dans notre cœur n'existent pas en ce monde. Mais c'est dans notre cœur, ce monde à part, qu'elles se construisent pour y vivre.
 Le Livre 1 a révélé l'existence du monde 1Q84.
 Certaines questions ont trouvé leur réponse.
 

@@ -21,7 +21,7 @@ publication_year: 2025
 
 Peter a 11 ans. Son père a quitté sa famille pour vivre seul dans un lieu qu’il tient secret. Pour toute explication, il a dit à sa femme que leur sécurité à tous les trois en dépendait. Mais, une nuit de tempête, il surgit chez eux, blessé, et les embarque dans un minivan, direction la Pennsylvanie.
 
-Confusément, Peter a toujours su que ce jour arriverait. Chaque weekend depuis deux ans, son père l’entraîne au tir sur cible, à l’endurance, au combat à mains nues… Et entre deux exercices physiques, il l’initie aux échecs, lui fait apprendre par coeur des stratégies, des numéros de téléphone, des codes…
+Confusément, Peter a toujours su que ce jour arriverait. Chaque weekend depuis deux ans, son père l’entraîne au tir sur cible, à l’endurance, au combat à mains nues… Et entre deux exercices physiques, il l’initie aux échecs, lui fait apprendre par cœur des stratégies, des numéros de téléphone, des codes…
 
 Menacé par des ennemis dont Peter ignore tout, son père a prévu jusqu’au moindre détail de leur exil. Malheureusement, le destin s’en mêle sous la forme d’un terrible accident. Peter et sa mère se retrouvent seuls pour affronter l’avenir, isolés dans une ferme en plein territoire amish, un monde hors de toute modernité.
 

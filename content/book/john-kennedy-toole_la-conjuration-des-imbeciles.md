@@ -12,5 +12,5 @@ page_count: 448
 publication_year: 1980
 ---
 
-À trente ans passés, Ignatus vit encore cloîtré chez sa mère, à La Nouvelle-Orléans. Harassée par ses frasques, celle-ci le somme de trouver du travail. C'est sans compter avec sa silhouette éléphantesque et son arrogance bizarre. Chef-d'oeuvre de la littérature américaine, La Conjuration des imbéciles offre le génial portrait d'un Don Quichotte yankee inclassable, et culte.
+À trente ans passés, Ignatus vit encore cloîtré chez sa mère, à La Nouvelle-Orléans. Harassée par ses frasques, celle-ci le somme de trouver du travail. C'est sans compter avec sa silhouette éléphantesque et son arrogance bizarre. Chef-d'œuvre de la littérature américaine, La Conjuration des imbéciles offre le génial portrait d'un Don Quichotte yankee inclassable, et culte.
 « On ne peut pas lire ce livre, l'un des plus drôles de l'histoire littéraire américaine, sans pleurer intérieurement tous ceux que Toole n'a pas écrits. »

@@ -16,6 +16,6 @@ page_count: 352
 publication_year: 2023
 ---
 
-Homme ou femme, jeune ou vieux, salarié ou retraité… ils sont cinq à franchir le pas de la petite bibliothèque tenue par Sayuri Komachi en plein coeur de Tokyo. Leur point commun: ils sont au croisement de leur vie. A chacun Sayuri Komachi, énigmatique bibliothécaire attentive aux autres, proposera un ouvrage totalement inattendu, bien loin de celui qu'ils croyaient être venus chercher.
+Homme ou femme, jeune ou vieux, salarié ou retraité… ils sont cinq à franchir le pas de la petite bibliothèque tenue par Sayuri Komachi en plein cœur de Tokyo. Leur point commun: ils sont au croisement de leur vie. A chacun Sayuri Komachi, énigmatique bibliothécaire attentive aux autres, proposera un ouvrage totalement inattendu, bien loin de celui qu'ils croyaient être venus chercher.
 Mais ce choix ne relève pas du hasard, ce livre se révèle comme le jalon qui leur permettra de changer de vie.
 Sayuri Komachi dévoile à chaque lecteur le pouvoir de la lecture et l'importance qu'une personne attentive et à l'écoute peut avoir sur le destin de chacun d'entre nous.
