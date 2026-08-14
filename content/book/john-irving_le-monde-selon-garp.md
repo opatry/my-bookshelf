@@ -17,7 +17,7 @@ page_count: 680
 publication_year: 1978
 ---
 
-Alors qu'en 1943, face à une contraception défaillante, le souci de bien des femmes reste d'avoir un homme sans avoir d'enfant, la préoccupation de l'excentrique Jenny est d'avoir un enfant et surtout pas d'homme. C'est ainsi qu'elle jette son dévolu sur le sergent technicien Garp, « opérationnellement » intact en dépit de son cerveau endommagé. De cette éphémère union naîtra S.T. Garp. Impossible de résumer ce roman débordant d'humour et d'énergie peuplé de personnages passionés, foisonnant de péripéties délirantes.
+Alors qu'en 1943, face à une contraception défaillante, le souci de bien des femmes reste d'avoir un homme sans avoir d'enfant, la préoccupation de l'excentrique Jenny est d'avoir un enfant et surtout pas d'homme. C'est ainsi qu'elle jette son dévolu sur le sergent technicien Garp, « opérationnellement » intact en dépit de son cerveau endommagé. De cette éphémère union naîtra S.T. Garp. Impossible de résumer ce roman débordant d'humour et d'énergie peuplé de personnages passionnés, foisonnant de péripéties délirantes.
 
 Le Monde selon Garp, c'est d'abord le récit des rapports orageux et tendres entre une mère célèbre, féministe malgré elle, et son fils écrivain, tous deux individualistes forcenés.
 

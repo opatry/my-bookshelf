@@ -12,4 +12,4 @@ publication_year: 2003
 ---
 
 Vous connaissez la fin: tout le monde meurt. Certes la mort arrive à pas mal de gens, un jour ou l'autre. L'originalité de cette histoire, c'est que tous ses personnages vont mourir en même temps et au même endroit. Est-ce que la mort crée des liens entre les êtres ?
-Le seul moyen de savoir ce qui s'est passé dans le restaurant situé au 107éme étage de la tour nord du World Trade Center, le 11 septembre 2001, entre 8h30 et 10h29, c'est de l'inventer.
+Le seul moyen de savoir ce qui s'est passé dans le restaurant situé au 107ème étage de la tour nord du World Trade Center, le 11 septembre 2001, entre 8h30 et 10h29, c'est de l'inventer.
