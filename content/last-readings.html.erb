@@ -25,6 +25,7 @@ else
     <% (1..12).each do |month_num| %>
       <th><%= I18n.t('date.month_names')[month_num].slice(0, 3) %></th>
     <% end %>
+    <th></th>
     </tr>
   </thead>
   <tbody>
@@ -73,6 +74,11 @@ else
     <% end %>
     </td>
     <% end %>
+    <td class="calendar-cell">
+    <a href="<%= @items[calendar_year_item_identifier(year)].path %>" title="Voir le calendrier des lectures de <%= year %>">
+      <%= lucide_icon_svg('calendar-days', params: { size: 16, class: 'icon' }) %>
+    </a>
+    </td>
   </tr>
 <% end %>
   </tbody>

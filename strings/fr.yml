@@ -17,6 +17,15 @@ fr:
     - octobre
     - novembre
     - décembre
+    day_names:
+    - 
+    - lundi
+    - mardi
+    - mercredi
+    - jeudi
+    - vendredi
+    - samedi
+    - dimanche
   last_readings:
     readings_count_in_year:
       zero: "Aucun livre lu en %{year}"
@@ -27,10 +36,10 @@ fr:
       one: "Voir le livre lu en %{month} %{year}"
       other: "Voir les %{book_count} livres lus en %{month} %{year}"
     books_count:
-      zero: "%{count} livre"
+      zero: "aucun livre"
       one: "%{count} livre"
       other: "%{count} livres"
     pages_count:
-      zero: "%{formatted_count} page"
+      zero: "aucune page"
       one: "%{formatted_count} page"
       other: "%{formatted_count} pages"

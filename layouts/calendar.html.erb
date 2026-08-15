@@ -1,0 +1,86 @@
+<h2>Calendrier des lectures de <%= @item[:year] %> <span class="title-more"><a href="<%= @items['/last-readings.*'].path %>">Dernières lectures…</a></span></h2>
+<% if @item[:books].nil? || @item[:books].empty? %>
+<%= yield %>
+<% else %>
+<%
+  year = @item[:year]
+  books_by_month = @item[:books]
+    .map { |book_identifier| @items[book_identifier] }
+    .group_by { |book| book[:read_date].month }
+%>
+
+<% (1..12).each do |month| %>
+  <%
+    break if year == Date.today.year && month > Date.today.month
+    books_in_month = books_by_month[month] || []
+    first_day = Date.new(year, month, 1)
+    days_in_month = Date.new(year, month, -1).day
+    # wday: Sunday=0..Saturday=6 -> shift so Monday=0..Sunday=6
+    start_offset = (first_day.wday + 6) % 7
+    weeks = ((start_offset + days_in_month) / 7.0).ceil
+    book_count_in_month = books_in_month.size
+    page_count_in_month = books_in_month.sum { |book| book[:page_count] || 0 }
+    count_label = if book_count_in_month == 0 || page_count_in_month == 0
+                    "Aucune lecture"
+                  else
+                    book_count_in_month_label = I18n.t('last_readings.books_count', count: book_count_in_month)
+                    page_count_in_month_label = I18n.t(
+                      'last_readings.pages_count',
+                      count: page_count_in_month,
+                      formatted_count: ActiveSupport::NumberHelper::number_to_delimited(page_count_in_month, delimiter: I18n.t('number.format.delimiter'))
+                    )
+                    "#{book_count_in_month_label}, #{page_count_in_month_label}"
+                  end
+  %>
+  <div id="y<%= year %>-m<%= month %>" class="month-block">
+    <h3><%= I18n.t('date.month_names')[month].capitalize %>&nbsp;<span class="book-count">(<%= count_label %>)</span> <span class="title-more"><a href="#" title="Retour en haut de page">↑</a></span></h3>
+
+    <table class="month-table">
+      <thead>
+        <tr>
+          <% 7.times do |day_index| %>
+            <th><%= I18n.t('date.day_names')[day_index + 1][0...3] %></th>
+          <% end %>
+        </tr>
+      </thead>
+      <tbody>
+        <% weeks.times do |week_index| %>
+          <tr>
+            <% 7.times do |day_index| %>
+              <%
+                day_number = week_index * 7 + day_index - start_offset + 1
+                is_valid_day   = day_number.between?(1, days_in_month)
+                day = Date.new(year, month, day_number) if is_valid_day
+                day_books  = books_in_month.select { |book| book[:read_date] == day }
+              %>
+              <td class="day-cell <%= 'invalid-day' unless is_valid_day %>">
+                <% if is_valid_day %>
+                  <% day_books.each do |book| %>
+                    <%
+                      cover = @items["/cover/#{book[:isbn]}.*"]
+                      raise "Missing cover for book: #{book[:isbn]}" unless cover
+                    %>
+                    <div class="book-entry">
+                      <a href="<%= book.path %>" title="<%= book[:title] %> de <%= book[:author] %>">
+                        <img src="<%= cover.path(rep: :medium) %>" width="<%= cover["width_medium"] %>"  alt="Couverture du livre <%= item[:title] %> de <%= item[:author] %>" class="book-cover-resp" />
+                        <span class="rating-overlay">
+                          <%= star_svg(filled: true, size: 12) %> <%= book[:rating] %>
+                          <% if book[:favorite] %>
+                            <%= heart_svg(size: 12) %>
+                          <% end %>
+                        </span>
+                      </a>
+                    </div>
+                  <% end %>
+                  <span class="day-number"><%= day_number %></span>
+                <% end %>
+              </td>
+            <% end %>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+<% end %>
+
+<% end %>

@@ -41,6 +41,7 @@ preprocess do
   end
 
   generate_tag_items
+  generate_calendar_items
 
   missing_covers = 0
 
@@ -273,6 +274,18 @@ compile '/tag/*' do
   layout '/default.*'
 
   write "#{item.identifier.without_exts}.html"
+end
+
+compile '/calendar/*' do
+  filter :erb
+  filter :french_typography
+  filter :kramdown
+  filter :html_compressor, type: item[:extension] unless @config[:dev]
+
+  layout '/calendar.*'
+  layout '/default.*'
+
+  write "/#{item[:year]}.html"
 end
 
 compile '/api/v1/*' do

@@ -571,6 +571,18 @@ p {
   transform: scale(1.05);
 }
 
+.book-cover-resp {
+  width: 75px;
+  max-height: 110px;
+}
+
+@media (max-width: 750px) {
+  .book-cover-resp {
+    width: 30px;
+    max-height: 50px;
+  }
+}
+
 .book-info {
   margin: 0 .5em;
   /* allow child items to position (last item stick at bottom) */
@@ -638,7 +650,21 @@ p {
   border-radius: 8px;
 }
 
-@media screen and (max-width: 675px) {
+.book-cover {
+  width: 150px;
+  float: left;
+  margin-right: 24px;
+  border-radius: 8px;
+}
+
+@media (max-width: 750px) {
+  .book-cover {
+    width: 100px;
+    height: auto;
+    margin-right: 12px;
+    border-radius: 4px;
+  }
+
   figure.quote {
     margin-inline-start: 20px;
     margin-inline-end: 20px;
@@ -691,6 +717,7 @@ blockquote::after {
 }
 
 .calendar-cell {
+  text-align: center;
   vertical-align: middle;
 }
 
@@ -848,6 +875,7 @@ blockquote::after {
 .calendar th {
   text-align: center;
   padding: .5em;
+  min-width: 24px;
 }
 .calendar td {
   padding: 5px 0;
@@ -968,4 +996,52 @@ blockquote::after {
 
 .book-tags a {
   border: 0 none;
+}
+
+.month-table tbody tr:hover { background-color: initial; }
+.month-table td {
+  width: 14.28%;
+  height: 110px;
+  padding: 0;
+  border: 1px solid rgba(0, 0, 0, .06);
+  overflow: hidden;
+}
+@media (max-width: 750px) {
+  .month-table td { height: 50px; }
+}
+
+.month-table td .book-cover-resp {
+   float: left;
+}
+.month-table .book-cover-resp {
+  width: auto;
+  height: 100%;
+}
+.day-cell { position: relative; }
+.invalid-day { background-color: rgba(0, 0, 0, .025); }
+
+.rating-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-weight: 700;
+  background-color: rgba(0, 0, 0, .6);
+  color: white;
+  padding: 4px 8px;
+  border-bottom-right-radius: 3px;
+}
+@media (max-width: 750px) {
+  .rating-overlay { display: none; }
+}
+
+.month-table th { text-align: center; padding: 4px; }
+.day-number {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: .9em;
+  color: rgba(0, 0, 0, .6);
+  background-color: rgb(255, 255, 255);
+  padding: 2px 4px;
+  border-top-left-radius: 3px;
 }

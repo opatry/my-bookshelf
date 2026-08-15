@@ -262,7 +262,7 @@ end
 
 def generate_tag_items
   all_tags.each do |tag, books|
-    # item's content is used as fallback when no post can be found.
+    # item's content is used as fallback when no book can be found.
     @items.create("
 Aucun livre n'est étiqueté \"<%= @item[:title] %>\".
 
@@ -270,7 +270,6 @@ Voir la liste des <%= link_to('autres étiquettes', @items['/all-tags.*']) %>.
       ", {
         title: tag,
         tag: tag_slug(tag),
-        layout: 'tags',
         # can't store item ref, from the preprocess block, the item view isn't suitable for future use
         # such as compiled_content, path, reps and so on.
         # only store identifier and request item from identifier at call site
@@ -278,6 +277,29 @@ Voir la liste des <%= link_to('autres étiquettes', @items['/all-tags.*']) %>.
                     .map { |p| p.identifier.to_s },
         extension: 'md'
       }, Nanoc::Identifier.new(tag_item_identifier(tag))
+    )
+  end
+end
+
+def calendar_year_item_identifier(year)
+  "/calendar/#{year}.*"
+end
+
+def generate_calendar_items
+  books_by_year = last_books.group_by { |book| book[:read_date].year }
+  books_by_year.each do |year, books|
+    # item's content is used as fallback when no book can be found.
+    @items.create("
+Aucun livre n'a été lu en <%= @item[:year] %>.
+      ", {
+        title: "Calendrier des lectures de #{year}",
+        year: year,
+        # can't store item ref, from the preprocess block, the item view isn't suitable for future use
+        # such as compiled_content, path, reps and so on.
+        # only store identifier and request item from identifier at call site
+        books: books.map { |p| p.identifier.to_s },
+        extension: 'md'
+      }, Nanoc::Identifier.new(calendar_year_item_identifier(year))
     )
   end
 end
