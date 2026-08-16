@@ -1,4 +1,4 @@
-<h2>Calendrier des lectures de <%= @item[:year] %> <span class="title-more"><a href="<%= @items['/last-readings.*'].path %>">Dernières lectures…</a></span></h2>
+<h1>Calendrier des lectures de <%= @item[:year] %> <span class="title-more"><a href="<%= @items['/last-readings.*'].path %>">Dernières lectures…</a></span></h1>
 <% if @item[:books].nil? || @item[:books].empty? %>
 <%= yield %>
 <% else %>
@@ -33,7 +33,7 @@
                   end
   %>
   <div id="y<%= year %>-m<%= month %>" class="month-block">
-    <h3><%= I18n.t('date.month_names')[month].capitalize %>&nbsp;<span class="book-count">(<%= count_label %>)</span> <span class="title-more"><a href="#" title="Retour en haut de page">↑</a></span></h3>
+    <h2><%= I18n.t('date.month_names')[month].capitalize %>&nbsp;<span class="book-count">(<%= count_label %>)</span> <span class="title-more"><a href="#" title="Retour en haut de page">↑</a></span></h2>
 
     <table class="month-table">
       <thead>

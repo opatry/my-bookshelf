@@ -1,4 +1,4 @@
-<h2>Les livres étiquetés "<%= @item[:title] %>" <span class="title-more"><%= link_to('🏷️ Toutes les étiquettes', @items['/all-tags.*']) %></span></h2>
+<h1>Les livres étiquetés "<%= @item[:title] %>" <span class="title-more"><%= link_to('🏷️ Toutes les étiquettes', @items['/all-tags.*']) %></span></h1>
 <% if @item[:books].nil? || @item[:books].empty? %>
 <%= yield %>
 <% else %>
