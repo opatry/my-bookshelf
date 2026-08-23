@@ -3,7 +3,8 @@ uuid: 5eb2bb17-0b6e-444a-b81e-afe64a8bba71
 isbn: '9791041411948'
 title: "Déjanté"
 author: "Hugo Hamilton"
-ongoing: true
+rating: 6
+read_date: 2026-08-23
 tags:
 - Irlande
 - Policier
