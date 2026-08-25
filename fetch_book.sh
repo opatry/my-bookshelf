@@ -132,7 +132,16 @@ else
         'https://www.googleapis.com/books/v1/volumes' \
         -H 'Accept: application/json')
 
+  if jq -e 'has("error")' <<< "${book_data}" >/dev/null 2>&1; then
+    code=$(jq -r '.error.code' <<< "${book_data}")
+    message=$(jq -r '.error.message' <<< "${book_data}")
+    echo "Error while fetching book information: ${code} ${message}"
+    exit 1
+  fi
+
   isbn=""
+  publication_year=""
+  page_count=""
   if [ "$(jq -r .totalItems <<< "${book_data}")" -gt 0 ]; then
     selected_volume=$(jq -r 'first(.items[] | select(.volumeInfo.industryIdentifiers[] | select(.type == "ISBN_13")))' <<< "${book_data}")
     title="$(jq -r .volumeInfo.title <<< "${selected_volume}")"
@@ -149,9 +158,14 @@ else
       description="$(jq -r '.volumeInfo.description' <<< "${selected_volume}")"
     fi
 
-    publication_year=$(jq -r '.items[].volumeInfo.publishedDate // empty' <<< "${book_data}" | sort | head -n1)
+    publication_year=$(jq -r '.items[].volumeInfo.publishedDate' <<< "${book_data}" | sort | head -n1)
     publication_year=$(grep -oE '[0-9]{4}' <<< "${publication_year}" | head -n1 || true)
-    page_count=$(jq -r '.volumeInfo.pageCount // empty' <<< "${selected_volume}")
+    echo "publication_year=$publication_year"
+    page_count=$(jq -r '.volumeInfo.pageCount' <<< "${selected_volume}")
+    if [ "${page_count}" = "null" ] || [ -z "${page_count}" ]; then
+      page_count=""
+    fi
+    echo "page_count=$page_count"
 
     cover_full_url=$(jq -r .volumeInfo.imageLinks.thumbnail <<< "${selected_volume}")
     if [ "${cover_full_url}" = "null" ] || [ -z "${cover_full_url}" ]; then
