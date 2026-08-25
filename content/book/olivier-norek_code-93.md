@@ -3,7 +3,8 @@ uuid: c36b2dbc-32d9-4986-be8b-a640fa4e056c
 isbn: '9782749919645'
 title: "Code 93"
 author: "Olivier Norek"
-ongoing: true
+rating: 7
+read_date: 2026-08-25
 tags:
 - Policier
 - Famille
