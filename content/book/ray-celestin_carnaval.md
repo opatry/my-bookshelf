@@ -21,6 +21,8 @@ Un premier roman exceptionnel, basé sur des faits réels survenus à la Nouvell
 
 Tensions raciales, corruption, vaudou, jazz et mafia : Ray Celestin a puisé l'inspiration dans cette véritable série de meurtres qui ont enflammé La Nouvelle-Orléans. Il nous offre un premier roman inoubliable, au suspense omniprésent, doublé d'un portrait de la ville d'un réalisme peu commun. Depuis L'Aliéniste de Caleb Carr, on n'avait jamais lu ça !
 
+### À propos
+
 <%= quote_markup(
   text: "Un thriller exaltant, qui fait son chemin vers un dénouement bluffant avec toute la grâce et le panache d'une fanfare de La Nouvelle-Orléans. C'est à la fois un premier roman exceptionnel et la promesse de nombreux livres passionnants.",
   author: "The Guardian"

@@ -20,6 +20,8 @@ L’hiver est froid et dur en Laponie. À Kautokeino, un grand village sami au m
 
 Dans une atmosphère à la Fargo, au milieu d’un paysage incroyable, des personnages attachants et forts nous plongent aux limites de l’hypermodernité et de la tradition d’un peuple luttant pour sa survie culturelle. Un thriller magnifique et prenant, écrit par un auteur au style direct et vigoureux, qui connaît bien la région dont il parle.
 
+### À propos
+
 <%= quote_markup(
   text: "Palpitant voyage sur des terres sauvages et verglacées à la rencontre d’un peuple luttant pour préserver son identité.",
   author: "Le Figaro Magazine"

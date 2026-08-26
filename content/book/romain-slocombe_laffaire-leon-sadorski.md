@@ -19,6 +19,8 @@ Le pire des salauds, le meilleur des enquêteurs. Avril 1942. Au sortir d'un hiv
 
 Après le succès de Monsieur le commandant, Romain Slocombe nous entraîne dans les abîmes de la collaboration et de la mauvaise conscience française. 
 
+### À propos
+
 <%= quote_markup(
   text: "Slocombe offre au polar un immense roman qui résonne avec notre Histoire. Grandiose.",
   author: "Benoît Minville, auteur de Rural noir, libraire Fnac Défense"

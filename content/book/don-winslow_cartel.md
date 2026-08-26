@@ -21,6 +21,8 @@ publication_year: 2016
 
 Dix ans après La Griffe du chien, Don Winslow revient avec un livre encore plus fort sur la montée en puissance des narco-empires. 2004. Adan Barrera, incarnation romanesque d'El Chapo, ronge son frein dans une prison fédérale de Californie, tandis qu'Art Keller, l'ex-agent de la DEA qui a causé sa chute, veille sur les abeilles dans un monastère. Quand Barrera s'échappe, reprend les affaires en main et met la tête de Keller à prix, la CIA et les Mexicains sortent l'Américain de sa retraite : lui seul connaît intimement le fugitif. La guerre de la drogue reprend de plus belle entre les différentes organisations, brillamment orchestrée par Barrera qui tire toutes les ficelles : la police, l'armée et jusqu'aux plus hauts fonctionnaires mexicains sont à sa solde. Alors que la lutte pour le contrôle de tous les cartels fait rage, avec une violence inouïe, Art Keller s'emploie à abattre son ennemi de toujours. Jusqu'où ira cette vendetta ?
 
+### À propos
+
 <%= quote_markup(
   text: "Le Guerre et Paix des romans sur la drogue.",
   author: "James Ellroy"

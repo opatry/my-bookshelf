@@ -20,6 +20,8 @@ Scott Manson, l'entraîneur du club de football de London City, se rend à Athè
 
 Après <%= link_to_book('9782702441411') %>, Philip Kerr nous emporte une nouvelle fois dans les méandres du football international, un monde où le vice et la violence sont maîtres du jeu.
 
+### À propos
+
 <%= quote_markup(
   text: "Une série drôlement grinçante qui allie crime et ballon rond… Un cocktail de suspense et d'ironie !",
   author: "Paris Match"

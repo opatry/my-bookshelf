@@ -21,6 +21,8 @@ Dans ce 4 e tome de la saga maritime française des Aventures de Gilles Belmonte
 
 Comme dans les précédents opus, rebondissements et personnages hauts en couleur jalonnent cette épopée, portée par son ton fluide et sa précision historique.
 
+### À propos
+
 <%= quote_markup(
   text: "Nous tenons notre Forester !",
   author: "Patrick Poivre d'Arvor – Vive les livres"

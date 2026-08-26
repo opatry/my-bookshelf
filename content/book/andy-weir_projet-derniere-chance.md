@@ -20,6 +20,8 @@ Ryland se rend compte peu à peu qu'il doit faire face à une tâche impossible.
 
 Alors que chaque minute compte et que des années-lumière le séparent de l'être humain le plus proche, il est seul pour relever cet incroyable défi… Mais l'est-il vraiment ?
 
+### À propos
+
 <%= quote_markup(
   text: "Un livre qui aurait ravi Robert A. Heinlein et Isaac Asimov.",
   author: "George R.R. Martin"
