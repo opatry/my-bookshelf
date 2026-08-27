@@ -16,7 +16,7 @@ page_count: 310
 publication_year: 1996
 ---
 
-A coup sûr, le premier des Pibrac n'avait pas la vocation.
+À coup sûr, le premier des Pibrac n'avait pas la vocation.
 
-Si le seigneur de Bellerocaille, dans l'Aveyron, n'avait eu prestement besoin d'un exécuteur, si Pibrac n'avait eu à choisir entre cet état et les galères, nul doute que lui même et sa descendance n'eussent point arboré la devise de ceux qu'on nomme familièrement les "bourreaux" : _Dieu et nous seuls pouvons_.
+Si le seigneur de Bellerocaille, dans l'Aveyron, n'avait eu prestement besoin d'un exécuteur, si Pibrac n'avait eu à choisir entre cet état et les galères, nul doute que lui-même et sa descendance n'eussent point arboré la devise de ceux qu'on nomme familièrement les "bourreaux" : _Dieu et nous seuls pouvons_.
 

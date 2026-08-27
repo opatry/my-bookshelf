@@ -20,6 +20,6 @@ Les choses qui restent enfermées dans notre cœur n'existent pas en ce monde. M
 Le Livre 1 a révélé l'existence du monde 1Q84.
 Certaines questions ont trouvé leur réponse.
 
-D'autres subsistent : qui sont les Little People ? Comment se feraient-ils un chemin vers le monde réel ? Pourquoi deux lunes dans le ciel ? Et la chrysalide de l'air, est-elle ce lieu ou sommeille notre double ?
+D'autres subsistent : qui sont les Little People ? Comment se feraient-ils un chemin vers le monde réel ? Pourquoi deux lunes dans le ciel ? Et la chrysalide de l'air, est-elle ce lieu où sommeille notre double ?
 Ceux qui s'aiment ne sont jamais seuls.
 Le destin de Tengo et d'Aomamé est en marche.

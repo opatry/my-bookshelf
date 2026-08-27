@@ -18,4 +18,4 @@ publication_year: 1898
 
 Ils sont là.  
 Les envahisseurs. Les engloutisseurs de mondes.  
-Fumée noire, herbe rouge, rayons ardents : ils ne reculeront devant rien pour coloniser la planète. Voraces. Tentaculaires. Impitoyables. Du haut de leurs tripodes, ils foulent au pied toute civilisation, toute vie humaine. Face au ravage, l’Homme ne peut rien. Sinon devenir fou. Fuir. Et attendre. Que la nature, comme toujours, reprenne ses droits.
+Fumée noire, herbe rouge, rayons ardents : ils ne reculeront devant rien pour coloniser la planète. Voraces. Tentaculaires. Impitoyables. Du haut de leurs tripodes, ils foulent aux pieds toute civilisation, toute vie humaine. Face au ravage, l’Homme ne peut rien. Sinon devenir fou. Fuir. Et attendre. Que la nature, comme toujours, reprenne ses droits.

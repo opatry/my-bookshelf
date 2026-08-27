@@ -19,4 +19,4 @@ _“Allez savoir ce qui se passe dans la tête d’un joueur.”_
 
 Cette tragique et folle histoire, Amélie la raconte avec son habituelle alacrité. Si noires que soient ses visions, si vives ses critiques de notre société de faussaires, elle sait danser avec elles. Il y a, bien sûr, un peu de magie là-dedans.
 
-Un anguleux jeu de miroirs pour un roman codé très noir, à l'image de son hauteur.
+Un anguleux jeu de miroirs pour un roman codé très noir, à l'image de son auteur.

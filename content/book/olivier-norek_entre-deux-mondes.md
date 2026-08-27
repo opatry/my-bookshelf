@@ -26,7 +26,7 @@ Adam a découvert en France un endroit où l'on peut tuer sans conséquences.
 ) %>
 
 <%= quote_markup(
-  text: "Un electrochoc, un excellent polar et un témoignage boulversant. Personnages attachants, suspense, écriture fluide et efficace, ce polar est aussi un récit salutaire dont personne ne peut sortir indemne…",
+  text: "Un électrochoc, un excellent polar et un témoignage bouleversant. Personnages attachants, suspense, écriture fluide et efficace, ce polar est aussi un récit salutaire dont personne ne peut sortir indemne…",
   author: "Sandrine Bajos, Le Parisien"
 ) %>
 

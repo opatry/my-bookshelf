@@ -15,7 +15,7 @@ page_count: 272
 publication_year: 2002
 ---
 
-Dans les années trente, Arturo Bandini, fils d' immigrés italiens, quitte le Colorado pour l'Eldorado, Los Angeles, avec son unique roman en poche et un rêve : devenir un écrivain reconnu. Vénérant les femmes et la littérature, il débarque dans une chambre d'hôtel miteuse, prêt à saisir la vie à bras-le-corps. Une errance sublime parmi les laissés-pour-compte du rêve américain.
+Dans les années trente, Arturo Bandini, fils d'immigrés italiens, quitte le Colorado pour l'Eldorado, Los Angeles, avec son unique roman en poche et un rêve : devenir un écrivain reconnu. Vénérant les femmes et la littérature, il débarque dans une chambre d'hôtel miteuse, prêt à saisir la vie à bras-le-corps. Une errance sublime parmi les laissés-pour-compte du rêve américain.
 
 ### À propos
 

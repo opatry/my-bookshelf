@@ -18,7 +18,7 @@ publication_year: 2021
 ---
 
 Tout juste rentré du Vietnam, le jeune adjoint Walt Longmire participe pour la première fois à l’excursion de l’Association des shérifs du Wyoming à bord du Western Star, train à vapeur légendaire de la conquête de l’Ouest.
-Une bonne occasion de resserrer les liens entre collègues en buvant du bourbon. Très vite, les langues se délient et Walt a vent de meurtres non-élucidés. Elément troublant, certains shérifs manifestent une mauvaise volonté évidente à répondre à ses questions.
+Une bonne occasion de resserrer les liens entre collègues en buvant du bourbon. Très vite, les langues se délient et Walt a vent de meurtres non-élucidés. Élément troublant, certains shérifs manifestent une mauvaise volonté évidente à répondre à ses questions.
 Walt ne se doute évidemment pas qu’il est sur le point de faire l’une des rencontres les plus dangereuses de sa vie. Et voilà que quarante ans plus tard, les échos de cette ancienne affaire résonnent de la plus terrifiante des manières.
 
 Dans cette nouvelle aventure qui télescope passé et présent, se révèle un jeune Walt Longmire plein de surprise.

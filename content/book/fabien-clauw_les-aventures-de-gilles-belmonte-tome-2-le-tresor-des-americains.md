@@ -22,7 +22,7 @@ Dans le second tome de sa saga d'aventure, Fabien Clauw nous fait frémir avec v
 ### À propos
 
 <%= quote_markup(
-  text: "Les Anglais, qui dominent la mer et les romansqui la racontent, ont trouvé à qui parler !",
+  text: "Les Anglais, qui dominent la mer et les romans qui la racontent, ont trouvé à qui parler !",
   author: "Libération"
 ) %>
 

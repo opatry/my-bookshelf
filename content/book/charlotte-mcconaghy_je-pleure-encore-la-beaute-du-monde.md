@@ -18,5 +18,5 @@ page_count: 400
 publication_year: 2024
 ---
 
-Inti Flynn, une jeune biologiste, arrive en Ecosse pour diriger une équipe de scientifiques chargés de réintroduire le loup dans les Highlands. Ses efforts pour réensauvager la nature meurtrie se heurtent rapidement à l’hostilité des locaux, inquiets pour leur sécurité et celle de leur bétail. Quand elle découvre le corps atrocement mutilé d’un éleveur quelques jours après avoir relâché les premiers loups dans la forêt, Inti comprend que les coupables seront vite désignés. Sans réfléchir, elle fait disparaître le cadavre. Mais si les loups n’ont rien à voir avec tout ça, quel monstre rôde donc dans les forêts ?
+Inti Flynn, une jeune biologiste, arrive en Écosse pour diriger une équipe de scientifiques chargés de réintroduire le loup dans les Highlands. Ses efforts pour réensauvager la nature meurtrie se heurtent rapidement à l’hostilité des locaux, inquiets pour leur sécurité et celle de leur bétail. Quand elle découvre le corps atrocement mutilé d’un éleveur quelques jours après avoir relâché les premiers loups dans la forêt, Inti comprend que les coupables seront vite désignés. Sans réfléchir, elle fait disparaître le cadavre. Mais si les loups n’ont rien à voir avec tout ça, quel monstre rôde donc dans les forêts ?
 

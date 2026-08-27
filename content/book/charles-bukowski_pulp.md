@@ -16,11 +16,11 @@ page_count: 189
 publication_year: 1997
 ---
 
-Louis-Ferdinant Céline n'est pas mort en 1961. On l'a aperçu à Los Angeles. Et une pulpeuse créature qui n'est autre que la Mort charge un "privé" minable, Nick Belane, de le retrouver :
+Louis-Ferdinand Céline n'est pas mort en 1961. On l'a aperçu à Los Angeles. Et une pulpeuse créature qui n'est autre que la Mort charge un "privé" minable, Nick Belane, de le retrouver :
 
 _“Je veux m'offrir, dit-elle, le plus grand écrivain français.”_
 
-Ainsi commence l'ultime roman du génial et intenable auteur des Contes de la folie ordinaire et d'Au sud de nulle part. Une enquête échevelée, jalonnée de saouleries et de cadavres, d'autant plus compliquée que le malheureux Belande doit aussi retrouver le Moineau écarlate et pister une nommée Cindy qui roule en Mercedes rouge… En détournant le roman policier et la littérature de gare, le vieux Buck, comme d'habitude, écrit le roman philosophique d'aujourd'hui…
+Ainsi commence l'ultime roman du génial et intenable auteur des Contes de la folie ordinaire et d'Au sud de nulle part. Une enquête échevelée, jalonnée de saouleries et de cadavres, d'autant plus compliquée que le malheureux Belane doit aussi retrouver le Moineau écarlate et pister une nommée Cindy qui roule en Mercedes rouge… En détournant le roman policier et la littérature de gare, le vieux Buck, comme d'habitude, écrit le roman philosophique d'aujourd'hui…
 
 ### À propos
 
