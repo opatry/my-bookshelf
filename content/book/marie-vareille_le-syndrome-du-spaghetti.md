@@ -1,7 +1,7 @@
 ---
 uuid: a8da0392-2052-4256-9258-816c00aec278
 isbn: '9782823870879'
-title: "Le syndrôme du spaghetti"
+title: "Le syndrome du spaghetti"
 author: "Marie Vareille"
 rating: 7
 read_date: 2025-02-02
