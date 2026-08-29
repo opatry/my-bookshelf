@@ -8,7 +8,7 @@ read_date: 2025-11-16
 tags:
 - Famille
 - Amour
-- Pyschologie
+- Psychologie
 social:
   babelio: '1589710'
   sc: '81676079'
