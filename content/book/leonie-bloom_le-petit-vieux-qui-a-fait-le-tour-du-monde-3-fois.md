@@ -3,7 +3,7 @@ uuid: 5ff8d567-2eec-4f91-b7a8-ffce9b6e632f
 isbn: '9782959481604'
 title: "Le petit vieux qui a fait le tour du monde (3 fois)"
 author: "Léonie Bloom"
-priority: 1
+ongoing: true
 tags:
   - Bretagne
   - Amitié
