@@ -8,7 +8,7 @@
 # NOTE: the constant is named `Isbn13` (not `ISBN13`) so it matches Zeitwerk's
 # inflector (`app/models/isbn13.rb` → `Isbn13`).
 class Isbn13
-  WEIGHTS = [1, 3].freeze
+  WEIGHTS = [ 1, 3 ].freeze
 
   # Returns the 13-digit string or nil if `value` is not a clean 13-digit number.
   def self.normalize(value)
@@ -56,11 +56,12 @@ class Isbn13
     self.class.normalize(value)
   end
 
-  # Basic grouping: GS1 prefix (3 digits), dash, then the remaining 10 digits.
+  # Basic grouping: GS1 prefix (3 digits), dash, then the remaining 10 digits
+  # (keeps the whole 13-digit number readable).
   def formatted
     d = digits
     return value unless d
 
-    "#{d[0, 3]}-#{d[3, 9]}"
+    "#{d[0, 3]}-#{d[3, 10]}"
   end
 end

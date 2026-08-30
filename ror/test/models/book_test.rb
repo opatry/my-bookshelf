@@ -64,6 +64,6 @@ class BookTest < ActiveSupport::TestCase
 
   test "formatted_isbn groups the GS1 prefix" do
     book = valid_book(isbn: "9782070373017")
-    assert_equal "978-207037301", book.formatted_isbn
+    assert_equal "978-2070373017", book.formatted_isbn
   end
 end

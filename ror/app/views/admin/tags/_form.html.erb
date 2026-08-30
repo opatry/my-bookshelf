@@ -1,0 +1,22 @@
+<%= form_with model: [:admin, tag], class: "form" do |form| %>
+  <% if tag.errors.any? %>
+    <div class="form-errors">
+      <h3><%= t("admin.form_errors", count: tag.errors.count) %></h3>
+      <ul>
+        <% tag.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form__row">
+    <%= form.label :name %>
+    <%= form.text_field :name, required: true %>
+  </div>
+
+  <div class="form__actions">
+    <%= form.submit class: "button" %>
+    <%= link_to t("admin.cancel"), admin_tags_path %>
+  </div>
+<% end %>

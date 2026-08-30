@@ -1,0 +1,8 @@
+<% content_for(:title, t(".title", title: @book.title)) %>
+
+<div class="page-heading">
+  <h1><%= @book.title %> <%= link_to t("admin.actions.edit"), edit_admin_book_path(@book), class: "button button--small" %></h1>
+  <p class="subtitle"><%= @book.author %></p>
+</div>
+
+<%= render "form", book: @book %>

@@ -1,0 +1,33 @@
+<% content_for(:title, t(".title", year: @year)) %>
+
+<div class="page-heading">
+  <h1><%= t(".title", year: @year) %></h1>
+  <p class="subtitle"><%= t(".subtitle", year: @year) %></p>
+</div>
+
+<nav class="calendar-year-nav" aria-label="<%= t('calendar.nav_label') %>">
+  <%= link_to t(".prev_year", year: @year - 1), calendar_path(year: @year - 1) %>
+  <span class="calendar-year-nav__current"><%= @year %></span>
+  <%= link_to t(".next_year", year: @year + 1), calendar_path(year: @year + 1) %>
+</nav>
+
+<% if @reviews.any? %>
+  <% @reviews.group_by { |review| review.read_date.beginning_of_month }.each do |month, reviews| %>
+    <section class="calendar-month">
+      <h2><%= l(month, format: "%B %Y") %></h2>
+      <ul class="calendar-grid">
+        <% reviews.each do |review| %>
+          <li class="calendar-day">
+            <%= link_to book_path(review.book) do %>
+              <%= cover_tag(review.book, variant: :medium) %>
+              <span class="calendar-day__title"><%= review.book.title %></span>
+              <span class="calendar-day__date"><%= review.read_date.day %> <%= l(review.read_date, format: "%B") %></span>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </section>
+  <% end %>
+<% else %>
+  <p class="empty-state"><%= t(".empty") %></p>
+<% end %>

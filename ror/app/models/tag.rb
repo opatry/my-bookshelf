@@ -11,9 +11,14 @@ class Tag < ApplicationRecord
 
   before_validation :set_slug
 
+  # Tag URLs take the form /tags/:slug.
+  def to_param
+    slug
+  end
+
   private
 
   def set_slug
-    self.slug = name.to_s.parameterize if slug.blank?
+    self.slug = name.to_s.parameterize if slug.blank? || name_changed?
   end
 end

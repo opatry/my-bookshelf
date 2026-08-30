@@ -1,4 +1,216 @@
 fr:
+  site:
+    name: "Les lectures d’Olivier"
+    footer_html: "© %{year} %{site} — un site personnel."
+    tagline: "Les livres que j’ai lus avec une note et un résumé rapide pour partager."
+
+  nav:
+    label: "Navigation principale"
+    home: "Accueil"
+    last_readings: "Dernières lectures"
+    wishlist: "Liste de souhaits"
+    tags: "Étiquettes"
+    calendar: "Calendrier"
+    feed: "Flux RSS"
+
+  search:
+    label: "Rechercher un livre"
+    placeholder: "Rechercher…"
+    no_results: "Aucun résultat"
+
+  meta:
+    ongoing: "En cours de lecture"
+    read_on: "lu le %{date}"
+    pages:
+      one: "%{count} page"
+      other: "%{count} pages"
+    no_page_count: "Pages non renseignées"
+    published: "paru en %{year}"
+    rating_out_of: "Note : %{rating} sur 10"
+
+  home:
+    tagline: "Les livres que j’ai lus avec une note et un résumé rapide pour partager."
+    section_recent: "Dernières lectures"
+    section_ongoing: "Lecture en cours"
+    section_wishlist: "Dans ma liste de souhaits"
+    section_library: "Ma bibliothèque"
+    see_all: "Voir tout →"
+    empty: "Aucun livre pour le moment."
+
+  books:
+    show:
+      title: "%{title} de %{author}"
+      read_on: "Lu le %{date}"
+      favorite: "Coup de cœur"
+      pages: "Nombre de pages"
+      published: "Paru en"
+      isbn: "ISBN"
+      series: "Série"
+      ongoing: "En cours de lecture"
+      wishlist: "Dans la liste de souhaits"
+      no_meta: "Aucune critique écrite pour ce livre pour le moment."
+      back: "← Retour"
+      same_series: "À lire aussi dans la série « %{series} »"
+
+  last_readings:
+    index:
+      title: "Dernières lectures"
+      subtitle: "Toutes mes lectures, de la plus récente à la plus ancienne."
+
+  wishlist:
+    index:
+      title: "Liste de souhaits"
+      subtitle: "Les livres que je souhaite lire, dans l’ordre de priorité."
+      priority: "Priorité %{level}"
+
+  tags:
+    index:
+      title: "Étiquettes"
+      subtitle: "Explorer mes lectures par thème, genre ou région."
+    show:
+      title: "%{tag}"
+      subtitle: "Mes lectures taguées « %{tag} »."
+
+  calendar:
+    nav_label: "Changer d’année"
+    show:
+      title: "%{year}"
+      subtitle: "Mes lectures de l’année %{year}."
+      prev_year: "← %{year}"
+      next_year: "%{year} →"
+      empty: "Aucune lecture enregistrée cette année-là."
+
+  feed:
+    title: "%{site} — Dernières lectures"
+    subtitle: "Les dernières lectures avec leur note."
+    entry_title: "%{title} de %{author}"
+
+  admin:
+    brand: "Admin"
+    nav:
+      label: "Navigation administration"
+      dashboard: "Tableau de bord"
+      books: "Livres"
+      tags: "Étiquettes"
+      series: "Séries"
+      public_site: "Voir le site"
+    actions:
+      edit: "Modifier"
+      review: "Critique"
+      delete: "Supprimer"
+      delete_review: "Supprimer la critique"
+    review:
+      status_read: "Lu"
+      status_wishlist: "À lire"
+      status_ongoing: "En cours"
+    form_errors:
+      one: "%{count} erreur a empêché l’enregistrement"
+      other: "%{count} erreurs ont empêché l’enregistrement"
+    cancel: "Annuler"
+    empty_option: "— Aucune —"
+    confirm_book_destroy: "Supprimer définitivement ce livre ?"
+    confirm_review_destroy: "Supprimer cette critique ?"
+    confirm_tag_destroy: "Supprimer cette étiquette ?"
+    confirm_series_destroy: "Supprimer cette série ?"
+
+    dashboard:
+      index:
+        title: "Tableau de bord"
+        read_count: "livres lus"
+        wishlist_count: "dans la liste de souhaits"
+        ongoing: "en cours : %{title}"
+        books_count: "livres en base"
+        tags_count: "étiquettes"
+        series_count: "séries"
+        recent: "Dernières lectures"
+        actions: "Actions rapides"
+        new_book: "Ajouter un livre"
+        new_tag: "Ajouter une étiquette"
+        new_series: "Ajouter une série"
+        empty: "Aucune lecture pour le moment."
+
+    books:
+      index:
+        title: "Livres"
+        new: "+ Ajouter"
+        th_title: "Titre"
+        th_author: "Auteur"
+        th_status: "Statut"
+        th_tags: "Étiquettes"
+        empty: "Aucun livre pour le moment."
+      show:
+        title: "%{title}"
+        review: "Critique"
+        edit_review: "Modifier la critique"
+        rating: "Note : %{rating}/10"
+        priority: "Priorité %{priority}"
+        no_review: "Aucune critique — ajouter un statut de lecture."
+      new:
+        title: "Nouveau livre"
+      create:
+        success: "Livre créé."
+      edit:
+        title: "Modifier — %{title}"
+      update:
+        success: "Livre mis à jour."
+      destroy:
+        success: "Livre supprimé."
+      form:
+        isbn_hint: "ISBN-13 à 13 chiffres (sans tirets)."
+        tags_hint: "Étiquettes séparées par des virgules ; créées au besoin."
+        remove_cover: "Supprimer la couverture actuelle"
+
+    reviews:
+      new:
+        title: "%{title} — nouvelle critique"
+        subtitle: "Ajouter un statut de lecture pour ce livre."
+      create:
+        success: "Critique créée."
+      edit:
+        title: "%{title} — modifier la critique"
+        subtitle: "Modifier le statut de lecture de ce livre."
+      update:
+        success: "Critique mise à jour."
+      destroy:
+        success: "Critique supprimée."
+
+    tags:
+      index:
+        title: "Étiquettes"
+        new: "+ Ajouter"
+        th_name: "Nom"
+        th_slug: "Slug"
+        th_books: "Livres"
+        empty: "Aucune étiquette pour le moment."
+      new:
+        title: "Nouvelle étiquette"
+      create:
+        success: "Étiquette créée."
+      edit:
+        title: "Modifier — %{name}"
+      update:
+        success: "Étiquette mise à jour."
+      destroy:
+        success: "Étiquette supprimée."
+
+    series:
+      index:
+        title: "Séries"
+        new: "+ Ajouter"
+        th_name: "Nom"
+        th_books: "Livres"
+        empty: "Aucune série pour le moment."
+      new:
+        title: "Nouvelle série"
+      create:
+        success: "Série créée."
+      edit:
+        title: "Modifier — %{name}"
+      update:
+        success: "Série mise à jour."
+      destroy:
+        success: "Série supprimée."
+
   helpers:
     submit:
       create: "Créer"
@@ -25,6 +237,8 @@ fr:
       book: "Livre"
       series: "Série"
       tag: "Étiquette"
+      review: "Critique"
+      user: "Utilisateur"
 
     attributes:
       book:
@@ -52,25 +266,3 @@ fr:
       user:
         name: "Nom"
         email: "E-mail"
-
-  # Common UI strings for the whole bookshelf.
-  bookshelf:
-    app_title: "Les lectures d’Olivier"
-    tagline: "Les livres que j’ai lus avec une note et un résumé rapide pour partager."
-    back_home: "Retour à l’accueil"
-    search_placeholder: "Rechercher…"
-    no_search_results: "Pas de résultat correspondant à la requête."
-    reading_states:
-      ongoing: "En cours de lecture…"
-      wishlist: "Dans les envies de lecture pour plus tard…"
-      read: "Lu"
-    status_labels:
-      read: "Lu"
-      wishlist: "À lire"
-      ongoing: "En cours"
-    favorite: "Coup de cœur"
-    pages:
-      one: "%{count} page"
-      other: "%{count} pages"
-    published_in: "paru en %{year}"
-    read_in: "lu en %{month} %{year}"

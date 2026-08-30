@@ -1,14 +1,29 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
-  # Can be used by load balancers and uptime monitors to verify that the app is live.
+  # Reveal health status on /up that returns 200 if the app boots with no exceptions.
   get "up" => "rails/health#show", as: :rails_health_check
 
-  # Render dynamic PWA files from app/views/pwa/* (remember to link manifest in application.html.erb)
-  # get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
-  # get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
+  root "home#index"
 
-  # Defines the root path route ("/")
-  # root "posts#index"
+  # Public site. Book URLs are /books/:id-:slug (id is canonical, slug optional help).
+  resources :books, only: [ :show ]
+  get "last_readings", to: "last_readings#index"
+  get "wishlist", to: "wishlist#index"
+  resources :tags, only: [ :index, :show ]
+  get "calendar/:year", to: "calendar#show", as: :calendar, constraints: { year: /\d{4}/ }
+  get "feed", to: "feed#index", as: :feed, defaults: { format: :xml }
+  get "search", to: "search#index"
+
+  # PWA
+  get "manifest", to: "rails/pwa#manifest", as: :pwa_manifest
+  get "service-worker", to: "rails/pwa#service_worker", as: :pwa_service_worker
+
+  # Admin (Phase 1: no authentication, acts on the default user).
+  namespace :admin do
+    root "dashboard#index"
+    resources :books do
+      resources :reviews, only: %i[new create edit update destroy]
+    end
+    resources :tags, except: :show
+    resources :series, except: :show
+  end
 end

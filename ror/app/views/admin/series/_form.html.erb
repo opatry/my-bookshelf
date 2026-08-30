@@ -1,0 +1,22 @@
+<%= form_with model: [:admin, series], class: "form" do |form| %>
+  <% if series.errors.any? %>
+    <div class="form-errors">
+      <h3><%= t("admin.form_errors", count: series.errors.count) %></h3>
+      <ul>
+        <% series.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form__row">
+    <%= form.label :name %>
+    <%= form.text_field :name, required: true %>
+  </div>
+
+  <div class="form__actions">
+    <%= form.submit class: "button" %>
+    <%= link_to t("admin.cancel"), admin_series_index_path %>
+  </div>
+<% end %>

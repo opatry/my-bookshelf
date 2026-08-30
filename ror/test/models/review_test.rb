@@ -29,20 +29,33 @@ class ReviewTest < ActiveSupport::TestCase
     assert_not build_review(rating: 11).valid?
   end
 
-  test "ongoing review cannot have a rating" do
+  test "ongoing review drops the rating" do
     review = build_review(status: :ongoing, rating: 8, read_date: nil)
-    assert_not review.valid?
-    assert review.errors.added?(:rating, :must_be_blank)
+    assert review.valid?
+    assert_nil review.rating
   end
 
-  test "ongoing review cannot have a read_date" do
+  test "ongoing review drops the read_date" do
     review = build_review(status: :ongoing, rating: nil, read_date: Date.new(2026, 1, 15))
-    assert_not review.valid?
-    assert review.errors.added?(:read_date, :must_be_blank)
+    assert review.valid?
+    assert_nil review.read_date
   end
 
   test "ongoing review is valid without rating or date" do
     assert build_review(status: :ongoing, rating: nil, read_date: nil).valid?
+  end
+
+  test "switching from read to wishlist drops the reading facts" do
+    review = build_review(status: :wishlist, priority: 2)
+    assert review.valid?
+    assert_nil review.rating
+    assert_nil review.read_date
+  end
+
+  test "switching from wishlist to read drops the priority" do
+    review = build_review(status: :read, rating: 8, read_date: Date.new(2026, 1, 15), priority: 2)
+    assert review.valid?
+    assert_nil review.priority
   end
 
   test "wishlist review requires a priority" do

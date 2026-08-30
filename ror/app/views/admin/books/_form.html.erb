@@ -1,0 +1,71 @@
+<%= form_with model: [:admin, book], class: "form" do |form| %>
+  <% if book.errors.any? %>
+    <div class="form-errors">
+      <h3><%= t("admin.form_errors", count: book.errors.count) %></h3>
+      <ul>
+        <% book.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form__row">
+    <%= form.label :title %>
+    <%= form.text_field :title, required: true %>
+  </div>
+
+  <div class="form__row">
+    <%= form.label :author %>
+    <%= form.text_field :author, required: true %>
+  </div>
+
+  <div class="form__row">
+    <%= form.label :isbn %>
+    <%= form.text_field :isbn %>
+    <p class="form__hint"><%= t("admin.books.form.isbn_hint") %></p>
+  </div>
+
+  <div class="form__row form__row--inline">
+    <div>
+      <%= form.label :publication_year %>
+      <%= form.number_field :publication_year, min: 1000, max: 2200 %>
+    </div>
+    <div>
+      <%= form.label :page_count %>
+      <%= form.number_field :page_count, min: 0 %>
+    </div>
+  </div>
+
+  <div class="form__row">
+    <%= form.label :series %>
+    <%= form.collection_select :series_id, Series.order(:name), :id, :name, include_blank: t("admin.empty_option") %>
+  </div>
+
+  <div class="form__row">
+    <%= form.label :tag_names %>
+    <%= form.text_field :tag_names %>
+    <p class="form__hint"><%= t("admin.books.form.tags_hint") %></p>
+  </div>
+
+  <div class="form__row">
+    <%= form.label :description %>
+    <%= form.text_area :description, rows: 6 %>
+  </div>
+
+  <div class="form__row">
+    <%= form.label :cover %>
+    <%= form.file_field :cover, accept: "image/jpeg,image/png,image/webp" %>
+    <% if book.cover.attached? %>
+      <div class="form__cover-preview">
+        <%= cover_tag(book, variant: :medium) %>
+        <label class="checkbox-inline"><%= form.check_box :remove_cover, { checked: false } %> <%= t("admin.books.form.remove_cover") %></label>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="form__actions">
+    <%= form.submit class: "button" %>
+    <%= link_to t("admin.cancel"), book.persisted? ? admin_book_path(book) : admin_books_path %>
+  </div>
+<% end %>

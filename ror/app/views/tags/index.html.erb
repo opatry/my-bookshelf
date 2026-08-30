@@ -1,0 +1,16 @@
+<% content_for(:title, t(".title")) %>
+
+<div class="page-heading">
+  <h1><%= t(".title") %></h1>
+  <p class="subtitle"><%= t(".subtitle") %></p>
+</div>
+
+<% if @tags.any? %>
+  <ul class="tag-cloud">
+    <% @tags.each do |tag, count| %>
+      <li><%= link_to tag.name, tag_path(tag) %> <span class="tag-cloud__count">(<%= count %>)</span></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p class="empty-state"><%= t("home.empty") %></p>
+<% end %>

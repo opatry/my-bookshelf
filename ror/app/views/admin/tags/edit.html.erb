@@ -1,0 +1,7 @@
+<% content_for(:title, t(".title", name: @tag.name)) %>
+
+<div class="page-heading">
+  <h1><%= @tag.name %></h1>
+</div>
+
+<%= render "form", tag: @tag %>

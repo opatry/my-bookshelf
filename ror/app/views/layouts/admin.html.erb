@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="<%= I18n.locale %>">
+  <head>
+    <title><%= page_title %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <link rel="icon" href="/icon.png" type="image/png">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/icon.png">
+
+    <%= stylesheet_link_tag :app %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body class="admin">
+    <header class="site-header">
+      <div class="site-header__inner">
+        <%= link_to t("admin.brand"), admin_root_path, class: "site-header__brand" %>
+        <nav class="site-header__nav" aria-label="<%= t('admin.nav.label') %>">
+          <ul class="nav-list">
+            <li><%= link_to t("admin.nav.dashboard"), admin_root_path %></li>
+            <li><%= link_to t("admin.nav.books"), admin_books_path %></li>
+            <li><%= link_to t("admin.nav.tags"), admin_tags_path %></li>
+            <li><%= link_to t("admin.nav.series"), admin_series_index_path %></li>
+          </ul>
+        </nav>
+        <div class="admin-header__site"><%= link_to t("admin.nav.public_site"), root_path %></div>
+      </div>
+    </header>
+
+    <main class="site-main">
+      <%= render "shared/flash" %>
+      <%= yield %>
+    </main>
+  </body>
+</html>

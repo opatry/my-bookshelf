@@ -1,0 +1,7 @@
+<% content_for(:title, t(".title", name: @series.name)) %>
+
+<div class="page-heading">
+  <h1><%= @series.name %></h1>
+</div>
+
+<%= render "form", series: @series %>

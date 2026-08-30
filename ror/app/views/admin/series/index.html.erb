@@ -1,0 +1,30 @@
+<% content_for(:title, t(".title")) %>
+
+<div class="page-heading">
+  <h1><%= t(".title") %> <%= link_to t(".new"), new_admin_series_path, class: "button button--small" %></h1>
+</div>
+
+<% if @series_list.any? %>
+  <table class="admin-table">
+    <thead>
+      <tr>
+        <th><%= t(".th_name") %></th>
+        <th><%= t(".th_books") %></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @series_list.each do |series| %>
+        <tr>
+          <td><%= link_to series.name, edit_admin_series_path(series) %></td>
+          <td class="muted"><%= series.books.count %></td>
+          <td class="adminTable__actions">
+            <%= button_to t("admin.actions.delete"), admin_series_path(series), method: :delete, data: { confirm: t("admin.confirm_series_destroy") } %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p class="empty-state"><%= t(".empty") %></p>
+<% end %>

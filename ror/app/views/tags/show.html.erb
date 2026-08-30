@@ -1,0 +1,8 @@
+<% content_for(:title, t(".title", tag: @tag.name)) %>
+
+<div class="page-heading">
+  <h1><%= t(".title", tag: @tag.name) %></h1>
+  <p class="subtitle"><%= t(".subtitle", tag: @tag.name) %></p>
+</div>
+
+<%= render "shared/book_grid", reviews: @reviews, with_date: true %>

@@ -1,0 +1,8 @@
+<%# locals: tags (Tag collection), linked: false %>
+<% if tags.any? %>
+  <ul class="tag-list">
+    <% tags.each do |tag| %>
+      <li class="tag"><%= link_to tag.name, tag_path(tag) %></li>
+    <% end %>
+  </ul>
+<% end %>

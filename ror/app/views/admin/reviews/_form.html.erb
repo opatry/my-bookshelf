@@ -1,0 +1,35 @@
+<%= form_with model: [:admin, @book, review], class: "form" do |form| %>
+  <% if review.errors.any? %>
+    <div class="form-errors">
+      <h3><%= t("admin.form_errors", count: review.errors.count) %></h3>
+      <ul>
+        <% review.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form__row">
+    <%= form.label :status %>
+    <%= form.select :status, review_status_options, {}, data: { review_status: true } %>
+  </div>
+
+  <div class="form__row" data-review-field-group="read">
+    <%= form.label :rating %>
+    <%= form.number_field :rating, in: 1..10 %>
+    <%= form.label :read_date %>
+    <%= form.date_field :read_date %>
+    <label class="checkbox-inline"><%= form.check_box :favorite %> <%= t("activerecord.attributes.review.favorite") %></label>
+  </div>
+
+  <div class="form__row" data-review-field-group="wishlist">
+    <%= form.label :priority %>
+    <%= form.number_field :priority, in: 1..10 %>
+  </div>
+
+  <div class="form__actions">
+    <%= form.submit class: "button" %>
+    <%= link_to t("admin.cancel"), admin_book_path(@book) %>
+  </div>
+<% end %>

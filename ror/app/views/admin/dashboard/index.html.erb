@@ -1,0 +1,41 @@
+<% content_for(:title, t(".title")) %>
+
+<div class="page-heading">
+  <h1><%= t(".title") %></h1>
+</div>
+
+<div class="admin-stats">
+  <div class="admin-stat"><span class="admin-stat__value"><%= @read_count %></span><span class="admin-stat__label"><%= t(".read_count") %></span></div>
+  <div class="admin-stat"><span class="admin-stat__value"><%= @wishlist_count %></span><span class="admin-stat__label"><%= t(".wishlist_count") %></span></div>
+  <% if @ongoing %>
+    <div class="admin-stat"><span class="admin-stat__value">1</span><span class="admin-stat__label"><%= t(".ongoing", title: @ongoing.book.title) %></span></div>
+  <% end %>
+  <div class="admin-stat"><span class="admin-stat__value"><%= @books_count %></span><span class="admin-stat__label"><%= t(".books_count") %></span></div>
+  <div class="admin-stat"><span class="admin-stat__value"><%= @tags_count %></span><span class="admin-stat__label"><%= t(".tags_count") %></span></div>
+  <div class="admin-stat"><span class="admin-stat__value"><%= @series_count %></span><span class="admin-stat__label"><%= t(".series_count") %></span></div>
+</div>
+
+<section class="home-section">
+  <h2><%= t(".recent") %> <%= link_to t("home.see_all"), last_readings_path, class: "admin-detail-link" %></h2>
+  <% if @recent.any? %>
+    <ul class="admin-list">
+      <% @recent.each do |review| %>
+        <li>
+          <%= link_to review.book.title, admin_book_path(review.book) %>
+          <span class="muted">— <%= review.book.author %> · <%= l(review.read_date, format: :long) %> · <%= review.rating %>/10</span>
+        </li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p class="empty-state"><%= t(".empty") %></p>
+  <% end %>
+</section>
+
+<section class="home-section">
+  <h2><%= t(".actions") %></h2>
+  <ul class="admin-actions">
+    <li><%= link_to t(".new_book"), new_admin_book_path %></li>
+    <li><%= link_to t(".new_tag"), new_admin_tag_path %></li>
+    <li><%= link_to t(".new_series"), new_admin_series_path %></li>
+  </ul>
+</section>

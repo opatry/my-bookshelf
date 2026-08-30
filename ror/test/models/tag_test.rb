@@ -31,6 +31,6 @@ class TagTest < ActiveSupport::TestCase
 
   test "has many books through book_tags" do
     tag = tags(:one)
-    assert_equal [books(:one)], tag.books
+    assert_equal [ books(:one) ], tag.books
   end
 end

@@ -1,0 +1,11 @@
+<%# locals: review %>
+<article class="current-reading">
+  <%= link_to book_path(review.book) do %>
+    <%= cover_tag(review.book, variant: :showcase) %>
+  <% end %>
+  <div class="current-reading__body">
+    <h3><%= link_to review.book.title, book_path(review.book) %></h3>
+    <p class="current-reading__author"><%= review.book.author %></p>
+    <p class="current-reading__status"><%= t("meta.ongoing") %></p>
+  </div>
+</article>

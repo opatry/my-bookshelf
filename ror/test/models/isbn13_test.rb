@@ -31,7 +31,7 @@ class Isbn13Test < ActiveSupport::TestCase
   end
 
   test "formats with GS1 prefix grouping" do
-    assert_equal "978-207037301", Isbn13.new("9782070373017").formatted
+    assert_equal "978-2070373017", Isbn13.new("9782070373017").formatted
   end
 
   test "formatted returns the raw value when invalid" do

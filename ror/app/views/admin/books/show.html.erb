@@ -1,0 +1,46 @@
+<% content_for(:title, t(".title", title: @book.title)) %>
+
+<div class="page-heading">
+  <h1><%= @book.title %></h1>
+  <p class="subtitle"><%= @book.author %></p>
+</div>
+
+<div class="admin-book">
+  <div class="admin-book__cover"><%= cover_tag(@book, variant: :showcase) %></div>
+  <div class="admin-book__details">
+    <dl class="book-detail__facts">
+      <div><dt><%= t("activerecord.attributes.book.isbn") %></dt><dd><%= @book.formatted_isbn %></dd></div>
+      <div><dt><%= t("activerecord.attributes.book.publication_year") %></dt><dd><%= @book.publication_year || "—" %></dd></div>
+      <div><dt><%= t("activerecord.attributes.book.page_count") %></dt><dd><%= @book.page_count || "—" %></dd></div>
+      <div><dt><%= t("activerecord.attributes.book.series") %></dt><dd><%= @book.series&.name || "—" %></dd></div>
+      <div><dt><%= t("activerecord.attributes.book.tags") %></dt><dd><%= @book.tags.map(&:name).join(", ").presence || "—" %></dd></div>
+    </dl>
+
+    <% if @book.description.present? %>
+      <div class="book-detail__description"><%= simple_format(@book.description) %></div>
+    <% end %>
+  </div>
+</div>
+
+<section class="home-section">
+  <h2><%= t(".review") %> <%= link_to t(".edit_review"), (@review ? edit_admin_book_review_path(@book, @review) : new_admin_book_review_path(@book)), class: "button button--small" %></h2>
+  <% if @review %>
+    <p>
+      <%= t("admin.review.status_#{@review.status}") %>
+      <% if @review.status == "read" %>
+        · <%= t(".rating", rating: @review.rating) %>
+        · <%= l(@review.read_date, format: :long) %>
+        <% if @review.favorite %> · ★<%= t("books.show.favorite") %><% end %>
+      <% elsif @review.status == "wishlist" %>
+        · <%= t(".priority", priority: @review.priority) %>
+      <% end %>
+    </p>
+    <%= button_to t("admin.actions.delete_review"), admin_book_review_path(@book, @review), method: :delete, data: { confirm: t("admin.confirm_review_destroy") } %>
+  <% else %>
+    <p class="empty-state"><%= t(".no_review") %></p>
+  <% end %>
+</section>
+
+<div class="form__actions">
+  <%= button_to t("admin.actions.delete"), admin_book_path(@book), method: :delete, class: "button button--danger", data: { confirm: t("admin.confirm_book_destroy") } %>
+</div>

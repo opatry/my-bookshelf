@@ -33,7 +33,7 @@ class UserTest < ActiveSupport::TestCase
 
   test "has many reviews and books through reviews" do
     user = users(:one)
-    assert_equal [books(:one)], user.books
-    assert_equal [reviews(:one)], user.reviews
+    assert_equal [ books(:one) ], user.books
+    assert_equal [ reviews(:one) ], user.reviews
   end
 end

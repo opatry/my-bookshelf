@@ -12,11 +12,30 @@ class Review < ApplicationRecord
   validate :read_review_requires_rating_and_date
   validate :ongoing_review_has_no_rating_nor_date
 
+  before_validation :normalize_status_fields
+
   scope :recent, -> { order(read_date: :desc, id: :desc) }
   scope :favorites, -> { where(favorite: true) }
   scope :rated, -> { where.not(rating: nil) }
+  scope :with_book, -> { includes(book: [ :tags, cover_attachment: :blob ]) }
 
   private
+
+  # Keep the record consistent when the status changes: switp to wishlist or
+  # ongoing drops the reading facts; read drops the priority.
+  def normalize_status_fields
+    case status&.to_sym
+    when :read
+      self.priority = nil
+    when :ongoing
+      self.priority = nil
+      self.rating = nil
+      self.read_date = nil
+    when :wishlist
+      self.rating = nil
+      self.read_date = nil
+    end
+  end
 
   def read_review_requires_rating_and_date
     return unless read?

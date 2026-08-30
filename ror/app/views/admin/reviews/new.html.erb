@@ -1,0 +1,8 @@
+<% content_for(:title, t(".title", title: @book.title)) %>
+
+<div class="page-heading">
+  <h1><%= @book.title %></h1>
+  <p class="subtitle"><%= t(".subtitle") %></p>
+</div>
+
+<%= render "form", review: @review %>

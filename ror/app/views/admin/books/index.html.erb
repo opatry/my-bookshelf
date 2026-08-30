@@ -1,0 +1,35 @@
+<% content_for(:title, t(".title")) %>
+
+<div class="page-heading">
+  <h1><%= t(".title") %> <%= link_to t(".new"), new_admin_book_path, class: "button button--small" %></h1>
+</div>
+
+<% if @books.any? %>
+  <table class="admin-table">
+    <thead>
+      <tr>
+        <th><%= t(".th_title") %></th>
+        <th><%= t(".th_author") %></th>
+        <th><%= t(".th_status") %></th>
+        <th><%= t(".th_tags") %></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @books.each do |book| %>
+        <tr>
+          <td><%= link_to book.title, admin_book_path(book) %></td>
+          <td><%= book.author %></td>
+          <td><%= review_status_badge(book) %></td>
+          <td class="muted"><%= book.tags.map(&:name).join(", ") %></td>
+          <td class="adminTable__actions">
+            <%= link_to t("admin.actions.edit"), edit_admin_book_path(book) %>
+            <%= link_to t("admin.actions.review"), new_admin_book_review_path(book), class: "muted" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p class="empty-state"><%= t(".empty") %></p>
+<% end %>

@@ -1,0 +1,31 @@
+<% content_for(:title, t("site.name")) %>
+
+<section class="home-section home-intro">
+  <p class="tagline"><%= t("home.tagline") %></p>
+</section>
+
+<% if @ongoing_review %>
+  <section class="home-section">
+    <h2><%= t("home.section_ongoing") %></h2>
+    <%= render "shared/current_reading", review: @ongoing_review %>
+  </section>
+<% end %>
+
+<% if @recent_reviews.any? %>
+  <section class="home-section">
+    <h2><%= t("home.section_recent") %> <%= link_to t("home.see_all"), last_readings_path %></h2>
+    <%= render "shared/book_grid", reviews: @recent_reviews, with_date: true %>
+  </section>
+<% end %>
+
+<% if @wishlist_preview.any? %>
+  <section class="home-section">
+    <h2><%= t("home.section_wishlist") %> <%= link_to t("home.see_all"), wishlist_path %></h2>
+    <%= render "shared/book_grid", reviews: @wishlist_preview %>
+  </section>
+<% end %>
+
+<section class="home-section">
+  <h2><%= t("home.section_library") %></h2>
+  <%= render "shared/book_grid", reviews: @library %>
+</section>
