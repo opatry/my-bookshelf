@@ -30,8 +30,11 @@ class SearchBooksTest < ActiveSupport::TestCase
     assert_equal [], SearchBooks.call("zzzzz")
   end
 
-  test "only searches the default owner books" do
-    # book two has no default-owner review (Marie reviewed it).
-    assert_equal [], SearchBooks.call("Petit")
+  test "searches the whole catalog, including books the owner has not reviewed" do
+    # book two has no default-owner review (Marie reviewed it) but is in the catalog.
+    results = SearchBooks.call("Petit")
+
+    assert_equal 1, results.size
+    assert_equal "Le Petit Prince", results.first[:title]
   end
 end

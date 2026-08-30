@@ -1,6 +1,6 @@
-# Server-side search across the default owner's books (title, author, tags),
-# used by the AJAX search endpoint. Phase 1 is single-user: we only search the
-# books the default owner has reviewed.
+# Server-side search over the whole book catalog (title, author, tags),
+# used by the AJAX search endpoint. Search covers every book, whether or not
+# the default owner has reviewed (read, ongoing, or wished) it.
 class SearchBooks
   MIN_QUERY_LENGTH = 2
 
@@ -22,7 +22,7 @@ class SearchBooks
 
   def matching_books
     tokens = @query.split(/\s+/)
-    books = Book.joins(:tags).where(id: owned_book_ids).distinct
+    books = Book.joins(:tags).distinct
 
     tokens.each do |token|
       pattern = "%#{token.downcase}%"
@@ -32,14 +32,6 @@ class SearchBooks
     end
 
     books.order(:title).limit(12)
-  end
-
-  def owned_book_ids
-    owner ? owner.reviews.select(:book_id) : []
-  end
-
-  def owner
-    @owner ||= User.default_owner
   end
 
   def serialize(book)

@@ -21,10 +21,10 @@ class SearchControllerTest < ActionDispatch::IntegrationTest
     assert_equal [], JSON.parse(response.body).fetch("results")
   end
 
-  test "ignores other users books" do
+  test "searches the whole catalog, not just the owner's books" do
     get search_path(q: "petit"), as: :json
 
     assert_response :success
-    assert_equal [], JSON.parse(response.body).fetch("results")
+    assert_equal [ "Le Petit Prince" ], JSON.parse(response.body).fetch("results").map { |r| r["title"] }
   end
 end
