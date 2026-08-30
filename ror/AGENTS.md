@@ -18,6 +18,17 @@ bin/rails db:migrate      # apply schema changes
 bin/rails runner '...'    # run a snippet
 ```
 
+## Committing (important)
+
+Commit small, coherent, self-contained increments. Use the granularity of the
+TODO list as a guide — one TODO item ≈ one commit:
+
+- One logical change per commit (one fix, one feature, one data-layer change, one page).
+- Each commit must be in a working, value-adding state (the app boots; `bin/rails test` green for the scope touched; `rubocop` clean).
+- Keep data-layer changes (migration + model + tests) separate from UI/feature changes.
+- Docs (`PLAN.md`, `AGENTS.md`) and i18n string additions deserve their own commits when standalone.
+- If a diff mixes unrelated changes or is hard to review, split it.
+
 ## i18n rule (important)
 
 **All UI text goes in `config/locales/fr.yml`.** Default locale is `fr`.

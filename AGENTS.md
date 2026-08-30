@@ -69,6 +69,11 @@ Requires: Ruby, Bundler, ImageMagick (`magick`).
 
 Never deploy on your own.
 
+## Committing (ror work)
+
+Commit small, coherent, self-contained increments (one TODO item ≈ one commit),
+each in a working, value-adding state with its tests green. See `ror/AGENTS.md`.
+
 ## Conventions
 
 - Apostrophes in titles: use curly quotes `’` not straight one `'`
