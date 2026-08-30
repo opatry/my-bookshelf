@@ -3,6 +3,18 @@
 Rails 8 migration of the Nanoc static bookshelf. See `PLAN.md` for the full plan,
 scope decisions, data model, and rationale.
 
+## Working guidelines
+
+- **Stay inside this git repo.** Don't go poking around outside it (no `git_root/..`, no
+  sibling directories, no unrelated paths on the machine). Sandbox/temp areas like `/tmp`
+  and the opencode temp dir are fine. If you need something outside the repo, the user
+  will tell you and point exactly where to look.
+- **Self-correct this file.** If the user corrects your behavior, update these guidelines
+  so the correction sticks. `AGENTS.md` is a living document — revise it whenever a
+  repeated expectation is clarified rather than just fixing the one-off instance.
+- `ror/AGENTS.md` is the future single source of truth for working directives; the copy
+  at the repo root is kept in sync for now.
+
 ## Stack & commands
 
 - Ruby 3.4, Rails 8, SQLite.
