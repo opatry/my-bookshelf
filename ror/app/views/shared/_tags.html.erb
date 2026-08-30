@@ -1,6 +1,7 @@
-<%# locals: tags (Tag collection), linked: false %>
+<%# locals: tags (Tag collection) %>
 <% if tags.any? %>
-  <ul class="tag-list">
+  <ul class="book-tags">
+    <li><span aria-hidden="true">🏷️</span></li>
     <% tags.each do |tag| %>
       <li class="tag"><%= link_to tag.name, tag_path(tag) %></li>
     <% end %>

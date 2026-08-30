@@ -11,10 +11,10 @@ class WishlistControllerTest < ActionDispatch::IntegrationTest
       get wishlist_path
 
       assert_response :success
-      assert_select ".wishlist__title", text: "Priorité basse"
-      assert_select ".priority", text: I18n.t("wishlist.index.priority", level: 2)
+      assert_select ".book-title", text: "Priorité basse"
+      assert_select ".wish-priority", text: "#2"
       # The two owned entries are the fixture's none here (no wishlist read fixture)
-      assert_select ".wishlist__item", count: 1
+      assert_select ".book-card", count: 1
     end
   end
 
@@ -22,6 +22,6 @@ class WishlistControllerTest < ActionDispatch::IntegrationTest
     get wishlist_path
 
     assert_response :success
-    assert_select ".wishlist__title", count: 0
+    assert_select ".book-card", count: 0
   end
 end

@@ -1,31 +1,63 @@
 <% content_for(:title, t("site.name")) %>
 
-<section class="home-section home-intro">
-  <p class="tagline"><%= t("home.tagline") %></p>
-</section>
-
-<% if @ongoing_review %>
-  <section class="home-section">
-    <h2><%= t("home.section_ongoing") %></h2>
-    <%= render "shared/current_reading", review: @ongoing_review %>
-  </section>
-<% end %>
-
-<% if @recent_reviews.any? %>
-  <section class="home-section">
-    <h2><%= t("home.section_recent") %> <%= link_to t("home.see_all"), last_readings_path %></h2>
-    <%= render "shared/book_grid", reviews: @recent_reviews, with_date: true %>
-  </section>
+<% if @ongoing_review || @recent_reviews.any? %>
+  <h1><%= t("home.section_recent") %> <span class="title-more"><%= link_to(t("home.see_all"), last_readings_path) %></span></h1>
+  <div id="recent-books" class="book-grid">
+    <% if @ongoing_review %>
+      <div class="book-card ongoing book-showcase">
+        <%= link_to book_path(@ongoing_review.book), class: "book-cover-showcase" do %>
+          <%= cover_tag(@ongoing_review.book, variant: :showcase, loading: nil) %>
+        <% end %>
+        <div class="book-info">
+          <h2><%= link_to @ongoing_review.book.title, book_path(@ongoing_review.book) %></h2>
+          <h4><%= @ongoing_review.book.author %></h4>
+        </div>
+      </div>
+    <% end %>
+    <% @recent_reviews.each do |review| %>
+      <%= render "shared/book_card", review: review %>
+    <% end %>
+  </div>
 <% end %>
 
 <% if @wishlist_preview.any? %>
-  <section class="home-section">
-    <h2><%= t("home.section_wishlist") %> <%= link_to t("home.see_all"), wishlist_path %></h2>
-    <%= render "shared/book_grid", reviews: @wishlist_preview %>
-  </section>
+  <h1><%= t("home.section_wishlist") %> <span class="title-more"><%= link_to(t("home.see_all"), wishlist_path) %></span></h1>
+  <div id="wished-books" class="book-grid">
+    <% @wishlist_preview.each do |review| %>
+      <%= render "shared/book_card", review: review %>
+    <% end %>
+  </div>
 <% end %>
 
-<section class="home-section">
-  <h2><%= t("home.section_library") %></h2>
-  <%= render "shared/book_grid", reviews: @library %>
-</section>
+<h1><%= t("home.section_library") %></h1>
+<% if @library.any? %>
+  <div id="books-table" class="books-table">
+    <table>
+      <caption class="visually-hidden"><%= t("home.section_library") %></caption>
+      <thead>
+        <tr>
+          <td aria-hidden="true"></td>
+          <td><%= t("home.table_title") %></td>
+          <td><%= t("home.table_author") %></td>
+          <td><%= t("home.table_rating") %></td>
+          <td><%= t("home.table_favorite") %></td>
+        </tr>
+      </thead>
+      <tbody>
+        <% @library.each do |review| %>
+          <tr>
+            <td><%= link_to cover_tag(review.book, variant: :mini, class: "book-cover-mini"), book_path(review.book) %></td>
+            <td class="book-title-cell"><%= link_to review.book.title, book_path(review.book) %>
+              <span class="book-cell-sub"><%= t("meta.read_on_month", date: l(review.read_date, format: "%B %Y")) %></span>
+            </td>
+            <td><%= review.book.author %></td>
+            <td><%= star_rating(review, size: 12) %></td>
+            <td><%= heart_icon if review.favorite %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+<% else %>
+  <p class="empty-state"><%= t("home.empty") %></p>
+<% end %>

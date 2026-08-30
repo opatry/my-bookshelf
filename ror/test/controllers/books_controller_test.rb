@@ -7,13 +7,14 @@ class BooksControllerTest < ActionDispatch::IntegrationTest
     get book_path(book)
 
     assert_response :success
-    assert_select "h1", text: book.title
+    assert_select "h2.book-title", text: /^#{Regexp.escape(book.title)}/
     assert_select ".book-detail__author", text: book.author
-    assert_select ".book-detail__review" do
-      assert_select ".stars"
+    assert_select ".rating-bar .star-icon" do
+      assert_select ".icon-active", count: book.reviews.first.rating
+      assert_select ".icon-inactive", count: 10 - book.reviews.first.rating
     end
     assert_select ".book-detail__back-cover", text: /À dix-neuf ans, une lettre dénonce Edmond Dantès\./
-    assert_select ".tag", text: "Thriller"
+    assert_select ".book-tags .tag", text: "Thriller"
   end
 
   test "accepts the id-slug URL form" do
@@ -22,7 +23,7 @@ class BooksControllerTest < ActionDispatch::IntegrationTest
     get "/books/#{book.id}-monte-cristo"
 
     assert_response :success
-    assert_select "h1", text: book.title
+    assert_select "h2.book-title", text: /^#{Regexp.escape(book.title)}/
   end
 
   test "accepts the bare id URL" do
@@ -41,7 +42,7 @@ class BooksControllerTest < ActionDispatch::IntegrationTest
       get book_path(wished_book)
 
       assert_response :success
-      assert_select ".book-detail__review", text: /#{I18n.t("books.show.wishlist")}/
+      assert_select ".book-details", text: /Priorité 1/
     end
   end
 

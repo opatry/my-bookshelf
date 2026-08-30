@@ -1,19 +1,20 @@
 require "test_helper"
 
 class CalendarControllerTest < ActionDispatch::IntegrationTest
-  test "shows the month groups for a year" do
+  test "shows a month table for the year" do
     get calendar_path(year: 2026)
 
     assert_response :success
-    assert_select "h2", text: I18n.l(Date.new(2026, 1, 1), format: "%B %Y")
-    assert_select ".calendar-day__title", text: "Le Comte de Monte-Cristo"
+    assert_select ".month-block h2", text: /^Janvier/
+    assert_select "table.month-table td.day-cell a[title*=Monte-Cristo]"
+    assert_select ".rating-overlay", text: /8/
   end
 
   test "does not include reviews of other years" do
     get calendar_path(year: 2025)
 
     assert_response :success
-    assert_select ".calendar-day", count: 0
+    assert_select "td.day-cell a", count: 0
     assert_select ".empty-state"
   end
 

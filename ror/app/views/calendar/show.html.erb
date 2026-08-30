@@ -1,9 +1,6 @@
 <% content_for(:title, t(".title", year: @year)) %>
 
-<div class="page-heading">
-  <h1><%= t(".title", year: @year) %></h1>
-  <p class="subtitle"><%= t(".subtitle", year: @year) %></p>
-</div>
+<h1><%= t(".title", year: @year) %> <span class="title-more"><%= link_to t(".all_readings"), last_readings_path %></span></h1>
 
 <nav class="calendar-year-nav" aria-label="<%= t('calendar.nav_label') %>">
   <% if @min_year && @year > @min_year %>
@@ -16,21 +13,69 @@
 </nav>
 
 <% if @reviews.any? %>
-  <% @reviews.group_by { |review| review.read_date.beginning_of_month }.each do |month, reviews| %>
-    <section class="calendar-month">
-      <h2><%= l(month, format: "%B %Y") %></h2>
-      <ul class="calendar-grid">
-        <% reviews.each do |review| %>
-          <li class="calendar-day">
-            <%= link_to book_path(review.book) do %>
-              <%= cover_tag(review.book, variant: :medium) %>
-              <span class="calendar-day__title"><%= review.book.title %></span>
-              <span class="calendar-day__date"><%= review.read_date.day %> <%= l(review.read_date, format: "%B") %></span>
+  <%
+  books_by_day = @reviews.group_by(&:read_date)
+  current_year = Time.current.year
+  %>
+  <% (1..12).each do |month| %>
+    <% break if @year == current_year && month > Time.current.month %>
+    <%
+    month_reviews = @reviews.select { |review| review.read_date.month == month }
+    page_total = month_reviews.sum { |review| review.book.page_count.to_i }
+    count_label =
+      if month_reviews.empty? || page_total.zero?
+        t(".zero_reading")
+      else
+        [ t("last_readings.books_count", count: month_reviews.size),
+          t("last_readings.pages_count", count: page_total, formatted_count: number_with_delimiter(page_total)) ].join(", ")
+      end
+    first_day = Date.new(@year, month, 1)
+    days_in_month = Date.new(@year, month, -1).day
+    start_offset = (first_day.wday + 6) % 7
+    weeks = ((start_offset + days_in_month) / 7.0).ceil
+    %>
+    <div id="y<%= @year %>-m<%= month %>" class="month-block">
+      <h2><%= t("date.month_names")[month].capitalize %>&nbsp;<span class="book-count">(<%= count_label %>)</span>
+        <span class="title-more"><%= link_to "↑", "#", title: t(".back_to_top") %></span>
+      </h2>
+
+      <table class="month-table">
+        <thead>
+          <tr>
+            <% 7.times do |day_index| %>
+              <th><%= t("date.abbr_day_names")[(day_index + 1) % 7] %></th>
             <% end %>
-          </li>
-        <% end %>
-      </ul>
-    </section>
+          </tr>
+        </thead>
+        <tbody>
+          <% weeks.times do |week_index| %>
+            <tr>
+              <% 7.times do |day_index| %>
+                <%
+                day_number = week_index * 7 + day_index - start_offset + 1
+                is_valid_day = day_number.between?(1, days_in_month)
+                day = Date.new(@year, month, day_number) if is_valid_day
+                %>
+                <td class="day-cell <%= "invalid-day" unless is_valid_day %>">
+                  <% if is_valid_day %>
+                    <% Array(books_by_day[day]).each do |review| %>
+                      <%= link_to book_path(review.book), title: "#{review.book.title} de #{review.book.author}" do %>
+                        <%= cover_tag(review.book, variant: :medium, class: "book-cover-resp") %>
+                        <span class="rating-overlay">
+                          <%= star_icon(filled: true, size: 12) %> <%= review.rating %>
+                          <% if review.favorite %><%= heart_icon(size: 12) %><% end %>
+                        </span>
+                      <% end %>
+                    <% end %>
+                    <span class="day-number"><%= day_number %></span>
+                  <% end %>
+                </td>
+              <% end %>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
   <% end %>
 <% else %>
   <p class="empty-state"><%= t(".empty") %></p>

@@ -1,0 +1,41 @@
+<%# locals: review %>
+<%
+book = review.book
+rating = review.rating
+%>
+<div id="book-<%= book.isbn %>" class="book-card <%= review.status %> <%= review.favorite ? "book-favorite" : "book-regular" %>">
+  <% if book.cover.attached? %>
+    <%= link_to book_path(book) do %>
+      <%= cover_tag(book, variant: :medium, class: "book-cover-card") %>
+    <% end %>
+  <% end %>
+  <div class="book-info" title="<%= "#{book.title} de #{book.author}" %>">
+    <div class="book-header">
+      <h2 class="book-title"><%= link_to book.title, book_path(book) %></h2>
+      <% if review.favorite %>
+        <span class="favorite-icon" aria-label="<%= t('meta.favorite') %>" title="<%= t('meta.favorite') %>"><%= heart_icon %></span>
+      <% end %>
+    </div>
+
+    <% if rating && rating.positive? %>
+      <div aria-label="<%= t('meta.rating_out_of', rating: rating) %>" title="<%= t('meta.rating_out_of', rating: rating) %>">
+        <% 10.times do |i| %>
+          <%= star_icon(filled: i < rating, size: 12) %>
+        <% end %>
+      </div>
+    <% else %>
+      <h4><%= book.author %></h4>
+    <% end %>
+
+    <div class="book-footer book-details">
+      <% case review.status %>
+      <% when "read" %>
+        <p class="read-date"><%= t("meta.read_on_month", date: pretty_read_date(review.read_date)) %></p>
+      <% when "ongoing" %>
+        <p><%= t("meta.ongoing_card") %></p>
+      <% when "wishlist" %>
+        <p><%= t("meta.priority_label") %> <span class="wish-priority" data-priority="<%= review.priority %>">#<%= review.priority %></span></p>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,16 +1,11 @@
 <% content_for(:title, t(".title")) %>
 
-<div class="page-heading">
-  <h1><%= t(".title") %></h1>
-  <p class="subtitle"><%= t(".subtitle") %></p>
-</div>
+<h1><%= t(".title") %></h1>
 
 <% if @reviews.any? %>
   <% @reviews.group_by { |review| review.read_date.year }.each do |year, reviews| %>
-    <section class="home-section">
-      <h2><%= year %></h2>
-      <%= render "shared/book_grid", reviews: reviews, with_date: true %>
-    </section>
+    <h2><%= year %> <span class="book-count">(<%= t("home.section_library") %>)</span></h2>
+    <%= render "shared/book_grid", reviews: reviews %>
   <% end %>
 <% else %>
   <p class="empty-state"><%= t("home.empty") %></p>

@@ -34,26 +34,36 @@ if (searchContainer) {
     results.replaceChildren();
     if (books.length === 0) {
       const empty = document.createElement("li");
-      empty.className = "search__empty";
+      empty.className = "search-result-row-none";
       empty.textContent = emptyMessage;
       results.append(empty);
     } else {
       for (const book of books) {
         const li = document.createElement("li");
+        li.className = "search-result-row";
         const a = document.createElement("a");
         a.href = book.url;
         a.setAttribute("role", "option");
 
-        const title = document.createElement("div");
-        title.className = "search__results__title";
+        const imageContainer = document.createElement("div");
+        imageContainer.className = "image-container";
+        if (book.cover) {
+          const img = document.createElement("img");
+          img.src = book.cover;
+          img.alt = "";
+          imageContainer.append(img);
+        }
+
+        const cell = document.createElement("div");
+        cell.className = "book-cell";
+        const title = document.createElement("h3");
         title.textContent = book.title;
+        const author = document.createElement("div");
+        author.className = "author-detail";
+        author.textContent = [book.author, ...(book.tags || [])].filter(Boolean).join(" · ");
 
-        const meta = document.createElement("div");
-        meta.className = "search__results__meta";
-        const extra = [book.author, ...(book.tags || [])].filter(Boolean).join(" · ");
-        meta.textContent = extra;
-
-        a.append(title, meta);
+        cell.append(title, author);
+        a.append(imageContainer, cell);
         li.append(a);
         results.append(li);
       }

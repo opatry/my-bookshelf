@@ -1,25 +1,8 @@
-<% with_date = local_assigns.fetch(:with_date, false) %>
-<%# locals: reviews (array of Review with book), with_date: false %>
+<%# locals: reviews %>
 <% unless reviews.none? %>
-  <ul class="book-grid">
+  <div class="book-grid">
     <% reviews.each do |review| %>
-      <li class="book-card">
-        <%= link_to book_path(review.book) do %>
-          <%= cover_tag(review.book, variant: :default) %>
-          <div class="book-card__title"><%= review.book.title %></div>
-          <div class="book-card__author"><%= review.book.author %></div>
-          <div class="book-card__meta">
-            <% if with_date && review.read_date %>
-              <span><%= l(review.read_date, format: :short) %></span>
-            <% end %>
-            <% if review.rating %>
-              <%= star_rating(review) %>
-            <% end %>
-          </div>
-        <% end %>
-      </li>
+      <%= render "shared/book_card", review: review %>
     <% end %>
-  </ul>
-<% else %>
-  <p class="empty-state"><%= t("home.empty") %></p>
+  </div>
 <% end %>

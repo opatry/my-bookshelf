@@ -5,8 +5,8 @@ class LastReadingsControllerTest < ActionDispatch::IntegrationTest
     get last_readings_path
 
     assert_response :success
-    assert_select ".book-card__title", text: "Le Comte de Monte-Cristo"
-    assert_select "h2", text: "2026"
+    assert_select ".book-title", text: "Le Comte de Monte-Cristo"
+    assert_select "h2", text: /^2026 /
   end
 
   test "does not include wishlist or other user reviews" do

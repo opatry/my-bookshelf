@@ -2,61 +2,49 @@
 
 <%= link_to t(".back"), root_path, class: "book-detail__back" %>
 
-<article class="book-detail">
-  <aside class="book-detail__cover"><%= cover_tag(@book, variant: :showcase) %></aside>
-
-  <div class="book-detail__content">
-    <h1><%= @book.title %></h1>
-    <p class="book-detail__author"><%= @book.author %></p>
-    <%= render "shared/tags", tags: @book.tags %>
-
-    <p class="book-detail__meta">
-      <%= page_count_label(@book) %><% if page_count_label(@book).present? %> · <% end %><%= published_label(@book) %>
-    </p>
-
-    <% if @review %>
-      <div class="book-detail__review">
-        <% case @review.status %>
-        <% when "read" %>
-          <p><%= star_rating(@review) %> — <span class="read-date"><%= t("books.show.read_on", date: l(@review.read_date, format: :long)) %></span>
-          <% if @review.favorite %> · <span class="favorite">★ <%= t("books.show.favorite") %></span><% end %></p>
-        <% when "ongoing" %>
-          <p><%= t("books.show.ongoing") %></p>
-        <% when "wishlist" %>
-          <p><%= t("books.show.wishlist") %></p>
-        <% end %>
-      </div>
+<div id="book-<%= @book.isbn %>">
+  <h2 class="book-title">
+    <%= @book.title %>
+    <% if @review&.favorite %>
+      <span class="favorite-icon" aria-label="<%= t('meta.favorite') %>" title="<%= t('meta.favorite') %>"><%= heart_icon %></span>
     <% end %>
+  </h2>
+  <h4 class="book-detail__author"><%= @book.author %></h4>
 
-    <% if @book.back_cover.present? %>
-      <div class="book-detail__back-cover">
-        <h2 class="book-detail__section-title"><%= t(".back_cover") %></h2>
-        <%= simple_format(@book.back_cover) %>
-      </div>
-    <% end %>
+  <% if @review&.read? %>
+    <%= star_rating(@review, size: 16) %>
+  <% end %>
 
-    <% if @book.description.present? %>
-      <div class="book-detail__description"><%= simple_format(@book.description) %></div>
-    <% else %>
-      <p class="book-detail__none"><%= t(".no_meta") %></p>
-    <% end %>
+  <% metadata = book_metadata(@book, @review) %>
+  <% unless metadata.empty? %>
+    <p class="book-details"><%= metadata.join(", ").capitalize %></p>
+  <% end %>
 
-    <dl class="book-detail__facts">
-      <% if @book.publication_year %><div><dt><%= t(".published") %></dt><dd><%= @book.publication_year %></dd></div><% end %>
-      <% if @book.page_count %><div><dt><%= t(".pages") %></dt><dd><%= @book.page_count %></dd></div><% end %>
-      <% if @book.isbn %><div><dt><%= t(".isbn") %></dt><dd><%= @book.formatted_isbn %></dd></div><% end %>
-      <% if @book.series %><div><dt><%= t(".series") %></dt><dd><%= @book.series.name %></dd></div><% end %>
-    </dl>
-  </div>
-</article>
+  <%= cover_tag(@book, variant: :default, class: "book-cover") %>
 
-<% if @same_series.any? %>
-  <section class="same-series">
-    <h2><%= t(".same_series", series: @book.series.name) %></h2>
-    <ul>
+  <% if @book.back_cover.present? %>
+    <div class="book-detail__back-cover">
+      <h2 class="book-detail__section-title"><%= t(".back_cover") %></h2>
+      <%= simple_format(@book.back_cover) %>
+    </div>
+  <% end %>
+
+  <% if @book.description.present? %>
+    <div class="book-detail__description"><%= simple_format(@book.description) %></div>
+  <% else %>
+    <p class="book-detail__none"><%= t(".no_meta") %></p>
+  <% end %>
+
+  <div style="clear: left; margin-bottom: 1em;"></div>
+
+  <%= render "shared/tags", tags: @book.tags %>
+
+  <% if @same_series.any? %>
+    <h3><%= t(".same_series", series: @book.series.name) %></h3>
+    <ul class="linked-books">
       <% @same_series.each do |book| %>
-        <li><%= link_to book.title, book_path(book) %> <span class="muted">— <%= book.author %></span></li>
+        <li><%= link_to "#{book.title}, par #{book.author}", book_path(book) %></li>
       <% end %>
     </ul>
-  </section>
-<% end %>
+  <% end %>
+</div>

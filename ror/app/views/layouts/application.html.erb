@@ -1,17 +1,19 @@
 <!DOCTYPE html>
+<% is_home = params[:controller] == "home" %>
 <html lang="<%= I18n.locale %>">
   <head>
     <title><%= page_title %></title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f2f2f2">
+    <meta name="description" content="<%= t('site.tagline') %>">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="mobile-web-app-capable" content="yes">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= yield :head %>
 
-    <link rel="icon" href="/icon.png" type="image/png">
-    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="shortcut icon" href="/icon.png" type="image/png">
     <link rel="apple-touch-icon" href="/icon.png">
     <link rel="alternate" type="application/atom+xml" title="<%= t('site.name') %>" href="<%= feed_path(format: :xml) %>">
 
@@ -20,22 +22,42 @@
   </head>
 
   <body>
-    <header class="site-header">
-      <div class="site-header__inner">
-        <%= link_to t("site.name"), root_path, class: "site-header__brand" %>
-        <nav class="site-header__nav" aria-label="<%= t('nav.label') %>">
-          <%= nav_links %>
-        </nav>
-        <%= render "shared/search" %>
+    <div id="main" class="<%= is_home ? "full" : "compact" %>">
+      <div id="header">
+        <div class="profile-picture">
+          <% unless is_home %>
+            <%= link_to image_tag("avatar.jpg", alt: "", width: 48, height: 48), root_path, title: t("nav.home") %>
+          <% else %>
+            <%= image_tag("avatar.jpg", alt: "", width: 128, height: 128) %>
+          <% end %>
+        </div>
+
+        <div class="header-detail">
+          <div id="badges">
+            <%= render "shared/search" %>
+            <div id="social-badge-babelio" class="social-badge">
+              <%= link_to image_tag("babelio.png", width: 25, height: 25, alt: "Babelio"),
+                          "https://www.babelio.com/bibliotheque.php?&s1=1&id_user=1664025&tri=note&sens=decroissant",
+                          title: "Mon profil Babelio", style: "--social-tint-color: rgba(251, 185, 30, 0.2)" %>
+            </div>
+            <div id="social-badge-sc" class="social-badge">
+              <%= link_to image_tag("senscritique.svg", width: 25, height: 25, alt: "SensCritique"),
+                          "https://www.senscritique.com/OlivY%C3%A9/collection?universe=2&action=RATING&order=MY_RATING_DESC",
+                          title: "Mon profil SensCritique", style: "--social-tint-color: rgba(0, 0, 0, 0.2)" %>
+            </div>
+            <div id="social-badge-rss" class="social-badge">
+              <%= link_to image_tag("rss.png", width: 25, height: 25, alt: "RSS"),
+                          feed_path(format: :xml),
+                          title: "Flux RSS", style: "--social-tint-color: rgba(109, 223, 227, 0.2)" %>
+            </div>
+          </div>
+        </div>
       </div>
-    </header>
 
-    <main class="site-main">
-      <%= yield %>
-    </main>
-
-    <footer class="site-footer">
-      <p><%= t("site.footer_html", year: Time.current.year, site: link_to(t("site.name"), root_path)).html_safe %></p>
-    </footer>
+      <div id="content">
+        <%= render "shared/flash" %>
+        <%= yield %>
+      </div>
+    </div>
   </body>
 </html>

@@ -1,25 +1,13 @@
 <% content_for(:title, t(".title")) %>
 
-<div class="page-heading">
-  <h1><%= t(".title") %></h1>
-  <p class="subtitle"><%= t(".subtitle") %></p>
-</div>
+<h1><%= t(".title") %></h1>
 
 <% if @reviews.any? %>
-  <ol class="wishlist">
+  <div class="book-grid wishlist-page">
     <% @reviews.each do |review| %>
-      <li class="wishlist__item">
-        <%= link_to book_path(review.book) do %>
-          <%= cover_tag(review.book, variant: :medium) %>
-          <span class="wishlist__info">
-            <span class="wishlist__title"><%= review.book.title %></span>
-            <span class="wishlist__author"><%= review.book.author %></span>
-          </span>
-        <% end %>
-        <span class="priority"><%= t("wishlist.index.priority", level: review.priority) %></span>
-      </li>
+      <%= render "shared/book_card", review: review %>
     <% end %>
-  </ol>
+  </div>
 <% else %>
   <p class="empty-state"><%= t("home.empty") %></p>
 <% end %>

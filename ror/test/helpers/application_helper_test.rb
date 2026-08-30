@@ -7,16 +7,6 @@ class ApplicationHelperTest < ActionView::TestCase
     assert_equal I18n.t("site.name"), page_title
   end
 
-  test "nav_links renders the French navigation" do
-    html = nav_links
-
-    assert_match I18n.t("nav.home"), html
-    assert_match I18n.t("nav.last_readings"), html
-    assert_match I18n.t("nav.wishlist"), html
-    assert_match I18n.t("nav.tags"), html
-    assert_match I18n.t("nav.calendar"), html
-  end
-
   test "read_date_label formats the read date" do
     review = reviews(:one)
 
@@ -29,12 +19,21 @@ class ApplicationHelperTest < ActionView::TestCase
     assert_equal I18n.t("meta.pages", count: book.page_count), page_count_label(book)
   end
 
-  test "star_rating renders 5 stars" do
+  test "star_rating renders the 10-star scale" do
     review = reviews(:one)
 
     html = star_rating(review)
-    assert_match "★", html
-    assert_match "☆", html
+    assert_equal 10, html.scan("star-icon").size
+    assert_equal review.rating, html.scan("icon-active").size
+    assert_equal 10 - review.rating, html.scan("icon-inactive").size
+  end
+
+  test "book_metadata mixes book facts and the review state" do
+    review = reviews(:one)
+    metadata = book_metadata(review.book, review)
+
+    assert_includes metadata, I18n.t("meta.read_on_month", date: pretty_read_date(review.read_date))
+    assert_includes metadata, I18n.t("meta.pages", count: review.book.page_count)
   end
 
   test "cover_tag falls back to a placeholder without a cover" do

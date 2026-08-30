@@ -6,7 +6,7 @@ class TagsControllerTest < ActionDispatch::IntegrationTest
 
     assert_response :success
     assert_select ".tag-cloud a", text: "Thriller"
-    assert_select ".tag-cloud__count", text: "(1)"
+    assert_select ".tag-count", text: "(1)"
   end
 
   test "shows the books tagged by the owner" do
@@ -15,8 +15,8 @@ class TagsControllerTest < ActionDispatch::IntegrationTest
     get tag_path(tag)
 
     assert_response :success
-    assert_select "h1", text: tag.name
-    assert_select ".book-card__title", text: "Le Comte de Monte-Cristo"
+    assert_select "h1", text: /#{Regexp.escape(tag.name)}/
+    assert_select ".book-title", text: "Le Comte de Monte-Cristo"
   end
 
   test "404 for an unknown tag slug" do

@@ -4,23 +4,21 @@ fr:
     footer_html: "© %{year} %{site} — un site personnel."
     tagline: "Les livres que j’ai lus avec une note et un résumé rapide pour partager."
 
-  nav:
-    label: "Navigation principale"
-    home: "Accueil"
-    last_readings: "Dernières lectures"
-    wishlist: "Liste de souhaits"
-    tags: "Étiquettes"
-    calendar: "Calendrier"
-    feed: "Flux RSS"
-
   search:
     label: "Rechercher un livre"
     placeholder: "Rechercher…"
     no_results: "Aucun résultat"
 
+  nav:
+    home: "Accueil"
+
   meta:
     ongoing: "En cours de lecture"
+    ongoing_card: "📖 En cours de lecture…"
     read_on: "lu le %{date}"
+    read_on_month: "Lu en %{date}"
+    priority_label: "Priorité"
+    favorite: "Coup de cœur"
     pages:
       one: "%{count} page"
       other: "%{count} pages"
@@ -30,12 +28,24 @@ fr:
 
   home:
     tagline: "Les livres que j’ai lus avec une note et un résumé rapide pour partager."
-    section_recent: "Dernières lectures"
-    section_ongoing: "Lecture en cours"
-    section_wishlist: "Dans ma liste de souhaits"
-    section_library: "Ma bibliothèque"
-    see_all: "Voir tout →"
+    section_recent: "Lectures récentes"
+    section_wishlist: "Envies"
+    section_library: "Bibliothèque"
+    see_all: "→ voir plus…"
     empty: "Aucun livre pour le moment."
+    table_title: "Titre"
+    table_author: "Auteur"
+    table_rating: "Note"
+    table_favorite: "Coup de cœur"
+
+  last_readings:
+    index:
+      title: "Dernières lectures"
+      subtitle: "Toutes mes lectures, de la plus récente à la plus ancienne."
+    books_count:
+      one: "un livre"
+      other: "%{count} livres"
+    pages_count: "%{formatted_count} pages"
 
   books:
     show:
@@ -48,15 +58,10 @@ fr:
       series: "Série"
       ongoing: "En cours de lecture"
       wishlist: "Dans la liste de souhaits"
-      no_meta: "Aucune critique écrite pour ce livre pour le moment."
+      no_meta: "Aucun résumé pour ce livre pour le moment."
       back_cover: "4e de couverture"
       back: "← Retour"
       same_series: "À lire aussi dans la série « %{series} »"
-
-  last_readings:
-    index:
-      title: "Dernières lectures"
-      subtitle: "Toutes mes lectures, de la plus récente à la plus ancienne."
 
   wishlist:
     index:
@@ -68,6 +73,7 @@ fr:
     index:
       title: "Étiquettes"
       subtitle: "Explorer mes lectures par thème, genre ou région."
+    back_all: "🏷️ Toutes les étiquettes"
     show:
       title: "%{tag}"
       subtitle: "Mes lectures taguées « %{tag} »."
@@ -80,6 +86,9 @@ fr:
       prev_year: "← %{year}"
       next_year: "%{year} →"
       empty: "Aucune lecture enregistrée cette année-là."
+      zero_reading: "Aucune lecture"
+      back_to_top: "Retour en haut de page"
+      all_readings: "Dernières lectures…"
 
   feed:
     title: "%{site} — Dernières lectures"

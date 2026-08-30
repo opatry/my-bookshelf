@@ -1,14 +1,17 @@
 <% content_for(:title, t(".title")) %>
 
-<div class="page-heading">
-  <h1><%= t(".title") %></h1>
-  <p class="subtitle"><%= t(".subtitle") %></p>
-</div>
+<h1><%= t(".title") %></h1>
 
 <% if @tags.any? %>
+  <%
+  max_count = @tags.map { |_, count| count }.max
+  %>
   <ul class="tag-cloud">
     <% @tags.each do |tag, count| %>
-      <li><%= link_to tag.name, tag_path(tag) %> <span class="tag-cloud__count">(<%= count %>)</span></li>
+      <li class="tag tag_<%= tag_weight(count, max_count) %>">
+        <%= link_to tag.name, tag_path(tag) %>
+        <span class="tag-count">(<%= count %>)</span>
+      </li>
     <% end %>
   </ul>
 <% else %>

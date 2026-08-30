@@ -12,7 +12,7 @@ class HomeControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_match I18n.t("home.section_recent"), response.body
     assert_match I18n.t("home.section_library"), response.body
-    assert_select ".book-card__title", text: "Lecture récente"
+    assert_select ".book-title", text: "Lecture récente"
   end
 
   test "renders the wishlist preview when the owner has wishlisted books" do
@@ -25,10 +25,10 @@ class HomeControllerTest < ActionDispatch::IntegrationTest
 
     assert_response :success
     assert_match I18n.t("home.section_wishlist"), response.body
-    assert_select ".book-card__title", text: "Un souhait"
+    assert_select ".book-title", text: "Un souhait"
   end
 
-  test "shows the ongoing reading section when the owner has an ongoing review" do
+  test "shows the ongoing reading as a showcase card" do
     owner = User.default_owner
     book = valid_book(title: "En cours", author: "Q")
     book.save!
@@ -37,8 +37,7 @@ class HomeControllerTest < ActionDispatch::IntegrationTest
     get root_path
 
     assert_response :success
-    assert_match I18n.t("home.section_ongoing"), response.body
-    assert_select ".current-reading__status", text: I18n.t("meta.ongoing")
+    assert_select "#recent-books .book-showcase h2 a", text: "En cours"
   end
 
   test "ignores other users reviews on the public site" do
@@ -46,9 +45,7 @@ class HomeControllerTest < ActionDispatch::IntegrationTest
     get root_path
 
     assert_response :success
-    assert_select ".book-card", count: 1 do
-      assert_select ".book-card__title", text: "Le Comte de Monte-Cristo"
-    end
-    assert_select ".book-card__title", text: "Le Petit Prince", count: 0
+    assert_select "#books-table .book-title-cell a", text: "Le Comte de Monte-Cristo"
+    assert_select "#books-table .book-title-cell a", text: "Le Petit Prince", count: 0
   end
 end
