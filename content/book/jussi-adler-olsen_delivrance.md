@@ -7,7 +7,7 @@ rating: 6
 tags:
 - Policier
 - Thriller
-- Scandinavie
+- Danemark
 social:
   babelio: '430586'
   sc: '8416501'

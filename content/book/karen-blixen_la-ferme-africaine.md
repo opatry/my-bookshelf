@@ -6,7 +6,7 @@ author: "Karen Blixen"
 rating: 4
 read_date: 2026-02-28
 tags:
-- Afrique
+- Kenya
 social:
   sc: '186812'
   babelio: '621545'

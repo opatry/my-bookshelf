@@ -6,7 +6,7 @@ author: "Stieg Larsson"
 rating: 8
 tags:
 - Thriller
-- Scandinavie
+- Suède
 linked_books:
 - '9782742765010'
 - '9782742770311'

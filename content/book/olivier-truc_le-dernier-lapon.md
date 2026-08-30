@@ -7,7 +7,7 @@ rating: 7
 read_date: 2023-10-22
 tags:
 - Policier
-- Scandinavie
+- Norvège
 - Nature
 social:
   babelio: '388398'

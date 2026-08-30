@@ -11,7 +11,7 @@ tags:
 - Biographie
 - Russie
 - Angleterre
-- Scandinavie
+- Danemark
 social:
   sc: '40332046'
   babelio: '1143535'

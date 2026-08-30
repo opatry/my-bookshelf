@@ -9,7 +9,7 @@ tags:
 - Thriller
 - Policier
 - Serial killer
-- Scandinavie
+- Norvège
 social:
   sc: '106249'
   babelio: '555987'

@@ -6,7 +6,7 @@ author: "Stieg Larsson"
 rating: 8
 tags:
 - Thriller
-- Scandinavie
+- Suède
 social:
   sc: '435720'
   babelio: '14497'

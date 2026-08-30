@@ -7,8 +7,8 @@ rating: 7
 read_date: 2025-04-26
 tags:
 - Famille
-- Aveyron
 - Moyen-âge
+- Occitanie
 social:
   babelio: '2400'
   sc: '474834'
