@@ -4,6 +4,16 @@ Personal book reading list website built with Nanoc (Ruby static site generator)
 
 **All content is in French** — book titles, descriptions, tags, and UI text.
 
+## Working guidelines
+
+- **Stay inside this git repo.** Don't go poking around outside it (no `git_root/..`, no
+  sibling directories, no unrelated paths on the machine). Sandbox/temp areas like `/tmp`
+  and the opencode temp dir are fine. If you need something outside the repo, I'll tell
+  you and point you exactly where to look.
+- **Self-correct this file.** If I correct your behavior, update these guidelines so the
+  correction sticks. `AGENTS.md` is a living document — revise it whenever a repeated
+  expectation is clarified rather than just fixing the one-off instance.
+
 ## Project structure
 
 - `content/book/*.md` — Book entries (markdown with YAML frontmatter)

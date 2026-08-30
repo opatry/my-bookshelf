@@ -74,7 +74,21 @@ Applied on save (see service objects under `app/services/`):
 
 ## Testing
 
-Minitest + fixtures. Must be green before any change is considered done: `bin/rails test`.
+- **Fail fast, short feedback loop.** Run `bin/rails test` as soon as a change is done,
+  and prefer a **test-first** approach: write a failing test for the expected behavior
+  before implementing it. This keeps you focused on behavior and output, and avoids
+  getting polluted by implementation details. Must be green before a change is done:
+  `bin/rails test`. Rubocop must stay clean (`bundle exec rubocop`).
+
+## Idiomatic Rails & Ruby
+
+- Enforce being **RoR & Ruby idiomatic** as much as possible: use the conventions the
+  framework and community expect (resourceful routing, `t('.key')` lazy lookup, service
+  objects where they fit, `ActiveRecord` scope methods, etc.).
+- If a directive would push against this rule (e.g. reimplementing something the framework
+  provides, or a non-idiomatic pattern), **try to teach the orchestrator/user about the
+  directive** and ask for confirmation before deviating — always explain your reasoning in
+  that kind of situation.
 
 ## Phases
 
