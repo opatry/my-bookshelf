@@ -28,6 +28,13 @@
       </div>
     <% end %>
 
+    <% if @book.back_cover.present? %>
+      <div class="book-detail__back-cover">
+        <h2 class="book-detail__section-title"><%= t(".back_cover") %></h2>
+        <%= simple_format(@book.back_cover) %>
+      </div>
+    <% end %>
+
     <% if @book.description.present? %>
       <div class="book-detail__description"><%= simple_format(@book.description) %></div>
     <% else %>

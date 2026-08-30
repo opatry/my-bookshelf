@@ -12,6 +12,7 @@ class BooksControllerTest < ActionDispatch::IntegrationTest
     assert_select ".book-detail__review" do
       assert_select ".stars"
     end
+    assert_select ".book-detail__back-cover", text: /À dix-neuf ans, une lettre dénonce Edmond Dantès\./
     assert_select ".tag", text: "Thriller"
   end
 

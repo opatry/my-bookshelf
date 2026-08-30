@@ -27,6 +27,7 @@ class Admin::BooksControllerTest < ActionDispatch::IntegrationTest
           title: "Candide", author: "Voltaire", isbn: unique_isbn,
           publication_year: 1759, page_count: 208,
           description: "Tout est pour le mieux.",
+          back_cover: "Le meilleur des mondes possibles.",
           tag_names: "Classique, Philosophie"
         }
       }
@@ -35,6 +36,7 @@ class Admin::BooksControllerTest < ActionDispatch::IntegrationTest
     book = Book.order(:created_at).last
     assert_redirected_to admin_book_path(book)
     assert_equal "Candide", book.title
+    assert_equal "Le meilleur des mondes possibles.", book.back_cover
     assert_equal [ "Classique", "Philosophie" ], book.tags.order(:name).pluck(:name)
     assert_equal I18n.t("admin.books.create.success"), flash[:notice]
   end

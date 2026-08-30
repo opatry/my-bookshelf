@@ -44,12 +44,14 @@ class BookTest < ActiveSupport::TestCase
     assert dup.errors[:isbn].present?
   end
 
-  test "sanitizes title author and description" do
-    book = valid_book(title: "  L'été   des orages...  ", author: "  A.  Dumas  ", description: "Une description !")
+  test "sanitizes title author description and back cover" do
+    book = valid_book(title: "  L'été   des orages...  ", author: "  A.  Dumas  ",
+                      description: "Une description !", back_cover: "Un synopsis ; sans fautes ?")
     book.valid? # triggers the sanitizing before_validation
     assert_equal "L’été des orages…", book.title
     assert_equal "A. Dumas", book.author
     assert_includes book.description, "Une description\u202F!"
+    assert_includes book.back_cover, "Un synopsis\u202F; sans fautes\u202F?"
   end
 
   test "series is optional" do

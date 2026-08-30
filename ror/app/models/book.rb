@@ -15,7 +15,7 @@ class Book < ApplicationRecord
     attachable.variant :showcase, resize_to_limit: [ 300, 450 ]
   end
 
-  sanitizes :title, :author, :description
+  sanitizes :title, :author, :description, :back_cover
 
   validates :title, presence: true
   validates :author, presence: true

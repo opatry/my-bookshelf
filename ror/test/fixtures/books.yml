@@ -5,6 +5,7 @@ one:
   page_count: 1248
   publication_year: 1844
   description: "Un classique de la littérature."
+  back_cover: "À dix-neuf ans, une lettre dénonce Edmond Dantès."
   senscritique_id: "123"
   babelio_id: "456"
   series: one
