@@ -3,12 +3,12 @@ uuid: c5b70ecf-21b9-4b5e-8449-755159c7f55d
 isbn: '9782266352529'
 title: "Les Disparus de Tatihou"
 author: "Nadine Mousselet"
-ongoing: true
+rating: 6
+read_date: 2026-08-30
 tags:
 - Policier
 - Thriller
 - Normandie
-- Bretagne
 social:
   babelio: '1852000'
 page_count: 272
