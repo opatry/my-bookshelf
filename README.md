@@ -71,7 +71,7 @@ $ ./node_modules/.bin/firebase deploy --only hosting
 You can fetch data for a single book (it will create a new file if one doesn't exist):
 
 ```bash
-./fetch_book.sh "Book Title" "Author"
+./scripts/fetch/google_books.sh "Book Title" "Author"
 ```
 
 Or process a batch from a text file, following the format:

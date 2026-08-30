@@ -32,3 +32,6 @@ gem 'i18n'
 gem 'nokogiri', '~> 1.18'
 gem 'colorize'
 gem 'activesupport'
+
+# headless Chrome automation for the Babelio lookup script (scripts/fetch/babelio.rb)
+gem 'ferrum'

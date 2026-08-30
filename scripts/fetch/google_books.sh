@@ -2,7 +2,8 @@
 
 set -euo pipefail
 
-origin=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd) || exit
+script_dir=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd) || exit
+origin=$(cd "${script_dir}/../.." && pwd) || exit
 
 # if there are issues with `iconv`, try installing it with homebrew (`brew install libiconv`) and force adding it to PATH
 # export PATH="/opt/homebrew/opt/libiconv/bin:$PATH"
@@ -125,19 +126,40 @@ else
 
   echo "Query book information for ${book_query}"
 
-  book_data=$(curl -s --get \
+  # Google Books API rate limits / transient 503 errors: retry with backoff
+  fetch_book_data() {
+    curl -s --get \
         --data "key=${GOOGLE_BOOKS_API_KEY}" \
         --data "langRestrict=fr" \
         --data-urlencode "q=${book_title_query} by ${book_author_query}" \
         'https://www.googleapis.com/books/v1/volumes' \
-        -H 'Accept: application/json')
+        -H 'Accept: application/json'
+  }
 
-  if jq -e 'has("error")' <<< "${book_data}" >/dev/null 2>&1; then
+  book_data=""
+  attempt=1
+  max_attempts=3
+  while [ "${attempt}" -le "${max_attempts}" ]; do
+    book_data=$(fetch_book_data)
+
+    if ! jq -e 'has("error")' <<< "${book_data}" >/dev/null 2>&1; then
+      break
+    fi
+
     code=$(jq -r '.error.code' <<< "${book_data}")
     message=$(jq -r '.error.message' <<< "${book_data}")
-    echo "Error while fetching book information: ${code} ${message}"
-    exit 1
-  fi
+    echo "Error while fetching book information (attempt ${attempt}/${max_attempts}): ${code} ${message}"
+
+    if [ "${attempt}" -ge "${max_attempts}" ]; then
+      echo "Giving up after ${max_attempts} attempts."
+      exit 1
+    fi
+
+    sleep_delay=$((2 ** attempt))
+    echo "Retrying in ${sleep_delay}s..."
+    sleep "${sleep_delay}"
+    attempt=$((attempt + 1))
+  done
 
   isbn=""
   publication_year=""
@@ -160,12 +182,12 @@ else
 
     publication_year=$(jq -r '.items[].volumeInfo.publishedDate' <<< "${book_data}" | sort | head -n1)
     publication_year=$(grep -oE '[0-9]{4}' <<< "${publication_year}" | head -n1 || true)
-    echo "publication_year=$publication_year"
+    echo "publication_year=${publication_year}"
     page_count=$(jq -r '.volumeInfo.pageCount' <<< "${selected_volume}")
     if [ "${page_count}" = "null" ] || [ -z "${page_count}" ]; then
       page_count=""
     fi
-    echo "page_count=$page_count"
+    echo "page_count=${page_count}"
 
     cover_full_url=$(jq -r .volumeInfo.imageLinks.thumbnail <<< "${selected_volume}")
     if [ "${cover_full_url}" = "null" ] || [ -z "${cover_full_url}" ]; then

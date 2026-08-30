@@ -2,7 +2,8 @@
 
 set -euo pipefail
 
-origin=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd) || exit
+script_dir=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd) || exit
+origin=$(cd "${script_dir}/../.." && pwd) || exit
 
 new_books=$(cd "${origin}/content/book" && git ls-files -o --exclude-standard --full-name)
 

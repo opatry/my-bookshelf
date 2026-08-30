@@ -1,0 +1,81 @@
+# Babelio tags to ignore when inferring tags for books.
+# These are genre/topic labels from Babelio that don't map well
+# to the existing project tag taxonomy.
+#
+# Format: list of tag names (case-sensitive, matching Babelio's labels).
+# When the LLM agent processes Babelio tags, any tag in this list
+# is automatically skipped.
+
+# Generic catch-all (every book is a "roman" here)
+- Roman
+
+# Literature-by-language categories (project uses country tags instead)
+- Littérature française
+- Littérature étrangère
+- Littérature américaine
+- Littérature anglaise
+- Littérature européenne
+- Littérature japonaise
+- Littérature latino-américaine
+- Littérature africaine
+- Littérature nord-américaine
+- Littérature québécoise
+- Littérature islandaise
+- Littérature allemande
+- Littérature russe
+- Littérature italienne
+- Littérature espagnole
+- Littérature générale
+- Littérature blanche
+
+# Age-group categories (not used in this project)
+- Jeunesse
+- Jeune adulte
+- Adolescence
+- Littérature jeunesse
+
+# Format-based genres (not tracked in this taxonomy)
+- Nouvelle
+- Conte
+- Poésie
+- Théâtre
+- BD
+- Bande dessinée
+- Manga
+- Graphique
+
+# Non-fiction categories (only Biographie is used)
+- Essai
+- Documentaire
+- Guide
+- Guide pratique
+- Revue
+- Manuel
+
+# Period/canon labels
+- Classique
+- Culte
+- Incontournable
+
+# Overlapping genres
+- Polar  # covered by Policier/Thriller
+- Roman noir  # covered by Policier/Thriller
+- Romance  # redundant with Amour
+
+# Philosophy/religion
+- Philosophie
+- Religion
+- Spiritualité
+- Ésotérisme
+
+# Historical (too broad; only "Moyen-âge" exists as a period tag)
+- Historique
+- Roman historique
+
+# Other generic labels
+- Roadmovie
+- Feel good  # project uses "Feel-good" with hyphen
+- Young adult
+- Fantasy romantique
+- Dark romance
+- Romantasy
