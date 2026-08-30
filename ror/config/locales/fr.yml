@@ -1,0 +1,76 @@
+fr:
+  helpers:
+    submit:
+      create: "Créer"
+      update: "Mettre à jour"
+      submit: "Enregistrer"
+
+  activerecord:
+    errors:
+      models:
+        book:
+          attributes:
+            isbn:
+              invalid_isbn: "n’est pas un ISBN-13 valide"
+        review:
+          attributes:
+            rating:
+              must_be_blank: "doit être vide pour une lecture en cours"
+            read_date:
+              must_be_blank: "doit être vide pour une lecture en cours"
+      messages:
+        must_be_blank: "doit être vide"
+
+    models:
+      book: "Livre"
+      series: "Série"
+      tag: "Étiquette"
+
+    attributes:
+      book:
+        isbn: "ISBN"
+        title: "Titre"
+        author: "Auteur"
+        page_count: "Nombre de pages"
+        publication_year: "Année de publication"
+        description: "Description"
+        senscritique_id: "ID SensCritique"
+        babelio_id: "ID Babelio"
+        series: "Série"
+        tags: "Étiquettes"
+        cover: "Couverture"
+      review:
+        status: "Statut"
+        rating: "Note"
+        read_date: "Date de lecture"
+        priority: "Priorité"
+        favorite: "Coup de cœur"
+      series:
+        name: "Nom"
+      tag:
+        name: "Nom"
+      user:
+        name: "Nom"
+        email: "E-mail"
+
+  # Common UI strings for the whole bookshelf.
+  bookshelf:
+    app_title: "Les lectures d’Olivier"
+    tagline: "Les livres que j’ai lus avec une note et un résumé rapide pour partager."
+    back_home: "Retour à l’accueil"
+    search_placeholder: "Rechercher…"
+    no_search_results: "Pas de résultat correspondant à la requête."
+    reading_states:
+      ongoing: "En cours de lecture…"
+      wishlist: "Dans les envies de lecture pour plus tard…"
+      read: "Lu"
+    status_labels:
+      read: "Lu"
+      wishlist: "À lire"
+      ongoing: "En cours"
+    favorite: "Coup de cœur"
+    pages:
+      one: "%{count} page"
+      other: "%{count} pages"
+    published_in: "paru en %{year}"
+    read_in: "lu en %{month} %{year}"

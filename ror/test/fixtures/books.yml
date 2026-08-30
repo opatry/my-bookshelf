@@ -1,0 +1,21 @@
+one:
+  isbn: "9782070373017"
+  title: "Le Comte de Monte-Cristo"
+  author: "Alexandre Dumas"
+  page_count: 1248
+  publication_year: 1844
+  description: "Un classique de la littérature."
+  senscritique_id: "123"
+  babelio_id: "456"
+  series: one
+
+two:
+  isbn: "9782226317179"
+  title: "Le Petit Prince"
+  author: "Antoine de Saint-Exupéry"
+  page_count: 96
+  publication_year: 1943
+  description: "Un conte pour enfants et grandes personnes."
+  senscritique_id: "789"
+  babelio_id: "101"
+  series: two

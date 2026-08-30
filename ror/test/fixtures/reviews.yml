@@ -1,0 +1,13 @@
+one:
+  user: one
+  book: one
+  status: 0
+  rating: 8
+  read_date: 2026-01-15
+  favorite: true
+
+two:
+  user: two
+  book: two
+  status: 2
+  favorite: false
