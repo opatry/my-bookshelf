@@ -40,6 +40,48 @@ class HomeControllerTest < ActionDispatch::IntegrationTest
     assert_select "#recent-books .book-showcase h2 a", text: "En cours"
   end
 
+  test "holds up to six books in the recent reads section" do
+    owner = User.default_owner
+    books = 6.times.map { |i| valid_book(title: "Récente #{i}", author: "Q").tap(&:save!) }
+    books.each_with_index do |book, i|
+      owner.reviews.create!(book: book, status: :read, rating: 7, read_date: Date.current - (i + 1).days)
+    end
+
+    get root_path
+
+    assert_response :success
+    assert_select "#recent-books .book-card.read", count: 6
+    assert_select "#recent-books .book-showcase", count: 0
+  end
+
+  test "makes room for the ongoing showcase in the recent reads section" do
+    owner = User.default_owner
+    ongoing = valid_book(title: "En cours", author: "Q").tap(&:save!)
+    owner.reviews.create!(book: ongoing, status: :ongoing)
+    books = 6.times.map { |i| valid_book(title: "Récente #{i}", author: "Q").tap(&:save!) }
+    books.each_with_index do |book, i|
+      owner.reviews.create!(book: book, status: :read, rating: 7, read_date: Date.current - (i + 1).days)
+    end
+
+    get root_path
+
+    assert_response :success
+    assert_select "#recent-books .book-showcase", count: 1
+    assert_select "#recent-books .book-card.read", count: 4
+  end
+
+  test "shows the ongoing showcase card without a priority value" do
+    owner = User.default_owner
+    book = valid_book(title: "En cours", author: "Q").tap(&:save!)
+    owner.reviews.create!(book: book, status: :ongoing)
+
+    get root_path
+
+    assert_response :success
+    assert_select "#recent-books .book-showcase h2 a", text: "En cours"
+    assert_select "#recent-books .book-showcase", text: /#[0-9]/, count: 0
+  end
+
   test "ignores other users reviews on the public site" do
     # reviews(:two) belongs to Marie, not the default owner.
     get root_path
