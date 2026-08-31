@@ -2,8 +2,6 @@ html {
   scroll-behavior: smooth;
 }
 
-* { box-sizing: border-box; }
-
 body {
   margin: 0;
   padding: 0;
@@ -212,7 +210,6 @@ a:hover {
   border: 0 none;
   flex-grow: 1;
   background: transparent;
-  font: inherit;
 }
 .book-query-box input[type='search']:focus {
   outline: 0 none;
@@ -877,7 +874,7 @@ blockquote::after {
   padding-bottom: 0.25em;
 }
 .month-table {
-  width: initial;
+  width: 100%;
 }
 .month-table thead th {
   text-align: center;
