@@ -50,14 +50,14 @@ class ApplicationHelperTest < ActionView::TestCase
     assert_equal "Dans les envies…", capitalize_first("dans les envies…")
   end
 
-  test "shared book card shows the pending phrases instead of priority values" do
+  test "shared book card shows the priority value on a wished book" do
     book = books(:one)
     wishlist = Review.new(book: book, user: users(:one), status: :wishlist, priority: 2)
     ongoing = Review.new(book: book, user: users(:one), status: :ongoing)
 
     wishlist_html = render(partial: "shared/book_card", locals: { review: wishlist })
-    assert_includes wishlist_html, "les envies de lecture pour plus tard"
-    assert_not_includes wishlist_html, "#2"
+    assert_includes wishlist_html, "Priorité"
+    assert_includes wishlist_html, "#2"
 
     ongoing_html = render(partial: "shared/book_card", locals: { review: ongoing })
     assert_includes ongoing_html, "En cours de lecture"

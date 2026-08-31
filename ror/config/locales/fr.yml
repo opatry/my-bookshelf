@@ -18,6 +18,7 @@ fr:
     read_on: "lu le %{date}"
     read_on_month: "lu en %{date}"
     wishlist_pending: "dans les envies de lecture pour plus tard…"
+    priority_label: "Priorité"
     favorite: "Coup de cœur"
     pages:
       one: "%{count} page"

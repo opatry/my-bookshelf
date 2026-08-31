@@ -34,7 +34,7 @@ rating = review.rating
       <% when "ongoing" %>
         <p><%= capitalize_first(t("meta.ongoing_pending")) %></p>
       <% when "wishlist" %>
-        <p><%= capitalize_first(t("meta.wishlist_pending")) %></p>
+        <p><%= t("meta.priority_label") %> <span class="wish-priority" data-priority="<%= review.priority %>">#<%= review.priority %></span></p>
       <% end %>
     </div>
   </div>
