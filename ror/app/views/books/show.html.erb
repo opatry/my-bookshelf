@@ -48,7 +48,7 @@
 
   <div style="clear: left; margin-bottom: 1em;"></div>
 
-  <%= render "shared/tags", tags: @book.tags %>
+  <%= render "shared/tags", tags: @book.tags_in_order %>
 
   <% if @same_series.any? %>
     <h3><%= t(".same_series", series: @book.series.name) %></h3>

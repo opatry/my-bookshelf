@@ -40,6 +40,14 @@ class Book < ApplicationRecord
     @tag_names.presence || tags.map(&:name).join(", ")
   end
 
+  # Tags in the order they were attached (authorship order, matching the static
+  # site which renders tags without sorting). The join table has no primary key,
+  # so order by its created_at instead of an id column.
+  def tags_in_order
+    ordered_ids = book_tags.order(:created_at).pluck(:tag_id)
+    tags.sort_by { |tag| ordered_ids.index(tag.id) || Float::INFINITY }
+  end
+
   def tags_from_names!
     names = @tag_names.to_s.split(/[,;]/).map(&:strip).reject(&:empty?).uniq
     self.tags = names.map { |name| Tag.find_or_create_by!(name: name) }
