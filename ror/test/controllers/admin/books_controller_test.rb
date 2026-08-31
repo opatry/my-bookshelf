@@ -81,4 +81,44 @@ class Admin::BooksControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to admin_books_path
   end
+
+  test "updating a book keeps its cover when remove_cover is unchecked" do
+    assert_no_difference -> { ActiveStorage::Attachment.count } do
+      patch admin_book_path(@book), params: {
+        book: {
+          title: @book.title, author: @book.author, isbn: @book.isbn,
+          tag_names: "Classique", remove_cover: "0"
+        }
+      }
+    end
+
+    assert_redirected_to admin_book_path(@book)
+    assert @book.reload.cover.attached?
+  end
+
+  test "updating a book can replace an existing cover" do
+    patch admin_book_path(@book), params: {
+      book: {
+        title: @book.title, author: @book.author, isbn: @book.isbn,
+        cover: fixture_file_upload("cover.jpg", "image/jpeg"), remove_cover: "1"
+      }
+    }
+
+    assert_redirected_to admin_book_path(@book)
+    assert @book.reload.cover.attached?
+  end
+
+  test "checking remove_cover without a replacement keeps the existing cover" do
+    assert_no_difference -> { ActiveStorage::Attachment.count } do
+      patch admin_book_path(@book), params: {
+        book: {
+          title: @book.title, author: @book.author, isbn: @book.isbn,
+          tag_names: "Classique", remove_cover: "1"
+        }
+      }
+    end
+
+    assert_redirected_to admin_book_path(@book)
+    assert @book.reload.cover.attached?
+  end
 end
