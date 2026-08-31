@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <% is_home = params[:controller] == "home" %>
-<% is_last_readings = params[:controller] == "last_readings" %>
-<html lang="<%= I18n.locale %>" <%= "id=\"only-favorites\"" if is_last_readings %>>
+<html lang="<%= I18n.locale %>">
   <head>
     <title><%= page_title %></title>
     <meta charset="utf-8">

@@ -1,7 +1,6 @@
 <% content_for(:title, t(".title")) %>
-
 <% if @reviews.any? %>
-  <h1><%= t(".title") %> <span class="title-more"><a href="#" title="<%= t(".no_filter") %>">tout</a> • <a href="#only-favorites" title="<%= t(".favorites_only") %>"><%= heart_icon(size: 12) %></a></span></h1>
+  <h1><%= t(".title") %></h1>
 
   <%
   by_year = @reviews.group_by { |review| review.read_date.year }

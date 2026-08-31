@@ -43,8 +43,6 @@ fr:
     index:
       title: "Dernières lectures"
       subtitle: "Toutes mes lectures, de la plus récente à la plus ancienne."
-      no_filter: "Pas de filtre"
-      favorites_only: "Ne voir que les favoris"
       go_to_calendar: "Voir le calendrier des lectures de %{year}"
     readings_count_in_year:
       zero: "Aucun livre lu en %{year}"
