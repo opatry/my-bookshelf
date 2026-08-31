@@ -164,6 +164,7 @@ fr:
         success: "Livre créé."
       edit:
         title: "Modifier — %{title}"
+        view_page: "Voir la page"
       update:
         success: "Livre mis à jour."
       destroy:
@@ -267,6 +268,7 @@ fr:
         babelio_id: "ID Babelio"
         series: "Série"
         tags: "Étiquettes"
+        tag_names: "Étiquettes"
         cover: "Couverture"
       review:
         status: "Statut"

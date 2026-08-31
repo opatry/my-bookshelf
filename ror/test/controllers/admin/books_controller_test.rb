@@ -20,6 +20,15 @@ class Admin::BooksControllerTest < ActionDispatch::IntegrationTest
     assert_select "form"
   end
 
+  test "edit page labels tags in French and links to the public page" do
+    get edit_admin_book_path(@book)
+
+    assert_response :success
+    assert_select "label[for=book_tag_names]", text: I18n.t("activerecord.attributes.book.tag_names")
+    assert_select "label[for=book_tag_names]", text: "Étiquettes"
+    assert_select "a", text: I18n.t("admin.books.edit.view_page")
+  end
+
   test "create a book with resolved tags" do
     assert_difference -> { Book.count } => 1 do
       post admin_books_path, params: {
