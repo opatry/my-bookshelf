@@ -13,6 +13,8 @@ gem "importmap-rails"
 
 # Active Storage image variants (mini/medium/showcase/default cover sizes)
 gem "image_processing", ">= 1.2"
+# Variant backend backed by the installed ImageMagick (the vips rubygem is absent)
+gem "mini_magick"
 
 # Use Active Model has_secure_password (User auth in Phase 2)
 gem "bcrypt", "~> 3.1.7"

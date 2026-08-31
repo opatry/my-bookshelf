@@ -41,5 +41,9 @@ module Ror
     config.i18n.available_locales = %i[fr]
     config.i18n.default_locale = :fr
     config.time_zone = "Europe/Paris"
+
+    # Image processing backend. ImageMagick (`magick`) is installed locally and
+    # the `vips` rubygem is not, so use MiniMagick for Active Storage variants.
+    config.active_storage.variant_processor = :mini_magick
   end
 end
