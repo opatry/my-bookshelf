@@ -1,5 +1,17 @@
 const searchContainer = document.querySelector("[data-search]");
 
+// Favorite-only filter on the last-readings page. The pure CSS `:target` on
+// `<html>` is unreliable across browsers, so drive the same state via a class.
+const htmlEl = document.documentElement;
+const favoritesLink = document.querySelector('#only-favorites a[href="#only-favorites"]');
+const allLink = document.querySelector('#only-favorites a[href="#"]');
+function setFavoritesFilter(on) {
+  htmlEl.classList.toggle("favorites-only", on);
+  history.replaceState(null, "", location.pathname + (on ? "#only-favorites" : ""));
+}
+if (favoritesLink) favoritesLink.addEventListener("click", (e) => { e.preventDefault(); setFavoritesFilter(true); });
+if (allLink) allLink.addEventListener("click", (e) => { e.preventDefault(); setFavoritesFilter(false); });
+
 document.addEventListener("click", (event) => {
   const target = event.target.closest("[data-confirm]");
   if (target && !window.confirm(target.dataset.confirm)) event.preventDefault();
