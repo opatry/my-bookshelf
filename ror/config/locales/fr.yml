@@ -16,7 +16,7 @@ fr:
     ongoing: "En cours de lecture"
     ongoing_card: "📖 En cours de lecture…"
     read_on: "lu le %{date}"
-    read_on_month: "Lu en %{date}"
+    read_on_month: "lu en %{date}"
     priority_label: "Priorité"
     favorite: "Coup de cœur"
     pages:

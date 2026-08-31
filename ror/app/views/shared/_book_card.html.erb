@@ -30,7 +30,7 @@ rating = review.rating
     <div class="book-footer book-details">
       <% case review.status %>
       <% when "read" %>
-        <p class="read-date"><%= t("meta.read_on_month", date: pretty_read_date(review.read_date)) %></p>
+        <p class="read-date"><%= capitalized_read_on_month_label(review.read_date) %></p>
       <% when "ongoing" %>
         <p><%= t("meta.ongoing_card") %></p>
       <% when "wishlist" %>

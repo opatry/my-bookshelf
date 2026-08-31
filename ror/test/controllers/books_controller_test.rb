@@ -13,6 +13,8 @@ class BooksControllerTest < ActionDispatch::IntegrationTest
       assert_select ".icon-active", count: book.reviews.first.rating
       assert_select ".icon-inactive", count: 10 - book.reviews.first.rating
     end
+    assert_select ".book-details time[datetime=?]", "2026-01-15"
+    assert_select ".book-details", text: /lu en/
     assert_select "h2.book-detail__section-title", text: "4e de couverture"
     assert_select ".book-detail__description", text: /Un classique de la littérature\./
     assert_select ".book-tags .tag", text: "Thriller"

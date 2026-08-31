@@ -48,7 +48,22 @@ module ApplicationHelper
   end
 
   def pretty_read_date(date)
-    l(date, format: "%B %Y")
+    content_tag(:time, datetime: date.strftime("%Y-%m-%d")) { l(date, format: "%B %Y") }
+  end
+
+  # "lu en <time datetime=...>janvier 2026</time>", including the semantic
+  # <time> element. Used mid-sentence in the book-page metadata, so it is
+  # lowercase. The translation framework interpolates its arguments as plain
+  # text, so the safe fragment needs to be re-marked html_safe here.
+  def read_on_month_label(date)
+    t("meta.read_on_month", date: pretty_read_date(date)).html_safe
+  end
+
+  # "Lu en <time>...</time>": same phrase, but capitalized for the standalone
+  # read-date on book cards. Only the first letter is upper-cased in place so
+  # the <time> fragment stays html_safe.
+  def capitalized_read_on_month_label(date)
+    read_on_month_label(date).dup.tap { |s| s[0] = s[0].upcase }
   end
 
   def tag_weight(count, max_count)
@@ -65,7 +80,7 @@ module ApplicationHelper
     return metadata unless review
 
     case review.status
-    when "read" then metadata << t("meta.read_on_month", date: pretty_read_date(review.read_date))
+    when "read" then metadata << read_on_month_label(review.read_date)
     when "ongoing" then metadata << t("meta.ongoing_card")
     when "wishlist" then metadata << "#{t("meta.priority_label")} #{review.priority}"
     end

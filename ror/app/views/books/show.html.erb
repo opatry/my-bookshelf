@@ -17,7 +17,7 @@
 
   <% metadata = book_metadata(@book, @review) %>
   <% unless metadata.empty? %>
-    <p class="book-details"><%= metadata.join(", ") %></p>
+    <p class="book-details"><%= metadata.join(", ").html_safe %></p>
   <% end %>
 
   <%= cover_tag(@book, variant: :default, class: "book-cover") %>

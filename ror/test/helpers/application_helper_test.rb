@@ -36,6 +36,28 @@ class ApplicationHelperTest < ActionView::TestCase
     assert_includes metadata, I18n.t("meta.pages", count: review.book.page_count)
   end
 
+  test "read_on_month_label is lowercase and renders a real time element" do
+    date = Date.new(2026, 1, 15)
+
+    html = read_on_month_label(date)
+
+    assert html.start_with?("lu en ")
+    assert_includes html, '<time datetime="2026-01-15">'
+    assert_includes html, "janvier 2026"
+    assert html.html_safe?
+    assert_not_includes html, "&lt;time"
+  end
+
+  test "capitalized_read_on_month_label is uppercase for the standalone card" do
+    date = Date.new(2026, 1, 15)
+
+    html = capitalized_read_on_month_label(date)
+
+    assert html.start_with?("Lu en ")
+    assert_includes html, '<time datetime="2026-01-15">'
+    assert html.html_safe?
+  end
+
   test "cover_tag falls back to a placeholder without a cover" do
     book = books(:one)
 
