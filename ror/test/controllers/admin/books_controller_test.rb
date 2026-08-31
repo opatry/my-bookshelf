@@ -27,7 +27,8 @@ class Admin::BooksControllerTest < ActionDispatch::IntegrationTest
           title: "Candide", author: "Voltaire", isbn: unique_isbn,
           publication_year: 1759, page_count: 208,
           description: "Tout est pour le mieux.",
-          tag_names: "Classique, Philosophie"
+          tag_names: "Classique, Philosophie",
+          cover: fixture_file_upload("cover.jpg", "image/jpeg")
         }
       }
     end
@@ -35,8 +36,20 @@ class Admin::BooksControllerTest < ActionDispatch::IntegrationTest
     book = Book.order(:created_at).last
     assert_redirected_to admin_book_path(book)
     assert_equal "Candide", book.title
+    assert book.cover.attached?
     assert_equal [ "Classique", "Philosophie" ], book.tags.order(:name).pluck(:name)
     assert_equal I18n.t("admin.books.create.success"), flash[:notice]
+  end
+
+  test "rejects a book without a cover" do
+    assert_no_difference -> { Book.count } do
+      post admin_books_path, params: {
+        book: { title: "Sans couverture", author: "Personne", isbn: unique_isbn }
+      }
+    end
+
+    assert_response :unprocessable_entity
+    assert_select ".form-errors"
   end
 
   test "rejects a book with an invalid ISBN and re-renders" do

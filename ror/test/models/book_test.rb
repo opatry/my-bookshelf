@@ -32,14 +32,13 @@ class BookTest < ActiveSupport::TestCase
   test "accepts an isbn with valid checksum" do
     isbn = unique_isbn
     assert Isbn13.valid?(isbn)
-    book = Book.new(isbn: isbn, title: "T", author: "A")
-    assert book.valid?
+    assert valid_book(isbn: isbn).valid?
   end
 
   test "isbn must be unique" do
     isbn = unique_isbn
-    Book.create!(isbn: isbn, title: "T", author: "A")
-    dup = Book.new(isbn: isbn, title: "U", author: "B")
+    valid_book(isbn: isbn).tap(&:save!)
+    dup = valid_book(isbn: isbn, title: "U", author: "B")
     assert_not dup.valid?
     assert dup.errors[:isbn].present?
   end

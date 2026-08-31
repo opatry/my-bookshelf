@@ -245,6 +245,8 @@ fr:
           attributes:
             isbn:
               invalid_isbn: "n’est pas un ISBN-13 valide"
+            cover:
+              blank: "doit être fournie"
         review:
           attributes:
             rating:

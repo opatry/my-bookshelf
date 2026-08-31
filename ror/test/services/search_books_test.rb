@@ -39,32 +39,32 @@ class SearchBooksTest < ActiveSupport::TestCase
   end
 
   test "matches tagless books by title or author" do
-    Book.create!(
+    valid_book(
       isbn: "9782070368228",
       title: "L’Étranger",
       author: "Albert Camus"
-    )
+    ).tap(&:save!)
 
     assert_equal [ "L’Étranger" ], SearchBooks.call("Camus").map { |r| r[:title] }
   end
 
   test "is accent-insensitive" do
-    Book.create!(
+    valid_book(
       isbn: "9782070368228",
       title: "L’Étranger",
       author: "Albert Camus"
-    )
+    ).tap(&:save!)
 
     assert_equal [ "L’Étranger" ], SearchBooks.call("etranger").map { |r| r[:title] }
     assert_equal [ "L’Étranger" ], SearchBooks.call("Étranger").map { |r| r[:title] }
   end
 
   test "is apostrophe-insensitive" do
-    Book.create!(
+    valid_book(
       isbn: "9782070368228",
       title: "L’Étranger",
       author: "Albert Camus"
-    )
+    ).tap(&:save!)
 
     assert_equal [ "L’Étranger" ], SearchBooks.call("L'Étranger").map { |r| r[:title] }
   end

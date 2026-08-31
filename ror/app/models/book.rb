@@ -22,6 +22,7 @@ class Book < ApplicationRecord
   validates :title, presence: true
   validates :author, presence: true
   validates :isbn, presence: true, uniqueness: true, isbn13: true
+  validate :cover_must_be_attached
 
   # Books never belong to a user directly; they are shared. Reverse side of
   # the review relationship is provided for convenience.
@@ -54,6 +55,11 @@ class Book < ApplicationRecord
   end
 
   private
+
+  # A cover is mandatory: every book must ship with an attached image.
+  def cover_must_be_attached
+    errors.add(:cover, :blank) unless cover.attached?
+  end
 
   # Maintains the portable, accent/quote-insensitive search vector from the
   # current title, author and tags. Runs in Ruby via `SearchNormalizer`, so it

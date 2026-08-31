@@ -86,7 +86,7 @@ class ApplicationHelperTest < ActionView::TestCase
   end
 
   test "cover_tag falls back to a placeholder without a cover" do
-    book = books(:one)
+    book = Book.new(title: "Sans couverture", author: "Une autrice")
 
     html = cover_tag(book)
     assert_includes html, "cover--placeholder"

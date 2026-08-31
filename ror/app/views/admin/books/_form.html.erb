@@ -55,7 +55,7 @@
 
   <div class="form__row">
     <%= form.label :cover %>
-    <%= form.file_field :cover, accept: "image/jpeg,image/png,image/webp" %>
+    <%= form.file_field :cover, accept: "image/jpeg,image/png,image/webp", required: !book.cover.attached? %>
     <% if book.cover.attached? %>
       <div class="form__cover-preview">
         <%= cover_tag(book, variant: :medium) %>

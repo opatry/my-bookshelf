@@ -11,6 +11,18 @@ module ActiveSupport
     # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
     fixtures :all
 
+    # A cover is mandatory for books, so give the fixture books one before each
+    # test (the demo test image is a tiny real JPEG under test/fixtures/files/).
+    setup do
+      Book.where.missing(:cover_attachment).find_each do |book|
+        book.cover.attach(
+          io: File.open(Rails.root.join("test/fixtures/files/cover.jpg")),
+          filename: "cover.jpg",
+          content_type: "image/jpeg"
+        )
+      end
+    end
+
     # Add more helper methods to be used by all tests here...
     def unique_isbn
       @isbn_counter = @isbn_counter.to_i + 1
@@ -20,9 +32,14 @@ module ActiveSupport
     end
 
     def valid_book(attrs = {})
-      Book.new(
+      book = Book.new(
         { isbn: unique_isbn, title: "Un livre", author: "Un auteur" }.merge(attrs)
       )
+      book.cover.attach(
+        io: File.open(Rails.root.join("test/fixtures/files/cover.jpg")),
+        filename: "cover.jpg", content_type: "image/jpeg"
+      )
+      book
     end
   end
 end
