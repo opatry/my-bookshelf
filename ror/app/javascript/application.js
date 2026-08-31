@@ -20,7 +20,7 @@ if (reviewStatusSelect) {
 
 if (searchContainer) {
   const input = searchContainer.querySelector("[data-search-input]");
-  const results = searchContainer.querySelector("[data-search-results]");
+  const results = document.querySelector("[data-search-results]");
   const emptyMessage = searchContainer.dataset.emptyMessage || "No results";
   let timer;
   let controller;

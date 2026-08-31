@@ -13,7 +13,8 @@ class BooksControllerTest < ActionDispatch::IntegrationTest
       assert_select ".icon-active", count: book.reviews.first.rating
       assert_select ".icon-inactive", count: 10 - book.reviews.first.rating
     end
-    assert_select ".book-detail__back-cover", text: /À dix-neuf ans, une lettre dénonce Edmond Dantès\./
+    assert_select "h2.book-detail__section-title", text: "4e de couverture"
+    assert_select ".book-detail__description", text: /Un classique de la littérature\./
     assert_select ".book-tags .tag", text: "Thriller"
   end
 

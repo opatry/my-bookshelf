@@ -44,14 +44,13 @@ class BookTest < ActiveSupport::TestCase
     assert dup.errors[:isbn].present?
   end
 
-  test "sanitizes title author description and back cover" do
+  test "sanitizes title author and description" do
     book = valid_book(title: "  L'été   des orages...  ", author: "  A.  Dumas  ",
-                      description: "Une description !", back_cover: "Un synopsis ; sans fautes ?")
+                      description: "Une description !")
     book.valid? # triggers the sanitizing before_validation
     assert_equal "L’été des orages…", book.title
     assert_equal "A. Dumas", book.author
     assert_includes book.description, "Une description\u202F!"
-    assert_includes book.back_cover, "Un synopsis\u202F; sans fautes\u202F?"
   end
 
   test "series is optional" do
@@ -67,5 +66,25 @@ class BookTest < ActiveSupport::TestCase
   test "formatted_isbn groups the GS1 prefix" do
     book = valid_book(isbn: "9782070373017")
     assert_equal "978-2070373017", book.formatted_isbn
+  end
+
+  test "computes search_text on save, accent and apostrophe normalized" do
+    book = valid_book(title: "L’Étranger", author: "Albert Camus")
+    book.save!
+
+    assert_equal "l etranger albert camus", book.search_text
+  end
+
+  test "recomputes search_text when tags change" do
+    book = valid_book(title: "La Peste", author: "Albert Camus")
+    book.tags = [ tags(:one) ]
+    book.save!
+
+    assert_includes book.search_text, "thriller"
+
+    book.tags = []
+    book.save!
+
+    assert_not_includes book.search_text, "thriller"
   end
 end

@@ -168,7 +168,6 @@ fr:
       form:
         isbn_hint: "ISBN-13 à 13 chiffres (sans tirets)."
         tags_hint: "Étiquettes séparées par des virgules ; créées au besoin."
-        back_cover_hint: "Texte de la 4e de couverture (synopsis éditeur)."
         remove_cover: "Supprimer la couverture actuelle"
 
     reviews:
@@ -259,7 +258,6 @@ fr:
         page_count: "Nombre de pages"
         publication_year: "Année de publication"
         description: "Description"
-        back_cover: "4e de couverture"
         senscritique_id: "ID SensCritique"
         babelio_id: "ID Babelio"
         series: "Série"

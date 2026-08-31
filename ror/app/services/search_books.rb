@@ -1,6 +1,11 @@
 # Server-side search over the whole book catalog (title, author, tags),
 # used by the AJAX search endpoint. Search covers every book, whether or not
 # the default owner has reviewed (read, ongoing, or wished) it.
+#
+# Matching is accent- and apostrophe-insensitive (same behaviour as the original
+# Fuse.js `ignoreDiacritics`): the query is normalized in Ruby with
+# `SearchNormalizer` and compared against the denormalized `search_text`
+# column, so "etranger" matches "Étranger" and "L'Étranger" matches "L’Étranger".
 class SearchBooks
   MIN_QUERY_LENGTH = 2
 
@@ -21,14 +26,10 @@ class SearchBooks
   private
 
   def matching_books
-    tokens = @query.split(/\s+/)
-    books = Book.joins(:tags).distinct
+    books = Book.all
 
-    tokens.each do |token|
-      pattern = "%#{token.downcase}%"
-      books = books.where(
-        "LOWER(books.title) LIKE :p OR LOWER(books.author) LIKE :p OR LOWER(tags.name) LIKE :p", p: pattern
-      )
+    SearchNormalizer.normalize(@query).split(/\s+/).each do |token|
+      books = books.where("books.search_text LIKE ?", "%#{token}%")
     end
 
     books.order(:title).limit(12)

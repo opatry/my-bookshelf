@@ -15,7 +15,9 @@ class Book < ApplicationRecord
     attachable.variant :showcase, resize_to_limit: [ 300, 450 ]
   end
 
-  sanitizes :title, :author, :description, :back_cover
+  sanitizes :title, :author, :description
+
+  before_save :set_search_text
 
   validates :title, presence: true
   validates :author, presence: true
@@ -49,5 +51,14 @@ class Book < ApplicationRecord
 
   def formatted_isbn
     Isbn13.new(isbn).formatted
+  end
+
+  private
+
+  # Maintains the portable, accent/quote-insensitive search vector from the
+  # current title, author and tags. Runs in Ruby via `SearchNormalizer`, so it
+  # behaves identically on any database engine.
+  def set_search_text
+    self.search_text = SearchNormalizer.normalize([ title, author, tags.map(&:name) ].flatten.join(" "))
   end
 end

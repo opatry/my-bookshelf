@@ -13,6 +13,9 @@ Personal book reading list website built with Nanoc (Ruby static site generator)
 - **Self-correct this file.** If I correct your behavior, update these guidelines so the
   correction sticks. `AGENTS.md` is a living document — revise it whenever a repeated
   expectation is clarified rather than just fixing the one-off instance.
+- **Ask for clarification in case of doubt.** If a request or directive is ambiguous,
+  or if you're unsure whether an existing field/convention should cover a use case,
+  ask the user before proceeding rather than guessing.
 
 ## Project structure
 

@@ -37,4 +37,35 @@ class SearchBooksTest < ActiveSupport::TestCase
     assert_equal 1, results.size
     assert_equal "Le Petit Prince", results.first[:title]
   end
+
+  test "matches tagless books by title or author" do
+    Book.create!(
+      isbn: "9782070368228",
+      title: "L’Étranger",
+      author: "Albert Camus"
+    )
+
+    assert_equal [ "L’Étranger" ], SearchBooks.call("Camus").map { |r| r[:title] }
+  end
+
+  test "is accent-insensitive" do
+    Book.create!(
+      isbn: "9782070368228",
+      title: "L’Étranger",
+      author: "Albert Camus"
+    )
+
+    assert_equal [ "L’Étranger" ], SearchBooks.call("etranger").map { |r| r[:title] }
+    assert_equal [ "L’Étranger" ], SearchBooks.call("Étranger").map { |r| r[:title] }
+  end
+
+  test "is apostrophe-insensitive" do
+    Book.create!(
+      isbn: "9782070368228",
+      title: "L’Étranger",
+      author: "Albert Camus"
+    )
+
+    assert_equal [ "L’Étranger" ], SearchBooks.call("L'Étranger").map { |r| r[:title] }
+  end
 end

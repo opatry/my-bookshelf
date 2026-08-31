@@ -51,7 +51,7 @@ module Admin
 
     def book_params
       params.require(:book).permit(:title, :author, :isbn, :page_count, :publication_year,
-                                   :description, :back_cover, :series_id, :cover, :tag_names, :remove_cover)
+                                   :description, :series_id, :cover, :tag_names, :remove_cover)
     end
   end
 end

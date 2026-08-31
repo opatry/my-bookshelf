@@ -12,6 +12,9 @@ scope decisions, data model, and rationale.
 - **Self-correct this file.** If the user corrects your behavior, update these guidelines
   so the correction sticks. `AGENTS.md` is a living document — revise it whenever a
   repeated expectation is clarified rather than just fixing the one-off instance.
+- **Ask for clarification in case of doubt.** If a request or directive is ambiguous,
+  or if you're unsure whether an existing field/convention should cover a use case,
+  ask the user before proceeding rather than guessing.
 - `ror/AGENTS.md` is the future single source of truth for working directives; the copy
   at the repo root is kept in sync for now.
 

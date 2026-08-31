@@ -8,7 +8,7 @@ body {
   margin: 0;
   padding: 0;
   /* https://www.toptal.com/designers/subtlepatterns/swirl/ Made by Peter Chon licensed under Creative Commons */
-  background: url(/assets/swirl.png) fixed repeat rgba(0, 0, 0, .05);
+  background: url(/swirl.png) fixed repeat rgba(0, 0, 0, .05);
   font-family: serif;
   font-weight: 400;
   font-style: normal;
