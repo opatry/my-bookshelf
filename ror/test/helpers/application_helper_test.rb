@@ -91,4 +91,23 @@ class ApplicationHelperTest < ActionView::TestCase
     html = cover_tag(book)
     assert_includes html, "cover--placeholder"
   end
+
+  test "cover_tag does not build a variant for an unsaved attachment" do
+    book = Book.new(title: "Nouveau", author: "Un auteur")
+    book.cover.attach(
+      io: StringIO.new("x"), filename: "cover.jpg", content_type: "image/jpeg"
+    )
+
+    html = cover_tag(book)
+    assert_includes html, "cover--placeholder"
+    assert_not_includes html, "rails/active_storage"
+  end
+
+  test "cover_tag renders a variant for a persisted attachment" do
+    book = books(:one)
+
+    html = cover_tag(book, variant: :medium)
+    assert_includes html, "rails/active_storage"
+    assert_includes html, 'class="cover"'
+  end
 end

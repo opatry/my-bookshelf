@@ -111,7 +111,10 @@ module ApplicationHelper
   end
 
   def cover_tag(book, variant: :default, **options)
-    if book.cover.attached?
+    # A cover can be attached but not yet persisted (e.g. right after the admin
+    # create form renders a failed submission). Building a variant URL there
+    # would call signed_id on a new blob and raise; fall back to the placeholder.
+    if book.cover.attached? && book.cover.blob.persisted?
       image_tag(book.cover.variant(variant), alt: book.title, class: "cover #{options.delete(:class)}".strip, loading: options.delete(:loading))
     else
       content_tag(:div, class: "cover cover--placeholder #{options.delete(:class)}".strip, aria_hidden: true) do

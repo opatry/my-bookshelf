@@ -55,12 +55,16 @@ class Admin::BooksControllerTest < ActionDispatch::IntegrationTest
   test "rejects a book with an invalid ISBN and re-renders" do
     assert_no_difference -> { Book.count } do
       post admin_books_path, params: {
-        book: { title: "Mauvais", author: "Personne", isbn: "1234567890123" }
+        book: {
+          title: "Mauvais", author: "Personne", isbn: "1234567890123",
+          cover: fixture_file_upload("cover.jpg", "image/jpeg")
+        }
       }
     end
 
     assert_response :unprocessable_entity
     assert_select ".form-errors"
+    assert_select ".form-errors li", text: /ISBN/i
   end
 
   test "updates a book" do
