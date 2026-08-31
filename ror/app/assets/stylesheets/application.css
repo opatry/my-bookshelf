@@ -364,7 +364,8 @@ p {
 }
 
 /* Cards & grid */
-#recent-books {
+#recent-books,
+.recent-books {
   margin-bottom: 1em;
 }
 
@@ -653,20 +654,6 @@ table td {
   padding: 8px 4px;
   vertical-align: top;
   text-overflow: ellipsis;
-}
-.books-table a {
-  border: 0 none;
-}
-.book-title-cell {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 240px;
-}
-.books-table .book-cell-sub {
-  color: rgba(0, 0, 0, .6);
-  font-size: .85em;
-  display: block;
 }
 
 /* Search results */

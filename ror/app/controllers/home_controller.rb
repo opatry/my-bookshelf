@@ -10,7 +10,6 @@ class HomeController < ApplicationController
     recent_limit = @ongoing_review ? RECENT_LIMIT - 2 : RECENT_LIMIT
     @recent_reviews = recent_reads(recent_limit)
     @wishlist_preview = owner_reviews.wishlist.with_book.order(:priority).limit(WISHLIST_PREVIEW)
-    @library = owner_reviews.read.with_book
   end
 
   private

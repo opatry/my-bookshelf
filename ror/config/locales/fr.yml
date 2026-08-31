@@ -31,13 +31,8 @@ fr:
     tagline: "Les livres que j’ai lus avec une note et un résumé rapide pour partager."
     section_recent: "Lectures récentes"
     section_wishlist: "Envies"
-    section_library: "Bibliothèque"
     see_all: "→ voir plus…"
     empty: "Aucun livre pour le moment."
-    table_title: "Titre"
-    table_author: "Auteur"
-    table_rating: "Note"
-    table_favorite: "Coup de cœur"
 
   last_readings:
     index:

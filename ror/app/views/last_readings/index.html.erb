@@ -75,7 +75,7 @@
           <h3><%= t("date.month_names")[month].capitalize %>&nbsp;<span class="book-count">(<%= t("last_readings.books_count", count: month_count) %>, <%= t("last_readings.pages_count", count: month_pages, formatted_count: number_with_delimiter(month_pages)) %>)</span>
             <span class="title-more"><%= link_to "↑", "#", title: t("calendar.show.back_to_top") %></span>
           </h3>
-          <div id="recent-books" class="book-grid">
+          <div class="book-grid recent-books">
             <% reviews.each do |review| %>
               <%= render "shared/book_card", review: review %>
             <% end %>

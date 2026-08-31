@@ -1,7 +1,7 @@
 require "test_helper"
 
 class HomeControllerTest < ActionDispatch::IntegrationTest
-  test "renders the home page with library and recent sections" do
+  test "renders the home page with recent sections" do
     owner = User.default_owner
     recent = valid_book(title: "Lecture récente", author: "Q")
     recent.save!
@@ -11,7 +11,6 @@ class HomeControllerTest < ActionDispatch::IntegrationTest
 
     assert_response :success
     assert_match I18n.t("home.section_recent"), response.body
-    assert_match I18n.t("home.section_library"), response.body
     assert_select ".book-title", text: "Lecture récente"
   end
 
@@ -83,11 +82,18 @@ class HomeControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "ignores other users reviews on the public site" do
-    # reviews(:two) belongs to Marie, not the default owner.
+    owner = User.default_owner
+    mine = valid_book(title: "Mon livre", author: "Q").tap(&:save!)
+    owner.reviews.create!(book: mine, status: :read, rating: 7, read_date: Date.current.prev_day)
+
+    marie = users(:two)
+    theirs = valid_book(title: "Livre de Marie", author: "Q").tap(&:save!)
+    marie.reviews.create!(book: theirs, status: :read, rating: 7, read_date: Date.current.prev_day)
+
     get root_path
 
     assert_response :success
-    assert_select "#books-table .book-title-cell a", text: "Le Comte de Monte-Cristo"
-    assert_select "#books-table .book-title-cell a", text: "Le Petit Prince", count: 0
+    assert_select "#recent-books .book-title", text: "Mon livre"
+    assert_select "#recent-books .book-title", text: "Livre de Marie", count: 0
   end
 end

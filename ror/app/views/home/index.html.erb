@@ -28,36 +28,3 @@
     <% end %>
   </div>
 <% end %>
-
-<h1><%= t("home.section_library") %></h1>
-<% if @library.any? %>
-  <div id="books-table" class="books-table">
-    <table>
-      <caption class="visually-hidden"><%= t("home.section_library") %></caption>
-      <thead>
-        <tr>
-          <td aria-hidden="true"></td>
-          <td><%= t("home.table_title") %></td>
-          <td><%= t("home.table_author") %></td>
-          <td><%= t("home.table_rating") %></td>
-          <td><%= t("home.table_favorite") %></td>
-        </tr>
-      </thead>
-      <tbody>
-        <% @library.each do |review| %>
-          <tr>
-            <td><%= link_to cover_tag(review.book, variant: :mini, class: "book-cover-mini"), book_path(review.book) %></td>
-            <td class="book-title-cell"><%= link_to review.book.title, book_path(review.book) %>
-              <span class="book-cell-sub"><%= t("meta.read_on_month", date: l(review.read_date, format: "%B %Y")) %></span>
-            </td>
-            <td><%= review.book.author %></td>
-            <td><%= star_rating(review, size: 12) %></td>
-            <td><%= heart_icon if review.favorite %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
-<% else %>
-  <p class="empty-state"><%= t("home.empty") %></p>
-<% end %>
