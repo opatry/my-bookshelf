@@ -14,10 +14,10 @@ fr:
 
   meta:
     ongoing: "En cours de lecture"
-    ongoing_card: "📖 En cours de lecture…"
+    ongoing_pending: "📖 en cours de lecture…"
     read_on: "lu le %{date}"
     read_on_month: "lu en %{date}"
-    priority_label: "Priorité"
+    wishlist_pending: "dans les envies de lecture pour plus tard…"
     favorite: "Coup de cœur"
     pages:
       one: "%{count} page"
@@ -42,6 +42,17 @@ fr:
     index:
       title: "Dernières lectures"
       subtitle: "Toutes mes lectures, de la plus récente à la plus ancienne."
+      no_filter: "Pas de filtre"
+      favorites_only: "Ne voir que les favoris"
+      go_to_calendar: "Voir le calendrier des lectures de %{year}"
+    readings_count_in_year:
+      zero: "Aucun livre lu en %{year}"
+      one: "Voir le livre lu en %{year}"
+      other: "Voir les %{book_count} livres lus en %{year}"
+    readings_count_in_month:
+      zero: "Aucun livre lu en %{month} %{year}"
+      one: "Voir le livre lu en %{month} %{year}"
+      other: "Voir les %{book_count} livres lus en %{month} %{year}"
     books_count:
       one: "un livre"
       other: "%{count} livres"

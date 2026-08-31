@@ -81,10 +81,25 @@ module ApplicationHelper
 
     case review.status
     when "read" then metadata << read_on_month_label(review.read_date)
-    when "ongoing" then metadata << t("meta.ongoing_card")
-    when "wishlist" then metadata << "#{t("meta.priority_label")} #{review.priority}"
+    when "ongoing" then metadata << t("meta.ongoing_pending")
+    when "wishlist" then metadata << t("meta.wishlist_pending")
     end
     metadata
+  end
+
+  # Uppercases the first letter of a standalone metadata phrase (skipping any
+  # leading emoji/symbol), for the sentence-initial footer of book cards.
+  def capitalize_first(text)
+    dup = text.dup
+    index = dup.index(/[a-zA-ZÀ-ÿ]/)
+    dup[index] = dup[index].upcase unless index.nil?
+    dup
+  end
+
+  def calendar_icon(size: 16)
+    %(<svg xmlns="http://www.w3.org/2000/svg" width="#{size}" height="#{size}" viewBox="0 0 24 24"
+      fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+      class="icon" aria-hidden="true"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg>).html_safe
   end
 
   def cover_tag(book, variant: :default, **options)

@@ -36,6 +36,33 @@ class ApplicationHelperTest < ActionView::TestCase
     assert_includes metadata, I18n.t("meta.pages", count: review.book.page_count)
   end
 
+  test "book_metadata uses the lowercase pending phrases for the book page" do
+    book = Book.new(title: "T", author: "A", page_count: 583, publication_year: 2017)
+
+    assert_includes book_metadata(book, Review.new(status: :wishlist, priority: 1)).join(", "),
+                    "dans les envies de lecture pour plus tard…"
+    assert_includes book_metadata(book, Review.new(status: :ongoing)).join(", "),
+                    "📖 en cours de lecture…"
+  end
+
+  test "capitalize_first uppercases the first letter, skipping a leading emoji" do
+    assert_equal "📖 En cours de lecture…", capitalize_first("📖 en cours de lecture…")
+    assert_equal "Dans les envies…", capitalize_first("dans les envies…")
+  end
+
+  test "shared book card shows the pending phrases instead of priority values" do
+    book = books(:one)
+    wishlist = Review.new(book: book, user: users(:one), status: :wishlist, priority: 2)
+    ongoing = Review.new(book: book, user: users(:one), status: :ongoing)
+
+    wishlist_html = render(partial: "shared/book_card", locals: { review: wishlist })
+    assert_includes wishlist_html, "les envies de lecture pour plus tard"
+    assert_not_includes wishlist_html, "#2"
+
+    ongoing_html = render(partial: "shared/book_card", locals: { review: ongoing })
+    assert_includes ongoing_html, "En cours de lecture"
+  end
+
   test "read_on_month_label is lowercase and renders a real time element" do
     date = Date.new(2026, 1, 15)
 

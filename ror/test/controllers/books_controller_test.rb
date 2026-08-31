@@ -45,7 +45,7 @@ class BooksControllerTest < ActionDispatch::IntegrationTest
       get book_path(wished_book)
 
       assert_response :success
-      assert_select ".book-details", text: /Priorité 1/
+      assert_select ".book-details", text: /dans les envies de lecture pour plus tard…/
     end
   end
 
