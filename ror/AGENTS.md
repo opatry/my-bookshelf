@@ -15,6 +15,13 @@ scope decisions, data model, and rationale.
 - **Ask for clarification in case of doubt.** If a request or directive is ambiguous,
   or if you're unsure whether an existing field/convention should cover a use case,
   ask the user before proceeding rather than guessing.
+- **Never narrate a tool call into a loop.** The moment you've decided on a next action,
+  invoke its tool immediately and only once — do not repeat "Let me run X / Running it now"
+  multiple times in your visible output instead of executing. If you catch yourself emitting
+  the same intent 3+ times without an actual tool invocation (or a short, substantive reply),
+  that is the loop failure: stop mid-sentence, invoke the tool (or state the answer) right
+  away, and do not add another near-identical line before the result. Plan in your own
+  reasoning, not in repeated prose in the reply.
 - `ror/AGENTS.md` is the future single source of truth for working directives; the copy
   at the repo root is kept in sync for now.
 
