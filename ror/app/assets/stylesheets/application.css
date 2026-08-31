@@ -307,7 +307,6 @@ p {
 /* Book covers */
 .cover {
   display: block;
-  border-radius: 4px;
 }
 .cover--placeholder {
   background-color: rgba(0, 0, 0, .08);
@@ -384,7 +383,6 @@ p {
   width: 100%;
   min-width: 250px;
   transition: border-color 0.3s ease-in-out;
-  min-height: 140px;
 }
 .book-card:hover {
   border-color: rgba(0, 0, 0, .3);
@@ -949,7 +947,6 @@ blockquote::after {
 }
 .book-detail__description {
   margin: 1em 0;
-  clear: left;
 }
 .book-detail__none {
   color: rgba(0, 0, 0, .5);
