@@ -70,8 +70,6 @@ fr:
       ongoing: "En cours de lecture"
       wishlist: "Dans la liste de souhaits"
       no_meta: "Aucun résumé pour ce livre pour le moment."
-      back_cover: "4e de couverture"
-      back: "← Retour"
       same_series: "À lire aussi dans la série « %{series} »"
 
   wishlist:

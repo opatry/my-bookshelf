@@ -23,7 +23,6 @@
   <%= cover_tag(@book, variant: :default, class: "book-cover") %>
 
   <% if @book.description.present? %>
-    <h2 class="book-detail__section-title"><%= t(".back_cover") %></h2>
     <div class="book-detail__description"><%= simple_format(@book.description) %></div>
   <% else %>
     <p class="book-detail__none"><%= t(".no_meta") %></p>

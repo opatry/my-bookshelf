@@ -950,28 +950,12 @@ blockquote::after {
   margin: .2em 0 .8em;
   color: rgba(0, 0, 0, .7);
 }
-.book-detail__back-cover {
-  background-color: rgba(0, 0, 0, .02);
-  border-radius: 10px;
-  padding: 1em;
-  margin-bottom: 1em;
-}
-.book-detail__section-title {
-  display: block;
-  font-size: 1.05em;
-  color: rgba(0, 0, 0, .6);
-  margin: 0 0 .4em;
-}
 .book-detail__description {
   margin: 1em 0;
   clear: left;
 }
 .book-detail__none {
   color: rgba(0, 0, 0, .5);
-}
-.book-detail__back {
-  border: 0 none;
-  color: rgba(0, 0, 0, .6);
 }
 
 .linked-books {
