@@ -25,7 +25,6 @@
     <link rel="alternate" type="application/atom+xml" title="<%= t('site.name') %>" href="<%= feed_path(format: :xml) %>">
 
     <%= stylesheet_link_tag :app %>
-    <%= javascript_importmap_tags %>
   </head>
 
   <body>
@@ -66,5 +65,7 @@
         <%= yield %>
       </div>
     </div>
+
+    <%= javascript_importmap_tags %>
   </body>
 </html>

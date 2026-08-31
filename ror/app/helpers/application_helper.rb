@@ -112,7 +112,7 @@ module ApplicationHelper
 
   def cover_tag(book, variant: :default, **options)
     if book.cover.attached?
-      image_tag(book.cover.variant(variant), alt: book.title, class: "cover #{options.delete(:class)}".strip, loading: options.delete(:loading) || "lazy")
+      image_tag(book.cover.variant(variant), alt: book.title, class: "cover #{options.delete(:class)}".strip, loading: options.delete(:loading))
     else
       content_tag(:div, class: "cover cover--placeholder #{options.delete(:class)}".strip, aria_hidden: true) do
         content_tag(:span, book.title.to_s.first.to_s.upcase)
