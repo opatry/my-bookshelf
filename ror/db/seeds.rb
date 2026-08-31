@@ -24,6 +24,12 @@ def isbn13(number)
   (digits + [ (10 - (checksum % 10)) % 10 ]).join
 end
 
+# Demo covers are borrowed from the static site (repo root `content/cover/`) so
+# the seeded books display real covers. Any cover works — the demo books don't
+# have matching artworks, so they are picked deterministically (round-robin).
+COVER_DIR = File.expand_path("../../content/cover", __dir__)
+COVERS = Dir[File.join(COVER_DIR, "*.jpg")].sort
+
 READ_BOOKS = [
   {
     base: 978236793001, title: "La Horde du Contrevent", author: "Alain Damasio",
@@ -109,7 +115,7 @@ WISHLIST_BOOKS = [
 ]
 
 def seed_books(entries, user, status)
-  entries.each do |entry|
+  entries.each_with_index do |entry, index|
     book = Book.find_or_create_by!(isbn: isbn13(entry[:base])) do |b|
       b.title = entry[:title]
       b.author = entry[:author]
@@ -119,6 +125,8 @@ def seed_books(entries, user, status)
       b.tags = entry[:tags].map { |name| Tag.find_or_create_by!(name: name) }
     end
 
+    attach_cover(book, COVERS[index % COVERS.size]) if COVERS.any?
+
     attrs = { user: user, book: book, status: status }
     attrs[:rating] = entry[:rating] if status == :read
     attrs[:read_date] = entry[:read_date] if status == :read
@@ -127,6 +135,16 @@ def seed_books(entries, user, status)
 
     Review.find_or_create_by!(user: user, book: book) { |r| r.assign_attributes(attrs) }
   end
+end
+
+def attach_cover(book, path)
+  return if book.cover.attached?
+
+  book.cover.attach(
+    io: File.open(path),
+    filename: File.basename(path),
+    content_type: "image/jpeg"
+  )
 end
 
 seed_books(READ_BOOKS, user, :read)
