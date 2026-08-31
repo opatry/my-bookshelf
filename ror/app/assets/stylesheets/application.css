@@ -1128,11 +1128,56 @@ blockquote::after {
   flex-wrap: wrap;
   gap: 0.5rem 1.25rem;
 }
+.home-section {
+  margin: 2rem 0;
+}
+.home-section h2 {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
+  padding-bottom: .35rem;
+  margin-bottom: .75rem;
+}
+.admin-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: .35rem;
+}
+.admin-list li::before {
+  content: none;
+}
+.admin-detail-link {
+  margin-left: auto;
+  font-size: .8em;
+  color: rgba(0, 0, 0, .6);
+}
 .admin-book {
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 1.5rem;
   margin-bottom: 2rem;
+}
+.book-detail__facts {
+  display: grid;
+  gap: .35rem;
+  margin: 0 0 1rem;
+  font-size: .95em;
+}
+.book-detail__facts div {
+  display: flex;
+  gap: .5rem;
+}
+.book-detail__facts dt {
+  font-weight: 700;
+  min-width: 8rem;
+  color: rgba(0, 0, 0, .75);
+}
+.book-detail__facts dd {
+  margin: 0;
 }
 .muted {
   color: rgba(0, 0, 0, .6);

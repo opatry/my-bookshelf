@@ -13,6 +13,13 @@ class Admin::DashboardControllerTest < ActionDispatch::IntegrationTest
     end
   end
 
+  test "places the public-site link inside the header-detail" do
+    get admin_root_path
+
+    assert_select ".header-detail #badges #admin-public-site a", text: I18n.t("admin.nav.public_site")
+    assert_select "a[href='#{root_path}']", text: I18n.t("admin.nav.public_site")
+  end
+
   test "404 when the default owner is missing" do
     User.destroy_all
 
