@@ -184,13 +184,17 @@ def ongoing_book_info()
   [ongoing_book, ongoing_book_cover]
 end
 
+def sorted_books
+  @items.select { |item| book?(item) && item[:read_date].is_a?(Date) }
+        .sort_by { |item| -item[:read_date].to_time.to_i }
+end
+
 # Returns the last books sorted by read date in descending order.
 #
 # @param limit [Integer, nil] the maximum number of books to return. If nil, returns all books.
 # @return [Array<Hash>] an array of book items sorted by read date.
 def last_books(limit = nil)
-  books = @items.select { |item| book?(item) && item[:read_date].is_a?(Date) }
-                .sort_by { |item| -item[:read_date].to_time.to_i }
+  books = sorted_books
   limit.nil? ? books : books.first(limit)
 end
 
@@ -204,9 +208,10 @@ def wished_books(limit = nil)
   limit.nil? ? books : books.first(limit)
 end
 
-def recent_books()
-  six_months_ago = Date.today << 6
-  last_books(6).select { |book| book[:read_date] >= six_months_ago }
+def recent_books(months: 6, limit: 6)
+  cutoff = Date.today << months
+  books = sorted_books.select { |book| book[:read_date] >= cutoff }
+  limit.nil? ? books : books.first(limit)
 end
 
 def feed_books()
