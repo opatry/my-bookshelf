@@ -205,7 +205,7 @@ def wished_books(limit = nil)
 end
 
 def recent_books()
-  six_months_ago = Date.today << 60
+  six_months_ago = Date.today << 6
   last_books(6).select { |book| book[:read_date] >= six_months_ago }
 end
 
