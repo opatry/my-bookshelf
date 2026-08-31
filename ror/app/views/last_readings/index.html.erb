@@ -1,12 +1,91 @@
 <% content_for(:title, t(".title")) %>
 
-<h1><%= t(".title") %></h1>
-
 <% if @reviews.any? %>
-  <% @reviews.group_by { |review| review.read_date.year }.each do |year, reviews| %>
-    <h2><%= year %> <span class="book-count">(<%= t("home.section_library") %>)</span></h2>
-    <%= render "shared/book_grid", reviews: reviews %>
+  <h1><%= t(".title") %> <span class="title-more"><a href="#" title="<%= t(".no_filter") %>">tout</a> • <a href="#only-favorites" title="<%= t(".favorites_only") %>"><%= heart_icon(size: 12) %></a></span></h1>
+
+  <%
+  by_year = @reviews.group_by { |review| review.read_date.year }
+  by_year = by_year.transform_values { |reviews| reviews.group_by { |review| review.read_date.month } }
+  %>
+
+  <table class="calendar">
+    <thead>
+      <tr>
+        <th></th>
+        <% (1..12).each do |month| %>
+          <th><%= t("date.month_names")[month].slice(0, 3) %></th>
+        <% end %>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% by_year.each do |year, by_month| %>
+        <%
+        year_count = by_month.values.sum(&:size)
+        year_title = t("last_readings.readings_count_in_year", count: year_count, book_count: year_count, year: year)
+        %>
+        <tr>
+          <th><%= link_to year, "#y#{year}", title: year_title %></th>
+          <% (1..12).each do |month| %>
+            <%
+            month_count = (by_month[month] || []).size
+            month_title = t("last_readings.readings_count_in_month",
+                            count: month_count, book_count: month_count,
+                            month: t("date.month_names")[month], year: year)
+            # a max of 7 books per month maps to the max circle radius (50)
+            max_per_month = 7
+            max_radius = 50
+            count_cap = [month_count, max_per_month].min
+            radius = max_radius / max_per_month.to_f * count_cap
+            color_alpha = count_cap * 14 / 100.0
+            %>
+            <td class="calendar-cell" data-book-read-count="<%= count_cap %>">
+              <% if month_count > 0 %>
+                <%= link_to "#y#{year}-m#{month}", title: month_title do %>
+                  <svg height="100%" viewBox="0 0 100 100" class="book-read-count-marker">
+                    <circle cx="50" cy="50" r="<%= radius %>" fill="rgba(197, 17, 4, <%= color_alpha %>)" />
+                  </svg>
+                <% end %>
+              <% end %>
+            </td>
+          <% end %>
+          <td class="calendar-cell">
+            <%= link_to calendar_path(year: year), title: t(".go_to_calendar", year: year) do %>
+              <%= calendar_icon(size: 16) %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <% by_year.each do |year, by_month| %>
+    <%
+    year_count = by_month.values.sum(&:size)
+    year_pages = by_month.values.flatten.sum { |review| review.book.page_count.to_i }
+    %>
+    <div id="y<%= year %>" class="temporal-section year-section">
+      <h2><%= year %>&nbsp;<span class="book-count">(<%= t("last_readings.books_count", count: year_count) %>, <%= t("last_readings.pages_count", count: year_pages, formatted_count: number_with_delimiter(year_pages)) %>)</span></h2>
+
+      <% by_month.each do |month, reviews| %>
+        <%
+        month_count = reviews.size
+        month_pages = reviews.sum { |review| review.book.page_count.to_i }
+        %>
+        <div id="y<%= year %>-m<%= month %>" class="temporal-section month-section">
+          <h3><%= t("date.month_names")[month].capitalize %>&nbsp;<span class="book-count">(<%= t("last_readings.books_count", count: month_count) %>, <%= t("last_readings.pages_count", count: month_pages, formatted_count: number_with_delimiter(month_pages)) %>)</span>
+            <span class="title-more"><%= link_to "↑", "#", title: t("calendar.show.back_to_top") %></span>
+          </h3>
+          <div id="recent-books" class="book-grid">
+            <% reviews.each do |review| %>
+              <%= render "shared/book_card", review: review %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
   <% end %>
 <% else %>
-  <p class="empty-state"><%= t("home.empty") %></p>
+  <h1><%= t(".title") %></h1>
+  <p class="empty-state"><%= t("last_readings.index.subtitle") %></p>
 <% end %>
