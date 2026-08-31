@@ -81,17 +81,17 @@ fr:
 
   tags:
     index:
-      title: "Étiquettes"
+      title: "Toutes les étiquettes"
       subtitle: "Explorer mes lectures par thème, genre ou région."
     back_all: "🏷️ Toutes les étiquettes"
     show:
-      title: "%{tag}"
+      title: "Les livres étiquetés \"%{tag}\""
       subtitle: "Mes lectures taguées « %{tag} »."
 
   calendar:
     nav_label: "Changer d’année"
     show:
-      title: "%{year}"
+      title: "Calendrier des lectures de %{year}"
       subtitle: "Mes lectures de l’année %{year}."
       prev_year: "← %{year}"
       next_year: "%{year} →"
