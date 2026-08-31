@@ -4,6 +4,14 @@ module ApplicationHelper
     content_for(:title).present? ? "#{content_for(:title)} — #{base}" : base
   end
 
+  # Open Graph description for a book page: the book description truncated to
+  # the first N words (the static site used a 50-word limit).
+  def book_og_description(book, max_words: 50)
+    return t("books.show.no_meta") if book.description.blank?
+
+    book.description.split(/\s+/).first(max_words).join(" ")
+  end
+
   def read_date_label(review)
     return t("meta.ongoing") unless review.read_date
 

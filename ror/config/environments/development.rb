@@ -46,6 +46,9 @@ Rails.application.configure do
   # Active Storage: local disk in development.
   config.active_storage.service = :local
 
+  # Local host for absolute URLs (feeds, Open Graph images).
+  Rails.application.routes.default_url_options = { host: "localhost", port: 3000 }
+
   # Raises error for missing translations.
   # config.i18n.raise_on_missing_translations = true
 

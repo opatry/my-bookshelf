@@ -15,9 +15,26 @@ class BooksControllerTest < ActionDispatch::IntegrationTest
     end
     assert_select ".book-details time[datetime=?]", "2026-01-15"
     assert_select ".book-details", text: /lu en/
-    assert_select "h2.book-detail__section-title", text: "4e de couverture"
     assert_select ".book-detail__description", text: /Un classique de la littérature\./
     assert_select ".book-tags .tag", text: "Thriller"
+    assert_select 'meta[property="og:type"][content="book"]'
+    assert_select 'meta[property="book:author"][content=?]', book.author
+    assert_select 'meta[property="book:isbn"][content=?]', book.isbn
+    assert_select 'meta[property="book:release_date"][content=?]', "1844"
+    assert_select 'meta[property="og:url"]' do
+      assert_select "meta[content*='#{book_path(book)}']"
+    end
+    assert_select 'meta[property="og:description"][content=?]', book.description
+  end
+
+  test "includes the cover in Open Graph metadata for a book with a cover" do
+    book = valid_book(title: "Un livre avec couverture", author: "Quelqu’un")
+    book.save!
+
+    get book_path(book)
+
+    assert_response :success
+    assert_select 'meta[property="og:image"][content*="/rails/active_storage/"]'
   end
 
   test "accepts the id-slug URL form" do

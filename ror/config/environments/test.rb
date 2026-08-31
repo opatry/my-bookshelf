@@ -37,6 +37,9 @@ Rails.application.configure do
   # Active Storage: use the dedicated test disk that gets cleared between runs.
   config.active_storage.service = :test
 
+  # Test host for absolute URLs (feeds, Open Graph images).
+  Rails.application.routes.default_url_options = { host: "example.com" }
+
   # Annotate rendered view with file names.
   # config.action_view.annotate_rendered_view_with_filenames = true
 

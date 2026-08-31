@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <% is_home = params[:controller] == "home" %>
-<html lang="<%= I18n.locale %>">
+<% is_last_readings = params[:controller] == "last_readings" %>
+<html lang="<%= I18n.locale %>" <%= "id=\"only-favorites\"" if is_last_readings %>>
   <head>
     <title><%= page_title %></title>
     <meta charset="utf-8">
@@ -13,8 +14,15 @@
 
     <%= yield :head %>
 
-    <link rel="shortcut icon" href="/icon.png" type="image/png">
-    <link rel="apple-touch-icon" href="/icon.png">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="<%= t('site.name') %>">
+    <meta property="og:title" content="<%= page_title %>">
+    <meta property="og:url" content="<%= request.original_url %>">
+    <meta property="og:type" content="<%= content_for(:og_type).presence || 'website' %>">
+    <meta property="og:description" content="<%= content_for(:og_description).presence || t('site.tagline') %>">
+
+    <link rel="shortcut icon" href="/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="/favicon.png">
     <link rel="alternate" type="application/atom+xml" title="<%= t('site.name') %>" href="<%= feed_path(format: :xml) %>">
 
     <%= stylesheet_link_tag :app %>

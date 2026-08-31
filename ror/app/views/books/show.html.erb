@@ -1,6 +1,24 @@
 <% content_for(:title, t(".title", title: @book.title, author: @book.author)) %>
 
-<%= link_to t(".back"), root_path, class: "book-detail__back" %>
+<% content_for(:og_type, "book") %>
+<% content_for(:og_description, book_og_description(@book)) %>
+<% content_for(:head) do %>
+  <meta property="book:author" content="<%= @book.author %>">
+  <% if @book.isbn.present? %>
+    <meta property="book:isbn" content="<%= @book.isbn %>">
+  <% end %>
+  <% if @book.publication_year.present? %>
+    <meta property="book:release_date" content="<%= @book.publication_year %>">
+  <% end %>
+  <% @book.tags.each do |tag| %>
+    <meta property="book:tag" content="<%= tag.name %>">
+  <% end %>
+  <% if @book.cover.attached? %>
+    <meta property="og:image" content="<%= url_for(@book.cover.variant(:default)) %>">
+    <meta property="og:image:secure_url" content="<%= url_for(@book.cover.variant(:default)) %>">
+    <meta property="og:image:type" content="<%= @book.cover.blob.content_type %>">
+  <% end %>
+<% end %>
 
 <div id="book-<%= @book.isbn %>">
   <h2 class="book-title">
