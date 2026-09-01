@@ -52,7 +52,10 @@ module Admin
     def book_params
       params.require(:book).permit(:title, :author, :isbn, :page_count, :publication_year,
                                    :description, :series_id, :cover, :tag_names, :remove_cover)
-                                   .tap { |p| p.delete(:remove_cover) if p.key?(:remove_cover) }
+                                   .tap do |p|
+        p.delete(:remove_cover) if p.key?(:remove_cover)
+        p[:cover] = CoverProcessor.call(p[:cover]) if p[:cover].present?
+      end
     end
 
     # The `remove_cover` checkbox is a virtual form flag, not a Book attribute.

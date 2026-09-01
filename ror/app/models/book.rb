@@ -23,6 +23,7 @@ class Book < ApplicationRecord
   validates :author, presence: true
   validates :isbn, presence: true, uniqueness: true, isbn13: true
   validate :cover_must_be_attached
+  validates :cover, cover_file: true
 
   # Books never belong to a user directly; they are shared. Reverse side of
   # the review relationship is provided for convenience.

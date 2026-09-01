@@ -50,6 +50,21 @@ class Admin::BooksControllerTest < ActionDispatch::IntegrationTest
     assert_equal I18n.t("admin.books.create.success"), flash[:notice]
   end
 
+  test "create resizes a wide uploaded cover down to 575px" do
+    assert_difference -> { Book.count } => 1 do
+      post admin_books_path, params: {
+        book: {
+          title: "Large", author: "Q", isbn: unique_isbn,
+          cover: fixture_file_upload("cover_wide.jpg", "image/jpeg")
+        }
+      }
+    end
+
+    book = Book.order(:created_at).last
+    assert_redirected_to admin_book_path(book)
+    assert_operator cover_width(book), :<=, CoverProcessor::MAX_WIDTH
+  end
+
   test "rejects a book without a cover" do
     assert_no_difference -> { Book.count } do
       post admin_books_path, params: {
@@ -133,5 +148,12 @@ class Admin::BooksControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to admin_book_path(@book)
     assert @book.reload.cover.attached?
+  end
+
+  private
+
+  def cover_width(book)
+    image = MiniMagick::Image.read(book.cover.download)
+    image.width
   end
 end

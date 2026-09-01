@@ -67,6 +67,22 @@ class BookTest < ActiveSupport::TestCase
     assert_equal "978-2070373017", book.formatted_isbn
   end
 
+  test "rejects a cover with a disallowed content type" do
+    book = valid_book
+    book.cover.attach(io: StringIO.new("gif"), filename: "a.gif", content_type: "image/gif")
+
+    assert_not book.valid?
+    assert book.errors.added?(:cover, :invalid_content_type)
+  end
+
+  test "rejects a cover larger than the size limit" do
+    book = valid_book
+    book.cover.blob.byte_size = CoverFileValidator::MAX_BYTES + 1
+
+    assert_not book.valid?
+    assert book.errors.added?(:cover, :too_large, max_megabytes: 3)
+  end
+
   test "computes search_text on save, accent and apostrophe normalized" do
     book = valid_book(title: "L’Étranger", author: "Albert Camus")
     book.save!

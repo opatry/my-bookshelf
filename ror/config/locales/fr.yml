@@ -240,6 +240,8 @@ fr:
               invalid_isbn: "n’est pas un ISBN-13 valide"
             cover:
               blank: "doit être fournie"
+              invalid_content_type: "doit être une image JPEG, PNG ou WebP"
+              too_large: "ne doit pas dépasser %{max_megabytes} Mo"
         review:
           attributes:
             rating:
