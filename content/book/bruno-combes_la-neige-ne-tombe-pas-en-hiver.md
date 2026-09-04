@@ -3,7 +3,7 @@ uuid: 6cd4b2b9-b6bc-4107-b42a-67f07ead2da4
 isbn: '9782749957937'
 title: "La neige ne tombe pas en hiver"
 author: "Bruno Combes"
-priority: 1.2
+ongoing: true
 tags:
 - Feel-good
 - Développement personnel
