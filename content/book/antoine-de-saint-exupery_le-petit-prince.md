@@ -7,7 +7,7 @@ rating: 7
 social:
   sc: '97412'
   babelio: '36712'
-page_count: 10
+page_count: 97
 publication_year: 1943
 ---
 
