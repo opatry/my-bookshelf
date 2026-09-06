@@ -1,0 +1,46 @@
+name: PR Build Check
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review, labeled]
+
+jobs:
+  build:
+    name: Build
+    # GitHub has no trigger-level label filter; job-level `if` is the idiomatic way.
+    # The job (and its check) reports as skipped/success for draft or unlabeled PRs.
+    if: >-
+      ${{ !github.event.pull_request.draft &&
+      contains(github.event.pull_request.labels.*.name, 'content:book') }}
+    runs-on: ubuntu-latest
+
+    env:
+      BUNDLE_WITHOUT: development
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v5
+
+    - name: Setup Ruby 3.4
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: '3.4'
+        bundler-cache: true
+
+    - name: Cache nanoc (dev)
+      id: cache-nanoc
+      uses: actions/cache@v5
+      with:
+        path: |
+          output
+          tmp/nanoc
+        key: ${{ runner.os }}-nanoc-pr-dev-v1-${{ hashFiles('content/**', 'Rules', 'nanoc.yaml', 'lib/**', 'layouts/**') }}
+        restore-keys: |
+          ${{ runner.os }}-nanoc-pr-dev-v1-
+
+    - name: Build (dev env)
+      run: |
+        export LANG=en_US.UTF-8
+        export LANGUAGE=en_US:en
+        export LC_ALL=en_US.UTF-8
+        bundle exec nanoc compile
