@@ -145,13 +145,13 @@ end
 favicon_reprs.each do |repr|
   compile '/static/favicon.*', rep: repr do
     route = if repr == :default
-              filter :favicon
+              filter :favicon unless @config[:dev]
               # browser friendly favicon location + avoids 404 errors on server when such browsers are looking for it
               '/favicon.ico'
             else
               # extract size from favicon repr name
               size = repr.to_s.delete_prefix('favicon').to_i
-              filter :thumbnailize, width: size
+              filter :thumbnailize, width: size unless @config[:dev]
               "/#{repr}.#{item[:extension]}"
             end
     write route
@@ -170,8 +170,8 @@ end
 
 %i[compact default].each do |repr|
   compile '/static/avatar.*', rep: repr do
-    filter :thumbnailize, width: @config[:avatar_size][repr] #unless @config[:dev]
-    
+    filter :thumbnailize, width: @config[:avatar_size][repr] unless @config[:dev]
+
     suffix = "-#{repr}" unless repr == :default
     write "#{item.identifier.without_exts}#{suffix}.#{item[:extension]}"
   end
