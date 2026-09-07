@@ -3,8 +3,9 @@ uuid: 2c0d9f6d-1b57-48d4-ba98-ff541478d6d7
 isbn: '9782070408504'
 title: "Le Petit Prince"
 author: "Antoine de Saint-Exupéry"
-rating: 5
-read_date: 2026-09-04
+rating: 3
+read_date: 2026-09-06
+favorite: true
 social:
   sc: '97412'
   babelio: '36712'
