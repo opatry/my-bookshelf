@@ -2,6 +2,6 @@
 require 'json'
 
 books_json = @items.find_all { |item| book?(item) }
-                    .sort_by { |book| sortable_label(book[:title]) }
-                    .map { |book| to_json(book, url: :relative) }
+                   .sort_by { |book| sortable_label(book[:title]) }
+                   .map { |book| to_json(book, url: :relative, keys: SEARCH_BOOK_KEYS) }
 %><%= books_json.to_json %>
