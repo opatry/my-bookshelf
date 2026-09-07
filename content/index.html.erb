@@ -61,7 +61,7 @@ unless w_books.empty?
   <div id="books-table" class="books-table"></div>
   <script type="text/javascript" defer>
     // TODO load JSON file
-  const booksData = <%= JSON[rated_books.map { |book| to_json(book) }] %>;
+  const booksData = <%= JSON[rated_books.map { |book| to_json(book, keys: HOME_BOOK_KEYS) }] %>;
 
   var table;
 

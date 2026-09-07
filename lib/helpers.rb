@@ -24,13 +24,18 @@ def h(text)
   CGI.escapeHTML(text.nil? ? '' : text)
 end
 
-def to_json(book, url: :relative)
+# Fields consumed by the JSON API (see content/api/v1/books.json.erb) are the full to_json payload.
+# Both consumers below fetch all books on every page view, so they only keep the fields they use.
+SEARCH_BOOK_KEYS = %i[link title author tags cover_mini].freeze
+HOME_BOOK_KEYS = %i[link title author rating favorite cover_mini].freeze
+
+def to_json(book, url: :relative, keys: nil)
   cover = @items["/cover/#{book[:isbn]}.*"]
   cover_path = cover.path(rep: :default) unless cover.nil?
   cover_mini_path = cover.path(rep: :mini) unless cover.nil?
   url_prefix = url == :absolute ? @config[:site][:url] : ''
   read_date = book[:read_date].iso8601 if book[:read_date].is_a?(Date)
-  {
+  result = {
     'isbn': book[:isbn],
     'uuid': book[:uuid],
     'title': book[:title],
@@ -49,6 +54,7 @@ def to_json(book, url: :relative)
     'publication_year': book[:publication_year] || nil,
     'source_path': book_source_path(book),
   }
+  keys.nil? ? result : result.select { |k, _| keys.include?(k) }
 end
 
 # Path of the book's source file, relative to the site root.
