@@ -47,7 +47,14 @@ def to_json(book, url: :relative)
     'social': book[:social] || {},
     'page_count': book[:page_count] || nil,
     'publication_year': book[:publication_year] || nil,
+    'source_path': book_source_path(book),
   }
+end
+
+# Path of the book's source file, relative to the site root.
+# Nanoc reports it as an absolute path on the compiling machine, which we don't want to expose publicly.
+def book_source_path(book)
+  book.raw_filename&.delete_prefix("#{Dir.pwd}/")
 end
 
 def home?(item)
