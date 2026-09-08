@@ -5,6 +5,7 @@ title: "11h14"
 author: "Glendon Swarthout"
 rating: 3
 read_date: 2024-05-14
+favorite: true
 tags:
 - Etats-Unis
 - Policier
