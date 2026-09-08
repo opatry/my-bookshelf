@@ -3,9 +3,8 @@ uuid: f30274a6-1ea1-41cf-bf01-73140e91401a
 isbn: '9782351785737'
 title: "11h14"
 author: "Glendon Swarthout"
-rating: 3
-read_date: 2024-05-14
-favorite: true
+rating: 6
+read_date: 2024-05-26
 tags:
 - Etats-Unis
 - Policier
