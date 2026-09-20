@@ -3,11 +3,11 @@ uuid: 699c23d8-d391-4e8a-a9a2-526f872679b5
 isbn: '9782070445097'
 title: "Le confident"
 author: "Hélène Gremillon"
-ongoing: true
+rating: 6
+read_date: 2026-09-20
 tags:
 - Amour
 - Guerre
-- Féminisme
 - Famille
 social:
   sc: '435428'
