@@ -3,7 +3,7 @@ uuid: 7da32016-0121-4789-ba0a-e5a99e424c9f
 isbn: '9782021455687'
 title: "Route One"
 author: "Michel Moutot"
-priority: 1.3
+ongoing: true
 tags:
 - Etats-Unis
 - Mafia
