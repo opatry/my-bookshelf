@@ -899,6 +899,7 @@ blockquote::after {
     height: 20px;
     line-height: 20px;
     margin: 0 1px;
+    border-radius: 2px;
   }
   [data-book-read-count]:last-child a { margin-right: 5px; }
   [data-book-read-count="0"] a { background-color: rgba(197, 17, 4, 0); }
