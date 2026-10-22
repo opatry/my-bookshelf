@@ -3,7 +3,7 @@ uuid: e9a8613b-8244-4986-b33b-7288cdbd0c2e
 isbn: '9782021526295'
 title: "Filles du ciel"
 author: "Michel Moutot"
-priority: 1.2
+ongoing: true
 tags:
 - Etats-Unis
 - Amour
