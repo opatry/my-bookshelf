@@ -3,15 +3,14 @@ uuid: e9a8613b-8244-4986-b33b-7288cdbd0c2e
 isbn: '9782021526295'
 title: "Filles du ciel"
 author: "Michel Moutot"
-rating: 6
-read_date: 2026-10-27
+ongoing: true
 tags:
 - Etats-Unis
 - Amour
 - Vengeance
 - Serial killer
 social:
-  sc: '18747735'
+  sc: '90889662'
   babelio: '1659531'
 page_count: 336
 publication_year: 2024
