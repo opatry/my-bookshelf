@@ -12,7 +12,7 @@ tags:
 social:
   babelio: '1589710'
   sc: '81676079'
-page_count: 352
+page_count: 336
 publication_year: 2025
 ---
 
