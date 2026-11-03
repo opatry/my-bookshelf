@@ -1,9 +1,10 @@
 ---
 uuid: 051ca563-91c6-4a4b-8729-b04dc4547ff0
 isbn: '9782756406299'
-title: "Les Aventuriers de la mer, tome 6 : L'Éveil des eaux dormantes"
+title: "Les Aventuriers de la mer, tome 6 : L’Éveil des eaux dormantes"
 author: "Robin Hobb"
-ongoing: true
+rating: 7
+read_date: 2026-11-03
 tags:
 - Fantasy
 - Aventure
