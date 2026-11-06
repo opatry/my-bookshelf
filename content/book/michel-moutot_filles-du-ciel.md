@@ -11,7 +11,7 @@ tags:
 - Vengeance
 - Serial killer
 social:
-  sc: '18747735'
+  sc: '90889662'
   babelio: '1659531'
 page_count: 336
 publication_year: 2024
