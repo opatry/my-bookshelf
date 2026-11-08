@@ -3,7 +3,7 @@ uuid: a59898b8-caa6-4b22-b8e1-e437bb26af20
 isbn: '9782756406336'
 title: "Les Aventuriers de la mer, tome 8 : Ombres et flammes"
 author: "Robin Hobb"
-priority: 2.5
+ongoing: true
 tags:
 - Fantasy
 - Aventure
