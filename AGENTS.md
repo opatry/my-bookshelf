@@ -12,6 +12,7 @@ Nanoc 4 static site (French personal bookshelf, https://lecture.opatry.net) depl
 - `bundle exec nanoc compile --env=prod` — prod build: HTML/CSS minified, covers thumbnailized via ImageMagick. Unrated books are DELETED in prod (dev keeps everything), so validate with the dev compile.
 - Local build needs ImageMagick 7 (`magick`; `convert` fallback only on Linux) and Ruby ~3.4 (CI uses 3.4).
 - Deploy is automatic: pushes to `main` are built and deployed to Firebase by GitHub Actions (`.github/workflows/build_deploy.yml`). Never deploy manually unless explicitly asked.
+- `firebase-tools` is pinned to `15.34.0` on purpose: `15.34.1`+ runs a Hosting API enablement preflight calling `serviceusage.googleapis.com`, which the deploy service account cannot read (`403`, needs `serviceusage.services.get`). Unpin once the upstream warn-only fix (`firebase/firebase-tools#11412`) is released.
 
 ## Content model
 - One book = `content/book/{author-slug}_{title-slug}.md` with YAML frontmatter: `uuid`, `isbn`, `title`, `author`, `rating` (1–10), `read_date`, `priority` (wish list), `ongoing`, `favorite`, `tags`, `linked_books` (series, by ISBN; backfilled reciprocally), `social: {sc, babelio}` (numeric profile IDs), `page_count`, `publication_year`. Body = French description.
