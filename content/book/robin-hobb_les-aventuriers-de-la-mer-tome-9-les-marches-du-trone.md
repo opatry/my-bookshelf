@@ -3,7 +3,8 @@ uuid: c84c5a63-016a-4da7-91c9-8b960c909178
 isbn: '9782756406749'
 title: "Les Aventuriers de la mer, tome 9 : Les marches du trône"
 author: "Robin Hobb"
-ongoing: true
+rating: 6
+read_date: 2026-11-12
 tags:
 - Fantasy
 - Aventure
