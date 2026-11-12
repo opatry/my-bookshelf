@@ -15,6 +15,7 @@ else
   books_by_year.each do |year, books_in_year|
     books_by_year[year] = books_in_year.group_by { |book| book[:read_date].month }
   end
+  max_book_count_per_month = books_by_year.values.flat_map { |books_by_month| books_by_month.values.map(&:size) }.max.to_i
 %>
   <h1><%= @item[:title] %> <span class="title-more"><a href="#" title="Pas de filtre">tout</a> • <a href="#only-favorites" title="Ne voir que les favoris"><%= heart_svg(size: 12) %></a></span></h1>
 
@@ -53,16 +54,18 @@ else
         month: I18n.t('date.month_names')[month_num],
         year: year
       )
-      # we consider a max of 7 books per month for a max radius of 50
-      max_per_month = 7
+      # proportional level 0..7 normalized by the busiest month in the library (7 matches
+      # `data-book-read-count` steps in style.css): keeps 1-book months small, and adapts
+      # instead of saturating if a month ever goes above the historical peak of 7 books
+      max_level = 7
       max_radius = 50
-      book_count_cap = [book_count, max_per_month].min
-      radius_per_book = max_radius / max_per_month.to_f
-      book_radius = radius_per_book * book_count_cap
+      book_level = (book_count * max_level.to_f / max_book_count_per_month).round
+      radius_per_level = max_radius / max_level.to_f
+      book_radius = radius_per_level * book_level
       # linked to values in style.css (`data-book-read-count`)
-      book_color_alpha = book_count_cap * 14 / 100.0
+      book_color_alpha = book_level * 14 / 100.0
     %>
-    <td class="calendar-cell" data-book-read-count="<%= book_count_cap %>">
+    <td class="calendar-cell" data-book-read-count="<%= book_level %>">
     <% if book_count > 0 %>
     <a href="#y<%= year %>-m<%= month_num %>" title="<%= book_count_title %>">
     <% end %>
