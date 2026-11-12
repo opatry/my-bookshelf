@@ -326,16 +326,27 @@ Aucun livre n'a été lu en <%= @item[:year] %>.
   end
 end
 
+# Maps a value to an integer level 0..levels on a logarithmic scale normalized by
+# max_value, so outliers do not compress everybody else into level 0 and quiet
+# cells stay visible (ex: Robin Hobb in the author cloud, a busy reading month).
+def log_weight(value, max_value, levels)
+  return 0 if value.zero?
+  return 1 if max_value <= 1
+
+  (levels * Math.log1p(value) / Math.log1p(max_value)).round.clamp(1, levels)
+end
+
 def author_tag_cloud
   # FIXME natural sort on author name?
   authors = @items.select { |item| book?(item) }.group_by { |book| book[:author] }.sort # sort on hash sort by key which is what we want
-  # tag_<weight> goes from tag_0 to tag_10, map tag weight value to [0,10]
+  # tag_<weight> goes from tag_0 to tag_10
+  # logarithmic scale on book count, so a prolific author (ex: Robin Hobb, 25 books out of 153
+  # authors) does not compress everybody else into tag_0 (linear scale maps 1..4 books to 0..1)
   max = authors.max_by { |_, v| v.size }[1].size
-  min = authors.min_by { |_, v| v.size }[1].size
   result = []
   authors.each do |author, books|
     books_count = books.size
-    tag_weight = (((books_count - min) * 10.0) / max).round
+    tag_weight = log_weight(books_count, max, 10)
     result << [author, tag_weight, books_count]
   end
   result
