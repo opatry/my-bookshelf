@@ -3,7 +3,7 @@ uuid: 92ac9f9a-5eb2-41bb-8e9b-e4c6f74b8a15
 isbn: '9782378803933'
 title: "Veiller sur elle"
 author: "Jean-Baptiste Andrea"
-priority: 1.1
+ongoing: true
 tags:
 - Amitié
 - Famille
