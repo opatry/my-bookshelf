@@ -232,7 +232,7 @@ Commit: `Store author pictures locally with thumbnail reps`
       that's a designed state, not a failure.
 - [ ] Curated batches commit as `[authors] fill metadata for <N> authors` (a handful per
       commit so review stays sane); alias discoveries feed A3's `aliases:`. Paste target is
-      `nanoc.yaml` until D5 lands, then `content/meta/authors/<slug>.md`.
+      `nanoc.yaml` until D5 lands, then `content/authors/<slug>.md`.
 - [ ] Expectation: Wikipedia has ~60–80% of the French-market authors in the shelf; the
       rest: manual one-liners (own words) or none.
 
@@ -244,7 +244,14 @@ Commit: `Store author pictures locally with thumbnail reps`
 - [ ] Nice-to-have later: cross-check book `social.sc` pages — the author/contact ID is in
       those profile URLs sometimes (harvest without scraping).
 
-### D5. Author metadata as items: `content/meta/authors/<slug>.md` replaces the `@config[:author]` blob
+### D5. Author metadata as items: `content/authors/<slug>.md` replaces the `@config[:author]` blob
+
+Naming decision (2026-11-13): `content/authors/` for symmetry with `content/book/` — one shelf,
+one directory per entity kind; the `content/meta/…` quarantine was considered and rejected as
+needlessly indirect. Consequence: `content/book/*.md` items ARE pages, while `content/authors/*.md`
+items are data-only — that asymmetry must be made explicit in `Rules` (see exclusion bullet), not
+assumed from the path. Generated pages keep the singular namespace `/author/<slug>.*`, so nothing
+ever collides, but any helper matching on identifiers should double-check plural vs singular.
 
 Rationale (decided 2026-11-13, after the first 10-author curation batch): bios/pictures/links are
 *content*, not site config; the single `nanoc.yaml` blob conflicts with the branch-per-book/PR
@@ -254,16 +261,19 @@ reuses the machinery books already have — Rules validation, orthogonal diffs, 
 roster); metadata files are merge inputs, created lazily (uncurated authors have no file —
 initials fallback stays a designed state, ~10% of files at first).
 
-- [ ] One file per curated author under `content/meta/authors/` (namespace deliberately kept
-      distinct from generated `/author/<slug>.*` identifiers):
+- [ ] One file per curated author under `content/authors/` (singular/plural keeps it distinct
+      from generated `/author/<slug>.*` identifiers — verify no identifier-equality lookup
+      ever conflates them):
       frontmatter = the exact block `fetch_author.sh` prints today (`wikidata`, `picture`,
       `picture_source`, `bio_source`, `wikipedia`, `babelio`, `sc`, `aliases`),
       body = bio in markdown (escapes the YAML-string quoting dance, allows longer notes later).
-- [ ] `Rules`: exclude `/meta/authors/*` from compile/route so curated data never becomes a page.
+- [ ] `Rules`: exclude `/authors/*` from compile/route explicitly (`ignore:` in `nanoc.yaml` or
+      a comment-justified no-write rule) so curated data never becomes a page — today an
+      unrouted item emits nothing by accident, a future catch-all `compile '*'` would leak it.
 - [ ] `lib/helpers.rb` `generate_author_items` and `layouts/head_author.html.erb`: replace
-      `@config[:author][slug]` lookups by `@items["/meta/authors/<slug>.*"]`; render the file
+      `@config[:author][slug]` lookups by `@items["/authors/<slug>.*"]`; render the file
       body as the bio block instead of the injected `> bio` string.
-- [ ] Validation in `Rules`, mirroring the book checks: fail on a `meta/authors` file whose slug
+- [ ] Validation in `Rules`, mirroring the book checks: fail on a `content/authors` file whose slug
       matches no shelf author (stale or typo'd — warn vs raise decided at impl); extend the A3
       slug-collision check across `aliases:` declared in frontmatter.
 - [ ] Migrate the current 10 `nanoc.yaml` entries to md files, then delete the `author:` blob.
