@@ -81,7 +81,7 @@ author:
     bio_source: wikipedia
     picture: "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Agatha_Christie_in_Nederland_%28detectiveschrijfster%29%2C_bij_aankomst_op_Schiphol_me%2C_Bestanddeelnr_916-8898_%28cropped%29.jpg/330px-Agatha_Christie_in_Nederland_%28detectiveschrijfster%29%2C_bij_aankomst_op_Schiphol_me%2C_Bestanddeelnr_916-8898_%28cropped%29.jpg"
     wikipedia: https://fr.wikipedia.org/wiki/Agatha_Christie
-    babelio: https://www.babelio.com/auteur/x/3638
+    babelio: https://www.babelio.com/auteur/agatha-christie/3638
   benoit-philippon:
     wikidata: Q27535467
     bio: "Benoît Philippon, né en 1976, est un écrivain, un réalisateur et un scénariste français, auteur de roman noir."
@@ -95,7 +95,7 @@ author:
     bio: "Delia Owens est une écrivaine et zoologiste américaine née en 1949."
     bio_source: wikipedia
     wikipedia: https://fr.wikipedia.org/wiki/Delia_Owens
-    babelio: https://www.babelio.com/auteur/x/52513
+    babelio: https://www.babelio.com/auteur/delia-owens/52513
   frederic-beigbeder:
     wikidata: Q314972
     bio: "Frédéric Beigbeder, né le 21 septembre 1965 à Neuilly-sur-Seine, est un écrivain, critique littéraire, scénariste, animateur de télévision, et réalisateur français."
@@ -110,21 +110,21 @@ author:
     bio_source: wikipedia
     picture: "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Conversatorio_Haruki_Murakami_%2812_de_12%29_%2845747009452%29_%28cropped%29.jpg/330px-Conversatorio_Haruki_Murakami_%2812_de_12%29_%2845747009452%29_%28cropped%29.jpg"
     wikipedia: https://fr.wikipedia.org/wiki/Haruki_Murakami
-    babelio: https://www.babelio.com/auteur/x/3041
+    babelio: https://www.babelio.com/auteur/haruki-murakami/3041
   j-r-r-tolkien:
     wikidata: Q892
     bio: "John Ronald Reuel Tolkien, plus connu sous la forme J. R. R. Tolkien, est un écrivain, poète, philologue, essayiste et professeur d'université anglais né le 3 janvier 1892 à Bloemfontein et mort le 2 septembre 1973 à Bournemouth (Royaume-Uni)."
     bio_source: wikipedia
     picture: "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/J._R._R._Tolkien%2C_ca._1925.jpg/330px-J._R._R._Tolkien%2C_ca._1925.jpg"
     wikipedia: https://fr.wikipedia.org/wiki/J._R._R._Tolkien
-    babelio: https://www.babelio.com/auteur/x/3993
+    babelio: https://www.babelio.com/auteur/j-r-r-tolkien/3993
   jo-nesbo:
     wikidata: Q202693
     bio: "Jo Nesbø, né le 29 mars 1960 à Oslo, est un écrivain, musicien et scénariste norvégien, auteur de roman policier et de littérature d'enfance et de jeunesse."
     bio_source: wikipedia
     picture: "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Jo_Nesb%C3%B81.jpg/330px-Jo_Nesb%C3%B81.jpg"
     wikipedia: https://fr.wikipedia.org/wiki/Jo_Nesb%C3%B8
-    babelio: https://www.babelio.com/auteur/x/141015
+    babelio: https://www.babelio.com/auteur/jo-nesbo/141015
   kuo-li-chang:
     wikidata: Q9092882
     # no fr.wikipedia article — bio left empty on purpose (plan decision point 5);
@@ -136,11 +136,11 @@ author:
     bio: "Michel Moutot, né à Narbonne (Aude) le 3 février 1961, est un journaliste et écrivain français."
     bio_source: wikipedia
     wikipedia: https://fr.wikipedia.org/wiki/Michel_Moutot
-    babelio: https://www.babelio.com/auteur/x/235557
+    babelio: https://www.babelio.com/auteur/michel-moutot/235557
   robin-hobb:
     wikidata: Q234403
     bio: "Robin Hobb, ou Megan Lindholm, nom de plume de Margaret Astrid Lindholm Ogden, née le 5 mars 1952 à Berkeley en Californie, est une écrivaine américaine de fantasy."
     bio_source: wikipedia
     picture: "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Robin_Hobb_at_World_Fantasy_Convention_2026.jpg/330px-Robin_Hobb_at_World_Fantasy_Convention_2026.jpg"
     wikipedia: https://fr.wikipedia.org/wiki/Robin_Hobb
-    babelio: https://www.babelio.com/auteur/x/5338
+    babelio: https://www.babelio.com/auteur/robin-hobb/5338
