@@ -70,7 +70,8 @@ that transliterate to the same slug silently clash (`FIXME` in `generate_author_
 - [ ] In `Rules` preprocess (where the other validations raise): raise when two distinct
       `book[:author]` strings resolve to the same slug, message naming both variants.
 - [ ] Config-driven normalization: `@config[:author][<canonical-slug>]` gains
-      `aliases: [ "Variant Name", … ]`; build a variant→canonical map consumed by
+      `aliases: [ "Variant Name", … ]` (after D5: in the canonical md frontmatter instead);
+      build a variant→canonical map consumed by
       `generate_author_items` (group books under canonical) **and**
       `author_item_identifier(author)` (so every card/link resolves to the canonical page).
 - [ ] Author page title displays canonical; consider `<title>` + a line
@@ -216,7 +217,8 @@ Hotlinked `upload.wikimedia.org/thumb/...` URLs rot; prod pipeline wants local f
       (default 128, compact 48) so author pages and (future) micro-avatars reuse the
       existing `:default`/`:compact` machinery; needs ImageMagick, same as covers.
 - [ ] Every downloaded file needs its license recorded: sidecar comment or `source:` key
-      pointing at the Commons file page (also feeds an attribution tooltip later).
+      pointing at the Commons file page (also feeds an attribution tooltip later); D5 moves
+      this key into the per-author md frontmatter.
 
 Commit: `Store author pictures locally with thumbnail reps`
 
@@ -229,7 +231,8 @@ Commit: `Store author pictures locally with thumbnail reps`
       3) → wishlist authors → long tail. Remaining authors stay on the initials fallback —
       that's a designed state, not a failure.
 - [ ] Curated batches commit as `[authors] fill metadata for <N> authors` (a handful per
-      commit so review stays sane); alias discoveries feed A3's `aliases:`.
+      commit so review stays sane); alias discoveries feed A3's `aliases:`. Paste target is
+      `nanoc.yaml` until D5 lands, then `content/meta/authors/<slug>.md`.
 - [ ] Expectation: Wikipedia has ~60–80% of the French-market authors in the shelf; the
       rest: manual one-liners (own words) or none.
 
@@ -240,6 +243,35 @@ Commit: `Store author pictures locally with thumbnail reps`
       IDs is `senscritique.com/contact/<slug>/<numeric-id>`.
 - [ ] Nice-to-have later: cross-check book `social.sc` pages — the author/contact ID is in
       those profile URLs sometimes (harvest without scraping).
+
+### D5. Author metadata as items: `content/meta/authors/<slug>.md` replaces the `@config[:author]` blob
+
+Rationale (decided 2026-11-13, after the first 10-author curation batch): bios/pictures/links are
+*content*, not site config; the single `nanoc.yaml` blob conflicts with the branch-per-book/PR
+workflow (every curation batch edits the same file region → merge-conflict magnet); per-author md
+reuses the machinery books already have — Rules validation, orthogonal diffs, item model,
+`commit_book.sh`-like story. **Pages stay generated** (books = source of truth for the author
+roster); metadata files are merge inputs, created lazily (uncurated authors have no file —
+initials fallback stays a designed state, ~10% of files at first).
+
+- [ ] One file per curated author under `content/meta/authors/` (namespace deliberately kept
+      distinct from generated `/author/<slug>.*` identifiers):
+      frontmatter = the exact block `fetch_author.sh` prints today (`wikidata`, `picture`,
+      `picture_source`, `bio_source`, `wikipedia`, `babelio`, `sc`, `aliases`),
+      body = bio in markdown (escapes the YAML-string quoting dance, allows longer notes later).
+- [ ] `Rules`: exclude `/meta/authors/*` from compile/route so curated data never becomes a page.
+- [ ] `lib/helpers.rb` `generate_author_items` and `layouts/head_author.html.erb`: replace
+      `@config[:author][slug]` lookups by `@items["/meta/authors/<slug>.*"]`; render the file
+      body as the bio block instead of the injected `> bio` string.
+- [ ] Validation in `Rules`, mirroring the book checks: fail on a `meta/authors` file whose slug
+      matches no shelf author (stale or typo'd — warn vs raise decided at impl); extend the A3
+      slug-collision check across `aliases:` declared in frontmatter.
+- [ ] Migrate the current 10 `nanoc.yaml` entries to md files, then delete the `author:` blob.
+- [ ] Update `fetch_author.sh` closing guidance + AGENTS.md Workflow/Content-model lines to the
+      new paste destination; optionally a `commit_author.sh` with `[author][<QID>]` message
+      format mirroring `[book][<isbn>]`.
+
+Commit: `Store author metadata as md items instead of nanoc.yaml config blob`
 
 ---
 
@@ -294,6 +326,7 @@ Commit: `Reveal full book card over cover on author mosaic hover`
 ```
 A1 ──► C2            A2 ──► B2            A3 ──► (D3 aliases)
 A1 ──► B3 og:url     A1,A2 ──► C3         D1 ──► D2 ──► D3 ──► D4
+D1,D2 ──► D5 (metadata→md items: run it after a few curation batches, not mid-batch)
 everything above ──► E1 ──► E2 ──► F
 ```
 
