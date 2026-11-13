@@ -221,7 +221,9 @@ process_author() {
   fi
   [[ -n "${wikipedia}" ]] && echo "  wikipedia: $(yaml_str "${wikipedia}")"
   if [[ -n "${babelio}" ]]; then
-    echo "  babelio: \"https://www.babelio.com/auteur/x/${babelio}\""
+    # /auteur/<numeric-id> is authoritative; the slug segment is decorative (redirect
+    # verified once — never re-probe Babelio, it heavily rate-limits). Reuse the site slug.
+    echo "  babelio: \"https://www.babelio.com/auteur/${slug}/${babelio}\""
   else
     echo "  # babelio not on Wikidata — manual check: https://www.babelio.com/recherche.php?mots=$(urlencode "${name}")"
   fi
