@@ -70,16 +70,77 @@ avatar_size:
   compact: 48
   default: 128
 
+# Author metadata, drafted with ./fetch_author.sh and curated by hand (Wikidata +
+# fr.wikipedia). bios with bio_source: wikipedia are CC BY-SA 4.0 extracts — display
+# attribution pending plan step B4 (docs/plan-author-pages.md). picture: URLs will move
+# to local files under content/static/authors/ at plan step D2.
 author:
-  frederic-beigbeder:
-    picture: https://upload.wikimedia.org/wikipedia/commons/7/7e/Fr%C3%A9d%C3%A9ric_Beigbeder_2.jpg # TODO identifier
-    bio: Voici un exemple de bio d'un auteur à compléter.
-    wikipedia: https://fr.wikipedia.org/wiki/Fr%C3%A9d%C3%A9ric_Beigbeder
-    babelio: https://www.babelio.com/auteur/Frederic-Beigbeder/2200
-    sc: https://www.senscritique.com/contact/frederic_beigbeder/45775
+  agatha-christie:
+    wikidata: Q35064
+    bio: "Agatha Christie, née Miller le 15 septembre 1890 à Torquay (Devon), et morte le 12 janvier 1976 à Wallingford (Oxfordshire), est une femme de lettres britannique, autrice de nombreux romans policiers."
+    bio_source: wikipedia
+    picture: "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Agatha_Christie_in_Nederland_%28detectiveschrijfster%29%2C_bij_aankomst_op_Schiphol_me%2C_Bestanddeelnr_916-8898_%28cropped%29.jpg/330px-Agatha_Christie_in_Nederland_%28detectiveschrijfster%29%2C_bij_aankomst_op_Schiphol_me%2C_Bestanddeelnr_916-8898_%28cropped%29.jpg"
+    wikipedia: https://fr.wikipedia.org/wiki/Agatha_Christie
+    babelio: https://www.babelio.com/auteur/x/3638
   benoit-philippon:
-    picture: https://cdn1.booknode.com/author_picture/842/benoit-philippon-841665-250-400.jpg # TODO identifier
-    bio: Voici un exemple de bio d'un auteur à compléter.
+    wikidata: Q27535467
+    bio: "Benoît Philippon, né en 1976, est un écrivain, un réalisateur et un scénariste français, auteur de roman noir."
+    bio_source: wikipedia
+    picture: "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/Beno%C3%AEt_Philippon_%28born_1976%29_in_the_video_%27Beno%C3%AEt_Philippon_-_The_Strange_Odyssey_of_the_Monsieur_Family%27.png/330px-Beno%C3%AEt_Philippon_%28born_1976%29_in_the_video_%27Beno%C3%AEt_Philippon_-_The_Strange_Odyssey_of_the_Monsieur_Family%27.png"
     wikipedia: https://fr.wikipedia.org/wiki/Beno%C3%AEt_Philippon
     babelio: https://www.babelio.com/auteur/Benoit-Philippon/398769
     sc: https://www.senscritique.com/contact/Benoit_Philippon/501444
+  delia-owens:
+    wikidata: Q62112277
+    bio: "Delia Owens est une écrivaine et zoologiste américaine née en 1949."
+    bio_source: wikipedia
+    wikipedia: https://fr.wikipedia.org/wiki/Delia_Owens
+    babelio: https://www.babelio.com/auteur/x/52513
+  frederic-beigbeder:
+    wikidata: Q314972
+    bio: "Frédéric Beigbeder, né le 21 septembre 1965 à Neuilly-sur-Seine, est un écrivain, critique littéraire, scénariste, animateur de télévision, et réalisateur français."
+    bio_source: wikipedia
+    picture: https://upload.wikimedia.org/wikipedia/commons/7/7e/Fr%C3%A9d%C3%A9ric_Beigbeder_2.jpg
+    wikipedia: https://fr.wikipedia.org/wiki/Fr%C3%A9d%C3%A9ric_Beigbeder
+    babelio: https://www.babelio.com/auteur/Frederic-Beigbeder/2200
+    sc: https://www.senscritique.com/contact/frederic_beigbeder/45775
+  haruki-murakami:
+    wikidata: Q134798
+    bio: "Haruki Murakami (村上 春樹, Murakami Haruki, né à Kyoto le 12 janvier 1949) est un écrivain japonais, auteur de romans à succès, mais aussi de nouvelles et d'essais."
+    bio_source: wikipedia
+    picture: "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Conversatorio_Haruki_Murakami_%2812_de_12%29_%2845747009452%29_%28cropped%29.jpg/330px-Conversatorio_Haruki_Murakami_%2812_de_12%29_%2845747009452%29_%28cropped%29.jpg"
+    wikipedia: https://fr.wikipedia.org/wiki/Haruki_Murakami
+    babelio: https://www.babelio.com/auteur/x/3041
+  j-r-r-tolkien:
+    wikidata: Q892
+    bio: "John Ronald Reuel Tolkien, plus connu sous la forme J. R. R. Tolkien, est un écrivain, poète, philologue, essayiste et professeur d'université anglais né le 3 janvier 1892 à Bloemfontein et mort le 2 septembre 1973 à Bournemouth (Royaume-Uni)."
+    bio_source: wikipedia
+    picture: "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/J._R._R._Tolkien%2C_ca._1925.jpg/330px-J._R._R._Tolkien%2C_ca._1925.jpg"
+    wikipedia: https://fr.wikipedia.org/wiki/J._R._R._Tolkien
+    babelio: https://www.babelio.com/auteur/x/3993
+  jo-nesbo:
+    wikidata: Q202693
+    bio: "Jo Nesbø, né le 29 mars 1960 à Oslo, est un écrivain, musicien et scénariste norvégien, auteur de roman policier et de littérature d'enfance et de jeunesse."
+    bio_source: wikipedia
+    picture: "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Jo_Nesb%C3%B81.jpg/330px-Jo_Nesb%C3%B81.jpg"
+    wikipedia: https://fr.wikipedia.org/wiki/Jo_Nesb%C3%B8
+    babelio: https://www.babelio.com/auteur/x/141015
+  kuo-li-chang:
+    wikidata: Q9092882
+    # no fr.wikipedia article — bio left empty on purpose (plan decision point 5);
+    # label reversed on Wikidata ("Chang Kuo-li"), hence the manual QID lookup
+    picture: "https://commons.wikimedia.org/wiki/Special:FilePath/Chang%20Kuo-li%20Taiwanese%20writer-DSC%206644.JPG?width=330"
+    picture_source: https://commons.wikimedia.org/wiki/File:Chang_Kuo-li_Taiwanese_writer-DSC_6644.JPG # CC BY-SA 3.0, photo by Ellery
+  michel-moutot:
+    wikidata: Q3310418
+    bio: "Michel Moutot, né à Narbonne (Aude) le 3 février 1961, est un journaliste et écrivain français."
+    bio_source: wikipedia
+    wikipedia: https://fr.wikipedia.org/wiki/Michel_Moutot
+    babelio: https://www.babelio.com/auteur/x/235557
+  robin-hobb:
+    wikidata: Q234403
+    bio: "Robin Hobb, ou Megan Lindholm, nom de plume de Margaret Astrid Lindholm Ogden, née le 5 mars 1952 à Berkeley en Californie, est une écrivaine américaine de fantasy."
+    bio_source: wikipedia
+    picture: "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Robin_Hobb_at_World_Fantasy_Convention_2026.jpg/330px-Robin_Hobb_at_World_Fantasy_Convention_2026.jpg"
+    wikipedia: https://fr.wikipedia.org/wiki/Robin_Hobb
+    babelio: https://www.babelio.com/auteur/x/5338
