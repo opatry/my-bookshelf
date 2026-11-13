@@ -26,6 +26,7 @@ Nanoc 4 static site (French personal bookshelf, https://lecture.opatry.net) depl
 
 ## Workflow
 - Add books with `./fetch_book.sh "Title" "Author" [rating] [desc]` or a batch file `title | author | rating | description` (rating `X` or `X/Y`, normalized to /10). Requires `GOOGLE_BOOKS_API_KEY`; Google Books data is inaccurate — verify ISBN/cover manually (script prints Google Images/Amazon fallback links).
+- Draft author metadata with `./fetch_author.sh "Author" [more…]` (or a file, one name per line): looks up Wikidata + fr.wikipedia and PRINTS a `nanoc.yaml` `author:` YAML block with verification links — never writes the config itself. Wikidata search can pick homonyms and Commons photos need license/portrait checks, so every block is reviewed by hand before pasting. Bios are CC BY-SA 4.0 extracts (attribution pending plan step B4). HTTP responses cached in `tmp/authors-cache/`; politeness: sequential ~1 req/s with mandatory User-Agent.
 - New books are left untracked; `./commit_book.sh` commits each as `[book][<isbn>] "Title" by "Author"` with author date = `read_date`. Match this format.
 - Branch per topic/book (e.g. `book/<author>_<slug>`); PRs merged to `main`; merging to `main` triggers the deploy.
 - Shell scripts: keep `shellcheck`-clean — `.shellcheckrc` sets `enable=require-variable-braces`, so always write `${var}`, and `set -euo pipefail`.

@@ -183,21 +183,24 @@ is sparsely filled; fr.wikipedia REST `page/summary` returns a usable 1–3 sent
 thumbnail (the config picture for Beigbeder is exactly that image). License: extracts are
 CC BY-SA → attribution via B4; Commons photos keep their own credits (store file page URL).
 
-### D1. `fetch_author.sh` (mirrors `fetch_book.sh` ergonomics)
+### D1. `fetch_author.sh` (mirrors `fetch_book.sh` ergonomics) — **DONE**
 
-- [ ] Input: `./fetch_author.sh "Author Name"` → prints a YAML block for `@config[:author]`
-      plus verification links; never writes config automatically (homonym risk is real:
-      “Dan Brown” ≠ the spy novelist… verify every pick).
-- [ ] Chain: Wikidata `wbsearchentities` (fr) → QID; sanity-filter `P106 ∈ {Q365834 writer,
-      Q49646 writer/…}`; pull: frwiki sitelink → REST summary (`extract`, `thumbnail`,
-      `content_urls.desktop.page`) → `bio` + `wikipedia` + `picture`; `P3630` →
-      `babelio: https://www.babelio.com/auteur/…/<id>`; `P14412` → `sc:`; `P742` (pseudonym)
-      → suggest `aliases:` entries; `P735`/`P734` → `given_name`/`family_name` (B3 option a).
-- [ ] Keep `shellcheck`-clean (`${var}`, `set -euo pipefail` per AGENTS.md); API key-free
-      (Wikimedia APIs are public; be polite with a UA header via curl).
-- [ ] `picture` output = **Commons file page URL** (for license check), not a thumb URL —
-      download step is D2.
-- [ ] Document in AGENTS.md “Workflow” section.
+- [x] Input: `./fetch_author.sh "Author Name" ["Next" …]` (or file, one name per line) →
+      prints a YAML block for `@config[:author]` plus verification links; writes nothing
+      (homonym risk is real: “Dan Brown” ≠ the spy novelist… verify every pick).
+- [x] Chain: Wikidata `wbsearchentities` (fr) → QID; scoring: frwiki sitelink +2,
+      P106 ∈ {Q36180 écrivain, Q6625963 romancier, Q49757 poète, Q28389 scénariste} +2,
+      exact label match +1 — ⚠️ item-type claim values are `{"id":"Q…"}` objects
+      (`datavalue.value.id`), only external IDs are plain strings.
+- [x] `shellcheck`-clean (`${var}`, `set -euo pipefail` per AGENTS.md); no API key
+      (Wikimedia APIs are public); mandatory `User-Agent`, sequential ~1 req/s,
+      one 30s backoff retry on 429, responses cached under git-ignored `tmp/`.
+- [x] `picture` = frwiki summary image URL for now + a `# photo file page` comment with the
+      Commons page URL (license/portrait check before accepting); D2 replaces hotlinks with
+      local files.
+- [x] Documented in AGENTS.md “Workflow” section.
+- [ ] `bio_source: wikipedia` (CC BY-SA) + `wikidata:` anchor keys are emitted; consuming
+      them (`given_name`/`family_name` P735/P734, birth/death rendering) still B3/optional.
 
 Commit: `Add fetch_author.sh to bootstrap author metadata from Wikidata/Wikipedia`
 
