@@ -17,7 +17,8 @@ preprocess do
 
   @config[:favicon_reprs] = favicon_reprs
 
-  # remove unrated books in prod
+  # in prod, drop the books nobody has rated yet: the ones without a rating AND without a wish
+  # list priority (an unrated wished book, or the ongoing one, stays: see the guards below)
   ignored_isbns = []
   @items.delete_if do |item|
     # keep everything in dev
@@ -44,6 +45,27 @@ preprocess do
   generate_calendar_items
 
   missing_covers = 0
+  # Build the JSON API linked_books groups from the spines: the books whose frontmatter
+  # declares linked_books, which carry the editorial choice of "the book you start from".
+  # Must be read before the reciprocal backfill below. A spine lists the companions the author
+  # picked, excluding itself; backfill gives every other member the whole group minus itself.
+  # A spine's own list survives (the backfill guard skips it) but is no longer recognisable as
+  # one: 60 non-empty lists instead of 17, and a member such as Bilbo becomes a root of
+  # [SDA t1, t2, t3], reading as a companion of a series the spine had welded to a single
+  # group. Only the declarers carry that editorial intent, so this pass cannot run later.
+  # A cluster whose members declare each other yields one entry per declarer: entries may
+  # overlap, root is a perspective, not an identifier. Members keep declaration order: it is
+  # editorial, whereas the web page's "À lire aussi" sorts by title for display.
+  @config[:linked_book_groups] = @items
+                                 .select { |item| book?(item) && item[:linked_books] && !item[:linked_books].empty? }
+                                 .sort_by { |item| item[:isbn] }
+                                 .map do |item|
+                                   members = ([item[:isbn]] + item[:linked_books]).uniq
+                                   members.each do |isbn|
+                                     raise "linked book #{isbn} of #{item[:isbn]} doesn't resolve to a book in this build" unless find_book_by_isbn(isbn)
+                                   end
+                                   { root: item[:isbn], books: members }
+                                 end
 
   @items.select { |item| home?(item) || book?(item) }.each do |item|
     raise "item #{item.identifier} doesn't have a uuid (suggested: #{SecureRandom.uuid})" unless item[:uuid]
