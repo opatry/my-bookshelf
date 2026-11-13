@@ -4,7 +4,9 @@ Nanoc 4 static site (French personal bookshelf, https://lecture.opatry.net) depl
 
 ## Ignore
 - `output/`, `output.diff`, `tmp*` — local build artifacts.
-- `raw/` — GIMP sources for favicons; CI ignores changes there.
+- `raw/` — sources for favicons/PWA icons (SVG masters + `render_icons.sh` which
+  regenerates `content/static/favicon*.png` via sharp; legacy GIMP `.xcf` kept for
+  reference) — CI ignores changes there.
 
 ## Commands
 - `bundle install && bundle exec nanoc compile` — build; this is also the de-facto test (no unit-test suite).

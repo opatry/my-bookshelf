@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Master for content/static/favicon192-maskable.png and
+  content/static/favicon512-maskable.png (PWA maskable icons, served as-is,
+  not derived from favicon.png).
+
+  Full-bleed dark-red background (#731b15) so any platform mask (circle,
+  squircle, …) keeps a solid color; the Lucide "book-open" glyph is sized to
+  stay inside the maskable 80% safe zone (icon box = 341.333 on the 512 grid,
+  content diagonal ~404 < 409.6).
+
+  Regenerate with raw/render_icons.sh (ImageMagick's internal SVG renderer
+  can't parse Lucide's compact path syntax, hence the sharp/librsvg script).
+-->
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <rect x="0" y="0" width="512" height="512" fill="#731b15"/>
+  <!-- Lucide book-open, 24-unit grid scaled to 341.333px, optically centered
+       (content bbox is x:1..23, y:4..22 in icon units) -->
+  <g transform="translate(85.333 71.111) scale(14.222)" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 5v16"/>
+    <path d="M20.001 19A2 2 0 0022 17V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2z"/>
+  </g>
+</svg>

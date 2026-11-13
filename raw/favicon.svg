@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Master for content/static/favicon.png (the 192x192 source nanoc resizes for
+  every favicon repr and for favicon.ico).
+
+  Same design as the previous GIMP-made favicon: rounded dark-red square
+  (#731b15, 192-grid: 10px inset, ~4px corner radius) with the book glyph
+  centered; the emoji "book open" is replaced by the Lucide "book-open"
+  line icon (https://lucide.dev, ISC).
+
+  Regenerate with raw/render_icons.sh (ImageMagick's internal SVG renderer
+  can't parse Lucide's compact path syntax, hence the sharp/librsvg script).
+-->
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <rect x="26.667" y="26.667" width="458.667" height="458.667" rx="10.667" fill="#731b15"/>
+  <!-- Lucide book-open, 24-unit grid scaled to 320px (62.5% of the canvas),
+       optically centered (content bbox is x:1..23, y:4..22 in icon units) -->
+  <g transform="translate(96 82.667) scale(13.333)" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 5v16"/>
+    <path d="M20.001 19A2 2 0 0022 17V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2z"/>
+  </g>
+</svg>
