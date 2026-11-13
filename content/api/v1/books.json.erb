@@ -7,6 +7,11 @@ layout: none
 #  - field format
 #  - do not remove fields
 #######################################################################
+# linked_books groups: one entry per book that declares linked_books in its frontmatter (the
+# "spine"). books holds that spine plus its declared linked_books, as ISBN references into the
+# top-level books array; order is the editorial declaration order, not a reading order. Entries
+# may overlap when two books declare each other, so root is a perspective, not an id.
+#######################################################################
 ---
 {
   "url": <%= @config[:site][:url].to_json %>,
@@ -14,5 +19,6 @@ layout: none
   "title": <%= @config[:site][:title].to_json %>,
   "description": <%= @config[:site][:description].to_json %>,
   "tint": "#c51104",
+  "linked_books": <%= @config[:linked_book_groups].to_json %>,
   "books": <%= @items.select { |item| book?(item) }.sort_by { |book| book[:isbn] }.map { |book| to_json(book, url: :absolute) }.to_json %>
 }
