@@ -131,9 +131,30 @@ Config bios are placeholders (“Voici un exemple…”). Licensing matters for 
       (renders a short “Wikipédia, CC BY-SA 4.0” attribution link after the blockquote);
       own words → no source key, no attribution line.
 - [ ] Decide: `bio:` plain text (today, rendered as blockquote) or allow limited markdown.
+- [ ] Length policy (what today decides it *de facto*: fr-wiki lead conventions, the
+      script's 50-word draft cap, blockquote visual weight, `og:description` ~50 words /
+      crawlers' ~160–200 chars): **target 1–2 sentences (~30–60 words)** — "who + why read
+      them", one breath above the card grid; depth is the `wikipedia:` link's job (B1).
+      Prefer structured facts over prose (P569/P570 → "1890–1976" beside the name).
+      The 50-word cap stays a *draft ceiling*, not a rule — D5's md body restores
+      per-author editorial freedom.
 - [ ] Attribution markup + i18n string in `strings/fr.yml`.
 
 Commits: `Add bio attribution support to author pages` (+ one per curation batch, see D)
+
+### B5. Square avatar geometry (stop stretching wiki portraits into the circle)
+
+`.profile-picture img` is forced to `width/height: 100%` of a 128px square with no
+`object-fit` — a 330×495 portrait is squashed into a pancake before the `border-radius`
+clip. The pipeline part of the fix is D2's square reps; the browser side is immediate.
+
+- [ ] `content/static/style.css` — add `object-fit: cover; object-position: center 20%;` to
+      `.profile-picture img` (faces sit high in portrait crops; keep the `width`/`height`
+      attributes in `default.html.erb` for CLS; re-check the `:hover` `scale(1.1)` zoom).
+- [ ] Remove the dead `.profile-picture.author-picture` rule (style.css:1050) — no markup
+      ever adds that class, and its geometry duplicates `.profile-picture`.
+
+Commit: `Crop author pictures instead of stretching them into the avatar circle`
 
 ---
 
@@ -202,6 +223,11 @@ CC BY-SA → attribution via B4; Commons photos keep their own credits (store fi
 - [x] Documented in AGENTS.md “Workflow” section.
 - [ ] `bio_source: wikipedia` (CC BY-SA) + `wikidata:` anchor keys are emitted; consuming
       them (`given_name`/`family_name` P735/P734, birth/death rendering) still B3/optional.
+- [x] Babelio URL form: `auteur/<numeric-id>` is authoritative, the slug segment is
+      decorative (verified once by the 301 `/auteur/x/3638` → `/auteur/Agatha-Christie/3638` —
+      **do NOT probe Babelio for slugs: heavily rate-limited, 403s**) → emit the already
+      computed site slug (lowercase, no title-casing): `auteur/${slug}/${babelio}`. The two
+      hand-made title-case entries stay untouched (both forms resolve the same).
 
 Commit: `Add fetch_author.sh to bootstrap author metadata from Wikidata/Wikipedia`
 
@@ -216,6 +242,11 @@ Hotlinked `upload.wikimedia.org/thumb/...` URLs rot; prod pipeline wants local f
 - [ ] `Rules`: compile `/static/authors/*` with the `avatar_size` thumbnail reps
       (default 128, compact 48) so author pages and (future) micro-avatars reuse the
       existing `:default`/`:compact` machinery; needs ImageMagick, same as covers.
+- [ ] Make the avatar reps genuinely **square** (companion to B5): extend `Thumbnailize`
+      with `square:`/`gravity:` params → `-resize ${w}x${w}^ -gravity North -extent ${w}x${w}`
+      (fill-box then crop; North protects the head) — deterministic across browsers and
+      smaller than 330px hotlinked thumbs; `og:image` stays the un-cropped source (crawlers
+      frame it themselves). Consider 2× output width for retina.
 - [ ] Every downloaded file needs its license recorded: sidecar comment or `source:` key
       pointing at the Commons file page (also feeds an attribution tooltip later); D5 moves
       this key into the per-author md frontmatter.
@@ -233,6 +264,9 @@ Commit: `Store author pictures locally with thumbnail reps`
 - [ ] Curated batches commit as `[authors] fill metadata for <N> authors` (a handful per
       commit so review stays sane); alias discoveries feed A3's `aliases:`. Paste target is
       `nanoc.yaml` until D5 lands, then `content/authors/<slug>.md`.
+- [ ] Coverage stats expectation from the first 10-author batch (2026-11-13): 9/10 resolved,
+      8 bios, 7 pictures, 9 Babelio IDs, 0 SensCritique IDs, all homonym traps avoided —
+      recalibrate D3 batching with real numbers as curation grows.
 - [ ] Expectation: Wikipedia has ~60–80% of the French-market authors in the shelf; the
       rest: manual one-liners (own words) or none.
 
