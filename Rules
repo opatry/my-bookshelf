@@ -6,16 +6,11 @@ require 'image_size'
 require 'i18n'
 require 'colorize'
 
-# mainly used for Android "Add to Homescreen" feature
-favicon_reprs = %i[default favicon152 favicon36 favicon48 favicon72 favicon96 favicon144 favicon192 favicon512]
-
 preprocess do
   # by default, no locale available, I18n::InvalidLocale: "fr" is not a valid locale
   I18n.load_path << Dir["#{File.expand_path('strings')}/*.yml"]
   I18n.available_locales = [ @config[:site][:lang] ]
   I18n.default_locale = @config[:site][:lang]
-
-  @config[:favicon_reprs] = favicon_reprs
 
   # in prod, drop the books nobody has rated yet: the ones without a rating AND without a wish
   # list priority (an unrated wished book, or the ongoing one, stays: see the guards below)
@@ -164,20 +159,11 @@ preprocess do
   puts rating_map(books)
 end
 
-favicon_reprs.each do |repr|
-  compile '/static/favicon.*', rep: repr do
-    route = if repr == :default
-              filter :favicon unless @config[:dev]
-              # browser friendly favicon location + avoids 404 errors on server when such browsers are looking for it
-              '/favicon.ico'
-            else
-              # extract size from favicon repr name
-              size = repr.to_s.delete_prefix('favicon').to_i
-              filter :thumbnailize, width: size unless @config[:dev]
-              "/#{repr}.#{item[:extension]}"
-            end
-    write route
-  end
+# The `.ico` convention request a browser makes when a page declares no icon has to answer at the
+# site root, so the rendered file is routed there; `raw/render_icons.sh` writes it beside the other
+# icons, which is where a regeneration looks for it.
+compile '/static/favicon.ico' do
+  write '/favicon.ico'
 end
 
 compile '/static/pwa-screenshot-*' do
@@ -389,8 +375,6 @@ end
 route '/**/*.erb' do
   "#{item.identifier.without_ext}/index.html"
 end
-
-passthrough '/static/favicon{192,512}-maskable.*'
 
 passthrough '/**/*'
 

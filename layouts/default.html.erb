@@ -45,20 +45,12 @@ special_favorite_filter_id_attr = 'id="only-favorites"' if @item.identifier =~ '
   <style type="text/css"><%= @items['/static/style.*'].compiled_content %></style>
 <% end %>
 
-  <link rel="shortcut icon" href="<%= @items['/static/favicon.*'].path(rep: :default) %>">
-<%
-@config[:favicon_reprs].each do |repr|
-  next if repr == :default
-  # retrieve size from repr name
-  size = repr.to_s
-  size.slice! 'favicon'
-%>
-  <link rel="icon" type="image/png" href="<%= @items['/static/favicon.*'].path(rep: repr) %>" sizes="<%= "#{size}x#{size}" %>">
-<% end %>
+  <%# One icon link, and deliberately no `<link>` for `/favicon.ico`: browsers disagree about which of several icon links to use and Chrome takes the last suitable one, so declaring the raster made it win the tab while the rounded SVG beside it sat there unread. The .ico is still built and still served at the site root, for the convention request a browser makes when a page declares nothing. %>
+  <link rel="icon" type="image/svg+xml" href="<%= @items['/static/favicon.svg'].path %>">
+  <%# iOS composites the home-screen icon itself, so it gets the full-bleed ground: it supplies the shape, and a shape in the file would be cut by it. Same 180px raster and same artwork as the book nook app's apple-touch icon. %>
+  <link rel="apple-touch-icon" href="<%= @items['/static/apple-touch-icon-180x180.*'].path %>">
 
-  <link rel="apple-touch-icon" href="<%= @items['/static/favicon192-maskable.*'].path %>">
-
-  <!-- https://developer.chrome.com/multidevice/android/installtohomescreen -->
+  <%# https://developer.chrome.com/multidevice/android/installtohomescreen %>
   <link rel="manifest" href="<%= @items['/manifest.*'].path %>">
   <meta name="mobile-web-app-capable" content="yes">
 

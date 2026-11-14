@@ -16,7 +16,7 @@ books = feed_books
 <% end %>
   <id>urn:uuid:<%= @config[:site][:uuid] %></id>
 
-  <icon><%= "#{site_url}#{@items['/static/favicon.*'].path(rep: :default)}" %></icon>
+  <icon><%= "#{site_url}#{@items['/static/pwa-512x512.*'].path}" %></icon>
   <% books.each do |book| %>
     <%= book.reps[:feed].compiled_content(snapshot: :feed) %>
   <% end %>

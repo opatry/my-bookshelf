@@ -58,7 +58,6 @@ social:
 pwa_screenshot_width:
   phone: 651
   desktop: 470
-favicon_reprs: [ 'default' ]
 cover:
   quality: '85%'
   width:

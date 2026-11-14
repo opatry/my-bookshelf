@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!--
+    The rounded tab tile, unlike `app-icon.svg`: a browser tab is a fixed little square, so this is
+    the one place the mark is allowed to have corners of its own.
+
+    The geometry is copied from the book nook app, the icon reference for this family: a 64-unit
+    grid with a 16-unit radius (a quarter of the tile), and the glyph scaled 1.6667 with a 1.8-unit
+    stroke, which paints the same 24px weight as the 512-grid master while sitting a little larger
+    in the smaller tile. Only the ground colour differs (the site red rather than the app green).
+
+    Rendered into `content/static/favicon.ico` (16, 32 and 48px frames) by `raw/render_icons.sh`,
+    and served as-is at `/static/favicon.svg`. No double hyphen may appear inside an XML comment:
+    the document stops being well-formed, librsvg discards the whole file, and every browser falls
+    back to the square `favicon.ico` with nothing in the repository looking wrong.
+  -->
+  <rect width="64" height="64" rx="16" fill="#731b15" />
+  <g
+    transform="translate(12 12) scale(1.6667)"
+    fill="none"
+    stroke="#ffffff"
+    stroke-width="1.8"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M12 5v16" />
+    <path d="M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2Z" />
+  </g>
+</svg>

@@ -4,9 +4,7 @@ Nanoc 4 static site (French personal bookshelf, https://lecture.opatry.net) depl
 
 ## Ignore
 - `output/`, `output.diff`, `tmp*` — local build artifacts.
-- `raw/` — sources for favicons/PWA icons (SVG masters + `render_icons.sh` which
-  regenerates `content/static/favicon*.png` via sharp; legacy GIMP `.xcf` kept for
-  reference) — CI ignores changes there.
+- `raw/` — the two SVG icon masters (`app-icon.svg` full-bleed, `favicon.svg` rounded tab tile) and `render_icons.sh`, which re-renders every committed icon in `content/static/` (`pwa-*.png`, `maskable-icon-512x512.png`, `apple-touch-icon-180x180.png`, `favicon.ico`, `favicon.svg`) from them via sharp and fails on a measured defect; CI never runs it because the rasters are committed. The legacy GIMP `.xcf` sources are kept for history only.
 
 ## Commands
 - `bundle install && bundle exec nanoc compile` — build; this is also the de-facto test (no unit-test suite).

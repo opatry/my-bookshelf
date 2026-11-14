@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!--
+    The master for every raster icon: `pwa-64x64.png`, `pwa-192x192.png`, `pwa-512x512.png`,
+    `maskable-icon-512x512.png` and `apple-touch-icon-180x180.png`, all rendered from this one file
+    by `raw/render_icons.sh` and committed. CI never runs the generator, so the icons in the
+    repository and the icons that ship cannot drift apart.
+
+    Full-bleed on purpose, with no corner radius, exactly like the book nook app's `app-icon.svg`.
+    It doubles as the maskable source, and a maskable icon is cut by whatever shape the launcher
+    feels like: a circle, a squircle, a rounded square. A rounded ground would show the launcher's
+    shape cutting our corners, which is the one thing a maskable icon may not do. Every platform
+    masks the "any" icons as well, so the square is the right source for those too, and the rounded
+    tile lives only in `favicon.svg`, where a fixed browser tab is the frame.
+
+    The glyph sits inside the maskable safe zone, a circle of 80% of the icon: a radius of 204.8px
+    here. Lucide's `book-open` spans x 2..22 and y 3..21 in its 24-unit box, centred on (12, 12);
+    scaled by 12 the painted box is 264x240 and its half-diagonal is about 178px, which clears
+    204.8 with room to spare. A maskable icon is judged on the corners of that box, not its centre.
+
+    The scale of 12 is the book nook ratio, the icon reference for this family; only the ground
+    colour differs (the site red rather than the app green).
+  -->
+  <rect width="512" height="512" fill="#731b15" />
+  <g
+    transform="translate(256 256) scale(12) translate(-12 -12)"
+    fill="none"
+    stroke="#ffffff"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M12 5v16" />
+    <path d="M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2Z" />
+  </g>
+</svg>

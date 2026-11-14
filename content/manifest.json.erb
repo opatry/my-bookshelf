@@ -6,26 +6,22 @@ layout: none
   "short_name": <%= @config[:site][:title].to_json %>,
   "icons": [
     {
-      "src": "<%= @items['/static/favicon.*'].path(rep: :favicon192) %>",
-      "sizes": "192x192",
-      "type": "image/png",
-      "density": 4.0,
-      "purpose": "any"
+      "src": "<%= @items['/static/pwa-64x64.*'].path %>",
+      "sizes": "64x64",
+      "type": "image/png"
     },
     {
-      "src": "<%= @items['/static/favicon.*'].path(rep: :favicon512) %>",
+      "src": "<%= @items['/static/pwa-192x192.*'].path %>",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "<%= @items['/static/pwa-512x512.*'].path %>",
       "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any"
+      "type": "image/png"
     },
     {
-      "src": "<%= @items['/static/favicon192-maskable.*'].path %>",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "maskable"
-    },
-    {
-      "src": "<%= @items['/static/favicon512-maskable.*'].path %>",
+      "src": "<%= @items['/static/maskable-icon-512x512.*'].path %>",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
