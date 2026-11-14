@@ -330,10 +330,6 @@ compile '/manifest.*' do
   filter :erb
 end
 
-# Android App Links statements for the Lectures app (net.opatry.readings): plain
-# source, published at the dot-prefixed path the protocol mandates. Must precede the
-# generic '/**/*' compile below — first match wins, and the catch-alls would either
-# wrap this JSON in the site layout ('/333' compile) or ship it at the source path.
 compile '/well-known/assetlinks.*' do
   write '/.well-known/assetlinks.json'
 end
