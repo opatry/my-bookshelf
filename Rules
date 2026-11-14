@@ -330,6 +330,10 @@ compile '/manifest.*' do
   filter :erb
 end
 
+compile '/well-known/assetlinks.*' do
+  write '/.well-known/assetlinks.json'
+end
+
 compile '/**/*' do
   unless item.binary?
     filter :erb
