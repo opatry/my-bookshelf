@@ -951,17 +951,11 @@ blockquote::after {
   white-space: nowrap;
 }
 
-.tag_0 { font-size: .7em; font-weight: 100; }
-.tag_1 { font-size: .9em; font-weight: 100; }
-.tag_2 { font-size: 1.1em; font-weight: 200; }
-.tag_3 { font-size: 1.3em; font-weight: 300; }
-.tag_4 { font-size: 1.5em; font-weight: 400; }
-.tag_5 { font-size: 1.7em; font-weight: 500; }
-.tag_6 { font-size: 1.9em; font-weight: 600; }
-.tag_7 { font-size: 2.1em; font-weight: 700; }
-.tag_8 { font-size: 2.4em; font-weight: 800; }
-.tag_9 { font-size: 2.6em; font-weight: 900; }
-.tag_10 { font-size: 2.6em; font-weight: 900; }
+.tag_0 { font-size: .9em; font-weight: 300; }
+.tag_1 { font-size: 1.1em; font-weight: 400; }
+.tag_2 { font-size: 1.3em; font-weight: 500; }
+.tag_3 { font-size: 1.5em; font-weight: 600; }
+.tag_4 { font-size: 1.8em; font-weight: 700; }
 
 .book-tags {
   margin: 0;
