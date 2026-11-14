@@ -55,7 +55,7 @@
         "headers": [
           {
             "key": "Content-Type",
-            "value": "application/assetlinks.json"
+            "value": "application/json"
           },
           {
             "key": "Cache-Control",
