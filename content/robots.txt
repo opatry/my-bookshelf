@@ -3,3 +3,4 @@ layout: none
 ---
 User-agent: *
 Disallow: /
+Allow: /.well-known/
