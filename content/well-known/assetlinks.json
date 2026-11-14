@@ -3,6 +3,16 @@
     "relation": ["delegate_permission/common.handle_all_urls"],
     "target": {
       "namespace": "android_app",
+      "package_name": "net.opatry.readings.debug",
+      "sha256_cert_fingerprints": [
+        "7B:02:84:56:B3:C2:CA:40:05:A5:78:F2:36:B7:41:31:F7:B8:7B:49:E7:A2:E9:AD:B5:3A:3A:60:69:09:43:D4"
+      ]
+    }
+  },
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
       "package_name": "net.opatry.readings",
       "sha256_cert_fingerprints": [
         "7B:02:84:56:B3:C2:CA:40:05:A5:78:F2:36:B7:41:31:F7:B8:7B:49:E7:A2:E9:AD:B5:3A:3A:60:69:09:43:D4"
