@@ -24,6 +24,9 @@ Nanoc 4 static site (French personal bookshelf, https://lecture.opatry.net) depl
 - Tag pages and calendar pages are generated in preprocess, not content files. Apostrophes in title/author are rewritten to `’` automatically.
 - Site is French: UI strings in `strings/fr.yml` (I18n). Markdown pipeline: erb → french_typography → kramdown.
 
+## Code style
+- No useless comments: don't restate what the code says. When a comment is genuinely needed (non-obvious intent, external constraint), keep it synthetic — one short line.
+
 ## Workflow
 - Add books with `./fetch_book.sh "Title" "Author" [rating] [desc]` or a batch file `title | author | rating | description` (rating `X` or `X/Y`, normalized to /10). Requires `GOOGLE_BOOKS_API_KEY`; Google Books data is inaccurate — verify ISBN/cover manually (script prints Google Images/Amazon fallback links).
 - New books are left untracked; `./commit_book.sh` commits each as `[book][<isbn>] "Title" by "Author"` with author date = `read_date`. Match this format.
@@ -37,5 +40,5 @@ Nanoc 4 static site (French personal bookshelf, https://lecture.opatry.net) depl
 - Be autonomous: commit after each logical step without waiting for user confirmation.
 - Granularity: think like a reviewer — your commit history should tell the story of the plan, bullet by bullet.
 - **No conventional commit format** (no `feat:`, `fix:`, etc.). Use concise, clear messages describing *what* changed, not *how*. (Book additions keep the `[book][<isbn>]` format.)
-- Detailed messages only when linked to context: a discussion choice, a doc reference, a GitHub issue, evidence for a decision.
+- Commit messages stay synthetic: subject line only. No detailed body unless it's really needed and relevant (a discussion choice, a doc reference, a GitHub issue, evidence for a decision) — and then keep it short.
 - Commit autonomy covers LOCAL commits on the current topic branch only: by default there is NO remote impact — never push, create/comment/merge PRs (`gh`), or deploy (Firebase) without an explicit ask (pushing `main` triggers the deploy).
