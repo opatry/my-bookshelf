@@ -249,17 +249,45 @@ def all_tags
   tags
 end
 
+# The cloud's typographic ramp: five sizes, `.tag_0` (rare word) to `.tag_4`
+# (common one), declared in content/static/style.css.
+TAG_CLOUD_LEVELS = 5
+
+# Top of the scale, as a percentile of the per-tag book counts. A word carried by far
+# more books than the rest must not define the ramp alone: everything above the
+# percentile shares the largest size, so tagging « Famille » on ten more books cannot
+# shrink every other word.
+TAG_CLOUD_TOP_PERCENTILE = 0.95
+
+# Square root of the count rather than the count: the shelf's tag distribution is a
+# long tail (half of it sits at 1–3 books, one word at 50+), and a linear mapping
+# crams ~70% of the words into its two smallest steps, where sizes are
+# indistinguishable. √ spreads the tail across the ramp and keeps the head tame.
+TAG_CLOUD_EXPONENT = 0.5
+
 def tag_cloud
   # sort on hash sort by key which is what we want
   tags = all_tags.sort
   result = []
   return result if tags.empty?
-  # tag_<weight> goes from tag_0 to tag_10, map tag weight value to [0,10]
-  max = tags.max_by { |_, v| v.size }[1].size
-  min = tags.min_by { |_, v| v.size }[1].size
+
+  counts = tags.map { |_, posts| posts.size }
+  min = counts.min
+  ranked = counts.sort
+  top = ranked[(TAG_CLOUD_TOP_PERCENTILE * (ranked.size - 1)).round]
+  span = top - min
   tags.each do |tag, posts|
     posts_count = posts.size
-    tag_weight = (((posts_count - min) * 10.0) / max).round
+    # A flat shelf (every word on the same number of books) has no hierarchy to draw:
+    # all words take the middle size instead of dividing by a zero span.
+    tag_weight =
+      if span.zero?
+        (TAG_CLOUD_LEVELS - 1) / 2
+      else
+        beyond_top = [posts_count, top].min
+        ratio = ((beyond_top - min)**TAG_CLOUD_EXPONENT) / (span**TAG_CLOUD_EXPONENT)
+        ((TAG_CLOUD_LEVELS - 1) * ratio).round.clamp(0, TAG_CLOUD_LEVELS - 1)
+      end
     result << [tag, tag_weight, posts_count]
   end
   result
