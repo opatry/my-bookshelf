@@ -21,7 +21,7 @@ environments:
 
 site:
   lang: fr
-  title: 📚 Les lectures d'Olivier
+  title: Les lectures d’Olivier
   description: Les livres que j'ai lu avec une note et un résumé rapide pour partager.
   uuid: 4effbc5e-6476-4f0b-a81c-77011812d4f6
   feed:
