@@ -12,6 +12,13 @@ preprocess do
   I18n.available_locales = [ @config[:site][:lang] ]
   I18n.default_locale = @config[:site][:lang]
 
+  uuid_owners = @items
+                .select { |item| (home?(item) || book?(item)) && item[:uuid] }
+                .group_by { |item| item[:uuid] }
+  uuid_owners.each do |uuid, items|
+    raise "duplicated uuid #{uuid} in #{items.map(&:identifier).join(', ')}" if items.size > 1
+  end
+
   # in prod, drop the books nobody has rated yet: the ones without a rating AND without a wish
   # list priority (an unrated wished book, or the ongoing one, stays: see the guards below)
   ignored_isbns = []

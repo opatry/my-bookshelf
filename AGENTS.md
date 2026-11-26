@@ -17,7 +17,7 @@ Nanoc 4 static site (French personal bookshelf, https://lecture.opatry.net) depl
 ## Content model
 - One book = `content/book/{author-slug}_{title-slug}.md` with YAML frontmatter: `uuid`, `isbn`, `title`, `author`, `rating` (1–10), `read_date`, `priority` (wish list), `ongoing`, `favorite`, `tags`, `linked_books` (series, by ISBN; backfilled reciprocally), `social: {sc, babelio}` (numeric profile IDs), `page_count`, `publication_year`. Body = French description.
 - Cover: `content/cover/<isbn>.<ext>`; every cover must have a matching book and vice versa.
-- `Rules` preprocess VALIDATES and raises on violations: books need `isbn`+`uuid`; `read_date` requires nonzero rating; `priority` (wish) XOR rated; `ongoing` forbids `read_date`/`rating`; max one ongoing book; `linked_books` ISBNs must resolve. A failed compile usually means a frontmatter violation — read the raised message.
+- `Rules` preprocess VALIDATES and raises on violations: books need `isbn`+`uuid` (unique across books and the home item); `read_date` requires nonzero rating; `priority` (wish) XOR rated; `ongoing` forbids `read_date`/`rating`; max one ongoing book; `linked_books` ISBNs must resolve. A failed compile usually means a frontmatter violation — read the raised message.
 - Missing `social`/cover fields only print warnings (🚫/⚠️ lines in compile output); fill SensCritique/Babelio IDs when known.
 - Tag pages and calendar pages are generated in preprocess, not content files. Apostrophes in title/author are rewritten to `’` automatically.
 - Site is French: UI strings in `strings/fr.yml` (I18n). Markdown pipeline: erb → french_typography → kramdown.
