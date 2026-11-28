@@ -7,6 +7,8 @@ layout: none
 #  - field format
 #  - do not remove fields
 #######################################################################
+# Same contract for the per-book api/v1/<isbn>.json files (see generate_book_api_items),
+# which carry this payload plus a description object (markdown & html).
 # linked_books groups: one entry per book that declares linked_books in its frontmatter (the
 # "spine"). books holds that spine plus its declared linked_books, as ISBN references into the
 # top-level books array; order is the editorial declaration order, not a reading order. Entries

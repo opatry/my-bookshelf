@@ -24,7 +24,8 @@ def h(text)
   CGI.escapeHTML(text.nil? ? '' : text)
 end
 
-# Fields consumed by the JSON API (see content/api/v1/books.json.erb) are the full to_json payload.
+# Fields consumed by the JSON API (see content/api/v1/books.json.erb and the per-book
+# api/v1/<isbn>.json files) are the full to_json payload.
 # Both consumers below fetch all books on every page view, so they only keep the fields they use.
 SEARCH_BOOK_KEYS = %i[link title author tags cover_mini].freeze
 HOME_BOOK_KEYS = %i[link title author rating favorite cover_mini].freeze
@@ -41,6 +42,7 @@ def to_json(book, url: :relative, keys: nil)
     'title': book[:title],
     'author': book[:author],
     'link': "#{url_prefix}#{book.path}",
+    'detail': "#{url_prefix}/api/v1/#{book[:isbn]}.json",
     'rating': book[:rating] || 0,
     'read_date': read_date,
     'priority': book[:priority],
