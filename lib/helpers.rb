@@ -63,6 +63,30 @@ def book_source_path(book)
   book.raw_filename&.delete_prefix("#{Dir.pwd}/")
 end
 
+# One api/v1/<isbn>.json file per book: the books.json entry plus the descriptions, which only
+# exist once items compile — hence the erb template deferred to the API item's own compilation.
+def generate_book_api_items
+  @items.select { |item| book?(item) }.each do |book|
+    @items.create("<%= book_detail_json(@item[:isbn]) %>",
+                  { isbn: book[:isbn], layout: 'none' },
+                  Nanoc::Identifier.new("/api/v1/#{book[:isbn]}.json")
+    )
+  end
+end
+
+def book_detail_json(isbn)
+  book = find_book_by_isbn(isbn)
+  url = @config[:site][:url]
+  detail = to_json(book, url: :absolute)
+  # description links are site-root-relative (link_to_book): the API files are consumed
+  # standalone, so rewrite them absolute. External links (http…, mailto…) don't match.
+  detail[:description] = {
+    markdown: book.compiled_content(snapshot: :md).gsub(%r{\]\((/[^)]*)\)}) { "](#{url}#{Regexp.last_match(1)})" },
+    html: book.compiled_content(snapshot: :html).gsub(%r{href="/}) { %Q[href="#{url}/] },
+  }
+  detail.to_json
+end
+
 def home?(item)
   item.identifier =~ '/index.*'
 end
