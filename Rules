@@ -152,6 +152,8 @@ preprocess do
     end
   end
 
+  generate_book_api_items
+
   books = @items.select { |item| book?(item) }
   read_books = books - wished_books
   total_rating = read_books.sum { |book| book[:rating] || 0 }
@@ -268,8 +270,14 @@ end
 
 compile '/book/**/*' do
   filter :erb
+  # ERB-resolved Markdown, as served by the API detail endpoint
+  snapshot :md
+
   filter :french_typography
   filter :kramdown
+  # pre-compressor, so the API detail payload is identical in dev and prod
+  snapshot :html
+
   filter :html_compressor, type: item[:extension] unless @config[:dev]
 
   layout '/book.*'

@@ -24,7 +24,8 @@ def h(text)
   CGI.escapeHTML(text.nil? ? '' : text)
 end
 
-# Fields consumed by the JSON API (see content/api/v1/books.json.erb) are the full to_json payload.
+# Fields consumed by the JSON API (see content/api/v1/books.json.erb and the per-book
+# api/v1/<isbn>.json files) are the full to_json payload.
 # Both consumers below fetch all books on every page view, so they only keep the fields they use.
 SEARCH_BOOK_KEYS = %i[link title author tags cover_mini].freeze
 HOME_BOOK_KEYS = %i[link title author rating favorite cover_mini].freeze
@@ -41,6 +42,7 @@ def to_json(book, url: :relative, keys: nil)
     'title': book[:title],
     'author': book[:author],
     'link': "#{url_prefix}#{book.path}",
+    'detail': "#{url_prefix}/api/v1/#{book[:isbn]}.json",
     'rating': book[:rating] || 0,
     'read_date': read_date,
     'priority': book[:priority],
@@ -61,6 +63,30 @@ end
 # Nanoc reports it as an absolute path on the compiling machine, which we don't want to expose publicly.
 def book_source_path(book)
   book.raw_filename&.delete_prefix("#{Dir.pwd}/")
+end
+
+# One api/v1/<isbn>.json file per book: the books.json entry plus the descriptions, which only
+# exist once items compile — hence the erb template deferred to the API item's own compilation.
+def generate_book_api_items
+  @items.select { |item| book?(item) }.each do |book|
+    @items.create("<%= book_detail_json(@item[:isbn]) %>",
+                  { isbn: book[:isbn], layout: 'none' },
+                  Nanoc::Identifier.new("/api/v1/#{book[:isbn]}.json")
+    )
+  end
+end
+
+def book_detail_json(isbn)
+  book = find_book_by_isbn(isbn)
+  url = @config[:site][:url]
+  detail = to_json(book, url: :absolute)
+  # description links are site-root-relative (link_to_book): the API files are consumed
+  # standalone, so rewrite them absolute. External links (http…, mailto…) don't match.
+  detail[:description] = {
+    markdown: book.compiled_content(snapshot: :md).gsub(%r{\]\((/[^)]*)\)}) { "](#{url}#{Regexp.last_match(1)})" },
+    html: book.compiled_content(snapshot: :html).gsub(%r{href="/}) { %Q[href="#{url}/] },
+  }
+  detail.to_json
 end
 
 def home?(item)
